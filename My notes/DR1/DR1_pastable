@@ -1,0 +1,130 @@
+Scheme of Maneuver:
+>T1: 10.50.27.188
+->T2: 10.145.117.11
+-->T3: Unknown
+--->T4: 192.168.117.100
+---->T5: 192.168.117.101
+----->T6: 192.168.117.102
+------>T7: 192.168.117.103
+
+
+T1
+Hostname: EXT_RTR
+IP: 10.50.27.188
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+
+Action: Perform SSH masquerade. Scan the 10.145.117.0/24 network for SSH ports. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999 range. Scan discovered hosts for internal router IP for T3. Intelligence indicates they can be identified by their router config update software, which listens on port 41481. Redirect to the next target.
+
+
+kali:
+ssh -S /tmp/T1 bad -O forward -D 9050
+proxychains nmap -Pn -sT 10.145.117.0-255 -p22000-22999,41481 | grep open
+
+<diconnect MC>
+
+T2
+Hostname: SERVER1
+IP: 10.145.117.11
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.11:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+Action: Perform SSH masquerade and redirect to the next target.
+<diconnect MC>
+
+T3
+Hostname: Router
+IP: 10.145.117.15 / 192.168.117.98
+####VERIFY IP####
+ssh -S /tmp/T2 bad -O forward -L 3333:10.145.117.15:22012
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade. Scan the 192.168.117.0/24 network for SSH ports. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999 range. Redirect to the next target.
+
+ssh -S /tmp/T1 bad -O cancel -D 9050
+ssh -S /tmp/T3 bad -O forward -D 9050
+proxychains nmap -Pn -sT 192.168.117.0-255 -p22000-22999 | grep open
+proxychains nmap -Pn -sT 192.168.117.103 -p22000-22999 -T4 | grep open
+proxychains nmap -Pn -sT 192.168.117.0-255 -p22013 -T4 | grep open
+<diconnect MC>
+
+T4
+Hostname: ADMIN1
+Local IP: 192.168.117.100
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.117.100:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+Action: Perform SSH masquerade and conduct device survey. Identify and inform analyst of target potential for follow-on operational value. Redirect to the next target.
+<diconnect MC>
+
+
+T5
+Hostname: TARGET1
+Local IP: 192.168.117.101
+OS: Windows v. unknown
+ssh -S /tmp/T4 bad -O forward -L 5555:192.168.117.101:22013
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+Action: Perform SSH masquerade and conduct device survey. Identify and inform analyst of target potential for follow-on operational value. Redirect to the next target.
+<diconnect MC>
+
+
+
+T6
+Hostname: TARGET2
+Local IP: 192.168.117.102
+OS: Linux v. unknown
+ssh -S /tmp/T5 bad -O forward -L 6666:192.168.117.102:22013
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+Action: Perform SSH masquerade and conduct device survey. Identify and inform analyst of target potential for follow-on operational value. Redirect to the next target.
+<diconnect MC>
+
+T7
+Hostname: TARGET3
+Local IP: 192.168.117.103
+OS: Windows v. unknown
+ssh -S /tmp/T6 bad -O forward -L 7777:192.168.117.103:22013
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<connect MC, EA IP/MA>
+<start vet time end time>
+Action: Perform SSH masquerade and conduct device survey. Identify and inform analyst of target potential for follow-on operational value. Conclude operation.
+<diconnect MC>
+
+make sure you do the teardown procedures
+
+DEBRIEF!!!!!!
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: DRYRUN01
+
+MC: mc1
+
+Analyst: analyst2
+
+Description: In this mission, we accessed two internal networks and perform necessary scan to get new devices on the network. On the three targets in one of the internal network, we performed analyst surveys. Collect information will enable future ops to investigate the network further and plan for effects.
+On T1, we scanned the 10.145.117.0/24 network and found  T3 (a router) and .16 which is currently unknown.
+On T2, we redirect to T3. On t3, we performed scan of 192.168.117.0./24 network. We found three additional hosts from what we knew so far.
+On T4, we performed an analyst survey and redirected to T5.
+On T5, we performed an analyst survey and redirected to T6.
+On T6, we performed an analyst survey and redirected to T7. We found some interesting logging called Logwatch, and it was sending email to george@qmial. Further investigation is needed.
+On T7, we did not have enough time to complete the survey. However, vetting is complete, and we need to go back to T7 on another op.
+
+
+
+
+

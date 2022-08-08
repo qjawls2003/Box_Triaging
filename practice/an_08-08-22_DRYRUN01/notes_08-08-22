@@ -1,0 +1,1174 @@
+Notes for 08-08-22
+
+Here I go@!@!@!
+
+>T1: 10.50.27.188
+->T2: 10.145.117.11
+-->T3: Unknown
+--->T4: 192.168.117.100
+---->T5: 192.168.117.101
+----->T6: 192.168.117.102
+------>T7: 192.168.117.103
+
+=========================
+T1: 10.50.27.188 
+=========================
+2022-08-08 19:32:25-- X-----------------------
+
+2022-08-08 13:09:48-- ON
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+
+2022-08-08 13:12:16-- start looking
+[student4@dryruns-ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:91:7a:88 brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.86/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 86087sec preferred_lft 86087sec
+    inet6 fe80::f816:3eff:fe91:7a88/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[student4@dryruns-ext-rtr ~]$ ls -latr .
+total 32
+-rw-r--r--.  1 student4 wheel   231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel   193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel    18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root   4096 Feb 11 15:52 ..
+drwx------.  3 student4 wheel    95 May 12 12:00 .
+drwxr-xr-x.  2 root     root    100 May 12 12:01 logs
+-rw-------.  1 student4 wheel 12522 May 12 18:13 .bash_history
+
+[student4@dryruns-ext-rtr ~]$ ls -latr logs
+total 756
+drwx------. 3 student4 wheel     95 May 12 12:00 ..
+-rw-r--r--. 1 root     root  122619 May 12 12:01 secure
+-rw-r--r--. 1 root     root   92817 May 12 12:01 messages
+-rw-r--r--. 1 root     root  299008 May 12 12:01 lastlog
+-rw-r--r--. 1 root     root   33963 May 12 12:01 dmesg
+-rw-r--r--. 1 root     root   37080 May 12 12:01 cron
+-rw-r--r--. 1 root     root   14592 May 12 12:01 btmp
+-rw-r--r--. 1 root     root  163200 May 12 12:01 wtmp
+drwxr-xr-x. 2 root     root     100 May 12 12:01 .
+
+
+[student4@dryruns-ext-rtr ~]$ sudo ls -latr /root
+total 44
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11 15:52 .ssh
+-rw-r--r--.  1 root root  899 May 11 20:58 Sharknado_VII_Megalodownpour.txt
+dr-xr-x---.  3 root root  210 May 11 20:58 .
+-rw-------.  1 root root  179 May 11 20:58 .bash_history
+
+
+4 S root      1199     1  0  80   0 - 59230 poll_s Jun18 ?        00:05:13 /usr/sbin/rsyslogd -n
+5 S root       610     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+
+tcp        0      1 10.145.117.86:56962     10.49.1.4:514           SYN_SENT    1199/rsyslogd       
+
+[student4@dryruns-ext-rtr ~]$ date; date -u
+Mon Aug  8 13:17:14 UTC 2022
+Mon Aug  8 13:17:14 UTC 2022
+
+[student4@dryruns-ext-rtr ~]$ uname -a
+Linux dryruns-ext-rtr.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-ext-rtr ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+[student4@dryruns-ext-rtr ~]$ ls -latr /var/*log*/
+total 1500
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 chrony
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 qemu-ga
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 anaconda
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 rhsm
+drwxr-xr-x. 19 root   root      267 Feb 11 15:52 ..
+drwxr-xr-x.  2 root   root       23 Feb 11 15:52 tuned
+-rw-------.  1 root   root        0 Mar  9 14:23 yum.log
+drwx------.  2 root   root       61 May 12 14:14 audit
+
+cat /etc/rsyslog.conf
+authpriv.*                                              /var/log/secure
+cron.*                                                  /var/log/cron
+uucp,news.crit                                          /var/log/spooler
+local7.*                                                /var/log/boot.log
+mail.*                                                  -/var/log/maillog
+
+*.* @@10.49.1.4:514
+
+[student4@dryruns-ext-rtr ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+2022-08-08 13:22:47-- 
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-rw-r--. 1 root utmp             271104 Aug  8 13:11 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Aug  8 13:11 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               9216 Aug  8 13:11 /run/utmp
+-rw-------. 1 root root              14567 Aug  8 13:13 /var/log/messages
+-rw-------. 1 root root             131627 Aug  8 13:22 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 8388608 Aug  8 13:22 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+
+[student4@dryruns-ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+
+[student4@dryruns-ext-rtr ~]$ sudo cat /root/.bash_history
+exit
+vim Sharknado_VII_Megalodownpour.txt
+vi Sharknado_VII_Megalodownpour.txt
+exit
+rm -rf /home/useraccounts/student*/.bash_history
+exit
+vi Sharknado_VII_Megalodownpour.txt 
+exit
+
+[student4@dryruns-ext-rtr ~]$ sudo cat /etc/audit/rules.d/audit.rules
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## Set failure mode to syslog
+-f 1
+
+2022-08-08 13:28:07-- finish looking
+
+scanning
+
+10.145.117.11:22012 ssh port open
+10.145.117.15:41481 open
+
+arp -a
+? (10.145.117.11) at fa:16:3e:0d:1a:69 [ether] on eth0
+? (10.145.117.3) at fa:16:3e:ea:72:ab [ether] on eth0
+? (10.145.117.16) at fa:16:3e:09:40:00 [ether] on eth0
+gateway (10.145.117.1) at fa:16:3e:5d:2d:58 [ether] on eth0
+? (10.145.117.4) at fa:16:3e:a0:18:0d [ether] on eth0
+? (10.145.117.15) at fa:16:3e:0b:1b:cd [ether] on eth0
+? (10.145.117.10) at fa:16:3e:6e:ad:f6 [ether] on eth0
+? (10.145.117.2) at fa:16:3e:2c:9f:76 [ether] on eth0
+
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.145.117.11:22012  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.145.117.15:22012  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.145.117.16:22012  ...  OK
+
+DISCONNECT!
+2022-08-08 19:27:14-- disconnect
+
+------------------------X
+=========================
+
+=========================
+T2: 10.145.117.11 
+=========================
+X-----------------------
+
+2022-08-08 14:43:26-- ON
+
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.11:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+
+
+[student4@dryruns-server1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:0d:1a:69 brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.11/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 50444sec preferred_lft 50444sec
+    inet6 fe80::f816:3eff:fe0d:1a69/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[student4@dryruns-server1 ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11 15:52 .ssh
+dr-xr-x---.  3 root root  170 May  6 13:21 .
+-rw-------.  1 root root   54 May  6 13:21 .bash_history
+
+
+
+5 S apache   27874   937  0  80   0 - 57628 inet_c Aug07 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   27875   937  0  80   0 - 57628 inet_c Aug07 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   27876   937  0  80   0 - 57628 inet_c Aug07 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   27877   937  0  80   0 - 57628 inet_c Aug07 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   27878   937  0  80   0 - 57628 inet_c Aug07 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+4 S root      1061     1  0  80   0 - 60277 poll_s Jun18 ?        00:05:08 /usr/sbin/rsyslogd -n
+4 S root       937     1  0  80   0 - 57628 poll_s Jun18 ?        00:05:41 /usr/sbin/httpd -DFOREGROUND
+5 S root       535     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+
+
+tcp        0      1 10.145.117.11:48434     10.49.1.4:514           SYN_SENT    1061/rsyslogd       
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      937/httpd           
+
+[student4@dryruns-server1 ~]$ date; date -u
+Mon Aug  8 14:50:38 UTC 2022
+Mon Aug  8 14:50:38 UTC 2022
+
+[student4@dryruns-server1 ~]$ uname -a
+Linux dryruns-server1.novalocal 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-server1 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   crond.service  irqbalance.service  nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  httpd.service  kdump.service       postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+authpriv.*                                              /var/log/secure
+mail.*                                                  -/var/log/maillog
+cron.*                                                  /var/log/cron
+*.emerg                                                 :omusrmsg:*
+uucp,news.crit                                          /var/log/spooler
+local7.*                                                /var/log/boot.log
+*.* @@upsidedown:514
+
+10.49.1.4 upsidedown
+
+[student4@dryruns-server1 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-rw-r--. 1 root utmp             127104 Aug  8 14:49 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Aug  8 14:49 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               6912 Aug  8 14:49 /run/utmp
+-rw-------. 1 root root                  0 Aug  8 14:51 /run/xtables.lock
+-rw-------. 1 root root              13751 Aug  8 14:51 /var/log/messages
+-rw-r-----+ 1 root systemd-journal 8388608 Aug  8 14:55 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root             215324 Aug  8 14:55 /var/log/secure
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+[student4@dryruns-server1 ~]$ sudo cat /etc/audit/rules.d/audit.rules
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## Set failure mode to syslog
+-f 1
+`
+[student4@dryruns-server1 ~]$ type -a httpd
+httpd is /usr/sbin/httpd
+[student4@dryruns-server1 ~]$ httpd -v
+Server version: Apache/2.4.6 (CentOS)
+Server built:   Jan 25 2022 14:08:43
+
+[student4@dryruns-server1 ~]$ ls -latr /var/www
+total 0
+drwxr-xr-x.  2 root root   6 Jan 25  2022 cgi-bin
+drwxr-xr-x. 20 root root 278 Feb 11 16:01 ..
+drwxr-xr-x.  4 root root  33 Feb 11 16:01 .
+drwxr-xr-x.  3 root root  25 Feb 11 16:01 html
+[student4@dryruns-server1 ~]$ ls -latr /var/www/html
+total 0
+drwxr-xr-x. 4 root root 33 Feb 11 16:01 ..
+drwxr-xr-x. 4 root root 37 Feb 11 16:01 Everett.com
+drwxr-xr-x. 3 root root 25 Feb 11 16:01 .
+[student4@dryruns-server1 ~]$ ls -latr /var/www/html/Everett.com
+total 0
+drwxr-xr-x. 2 root root  6 Feb 11 16:01 public_html
+drwxr-xr-x. 2 root root  6 Feb 11 16:01 logs
+drwxr-xr-x. 3 root root 25 Feb 11 16:01 ..
+drwxr-xr-x. 4 root root 37 Feb 11 16:01 .
+[student4@dryruns-server1 ~]$ ls -latr /var/www/html/Everett.com/public_html
+total 0
+drwxr-xr-x. 4 root root 37 Feb 11 16:01 ..
+drwxr-xr-x. 2 root root  6 Feb 11 16:01 .
+[student4@dryruns-server1 ~]$ ls -latr /var/www/html/Everett.com/logs
+total 0
+drwxr-xr-x. 4 root root 37 Feb 11 16:01 ..
+drwxr-xr-x. 2 root root  6 Feb 11 16:01 .
+
+2022-08-08 15:19:17-- finished looking
+
+
+DISCONNEC
+2022-08-08 19:26:30-- disconnecT
+
+------------------------X
+=========================
+
+=========================
+T3: 10.145.117.15
+=========================
+X-----------------------
+
+2022-08-08 15:37:22-- ON
+
+[student4@dryruns-int-rtr1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:0b:1b:cd brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.15/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 75008sec preferred_lft 75008sec
+    inet6 fe80::f816:3eff:fe0b:1bcd/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:6a:19:a5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.98/24 brd 192.168.117.255 scope global dynamic eth1
+       valid_lft 72170sec preferred_lft 72170sec
+    inet6 fe80::f816:3eff:fe6a:19a5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+[student4@dryruns-int-rtr1 ~]$ ls -latr .
+total 20
+-rw-r--r--.  1 student4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Feb 11 15:52 ..
+-rw-r--r--.  1 student4 wheel    0 Mar  8 19:38 -type
+drwx------.  2 student4 wheel   96 May  6 18:44 .
+-rw-------.  1 student4 wheel 2883 May 12 15:28 .bash_history
+
+
+
+0 S root     31493     1  0  80   0 - 11020 poll_s 13:51 pts/0    00:00:00 /bin/centOS.rtr.updtr -nlvkp 41481
+4 S root      1323     1  0  80   0 - 70453 poll_s Jun18 ?        00:05:48 /usr/sbin/rsyslogd -n
+5 S root       575     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+
+tcp6       0      0 :::41481                :::*                    LISTEN      31493/centOS.rtr.up 
+tcp        0      0 0.0.0.0:41481           0.0.0.0:*               LISTEN      31493/centOS.rtr.up 
+
+[student4@dryruns-int-rtr1 ~]$ date; date -u
+Mon Aug  8 15:42:05 UTC 2022
+Mon Aug  8 15:42:05 UTC 2022
+
+[student4@dryruns-int-rtr1 ~]$ uname -a
+Linux dryruns-int-rtr1.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-int-rtr1 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+
+[student4@dryruns-int-rtr1 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-------. 1 root root               17087 Aug  8 15:43 /var/log/messages
+-rw-r--r--. 1 root root                 264 Aug  8 15:43 /run/systemd/users/1006
+-rw-r--r--. 1 root root                 302 Aug  8 15:43 /run/systemd/sessions/1256
+-rw-rw-r--. 1 root utmp              127104 Aug  8 15:43 /var/log/wtmp
+-rw-r--r--. 1 root root              299008 Aug  8 15:43 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                8064 Aug  8 15:43 /run/utmp
+-rw-------. 1 root root             4122395 Aug  8 15:44 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 25165824 Aug  8 15:44 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[student4@dryruns-int-rtr1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+[student4@dryruns-int-rtr1 ~]$ sudo cat /root/.bash_history
+cp /bin/ncat /bin/centOS.rtr.updtr
+/bin/centOS.rtr.updtr -nlvkp 41481 > /etc/centOS.rtr.conf
+/bin/centOS.rtr.updtr -nlvkp 41481 > /etc/centOS.rtr.conf &
+exit
+rm -rf /home/useraccounts/student*/.bash_history
+exit
+/bin/centOS.rtr.updtr -nlvkp 41481 > /etc/centOS.rtr.conf
+/bin/centOS.rtr.updtr -nlvkp 41481 > /etc/centOS.rtr.conf &
+exit
+
+[student4@dryruns-int-rtr1 ~]$ arp -a
+? (192.168.117.102) at fa:16:3e:45:c1:d4 [ether] on eth1
+? (192.168.117.2) at fa:16:3e:85:59:f0 [ether] on eth1
+? (192.168.117.107) at fa:16:3e:f7:76:f4 [ether] on eth1
+? (192.168.117.104) at fa:16:3e:ef:b0:50 [ether] on eth1
+? (192.168.117.101) at fa:16:3e:92:8b:63 [ether] on eth1
+? (192.168.117.4) at fa:16:3e:1c:8e:c2 [ether] on eth1
+gateway (192.168.117.1) at fa:16:3e:3e:23:7a [ether] on eth1
+? (192.168.117.106) at fa:16:3e:c8:19:ac [ether] on eth1
+? (192.168.117.103) at fa:16:3e:34:59:51 [ether] on eth1
+? (192.168.117.3) at fa:16:3e:3e:42:e6 [ether] on eth1
+? (192.168.117.100) at fa:16:3e:0d:ce:12 [ether] on eth1
+? (10.145.117.11) at fa:16:3e:0d:1a:69 [ether] on eth0
+? (192.168.117.105) at fa:16:3e:01:50:9b [ether] on eth1
+
+
+
+2022-08-08 15:52:13-- looking finished
+
+
+2022-08-08 15:54:30-- scanning
+
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.100:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.101:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.102:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.103:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.104:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.106:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.107:22013  ...  OK
+
+2022-08-08 16:08:35-- scanning done
+
+DISCONNECT
+2022-08-08 19:25:48-- disconnect
+
+------------------------X
+=========================
+
+=========================
+T4:192.168.117.100
+=========================
+X-----------------------
+
+2022-08-08 16:09:12-- ON
+
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.117.100:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+
+[student4@dryruns-admin1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:0d:ce:12 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.100/24 brd 192.168.117.255 scope global dynamic eth0
+       valid_lft 55310sec preferred_lft 55310sec
+    inet6 fe80::f816:3eff:fe0d:ce12/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[student4@dryruns-admin1 ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 student4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Feb 11 15:52 ..
+-rw-r-----.  1 student4 wheel    0 May 12 14:46 lynis.log
+-rw-r-----.  1 student4 wheel  603 May 12 14:46 lynis-report.dat
+drwx------.  2 student4 wheel  124 May 12 14:46 .
+-rw-------.  1 student4 wheel 3137 May 12 15:26 .bash_history
+
+[student4@dryruns-admin1 ~]$ sudo ls -latr /root
+total 48
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11 15:52 .ssh
+drwxr-----.  3 root root   19 Feb 11 22:00 .pki
+-rw-------.  1 root root   41 Mar 11 18:14 .lesshst
+drwxr-xr-x.  6 root root 4096 Apr 13 19:59 firetools
+dr-xr-x---.  5 root root  215 May  6 13:23 .
+-rw-------.  1 root root  497 May 12 14:33 .bash_history
+
+
+
+4 S root      1051     1  0  80   0 - 66388 poll_s Jun18 ?        00:05:17 /usr/sbin/rsyslogd -n
+5 S root       563     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+
+
+[student4@dryruns-admin1 ~]$ date; date -u
+Mon Aug  8 16:13:02 UTC 2022
+Mon Aug  8 16:13:02 UTC 2022
+
+
+
+[student4@dryruns-admin1 ~]$ uname -a
+Linux dryruns-admin1.novalocal 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+
+[student4@dryruns-admin1 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+/var/log
+-rw-r-----.  1 root   root    39713 Aug  8 16:00 lynis-report.dat
+-rw-r-----.  1 root   root   290571 Aug  8 16:00 lynis.log
+
+
+
+[student4@dryruns-admin1 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+clamupdate:x:997:994:Clamav database update user:/var/lib/clamav:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+clamscan:x:996:992:Clamav scanner user:/:/sbin/nologin
+
+[student4@dryruns-admin1 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+0 * * * * root    /bin/lynis audit system
+
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-------. 1 root root               22197 Aug  8 16:10 /var/log/messages
+-rw-r--r--. 1 root root                 264 Aug  8 16:10 /run/systemd/users/1003
+-rw-r--r--. 1 root root                 303 Aug  8 16:10 /run/systemd/sessions/2492
+-rw-rw-r--. 1 root utmp               87552 Aug  8 16:10 /var/log/wtmp
+-rw-r--r--. 1 root root              299008 Aug  8 16:10 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                6528 Aug  8 16:10 /run/utmp
+-rw-r-----+ 1 root systemd-journal 16777216 Aug  8 16:16 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root              128786 Aug  8 16:16 /var/log/secure
+
+[student4@dryruns-admin1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+[student4@dryruns-admin1 ~]$ sudo cat /root/.bash_history
+rm -rf /home/useraccounts/student*/.bash_history
+exiyt
+exit
+sudo yum install gcc-c++ qt5-qtbase-devel qt5-qtsvg.x86_64 git
+ls
+git clone https://github.com/netblue30/firetools
+cd firetools
+./configure --prefix=/usr --with-qmake=/usr/lib64/qt5/bin/qmake
+make
+sudo make install-strip
+cat /etc/crontab
+yum remove clamav*
+cat /etc/crontab
+vi /etc/crontab
+q!
+ls -latr /etc/crontab
+cat /etc/crontab
+clear
+ls -latr /var/log
+rm -rf /var/log/*clam*
+ls -latr /var/log
+ls -latr /etc
+ls -latr /etc/*clam*
+exit
+
+[student4@dryruns-admin1 ~]$ cat lynis-report.dat
+# Lynis Report
+report_version_major=1
+report_version_minor=0
+report_datetime_start=2022-05-12 14:46:04
+auditor=[Not Specified]
+lynis_version=3.0.7
+os=Linux
+os_name=CentOS Linux
+os_fullname=CentOS Linux 7 (Core)
+os_version=7
+linux_version=CentOS
+os_kernel_version=3.10.0
+os_kernel_version_full=3.10.0-957.27.2.el7.x86_64
+hostname=dryruns-admin1
+test_category=all
+test_group=all
+plugin_directory=/usr/share/lynis/plugins
+lynis_update_available=0
+vm=1
+vmtype=kvm
+container=0
+systemd=1
+hostid=a291935c72ce35a6da947594c058a2a445abe204
+hostid2=041622fc4eb2d73ca2832f2fde2238f009582819e4b70fc430d4e44b4ede9d8f
+
+[student4@dryruns-admin1 ~]$ cat lynis.log
+2022-08-08 16:25:07 ====
+2022-08-08 16:25:07 Action: Performing tests from category: Initializing program
+2022-08-08 16:25:07 PID file removed (/home/useraccounts/student4/lynis.pid)
+
+
+[student4@dryruns-admin1 ~]$ sudo cat /root/.lesshst
+.less-history-file:
+.search
+"sshd
+.shell
+
+2022-08-08 17:04:02-- finished looking
+
+DISCONNECT
+2022-08-08 19:25:38-- disconnect
+
+------------------------X
+=========================
+
+=========================
+T5:192.168.117.101
+=========================
+X-----------------------
+
+2022-08-08 17:07:46-- ON
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>date /t                                                                              
+Mon 08/08/2022                                                                                                                  
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>time /t                                                                              
+05:08 PM                   
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>auditpol /get /category:*                                                                                                                                                
+System audit policy                                                                                                                                                                                                 
+Category/Subcategory                      Setting                                                                                                                                                                   
+System                                                                                                                                                                                                              
+  Security System Extension               No Auditing                                                                                                                                                               
+  System Integrity                        Success and Failure                                                                                                                                                       
+  IPsec Driver                            No Auditing                                                                                                                                                               
+  Other System Events                     Success and Failure                                                                                                                                                       
+  Security State Change                   Success                                                                                                                                                                   
+Logon/Logoff                                                                                                                                                                                                        
+  Logon                                   Success                                                                                                                                                                   
+  Logoff                                  Success                                                                                                                                                                   
+  Account Lockout                         Success                                                                                                                                                                   
+  IPsec Main Mode                         No Auditing                                                                                                                                                               
+  IPsec Quick Mode                        No Auditing                                                                                                                                                               
+  IPsec Extended Mode                     No Auditing                                                                                                                                                               
+  Special Logon                           Success                                                                                                                                                                   
+  Other Logon/Logoff Events               No Auditing                                                                                                                                                               
+  Network Policy Server                   Success and Failure                                                                                                                                                       
+  User / Device Claims                    No Auditing                                                                                                                                                               
+  Group Membership                        No Auditing                     
+
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>net share                                                                                                                                                                
+                                                                                                                                                                                                                    
+Share name   Resource                        Remark                                                                                                                                                                 
+                                                                                                                                                                                                                    
+-------------------------------------------------------------------------------                                                                                                                                     
+C$           C:\                             Default share                                                                                                                                                          
+IPC$                                         Remote IPC                                                                                                                                                             
+ADMIN$       C:\windows                      Remote Admin                                                                                                                                                           
+The command completed successfully.    
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run                                                                                                             
+                                                                                                                                                                                                                    
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run                                                                                                                                                    
+    SecurityHealth    REG_EXPAND_SZ    %ProgramFiles%\Windows Defender\MSASCuiL.exe     
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>dir /o:d /t:w c:\                                                                                                                                                        
+ Volume in drive C is OS                                                                                                                                                                                            
+ Volume Serial Number is 00E6-9C0D                                                                                                                                                                                  
+                                                                                                                                                                                                                    
+ Directory of c:\                                                                                                                                                                                                   
+                                                                                                                                                                                                                    
+04/11/2018  11:38 PM    <DIR>          PerfLogs                                                                                                                                                                     
+04/12/2018  09:16 AM    <DIR>          Program Files (x86)                                                                                                                                                          
+01/04/2019  12:28 AM    <DIR>          Program Files                                                                                                                                                                
+02/11/2022  03:58 PM    <DIR>          Windows                                                                                                                                                                      
+05/06/2022  05:31 PM                 0 wmic                                                                                                                                                                         
+05/06/2022  06:07 PM                 0 net                                                                                                                                                                          
+08/08/2022  04:16 PM    <DIR>          Users                                                                                                                                                                        
+               2 File(s)              0 bytes                                                                                                                                                                       
+               5 Dir(s)  19,408,248,832 bytes free 
+
+dir /o:d /t:w c:\windows\system32
+07/16/2022  12:08 PM    <DIR>          SleepStudy                                                                                                                                                                   
+
+CommandLine=more                                                                                                                                                                                                    
+ExecutablePath=C:\windows\system32\more.com                                                                                                                                                                         
+ParentProcessId=4628                                                                                                                                                                                                
+ProcessId=3772                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine=C:\windows\System32\OpenSSH\ssh-shellhost.exe -nopty ZGlyIGM6XCAvUyAqLnR4dCAqLnBkZiAqLmRvYyAqLmRvY3ggKi54bHMgKi54bHN                                                                                    
+4ICoucHB0ICoucHB0eCAqLmh0bWwgKi5odG0gfCBtb3Jl                                                                                                                                                                       
+ExecutablePath=C:\windows\System32\OpenSSH\ssh-shellhost.exe                                                                                                                                                        
+ParentProcessId=4836                                                                                                                                                                                                
+ProcessId=4316                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine=C:\windows\system32\cmd.exe /c dir c:\ /S *.txt *.pdf *.doc *.docx *.xls *.xlsx *.ppt *.pptx *.html *.htm | more                                                                                        
+ExecutablePath=C:\windows\system32\cmd.exe                                                                                                                                                                          
+ParentProcessId=4316                                                                                                                                                                                                
+ProcessId=3220                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine=\??\C:\windows\system32\conhost.exe 0x4                                                                                                                                                                 
+ExecutablePath=C:\windows\system32\conhost.exe                                                                                                                                                                      
+ParentProcessId=3220                                                                                                                                                                                                
+ProcessId=4660                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine=C:\windows\system32\cmd.exe  /S /D /c" dir c:\ /S *.txt *.pdf *.doc *.docx *.xls *.xlsx *.ppt *.pptx *.html *.htm "                                                                                     
+ExecutablePath=C:\windows\system32\cmd.exe                                                                                                                                                                          
+ParentProcessId=3220                                                                                                                                                                                                
+ProcessId=1876                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine=more                                                                                                                                                                                                    
+ExecutablePath=C:\windows\system32\more.com                                                                                                                                                                         
+ParentProcessId=3220                                                                                                                                                                                                
+ProcessId=4608       
+
+2022-08-08 17:33:14-- finished looking
+
+
+
+student4@DESKTOP-JSMECQ1 C:\Users\student4>arp -a                                                                                                                                                                   
+                                                                                                                                                                                                                    
+Interface: 192.168.117.101 --- 0x6                                                                                                                                                                                  
+  Internet Address      Physical Address      Type                                                                                                                                                                  
+  192.168.117.1         fa-16-3e-3e-23-7a     dynamic                                                                                                                                                               
+  192.168.117.3         fa-16-3e-3e-42-e6     dynamic                                                                                                                                                               
+  192.168.117.4         fa-16-3e-1c-8e-c2     dynamic                                                                                                                                                               
+  192.168.117.98        fa-16-3e-6a-19-a5     dynamic                                                                                                                                                               
+  192.168.117.100       fa-16-3e-0d-ce-12     dynamic                                                                                                                                                               
+  192.168.117.102       fa-16-3e-45-c1-d4     dynamic                                                                                                                                                               
+  192.168.117.255       ff-ff-ff-ff-ff-ff     static                                                                                                                                                                
+  224.0.0.22            01-00-5e-00-00-16     static                                                                                                                                                                
+  224.0.0.252           01-00-5e-00-00-fc     static                                                                                                                                                                
+  239.255.255.250       01-00-5e-7f-ff-fa     static                                                                                                                                                                
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static   
+
+2022-08-08 18:33:49-- finish looking at it further
+
+DISCONNECT
+2022-08-08 19:25:26-- disconnect
+------------------------X
+=========================
+
+=========================
+T6: 192.168.117.102
+=========================
+X-----------------------
+
+2022-08-08 18:34:48-- ON
+
+[student4@dryruns-target2 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:45:c1:d4 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.102/24 brd 192.168.117.255 scope global dynamic eth0
+       valid_lft 75198sec preferred_lft 75198sec
+    inet6 fe80::f816:3eff:fe45:c1d4/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1183     1  0  80   0 - 65409 poll_s Jun18 ?        00:05:44 /usr/sbin/rsyslogd -n
+5 S root       711     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+[student4@dryruns-target2 ~]$ date; date -u
+Mon Aug  8 18:36:33 UTC 2022
+Mon Aug  8 18:36:33 UTC 2022
+
+[student4@dryruns-target2 ~]$ uname -a
+Linux dryruns-target2.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+
+[student4@dryruns-target2 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+
+[student4@dryruns-target2 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+
+-rw-------. 1 root    root               16433 Aug  8 18:36 /var/log/messages
+-rw-r--r--. 1 root    root                 265 Aug  8 18:36 /run/systemd/users/1010
+-rw-r--r--. 1 root    root                 305 Aug  8 18:36 /run/systemd/sessions/1260
+-rw-rw-r--. 1 root    utmp               48768 Aug  8 18:37 /var/log/wtmp
+-rw-r--r--. 1 root    root              299008 Aug  8 18:37 /var/log/lastlog
+-rw-rw-r--. 1 root    utmp                6144 Aug  8 18:37 /run/utmp
+-rw-------. 1 root    root             1777042 Aug  8 18:38 /var/log/audit/audit.log
+-rw-------. 1 root    root              129664 Aug  8 18:38 /var/log/secure
+-rw-r-----+ 1 root    systemd-journal 16777216 Aug  8 18:38 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root    root                 125 Aug  8 18:38 /var/lib/rsyslog/imjournal.state
+-rwx------. 1 postfix postfix             3750 Aug  8  2022 /var/spool/postfix/deferred/2/21F3AB070D
+-rwx------. 1 postfix postfix             3750 Aug  8  2022 /var/spool/postfix/deferred/1/14441B071A
+-rwx------. 1 postfix postfix             3750 Aug  8  2022 /var/spool/postfix/deferred/C/C8B7FB0740
+-rwx------. 1 postfix postfix             3750 Aug  8  2022 /var/spool/postfix/deferred/6/648E3B070C
+-rwx------. 1 postfix postfix             3750 Aug  8  2022 /var/spool/postfix/deferred/D/D1F82B0591
+
+[student4@dryruns-target2 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+$SystemLogSocketName /run/systemd/journal/syslog
+[student4@dryruns-target2 ~]$ arp -a
+? (192.168.117.100) at fa:16:3e:0d:ce:12 [ether] on eth0
+? (192.168.117.98) at fa:16:3e:6a:19:a5 [ether] on eth0
+gateway (192.168.117.1) at fa:16:3e:3e:23:7a [ether] on eth0
+? (192.168.117.3) at fa:16:3e:3e:42:e6 [ether] on eth0
+? (192.168.117.103) at fa:16:3e:34:59:51 [ether] on eth0
+? (192.168.117.101) at fa:16:3e:92:8b:63 [ether] on eth0
+? (192.168.117.4) at fa:16:3e:1c:8e:c2 [ether] on eth0
+
+
+
+####logwatch???###
+/var/spool/postfix/deferred
+sudo ls -latr /var/spool/postfix/deferred
+sudo cat /var/spool/postfix/deferred/C/C8B7FB0740
+sudo cat /etc/cron.daily/0logwatch
+sudo ls -latr /var/cache/logwatch
+sudo cat /etc/cron.hourly/0anacron
+ls -latr /usr/share/logwatch/scripts/services
+cat /usr/share/logwatch/scripts/logile
+
+2022-08-08 19:25:14-- disconnect
+
+------------------------X
+=========================
+
+=========================
+T7:192.168.117.103 
+=========================
+X-----------------------
+2022-08-08 19:14:22-- ON
+
+
+student4@DESKTOP-6VSFRCO C:\Users\student4>ipconfig /all                                                                        
+
+Windows IP Configuration                                                                                                        
+
+   Host Name . . . . . . . . . . . . : DESKTOP-6VSFRCO                                                                          
+   Primary Dns Suffix  . . . . . . . :                                                                                          
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                   
+   IP Routing Enabled. . . . . . . . : No                                                                                       
+   WINS Proxy Enabled. . . . . . . . : No                                                                                       
+   DNS Suffix Search List. . . . . . : vta                                                                                      
+
+Ethernet adapter Ethernet:                                                                                                      
+
+   Connection-specific DNS Suffix  . : vta                                                                                      
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                          
+   Physical Address. . . . . . . . . : FA-16-3E-34-59-51                                                                        
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                      
+   Autoconfiguration Enabled . . . . : Yes                                                                                      
+   Link-local IPv6 Address . . . . . : fe80::bd89:65d8:7785:c6dc%6(Preferred)                                                   
+   IPv4 Address. . . . . . . . . . . : 192.168.117.103(Preferred)                                                               
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                            
+   Lease Obtained. . . . . . . . . . : Friday, May 27, 2022 11:54:14 PM                                                         
+   Lease Expires . . . . . . . . . . : Tuesday, August 9, 2022 6:07:28 PM                                                       
+   Default Gateway . . . . . . . . . : 192.168.117.1                                                                            
+   DHCP Server . . . . . . . . . . . : 192.168.117.4                                                                            
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                                                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-3E-BF-FA-16-3E-34-59-51                                                
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled       
+
+
+
+
+
+
+student4@DESKTOP-6VSFRCO C:\Users\student4>date /t                                                                              
+Mon 08/08/2022                                                                                                                  
+
+student4@DESKTOP-6VSFRCO C:\Users\student4>time /t                                                                              
+07:14 PM   
+
+2022-08-08 19:25:03-- diconnect
+
+
+------------------------X
+=========================
+
+

@@ -1,0 +1,117 @@
+T1
+ls -latr . (logs????)
+ls -latr logs
+tail -n 50 logs/cron
+sudo file /root/Sharknado_VII_Megalodownpour.txt
+sudo tail -n 150 /root/Sharknado_VII_Megalodownpour.txt
+sudo cat /root/Sharknado_VII_Megalodownpour.txt
+
+rsyslog
+auditd
+sudo ls -latr /var/log/audit
+sudo tail -n 50 /var/log/audit/audit.log
+cat /etc/rsyslog.d/listen.conf
+
+SELinux!!!!!
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
+log cleaning spotted on student4
+
+T2
+
+rsyslog
+auditd
+sudo ls -latr /var/log/httpd
+sudo cat /var/log/httpd/error_log
+httpd
+SELinux
+
+file /usr/sbin/httpd
+strings /usr/sbin/httpd
+which httpd
+ls -latr /etc/httpd/conf
+cat /etc/httpd/conf/magic
+cat /etc/httpd/conf/httpd.conf
+httpd -v
+md5sum /usr/sbin/httpd
+sudo ls -latr /var/www/html/Everett.com/public_html
+sudo ls -latr /var/www/cgi-bin
+sudo cat /var/log/httpd/error_log-20220807
+lastlog
+
+
+T3 
+
+cat ./-type
+malware? /bin/centOS.rtr.updtr -nlvkp 41481
+router update?
+cat /etc/centOS.rtr.conf
+md5sum /bin/centOS.rtr.updtr
+file /bin/centOS.rtr.updtr
+strings /bin/centOS.rtr.updtr
+strings /etc/centOS.rtr.conf
+SELinux
+
+T4 
+
+lynis report .
+
+in root
+drwxr-----.  3 root root   19 Feb 11 22:00 .pki
+-rw-------.  1 root root   41 Mar 11 18:14 .lesshst
+drwxr-xr-x.  6 root root 4096 Apr 13 19:59 firetools
+
+/var/log
+-rw-r-----.  1 root   root    39713 Aug  8 16:00 lynis-report.dat
+-rw-r-----.  1 root   root   290571 Aug  8 16:00 lynis.log
+
+firetool
+firejail-ui
+Clamav scanner
+trouser package
+SELinux
+check root bash history
+
+cat lynis.log
+cat lynis-report.dat
+
+sudo tail -n 50 /var/log/lynis.log
+which lynis
+lynis -v
+ls -latr /etc
+ls -latr /usr/local
+ls -latr /usr/bin
+where lynis
+ls -latr /usr/share/lynis
+sudo cat /var/log/lynis-report.dat
+sudo stat /var/log/lynis.log
+
+sudo cat /root/.lesshst
+sudo ls -latr /root/firetools
+
+ls -latr /etc/*clam*
+ls -latr /var/log/*clam*
+sudo ls -latr /root/.pki/nssdb
+sudo cat /root/.pki/nssdb
+which clamav*
+
+
+T5
+tmprtwfhrnd
+dir /o:d /t:w c:\windows\security\database
+dir /o:d /t:w c:\windows\system32\SleepStudy
+dir /o:d /t:w c:\windows\system32\sru
+
+T6
+
+/var/spool/postfix/deferred
+sudo ls -latr /var/spool/postfix/deferred
+sudo cat /var/spool/postfix/deferred/C/C8B7FB0740
+
+sudo cat /etc/cron.daily/0logwatch
+
+sudo ls -latr /var/cache/logwatch
+crontab -e
+sudo cat /etc/cron.hourly/0anacron
+ls -latr /usr/share/logwatch/scripts/services
+cat /usr/share/logwatch/scripts/logile

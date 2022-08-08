@@ -1,0 +1,434 @@
+[student4@dryruns-target2 ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2948952k,nr_inodes=737238,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=24,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=9919)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+tmpfs on /run/user/1019 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1019,gid=10)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tmpfs on /run/user/1012 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1012,gid=10)
+tmpfs on /run/user/1016 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1016,gid=10)
+tmpfs on /run/user/1017 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1017,gid=10)
+tmpfs on /run/user/1013 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1013,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1004,gid=10)
+tmpfs on /run/user/1010 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1010,gid=10)
+tmpfs on /run/user/1009 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1009,gid=10)
+tmpfs on /run/user/1018 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1018,gid=10)
+tmpfs on /run/user/1001 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1001,gid=10)
+tmpfs on /run/user/1006 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1006,gid=10)
+
+
+[student4@dryruns-target2 ~]$ lsmod
+Module                  Size  Used by
+iptable_nat            12875  0 
+nf_conntrack_ipv4      15053  1 
+nf_defrag_ipv4         12729  1 nf_conntrack_ipv4
+nf_nat_ipv4            14115  1 iptable_nat
+nf_nat                 26583  1 nf_nat_ipv4
+nf_conntrack          137239  3 nf_nat,nf_nat_ipv4,nf_conntrack_ipv4
+iptable_filter         12810  0 
+binfmt_misc            17468  1 
+tcp_diag               12591  0 
+udp_diag               12801  0 
+inet_diag              18949  2 tcp_diag,udp_diag
+ppdev                  17671  0 
+kvm_amd              2177260  0 
+kvm                   621392  1 kvm_amd
+irqbypass              13503  1 kvm
+virtio_rng             13029  0 
+crc32_pclmul           13133  0 
+virtio_balloon         18015  0 
+parport_pc             28205  0 
+i2c_piix4              22401  0 
+parport                46395  2 ppdev,parport_pc
+ghash_clmulni_intel    13273  0 
+sg                     40721  0 
+joydev                 17389  0 
+aesni_intel           189415  0 
+pcspkr                 12718  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+ip_tables              27126  2 iptable_filter,iptable_nat
+xfs                   996949  1 
+libcrc32c              12644  3 xfs,nf_nat,nf_conntrack
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_console         28076  0 
+virtio_net             28063  0 
+virtio_scsi            18463  1 
+ata_piix               35052  0 
+libata                243133  3 pata_acpi,ata_generic,ata_piix
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+crc32c_intel           22094  1 
+virtio_pci             22985  0 
+virtio_ring            22746  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+serio_raw              13434  0 
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+floppy                 69432  0 
+sunrpc                353103  1 
+
+[student4@dryruns-target2 ~]$ uname -a
+Linux dryruns-target2.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-target2 ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root  23 Nov 23  2018 /etc/system-release-cpe
+-rw-r--r--. 1 root root 393 Nov 23  2018 /etc/os-release
+-rw-r--r--. 1 root root  51 Nov 23  2018 /etc/centos-release-upstream
+-rw-r--r--. 1 root root  38 Nov 23  2018 /etc/centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/redhat-release -> centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/system-release -> centos-release
+[student4@dryruns-target2 ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+
+[student4@dryruns-target2 ~]$ services --status-all || systemctl status --no-pager 
+-bash: services: command not found
+● dryruns-target2.novalocal
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Sat 2022-06-18 01:02:30 UTC; 1 months 21 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1006.slice
+           │ │ └─session-1267.scope
+           │ │   ├─10784 sshd: student6 [priv]
+           │ │   ├─10795 sshd: student6@pts/14
+           │ │   └─10799 -bash
+           │ ├─user-1001.slice
+           │ │ └─session-1266.scope
+           │ │   ├─10629 sshd: student1 [priv]
+           │ │   ├─10699 sshd: student1@pts/13
+           │ │   └─10700 -bash
+           │ ├─user-1018.slice
+           │ │ ├─session-1265.scope
+           │ │ │ ├─10602 sshd: student18 [priv]
+           │ │ │ ├─10609 sshd: student18@pts/12
+           │ │ │ └─10610 -bash
+           │ │ └─session-1264.scope
+           │ │   ├─10443 sshd: student18 [priv]
+           │ │   ├─10450 sshd: student18@pts/9
+           │ │   └─10451 -bash
+           │ ├─user-1009.slice
+           │ │ └─session-1262.scope
+           │ │   ├─9504 sshd: student9 [priv]
+           │ │   ├─9517 sshd: student9@pts/2
+           │ │   └─9518 -bash
+           │ ├─user-1010.slice
+           │ │ └─session-1260.scope
+           │ │   ├─9069 sshd: student10 [priv]
+           │ │   ├─9093 sshd: student10@pts/10
+           │ │   └─9094 -bash
+           │ ├─user-1004.slice
+           │ │ └─session-1258.scope
+           │ │   ├─ 8900 sshd: student4 [priv]
+           │ │   ├─ 8910 sshd: student4@pts/8
+           │ │   ├─ 8911 -bash
+           │ │   └─12204 systemctl status --no-pager
+           │ ├─user-1013.slice
+           │ │ └─session-1254.scope
+           │ │   ├─6415 sshd: student13 [priv]
+           │ │   ├─6422 sshd: student13@pts/0
+           │ │   └─6423 -bash
+           │ ├─user-1017.slice
+           │ │ └─session-1251.scope
+           │ │   ├─5820 sshd: student17 [priv]
+           │ │   ├─5838 sshd: student17@pts/7
+           │ │   └─5839 -bash
+           │ ├─user-1016.slice
+           │ │ └─session-1249.scope
+           │ │   ├─4335 sshd: student16 [priv]
+           │ │   ├─4344 sshd: student16@pts/1
+           │ │   └─4345 -bash
+           │ ├─user-1012.slice
+           │ │ └─session-1247.scope
+           │ │   ├─3208 sshd: student12 [priv]
+           │ │   ├─3217 sshd: student12@pts/5
+           │ │   └─3218 -bash
+           │ └─user-1019.slice
+           │   └─session-1245.scope
+           │     ├─2785 sshd: student19 [priv]
+           │     ├─2789 sshd: student19@pts/4
+           │     └─2790 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1191 /usr/sbin/crond -n
+             ├─rsyslog.service
+             │ └─1183 /usr/sbin/rsyslogd -n
+             ├─sshd.service
+             │ └─1176 /usr/sbin/sshd -D
+             ├─postfix.service
+             │ ├─ 1187 /usr/libexec/postfix/master -w
+             │ ├─ 1190 qmgr -l -t unix -u
+             │ └─10482 pickup -l -t unix -u
+             ├─tuned.service
+             │ └─1051 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─network.service
+             │ └─991 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H dryruns-target2 eth0
+             ├─rpcbind.service
+             │ └─766 /sbin/rpcbind -w
+             ├─dbus.service
+             │ └─745 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─chronyd.service
+             │ └─747 /usr/sbin/chronyd
+             ├─gssproxy.service
+             │ └─749 /usr/sbin/gssproxy -D
+             ├─polkit.service
+             │ └─739 /usr/lib/polkit-1/polkitd --no-debug
+             ├─irqbalance.service
+             │ └─737 /usr/sbin/irqbalance --foreground
+             ├─systemd-logind.service
+             │ └─736 /usr/lib/systemd/systemd-logind
+             ├─auditd.service
+             │ └─711 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─510 /usr/lib/systemd/systemd-udevd
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1188 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1186 /sbin/agetty --noclear tty1 linux
+             └─systemd-journald.service
+[student4@dryruns-target2 ~]$ cat /proc/meminfo
+MemTotal:        5944464 kB
+MemFree:         5470304 kB
+MemAvailable:    5466004 kB
+Buffers:            2088 kB
+Cached:           216712 kB
+SwapCached:            0 kB
+Active:           143292 kB
+Inactive:         136940 kB
+Active(anon):      73664 kB
+Inactive(anon):    29724 kB
+Active(file):      69628 kB
+Inactive(file):   107216 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 8 kB
+Writeback:             0 kB
+AnonPages:         61432 kB
+Mapped:            30604 kB
+Shmem:             41956 kB
+Slab:             102108 kB
+SReclaimable:      64440 kB
+SUnreclaim:        37668 kB
+KernelStack:        2560 kB
+PageTables:        11392 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972232 kB
+Committed_AS:     318328 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17900 kB
+VmallocChunk:   34359717888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      6144 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      102260 kB
+DirectMap2M:     4091904 kB
+DirectMap1G:     4194304 kB
+
+[student4@dryruns-target2 ~]$ sudo cat /etc/shadow
+root:$6$uhzjGqTUi//m$tjjR/wfa2kfzMhxX9rvRS.9N3LaT2WQgKRU8St01c1UnlrwCzkzYUOd6y5gQnOvTtXjmfdiASW92lB9/Ex6941:19034:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19034:0:99999:7:::
+student1:$1$Ph6dtTwi$CFDdbXZ5SoyjYITyUMea8.:19034:0:99999:7:::
+student2:$1$aViYbYKV$dxzn58FIItLxONn9eiZDG/:19034:0:99999:7:::
+student3:$1$ZrIT/Dsh$756BJyFqmDTg2YwnNBUPt/:19034:0:99999:7:::
+student4:$1$fs0jEzp6$8bXWmwqkCoQccIyzL5i0c.:19034:0:99999:7:::
+student5:$1$6ZlclxaF$sH1IvBctoto85wCfgdS2o1:19034:0:99999:7:::
+student6:$1$Di.9cnPj$tBNybeo3lnODbyWyHwlii.:19034:0:99999:7:::
+student7:$1$3Wco7oAG$FMSNtFR1/r5GYCoimRrXu0:19034:0:99999:7:::
+student8:$1$kZZoDSm4$Zi0.veE8MM5bK2.K1ErpY0:19034:0:99999:7:::
+student9:$1$8BqCFV5E$INcdb/bwWnuchtT/yzo8C/:19034:0:99999:7:::
+student10:$1$hI1Gfog1$2Wg5cg9YtxpaHw/vZvAWN1:19034:0:99999:7:::
+student11:$1$TdtOE3Jj$ojLmIw2yJm96XvW9aqPvD.:19034:0:99999:7:::
+student12:$1$Vt0FdlZY$hhxQvoWjUEFxrl7sGS3TD.:19034:0:99999:7:::
+student13:$1$3MvhJPnH$LWwwfJntjkRWR83tRA6jS/:19034:0:99999:7:::
+student14:$1$YaiD0FQ0$cIv2gf.Lrh2oI7ELWwndO1:19034:0:99999:7:::
+student15:$1$vk/9mk5i$2tD1z/ky5LI/rvd4f97uM0:19034:0:99999:7:::
+student16:$1$.nHyJQUW$ovQEteOSVp9lY3lTPpu9c/:19034:0:99999:7:::
+student17:$1$0BW8T7Ps$qjM.dqUdskhl/zDD4mCla0:19034:0:99999:7:::
+student18:$1$kuar7L8g$Ry8Rf8pWyjoci7A/R9OHK/:19034:0:99999:7:::
+student19:$1$j0N.Puc5$lQeX/HYwafyeBFskgzM680:19034:0:99999:7:::
+student20:$1$.s2QqJ9E$T8LJJSovli8bj7uC6ShEZ0:19034:0:99999:7:::
+student21:$1$d9ORBKLh$wfrpjTnsN2W1XHEH/7Mp70:19034:0:99999:7:::
+student22:$1$i1ijkAuj$WwkTpKTINg5IUXZMmvS8Y.:19034:0:99999:7:::
+student23:$1$3x0yRDDh$ht5A5/zsbG/MOBmXtToUX0:19034:0:99999:7:::
+[student4@dryruns-target2 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+[student4@dryruns-target2 ~]$ lspci -vv
+-bash: lspci: command not found
+[student4@dryruns-target2 ~]$ arp -a
+? (192.168.117.100) at fa:16:3e:0d:ce:12 [ether] on eth0
+? (192.168.117.98) at fa:16:3e:6a:19:a5 [ether] on eth0
+gateway (192.168.117.1) at fa:16:3e:3e:23:7a [ether] on eth0
+? (192.168.117.3) at fa:16:3e:3e:42:e6 [ether] on eth0
+? (192.168.117.103) at fa:16:3e:34:59:51 [ether] on eth0
+? (192.168.117.101) at fa:16:3e:92:8b:63 [ether] on eth0
+? (192.168.117.4) at fa:16:3e:1c:8e:c2 [ether] on eth0
+[student4@dryruns-target2 ~]$ lsusb
+-bash: lsusb: command not found
+[student4@dryruns-target2 ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+[student4@dryruns-target2 ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+[student4@dryruns-target2 ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5805         149        5342          40         313        5338
+Swap:             0           0           0
+[student4@dryruns-target2 ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+        Vendor: SeaBIOS
+        Version: 1.13.0-1ubuntu1.1
+        Release Date: 04/01/2014
+        Address: 0xE8000
+        Runtime Size: 96 kB
+        ROM Size: 64 kB
+        Characteristics:
+                BIOS characteristics not supported
+                Targeted content distribution is supported
+        BIOS Revision: 0.0
+

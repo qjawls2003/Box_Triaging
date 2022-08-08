@@ -10,6 +10,7 @@ ps -elf
 netstat -auntp OR ss -auntp
 sudo netstat -auntp
 w
+who
 sudo cat /etc/sudoers
 ls -latr /var/spool/cron
 sudo ls -latr /var/spool/cron
@@ -25,22 +26,25 @@ ls -latr /var/*log*/
 ls -latr /var/log/*
 sudo ls -latr /var/log/*
 cat out relevant files (grep for your logged in user account)
-ls -la /etc/*syslog* (read all the config files)
+ls -la /etc/*syslog*
 cat /etc/rsyslog.conf
 cat /etc/hosts
 cat /etc/passwd
 for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
 cat /etc/crontab
 ls -la /etc/cron.*
+cat /etc/cron.hourly/0anacron
 As needed, examine the files/scripts shown in the directory listing of the cron.* directories
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
-sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
 sestatus OR getenforce
 cat /root/.bash_history
 sudo cat /root/.bash_history
 cat ~/.bash_history
 cat ~/.zsh_history
 <extra>
+cat /etc/rsyslog.d/listen.conf
+arp -a
 ls -latr /etc/sysconfig/
 cat /etc/rsyslog.d/00-my_iptables.conf
 cat /etc/logrotate.conf
@@ -55,6 +59,17 @@ lsmod
 sudo iptables -L
 man <binary>
 man netcat
+<selinux>
+ls -latr /etc/selinux
+cat /etc/selinux/semanage.conf
+cat /etc/selinux/config
+ls -latr /etc/selinux/tmp
+ls -latr /etc/selinux/targeted
+cat /etc/selinux/targeted/setrans.conf
+cat /etc/selinux/targeted/seusers
+ls -latr /etc/selinux/targeted/logins
+sudo tail -n 20 /var/log/audit/auth.log
+
 
 
 
@@ -114,12 +129,13 @@ dir /o:d /t:w c:\windows\
 dir /o:d /t:w c:\windows\system32
 dir /o:d /t:w c:\windows\system32\winevt\logs
 dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
-wevtutil qe security /c:25 /rd:true /f:texy (whatever has updated from previous dir) (get the 25 newest logs)
+wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir) (get the 25 newest logs)
 wevtutil qe security /c:25 /rd:true /f:text | findstr Event
-wevtutil qe security /cpassword4:25 /rd:true /f:text | findstr "Process Name"
+wevtutil qe security /c:25 /rd:true /f:text | findstr "Process Name"
 wevtutil el
 wevtutil gl security
 wevtutil gli security
+wevtutil gl 'windows powershell'
 <extra>
 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\winlogon"
 Norton_Free.exe
@@ -130,10 +146,12 @@ C:\temp
 C:\Sysinternals
 dir /o:d /t:w c:\windows\prefetch
 
+
+
 Before Disconnect
 dir /o:d /t:w c:\windows\temp
 dir /o:d /t:w c:\windows\system32\winevt\logs
-wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+wevtutil qe security /c:25 /rd:true /f:text
 netstat /anob
 query user
 tasklist /V
@@ -145,7 +163,7 @@ net user
 net localgroup
 net session
 net start
-type %systemroot%\system32\drivers\etc\hosts
+type %systemroot%\system32\drivers\etc\host
 arp -a
 route print
 driverquery /v
