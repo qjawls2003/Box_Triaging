@@ -1,0 +1,762 @@
+Notes for 01-08-22
+
+Scheme of Maneuver:
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.27
+--> T3: 192.168.0.13
+---> T4: 192.168.0.9
+----> T5: 192.168.0.12
+
+student4::password4
+
+T1
+2022-08-01 17:59:34-- ON
+
+
+####T1 VETTING####
+2022-08-01 18:00:04-- 
+[student4@frankcastle ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Jul 26 13:52 .ssh
+drwxr-xr-x.  8 root root   78 Jul 26 13:54 timestampfun
+drwxr-xr-x.  4 root root  220 Jul 26 14:10 linux-malware-detect
+drwxr-----.  3 root root   19 Jul 26 14:22 .pki
+dr-xr-x---.  6 root root  230 Jul 26 14:22 .
+-rw-------.  1 root root  102 Jul 27 14:21 .bash_history
+
+2022-08-01 18:00:58-- 
+[student4@frankcastle ~]$ ps -elf
+4 S root      1164     1  0  80   0 - 31579 hrtime Jul26 ?        00:00:02 /usr/sbin/crond -n
+4 S root      3169     1  0  80   0 - 28216 poll_s Jul26 ?        00:00:00 /usr/sbin/sshd -D
+5 S root      9089     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:01 /sbin/auditd
+4 S root     10737     1  0  80   0 - 98257 poll_s Jul26 ?        00:00:52 /usr/sbin/rsyslogd -n
+
+2022-08-01 18:01:48-- 
+[student4@frankcastle ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 63397sec preferred_lft 63397sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+2022-08-01 18:02:36-- 
+[student4@frankcastle ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1089/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3169/sshd           
+tcp        0      0 192.168.0.99:22         10.50.33.208:37872      ESTABLISHED 17482/sshd: student 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1089/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      3169/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           898/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           617/chronyd         
+udp        0      0 0.0.0.0:514             0.0.0.0:*                           10737/rsyslogd      
+udp        0      0 0.0.0.0:689             0.0.0.0:*                           555/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                617/chronyd         
+udp6       0      0 :::514                  :::*                                10737/rsyslogd      
+udp6       0      0 :::689                  :::*                                555/rpcbind 
+
+
+2022-08-01 18:04:13-- 
+[student4@frankcastle ~]$ date; date -u
+Mon Aug  1 18:04:04 UTC 2022
+Mon Aug  1 18:04:04 UTC 2022
+
+
+
+2022-08-01 18:04:27-- 
+[student4@frankcastle ~]$ uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+
+2022-08-01 18:04:54-- 
+[student4@frankcastle ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service   nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  maldet.service  postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+
+
+2022-08-01 18:05:13-- 
+[student4@frankcastle ~]$ ls -latr /var/*log*/
+total 368
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 chrony
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 qemu-ga
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler-20220731
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 anaconda
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 rhsm
+drwx------.  2 root   root       23 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 ..
+-rw-r--r--.  1 root   root    32750 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 tuned
+-rw-------.  1 root   root      212 Jul 26 13:52 maillog-20220731
+-rw-r--r--.  1 root   root       96 Jul 26 13:52 boot.log
+-rw-r--r--.  1 root   root      202 Jul 26 13:52 cron-20220731
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure-20220731
+-rw-------.  1 root   root     1900 Jul 26 13:54 yum.log
+-rw-------.  1 root   root   103191 Jul 26 13:54 messages-20220731
+-rw-------.  1 root   root   135860 Jul 26 13:57 cloud-init.log
+-rw-------.  1 root   utmp     4224 Jul 26 15:40 btmp-20220801
+drwx------.  2 root   root     4096 Jul 27 17:08 WadeWilson
+drwx------.  2 root   root      168 Jul 29 19:12 MattMurdock
+drwx------.  2 root   root     4096 Jul 31 02:43 frankcastle
+-rw-------.  1 root   root        0 Jul 31 03:31 spooler
+-rw-------.  1 root   root        0 Jul 31 03:31 secure
+-rw-------.  1 root   root        0 Jul 31 03:31 messages
+-rw-------.  1 root   root        0 Jul 31 03:31 maillog
+-rw-r--r--.  1 root   root        0 Jul 31 03:31 cron
+drwx------.  2 root   root      180 Aug  1 00:24 TonyStark
+drwx------.  2 root   root     4096 Aug  1 00:34 peterparker
+-rw-------.  1 root   utmp        0 Aug  1 03:45 btmp
+drwxr-xr-x. 13 root   root     4096 Aug  1 03:45 .
+-rw-rw-r--.  1 root   utmp    23424 Aug  1 17:58 wtmp
+-rw-r--r--.  1 root   root   299008 Aug  1 17:58 lastlog
+
+2022-08-01 18:07:00-- 
+[student4@frankcastle ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+[student4@frankcastle ~]$ ls -la /etc/*syslog* 
+-rw-r--r--. 1 root root 3312 Jul 26 13:52 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 24
+drwxr-xr-x.  2 root root   77 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rw-r--r--.  1 root root   57 Jul 26 13:54 00-my_iptables.conf
+-rw-r--r--.  1 root root  255 Mar 27  2018 21-cloudinit.conf
+-rw-r--r--.  1 root root   49 Jul 31  2019 listen.conf
+
+2022-08-01 18:07:38-- 
+usr/local/maldet[student4@frankcastle ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+  10  *  *  *  * root echo -e '\n\n' + Tue Jul 26 13:54:44 UTC 2022 + '\n' >> /root/linux-malware-detect/report.txt && /usr/local/sbin/maldet -a /bin >> /root/linux-malware-detect/report.txt
+
+
+
+
+2022-08-01 18:13:01-- 
+[student4@frankcastle ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 20
+drwxr-xr-x.  2 root root   39 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+-rw-r--r--.  1 root root   76 Jul 26 14:22 maldet_pub
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   56 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rwx------.  1 root root  219 Oct 30  2018 logrotate
+-rwxr-xr-x.  1 root root 3777 Jul 26 14:22 maldet
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 man-db.cron
+
+2022-08-01 18:13:50-- 
+[student4@frankcastle ~]$ find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-r--r--. 1 root root                 42 Aug  1 17:58 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root root                 17 Aug  1 17:58 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root root                 26 Aug  1 17:58 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 43 Aug  1 17:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 36 Aug  1 17:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 17 Aug  1 17:58 /run/systemd/system/session-2098.scope
+-rw-r--r--. 1 root root                 30 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-Slice.conf
+-rw-r--r--. 1 root root                 49 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-Description.conf
+-rw-r--r--. 1 root root                 36 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 23 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root root                 43 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 26 Aug  1 17:58 /run/systemd/system/session-2098.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                263 Aug  1 17:58 /run/systemd/users/1004
+-rw-r--r--. 1 root root                301 Aug  1 17:58 /run/systemd/sessions/2098
+-rw-rw-r--. 1 root utmp              23424 Aug  1 17:58 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Aug  1 17:58 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               3072 Aug  1 17:58 /run/utmp
+-rw-r--r--. 1 root root                  6 Aug  1 18:10 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root root                  0 Aug  1 18:10 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root root                 44 Aug  1 18:10 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root root                201 Aug  1 18:10 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root root                  0 Aug  1 18:10 /usr/local/maldetect/ignore_file_ext
+-rw-r--r--. 1 root root             129861 Aug  1 18:10 /usr/local/maldetect/logs/event_log
+-rw-r-----+ 1 root systemd-journal 8388608 Aug  1 18:13 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+2022-08-01 18:14:19-- 
+[student4@frankcastle ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-01 18:34:20-- 
+[student4@frankcastle ~]$ maldet --help
+Linux Malware Detect v1.6.4
+            (C) 2002-2019, R-fx Networks <proj@rfxn.com>
+            (C) 2019, Ryan MacDonald <ryan@rfxn.com>
+This program may be freely redistributed under the terms of the GNU GPL v2
+
+public scanning is currently disabled (scan_user_access=0), please contact your system administrator to enable scan_user_access in conf.maldet.
+
+####DISCONNECT####
+
+=======================================================================================================================
+T2: 192.168.0.27
+
+student4::password4
+
+2022-08-01 18:55:50-- ON
+
+####VETTING####
+
+2022-08-01 18:56:42-- 
+[student4@WadeWilson ~]$ ls -latr .
+total 28
+-rw-r--r--.  1 student4 wheel  312 Oct  8  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  141 Oct  8  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct  8  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Jul 26 13:52 ..
+drwx------.  3 student4 wheel 4096 Jul 27 17:08 .config
+drwx------.  3 student4 wheel 4096 Jul 27 17:08 .
+-rw-------.  1 student4 wheel  754 Jul 27 17:11 .bash_history
+
+2022-08-01 18:57:03-- 
+[student4@WadeWilson ~]$ sudo ls -latr /root
+total 56
+-rw-r--r--.  1 root root  129 Jul 15  2018 .tcshrc
+-rw-r--r--.  1 root root  100 Jul 15  2018 .cshrc
+-rw-r--r--.  1 root root  176 Jul 15  2018 .bashrc
+-rw-r--r--.  1 root root  176 Jul 15  2018 .bash_profile
+-rw-r--r--.  1 root root   18 Jul 15  2018 .bash_logout
+-rw-------.  1 root root 7778 Oct 24  2018 original-ks.cfg
+-rw-------.  1 root root 7973 Oct 24  2018 anaconda-ks.cfg
+dr-xr-xr-x. 18 root root 4096 Jul 26 13:51 ..
+dr-xr-x---.  3 root root 4096 Jul 26 13:52 .
+drwx------.  2 root root 4096 Jul 26 13:52 .ssh
+
+2022-08-01 18:57:44-- 
+[student4@WadeWilson ~]$ ps -elf
+5 S root       414     1  0  76  -4 -  6928 -      Jul26 ?        00:00:00 /sbin/auditd
+4 S root       458     1  0  80   0 -  7054 -      Jul26 ?        00:00:00 /usr/sbin/sssd -i --logger=files
+4 S root      1285     1  0  80   0 - 43103 -      Jul26 ?        00:00:29 /usr/sbin/rsyslogd -n
+
+2022-08-01 18:58:22-- 
+[student4@WadeWilson ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:34:6e:8d brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.27/24 brd 192.168.0.255 scope global dynamic noprefixroute eth0
+       valid_lft 79439sec preferred_lft 79439sec
+    inet6 fe80::f816:3eff:fe34:6e8d/64 scope link 
+       valid_lft forever preferred_lft forever
+2022-08-01 18:58:37-- 
+[student4@WadeWilson ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      767/sshd            
+tcp        0    212 192.168.0.27:22         192.168.0.99:58772      ESTABLISHED 9976/sshd: student4 
+tcp6       0      0 :::22                   :::*                    LISTEN      767/sshd            
+udp        0      0 0.0.0.0:58271           0.0.0.0:*                           1285/rsyslogd       
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           555/dhclient        
+udp        0      0 0.0.0.0:52347           0.0.0.0:*                           1285/rsyslogd       
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           464/chronyd         
+udp6       0      0 ::1:323                 :::*                                464/chronyd    
+
+2022-08-01 19:00:22-- 
+[student4@WadeWilson ~]$ date; date -u
+Mon Aug  1 19:00:17 UTC 2022
+Mon Aug  1 19:00:17 UTC 2022
+
+2022-08-01 19:00:33-- 
+[student4@WadeWilson ~]$ uname -a
+Linux WadeWilson 4.18.16-300.fc29.x86_64 #1 SMP Sat Oct 20 23:24:08 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+2022-08-01 19:00:55-- 
+[student4@WadeWilson ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service  chronyd.service  dnf-makecache.timer  NetworkManager.service  remote-fs.target  rsyslog.service  sshd.service  sssd.service
+
+2022-08-01 19:01:10-- 
+[student4@WadeWilson ~]$ ls -latr /var/*log*/
+total 2536
+-rw-r--r--.  1 root   root               1040 Jul 18  2018 README
+drwxr-xr-x.  2 chrony chrony             4096 Sep 19  2018 chrony
+drwx------.  2 root   root               4096 Oct 24  2018 private
+-rw-r--r--.  1 root   root                  0 Oct 24  2018 cron
+-rw-r--r--.  1 root   root                  0 Oct 24  2018 boot.log
+drwxr-xr-x.  2 root   root               4096 Oct 24  2018 anaconda
+drwxr-sr-x+  3 root   systemd-journal    4096 Jul 26 13:51 journal
+drwx------.  2 root   root               4096 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root               4096 Jul 26 13:51 ..
+drwxr-x---.  2 root   root               4096 Jul 26 13:51 sssd
+-rw-------.  1 root   root              65536 Jul 26 13:52 tallylog
+-rw-------.  1 root   root                  0 Jul 26 13:53 secure
+-rw-------.  1 root   root                  0 Jul 26 13:53 maillog
+-rw-------.  1 root   root                  0 Jul 26 13:53 spooler
+drwxr-xr-x.  8 root   root               4096 Jul 26 13:53 .
+-rw-r--r--.  1 root   root               7848 Jul 26 13:53 cloud-init-output.log
+-rw-r--r--.  1 root   adm              136502 Jul 26 13:53 cloud-init.log
+-rw-rw----.  1 root   utmp                384 Jul 26 17:18 btmp
+-rw-r--r--.  1 root   root               8590 Aug  1 18:53 dnf.rpm.log
+-rw-r--r--.  1 root   root            1620785 Aug  1 18:53 dnf.librepo.log
+-rw-r--r--.  1 root   root              97497 Aug  1 18:53 hawkey.log
+-rw-r--r--.  1 root   root             233023 Aug  1 18:53 dnf.log
+-rw-rw-r--.  1 root   utmp               6528 Aug  1 18:55 wtmp
+-rw-rw-r--.  1 root   utmp             299008 Aug  1 18:55 lastlog
+-rw-------.  1 root   root             386954 Aug  1 19:00 messages
+
+2022-08-01 19:01:45-- 
+[student4@WadeWilson ~]$ sudo ls -latr /var/log/*
+/var/log/sssd:
+total 8
+-rw-------. 1 root root    0 Jul 26 13:51 sssd.log
+-rw-------. 1 root root    0 Jul 26 13:51 sssd_implicit_files.log
+-rw-------. 1 root root    0 Jul 26 13:51 sssd_nss.log
+drwxr-x---. 2 root root 4096 Jul 26 13:51 .
+drwxr-xr-x. 8 root root 4096 Jul 26 13:53 ..
+
+2022-08-01 19:02:39-- 
+cat /etc/rsyslog.conf
+*.* @remote-host:514
+
+2022-08-01 19:02:54-- 
+cat /etc/hosts
+192.168.0.99    remote-host
+
+2022-08-01 19:03:11-- 
+[student4@WadeWilson ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+unbound:x:997:995:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+chrony:x:996:993::/var/lib/chrony:/sbin/nologin
+fedora:x:1000:1000:fedora Cloud User:/home/fedora:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+2022-08-01 19:05:17-- 
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-r--r--. 1 root   root             1318912 Aug  1 18:53 /var/lib/rpm/__db.003
+-rw-r--r--. 1 root   root               90112 Aug  1 18:53 /var/lib/rpm/__db.002
+-rw-r--r--. 1 root   root              286720 Aug  1 18:53 /var/lib/rpm/__db.001
+-rw-r--r--. 1 root   root                8590 Aug  1 18:53 /var/log/dnf.rpm.log
+-rw-r--r--. 1 root   root              305383 Aug  1 18:53 /var/cache/dnf/fedora-modular-ce4dd907f26812da/repodata/6e103cbb21f99c2140345730236cc64b7b0f329c6e50a087b1f0d8979a022637-primary.xml.gz
+-rw-r--r--. 1 root   root              306767 Aug  1 18:53 /var/cache/dnf/updates-modular-24485ab21e58c84e/repodata/716ef57aea9e9c2c2118a72ba6ad0e2206045d7f599b5731ac38f668126f75f0-primary.xml.gz
+-rw-r--r--. 1 root   root             6195168 Aug  1 18:53 /var/cache/dnf/updates-0b4cc238d1aa4ffe/repodata/cbb4a754232133147fe9c468edd45ffd6881500b559d6c7fa2357ba36a0d8cc6-primary.xml.gz
+-rw-r--r--. 1 root   root             1620785 Aug  1 18:53 /var/log/dnf.librepo.log
+-rw-r--r--. 1 root   root            16191653 Aug  1 18:53 /var/cache/dnf/fedora-8c9e363c32277c01/repodata/912f062d93e096c75901055ffca02a0c3961b33b8e1dd65319d97d493d3e49d5-primary.xml.gz
+-rw-r--r--. 1 root   root               97497 Aug  1 18:53 /var/log/hawkey.log
+-rw-r--r--. 1 root   root             7979008 Aug  1 18:53 /var/cache/dnf/packages.db
+-rw-r--r--. 1 root   root              233023 Aug  1 18:53 /var/log/dnf.log
+-rw-r--r--. 1 root   root                   0 Aug  1 18:53 /var/cache/dnf/last_makecache
+-rw-r--r--. 1 root   root                   2 Aug  1 18:53 /var/cache/dnf/expired_repos.json
+-rw-r--r--. 1 root   root            10406312 Aug  1 18:55 /var/lib/sss/mc/initgroups
+-rw-r--r--. 1 root   root                 277 Aug  1 18:55 /run/systemd/transient/session-11.scope
+-rw-------. 1 root   root                 185 Aug  1 18:55 /run/systemd/journal/streams/9:5215794
+-rw-r--r--. 1 root   root                 233 Aug  1 18:55 /run/systemd/users/1004
+-rw-r--r--. 1 root   root                 288 Aug  1 18:55 /run/systemd/sessions/11
+-rw-rw-r--. 1 root   utmp                6528 Aug  1 18:55 /var/log/wtmp
+-rw-rw-r--. 1 root   utmp              299008 Aug  1 18:55 /var/log/lastlog
+-rw-rw-r--. 1 root   utmp                1920 Aug  1 18:55 /run/utmp
+-rw-r--r--. 1 root   root             6406312 Aug  1 19:01 /var/lib/sss/mc/group
+-rw-------. 1 root   root              389530 Aug  1 19:01 /var/log/messages
+-rw-r--r--. 1 chrony chrony                42 Aug  1 19:02 /var/lib/chrony/drift
+-rw-r-----+ 1 root   systemd-journal  8388608 Aug  1 19:03 /var/log/journal/5d6bdcf26da147f6b632bf2ef6354626/user-1004.journal
+-rw-r-----+ 1 root   systemd-journal  8388608 Aug  1 19:03 /var/log/journal/5d6bdcf26da147f6b632bf2ef6354626/system.journal
+-rw-r--r--. 1 root   root             8406312 Aug  1 19:04 /var/lib/sss/mc/passwd
+
+
+[student4@WadeWilson ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      31
+
+####DISCONNECT####
+
+
+=======================================================================================================================
+T3: 192.168.0.13
+
+student4::password4
+
+2022-08-01 19:15:04-- ON
+
+####VETTING####
+
+2022-08-01 19:17:30-- 
+student4@MattMurdock:~$ ls -latr /
+drwxr-xr-x   7 root root  4096 Jul 26 14:11 Reptile
+
+2022-08-01 19:17:31-- 
+student4@MattMurdock:~$ ps -elfH
+4 S syslog    5187     1  0  80   0 - 66820 -      Jul26 ?        00:00:00   /usr/sbin/rsyslogd -n
+
+2022-08-01 19:18:14-- 
+student4@MattMurdock:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:14:90:a8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.13/24 brd 192.168.0.255 scope global dynamic ens3
+       valid_lft 69704sec preferred_lft 69704sec
+    inet6 fe80::f816:3eff:fe14:90a8/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+2022-08-01 19:18:31-- 
+student4@MattMurdock:~$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      4162/systemd-resolv 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      5318/sshd           
+tcp        0    304 192.168.0.13:22         192.168.0.27:44966      ESTABLISHED 18540/sshd: student 
+tcp6       0      0 :::22                   :::*                    LISTEN      5318/sshd           
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           4162/systemd-resolv 
+udp        0      0 192.168.0.13:68         0.0.0.0:*                           4138/systemd-networ 
+udp        0      0 0.0.0.0:45306           0.0.0.0:*                           5187/rsyslogd  
+
+
+2022-08-01 19:20:00-- 
+student4@MattMurdock:~$ ls -latr /var/spool/cron
+total 20
+drwx-wx--T 2 root   crontab 4096 Nov 16  2017 crontabs
+drwxrwx--T 2 daemon daemon  4096 Feb 20  2018 atspool
+drwxr-xr-x 4 root   root    4096 Mar  4  2020 ..
+drwxr-xr-x 5 root   root    4096 Mar  4  2020 .
+drwxrwx--T 2 daemon daemon  4096 Mar  4  2020 atjobs
+
+2022-08-01 19:21:44-- 
+student4@MattMurdock:~$ date; date -u
+Mon Aug  1 19:21:39 UTC 2022
+Mon Aug  1 19:21:39 UTC 2022
+
+2022-08-01 19:21:53-- 
+student4@MattMurdock:~$ uname -a
+Linux MattMurdock 4.15.0-88-generic #88-Ubuntu SMP Tue Feb 11 20:11:34 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+2022-08-01 19:22:28-- 
+student4@MattMurdock:~$ ls /etc/systemd/system/multi-user.target.wants
+atd.service            lxcfs.service                pollinate.service       snapd.autoimport.service                ssh.service
+console-setup.service  lxd-containers.service       remote-fs.target        snapd.core-fixup.service                systemd-networkd.service
+cron.service           networkd-dispatcher.service  rsync.service           snapd.recovery-chooser-trigger.service  systemd-resolved.service
+ebtables.service       ondemand.service             rsyslog.service         snapd.seeded.service                    ufw.service
+irqbalance.service     open-vm-tools.service        snapd.apparmor.service  snapd.service                           unattended-upgrades.service
+
+
+
+2022-08-01 19:23:21-- 
+student4@MattMurdock:~$ ls -latr /var/log/*
+-rw-rw----  1 root      utmp                 0 Mar  4  2020 /var/log/btmp.1
+-rw-r--r--  1 root      root              7890 Jul 26 14:08 /var/log/alternatives.log.1
+-rw-r-----  1 syslog    adm               6628 Jul 26 14:11 /var/log/auth.log.1
+-rw-------  1 root      root             65536 Jul 26 14:11 /var/log/tallylog
+-rw-r--r--  1 syslog    adm             115311 Jul 26 14:11 /var/log/cloud-init.log
+-rw-r-----  1 root      adm             122896 Jul 26 14:11 /var/log/cloud-init-output.log
+-rw-r-----  1 syslog    adm              53454 Jul 27 06:30 /var/log/kern.log.1
+-rw-r--r--  1 root      root            236129 Jul 27 06:31 /var/log/dpkg.log.1
+-rw-r-----  1 syslog    adm              43139 Jul 28 06:17 /var/log/syslog.5.gz
+-rw-r-----  1 syslog    adm                973 Jul 29 06:25 /var/log/syslog.4.gz
+-rw-r-----  1 syslog    adm               1381 Jul 30 06:25 /var/log/syslog.3.gz
+-rw-r-----  1 syslog    adm                928 Jul 31 06:25 /var/log/syslog.2.gz
+-rw-r-----  1 syslog    adm                  0 Jul 31 06:25 /var/log/kern.log
+-rw-r-----  1 syslog    adm                  0 Jul 31 06:25 /var/log/auth.log
+-rw-rw-r--  1 root      utmp              7680 Aug  1 00:36 /var/log/wtmp.1
+-rw-r--r--  1 root      root                 0 Aug  1 06:25 /var/log/alternatives.log
+-rw-r--r--  1 root      root                 0 Aug  1 06:25 /var/log/dpkg.log
+-rw-r-----  1 syslog    adm               8444 Aug  1 06:25 /var/log/syslog.1
+-rw-rw----  1 root      utmp                 0 Aug  1 06:25 /var/log/btmp
+-rw-rw-r--  1 root      utmp               384 Aug  1 19:14 /var/log/wtmp
+-rw-rw-r--  1 root      utmp            299008 Aug  1 19:14 /var/log/lastlog
+-rw-r-----  1 syslog    adm               4820 Aug  1 19:21 /var/log/syslog
+
+/var/log/apt:
+total 44
+-rw-r--r-- 1 root root   20208 Jul 27 06:30 eipp.log.xz
+-rw-r----- 1 root adm     9333 Jul 27 06:31 term.log.1.gz
+-rw-r--r-- 1 root root    3538 Jul 27 06:31 history.log.1.gz
+-rw-r----- 1 root adm        0 Aug  1 06:25 term.log
+-rw-r--r-- 1 root root       0 Aug  1 06:25 history.log
+drwxr-xr-x 2 root root    4096 Aug  1 06:25 .
+drwxrwxr-x 8 root syslog  4096 Aug  1 06:25 ..
+
+
+2022-08-01 19:33:02-- 
+student4@MattMurdock:~$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+192.168.0.99    remote-host
+
+
+
+2022-08-01 19:41:25-- 
+student4@MattMurdock:~$ ls -latr /Reptile
+total 44
+drwxr-xr-x  7 root root 4096 Jul 26 14:11 kernel
+drwxr-xr-x  2 root root 4096 Jul 26 14:11 configs
+-rw-r--r--  1 root root 2183 Jul 26 14:11 README.md
+-rw-r--r--  1 root root 1852 Jul 26 14:11 Makefile
+-rw-r--r--  1 root root 1922 Jul 26 14:11 Kconfig
+-rw-r--r--  1 root root    8 Jul 26 14:11 .gitignore
+drwxr-xr-x  6 root root 4096 Jul 26 14:11 userland
+drwxr-xr-x  4 root root 4096 Jul 26 14:11 scripts
+drwxr-xr-x  8 root root 4096 Jul 26 14:11 .git
+drwxr-xr-x  7 root root 4096 Jul 26 14:11 .
+
+2022-08-01 19:44:14-- 
+drwxr-xr-x 24 root root 4096 Jul 27 06:30 ..
+student4@MattMurdock:~$ md5sum /Reptile/Kconfig
+8e8d943f55866e10b6a9df04dd94d8a2  /Reptile/Kconfig
+
+####DISCONNECT####
+
+=======================================================================================================================
+T4: 192.168.0.9
+
+
+2022-08-01 19:59:15-- ON
+
+####VETTING####
+
+2022-08-01 20:00:33-- 
+student4@DESKTOP-F75703C C:\Users\student4>date /t 
+Mon 08/01/2022                              
+                                            
+student4@DESKTOP-F75703C C:\Users\student4>time /t 
+08:00 PM   
+
+2022-08-01 20:00:42-- 
+student4@DESKTOP-F75703C C:\Users\student4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   7/28/2022 2:00 AM
+
+
+2022-08-01 20:01:09-- 
+student4@DESKTOP-F75703C C:\Users\student4>tasklist /V
+Skype4Life.exe                6556 Console                    1     31,344 K Unknown         DESKTOP-F75703C\Administrator                           0:00:00 N/A
+SecurityHealthService.exe     2448 Services                   0     19,696 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:01 N/A
+ShellExperienceHost.exe       5776 Console                    1     66,460 K Unknown         DESKTOP-F75703C\Administrator                           0:00:02 N/A
+powershell.exe                7004 Console                    1     74,664 K Unknown         DESKTOP-F75703C\Administrator                           0:00:25 N/A
+
+2022-08-01 20:03:42-- 
+student4@DESKTOP-F75703C C:\Users\student4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-F75703C
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-78-9E-D0
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::b9f1:6d4a:db87:1dd5%3(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.0.9(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, July 28, 2022 1:56:40 AM
+   Lease Expires . . . . . . . . . . : Tuesday, August 2, 2022 5:43:10 PM
+   Default Gateway . . . . . . . . . : 192.168.0.254
+   DHCP Server . . . . . . . . . . . : 192.168.0.5
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-71-AA-29-FA-16-3E-78-9E-D0
+   DNS Servers . . . . . . . . . . . : 10.50.255.25
+
+2022-08-01 20:04:32-- 
+
+  TCP    192.168.0.9:53670      192.168.0.13:12323     SYN_SENT        3852
+ [nc64.exe]
+ TCP    192.168.0.9:22         192.168.0.13:45556     ESTABLISHED     3964 
+ [sshd.exe]
+
+
+2022-08-01 20:05:33-- 
+student4@DESKTOP-F75703C C:\Users\student4>netsh advfirewall show allprofiles
+Domain Profile Settings:
+----------------------------------------------------------------------
+State                                 OFF
+----------------------------------------------------------------------
+
+Private Profile Settings:
+----------------------------------------------------------------------
+State                                 OFF
+
+Public Profile Settings:
+----------------------------------------------------------------------
+State                                 OFF
+
+
+2022-08-01 20:06:51-- 
+student4@DESKTOP-F75703C C:\Users\student4>net share
+
+Share name   Resource                        Remark
+
+-------------------------------------------------------------------------------
+C$           C:\                             Default share
+IPC$                                         Remote IPC
+ADMIN$       C:\windows                      Remote Admin
+The command completed successfully.
+
+
+student4@DESKTOP-F75703C C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run
+
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run
+    SecurityHealth    REG_EXPAND_SZ    %windir%\system32\SecurityHealthSystray.exe
+    Beacon    REG_SZ    C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe C:\Tools\beacon.ps1
+
+
+
+
+
+
+
+

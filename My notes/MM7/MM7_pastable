@@ -1,0 +1,48 @@
+Scheme of Maneuver:
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.27
+--> T3: 192.168.0.13
+---> T4: 192.168.0.9
+----> T5: 192.168.0.12
+<check IP with MC>
+
+kali -> T1
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223 -p 22
+password4
+<notify MC of the connection>
+<start vetting>
+<notify MC of the disconnect>
+
+T1 -> T2
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.27:22
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+<notify MC of the disconnect>
+
+T2 -> T3
+ssh -S /tmp/T2 bad -O forward -L 3333:192.168.0.13:22
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+<notify MC of the disconnect>
+
+T3 -> T4
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.0.9:22
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+<perform analyst collection>
+<notify MC of the disconnect>
+
+T4 -> T5
+ssh -S /tmp/T4 bad -O forward -L 5555:192.168.0.12:22
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+<perform analyst collection>
+<notify MC of the disconnect>

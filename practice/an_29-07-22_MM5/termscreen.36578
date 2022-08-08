@@ -1,0 +1,206 @@
+Script started on 2022-07-29 15:54:43+00:00 [TERM="xterm-256color" TTY="/dev/pts/16" COLUMNS="187" LINES="42"]
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T3[24m bad [7m[35m-O[39m[7m forward [7m[35m-D[39m[7m 9050[27m
+[K[K[A[4C[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m3[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mD[39m[27m [27m9[27m0[27m5[27m0[1B[?1l>[?2004l
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[7m[31mproxychain[0m[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m [7m[35m-v[39m[7m 192.168.0.16/28[27m
+[K[K[A[4C[27m[1m[31mp[27m[1m[31mr[27m[1m[31mo[27m[1m[31mx[27m[1m[31my[27m[1m[31mc[27m[1m[31mh[27m[1m[31ma[27m[1m[31mi[27m[1m[31mn[0m[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m[35m-[27m[35mv[39m[27m [27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m6[27m/[27m2[27m8[1B[?1l>[?2004l
+proxychain: command not found
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mproxychains[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m [7m[35m-v[39m[7m 192.168.0.16/28[27m
+[K[K[A[4C[27m[32mp[27m[32mr[27m[32mo[27m[32mx[27m[32my[27m[32mc[27m[32mh[27m[32ma[27m[32mi[27m[32mn[27m[32ms[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m[35m-[27m[35mv[39m[27m [27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m6[27m/[27m2[27m8[1B[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-29 19:04 UTC
+Initiating Parallel DNS resolution of 16 hosts. at 19:04
+Completed Parallel DNS resolution of 16 hosts. at 19:04, 0.00s elapsed
+Initiating Connect Scan at 19:04
+Scanning 16 hosts [1000 ports/host]
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.17:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.20:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.23:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.28:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.31:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.18:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.21:587 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.28:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.31:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.18:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.21:23 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.28:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.31:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.18:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.21:25 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:113 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:113 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.28:113 
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mproxychains[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m [7m[35m-v[39m[7m 192.168.0.16/28 [7m[35m-p22[39m[27m
+[K[K[A[4C[27m[32mp[27m[32mr[27m[32mo[27m[32mx[27m[32my[27m[32mc[27m[32mh[27m[32ma[27m[32mi[27m[32mn[27m[32ms[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m[35m-[27m[35mv[39m[27m [27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m6[27m/[27m2[27m8[27m [27m[35m-[27m[35mp[27m[35m2[27m[35m2[39m[1B[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+Starting Nmap 7.92 ( https://nmap.org ) at 2022-07-29 19:05 UTC
+Initiating Parallel DNS resolution of 16 hosts. at 19:05
+Completed Parallel DNS resolution of 16 hosts. at 19:05, 0.00s elapsed
+Initiating Connect Scan at 19:05
+Scanning 16 hosts [1 port/host]
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.17:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.20:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.23:22  ...  OK
+Discovered open port 22/tcp on 192.168.0.23
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:22  ...  OK
+Discovered open port 22/tcp on 192.168.0.27
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.28:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.31:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.19:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.25:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.30:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.21:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.29:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.22:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.18:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.26:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.16:22 <--socket error or timeout!
+Completed Connect Scan at 19:06, 43.55s elapsed (16 total ports)
+Nmap scan report for 192.168.0.16
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.17
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.18
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.19
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.20
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.21
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.22
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.23
+Host is up (0.050s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Nmap scan report for 192.168.0.24
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.25
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.26
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.27
+Host is up (0.049s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Nmap scan report for 192.168.0.28
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.29
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.30
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Nmap scan report for 192.168.0.31
+Host is up (3.1s latency).
+
+PORT   STATE  SERVICE
+22/tcp closed ssh
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 16 IP addresses (16 hosts up) scanned in 43.62 seconds
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mproxychains[39m nmap [35m-Pn[39m [35m-sT[39m [35m-v[39m 192.168.0.16/28 [35m-p22[39m
+[K[K[A[52C [1m[34m|[0m[39m [1m[31mg[0m[39m[1m[31mg[1m[31mr[0m[39m[1m[31mr[1m[31me[0m[39m[0m[32mg[0m[32mr[0m[32me[32mp[39m open[?1l>[?2004l[1B
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.17:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.20:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.23:22  ...  OK
+Discovered [01;31m[Kopen[m[K port 22/tcp on 192.168.0.23
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:22  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050 Discovered [01;31m[Kopen[m[K port 22/tcp on 192.168.0.27
+ ...  192.168.0.28:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.31:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.19:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.25:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.30:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.21:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.29:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.22:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.18:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.26:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.16:22 <--socket error or timeout!
+22/tcp [01;31m[Kopen[m[K  ssh
+22/tcp [01;31m[Kopen[m[K  ssh
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-07-29 19:59:04+00:00 [COMMAND_EXIT_CODE="0"]

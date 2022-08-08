@@ -1,0 +1,196 @@
+#MM5 Pastables
+Scheme of Maneuver:
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.13
+--> T3: 192.168.0.10
+---> T4: UNK
+---> T5: UNK
+
+script -af termscreen.$$
+
+=========================
+Vetting 
+=========================
+X-----------------------
+Linux
+Upon Connection:
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+sudo ls -latr /root
+ps -elfH
+ifconfig -a OR ip addr
+netstat -auntp OR ss -auntp
+w
+sudo ls -latr /var/spool/cron
+tail -n 1000 <files in /var/spool/cron/>
+date; date -u
+uname -a
+df
+sudo ls -latr /var/*/*acc*
+stat/date <check timestamp>
+ls /etc/systemd/system/multi-user.target.wants
+ls -latr /var/*log*/
+sudo ls -latr /var/log/*
+cat out relevant files (grep for your logged in user account)
+ls -la /etc/*syslog* read all the config files
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab
+ls -la /etc/cron.*
+As needed, examine the files/scripts shown in the directory listing of the cron.* directories
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sestatus OR getenforce
+sudo cat /root/.bash_history
+cat ~/.bash_history
+cat ~/.zsh_history
+
+Before Disconnect:
+w
+ls -latr /tmp
+ps -elf
+netstat -lptn
+ls -latr /var/log
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
+
+
+Linux Survey Commands:
+mount
+lsmod
+uname -a
+ls -latr /etc/*release*
+cat /etc/*release*
+cat /proc/cpuinfo
+services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
+cat /proc/meminfo
+sudo cat /etc/shadow
+cat /etc/passwd
+lspci -vv
+arp -a
+lsusb
+lsblk
+sudo fdisk -l (maybe sudo)
+free -m
+sudo dmidecode -t bios
+-----------------------X
+=========================
+
+=========================
+T1:  10.50.28.223 / 192.168.0.99
+=========================
+X----<-------------------
+ssh -MS /tmp/T1 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223
+password4
+<conduct vetting>
+cat /etc/rsyslog.d/00-my_iptables.conf/linux-malware-detect/report.txt
+sudo stat /usr/local/maldetect/logs/event_log
+
+cat /etc/rsyslog.d/listen.conf
+cat /etc/rsyslog.d/21-cloudinit.conf
+cat /etc/rsyslog.conf
+sudo file /root/linux-malware-detect/report.txt
+sudo cat /root/linux-malware-detect/report.txt
+sudo ls -latr /root/linux-malware-detect/
+which maldet
+maldet --help
+ps -aux | grep maldet
+sudo ls -latr /root/linux-malware-detect/files
+cat /usr/local/maldetect/logs/event_log
+sudo stat /root/linux-malware-detect/report.txt
+sudo stat /usr/local/maldetect/logs/event_log
+sudo ls -latrR /root/timestampfun
+sudo netstat -auntp
+<op is done>
+exit
+exit
+-----------------------X
+=========================
+
+
+
+=========================
+T2: 192.168.0.13
+=========================
+X-----------------------
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.13:22
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<conduct vetting>
+<clean logs>
+sudo tail -n 100 /var/log/syslog
+sudo grep -n '192.168.0.99' /var/log/syslog
+<op is done>
+exit
+ssh -S /tmp/T1 bad -O cancel L 2222:192.168.0.13
+exit
+-----------------------X
+=========================
+
+
+=========================
+T3: 192.168.0.10
+=========================
+X------------------<F9>-----
+ssh -S /tmp/T2 bad -O forward -L 3333:192.168.0.10:22
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<conduct vetting>
+<new window kali proxychain>
+ssh -S /tmp/T3 bad -O forward -D 9050
+proxychains nmap -Pn -sT -v 192.168.0.16/28 -p22 | grep open
+<redirect according to visibility>
+
+<back on T3>
+exit
+ssh -S /tmp/T2 bad -O cancel -L 3333:192.168.0.10
+
+-----------------------X
+=========================
+
+=========================
+T4: 192.168.0.23
+=========================
+X-----------------------
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.0.23:22
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<conduct vetting>
+<collect passwd and shadow>
+<clean log if 192.168.0.23>
+service auditd stop
+sudo grep -n 'Jul 29' /var/log/messages
+sudo wc -l /var/log/messages
+sudo cat /var/log/messages > /tmp/message_origin
+sudo head -n 1011 /var/log/messages > /tmp/messages
+wc -l /tmp/messages
+sudo cat /tmp/messages > /var/log/messages
+<goto root>
+touch -t '202207291918.01' /var/log/messages
+
+
+<let MC know that you disconnected>
+
+
+------------------------X
+=========================
+
+=========================
+T5: 192.168.0.27
+=========================
+X-----------------------
+ssh -S /tmp/T# bad -O forward -L 5555:x:22
+<conduct vetting>
+<collect passwd and shadow>
+<clean log if 192.168.0.23>
+
+
+
+
+
+
+
+------------------------X
+=========================
+
+

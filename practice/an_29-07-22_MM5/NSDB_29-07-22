@@ -1,0 +1,24 @@
+#####NSDB
+
+T1: 10.50.28.223
+*****Security Product Report*****
+Target: <T1 and 10.50.28.223 >
+Name - Maldet
+Version - Linux Malware Detect v1.6.4
+(NIX) Config file or install directory - /root/linux-malware-detect/
+Log files - /root/linux-malware-detect/report.txt ,  /usr/local/maldetect/logs/event_log (report.txt was nothing siginificant)
+Timestamp: Modify: 2022-07-29 16:10:02.202097261 +0000
+Cloud based: No
+Can read logs: as sudo
+Documentation: https://www.rfxn.com/projects/linux-malware-detect/
+Recommendation: Maldet is not connected to cloud for updates. There will low risk to using T1 as just a redirector.
+*****End of Report*****
+
+*****Security Product Report*****
+Target: <T1 and 10.50.28.223 >
+Name - SELinux
+Version - 53
+(WIN) Primary registry key - <>
+(NIX) Config file or install directory
+Documentation - <>
+*****End of Report*****

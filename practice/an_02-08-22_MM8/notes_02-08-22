@@ -1,0 +1,357 @@
+####Notes 02_08_22####
+
+
+>T1: 10.50.28.223 / 192.168.0.99
+->T2: 192.168.0.12
+-->T3:192.168.0.13
+--->T4:192.168.0.9
+---->T5:192.168.0.10
+
+===============================================================================================T1: 10.50.28.223 / 192.168.0.99
+
+2022-08-02 17:07:41-- ON
+
+2022-08-02 17:11:06-- 
+[student4@frankcastle ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 50809sec preferred_lft 50809sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+
+2022-08-02 17:11:20-- 
+[student4@frankcastle ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1089/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3169/sshd           
+tcp        0      0 192.168.0.99:22         10.50.33.208:37874      ESTABLISHED 9585/sshd: student4 
+
+
+2022-08-02 17:11:55-- 
+[student4@frankcastle ~]$ uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+
+===============================================================================================T2: 192.168.0.12
+
+2022-08-02 17:16:40-- ON
+<T2 is very slow to interact with>
+
+student4@DESKTOP-14H8G30 C:\Users\student4>date /t                                                                              
+Tue 08/02/2022                                                                                                                  
+
+student4@DESKTOP-14H8G30 C:\Users\student4>time /t                                                                              
+05:17 PM 
+
+2022-08-02 17:25:36-- 
+                                                                                                                                              
+System audit policy                                                                                                                                                                                                 
+Category/Subcategory                      Setting                                                                                                                                                                   
+System                                                                                                                                                                                                              
+  Security System Extension               No Auditing                                                                                                                                                               
+  System Integrity                        Success and Failure                                                                                                                                                       
+  IPsec Driver                            No Auditing                                                                                                                                                               
+  Other System Events                     Success and Failure                                                                                                                                                       
+  Security State Change                   Success                                                                                                                                                                   
+Logon/Logoff                                                                                                                                                                                                        
+  Logon                                   Success                                                                                                                                                                   
+  Logoff                                  Success                                                                                                                                                                   
+  Account Lockout                         Success                                                                                                                                                                   
+  IPsec Main Mode                         No Auditing                                                                                                                                                               
+  IPsec Quick Mode                        No Auditing                                                                                                                                                               
+  IPsec Extended Mode                     No Auditing                                                                                                                                                               
+  Special Logon                           Success                                                                                                                                                                   
+  Other Logon/Logoff Events               No Auditing                                                                                                                                                               
+  Network Policy Server                   Success and Failure                                                                                                                                                       
+  User / Device Claims                    No Auditing                                                                                                                                                               
+  Group Membership                        No Auditing                                                                                                                                                               
+2022-08-02 17:28:50-- LOST CONNECTION
+
+2022-08-02 17:32:35-- ON
+student4@DESKTOP-14H8G30 C:\Users\student4>wmic process get processid,parentprocessid,commandline 
+"C:\Program Files\OpenSSH-Win64\ssh-shellhost.exe" ---pty "c:\windows\system32\cmd.exe"                                                                                                                             
+                                             3532             6632 
+2022-08-02 17:36:52-- 
+tasklist /V
+taskhostw.exe                 4244 Console                    1      8,372 K Unknown         DESKTOP-14H8G30\Administrator                                                                                          Microsoft.Photos.exe          4672 Console                    1     11,928 K Unknown         DESKTOP-14H8G30\Administrator                                                                                          OneDrive.exe                  6852 Console                    1     23,724 K Unknown         DESKTOP-14H8G30\Administrator                                                                                          SearchUI.exe                  4356 Console                    1     67,152 K Unknown         DESKTOP-14H8G30\Administrator                                                                                          MsMpEng.exe                   2664 Services                   0    184,896 K Unknown         NT AUTHORITY\SYSTEM                                                                                                    
+2022-08-02 17:39:47-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>ipconfig /all                                                                                                                                                            
+                                                                                                                                                                                                                    
+Windows IP Configuration                                                                                                                                                                                            
+                                                                                                                                                                                                                    
+   Host Name . . . . . . . . . . . . : DESKTOP-14H8G30                                                                                                                                                              
+   Primary Dns Suffix  . . . . . . . :                                                                                                                                                                              
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                                                                                                       
+   IP Routing Enabled. . . . . . . . : No                                                                                                                                                                           
+   WINS Proxy Enabled. . . . . . . . : No                                                                                                                                                                           
+   DNS Suffix Search List. . . . . . : vta                                                                                                                                                                          
+                                                                                                                                                                                                                    
+Ethernet adapter Ethernet:                                                                                                                                                                                          
+                                                                                                                                                                                                                    
+   Connection-specific DNS Suffix  . : vta                                                                                                                                                                          
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                                                                                                              
+   Physical Address. . . . . . . . . : FA-16-3E-85-3C-EA                                                                                                                                                            
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                                                                                                          
+   Autoconfiguration Enabled . . . . : Yes                                                                                                                                                                          
+   Link-local IPv6 Address . . . . . : fe80::d9e8:ca2:71e0:af6f%5(Preferred)                                                                                                                                        
+   IPv4 Address. . . . . . . . . . . : 192.168.0.12(Preferred)                                                                                                                                                      
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                                                                                                                
+   Lease Obtained. . . . . . . . . . : Thursday, July 28, 2022 6:01:18 PM                                                                                                                                           
+   Lease Expires . . . . . . . . . . : Wednesday, August 3, 2022 10:13:21 AM                                                                                                                                        
+   Default Gateway . . . . . . . . . : 192.168.0.254                                                                                                                                                                
+   DHCP Server . . . . . . . . . . . : 192.168.0.5                                                                                                                                                                  
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                                                                                                                                                    
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-71-AA-13-FA-16-3E-85-3C-EA                                                                                                                                    
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                                                                                                                
+   NetBIOS over Tcpip. . . . . . . . : Enabled     
+
+
+2022-08-02 17:41:59-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>netstat /anob 
+  TCP    192.168.0.12:22        192.168.0.99:37726     ESTABLISHED     2652                                                                                                                                         
+ [sshd.exe]                                                                                                                                                                                                         
+  TCP    192.168.0.12:139       0.0.0.0:0              LISTENING       4                                                                                                                                            
+ Can not obtain ownership information                                                                                                                                                                               
+  TCP    192.168.0.12:49716     52.226.139.121:443     ESTABLISHED     2592                                                                                                                                         
+  WpnService                                                                                                                                                                                                        
+ [svchost.exe] 
+
+2022-08-02 17:44:40-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>netsh advfirewall show currentprofile                                                                                                                                    
+                                                                                                                                                                                                                    
+Public Profile Settings:                                                                                                                                                                                            
+----------------------------------------------------------------------                                                                                                                                              
+State                                 OFF                                                                                                                                                                           
+Firewall Policy                       BlockInbound,AllowOutbound                                                                                                                                                    
+LocalFirewallRules                    N/A (GPO-store only)                                                                                                                                                          
+LocalConSecRules                      N/A (GPO-store only)                                                                                                                                                          
+InboundUserNotification               Enable                                                                                                                                                                        
+RemoteManagement                      Disable                                                                                                                                                                       
+UnicastResponseToMulticast            Enable                                                                                                                                                                        
+                                                                                                                                                                                                                    
+Logging:                                                                                                                                                                                                            
+LogAllowedConnections                 Disable                                                                                                                                                                       
+LogDroppedConnections                 Disable                                                                                                                                                                       
+FileName                              %systemroot%\system32\LogFiles\Firewall\pfirewall.log                                                                                                                         
+MaxFileSize                           4096                                                                                                                                                                          
+                                                                                                                                                                                                                    
+Ok.  
+
+
+2022-08-02 17:46:35-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>query user                                                                                                                                                               
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME                                                                                                                                         
+ administrator         console             1  Active      none   7/28/2022 6:10 PM  
+
+
+2022-08-02 17:47:25-- 
+ student4@DESKTOP-14H8G30 C:\Users\student4>net share                                                                                                                                                                
+                                                                                                                                                                                                                    
+Share name   Resource                        Remark                                                                                                                                                                 
+                                                                                                                                                                                                                    
+-------------------------------------------------------------------------------                                                                                                                                     
+C$           C:\                             Default share                                                                                                                                                          
+IPC$                                         Remote IPC                                                                                                                                                             
+ADMIN$       C:\windows                      Remote Admin                                                                                                                                                           
+The command completed successfully. 
+
+
+2022-08-02 17:50:06-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run                                                                                                             
+                                                                                                                                                                                                                    
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run                                                                                                                                                    
+    SecurityHealth    REG_EXPAND_SZ    %ProgramFiles%\Windows Defender\MSASCuiL.exe                                                                                                                                 
+    Spyrix    REG_SZ    C:\sfk.exe    
+
+2022-08-02 17:55:33-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>reg query hklm\software                                                              
+
+HKEY_LOCAL_MACHINE\software\Classes                                                                                             
+HKEY_LOCAL_MACHINE\software\Clients                                                                                             
+HKEY_LOCAL_MACHINE\software\Cloudbase Solutions                                                                                 
+HKEY_LOCAL_MACHINE\software\Google                                                                                              
+HKEY_LOCAL_MACHINE\software\Intel                                                                                               
+HKEY_LOCAL_MACHINE\software\Macromedia                                                                                          
+HKEY_LOCAL_MACHINE\software\Microsoft                                                                                           
+HKEY_LOCAL_MACHINE\software\Mozilla                                                                                             
+HKEY_LOCAL_MACHINE\software\mozilla.org                                                                                         
+HKEY_LOCAL_MACHINE\software\ODBC                                                                                                
+HKEY_LOCAL_MACHINE\software\OEM                                                                                                 
+HKEY_LOCAL_MACHINE\software\OpenSSH                                                                                             
+HKEY_LOCAL_MACHINE\software\Partner                                                                                             
+HKEY_LOCAL_MACHINE\software\Policies                                                                                            
+HKEY_LOCAL_MACHINE\software\RegisteredApplications                                                                              
+HKEY_LOCAL_MACHINE\software\WOW6432Node  
+
+2022-08-02 17:57:45-- 
+schtasks /query /v
+
+2022-08-02 17:59:55-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>dir /o:d /t:w c:\                                                                    
+ Volume in drive C is OS                                                                                                        
+ Volume Serial Number is 00E6-9C0D                                                                                              
+
+ Directory of c:\                                                                                                               
+
+07/26/2022  02:11 PM        55,991,112 firefox.exe                                                                              
+07/26/2022  02:13 PM    <DIR>          temp                                                                                     
+07/26/2022  02:18 PM                 4 sfk.exe                                                                                  
+07/26/2022  05:55 PM    <DIR>          Program Files                                                                            
+07/28/2022  05:48 PM    <DIR>          PerfLogs                                                                                 
+07/28/2022  06:03 PM    <DIR>          Program Files (x86)                                                                      
+07/29/2022  09:59 PM    <DIR>          Windows                                                                                  
+08/02/2022  05:16 PM    <DIR>          Users                                                                                    
+               2 File(s)     55,991,116 bytes                                                                                   
+               6 Dir(s)  92,775,571,456 bytes free 
+
+2022-08-02 18:00:37-- 
+student4@DESKTOP-14H8G30 C:\Users\student4>dir /o:d /t:w c:\windows\temp                                                        
+ Volume in drive C is OS                                                                                                        
+ Volume Serial Number is 00E6-9C0D                                                                                              
+
+ Directory of c:\windows\temp                                                                                                   
+
+07/28/2022  06:02 PM           131,072 TS_8BB0.tmp                                                                              
+07/28/2022  06:02 PM           131,072 TS_9259.tmp                                                                              
+07/28/2022  06:03 PM           131,072 TS_BB5B.tmp                                                                              
+07/28/2022  06:03 PM                 0 FXSTIFFDebugLogFile.txt                                                                  
+07/28/2022  06:03 PM                 0 FXSAPIDebugLogFile.txt                                                                   
+07/28/2022  06:03 PM           131,072 TS_1A16.tmp                                                                              
+07/28/2022  06:03 PM           131,072 TS_23BC.tmp                                                                              
+07/28/2022  06:06 PM                 0 mat-debug-4104.log                                                                       
+07/28/2022  06:08 PM             2,842 {3A5F2396-5C8F-4F1F-9B67-6CCA6C990E61}.tmp                                               
+07/28/2022  06:14 PM         3,274,152 0ec94d6a-8a70-4a57-8b8b-b57b80990983.tmp                                                 
+07/28/2022  06:19 PM    <DIR>          MsEdgeCrashpad                                                                           
+07/29/2022  03:16 PM           143,577 msedge_installer.log                                                                     
+07/30/2022  03:47 AM            65,536 TS_E8EA.tmp                                                                              
+07/30/2022  03:47 AM            65,536 TS_EFF0.tmp                                                                              
+07/30/2022  03:47 AM            65,536 TS_FABE.tmp                                                                              
+07/30/2022  03:50 AM            65,536 TS_2AED.tmp                                                                              
+07/30/2022  03:50 AM            65,536 TS_487B.tmp                                                                                                                                                                  
+07/30/2022  03:50 AM            65,536 TS_4BC8.tmp                                                                                                                                                                  
+07/30/2022  03:50 AM            65,536 TS_A41F.tmp                                                                                                                                                                  
+07/30/2022  03:50 AM            65,536 TS_A691.tmp                                                                                                                                                                  
+07/30/2022  03:50 AM            65,536 TS_A922.tmp                                                                                                                                                                  
+07/30/2022  03:50 AM            65,536 TS_AC21.tmp                                                                                                                                                                  
+08/02/2022  06:09 AM            71,156 MpCmdRun.log                                                                                                                                                                 
+08/02/2022  10:14 AM    <DIR>          51BF2726-2194-4F58-845C-12DD3B63377A-Sigs                                                                                                                                    
+08/02/2022  10:14 AM           222,268 MpSigStub.log                                                                                                                                                                
+08/02/2022  10:14 AM            18,449 UsoStoreFile.xml                                                                                                                                                             
+08/02/2022  03:04 PM                67 PowerPlan.log                                                                                                                                                                
+08/02/2022  03:04 PM            14,583 HighPerformancePlan.log                                                                                                                                                      
+08/02/2022  04:06 PM    <DIR>          .                                                                                                                                                                            
+08/02/2022  04:06 PM    <DIR>          ..                                                                                                                                                                           
+              26 File(s)      5,057,814 bytes                                                                                                                                                                       
+               4 Dir(s)  92,775,497,728 bytes free  
+
+###Setting portproxy####
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=22022 listenaddress=192.168.0.12 connectport=22 connectaddress=192.168.0.13 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=22022 listenaddress=192.168.0.12
+==========================================================================================================================================
+T3: 192.168.0.12
+
+2022-08-02 18:46:53-- ON
+
+2022-08-02 18:50:33-- 
+student4@MattMurdock:~$ ls -latr /
+total 100
+drwxr-xr-x   2 root root  4096 Mar  4  2020 mnt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 srv
+drwxr-xr-x   2 root root  4096 Mar  4  2020 opt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 media
+drwxr-xr-x  10 root root  4096 Mar  4  2020 usr
+lrwxrwxrwx   1 root root    30 Mar  4  2020 vmlinuz.old -> boot/vmlinuz-4.15.0-88-generic
+lrwxrwxrwx   1 root root    33 Mar  4  2020 initrd.img.old -> boot/initrd.img-4.15.0-88-generic
+drwxr-xr-x  13 root root  4096 Mar  4  2020 var
+drwx------   2 root root 16384 Mar  4  2020 lost+found
+dr-xr-xr-x 106 root root     0 Jul 26 13:51 proc
+drwxr-xr-x  17 root root  3680 Jul 26 13:51 dev
+drwx------   3 root root  4096 Jul 26 13:52 root
+drwxr-xr-x   2 root root  4096 Jul 26 13:52 snap
+drwxr-xr-x   2 root root  4096 Jul 26 13:53 lib64
+drwxr-xr-x  20 root root  4096 Jul 26 13:54 lib
+drwxr-xr-x   2 root root  4096 Jul 26 14:00 bin
+drwxr-xr-x   2 root root 12288 Jul 26 14:02 sbin
+drwxr-xr-x   4 root root  4096 Jul 26 14:11 home
+drwxr-xr-x   7 root root  4096 Jul 26 14:11 Reptile
+
+===========================================================================================================================================T4: 192.168.0.9
+
+2022-08-02 19:04:34-- ON
+
+2022-08-02 19:04:36-- 
+student4@DESKTOP-F75703C C:\Users\student4>date /t
+Tue 08/02/2022
+
+student4@DESKTOP-F75703C C:\Users\student4>time /t
+07:04 PM
+
+student4@DESKTOP-F75703C C:\Users\student4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   7/28/2022 2:00 AM
+
+2022-08-02 19:05:50-- 
+wmic process get processid,parentprocessid,executablepath
+C:\Tools\netcat\nc64.exe                                                                                 7004             5580
+C:\Windows\System32\SecurityHealthSystray.exe                                                            5320             6980
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe                                                5320             7004
+
+
+student4@DESKTOP-F75703C C:\Users\student4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-F75703C
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-78-9E-D0
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::b9f1:6d4a:db87:1dd5%3(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.0.9(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, July 28, 2022 1:56:40 AM
+   Lease Expires . . . . . . . . . . : Wednesday, August 3, 2022 3:30:35 PM
+   Default Gateway . . . . . . . . . : 192.168.0.254
+   DHCP Server . . . . . . . . . . . : 192.168.0.5
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-71-AA-29-FA-16-3E-78-9E-D0
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+2022-08-02 19:08:08-- 
+netstat /anob
+  TCP    192.168.0.9:22         192.168.0.13:45566     ESTABLISHED     3964
+ [sshd.exe]
+  TCP    192.168.0.9:139        0.0.0.0:0              LISTENING       4 
+ Can not obtain ownership information
+  TCP    192.168.0.9:49815      23.220.189.207:443     CLOSE_WAIT      7620
+ [WinStore.App.exe]
+  TCP    192.168.0.9:49817      72.21.91.29:80         CLOSE_WAIT      7620 
+ [WinStore.App.exe]
+  TCP    192.168.0.9:49820      23.220.189.207:443     CLOSE_WAIT      7620
+ [WinStore.App.exe] 
+  TCP    192.168.0.9:53815      52.226.139.180:443     ESTABLISHED     2160
+  WpnService
+ [svchost.exe]
+  TCP    192.168.0.9:61570      192.168.0.13:12311     SYN_SENT        1880 
+ [nc64.exe]
+

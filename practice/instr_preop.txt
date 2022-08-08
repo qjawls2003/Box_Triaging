@@ -1,0 +1,11 @@
+Review the mission plan
+Review relevant guidance (MP, Daily Reads, Confluence, NSDB, etc)
+Prepare your operational environment
+Connect to OpStation
+Create STUDENT DIRECTORY: /<lastname>_<dd-mm-yy>_<op#>
+cd into STUDENT DIRECTORY
+Create an opnotes file with: vim notes_<dd-mm-yy>
+Create a NSDB file with: vim NSDB_<dd-mm-yy>
+Script all target terminal windows with: script -af termscreen.$$
+Note: opnotes and NSDB are not on target. Do NOT script them!
+Conduct pre-brief/IP verification with MC

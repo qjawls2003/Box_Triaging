@@ -1,0 +1,122 @@
+NSDB 01-08-22
+========================================================================================================================
+T1 reportable items
+*****Security Product Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - SELinux
+*Version - "Permissive" max kernal policy version 31
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Change: 2022-08-01 18:28:46.860071045 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+[student4@frankcastle ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659378526.864:15989): pid=18201 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_ACCT msg=audit(1659378564.886:15990): pid=18205 uid=1004 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="student4" AUID="student4"
+type=USER_CMD msg=audit(1659378564.886:15991): pid=18205 uid=1004 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/0 res=success'UID="student4" AUID="student4"
+type=CRED_REFR msg=audit(1659378564.886:15992): pid=18205 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_START msg=audit(1659378564.888:15993): pid=18205 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. T1 is being used as a redirector and SELinux is not going to prevent me from using T1 as a redirector. Low risk. 
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - Linus malware detect aka. maldet
+*Version - Linux Malware Detect v1.6.4
+*(NIX) Config file or install directory - /root/linux-malware-detect
+Directory location of associated logs - /usr/local/maldetect
+Timestamp of all associated log files - stat /usr/local/maldetect/logs/event_log Change: 2022-08-01 18:10:01.912367559 +0000
+Cloud based?; yes or no - NO
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - YES
+[student4@frankcastle ~]$ sudo tail -n 5 /usr/local/maldetect/logs/event_log
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} signatures loaded: 17273 (14451 MD5 | 2039 HEX | 783 YARA | 0 USER)
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} building file list for /bin, this might take awhile...
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} setting nice scheduler priorities for all operations: cpunice 19 , ionice 6
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} executed eval /bin/nice -n 19 /bin/ionice -c2 -n 6 /bin/find "/bin" /tmp /var/tmp /dev/shm -maxdepth 15 -regextype posix-egrep -type f  -size +24c -size -6947618c  -not -perm 000   -not -uid 0 -not -gid 0  
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} scan returned empty file list; check that path exists and contains files in scope of configuration.
+
+*Documentation - https://www.rfxn.com/projects/linux-malware-detect/
+*Recommendation - Maldet is not going to prevent T1 from being used as a redirector. Low risk.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - RSYSLOG
+*PID - 10737/rsyslogd
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - NONE
+*Network connections - LISTENING on 514
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is a rsyslog server that is listening for logs from the clients in the network
+*Recommendation - T1 is a server so all logs are stored in T1. Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+====================================================================================================================
+T2 reportable items
+
+*****Security Product Report*****
+*Target: <T2 and 192.168.0.27 >
+*Name - SELinux
+*Version - "Permissive" max kernal policy version 31
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var.log.audit/audit.log
+Timestamp of all associated log files - Change: 2022-08-01 19:10:24.724740801 +0000
+Cloud based?; yes or no - NO
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+[student4@WadeWilson ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659380746.821:798): pid=10103 uid=0 auid=1004 ses=11 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_localuser,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_ACCT msg=audit(1659380967.081:799): pid=10109 uid=1004 auid=1004 ses=11 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="student4" AUID="student4"
+type=USER_CMD msg=audit(1659380967.081:800): pid=10109 uid=1004 auid=1004 ses=11 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/0 res=success'UID="student4" AUID="student4"
+type=CRED_REFR msg=audit(1659380967.081:801): pid=10109 uid=0 auid=1004 ses=11 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_localuser,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_START msg=audit(1659380967.083:802): pid=10109 uid=0 auid=1004 ses=11 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+[student4@WadeWilson ~]$ sudo stat /var/log/audit/audit.log
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. T2 is being used as a redirector and SELinux is not going to prevent me from using T2 as a redirector. Low risk.
+*****End of Report*****
+
+======================================================================================================================
+T3 reportable items
+
+*****Abnormal Logging Report*****
+*Target: <T3 and 192.168.0.13 >
+*Name - RSYSLOG
+*PID - 5187
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf and /etc/rsyslog.d/50-default.conf
+*Remote IP (hostname if IP cannot be identified) - 192.168.0.99
+*Network connections - sending logs via port 45306
+*Documentation - https://www.rsyslog.com/
+*Description - T3 is a rsyslog client that is sending logs to T1 (server)
+*Recommendation - Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+*****Malware Report*****
+*Target: <T3 and 192.168.0.13 >
+*Name - Reptile
+*Hash - 8e8d943f55866e10b6a9df04dd94d8a2
+*PID - N/A
+*PPID - N/A
+*User - root
+*File type - tool suite, .sh and .c
+Supporting files - /Reptile/scripts
+Associated Logs - N/A
+Network connection - N/A
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - /
+*Documentation - https://github.com/f0rb1dd3n/Reptile
+*Description - Reptile is a open source tool
+*Recommendation - There is no evidence of Reptile tools being installed or ran (via checking logs and bash history) It is current not actively malicious.(no processes or active network connection) Low risk'
+*****End of Report*****
+
+========================================================================================================================T4: 192.168.0.9
+
+
+
+
+
+

@@ -1,0 +1,792 @@
+#####Notes
+
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.13
+--> T3: 192.168.0.10
+---> T4: UNK
+---> T5: UNK
+
+Cred: student4:password4
+Root cred: root:kalipassword
+
+Concept: clear logs on .13 and .23, and find T4 and T5 from T3
+
+=============================================================
+T1:
+2022-07-29 15:59:50-- on
+
+2022-07-29 16:02:49-- sudo ls -latr /root
+.
+.
+.
+drwxr-xr-x.  8 root root   78 Jul 26 13:54 timestampfun
+drwxr-xr-x.  4 root root  220 Jul 26 14:10 linux-malware-detect
+drwxr-----.  3 root root   19 Jul 26 14:22 .pki
+dr-xr-x---.  6 root root  230 Jul 26 14:22 .
+-rw-------.  1 root root  102 Jul 27 14:21 .bash_history
+
+2022-07-29 16:03:28-- ps -elf
+5 S root      9089     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:00 /sbin/auditd
+4 S root     10737     1  0  80   0 - 81873 poll_s Jul26 ?        00:00:21 /usr/sbin/rsyslogd -n
+
+
+2022-07-29 16:04:34-- ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 68002sec preferred_lft 68002sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+
+2022-07-29 16:05:04-- netstat -auntp 
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -  
+tcp        0     36 192.168.0.99:22         10.50.33.208:37862      ESTABLISHED -  
+
+2022-07-29 16:06:37-- uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+2022-07-29 16:07:25-- ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service   nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  maldet.service  postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+2022-07-29 16:08:01-- ls -latr /var/*log*/
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 chrony
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 qemu-ga
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 anaconda
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 rhsm
+drwx------.  2 root   root       23 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 ..
+-rw-r--r--.  1 root   root    32750 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 tuned
+-rw-------.  1 root   root      212 Jul 26 13:52 maillog
+-rw-r--r--.  1 root   root       96 Jul 26 13:52 boot.log
+-rw-r--r--.  1 root   root      202 Jul 26 13:52 cron
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure
+-rw-------.  1 root   root     1900 Jul 26 13:54 yum.log
+-rw-------.  1 root   root   103191 Jul 26 13:54 messages
+-rw-------.  1 root   root   135860 Jul 26 13:57 cloud-init.log
+drwxr-xr-x. 13 root   root     4096 Jul 26 14:20 .
+-rw-------.  1 root   utmp     4224 Jul 26 15:40 btmp
+drwx------.  2 root   root      146 Jul 26 15:50 TonyStark
+drwx------.  2 root   root     4096 Jul 27 16:48 frankcastle
+drwx------.  2 root   root     4096 Jul 27 17:08 WadeWilson
+drwx------.  2 root   root       99 Jul 27 17:45 MattMurdock
+drwx------.  2 root   root      199 Jul 27 17:52 peterparker
+-rw-rw-r--.  1 root   utmp    20352 Jul 29 15:55 wtmp
+-rw-r--r--.  1 root   root   299008 Jul 29 15:55 lastlog
+
+
+2022-07-29 16:10:43-- 
+[student4@frankcastle ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+2022-07-29 16:11:20-- 
+[student4@frankcastle ~]$ ls -la /etc/*syslog*
+-rw-r--r--. 1 root root 3312 Jul 26 13:52 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 24
+drwxr-xr-x.  2 root root   77 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rw-r--r--.  1 root root   57 Jul 26 13:54 00-my_iptables.conf
+-rw-r--r--.  1 root root  255 Mar 27  2018 21-cloudinit.conf
+-rw-r--r--.  1 root root   49 Jul 31  2019 listen.conf
+
+
+2022-07-29 16:12:05-- 
+[student4@frankcastle ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+  10  *  *  *  * root echo -e '\n\n' + Tue Jul 26 13:54:44 UTC 2022 + '\n' >> /root/linux-malware-detect/report.txt && /usr/local/sbin/maldet -a /bin >> /root/linux-malware-detect/report.txt
+
+
+
+2022-07-29 16:12:56-- 
+[student4@frankcastle ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 20
+drwxr-xr-x.  2 root root   39 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+-rw-r--r--.  1 root root   76 Jul 26 14:22 maldet_pub
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   56 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rwx------.  1 root root  219 Oct 30  2018 logrotate
+-rwxr-xr-x.  1 root root 3777 Jul 26 14:22 maldet
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 man-db.cron
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.  2 root root   22 Jun  9  2014 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rwxr-xr-x.  1 root root  392 Nov 20  2018 0anacron
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+
+/etc/cron.weekly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+
+
+
+
+2022-07-29 16:15:06-- 
+[student4@frankcastle ~]$ find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-r--r--. 1 root root                  6 Jul 29 16:10 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root root                  0 Jul 29 16:10 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root root                 44 Jul 29 16:10 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root root                201 Jul 29 16:10 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root root                  0 Jul 29 16:10 /usr/local/maldetect/ignore_file_ext
+-rw-r--r--. 1 root root              66809 Jul 29 16:10 /usr/local/maldetect/logs/event_log
+-rw-r-----+ 1 root systemd-journal 8388608 Jul 29 16:14 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+2022-07-29 16:15:49-- 
+[student4@frankcastle ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-07-29 16:25:03-- 
+[student4@frankcastle ~]$ lsmod
+ip_tables              27126  1 iptable_filter
+nf_conntrack          137239  3 nf_nat,nf_nat_ipv4,nf_conntrack_ipv4
+
+
+2022-07-29 16:25:54-- 
+[student4@frankcastle ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+
+[student4@frankcastle ~]$ sudo cat /etc/shadow
+root:$6$c3ybvpWMAt/lE$XkjRr/Pt/JQOrqLPOW.A7Er3/ZeslMrfSqvNRXf1nf6ZgMgMWjMunKJiIXKwoYcYLW2uFuK9.rCkOWR79kWvC.:19199:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19199:0:99999:7:::
+student1:$1$EfHzxiBT$pp2ZBE2LKSAUcMyJszLtb.:19199:0:99999:7:::
+student2:$1$pzPSnplg$P1UvBvnLR285GDTNupR2D.:19199:0:99999:7:::
+student3:$1$/8c8VceN$6WHM/VRUNZn7J5YB2jQW50:19199:0:99999:7:::
+student4:$1$imIaMeP5$NhAFJ862ZMOga7iJ735W.1:19199:0:99999:7:::
+student5:$1$WYPr6jJj$xzAs1w2g.lkuB0Op2jwLe1:19199:0:99999:7:::
+student6:$1$sGB2NUm9$Z.vmaZzUkImIybormLpwY0:19199:0:99999:7:::
+student7:$1$FpCt8Cm5$zZkWssgenCgPkkmmFJ8zY/:19199:0:99999:7:::
+student8:$1$YRPWYzE8$0i9Q7oVDIRCG1faQvHn3i1:19199:0:99999:7:::
+student9:$1$jhkelYCi$SsvTU8FMaLh3307TyY0nM.:19199:0:99999:7:::
+student10:$1$EB2OZtsd$lHW2UXbgvzW01PC13ogkS0:19199:0:99999:7:::
+student11:$1$I4EhtSFQ$fnEj9RHHlHnpwOEn0e1XH0:19199:0:99999:7:::
+student12:$1$m2XDXdXF$NIy50AzHRrLKPdWlw7EQT/:19199:0:99999:7:::
+student13:$1$/5cy1pN2$tXyIHx73xsaBqZFsRmob9.:19199:0:99999:7:::
+student14:$1$t8Tp6Vlk$JSM6RIyjTKb1fV3pz8Tr81:19199:0:99999:7:::
+student15:$1$1ZD10KKw$iTE9PwG5XadGl9MQ0znfD/:19199:0:99999:7:::
+student16:$1$L5P9J536$9GXySmeHRYJYS41064pdH/:19199:0:99999:7:::
+student17:$1$7YV7tgIr$fpSroL77YxG0HlHR/O9cU.:19199:0:99999:7:::
+student18:$1$Jlt59Yxb$Bn/jkqwyDRSK/Ig8Ngzb8.:19199:0:99999:7:::
+student19:$1$sr/29rjy$a5X6DJIsYUy/cAC3aM0MK/:19199:0:99999:7:::
+student20:$1$uDNUgHdI$nKxCvMbXdSCdNktIrkxjB.:19199:0:99999:7:::
+student21:$1$SguwJu/A$1ORqma5cgQhclkVGm9xae0:19199:0:99999:7:::
+student22:$1$3Ws7m5Ez$oTcJTjXMph1CamF1DE3tG/:19199:0:99999:7:::
+student23:$1$b3o8yAP/$j9sLQC7j/nn13aWXPmQeO/:19199:0:99999:7:::
+
+2022-07-29 16:27:05-- 
+[student4@frankcastle ~]$ arp -a
+? (192.168.0.27) at fa:16:3e:34:6e:8d [ether] on eth0
+? (192.168.0.10) at fa:16:3e:e7:c9:1e [ether] on eth0
+? (192.168.0.13) at fa:16:3e:14:90:a8 [ether] on eth0
+gateway (192.168.0.254) at fa:16:3e:63:70:97 [ether] on eth0
+? (192.168.0.23) at fa:16:3e:4c:67:71 [ether] on eth0
+? (192.168.0.5) at fa:16:3e:90:bd:a3 [ether] on eth0
+? (192.168.0.6) at fa:16:3e:11:40:47 [ether] on eth0
+
+2022-07-29 16:28:01-- 
+[student4@frankcastle ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+        Vendor: SeaBIOS
+        Version: 1.13.0-1ubuntu1.1
+        Release Date: 04/01/2014
+        Address: 0xE8000
+        Runtime Size: 96 kB
+        ROM Size: 64 kB
+        Characteristics:
+                BIOS characteristics not supported
+                Targeted content distribution is supported
+        BIOS Revision: 0.0
+
+2022-07-29 16:30:56-- 
+[student4@frankcastle ~]$ cat /etc/rsyslog.d/00-my_iptables.conf
+:msg, contains, "I SEE YOU"     /var/log/iptables.log
+& stop
+
+
+2022-07-29 16:31:10-- 
+[student4@frankcastle ~]$ cat /etc/rsyslog.d/listen.conf
+$SystemLogSocketName /run/systemd/journal/syslog
+
+
+
+2022-07-29 16:41:38-- 
+[student4@frankcastle ~]$ maldet --help
+Linux Malware Detect v1.6.4
+            (C) 2002-2019, R-fx Networks <proj@rfxn.com>
+            (C) 2019, Ryan MacDonald <ryan@rfxn.com>
+This program may be freely redistributed under the terms of the GNU GPL v2
+
+public scanning is currently disabled (scan_user_access=0), please contact your system administrator to enable scan_user_access in conf.maldet.
+
+
+
+2022-07-29 16:52:39-- 
+[student4@frankcastle ~]$ sudo stat /root/linux-malware-detect/report.txt
+  File: ‘/root/linux-malware-detect/report.txt’
+  Size: 47821           Blocks: 96         IO Block: 4096   regular file
+Device: 801h/2049d      Inode: 4211456     Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: system_u:object_r:admin_home_t:s0
+Access: 2022-07-29 16:36:34.406990830 +0000
+Modify: 2022-07-29 16:10:02.202097261 +0000
+Change: 2022-07-29 16:10:02.202097261 +0000
+ Birth: -
+
+=========================================================================
+
+T2: T2: 192.168.0.13
+student4:password4
+
+2022-07-29 18:44:20-- on
+
+2022-07-29 18:44:27--
+student4@MattMurdock:~$ ls -latr .
+total 36
+-rw-r--r--  1 student4 sudo  807 Apr  4  2018 .profile
+-rw-r--r--  1 student4 sudo 3771 Apr  4  2018 .bashrc
+-rw-r--r--  1 student4 sudo  220 Apr  4  2018 .bash_logout
+drwxr-xr-x 25 root     root 4096 Jul 26 14:11 ..
+drwx------  3 student4 sudo 4096 Jul 26 15:57 .gnupg
+drwx------  2 student4 sudo 4096 Jul 26 15:57 .cache
+-rw-r--r--  1 student4 sudo    0 Jul 27 17:45 .sudo_as_admin_successful
+drwxr-xr-x  4 student4 sudo 4096 Jul 27 17:45 .
+-rw-------  1 student4 sudo 4233 Jul 27 17:57 .bash_history
+
+2022-07-29 18:45:35-- 
+student4@MattMurdock:~$ ps -elfH
+4 S syslog    5187     1  0  80   0 - 66820 -      Jul26 ?        00:00:00   /usr/sbin/rsyslogd -n
+
+2022-07-29 18:47:20-- 
+student4@MattMurdock:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:14:90:a8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.13/24 brd 192.168.0.255 scope global dynamic ens3
+       valid_lft 56059sec preferred_lft 56059sec
+    inet6 fe80::f816:3eff:fe14:90a8/64 scope link 
+       valid_lft forever preferred_lft forever
+student4@MattMurdock:~$ netstat -auntp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0    360 192.168.0.13:22         192.168.0.99:49514      ESTABLISHED -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           -                   
+udp        0      0 192.168.0.13:68         0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:45306           0.0.0.0:*                           -    
+
+2022-07-29 18:47:54-- 
+student4@MattMurdock:~$ sudo ls -latr /var/spool/cron
+total 20
+drwx-wx--T 2 root   crontab 4096 Nov 16  2017 crontabs
+drwxrwx--T 2 daemon daemon  4096 Feb 20  2018 atspool
+drwxr-xr-x 4 root   root    4096 Mar  4  2020 ..
+drwxr-xr-x 5 root   root    4096 Mar  4  2020 .
+drwxrwx--T 2 daemon daemon  4096 Mar  4  2020 atjobs
+
+2022-07-29 18:49:02-- 
+student4@MattMurdock:~$ uname -a
+Linux MattMurdock 4.15.0-88-generic #88-Ubuntu SMP Tue Feb 11 20:11:34 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+2022-07-29 18:49:27-- 
+student4@MattMurdock:~$ df
+/dev/sda15        106858    6823    100035   7% /boot/efi
+
+2022-07-29 18:49:48-- 
+student4@MattMurdock:~$ ls /etc/systemd/system/multi-user.target.wants
+atd.service            lxcfs.service                pollinate.service       snapd.autoimport.service                ssh.service
+console-setup.service  lxd-containers.service       remote-fs.target        snapd.core-fixup.service                systemd-networkd.service
+cron.service           networkd-dispatcher.service  rsync.service           snapd.recovery-chooser-trigger.service  systemd-resolved.service
+ebtables.service       ondemand.service             rsyslog.service         snapd.seeded.service                    ufw.service
+irqbalance.service     open-vm-tools.service        snapd.apparmor.service  snapd.service                           unattended-upgrades.service
+
+2022-07-29 18:50:59-- 
+student4@MattMurdock:~$ ls -latr /var/*log*/
+total 664
+drwxr-xr-x   2 root      root              4096 Nov 23  2018 lxd
+drwxr-xr-x   2 root      root              4096 Jan 24  2020 dist-upgrade
+-rw-rw----   1 root      utmp                 0 Mar  4  2020 btmp
+drwxr-xr-x  13 root      root              4096 Mar  4  2020 ..
+drwxr-sr-x+  3 root      systemd-journal   4096 Jul 26 13:51 journal
+-rw-r--r--   1 root      root              7890 Jul 26 14:08 alternatives.log
+-rw-r-----   1 syslog    adm               6628 Jul 26 14:11 auth.log
+-rw-------   1 root      root             65536 Jul 26 14:11 tallylog
+-rw-r--r--   1 syslog    adm             115311 Jul 26 14:11 cloud-init.log
+-rw-r-----   1 root      adm             122896 Jul 26 14:11 cloud-init-output.log
+drwxr-xr-x   2 landscape landscape         4096 Jul 26 15:57 landscape
+drwxr-x---   2 root      adm               4096 Jul 27 06:29 unattended-upgrades
+-rw-r-----   1 syslog    adm              53454 Jul 27 06:30 kern.log
+drwxr-xr-x   2 root      root              4096 Jul 27 06:30 apt
+-rw-r--r--   1 root      root            236129 Jul 27 06:31 dpkg.log
+-rw-r-----   1 syslog    adm              43139 Jul 28 06:17 syslog.2.gz
+-rw-r-----   1 syslog    adm               5207 Jul 29 06:25 syslog.1
+drwxrwxr-x   8 root      syslog            4096 Jul 29 06:25 .
+-rw-r-----   1 syslog    adm               4201 Jul 29 18:43 syslog
+-rw-rw-r--   1 root      utmp              6528 Jul 29 18:43 wtmp
+-rw-rw-r--   1 root      utmp            299008 Jul 29 18:43 lastlog
+
+sudo tail -n 100 /var/log/syslog
+
+2022-07-29 18:52:52-- 
+student4@MattMurdock:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+2022-07-29 18:53:26-- 
+student4@MattMurdock:~$ ls -la /etc/*syslog*
+-rw-r--r-- 1 root root 1358 Jan 30  2018 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 20
+drwxr-xr-x  2 root root 4096 Jul 26 14:11 .
+drwxr-xr-x 89 root root 4096 Jul 27 06:30 ..
+-rw-r--r--  1 root root  314 Aug 15  2017 20-ufw.conf
+-rw-r--r--  1 root root  255 Jan 15  2020 21-cloudinit.conf
+-rw-r--r--  1 root root 1113 Jul 26 14:11 50-default.conf
+
+cat /etc/rsyslog.d/50-default.conf
+
+2022-07-29 18:54:56-- 
+student4@MattMurdock:~$ ls -la /etc/cron.*
+/etc/cron.d:
+total 20
+drwxr-xr-x  2 root root 4096 Jul 26 14:05 .
+drwxr-xr-x 89 root root 4096 Jul 27 06:30 ..
+-rw-r--r--  1 root root  102 Nov 16  2017 .placeholder
+-rw-r--r--  1 root root  589 Jan 14  2020 mdadm
+-rw-r--r--  1 root root  191 Mar  4  2020 popularity-contest
+
+/etc/cron.daily:
+total 60
+drwxr-xr-x  2 root root 4096 Jul 26 14:09 .
+drwxr-xr-x 89 root root 4096 Jul 27 06:30 ..
+-rw-r--r--  1 root root  102 Nov 16  2017 .placeholder
+-rwxr-xr-x  1 root root  376 Nov 11  2019 apport
+-rwxr-xr-x  1 root root 1478 Apr 20  2018 apt-compat
+-rwxr-xr-x  1 root root  355 Dec 29  2017 bsdmainutils
+-rwxr-xr-x  1 root root 1176 Nov  2  2017 dpkg
+-rwxr-xr-x  1 root root  372 Aug 21  2017 logrotate
+-rwxr-xr-x  1 root root 1065 Apr  7  2018 man-db
+-rwxr-xr-x  1 root root  539 Jan 14  2020 mdadm
+-rwxr-xr-x  1 root root  538 Mar  1  2018 mlocate
+-rwxr-xr-x  1 root root  249 Jan 25  2018 passwd
+-rwxr-xr-x  1 root root 3477 Feb 21  2018 popularity-contest
+-rwxr-xr-x  1 root root  246 Mar 21  2018 ubuntu-advantage-tools
+-rwxr-xr-x  1 root root  214 Nov 12  2018 update-notifier-common
+
+file /etc/cron.d/popularity-contest
+cat /etc/cron.d/popularity-contest
+
+
+2022-07-29 18:57:14-- 
+student4@MattMurdock:~$ lsmod
+x_tables               40960  1 ip_tables
+
+2022-07-29 18:57:39-- 
+student4@MattMurdock:~$ uname -a
+Linux MattMurdock 4.15.0-88-generic #88-Ubuntu SMP Tue Feb 11 20:11:34 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+
+2022-07-29 18:58:02-- 
+student4@MattMurdock:~$ cat /etc/*release*
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.4 LTS"
+NAME="Ubuntu"
+VERSION="18.04.4 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.4 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+
+2022-07-29 18:59:03-- 
+student4@MattMurdock:~$ sudo cat /etc/shadow
+root:$6$UzdBVrLf$wVnccPuyFVa5Lm3XdeC5rJqCfGOlMVXdvb5uuVJg3pQY/HQYXs8Lgwy9pP1BPuIJ.f.I7WxrLEalODTZUWKk9/:19199:0:99999:7:::
+daemon:*:18325:0:99999:7:::
+bin:*:18325:0:99999:7:::
+sys:*:18325:0:99999:7:::
+sync:*:18325:0:99999:7:::
+games:*:18325:0:99999:7:::
+man:*:18325:0:99999:7:::
+lp:*:18325:0:99999:7:::
+mail:*:18325:0:99999:7:::
+news:*:18325:0:99999:7:::
+uucp:*:18325:0:99999:7:::
+proxy:*:18325:0:99999:7:::
+www-data:*:18325:0:99999:7:::
+backup:*:18325:0:99999:7:::
+list:*:18325:0:99999:7:::
+irc:*:18325:0:99999:7:::
+gnats:*:18325:0:99999:7:::
+nobody:*:18325:0:99999:7:::
+systemd-network:*:18325:0:99999:7:::
+systemd-resolve:*:18325:0:99999:7:::
+syslog:*:18325:0:99999:7:::
+messagebus:*:18325:0:99999:7:::
+_apt:*:18325:0:99999:7:::
+lxd:*:18325:0:99999:7:::
+uuidd:*:18325:0:99999:7:::
+dnsmasq:*:18325:0:99999:7:::
+landscape:*:18325:0:99999:7:::
+sshd:*:18325:0:99999:7:::
+pollinate:*:18325:0:99999:7:::
+ubuntu:!:19199:0:99999:7:::
+student1:$1$FOLAv7eG$LWa1ckXxoZmp9LD4MVBWd0:19199:0:99999:7:::
+student2:$1$wAz2S5V0$F/ogTEmSa3JIUkpO6Tn8t/:19199:0:99999:7:::
+student3:$1$nI7m8duT$6kOntX4CmrICNvzP5GkqY/:19199:0:99999:7:::
+student4:$1$zUTfpFI.$zBfKI40OQe6QjdWI8GaVd/:19199:0:99999:7:::
+student5:$1$8vh34I9x$4bXOA51aMqpgPbtTZkZJW/:19199:0:99999:7:::
+student6:$1$9hyxUOwH$va4keK2OnXahtniEmqJlG/:19199:0:99999:7:::
+student7:$1$X8YPGAwn$5LzNMPjmEtTtIvaIH1zFn1:19199:0:99999:7:::
+student8:$1$VTBxWe0W$vZkKjktAgt4i9lcPcPbTq/:19199:0:99999:7:::
+student9:$1$HpJyjZ.u$dd.Kd/gLkLO1ORU9rw./D0:19199:0:99999:7:::
+student10:$1$u.LgTf/Y$crnr1eWdhAKcNNm/rlr3v1:19199:0:99999:7:::
+student11:$1$Ufa84z5C$YdLPbklaVv6.PkJQEm1YG0:19199:0:99999:7:::
+student12:$1$WMOlBDVT$74KDxdVqe6zq5E7ctp8w41:19199:0:99999:7:::
+student13:$1$dqE3nB18$sSI2/pHKQFqB.OWXlpGtY/:19199:0:99999:7:::
+student14:$1$nVHpx97W$1LTlGiCQtd53S3bg56H27/:19199:0:99999:7:::
+student15:$1$bnx44Y/I$Ug8agIfhiS.0EykHFG6R40:19199:0:99999:7:::
+student16:$1$.nj17ELP$S7zLaW75ZI7fiGnEx1K/U1:19199:0:99999:7:::
+student17:$1$NAifoM0x$RGiESyuTuEeIHI0wcZI4r.:19199:0:99999:7:::
+student18:$1$cM5axMjp$QEH6fRyDQ9TVJPPJm14Mw/:19199:0:99999:7:::
+student19:$1$xqPlhVLX$OFkUeeDf0qgSzShddXAEl.:19199:0:99999:7:::
+student20:$1$6m5GlZin$WyetMrokyYmiK4.pXQxhh1:19199:0:99999:7:::
+student21:$1$FzTsecoI$MScIqOXfLtzl654qYsxsV/:19199:0:99999:7:::
+student22:$1$fGQicXfM$.Ad8axpv5GPCAroiMT1aF.:19199:0:99999:7:::
+student23:$1$fxUZzrfE$6RHLQpePTl3v8fioliVaZ.:19199:0:99999:7:::
+
+2022-07-29 18:59:36-- 
+student4@MattMurdock:~$ arp -a
+? (192.168.0.5) at fa:16:3e:90:bd:a3 [ether] on ens3
+_gateway (192.168.0.254) at fa:16:3e:63:70:97 [ether] on ens3
+? (192.168.0.9) at fa:16:3e:78:9e:d0 [ether] on ens3
+? (192.168.0.23) at fa:16:3e:4c:67:71 [ether] on ens3
+remote-host (192.168.0.99) at fa:16:3e:48:09:b1 [ether] on ens3
+? (192.168.0.6) at fa:16:3e:11:40:47 [ether] on ens3
+
+2022-07-29 19:00:34-- 
+student4@MattMurdock:~$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+        Vendor: SeaBIOS
+        Version: 1.13.0-1ubuntu1.1
+        Release Date: 04/01/2014
+        Address: 0xE8000
+        Runtime Size: 96 kB
+        ROM Size: 64 kB
+        Characteristics:
+                BIOS characteristics not supported
+                Targeted content distribution is supported
+        BIOS Revision: 0.0
+
+
+2022-07-29 19:07:28-- 
+┌──(root㉿kali)-[~/Downloads/an_29-07-22_MM5]
+└─# proxychains nmap -Pn -sT -v 192.168.0.16/28 -p22
+Scanning 16 hosts [1 port/host]
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.17:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.20:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.23:22  ...  OK
+Discovered open port 22/tcp on 192.168.0.23
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.24:22 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:22  ...  OK
+Discovered open port 22/tcp on 192.168.0.27
+
+=====================================================================
+
+T4: 192.168.0.23
+2022-07-29 19:18:34-- on
+
+
+[student4@peterparker ~]$ sudo ls -latr /root
+total 36
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+dr-xr-x---.  3 root root  149 Jul 26 13:51 .
+drwx------.  2 root root   29 Jul 26 13:51 .ssh
+
+2022-07-29 19:23:21-- 
+[student4@peterparker ~]$ uname -a
+Linux peterparker 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+2022-07-29 19:24:02-- 
+[student4@peterparker ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+2022-07-29 19:25:45-- 
+[student4@peterparker ~]$ sudo ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   utmp        0 Aug  8  2019 /var/log/btmp
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/spooler
+-rw-r--r--. 1 root   root    32757 Jul 26 13:51 /var/log/dmesg
+-rw-------. 1 root   root      212 Jul 26 13:51 /var/log/maillog
+-rw-r--r--. 1 root   root       96 Jul 26 13:51 /var/log/boot.log
+-rw-------. 1 root   root     5025 Jul 26 13:52 /var/log/secure
+-rw-------. 1 root   root   133959 Jul 26 13:52 /var/log/cloud-init.log
+-rw-r--r--. 1 root   root    24293 Jul 29 19:01 /var/log/cron
+-rw-------. 1 root   root    91957 Jul 29 19:18 /var/log/messages
+-rw-rw-r--. 1 root   utmp     7296 Jul 29 19:18 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Jul 29 19:18 /var/log/lastlog
+
+/var/log/audit:
+total 452
+drwx------. 2 root root     23 Jul 26 13:51 .
+drwxr-xr-x. 8 root root   4096 Jul 26 13:51 ..
+-rw-------. 1 root root 243146 Jul 29 19:25 audit.log
+
+[student4@peterparker ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+
+ls: cannot access /var/lib/rsyslog/imjournal.state: Permission denied
+ls: cannot access /var/log/audit/audit.log: Permission denied
+-rw-r--r--. 1 root root                 17 Jul 29 19:18 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root root                 42 Jul 29 19:18 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root root                 36 Jul 29 19:18 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 26 Jul 29 19:18 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 43 Jul 29 19:18 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 30 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-Slice.conf
+-rw-r--r--. 1 root root                 47 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-Description.conf
+-rw-r--r--. 1 root root                 43 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 36 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 17 Jul 29 19:18 /run/systemd/system/session-85.scope
+-rw-r--r--. 1 root root                 26 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 23 Jul 29 19:18 /run/systemd/system/session-85.scope.d/50-SendSIGHUP.conf
+-rw-------. 1 root root              91957 Jul 29 19:18 /var/log/messages
+-rw-r--r--. 1 root root                255 Jul 29 19:18 /run/systemd/users/1004
+-rw-r--r--. 1 root root                295 Jul 29 19:18 /run/systemd/sessions/85
+-rw-rw-r--. 1 root utmp               7296 Jul 29 19:18 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Jul 29 19:18 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               1920 Jul 29 19:18 /run/utmp
+-rwxr-x---+ 1 root systemd-journal 8388608 Jul 29 19:26 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+######Log cleaning on T4
+sudo grep -n 'Jul 29' /var/log/messages
+sudo wc -l /var/log/messages
+sudo cat /var/log/messages > /tmp/message_origin
+sudo head -n 1011 /var/log/messages > /tmp/messages
+wc -l /tmp/messages
+sudo cat /tmp/messages > /var/log/messages
+<goto root>
+touch -t '202207291918.01' /var/log/messages
+
+
+
+
+

@@ -1,0 +1,112 @@
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.10
+--> T3: 192.168.0.23
+---> T4: 192.168.0.13
+
+T1:
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHosts=/dev/null student4@10.50.28.223 -p 22
+lsmod
+<check existing iptable rules>
+<check forwarding rule>
+<confirm with MC before>
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.10:22
+iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<confirm with MC>
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+<for T2>
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.10:22023
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+<for T3>
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.10:22024
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.99
+<same destination to replace all POSTROUTING cmd>
+*******sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.10 -j SNAT --to-source 192.168.0.99
+
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.10:22
+
+<for T2>
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.10:22023
+
+<for T3>
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.10:22024
+
+*******sudo iptables -t nat -D POSTROUTING -p tcp -d 192.168.0.10 -j SNAT --to-source 192.168.0.99
+
+
+T2:
+ssh student4@10.50.28.223 -p 22022
+<confirm with MC>
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+<screwed up, delete>
+[student4@frankcastle ~]$ sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+
+<set up iptables in T1>
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<confirm with MC>
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.23:22024
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.10
+
+
+T3:
+ssh student4@10.50.28.223 -p 22023
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.13:22
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.23
+
+
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+echo 1 | sudo tee /proc/net/sys/ipv4/ip_forward
+
+T4:
+ssh student4@10.50.28.223 -p 22024
+
+
+-O forward -L 2023:192.168.0.23:22
+--dport 2023 --to-destination 192.168.0.23:22
+
+
+
+
+
+
+
+
+
+echo 1 | sudo tee /proc/net/sys/ipv4/ip_forward
+
+
+Clean IPTABLES:
+<confirm with MC>
+[student4@peterparker ~]$ sudo iptables -t nat -D PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.13:22
+<confirm with MC>
+delete all your rules
+<if forward changed, change it back>
+
+################################################################################################################################3
+Windows Firewall
+
+netsh advfirewall firewall show rule name=all
+
+netsh interface show interface
+netsh interface ip show address
+netsh interface ip show dns
+
+####TUNNELING####
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=12345 listenaddress=192.168.0.9 connectport=54321 connectaddress=192.168.0.98 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=12345 listenaddress=192.168.0.221
+
+listenport 	Specifies the IPv4 port, by port number or service name, on which to listen.
+connectaddress 	Specifies the IPv4 address to which to connect. Acceptable values are IP address, computer NetBIOS name, or computer DNS name. If an address isn't specified, the default is the local computer.
+connectport 	Specifies the IPv4 port, by port number or service name, to which to connect. If connectport is not specified, the default is the value of listenport on the local computer.
+listenaddress 	Specifies the IPv4 address for which to listen. Acceptable values are IP address, computer NetBIOS name, or computer DNS name. If an address isn't specified, the default is the local computer.
+protocol 	Specifies the protocol to use.
+

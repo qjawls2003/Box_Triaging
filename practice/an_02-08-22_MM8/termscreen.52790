@@ -1,0 +1,290 @@
+Script started on 2022-08-02 17:04:43+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="212" LINES="42"]
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_02-08-22_MM8[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_02-08-22_MM8[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T1 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@10.50.28.223 [7m[35m-p[39m[7m 22[27m[103D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m1[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27m1[27m0[27m.[27m5[27m0[27m.[27m2[27m8[27m.[27m2[27m2[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m2[27m2[?1l>[?2004l
+Warning: Permanently added '10.50.28.223' (ED25519) to the list of known hosts.
+student4@10.50.28.223's password: 
+Last login: Mon Aug  1 17:58:55 2022 from 10.50.33.208
+]0;student4@frankcastle:~[?1034h[student4@frankcastle ~]$ ls -latr /
+total 16
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [0m[38;5;27msrv[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mopt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmnt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmedia[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mbin[0m -> [38;5;27musr/bin[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mlib[0m -> [38;5;27musr/lib[0m
+lrwxrwxrwx.   1 root root    8 Aug  8  2019 [38;5;51msbin[0m -> [38;5;27musr/sbin[0m
+lrwxrwxrwx.   1 root root    9 Aug  8  2019 [38;5;51mlib64[0m -> [38;5;27musr/lib64[0m
+drwxr-xr-x.  13 root root  155 Aug  8  2019 [38;5;27musr[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m..[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m.[0m
+dr-xr-xr-x. 105 root root    0 Jul 26 13:51 [38;5;27mproc[0m
+dr-xr-xr-x.  13 root root    0 Jul 26 13:51 [38;5;27msys[0m
+drwxr-xr-x.  19 root root  267 Jul 26 13:51 [38;5;27mvar[0m
+drwxr-xr-x.  19 root root 2800 Jul 26 13:51 [38;5;27mdev[0m
+drwxr-xr-x.   4 root root   40 Jul 26 13:52 [38;5;27mhome[0m
+dr-xr-xr-x.   5 root root 4096 Jul 26 13:52 [38;5;27mboot[0m
+drwxr-xr-x.  77 root root 8192 Jul 26 13:53 [38;5;27metc[0m
+drwxr-xr-x.  24 root root  800 Jul 26 13:57 [38;5;27mrun[0m
+dr-xr-x---.   6 root root  230 Jul 26 14:22 [38;5;27mroot[0m
+drwxrwxrwt.   8 root root  172 Aug  2 07:17 [48;5;10;38;5;16mtmp[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jul 26 13:51 [38;5;27msystemd-private-b88157ba84e94e8095158d81149f5d0f-chronyd.service-FtNyPt[0m
+drwxrwxrwt.  8 root root 172 Aug  2 07:17 [48;5;10;38;5;16m.[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 student4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Jul 26 13:52 [0m[38;5;27m..[0m
+drwx------.  3 student4 wheel   95 Aug  1 13:03 [38;5;27m.[0m
+drwx------.  2 student4 wheel   25 Aug  1 13:03 [38;5;27m.ssh[0m
+-rw-------.  1 student4 wheel 7312 Aug  2 17:02 .bash_history
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root      root    40 Jul 26 13:52 [0m[38;5;27m..[0m
+drwx------.  2 student1  wheel   62 Jul 26 13:52 [38;5;27mstudent1[0m
+drwx------.  2 student2  wheel   62 Jul 26 13:52 [38;5;27mstudent2[0m
+drwx------.  2 student3  wheel   62 Jul 26 13:52 [38;5;27mstudent3[0m
+drwx------.  2 student5  wheel   62 Jul 26 13:52 [38;5;27mstudent5[0m
+drwx------.  2 student6  wheel   62 Jul 26 13:52 [38;5;27mstudent6[0m
+drwx------.  2 student7  wheel   62 Jul 26 13:52 [38;5;27mstudent7[0m
+drwx------.  2 student8  wheel   62 Jul 26 13:52 [38;5;27mstudent8[0m
+drwx------.  2 student9  wheel   62 Jul 26 13:52 [38;5;27mstudent9[0m
+drwx------.  2 student10 wheel   62 Jul 26 13:52 [38;5;27mstudent10[0m
+drwx------.  2 student11 wheel   62 Jul 26 13:52 [38;5;27mstudent11[0m
+drwx------.  2 student12 wheel   62 Jul 26 13:52 [38;5;27mstudent12[0m
+drwx------.  2 student13 wheel   62 Jul 26 13:52 [38;5;27mstudent13[0m
+drwx------.  2 student14 wheel   62 Jul 26 13:52 [38;5;27mstudent14[0m
+drwx------.  2 student15 wheel   62 Jul 26 13:52 [38;5;27mstudent15[0m
+drwx------.  2 student16 wheel   62 Jul 26 13:52 [38;5;27mstudent16[0m
+drwx------.  2 student17 wheel   62 Jul 26 13:52 [38;5;27mstudent17[0m
+drwx------.  2 student18 wheel   62 Jul 26 13:52 [38;5;27mstudent18[0m
+drwx------.  2 student19 wheel   62 Jul 26 13:52 [38;5;27mstudent19[0m
+drwx------.  2 student20 wheel   62 Jul 26 13:52 [38;5;27mstudent20[0m
+drwx------.  2 student21 wheel   62 Jul 26 13:52 [38;5;27mstudent21[0m
+drwx------.  2 student22 wheel   62 Jul 26 13:52 [38;5;27mstudent22[0m
+drwxr-xr-x. 25 root      root  4096 Jul 26 13:52 [38;5;27m.[0m
+drwx------.  2 student23 wheel   62 Jul 26 13:52 [38;5;27mstudent23[0m
+drwx------.  3 student4  wheel   95 Aug  1 13:03 [38;5;27mstudent4[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Jul 26 13:52 .ssh
+drwxr-xr-x.  8 root root   78 Jul 26 13:54 timestampfun
+drwxr-xr-x.  4 root root  220 Jul 26 14:10 linux-malware-detect
+drwxr-----.  3 root root   19 Jul 26 14:22 .pki
+dr-xr-x---.  6 root root  230 Jul 26 14:22 .
+-rw-------.  1 root root  102 Jul 27 14:21 .bash_history
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ps -elfH
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+1 S root         2     0  0  80   0 -     0 kthrea Jul26 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jul26 ?        00:01:55   [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jul26 ?        00:00:00   [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jul26 ?        00:00:00   [kworker/u4:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jul26 ?        00:00:40   [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jul26 ?        00:00:00   [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jul26 ?        00:00:22   [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jul26 ?        00:00:58   [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jul26 ?        00:01:16   [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jul26 ?        00:00:31   [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jul26 ?        00:01:48   [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jul26 ?        00:00:00   [kworker/1:0H]
+5 S root        18     2  0  80   0 -     0 devtmp Jul26 ?        00:00:00   [kdevtmpfs]
+1 S root        19     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [netns]
+1 S root        20     2  0  80   0 -     0 watchd Jul26 ?        00:00:00   [khungtaskd]
+1 S root        21     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [writeback]
+1 S root        22     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kintegrityd]
+1 S root        23     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [bioset]
+1 S root        24     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [bioset]
+1 S root        25     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [bioset]
+1 S root        26     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kblockd]
+1 S root        27     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [md]
+1 S root        28     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [edac-poller]
+1 S root        29     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [watchdogd]
+1 S root        36     2  0  80   0 -     0 kswapd Jul26 ?        00:00:00   [kswapd0]
+1 S root        37     2  0  85   5 -     0 ksm_sc Jul26 ?        00:00:00   [ksmd]
+1 S root        38     2  0  99  19 -     0 khugep Jul26 ?        00:00:02   [khugepaged]
+1 S root        39     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [crypto]
+1 S root        47     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kthrotld]
+1 S root        49     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kmpath_rdacd]
+1 S root        50     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kaluad]
+1 S root        51     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kpsmoused]
+1 S root        52     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [ipv6_addrconf]
+1 S root        65     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [deferwq]
+1 S root       118     2  0  80   0 -     0 kaudit Jul26 ?        00:00:00   [kauditd]
+1 S root       182     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [rpciod]
+1 S root       183     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xprtiod]
+1 S root       271     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [ata_sff]
+1 S root       289     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00   [scsi_eh_0]
+1 S root       290     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [scsi_tmf_0]
+1 S root       291     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00   [scsi_eh_1]
+1 S root       292     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [scsi_tmf_1]
+1 S root       294     2  0  80   0 -     0 worker Jul26 ?        00:00:00   [kworker/u4:3]
+1 S root       295     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [virtscsi-scan]
+1 S root       297     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00   [scsi_eh_2]
+1 S root       298     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [scsi_tmf_2]
+1 S root       313     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [bioset]
+1 S root       314     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfsalloc]
+1 S root       315     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs_mru_cache]
+1 S root       316     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-buf/sda1]
+1 S root       317     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-data/sda1]
+1 S root       318     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-conv/sda1]
+1 S root       319     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-cil/sda1]
+1 S root       320     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-reclaim/sda]
+1 S root       321     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-log/sda1]
+1 S root       322     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [xfs-eofblocks/s]
+1 S root       323     2  0  80   0 -     0 xfsail Jul26 ?        00:00:46   [xfsaild/sda1]
+1 S root       324     2  0  60 -20 -     0 worker Jul26 ?        00:00:03   [kworker/0:1H]
+1 S root       515     2  0  80   0 -     0 add_hw Jul26 ?        00:00:00   [hwrng]
+1 S root       597     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [ttm_swap]
+1 S root       600     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00   [kvm-irqfd-clean]
+1 S root      1093     2  0  60 -20 -     0 worker Jul26 ?        00:00:03   [kworker/1:1H]
+5 S root      8927     2  0  80   0 -     0 worker 16:21 ?        00:00:00   [kworker/0:1]
+1 S root      9142     2  0  80   0 -     0 worker 16:36 ?        00:00:00   [kworker/0:0]
+5 S root      9212     2  0  80   0 -     0 worker 16:40 ?        00:00:01   [kworker/1:2]
+5 S root      9494     2  0  80   0 -     0 worker 17:00 ?        00:00:00   [kworker/1:0]
+5 S root      9510     2  0  80   0 -     0 ?      17:01 ?        00:00:00   [kworker/0:2]
+5 S root      9834     2  0  80   0 -     0 ?      17:10 ?        00:00:00   [kworker/1:1]
+4 S root         1     0  0  80   0 - 48401 ep_pol Jul26 ?        00:00:34 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+4 S root       402     1  0  80   0 - 10053 ?      Jul26 ?        00:00:26   /usr/lib/systemd/systemd-journald
+4 S root       431     1  0  80   0 - 11821 ep_pol Jul26 ?        00:00:00   /usr/lib/systemd/systemd-udevd
+5 S rpc        555     1  0  80   0 - 17316 poll_s Jul26 ?        00:00:04   /sbin/rpcbind -w
+4 S dbus       557     1  0  80   0 - 16611 ep_pol Jul26 ?        00:00:17   /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+1 S root       567     1  0  80   0 - 48774 ep_pol Jul26 ?        00:00:00   /usr/sbin/gssproxy -D
+4 S root       611     1  0  80   0 -  6653 ep_pol Jul26 ?        00:00:08   /usr/lib/systemd/systemd-logind
+4 S root       612     1  0  80   0 -  5416 hrtime Jul26 ?        00:00:19   /usr/sbin/irqbalance --foreground
+4 S polkitd    613     1  0  80   0 - 153057 poll_s Jul26 ?       00:00:04   /usr/lib/polkit-1/polkitd --no-debug
+5 S chrony     617     1  0  80   0 - 29446 poll_s Jul26 ?        00:00:01   /usr/sbin/chronyd
+5 S root       898     1  0  80   0 - 26866 poll_s Jul26 ?        00:00:00   /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid eth0
+4 S root       957     1  0  80   0 - 143481 poll_s Jul26 ?       00:01:19   /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1089     1  0  80   0 - 22413 ep_pol Jul26 ?        00:00:02   /usr/libexec/postfix/master -w
+4 S postfix   1092  1089  0  80   0 - 22483 ep_pol Jul26 ?        00:00:00     qmgr -l -t unix -u
+4 S postfix   8329  1089  0  80   0 - 22439 ep_pol 15:51 ?        00:00:00     pickup -l -t unix -u
+4 S root      1149     1  0  80   0 - 27526 n_tty_ Jul26 ttyS0    00:00:00   /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1150     1  0  80   0 - 27526 n_tty_ Jul26 tty1     00:00:00   /sbin/agetty --noclear tty1 linux
+4 S root      1164     1  0  80   0 - 31579 hrtime Jul26 ?        00:00:02   /usr/sbin/crond -n
+4 S root      3169     1  0  80   0 - 28216 poll_s Jul26 ?        00:00:00   /usr/sbin/sshd -D
+4 S root      9585  3169  0  80   0 - 39717 poll_s 17:07 ?        00:00:00     sshd: student4 [priv]
+5 S student4  9589  9585  0  80   0 - 39717 ?      17:07 ?        00:00:00       sshd: student4@pts/0
+0 S student4  9590  9589  0  80   0 - 28860 do_wai 17:07 pts/0    00:00:00         -bash
+0 R student4  9843  9590  0  80   0 - 38874 -      17:10 pts/0    00:00:00           ps -elfH
+5 S root      9089     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:01   /sbin/auditd
+4 S root     10737     1  0  80   0 - 98257 poll_s Jul26 ?        00:01:09   /usr/sbin/rsyslogd -n
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 50809sec preferred_lft 50809sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1089/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3169/sshd           
+tcp        0      0 192.168.0.99:22         10.50.33.208:37874      ESTABLISHED 9585/sshd: student4 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1089/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      3169/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           898/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           617/chronyd         
+udp        0      0 0.0.0.0:514             0.0.0.0:*                           10737/rsyslogd      
+udp        0      0 0.0.0.0:689             0.0.0.0:*                           555/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                617/chronyd         
+udp6       0      0 :::514                  :::*                                10737/rsyslogd      
+udp6       0      0 :::689                  :::*                                555/rpcbind         
+]0;student4@frankcastle:~[student4@frankcastle ~]$ w
+ 17:11:27 up 7 days,  3:19,  1 user,  load average: 0.01, 0.02, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student4 pts/0    10.50.33.208     17:07    7.00s  0.03s  0.00s w
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/spool/cron
+ls: cannot open directory /var/spool/cron: Permission denied
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo ls -latr /var/spool/cron
+total 0
+drwx------. 2 root root  6 Nov 20  2018 .
+drwxr-xr-x. 7 root root 71 Aug  8  2019 ..
+]0;student4@frankcastle:~[student4@frankcastle ~]$ date; date -u
+Tue Aug  2 17:11:41 UTC 2022
+Tue Aug  2 17:11:41 UTC 2022
+]0;student4@frankcastle:~[student4@frankcastle ~]$ uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;student4@frankcastle:~[student4@frankcastle ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/sda1        8377344 1235880   7141464  15% /
+devtmpfs          917748       0    917748   0% /dev
+tmpfs             941028       0    941028   0% /dev/shm
+tmpfs             941028  106924    834104  12% /run
+tmpfs             941028       0    941028   0% /sys/fs/cgroup
+tmpfs             188208       0    188208   0% /run/user/1004
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/*/*acc*
+ls: cannot access /var/*/*acc*: No such file or directory
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls /etc/systemd/system/multi-user.target.wants
+[0m[38;5;51mauditd.service[0m   [38;5;51mcloud-config.service[0m  [38;5;51mcloud-init-local.service[0m  [38;5;51mcrond.service[0m       [38;5;51mkdump.service[0m   [38;5;51mnfs-client.target[0m  [38;5;51mremote-fs.target[0m        [38;5;51mrpcbind.service[0m  [38;5;51msshd.service[0m
+[38;5;51mchronyd.service[0m  [38;5;51mcloud-final.service[0m   [38;5;51mcloud-init.service[0m        [38;5;51mirqbalance.service[0m  [38;5;51mmaldet.service[0m  [38;5;51mpostfix.service[0m    [38;5;51mrhel-configure.service[0m  [38;5;51mrsyslog.service[0m  [38;5;51mtuned.service[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/*log*/
+total 368
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler-20220731
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwx------.  2 root   root       23 Jul 26 13:51 [38;5;27maudit[0m
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 [38;5;27m..[0m
+-rw-r--r--.  1 root   root    32750 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 [38;5;27mtuned[0m
+-rw-------.  1 root   root      212 Jul 26 13:52 maillog-20220731
+-rw-r--r--.  1 root   root       96 Jul 26 13:52 boot.log
+-rw-r--r--.  1 root   root      202 Jul 26 13:52 cron-20220731
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure-20220731
+-rw-------.  1 root   root     1900 Jul 26 13:54 yum.log
+-rw-------.  1 root   root   103191 Jul 26 13:54 messages-20220731
+-rw-------.  1 root   root   135860 Jul 26 13:57 cloud-init.log
+-rw-------.  1 root   utmp     4224 Jul 26 15:40 btmp-20220801
+drwx------.  2 root   root     4096 Jul 27 17:08 [38;5;27mWadeWilson[0m
+drwx------.  2 root   root      168 Jul 29 19:12 [38;5;27mMattMurdock[0m
+drwx------.  2 root   root     4096 Jul 31 02:43 [38;5;27mfrankcastle[0m
+-rw-------.  1 root   root        0 Jul 31 03:31 spooler
+-rw-------.  1 root   root        0 Jul 31 03:31 secure
+-rw-------.  1 root   root        0 Jul 31 03:31 messages
+-rw-------.  1 root   root        0 Jul 31 03:31 maillog
+-rw-r--r--.  1 root   root        0 Jul 31 03:31 cron
+drwx------.  2 root   root      180 Aug  1 00:24 [38;5;27mTonyStark[0m
+drwx------.  2 root   root     4096 Aug  1 00:34 [38;5;27mpeterparker[0m
+-rw-------.  1 root   utmp        0 Aug  1 03:45 btmp
+drwxr-xr-x. 13 root   root     4096 Aug  1 03:45 [38;5;27m.[0m
+-rw-rw-r--.  1 root   utmp    24192 Aug  2 17:07 wtmp
+-rw-r--r--.  1 root   root   299008 Aug  2 17:07 lastlog
+]0;student4@frankcastle:~[student4@frankcastle ~]$ exit
+logout
+Connection to 10.50.28.223 closed.
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_02-08-22_MM8
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_02-08-22_MM8[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-03 12:32:53+00:00 [COMMAND_EXIT_CODE="0"]

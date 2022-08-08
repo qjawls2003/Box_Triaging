@@ -1,0 +1,59 @@
+T1
+Security product: linux_malware_detect (crontab)
+SELinus: permissive
+Logging: rsyslog, listening only
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
+which maldet
+maldet --help
+stat /usr/local/maldetect/logs/event_log
+sudo stat /root/linux-malware-detect/report.txt
+sudo tail -n 5 /usr/local/maldetect/logs/event_log
+sudo tail -n 5 /root/linux-malware-detect/report.txt
+T2
+sudo ls -latr /root/
+sudo tail -n 10 /var/log/sssd/sssd.log
+sudo ls -latr /var/log/sssd
+T3
+Reptile folder in /
+rsyslog sending to remote host 0.0.0.0:45306
+sudo ls -latr /var/spool/cron/crontabs
+sudo ls -latr /var/spool/cron/atspool
+tail -n 1000 /var/spool/cron/crontabs/
+sudo tail -n 10 /var/log/apt/history.log
+ls -latr /Reptile
+cat /Reptile/README.md
+cat /etc/hosts
+cat /etc/rsyslog.conf
+sudo ls -latr /var/spool/rsyslog
+sudo ls -latr /etc/rsyslog.d
+cat /etc/rsyslog.d/50-default.conf
+grep -r "remote*" /etc
+ls -latr /Reptile/scripts
+md5sum /Reptile/Kconfig
+ls -latr ../student23/
+sudo cat /var/log/syslog | grep Makefile
+lastlog
+sudo cat /var/log/syslog.1 | grep Makefile
+sudo cat /var/log/alternatives.log.1
+sudo cat /var/log/tallylog
+
+T4
+administrator active
+nc64.exe running on port 192.168.0.9:53670
+C:\Tools\beacon.ps1 runs on startup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

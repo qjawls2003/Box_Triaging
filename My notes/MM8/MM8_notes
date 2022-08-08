@@ -1,0 +1,18 @@
+MM8 Notes
+
+T2
+
+administrator on console active
+MsMpEng.exe running
+reg run sfk.exe (Spyrix)
+cd C:\
+dir /b/s *spyrix*
+dir C:\windows\prefetch
+scp -o ControlPath=/tmp/T2 -P 2222 -r student4@localhost:C:\Windows\prefetch\ ~/Downloads/an_02-08-22_MM8/prefetch 
+for /R "C:\Windows\prefetch" %f in (*.*) do certutil -hashfile "%f" MD5
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Windows\prefetch\*.*" -Recurse) -ErrorAction SilentlyContinue
+T3
+Reptile
+
+T4
+wmic process get processid,parentprocessid,commandline | findstr nc64*

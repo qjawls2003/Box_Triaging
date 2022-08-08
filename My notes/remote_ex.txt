@@ -1,0 +1,15 @@
+#connect
+
+kali -> T1
+T1 -> T2
+T2 -> T3
+T2 -> T4
+
+T4 <- T5 (remote)
+ssh -S /tmp/T4 -p 4444 student4@localhost -O forward -R192.168.0.4:12345:localhost:5555
+
+(on kali) netcat -lvpn 5555
+
+
+#clean up
+ssh -S /tmp/T4 bad -O cancel -R12345:localhost:5555

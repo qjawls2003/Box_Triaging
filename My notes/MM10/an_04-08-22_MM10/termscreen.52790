@@ -1,0 +1,1493 @@
+Script started on 2022-08-03 13:21:44+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="212" LINES="42"]
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T1 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@10.50.28.223 [7m[35m-p[39m[7m 22[27m[103D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m1[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27m1[27m0[27m.[27m5[27m0[27m.[27m2[27m8[27m.[27m2[27m2[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m2[27m2[?1l>[?2004l
+Warning: Permanently added '10.50.28.223' (ED25519) to the list of known hosts.
+student4@10.50.28.223's password: 
+Last login: Tue Aug  2 17:07:38 2022 from 10.50.33.208
+]0;student4@frankcastle:~[?1034h[student4@frankcastle ~]$ ls -latr /
+total 16
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [0m[38;5;27msrv[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mopt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmnt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmedia[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mbin[0m -> [38;5;27musr/bin[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mlib[0m -> [38;5;27musr/lib[0m
+lrwxrwxrwx.   1 root root    8 Aug  8  2019 [38;5;51msbin[0m -> [38;5;27musr/sbin[0m
+lrwxrwxrwx.   1 root root    9 Aug  8  2019 [38;5;51mlib64[0m -> [38;5;27musr/lib64[0m
+drwxr-xr-x.  13 root root  155 Aug  8  2019 [38;5;27musr[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m..[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m.[0m
+dr-xr-xr-x. 104 root root    0 Jul 26 13:51 [38;5;27mproc[0m
+dr-xr-xr-x.  13 root root    0 Jul 26 13:51 [38;5;27msys[0m
+drwxr-xr-x.  19 root root  267 Jul 26 13:51 [38;5;27mvar[0m
+drwxr-xr-x.  19 root root 2800 Jul 26 13:51 [38;5;27mdev[0m
+drwxr-xr-x.   4 root root   40 Jul 26 13:52 [38;5;27mhome[0m
+dr-xr-xr-x.   5 root root 4096 Jul 26 13:52 [38;5;27mboot[0m
+drwxr-xr-x.  77 root root 8192 Jul 26 13:53 [38;5;27metc[0m
+drwxr-xr-x.  24 root root  800 Jul 26 13:57 [38;5;27mrun[0m
+dr-xr-x---.   6 root root  230 Jul 26 14:22 [38;5;27mroot[0m
+drwxrwxrwt.   8 root root  172 Aug  3 12:23 [48;5;10;38;5;16mtmp[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jul 26 13:51 [38;5;27msystemd-private-b88157ba84e94e8095158d81149f5d0f-chronyd.service-FtNyPt[0m
+drwxrwxrwt.  8 root root 172 Aug  3 12:23 [48;5;10;38;5;16m.[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 student4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Jul 26 13:52 [0m[38;5;27m..[0m
+drwx------.  3 student4 wheel   95 Aug  1 13:03 [38;5;27m.[0m
+drwx------.  2 student4 wheel   25 Aug  1 13:03 [38;5;27m.ssh[0m
+-rw-------.  1 student4 wheel 7595 Aug  3 12:32 .bash_history
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root      root    40 Jul 26 13:52 [0m[38;5;27m..[0m
+drwx------.  2 student1  wheel   62 Jul 26 13:52 [38;5;27mstudent1[0m
+drwx------.  2 student2  wheel   62 Jul 26 13:52 [38;5;27mstudent2[0m
+drwx------.  2 student3  wheel   62 Jul 26 13:52 [38;5;27mstudent3[0m
+drwx------.  2 student5  wheel   62 Jul 26 13:52 [38;5;27mstudent5[0m
+drwx------.  2 student6  wheel   62 Jul 26 13:52 [38;5;27mstudent6[0m
+drwx------.  2 student7  wheel   62 Jul 26 13:52 [38;5;27mstudent7[0m
+drwx------.  2 student8  wheel   62 Jul 26 13:52 [38;5;27mstudent8[0m
+drwx------.  2 student9  wheel   62 Jul 26 13:52 [38;5;27mstudent9[0m
+drwx------.  2 student10 wheel   62 Jul 26 13:52 [38;5;27mstudent10[0m
+drwx------.  2 student11 wheel   62 Jul 26 13:52 [38;5;27mstudent11[0m
+drwx------.  2 student12 wheel   62 Jul 26 13:52 [38;5;27mstudent12[0m
+drwx------.  2 student13 wheel   62 Jul 26 13:52 [38;5;27mstudent13[0m
+drwx------.  2 student14 wheel   62 Jul 26 13:52 [38;5;27mstudent14[0m
+drwx------.  2 student15 wheel   62 Jul 26 13:52 [38;5;27mstudent15[0m
+drwx------.  2 student16 wheel   62 Jul 26 13:52 [38;5;27mstudent16[0m
+drwx------.  2 student17 wheel   62 Jul 26 13:52 [38;5;27mstudent17[0m
+drwx------.  2 student18 wheel   62 Jul 26 13:52 [38;5;27mstudent18[0m
+drwx------.  2 student19 wheel   62 Jul 26 13:52 [38;5;27mstudent19[0m
+drwx------.  2 student20 wheel   62 Jul 26 13:52 [38;5;27mstudent20[0m
+drwx------.  2 student21 wheel   62 Jul 26 13:52 [38;5;27mstudent21[0m
+drwx------.  2 student22 wheel   62 Jul 26 13:52 [38;5;27mstudent22[0m
+drwxr-xr-x. 25 root      root  4096 Jul 26 13:52 [38;5;27m.[0m
+drwx------.  2 student23 wheel   62 Jul 26 13:52 [38;5;27mstudent23[0m
+drwx------.  3 student4  wheel   95 Aug  1 13:03 [38;5;27mstudent4[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Jul 26 13:52 .ssh
+drwxr-xr-x.  8 root root   78 Jul 26 13:54 timestampfun
+drwxr-xr-x.  4 root root  220 Jul 26 14:10 linux-malware-detect
+drwxr-----.  3 root root   19 Jul 26 14:22 .pki
+dr-xr-x---.  6 root root  230 Jul 26 14:22 .
+-rw-------.  1 root root  102 Jul 27 14:21 .bash_history
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 48401 ep_pol Jul26 ?        00:00:37 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jul26 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jul26 ?        00:03:28 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jul26 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jul26 ?        00:00:01 [kworker/u4:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jul26 ?        00:09:26 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jul26 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jul26 ?        00:00:28 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jul26 ?        00:08:05 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jul26 ?        00:09:56 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jul26 ?        00:06:46 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jul26 ?        00:03:32 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jul26 ?        00:00:00 [kworker/1:0H]
+5 S root        18     2  0  80   0 -     0 devtmp Jul26 ?        00:00:00 [kdevtmpfs]
+1 S root        19     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [netns]
+1 S root        20     2  0  80   0 -     0 watchd Jul26 ?        00:00:00 [khungtaskd]
+1 S root        21     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [writeback]
+1 S root        22     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kintegrityd]
+1 S root        23     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [bioset]
+1 S root        24     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [bioset]
+1 S root        25     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [bioset]
+1 S root        26     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kblockd]
+1 S root        27     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [md]
+1 S root        28     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [edac-poller]
+1 S root        29     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [watchdogd]
+1 S root        36     2  0  80   0 -     0 kswapd Jul26 ?        00:00:00 [kswapd0]
+1 S root        37     2  0  85   5 -     0 ksm_sc Jul26 ?        00:00:00 [ksmd]
+1 S root        38     2  0  99  19 -     0 khugep Jul26 ?        00:00:03 [khugepaged]
+1 S root        39     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [crypto]
+1 S root        47     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kthrotld]
+1 S root        49     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kmpath_rdacd]
+1 S root        50     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kaluad]
+1 S root        51     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kpsmoused]
+1 S root        52     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [ipv6_addrconf]
+1 S root        65     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [deferwq]
+1 S root       118     2  0  80   0 -     0 kaudit Jul26 ?        00:00:00 [kauditd]
+1 S root       182     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [rpciod]
+1 S root       183     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xprtiod]
+1 S root       271     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [ata_sff]
+1 S root       289     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00 [scsi_eh_0]
+1 S root       290     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [scsi_tmf_0]
+1 S root       291     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00 [scsi_eh_1]
+1 S root       292     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [scsi_tmf_1]
+1 S root       294     2  0  80   0 -     0 worker Jul26 ?        00:00:01 [kworker/u4:3]
+1 S root       295     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [virtscsi-scan]
+1 S root       297     2  0  80   0 -     0 scsi_e Jul26 ?        00:00:00 [scsi_eh_2]
+1 S root       298     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [scsi_tmf_2]
+1 S root       313     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [bioset]
+1 S root       314     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfsalloc]
+1 S root       315     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs_mru_cache]
+1 S root       316     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-buf/sda1]
+1 S root       317     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-data/sda1]
+1 S root       318     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-conv/sda1]
+1 S root       319     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-cil/sda1]
+1 S root       320     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       321     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-log/sda1]
+1 S root       322     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       323     2  0  80   0 -     0 xfsail Jul26 ?        00:00:51 [xfsaild/sda1]
+1 S root       324     2  0  60 -20 -     0 worker Jul26 ?        00:00:05 [kworker/0:1H]
+4 R root       402     1  0  80   0 -  9866 ?      Jul26 ?        00:00:48 /usr/lib/systemd/systemd-journald
+4 S root       431     1  0  80   0 - 11821 ep_pol Jul26 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+1 S root       515     2  0  80   0 -     0 add_hw Jul26 ?        00:00:00 [hwrng]
+5 S rpc        555     1  0  80   0 - 17316 poll_s Jul26 ?        00:00:04 /sbin/rpcbind -w
+4 S dbus       557     1  0  80   0 - 16611 ep_pol Jul26 ?        00:00:19 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+1 S root       567     1  0  80   0 - 48774 ep_pol Jul26 ?        00:00:00 /usr/sbin/gssproxy -D
+1 S root       597     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [ttm_swap]
+1 S root       600     2  0  60 -20 -     0 rescue Jul26 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       611     1  0  80   0 -  6653 ep_pol Jul26 ?        00:00:09 /usr/lib/systemd/systemd-logind
+4 S root       612     1  0  80   0 -  5416 hrtime Jul26 ?        00:00:22 /usr/sbin/irqbalance --foreground
+4 S polkitd    613     1  0  80   0 - 153057 poll_s Jul26 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+5 S chrony     617     1  0  80   0 - 29446 poll_s Jul26 ?        00:00:01 /usr/sbin/chronyd
+5 S root       898     1  0  80   0 - 26866 poll_s Jul26 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid eth0
+4 S root       957     1  0  80   0 - 143481 poll_s Jul26 ?       00:01:32 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1089     1  0  80   0 - 22413 ep_pol Jul26 ?        00:00:03 /usr/libexec/postfix/master -w
+4 S postfix   1092  1089  0  80   0 - 22483 ep_pol Jul26 ?        00:00:00 qmgr -l -t unix -u
+1 S root      1093     2  0  60 -20 -     0 worker Jul26 ?        00:00:05 [kworker/1:1H]
+4 S root      1149     1  0  80   0 - 27526 n_tty_ Jul26 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1150     1  0  80   0 - 27526 n_tty_ Jul26 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1164     1  0  80   0 - 31579 hrtime Jul26 ?        00:00:10 /usr/sbin/crond -n
+4 S root      3169     1  0  80   0 - 28216 poll_s Jul26 ?        00:00:00 /usr/sbin/sshd -D
+5 S root      9089     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:02 /sbin/auditd
+4 S root     10737     1  0  80   0 - 98257 poll_s Jul26 ?        00:01:31 /usr/sbin/rsyslogd -n
+5 R root     30301     2  0  80   0 -     0 ?      12:40 ?        00:00:00 [kworker/0:0]
+5 R root     30444     2  0  80   0 -     0 ?      12:50 ?        00:00:02 [kworker/1:0]
+1 S root     30674     2  0  80   0 -     0 worker 13:06 ?        00:00:00 [kworker/0:2]
+1 S root     31188     2  0  80   0 -     0 worker 13:30 ?        00:00:00 [kworker/1:2]
+4 S postfix  31190  1089  0  80   0 - 22439 ep_pol 13:31 ?        00:00:00 pickup -l -t unix -u
+1 S root     31191     2  0  80   0 -     0 worker 13:32 ?        00:00:00 [kworker/0:1]
+4 S root     31263  3169  0  80   0 - 39717 poll_s 13:37 ?        00:00:00 sshd: student4 [priv]
+5 R student4 31267 31263  0  80   0 - 39717 ?      13:37 ?        00:00:00 sshd: student4@pts/0
+0 S student4 31268 31267  0  80   0 - 28860 do_wai 13:37 pts/0    00:00:00 -bash
+0 R student4 31292 31268  0  80   0 - 38840 -      13:39 pts/0    00:00:00 ps -elf
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 81846sec preferred_lft 81846sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1089/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3169/sshd           
+tcp        0      0 192.168.0.99:22         10.50.33.208:37876      ESTABLISHED 31263/sshd: student 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1089/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      3169/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           898/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           617/chronyd         
+udp        0      0 0.0.0.0:514             0.0.0.0:*                           10737/rsyslogd      
+udp        0      0 0.0.0.0:689             0.0.0.0:*                           555/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                617/chronyd         
+udp6       0      0 :::514                  :::*                                10737/rsyslogd      
+udp6       0      0 :::689                  :::*                                555/rpcbind         
+]0;student4@frankcastle:~[student4@frankcastle ~]$ w
+ 13:42:21 up 7 days, 23:50,  1 user,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student4 pts/0    10.50.33.208     13:37    5.00s  0.02s  0.00s w
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo ls -latr /var/spool/cron
+total 0
+drwx------. 2 root root  6 Nov 20  2018 .
+drwxr-xr-x. 7 root root 71 Aug  8  2019 ..
+]0;student4@frankcastle:~[student4@frankcastle ~]$ date; date -u
+Wed Aug  3 13:42:33 UTC 2022
+Wed Aug  3 13:42:33 UTC 2022
+]0;student4@frankcastle:~[student4@frankcastle ~]$ uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;student4@frankcastle:~[student4@frankcastle ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/sda1        8377344 1400912   6976432  17% /
+devtmpfs          917748       0    917748   0% /dev
+tmpfs             941028       0    941028   0% /dev/shm
+tmpfs             941028  106924    834104  12% /run
+tmpfs             941028       0    941028   0% /sys/fs/cgroup
+tmpfs             188208       0    188208   0% /run/user/1004
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/*/*acc*
+ls: cannot access /var/*/*acc*: No such file or directory
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls /etc/systemd/system/multi-user.target.wants
+[0m[38;5;51mauditd.service[0m   [38;5;51mcloud-config.service[0m  [38;5;51mcloud-init-local.service[0m  [38;5;51mcrond.service[0m       [38;5;51mkdump.service[0m   [38;5;51mnfs-client.target[0m  [38;5;51mremote-fs.target[0m        [38;5;51mrpcbind.service[0m  [38;5;51msshd.service[0m
+[38;5;51mchronyd.service[0m  [38;5;51mcloud-final.service[0m   [38;5;51mcloud-init.service[0m        [38;5;51mirqbalance.service[0m  [38;5;51mmaldet.service[0m  [38;5;51mpostfix.service[0m    [38;5;51mrhel-configure.service[0m  [38;5;51mrsyslog.service[0m  [38;5;51mtuned.service[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/*log*/
+total 372
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler-20220731
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwx------.  2 root   root       23 Jul 26 13:51 [38;5;27maudit[0m
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 [38;5;27m..[0m
+-rw-r--r--.  1 root   root    32750 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 [38;5;27mtuned[0m
+-rw-------.  1 root   root      212 Jul 26 13:52 maillog-20220731
+-rw-r--r--.  1 root   root       96 Jul 26 13:52 boot.log
+-rw-r--r--.  1 root   root      202 Jul 26 13:52 cron-20220731
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure-20220731
+-rw-------.  1 root   root     1900 Jul 26 13:54 yum.log
+-rw-------.  1 root   root   103191 Jul 26 13:54 messages-20220731
+-rw-------.  1 root   root   135860 Jul 26 13:57 cloud-init.log
+-rw-------.  1 root   utmp     4224 Jul 26 15:40 btmp-20220801
+drwx------.  2 root   root     4096 Jul 27 17:08 [38;5;27mWadeWilson[0m
+drwx------.  2 root   root      168 Jul 29 19:12 [38;5;27mMattMurdock[0m
+-rw-------.  1 root   root        0 Jul 31 03:31 spooler
+-rw-------.  1 root   root        0 Jul 31 03:31 secure
+-rw-------.  1 root   root        0 Jul 31 03:31 messages
+-rw-------.  1 root   root        0 Jul 31 03:31 maillog
+-rw-r--r--.  1 root   root        0 Jul 31 03:31 cron
+drwx------.  2 root   root      180 Aug  1 00:24 [38;5;27mTonyStark[0m
+drwx------.  2 root   root     4096 Aug  1 00:34 [38;5;27mpeterparker[0m
+-rw-------.  1 root   utmp        0 Aug  1 03:45 btmp
+drwxr-xr-x. 13 root   root     4096 Aug  1 03:45 [38;5;27m.[0m
+drwx------.  2 root   root     4096 Aug  2 17:18 [38;5;27mfrankcastle[0m
+-rw-rw-r--.  1 root   utmp    24960 Aug  3 13:37 wtmp
+-rw-r--r--.  1 root   root   299008 Aug  3 13:37 lastlog
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/spooler-20220731
+-rw-r--r--. 1 root   root    32750 Jul 26 13:51 /var/log/dmesg
+-rw-------. 1 root   root      212 Jul 26 13:52 /var/log/maillog-20220731
+-rw-r--r--. 1 root   root       96 Jul 26 13:52 /var/log/boot.log
+-rw-r--r--. 1 root   root      202 Jul 26 13:52 /var/log/cron-20220731
+-rw-------. 1 root   root     5025 Jul 26 13:52 /var/log/secure-20220731
+-rw-------. 1 root   root     1900 Jul 26 13:54 /var/log/yum.log
+-rw-------. 1 root   root   103191 Jul 26 13:54 /var/log/messages-20220731
+-rw-------. 1 root   root   135860 Jul 26 13:57 /var/log/cloud-init.log
+-rw-------. 1 root   utmp     4224 Jul 26 15:40 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/spooler
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/secure
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/messages
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/maillog
+-rw-r--r--. 1 root   root        0 Jul 31 03:31 /var/log/cron
+-rw-------. 1 root   utmp        0 Aug  1 03:45 /var/log/btmp
+-rw-rw-r--. 1 root   utmp    24960 Aug  3 13:37 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Aug  3 13:37 /var/log/lastlog
+
+/var/log/chrony:
+total 4
+drwxr-xr-x.  2 chrony chrony    6 Apr 12  2018 [0m[38;5;27m.[0m
+drwxr-xr-x. 13 root   root   4096 Aug  1 03:45 [38;5;27m..[0m
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x.  2 root root    6 Oct 30  2018 [38;5;27m.[0m
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 [38;5;27m..[0m
+
+/var/log/anaconda:
+total 1848
+-rw-------.  1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------.  1 root root  214566 Aug  8  2019 syslog
+-rw-------.  1 root root   38944 Aug  8  2019 program.log
+-rw-------.  1 root root  168908 Aug  8  2019 packaging.log
+-rw-------.  1 root root   50553 Aug  8  2019 storage.log
+-rw-------.  1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------.  1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------.  1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x.  2 root root     191 Aug  8  2019 [38;5;27m.[0m
+-rw-------.  1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 13 root root    4096 Aug  1 03:45 [38;5;27m..[0m
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x.  2 root root    6 Aug  8  2019 [38;5;27m.[0m
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 [38;5;27m..[0m
+ls: cannot open directory /var/log/audit: Permission denied
+
+/var/log/tuned:
+total 8
+drwxr-xr-x.  2 root root   23 Jul 26 13:51 [38;5;27m.[0m
+-rw-r--r--.  1 root root  946 Jul 26 13:51 tuned.log
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 [38;5;27m..[0m
+ls: cannot open directory /var/log/WadeWilson: Permission denied
+ls: cannot open directory /var/log/MattMurdock: Permission denied
+ls: cannot open directory /var/log/TonyStark: Permission denied
+ls: cannot open directory /var/log/peterparker: Permission denied
+ls: cannot open directory /var/log/frankcastle: Permission denied
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/spooler-20220731
+-rw-r--r--. 1 root   root    32750 Jul 26 13:51 /var/log/dmesg
+-rw-------. 1 root   root      212 Jul 26 13:52 /var/log/maillog-20220731
+-rw-r--r--. 1 root   root       96 Jul 26 13:52 /var/log/boot.log
+-rw-r--r--. 1 root   root      202 Jul 26 13:52 /var/log/cron-20220731
+-rw-------. 1 root   root     5025 Jul 26 13:52 /var/log/secure-20220731
+-rw-------. 1 root   root     1900 Jul 26 13:54 /var/log/yum.log
+-rw-------. 1 root   root   103191 Jul 26 13:54 /var/log/messages-20220731
+-rw-------. 1 root   root   135860 Jul 26 13:57 /var/log/cloud-init.log
+-rw-------. 1 root   utmp     4224 Jul 26 15:40 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/spooler
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/secure
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/messages
+-rw-------. 1 root   root        0 Jul 31 03:31 /var/log/maillog
+-rw-r--r--. 1 root   root        0 Jul 31 03:31 /var/log/cron
+-rw-------. 1 root   utmp        0 Aug  1 03:45 /var/log/btmp
+-rw-rw-r--. 1 root   utmp    24960 Aug  3 13:37 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Aug  3 13:37 /var/log/lastlog
+
+/var/log/chrony:
+total 4
+drwxr-xr-x.  2 chrony chrony    6 Apr 12  2018 .
+drwxr-xr-x. 13 root   root   4096 Aug  1 03:45 ..
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x.  2 root root    6 Oct 30  2018 .
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 ..
+
+/var/log/anaconda:
+total 1848
+-rw-------.  1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------.  1 root root  214566 Aug  8  2019 syslog
+-rw-------.  1 root root   38944 Aug  8  2019 program.log
+-rw-------.  1 root root  168908 Aug  8  2019 packaging.log
+-rw-------.  1 root root   50553 Aug  8  2019 storage.log
+-rw-------.  1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------.  1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------.  1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x.  2 root root     191 Aug  8  2019 .
+-rw-------.  1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 13 root root    4096 Aug  1 03:45 ..
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x.  2 root root    6 Aug  8  2019 .
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 ..
+
+/var/log/audit:
+total 9732
+drwx------.  2 root root      23 Jul 26 13:51 .
+drwxr-xr-x. 13 root root    4096 Aug  1 03:45 ..
+-rw-------.  1 root root 5850631 Aug  3 13:43 audit.log
+
+/var/log/tuned:
+total 8
+drwxr-xr-x.  2 root root   23 Jul 26 13:51 .
+-rw-r--r--.  1 root root  946 Jul 26 13:51 tuned.log
+drwxr-xr-x. 13 root root 4096 Aug  1 03:45 ..
+
+/var/log/WadeWilson:
+total 412
+-rw-------.  1 root root    146 Jul 26 15:53 rsyslogd.log
+-rw-------.  1 root root    196 Jul 26 17:20 unix_chkpwd.log
+-rw-------.  1 root root    130 Jul 27 17:05 systemd-udevd.log
+drwx------.  2 root root   4096 Jul 27 17:08 .
+-rw-------.  1 root root    445 Jul 31 19:54 chronyd.log
+drwxr-xr-x. 13 root root   4096 Aug  1 03:45 ..
+-rw-------.  1 root root  12398 Aug  1 19:13 sudo.log
+-rw-------.  1 root root   7798 Aug  2 17:02 sshd.log
+-rw-------.  1 root root   1671 Aug  2 17:10 systemd-logind.log
+-rw-------.  1 root root   8303 Aug  3 05:38 dbus-daemon.log
+-rw-------.  1 root root   4397 Aug  3 05:38 nm-dispatcher.log
+-rw-------.  1 root root  21698 Aug  3 05:38 NetworkManager.log
+-rw-------.  1 root root   5871 Aug  3 05:38 dhclient.log
+-rw-------.  1 root root  54892 Aug  3 13:26 systemd.log
+-rw-------.  1 root root  46734 Aug  3 13:26 dnf.log
+-rw-------.  1 root root 203064 Aug  3 13:26 audit.log
+
+/var/log/MattMurdock:
+total 92
+drwx------.  2 root root   168 Jul 29 19:12 .
+-rw-------.  1 root root   820 Jul 29 19:12 polkitd(authority=local).log
+-rw-------.  1 root root   180 Jul 29 19:18 polkit-agent-helper-1.log
+drwxr-xr-x. 13 root root  4096 Aug  1 03:45 ..
+-rw-------.  1 root root  1107 Aug  2 18:45 systemd.log
+-rw-------.  1 root root 16003 Aug  2 18:58 sudo.log
+-rw-------.  1 root root  1539 Aug  3 12:32 systemd-logind.log
+-rw-------.  1 root root  5921 Aug  3 12:32 sshd.log
+-rw-------.  1 root root 46173 Aug  3 13:21 CRON.log
+
+/var/log/TonyStark:
+total 100
+-rw-------.  1 root root  3340 Jul 26 14:21 useradd.log
+-rw-------.  1 root root   908 Jul 26 14:21 ec2.log
+-rw-------.  1 root root   114 Aug  1 00:24 kernel.log
+drwx------.  2 root root   180 Aug  1 00:24 .
+-rw-------.  1 root root 15737 Aug  1 00:52 sudo.log
+-rw-------.  1 root root 10024 Aug  1 00:53 sshd.log
+-rw-------.  1 root root  1499 Aug  1 00:53 systemd-logind.log
+-rw-------.  1 root root  1851 Aug  1 00:53 systemd.log
+drwxr-xr-x. 13 root root  4096 Aug  1 03:45 ..
+-rw-------.  1 root root  1839 Aug  3 00:05 liblogging-stdlog.log
+-rw-------.  1 root root 44803 Aug  3 13:17 CRON.log
+
+/var/log/peterparker:
+total 212
+-rw-------.  1 root root    73 Jul 27 17:57 crontab.log
+-rw-------.  1 root root   360 Jul 29 19:44 polkit-agent-helper-1.log
+-rw-------.  1 root root  1594 Jul 29 19:44 polkitd.log
+-rw-------.  1 root root  1120 Jul 29 19:58 su.log
+-rw-------.  1 root root   388 Jul 29 19:59 unix_chkpwd.log
+-rw-------.  1 root root   167 Jul 31 03:24 rsyslogd.log
+-rw-------.  1 root root   100 Aug  1 00:34 kernel.log
+drwx------.  2 root root  4096 Aug  1 00:34 .
+-rw-------.  1 root root 19388 Aug  1 00:51 sudo.log
+drwxr-xr-x. 13 root root  4096 Aug  1 03:45 ..
+-rw-------.  1 root root 15436 Aug  1 14:52 sshd.log
+-rw-------.  1 root root  1608 Aug  1 15:17 systemd-logind.log
+-rw-------.  1 root root   679 Aug  2 14:53 chronyd.log
+-rw-------.  1 root root  9208 Aug  3 03:49 anacron.log
+-rw-------.  1 root root  6240 Aug  3 08:15 dhclient.log
+-rw-------.  1 root root 17664 Aug  3 13:01 CROND.log
+-rw-------.  1 root root 37452 Aug  3 13:01 run-parts(.log
+-rw-------.  1 root root 50384 Aug  3 13:01 systemd.log
+
+/var/log/frankcastle:
+total 210188
+-rw-------.  1 root root      842 Jul 26 13:57 ec2.log
+-rw-------.  1 root root     2434 Jul 26 13:57 cloud-init.log
+-rw-------.  1 root root      192 Jul 26 14:23 crond.log
+-rw-------.  1 root root      535 Jul 26 15:40 unix_chkpwd.log
+drwxr-xr-x. 13 root root     4096 Aug  1 03:45 ..
+drwx------.  2 root root     4096 Aug  2 17:18 .
+-rw-------.  1 root root     1892 Aug  2 20:13 journal.log
+-rw-------.  1 root root      194 Aug  2 21:04 chronyd.log
+-rw-------.  1 root root      801 Aug  3 03:22 logrotate.log
+-rw-------.  1 root root    10112 Aug  3 03:24 anacron.log
+-rw-------.  1 root root     6276 Aug  3 03:24 postfix.log
+-rw-------.  1 root root     7413 Aug  3 12:23 dhclient.log
+-rw-------.  1 root root    13791 Aug  3 12:32 rsyslogd.log
+-rw-------.  1 root root    43010 Aug  3 13:01 run-parts(.log
+-rw-------.  1 root root     4626 Aug  3 13:37 systemd-logind.log
+-rw-------.  1 root root    19929 Aug  3 13:37 sshd.log
+-rw-------.  1 root root   365146 Aug  3 13:40 CROND.log
+-rw-------.  1 root root   672769 Aug  3 13:40 systemd.log
+-rw-------.  1 root root    37318 Aug  3 13:43 sudo.log
+-rw-------.  1 root root 79547373 Aug  3 13:43 kernel.log
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### MODULES ####
+
+# The imjournal module bellow is now used as a message source instead of imuxsock.
+$ModLoad imuxsock # provides support for local system logging (e.g. via logger command)
+$ModLoad imjournal # provides access to the systemd journal
+#$ModLoad imklog # reads kernel messages (the same are read from journald)
+#$ModLoad immark  # provides --MARK-- message capability
+
+# Provides UDP syslog reception
+$ModLoad imudp
+$UDPServerRun 514
+
+$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log"
+*.* ?RemoteLogs
+& ~
+
+# Provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+#### GLOBAL DIRECTIVES ####
+
+# Where to place auxiliary files
+$WorkDirectory /var/lib/rsyslog
+
+# Use default timestamp format
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# File syncing capability is disabled by default. This feature is usually not required,
+# not useful and an extreme performance hit
+#$ActionFileEnableSync on
+
+# Include all config files in /etc/rsyslog.d/
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+# Turn off message reception via local log socket;
+# local messages are retrieved through imjournal now.
+$OmitLocalLogging on
+
+# File to store the position in the journal
+$IMJournalStateFile imjournal.state
+
+
+#### RULES ####
+
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              /var/log/secure
+
+# Log all the mail messages in one place.
+mail.*                                                  -/var/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 :omusrmsg:*
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /var/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /var/log/boot.log
+
+
+# ### begin forwarding rule ###
+# The statement between the begin ... end define a SINGLE forwarding
+# rule. They belong together, do NOT split them. If you create multiple
+# forwarding rules, duplicate the whole block!
+# Remote Logging (we use TCP for reliable delivery)
+#
+# An on-disk queue is created for this action. If the remote host is
+# down, messages are spooled to disk and sent when it is up again.
+#$ActionQueueFileName fwdRule1 # unique name prefix for spool files
+#$ActionQueueMaxDiskSpace 1g   # 1gb space limit (use as much as possible)
+#$ActionQueueSaveOnShutdown on # save messages to disk on shutdown
+#$ActionQueueType LinkedList   # run asynchronously
+#$ActionResumeRetryCount -1    # infinite retries if host is down
+# remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+#*.* @@remote-host:514
+# ### end of the forwarding rule ###
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -la /etc/*syslog*
+-rw-r--r--. 1 root root 3312 Jul 26 13:52 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 24
+drwxr-xr-x.  2 root root   77 Jul 26 13:54 [0m[38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+-rw-r--r--.  1 root root   57 Jul 26 13:54 00-my_iptables.conf
+-rw-r--r--.  1 root root  255 Mar 27  2018 21-cloudinit.conf
+-rw-r--r--.  1 root root   49 Jul 31  2019 listen.conf
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+]0;student4@frankcastle:~[student4@frankcastle ~]$ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+###### root crontab is:
+###### bin crontab is:
+###### daemon crontab is:
+###### adm crontab is:
+###### lp crontab is:
+###### sync crontab is:
+###### shutdown crontab is:
+###### halt crontab is:
+###### mail crontab is:
+###### operator crontab is:
+###### games crontab is:
+###### ftp crontab is:
+###### nobody crontab is:
+###### systemd-network crontab is:
+###### dbus crontab is:
+###### polkitd crontab is:
+###### rpc crontab is:
+###### rpcuser crontab is:
+###### nfsnobody crontab is:
+###### sshd crontab is:
+###### postfix crontab is:
+###### chrony crontab is:
+###### centos crontab is:
+###### student1 crontab is:
+###### student2 crontab is:
+###### student3 crontab is:
+###### student4 crontab is:
+###### student5 crontab is:
+###### student6 crontab is:
+###### student7 crontab is:
+###### student8 crontab is:
+###### student9 crontab is:
+###### student10 crontab is:
+###### student11 crontab is:
+###### student12 crontab is:
+###### student13 crontab is:
+###### student14 crontab is:
+###### student15 crontab is:
+###### student16 crontab is:
+###### student17 crontab is:
+###### student18 crontab is:
+###### student19 crontab is:
+###### student20 crontab is:
+###### student21 crontab is:
+###### student22 crontab is:
+###### student23 crontab is:
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+  10  *  *  *  * root echo -e '\n\n' + Tue Jul 26 13:54:44 UTC 2022 + '\n' >> /root/linux-malware-detect/report.txt && /usr/local/sbin/maldet -a /bin >> /root/linux-malware-detect/report.txt
+]0;student4@frankcastle:~[student4@frankcastle ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 20
+drwxr-xr-x.  2 root root   39 Jul 26 13:54 [0m[38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+-rw-r--r--.  1 root root   76 Jul 26 14:22 maldet_pub
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   56 Jul 26 13:54 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+-rwx------.  1 root root  219 Oct 30  2018 [38;5;34mlogrotate[0m
+-rwxr-xr-x.  1 root root 3777 Jul 26 14:22 [38;5;34mmaldet[0m
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 [38;5;34mman-db.cron[0m
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.  2 root root   22 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  392 Nov 20  2018 [38;5;34m0anacron[0m
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+
+/etc/cron.weekly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 [38;5;27m..[0m
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo cat /etc/cron.daily/maldet
+#!/usr/bin/env bash
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LMDCRON=1
+inspath='/usr/local/maldetect'
+intcnf="$inspath/internals/internals.conf"
+
+if [ -f "$intcnf" ]; then
+	source $intcnf
+else
+	echo "\$intcnf not found."
+	exit 1
+fi
+if [ -f "$cnf" ]; then
+	source $cnf
+	if [ -f "$compatcnf" ]; then
+	        source $compatcnf
+	fi
+else
+	echo "could not find \$cnf, fatal error, bye."
+	exit 1
+fi
+
+if [ -f "/etc/sysconfig/maldet" ]; then
+	. /etc/sysconfig/maldet
+elif [ -f "/etc/default/maldet" ]; then
+	. /etc/default/maldet
+fi
+
+if [ -f "$cron_custom_conf" ]; then
+	. $cron_custom_conf
+fi
+
+if [ -z "$scan_days" ]; then
+	scan_days=1
+fi
+
+if [ -z "$cron_prune_days" ]; then
+	cron_prune_days=21
+fi
+
+if [ "$find" ]; then
+	# prune any quarantine/session/tmp data older than 7 days
+	tmpdirs="$tmpdir $varlibpath/sess $varlibpath/quarantine $varlibpath/pub"
+	for dir in $tmpdirs; do
+	 if [ -d "$dir" ]; then
+	  $find $dir -type f -mtime +${cron_prune_days} -print0 | xargs -0 rm -f >> /dev/null 2>&1
+	 fi
+	done
+fi
+
+if [ "$autoupdate_version" == "1" ] || [ "$autoupdate_signatures" == "1" ]; then
+	# sleep for random 1-999s interval to better distribute upstream load
+	sleep $(echo $RANDOM | cut -c1-3) >> /dev/null 2>&1
+fi
+
+if [ "$autoupdate_version" == "1" ]; then
+	# check for new release version
+	$inspath/maldet -d >> /dev/null 2>&1
+fi
+
+if [ "$autoupdate_signatures" == "1" ]; then
+	# check for new definition set
+	$inspath/maldet -u >> /dev/null 2>&1
+fi
+
+# if we're running inotify monitoring, send daily hit summary
+if [ "$(ps -A --user root -o "cmd" | grep -E maldetect | grep -E inotifywait)" ]; then
+        $inspath/maldet --monitor-report >> /dev/null 2>&1
+elif [ "$cron_daily_scan" == "1" ]; then
+	if [ -d "/home/virtual" ] && [ -d "/usr/lib/opcenter" ]; then
+		# ensim
+	        $inspath/maldet -b -r /home/virtual/?/fst/var/www/html/,/home/virtual/?/fst/home/?/public_html/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/etc/psa" ] && [ -d "/var/lib/psa" ]; then
+		# psa
+		$inspath/maldet -b -r /var/www/vhosts/?/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/local/directadmin" ]; then
+                # DirectAdmin
+                $inspath/maldet -b -r /home?/?/domains/?/public_html/,/var/www/html/?/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/var/www/clients" ]; then
+		# ISPConfig
+                $inspath/maldet -b -r /var/www/clients/?/web?/web,/var/www/clients/?/web?/subdomains,/var/www $scan_days >> /dev/null 2>&1
+	elif [ -d "/etc/webmin/virtual-server" ]; then
+		# Virtualmin
+                $inspath/maldet -b -r /home/?/public_html/,/home/?/domains/?/public_html/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/usr/local/ispmgr" ] || [ -d "/usr/local/mgr5" ]; then
+		# ISPmanager
+		$inspath/maldet -b -r /var/www/?/data/,/home/?/data/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/var/customers/webs" ]; then
+		# froxlor
+		$inspath/maldet -b -r /var/customers/webs/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/local/vesta" ]; then
+                # VestaCP
+                $inspath/maldet -b -r /home/?/web/?/public_html/,/home/?/web/?/public_shtml/,/home/?/tmp/,/home/?/web/?/private/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/share/dtc" ]; then
+                # DTC
+                if [ -f /var/lib/dtc/saved_install_config ]; then
+                    . /var/lib/dtc/saved_install_config
+                fi
+                $inspath/maldet -b -r ${conf_hosting_path:-/var/www/sites}/?/?/subdomains/?/html/ $scan_days >> /dev/null 2>&1
+	else
+		# cpanel, interworx and other standard home/user/public_html setups
+	        $inspath/maldet -b -r /home?/?/public_html/,/var/www/html/,/usr/local/apache/htdocs/ $scan_days >> /dev/null 2>&1
+	fi
+fi
+
+if [ -f "$cron_custom_exec" ]; then
+	. $cron_custom_exec
+fi
+]0;student4@frankcastle:~[student4@frankcastle ~]$ find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/rpcbind’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/log/journal/f3cde2d29d6948a9b5dfef514fab4f24’: Permission denied
+find: ‘/run/systemd/inaccessible’: Permission denied
+find: ‘/etc/grub.d’: Permission denied
+find: ‘/etc/pki/CA/private’: Permission denied
+find: ‘/etc/pki/rsyslog’: Permission denied
+find: ‘/etc/dhcp’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/etc/polkit-1/localauthority’: Permission denied
+find: ‘/etc/selinux/targeted/active’: Permission denied
+find: ‘/etc/selinux/targeted/tmp’: Permission denied
+find: ‘/etc/selinux/final’: Permission denied
+find: ‘/etc/firewalld’: Permission denied
+find: ‘/etc/audisp’: Permission denied
+find: ‘/etc/audit’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/var/tmp/systemd-private-b88157ba84e94e8095158d81149f5d0f-chronyd.service-UGNA7Y’: Permission denied
+find: ‘/var/lib/yum/history/2022-07-26/1’: Permission denied
+find: ‘/var/lib/machines’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/lib/rpcbind’: Permission denied
+find: ‘/var/lib/gssproxy/clients’: Permission denied
+find: ‘/var/lib/gssproxy/rcache’: Permission denied
+find: ‘/var/lib/rsyslog’: Permission denied
+find: ‘/var/lib/nfs/statd’: Permission denied
+find: ‘/var/lib/authconfig’: Permission denied
+find: ‘/var/lib/postfix’: Permission denied
+find: ‘/var/log/audit’: Permission denied
+find: ‘/var/log/frankcastle’: Permission denied
+find: ‘/var/log/peterparker’: Permission denied
+find: ‘/var/log/WadeWilson’: Permission denied
+find: ‘/var/log/MattMurdock’: Permission denied
+find: ‘/var/log/TonyStark’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/db/sudo’: Permission denied
+find: ‘/var/empty/sshd’: Permission denied
+find: ‘/var/spool/cron’: Permission denied
+find: ‘/var/spool/postfix/active’: Permission denied
+find: ‘/var/spool/postfix/bounce’: Permission denied
+find: ‘/var/spool/postfix/corrupt’: Permission denied
+find: ‘/var/spool/postfix/defer’: Permission denied
+find: ‘/var/spool/postfix/deferred’: Permission denied
+find: ‘/var/spool/postfix/flush’: Permission denied
+find: ‘/var/spool/postfix/hold’: Permission denied
+find: ‘/var/spool/postfix/incoming’: Permission denied
+find: ‘/var/spool/postfix/maildrop’: Permission denied
+find: ‘/var/spool/postfix/private’: Permission denied
+find: ‘/var/spool/postfix/public’: Permission denied
+find: ‘/var/spool/postfix/saved’: Permission denied
+find: ‘/var/spool/postfix/trace’: Permission denied
+find: ‘/tmp/systemd-private-b88157ba84e94e8095158d81149f5d0f-chronyd.service-FtNyPt’: Permission denied
+find: ‘/usr/share/polkit-1/rules.d’: Permission denied
+find: ‘/usr/libexec/initscripts/legacy-actions/auditd’: Permission denied
+find: ‘/usr/local/maldetect.bk11753/quarantine’: Permission denied
+find: ‘/usr/local/maldetect.bk11753/sess’: Permission denied
+find: ‘/usr/local/maldetect.bk11753/tmp/.lmdup.27290.11593’: Permission denied
+find: ‘/usr/local/maldetect/sess’: Permission denied
+find: ‘/usr/local/maldetect/quarantine’: Permission denied
+find: ‘/boot/efi/EFI/centos’: Permission denied
+find: ‘/boot/grub2’: Permission denied
+find: ‘/home/centos’: Permission denied
+find: ‘/home/useraccounts/student1’: Permission denied
+find: ‘/home/useraccounts/student2’: Permission denied
+find: ‘/home/useraccounts/student3’: Permission denied
+find: ‘/home/useraccounts/student5’: Permission denied
+find: ‘/home/useraccounts/student6’: Permission denied
+find: ‘/home/useraccounts/student7’: Permission denied
+find: ‘/home/useraccounts/student8’: Permission denied
+find: ‘/home/useraccounts/student9’: Permission denied
+find: ‘/home/useraccounts/student10’: Permission denied
+find: ‘/home/useraccounts/student11’: Permission denied
+find: ‘/home/useraccounts/student12’: Permission denied
+find: ‘/home/useraccounts/student13’: Permission denied
+find: ‘/home/useraccounts/student14’: Permission denied
+find: ‘/home/useraccounts/student15’: Permission denied
+find: ‘/home/useraccounts/student16’: Permission denied
+find: ‘/home/useraccounts/student17’: Permission denied
+find: ‘/home/useraccounts/student18’: Permission denied
+find: ‘/home/useraccounts/student19’: Permission denied
+find: ‘/home/useraccounts/student20’: Permission denied
+find: ‘/home/useraccounts/student21’: Permission denied
+find: ‘/home/useraccounts/student22’: Permission denied
+find: ‘/home/useraccounts/student23’: Permission denied
+-rw-r--r--. 1 chrony chrony               42 Aug  3 13:46 /var/lib/chrony/drift
+-rw-r--r--. 1 root   root                  6 Aug  3 13:50 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root   root                  0 Aug  3 13:50 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root   root                 44 Aug  3 13:50 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root   root                201 Aug  3 13:50 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root   root                  0 Aug  3 13:50 /usr/local/maldetect/ignore_file_ext
+-rw-r-----+ 1 root   systemd-journal 8388608 Aug  3 13:54 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat /root/.bash_history
+cat: /root/.bash_history: Permission denied
+]0;student4@frankcastle:~[student4@frankcastle ~]$ sudo cat /root/.bash_history
+exit
+ifconfig
+exit
+ls
+exit
+netstat -auntp
+exit
+ls tmp
+cd ls /tmp
+cd /tmp
+ls
+ls -lisa
+search
+grep
+exit
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat ~/.bash_history
+exit
+ip addr
+ifconfig -a
+exit
+ls
+exit
+whoami
+w
+hostname
+uname -a
+date -u
+ip addr
+netstat -auntp
+ss -auntp
+ps -elf
+service --status-all
+systemctl status --no-pager
+fdisk
+fdisk -l                                                                                                                
+sudo fdisk -l                                                                                                          
+free     
+top
+cat /etc/passwd
+netstat -auntp                                   
+exit
+ps -elf
+ls /proc
+ls /proc/1164
+sudo ls -lisa /proc/1164
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+ls
+cd /var/log
+ls
+cat cron
+grep -v Jul '26 13:52:01'
+grep -v 'Jul 26 13:52:01' cron
+cat cron
+ps -elf
+ls
+cd MattMurdock/
+ls
+sudo cd MattMurdock/
+ls
+sudo cd MattMurdock
+ls
+file MattMurdock/
+journalctl --verify
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -10 -type f -print0 | xargs -0 ls -latr
+cat /etc/rsyslog.conf
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
+getenforce
+sestatus
+ls -al /etc/cron*
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+ls -latr /root
+sudo ls -latr /root
+ps -elf
+ip addr
+netstat -auntp 
+w
+ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+date; date -u
+uname -a
+df
+ls -latr /var/*/*acc*
+sudo ls -latr /var/*/*acc*
+ls /etc/systemd/system/multi-user.target.wants
+ls -latr /var/*log*/
+ls -latr /var/log/*
+sudo ls -latr /var/log/*
+cat /etc/passwd
+ls -la /etc/*syslog*
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab
+ls -la /etc/cron.*
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sestatus
+getenforce
+cat /root/.bash_history
+sudo cat /root/.bash_history
+cat ~/.bash_history
+cat ~/.zsh_history
+ps -elfH
+services --status-all
+systemctl status --no-pager
+mount
+lsmod
+ls -latr /etc/*release*
+cat /etc/*release*
+cat /proc/cpuinfo
+cat /proc/meminfo
+sudo cat /etc/shadow
+lspci -vv
+arp -a
+lsusb
+lsblk
+sudo fdisk -l
+free -m
+dmidecode -t bios
+sudo dmidecode -t bios
+cat /etc/rsyslog.d/00-my_iptables.conf
+cat /etc/rsyslog.d/listen.conf
+sudo cat /var/log/iptables.log
+cat /etc/rsyslog.conf
+sudo file /root/linux-malware-detect/report.txt
+sudo cat /root/linux-malware-detect/report.txt
+sudo ls -latr /root/linux-malware-detect/
+which maldet
+maldet --help
+ps -aux | grep maldet
+ps -aux
+ sudo ls -latr /root/linux-malware-detect/
+file files
+sudo ls -latr /root/linux-malware-detect/files
+cat /usr/local/maldetect/logs/event_log
+sudo stat /root/linux-malware-detect/report.txt
+date; date -u
+sudo stat /usr/local/maldetect/logs/event_log
+sudo ls -latr /root/timestampfun
+sudo ls -latrR /root/timestampfun
+lastlog
+sudo netstat -auntp
+ps -elfH
+iptable -L
+iptables -L
+sudo iptable -L
+sudo iptables -L
+sudo iptables -t nat -L
+sudo iptables -t mangle -L
+lsmod
+exit
+sudo iptables -t nat -L
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+sudo iptables -t nat -L
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+sudo iptables -t nat -L
+ls
+ip a
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.10:22023
+iptables -t nat -A POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.10:22024
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+[student4@frankcastle ~]$ sudo iptables -t nat -A POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22023 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.10 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.10:22024
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.10:22024
+sudo iptables -t nat -L
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.10:22024
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.10:22023
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22 -j DNAT --to-destination 192.168.0.10:22
+sudo iptables -t nat -L
+sudo iptables -t nat -D PREROUTING -s 10.50.33.208 -p tcp --dport 22 -j DNAT --to-destination 192.168.0.10:22
+sudo iptables -t nat -D PREROUTING -s 10.50.33.208 -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.10:22
+sudo iptables -t nat -L
+sudo iptables -t nat -D POSTROUTING -p tcp -d 192.168.0.10 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -L
+exit
+lsmod
+sudo iptables -t nat -A PREROUTING -s 10.50.33.208 -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.10:22
+cat /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.99
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.99
+sudo iptables -t NAT
+sudo iptables -t nat
+sudo iptables -t nat -L
+ssh student4@192.168.0.23
+ssh student4@192.168.0.9 -p 22
+exit
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+ls -latr /root
+sudo ls -latr /root
+ps -elf
+ip addr
+netstat -auntp
+sudo netstat -auntp
+w
+ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+date; date -u
+uname -a
+df
+ls -latr /var/*/*acc*
+ls /etc/systemd/system/multi-user.target.wants
+ls -latr /var/*log*/
+ls -latr /var/log/*
+sudo ls -latr /var/log/*
+sudo cat /var/log/audit/audit.log
+sudo tail -n 10 /var/log/audit/audit.log
+cat /etc/passwd
+ls -la /etc/*syslog* 
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab
+ls -la /etc/cron.*
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sestatus
+cat /root/.bash_history
+sudo cat /root/.bash_history
+cat ~/.bash_history
+cat ~/.zsh_history
+stat /var/log/audit/audit.log
+sudo iptables -t nat -L
+sudo stat /var/log/audit/audit.log
+sudo tail -n 5 /var/log/audit/audit.log
+maldet --help
+stat /usr/local/maldetect/logs/event_log
+sudo tail -n 5 /usr/local/maldetect/logs/event_log
+sudo tail -n 5 /root/linux_malware_detect/report.txt
+sudo tail -n 5 /root/linux_malware_detect/reports.txt
+ls -latr /root/
+sudo ls -latr /root/
+sudo tail -n 5 /root/linux-malware-detect/report.txt
+sudo stat /root/linux-malware-detect/report.txt
+exit
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+sudo ls -latr /root
+ps -elfH
+ip addr
+sudo netstat -auntp
+w
+ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+date; date -u
+uname -a
+df
+ls -latr /var/*/*acc*
+ls /etc/systemd/system/multi-user.target.wants
+ls -latr /var/*log*/
+exit
+]0;student4@frankcastle:~[student4@frankcastle ~]$ cat ~/.zsh_history
+cat: /home/useraccounts/student4/.zsh_history: No such file or directory
+]0;student4@frankcastle:~[student4@frankcastle ~]$ channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: administratively prohibited: open failed
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: administratively prohibited: open failed
+channel 2: open failed: administratively prohibited: open failed
+channel 2: open failed: administratively prohibited: open failed
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 6: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 6: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+
+]0;student4@frankcastle:~[student4@frankcastle ~]$ [K[student4@frankcastle ~]$ exit
+logout
+Connection to 10.50.28.223 closed.
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-03 20:08:44+00:00 [COMMAND_EXIT_CODE="1"]

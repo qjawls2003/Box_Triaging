@@ -1,0 +1,81 @@
+Script started on 2022-07-29 15:53:38+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="187" LINES="42"]
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T2[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 3333:192.168.0.10:22[27m
+[K[K[A[4C[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m2[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m3[27m3[27m3[27m3[27m:[27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m0[27m:[27m2[27m2[1B[?1l>[?2004l
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T3 [7m[35m-p[39m[7m 3333 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m
+[K[K[A[4C[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m3[27m3[27m3[27m3[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[1B[?1l>[?2004l
+Warning: Permanently added '[localhost]:3333' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Jul 27 16:50:52 2022 from 192.168.0.99
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: Connection refused
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 5: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+channel 2: open failed: connect failed: No route to host
+
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ 
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_29-07-22_MM5
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_29-07-22_MM5[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-07-29 19:59:45+00:00 [COMMAND_EXIT_CODE="0"]

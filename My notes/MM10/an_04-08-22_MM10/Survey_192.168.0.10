@@ -1,0 +1,463 @@
+####T2 survey####
+
+student4@TonyStark:~$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=1014856k,nr_inodes=253714,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=205244k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=1968)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
+tmpfs on /run/user/112 type tmpfs (rw,nosuid,nodev,relatime,size=205240k,mode=700,uid=112,gid=115)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+gvfsd-fuse on /run/user/112/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=112,group_id=115)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,size=205240k,mode=700,uid=1004,gid=27)
+
+student4@TonyStark:~$ lsmod
+Module                  Size  Used by
+xt_nat                 16384  1
+xt_tcpudp              16384  0
+iptable_nat            16384  1
+nf_conntrack_ipv4      16384  1
+nf_defrag_ipv4         16384  1 nf_conntrack_ipv4
+nf_nat_ipv4            16384  1 iptable_nat
+nf_nat                 24576  2 xt_nat,nf_nat_ipv4
+nf_conntrack          114688  3 nf_conntrack_ipv4,nf_nat_ipv4,nf_nat
+dm_mod                118784  0
+fuse                   98304  3
+appletalk              36864  0
+ax25                   57344  0
+ipx                    28672  0
+p8023                  16384  1 ipx
+p8022                  16384  1 ipx
+psnap                  16384  2 appletalk,ipx
+llc                    16384  2 p8022,psnap
+qxl                    69632  2
+ttm                    98304  1 qxl
+kvm_amd              2179072  0
+virtio_balloon         16384  0
+ppdev                  20480  0
+joydev                 20480  0
+sg                     32768  0
+drm_kms_helper        155648  1 qxl
+kvm                   589824  1 kvm_amd
+virtio_rng             16384  0
+virtio_console         24576  0
+rng_core               16384  1 virtio_rng
+irqbypass              16384  1 kvm
+drm                   360448  5 qxl,ttm,drm_kms_helper
+evdev                  24576  5
+crct10dif_pclmul       16384  0
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+serio_raw              16384  0
+parport_pc             28672  0
+parport                49152  2 parport_pc,ppdev
+button                 16384  0
+ip_tables              24576  1 iptable_nat
+x_tables               36864  3 xt_nat,ip_tables,xt_tcpudp
+autofs4                40960  2
+ext4                  585728  1
+crc16                  16384  1 ext4
+jbd2                  106496  1 ext4
+crc32c_generic         16384  0
+fscrypto               28672  1 ext4
+ecb                    16384  0
+mbcache                16384  2 ext4
+sd_mod                 45056  2
+ata_generic            16384  0
+virtio_scsi            20480  1
+virtio_net             28672  0
+crc32c_intel           24576  2
+aesni_intel           167936  0
+aes_x86_64             20480  1 aesni_intel
+glue_helper            16384  1 aesni_intel
+lrw                    16384  1 aesni_intel
+gf128mul               16384  1 lrw
+ablk_helper            16384  1 aesni_intel
+cryptd                 24576  3 ablk_helper,ghash_clmulni_intel,aesni_intel
+psmouse               135168  0
+floppy                 69632  0
+ata_piix               36864  0
+virtio_pci             24576  0
+virtio_ring            24576  6 virtio_net,virtio_rng,virtio_scsi,virtio_balloon,virtio_console,virtio_pci
+virtio                 16384  6 virtio_net,virtio_rng,virtio_scsi,virtio_balloon,virtio_console,virtio_pci
+i2c_piix4              24576  0
+libata                249856  2 ata_piix,ata_generic
+scsi_mod              225280  4 sd_mod,virtio_scsi,libata,sg
+
+
+student4@TonyStark:~$ uname -a
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+
+student4@TonyStark:~$ ls -latr /etc/*release*
+lrwxrwxrwx 1 root root 21 Jul 10  2020 /etc/os-release -> ../usr/lib/os-release
+
+student4@TonyStark:~$ cat /etc/*release*
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+student4@TonyStark:~$ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 0
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero arat npt nrip_save
+bugs            : fxsave_leak sysret_ss_attrs
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 1
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero arat npt nrip_save
+bugs            : fxsave_leak sysret_ss_attrs
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+student4@TonyStark:~$ services --status-all || systemctl status --no-pager 
+-bash: services: command not found
+● TonyStark
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Tue 2022-07-26 13:51:45 UTC; 1 weeks 1 days ago
+   CGroup: /
+           ├─user.slice
+           │ ├─user-1004.slice
+           │ │ ├─session-230.scope
+           │ │ │ ├─2267 sshd: student4 [priv]
+           │ │ │ ├─2283 sshd: student4@pts/0
+           │ │ │ ├─2285 -bash
+           │ │ │ └─2601 systemctl status --no-pager
+           │ │ └─user@1004.service
+           │ │   └─init.scope
+           │ │     ├─2273 /lib/systemd/systemd --user
+           │ │     └─2275 (sd-pam)
+           │ └─user-112.slice
+           │   ├─user@112.service
+           │   │ ├─dbus.service
+           │   │ │ └─996 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+           │   │ ├─init.scope
+           │   │ │ ├─951 /lib/systemd/systemd --user
+           │   │ │ └─952 (sd-pam)
+           │   │ └─gvfs-daemon.service
+           │   │   ├─1128 /usr/lib/gvfs/gvfsd
+           │   │   └─1160 /usr/lib/gvfs/gvfsd-fuse /run/user/112/gvfs -f -o big_writes
+           │   └─session-c1.scope
+           │     ├─ 946 lightdm --session-child 16 19
+           │     ├─ 957 /usr/sbin/lightdm-gtk-greeter
+           │     ├─ 988 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+           │     ├─1066 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+           │     └─1126 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+           ├─init.scope
+           │ └─1 /lib/systemd/systemd --system --deserialize 19
+           └─system.slice
+             ├─irqbalance.service
+             │ └─831 /usr/sbin/irqbalance --foreground
+             ├─lightdm.service
+             │ ├─ 868 /usr/sbin/lightdm
+             │ ├─ 892 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+             │ └─1702 lightdm --session-child 15 20
+             ├─dbus.service
+             │ └─815 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─ssh.service
+             │ └─30441 /usr/sbin/sshd -D
+             ├─avahi-daemon.service
+             │ ├─25171 avahi-daemon: running [box2-tonystark.local]
+             │ └─25173 avahi-daemon: chroot helper
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─865 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─unscd.service
+             │ └─833 /usr/sbin/nscd -d
+             ├─ntp.service
+             │ └─23563 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 105:109
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─864 /sbin/agetty --noclear tty1 linux
+             ├─systemd-logind.service
+             │ └─826 /lib/systemd/systemd-logind
+             ├─rtkit-daemon.service
+             │ └─24981 /usr/lib/rtkit/rtkit-daemon
+             ├─packagekit.service
+             │ └─29477 /usr/lib/packagekit/packagekitd
+             ├─polkit.service
+             │ └─24913 /usr/lib/policykit-1/polkitd --no-debug
+             ├─cron.service
+             │ └─22716 /usr/sbin/cron -f
+             ├─systemd-udevd.service
+             │ └─16860 /lib/systemd/systemd-udevd
+             ├─rsyslog.service
+             │ └─1096 /usr/sbin/rsyslogd -n
+             ├─cloud-final.service
+             │ ├─ 984 /bin/sh -c tee -a /var/log/cloud-init-output.log
+             │ ├─ 985 tee -a /var/log/cloud-init-output.log
+             │ └─1518 nc -klvnp 31337 -e /bin/bash
+             ├─networking.service
+             │ ├─660 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+             │ └─718 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+             ├─systemd-journald.service
+             │ └─499 /lib/systemd/systemd-journald
+             └─wicd.service
+               ├─24038 /usr/bin/python -O /usr/share/wicd/daemon/wicd-daemon.py --keep-connection
+               └─24042 /usr/bin/python -O /usr/share/wicd/daemon/monitor.py
+
+student4@TonyStark:~$ cat /proc/meminfo
+MemTotal:        2052408 kB
+MemFree:           67732 kB
+MemAvailable:    1732052 kB
+Buffers:          108764 kB
+Cached:          1506948 kB
+SwapCached:            0 kB
+Active:           587508 kB
+Inactive:        1103576 kB
+Active(anon):      75940 kB
+Inactive(anon):    12416 kB
+Active(file):     511568 kB
+Inactive(file):  1091160 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         75416 kB
+Mapped:            87460 kB
+Shmem:             12992 kB
+Slab:             266576 kB
+SReclaimable:     249652 kB
+SUnreclaim:        16924 kB
+KernelStack:        2224 kB
+PageTables:         5960 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1026204 kB
+Committed_AS:     514572 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       57204 kB
+DirectMap2M:     2039808 kB
+DirectMap1G:           0 kB
+
+student4@TonyStark:~$ sudo cat /etc/shadow
+sudo: unable to resolve host TonyStark
+root:$6$r2nNiib9$ePgZPUlMIqdrP5r63ByRXhSRTWztImz6ywMaEtv0KZDR5iWOQ8xLVhHGNFjSVnXpoW6EPInF6T1mYY4LpOGFP0:19199:0:99999:7:::
+daemon:*:17575:0:99999:7:::
+bin:*:17575:0:99999:7:::
+sys:*:17575:0:99999:7:::
+sync:*:17575:0:99999:7:::
+games:*:17575:0:99999:7:::
+man:*:17575:0:99999:7:::
+lp:*:17575:0:99999:7:::
+mail:*:17575:0:99999:7:::
+news:*:17575:0:99999:7:::
+uucp:*:17575:0:99999:7:::
+proxy:*:17575:0:99999:7:::
+www-data:*:17575:0:99999:7:::
+backup:*:17575:0:99999:7:::
+list:*:17575:0:99999:7:::
+irc:*:17575:0:99999:7:::
+gnats:*:17575:0:99999:7:::
+nobody:*:17575:0:99999:7:::
+systemd-timesync:*:17575:0:99999:7:::
+systemd-network:*:17575:0:99999:7:::
+systemd-resolve:*:17575:0:99999:7:::
+systemd-bus-proxy:*:17575:0:99999:7:::
+unscd:*:17575:0:99999:7:::
+ntp:*:17575:0:99999:7:::
+_apt:*:17575:0:99999:7:::
+messagebus:*:17575:0:99999:7:::
+sshd:*:17575:0:99999:7:::
+debian:!*:17575:0:99999:7:::
+rtkit:*:17581:0:99999:7:::
+usbmux:*:17581:0:99999:7:::
+speech-dispatcher:!:17581:0:99999:7:::
+lightdm:*:17581:0:99999:7:::
+pulse:*:17581:0:99999:7:::
+avahi:*:17581:0:99999:7:::
+saned:*:17581:0:99999:7:::
+student1:$1$lcbAlLjz$k99GvJriHo.ne7rtwxxTg1:19199:0:99999:7:::
+student2:$1$gISe12/g$W8/tKq/t17c7c5zL7Nkip.:19199:0:99999:7:::
+student3:$1$U.FA3Jmx$1gbhcbr8qbOeoOTfqmoKI/:19199:0:99999:7:::
+student4:$1$uxFD0dxg$2wBxBrjmtKiAp7w47yvB/.:19199:0:99999:7:::
+student5:$1$yQ83u.W.$K0ZfX0W3BCXOeG3k1RTZ2.:19199:0:99999:7:::
+student6:$1$oezOe92W$YKQoxsuQ0/dM0EgYRLWo//:19199:0:99999:7:::
+student7:$1$Hsy.w2IJ$kI03J6r5ExjdzfN.BTcxf/:19199:0:99999:7:::
+student8:$1$NkZUkri2$GA35GqkRtAcInOmrry94z1:19199:0:99999:7:::
+student9:$1$IpUJ8T7t$u6ribWNIe6diPuKo5Kw3N0:19199:0:99999:7:::
+student10:$1$XsvvCbdo$BQcwj/7.tOeX5862zjYon.:19199:0:99999:7:::
+student11:$1$SAgT5Pdo$AhiGDxQfr044bGU3pxOr80:19199:0:99999:7:::
+student12:$1$tLUTd1Ng$Ulf8lSK67AliOIU39exui/:19199:0:99999:7:::
+student13:$1$8wjkUUg1$9IJ4BJTOUQY5e/m5hHYWM0:19199:0:99999:7:::
+student14:$1$SevEChQu$bxC9TcXW0rLy2RIACxbUm0:19199:0:99999:7:::
+student15:$1$xrWSrOa0$3z5H5w7U0cctlGnYkXraV0:19199:0:99999:7:::
+student16:$1$6k05sc6Z$BLOyC5dAM2kzkwR8c9Ctj1:19199:0:99999:7:::
+student17:$1$PACtpAsJ$dG9E3VDY8THSQeiQXlYk.0:19199:0:99999:7:::
+student18:$1$gX2h9Ujd$ypZNiCQbqBBasryJdmP0W/:19199:0:99999:7:::
+student19:$1$8baoh91Y$a4I1bhyzqCGnO3Cd6wLWX0:19199:0:99999:7:::
+student20:$1$b8pnnPpV$sX.hcp3JT8Ulbo0Rhx/rz.:19199:0:99999:7:::
+student21:$1$i3f5MgBQ$wlaGuIttW.LJsrD6BqWWN1:19199:0:99999:7:::
+student22:$1$en6dFKPh$GN0/yv88Fdseg7AfVV3H7.:19199:0:99999:7:::
+student23:$1$mAmzSpML$R27bmJBeOAJY6yGGA2bFK0:19199:0:99999:7:::
+
+student4@TonyStark:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+student4@TonyStark:~$ lspci -vv
+-bash: lspci: command not found
+
+
+student4@TonyStark:~$ arp -a
+-bash: arp: command not found
+
+student4@TonyStark:~$ lsusb
+-bash: lsusb: command not found
+
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   8G  0 disk 
+└─sda1   8:1    0   8G  0 part /
+
+student4@TonyStark:~$ fdisk -l
+-bash: fdisk: command not found
+
+student4@TonyStark:~$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           2004         116          65          12        1821        1691
+Swap:             0           0           0
+
+student4@TonyStark:~$ dmidecode -t bios
+-bash: dmidecode: command not found
+

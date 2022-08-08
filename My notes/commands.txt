@@ -1,0 +1,173 @@
+Linux
+Upon Connection:
+ifconfig -a OR ip addr
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+sudo ls -latr /root
+ps -elf
+netstat -auntp OR ss -auntp
+sudo netstat -auntp
+w
+sudo cat /etc/sudoers
+ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron/*
+tail -n 1000 <files in /var/spool/cron/>
+date; date -u
+uname -a
+df
+ls -latr /var/*/*acc*
+stat/date <check timestamp>
+ls /etc/systemd/system/multi-user.target.wants
+ls -latr /var/*log*/
+ls -latr /var/log/*
+sudo ls -latr /var/log/*
+cat out relevant files (grep for your logged in user account)
+ls -la /etc/*syslog* (read all the config files)
+cat /etc/rsyslog.conf
+cat /etc/hosts
+cat /etc/passwd
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab
+ls -la /etc/cron.*
+As needed, examine the files/scripts shown in the directory listing of the cron.* directories
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+sestatus OR getenforce
+cat /root/.bash_history
+sudo cat /root/.bash_history
+cat ~/.bash_history
+cat ~/.zsh_history
+<extra>
+ls -latr /etc/sysconfig/
+cat /etc/rsyslog.d/00-my_iptables.conf
+cat /etc/logrotate.conf
+cat /var/log/iptables.log
+<check /etc/audit/rules.d/audit.rules AND /etc/audit/auditd.conf>
+sudo cat /etc/audit/rules.d/audit.rules
+sudo cat /etc/audit/auditd.conf
+sudo ls -latr /etc/audit
+cat /etc/rsyslog.d/50-default.conf
+<if iptable is on>
+lsmod
+sudo iptables -L
+man <binary>
+man netcat
+
+
+
+Before Disconnect:
+w
+ls -latr /tmp
+ps -elf
+netstat -lptn
+ls -latr /var/log
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+
+
+Linux Survey Commands:
+mount
+lsmod
+uname -a
+ls -latr /etc/*release*
+cat /etc/*release*
+cat /proc/cpuinfo
+services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
+cat /proc/meminfo
+cat /etc/shadow
+sudo cat /etc/shadow
+cat /etc/passwd
+lspci -vv
+arp -a
+lsusb
+lsblk
+sudo fdisk -l
+free -m
+sudo dmidecode -t bios
+
+
+
+Windows
+Upon Connection:
+ipconfig /all
+date /t
+time /t
+query user
+tasklist /V
+wmic process get processid,parentprocessid,commandline,executablepath /value
+auditpol /get /category:*
+netstat /anob
+netsh advfirewall show allprofiles
+netsh advfirewall show currentprofile
+net share
+reg query hklm\software\microsoft\windows\currentversion\run
+reg query hklm\software\microsoft\windows\currentversion\runonce
+reg query hklm\software
+schtasks /query /v  
+schtasks /query /v /fo list | findstr TaskName
+dir /o:d /t:w c:\
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\
+dir /o:d /t:w c:\windows\system32
+dir /o:d /t:w c:\windows\system32\winevt\logs
+dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
+wevtutil qe security /c:25 /rd:true /f:texy (whatever has updated from previous dir) (get the 25 newest logs)
+wevtutil qe security /c:25 /rd:true /f:text | findstr Event
+wevtutil qe security /cpassword4:25 /rd:true /f:text | findstr "Process Name"
+wevtutil el
+wevtutil gl security
+wevtutil gli security
+<extra>
+reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\winlogon"
+Norton_Free.exe
+Avira_Free.exe
+dir /o:d /t:w "C:\Program Files\"
+C:\Windows\security\applications\norton.exe
+C:\temp
+C:\Sysinternals
+dir /o:d /t:w c:\windows\prefetch
+
+Before Disconnect
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\system32\winevt\logs
+wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+netstat /anob
+query user
+tasklist /V
+
+Windows Survey Commands
+
+systeminfo
+net user
+net localgroup
+net session
+net start
+type %systemroot%\system32\drivers\etc\hosts
+arp -a
+route print
+driverquery /v
+wmic baseboard get Manufacturer, Model, PRoduct, SerialNumber, Version
+wmic cpu get deviceID, Addresswidth, MaxClockSpeed, Name, Manufacturer
+wmic logicaldisk get name, freespace, systemname, filesystem, size, volumeserialnumber
+wmic path Win32_VideoController get caption, CurrentHorizontalResolution, CurrentVerticalResolution, Description, DriverVersion, AdapterRAM /format:list
+wmic printer list full
+wmic path win32_pnpentity where "ConfigManagerErrorCode<>0" get Name, PNPDeviceID
+wmic qfe list full
+wmic service list full
+wmic product get Caption, InstallDate, Vendor
+wmic useraccount where "LocalAccount='TRUE'" get Caption, Disabled, Domain, Lockout, PasswordExpires, SID, Status
+
+####Malware Hashing####
+certutil -hashfile beacon.ps1 MD5
+for /R "C:\Tools" %f in (*.*) do certutil -hashfile "%f" MD5
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Path\To\Data\*.*" -Recurse)
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Windows\prefetch\*.*" -Recurse) -ErrorAction SilentlyContinue
+find -type f -exec md5sum '{}' \; > md5sum.txt
+###Windows searching####
+dir /b/s *.txt <might be slow>
+Get-MpComputerStatus
+
+

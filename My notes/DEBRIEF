@@ -1,0 +1,25 @@
+After an Operation
+
+Below are the requirements of the Operator after completing or failing to complete an operation.
+
+    All files collected, edited, used by student must be located in STUDENT DIRECTORY
+    DEBRIEF reported to MC in DM
+
+    See below for DEBRIEF Template
+
+    cd out of the STUDENT DIRECTORY: cd ..
+    Zip everything up: tar -cvf <studentdir>.tar <studentdir>
+    Push tar to server: scp <studentdir>.tar student#@10.50.23.198:~
+    Password: password#
+
+DEBRIEF Template
+
+Operator: <your name>
+
+Operation: <name of operation>
+
+MC: <name of MC>
+
+Analyst: <name of analyst>
+
+Description: <two-three sentence description of operation as well as one sentence summary per target.>

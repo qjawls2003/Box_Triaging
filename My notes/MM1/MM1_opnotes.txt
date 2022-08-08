@@ -1,0 +1,26 @@
+#connect to T1 TrankCastle student4::password4
+ssh -M -S /tmp/T1 -p 22 student4@10.50.28.223
+
+#create tunnel 1 via T1 FrankCastle to T2
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.10:22
+
+#connect to T2 using tunnel 1, and make a socket (T2:TonyStark)
+ssh -M -S /tmp/T2 -p 2222 student4@localhost
+
+#create tunnel 2 via tunnel 1 to T3
+ssh -S /tmp/T2 bad -O forward -L 3333:192.168.0.27:22
+
+#connect to T3 using tunnel 2 (T3: WadeWilson)
+ssh -M -S /tmp/T3 -p 3333 student4@localhost
+
+#create tunnel 3 via tunnel 2 to T4
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.0.23:22
+
+#connect to T4 using tunnel 3 (T4: peterparker)
+ssh -M -S /tmp/T4 -p 4444 student4@localhost
+
+#create tunnel 4 via tunnel 3 to T5
+ssh -S /tmp/T4 bad -O forward -L 5555:192.168.0.13:22
+
+#connect to T5 using tunnel 4 (T5: MattMurdock)
+ssh -M -S /tmp/T5 -p 5555 student4@localhost

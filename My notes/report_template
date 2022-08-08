@@ -1,0 +1,102 @@
+Reports
+
+Mandatory Reporting Instructions
+
+Students must ensure communication with their Operational Team. Any of the below situations must be reported to the proper Team member. Any instruction marked with an "AI" will require the operator to Await Instructions, after reporting, before performing mission objectives (collection, deliver effects, etc) OR moving to the next identified target. Students will communicate with MC/Analyst on the identified medium. Personnel assigned to these roles will not provide answers to critical tasks, command line syntax, or assistance with technical issues.
+
+Analyst
+
+    MAC address and IP of all interfaces upon connection
+    The completion of any analyst action in the target section
+    Remote and local file hashes for all collected files.
+
+MC
+
+    Verify all IP addresses on mission plan before beginning operation AI
+    All connections to each target
+    All disconnections from each target
+    Collecting a file that exceeds 10MB in size AI
+
+Total downloads that exceed 100MB per operation
+
+    Encountering logged on Privileged (root;admin;sudoer;etc) Users AI
+    Encountering unknown binaries/processes/files/jobs AI
+    Removing anything from a target device AI
+    Placing any file on target AI
+    Adding an IP to the mission plan AI
+    Encountering any form of abnormal/irregular/remote logging AI
+    Changing anything on a target device AI
+    Verifying T10 effect immediately before emplacing it AI
+    Taking any action not identified in the mission plan AI
+    Encountering security productsAI
+    Providing details for DEBRIEF after operation
+
+    DEBRIEF Template is provided at the bottom of this document
+    MUST include 1 sentence per target, as well as logged in privileged user information
+
+    
+    
+*****Malware Report*****
+*Target: <T# and IP >
+*Name - <>
+*Hash - <>
+*PID - <>
+*PPID - <>
+*User - <>
+*File type - <>
+Supporting files - <>
+Associated Logs - <>
+Network connection - <>
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - <>
+*Documentation - <>
+*Description - <>
+*Recommendation - <>
+*****End of Report*****
+
+
+
+*****Abnormal Logging Report*****
+*Target: <T# and IP >
+*Name - <>
+*PID - <>
+*PPID - <>
+*User - <>
+*Location of config file - <>
+*Remote IP (hostname if IP cannot be identified) - <>
+*Network connections - <>
+*Documentation - <>
+*Description - <>
+*Recommendation - <>
+*****End of Report*****
+
+
+
+*****Privileged User Report*****
+*Target: <T# and IP >
+*User logged in - <>
+*Access Time - <>
+*Access Method - <>
+*Privileges - <>
+*Activity - <>
+*Recommendation - <>
+*****End of Report*****
+
+
+
+*****Security Product Report*****
+*Target: <T# and IP >
+*Name - <>
+*Version - <>
+*(WIN) Primary registry key - <>
+*(NIX) Config file or install directory - <>
+Directory location of associated logs - <>
+Timestamp of all associated log files - <>
+Cloud based?; yes or no - <>
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+*Documentation - <>
+*Recommendation - <>
+*****End of Report*****
+
+

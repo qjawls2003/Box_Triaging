@@ -1,0 +1,257 @@
+#MM3
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.10
+-> T3: 192.168.0.27
+-> T4: 192.168.0.23
+-> T5: 192.168.0.13
+
+######Connect to T1, ssh port might be different
+ssh -MS /tmp/T1 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223
+
+#who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+ssh -S /tmp/T1 bad -O cancel -L 2222:192.168.0.27:22
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#listening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+fdisk -l
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+
+#######Move to T2 via T1, create a tunnel, ssh port might be different
+script -af termscreen.$$
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.10:22
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+
+
+#who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#listening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+fdisk -l
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+
+#cancel tunnel
+exit
+ssh -S /tmp/T1 bad -O cancel -L 2222:192.168.0.10:22
+
+#####Move to T3 via T1, create a tunnel, ssh port might be different
+script -af termscreen.$$
+ssh -S /tmp/T1 bad -O forward -L 3333:192.168.0.27:22
+ssh -MS /tmp/T2 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost            
+password4
+
+#who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#listening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+sudo fdisk -l
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+
+ssh -S /tmp/T1 bad -O cancel -L 3333:192.168.0.27:22
+
+
+#####Move to T4 via T1, create a tunnel, ssh port might be different
+script -af termscreen.$$
+ssh -S /tmp/T1 bad -O forward -L 4444:192.168.0.23:22
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost            
+
+#who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#liostening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+sudo fdisk -l
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+
+#clean up
+ssh -S /tmp/T1 bad -O cancel -L 4444:192.168.0.23:22
+
+
+#####Move to T5 via T1, create a tunnel, ssh port might be different
+script -af termscreen.$$
+ssh -S /tmp/T1 bad -O forward -L 5555:192.168.0.13:22
+ssh -MS /tmp/T2 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost            
+
+#who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#listening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+ps -elfH
+
+sudo crontab -u root -l
+sudo cat /etc/crontab
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+fdisk
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+sudo cat /etc/shadow
+
+#######Clean up
+ssh -S /tmp/T1 bad -O cancel -L 5555:192.168.0.13:22
+
+exit  out of all connections

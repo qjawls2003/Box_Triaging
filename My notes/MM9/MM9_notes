@@ -1,0 +1,56 @@
+T1
+sudo cat /etc/cron.daily/maldet
+
+T2
+sudo ls -latr /var/spool/cron/crontabs
+ls -latr /tmp/hsperfdata_root
+ps -elfH
+cat /etc/rsyslog.d/listen.conf
+
+T3
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
+sudo cat /etc/shadow
+cat /tmp/messages
+cat /tmp/message_origin
+sudo cat /var/log/messages
+
+T4
+
+dir "C:\Program Files" 
+dir "C:\Program Files (x86)\"  
+tasklist /V | findstr spy
+wmic process get processid,parentprocessid,commandline | findstr spy
+schtasks /query /v | findstr Spyrix
+doskey /history
+wevtutil qe security /c:100 /rd:true | findstr sfk.exe
+wevtutil qe application /c:100 /rd:true | findstr sfk 
+tasklist /fi "ImageName eq sfk.exe"
+if "%ERRORLEVEL%"=="0" echo Program is running
+wevtutil qe security /c:100 /rd:true /f:text | findstr .exe
+netsh interface portproxy delete v4tov4 listenport=22022 listenaddress=192.168.0.12
+
+T5
+certutil -hashfile C:\Tools\beacon.ps1 MD5
+type C:\Tools\beacon.ps1 
+dir "C:\Program Files\Common Files\system\ado"
+dir "C:\Program Files\Common Files\system\ado\en-US"
+
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:/etc/hosts ~/Downloads/an_03-08-22_MM9/T5 
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:'"C:/Program Files/Common Files/system/ado/"' ~/Downloads/an_03-08-22_MM9/T5 
+
+T6
+sudo ls -latr /var/spool/cron/*
+cat /etc/rsyslog.d/50-default.conf
+ls -latr /Reptile
+cat /Reptile/Kconfig
+ps -elfH
+
+T7
+ls -latr ./.config/procps
+sudo cat /var/log/hawkey.log
+sudo cat /var/log/dnf.log
+sudo tail -n 10 /var/log/audit/audit.log
+sudo tail -n 10 /var/log/cron
+sudo tail -n 10 /var/log/sssd/sssd.log
+sudo stat /var/log/audit/audit.log

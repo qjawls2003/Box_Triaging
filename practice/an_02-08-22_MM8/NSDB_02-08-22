@@ -1,0 +1,23 @@
+*****Privileged User Report*****
+*Target: <T2 and 192.168.0.12 >
+*User logged in - administrator
+*Access Time - 7/28/2022 6:10 PM
+*Access Method - console
+*Privileges - Administrator
+*Activity - Has Microsoft Photos, Skype, OneDrive, etc. open. 
+*Recommendation - admin may see our activity. The user does not seem to be active currenly. I do not see any new processes running from the admin.
+*****End of Report*****
+
+ *****Abnormal Logging Report*****
+*Target: <T2 and 192.168.0.12 >
+*Name - Spyrix
+*PID - <>
+*PPID - <>
+*User - <>
+*Location of config file - <>
+*Remote IP (hostname if IP cannot be identified) - <>
+*Network connections - <>
+*Documentation - https://www.spyrix.com/en/manual.php
+*Description - Commercially available Keylogger, not a malware
+*Recommendation - <>
+*****End of Report*****

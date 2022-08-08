@@ -1,0 +1,54 @@
+2022-07-27 19:09:22-- 
+
+=========================
+T#: 
+=========================
+X-----------------------
+ssh -MS /tmp/T1 -p 22 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223
+
+who
+whoami
+
+#current users
+w
+
+#T1 vetting
+hostname
+
+#OS
+uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+#date in UTC
+date -u
+
+#Ip and Int
+ip addr
+
+#listening ports
+netstat -auntp
+ss -auntp
+
+#non-system processses
+ps -elf
+
+#services
+service --status-all
+systemctl status --no-pager
+
+#partitions
+fdisk
+
+#Mem resource usage
+free
+
+#CPU usage
+top
+
+#all users
+cat /etc/passwd
+
+------------------------X
+=========================
+
+

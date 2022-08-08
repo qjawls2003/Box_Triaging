@@ -1,0 +1,293 @@
+####NSDB 03-08-22####
+
+####T1####
+*****Security Product Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - Linux Malware Detect
+*Version - Linux Malware Detect v1.6.4
+*(NIX) Config file or install directory - /root/linux-malware-detect
+Directory location of associated logs - /usr/local/maldetect
+Timestamp of all associated log files - stat /usr/local/maldetect/logs/event_log Change: 2022-08-01 18:10:01.912367559 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+[student4@frankcastle ~]$ sudo tail -n 5 /usr/local/maldetect/logs/event_log
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} signatures loaded: 17273 (14451 MD5 | 2039 HEX | 783 YARA | 0 USER)
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} building file list for /bin, this might take awhile...
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} setting nice scheduler priorities for all operations: cpunice 19 , ionice 6
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} executed eval /bin/nice -n 19 /bin/ionice -c2 -n 6 /bin/find "/bin" /tmp /var/tmp /dev/shm -maxdepth 15 -regextype posix-egrep -type f  -size +24c -size -6947618c  -not -perm 000   -not -uid 0 -not -gid 0  
+Aug 01 18:10:01 frankcastle maldet(17751): {scan} scan returned empty file list; check that path exists and contains files in scope of configuration.
+*Documentation -  https://www.rfxn.com/projects/linux-malware-detect/
+*Recommendation - Maldet is not going to prevent T1 from being used as a redirector. Low risk.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - SELinux
+*Version - "Permissive" max kernal policy version 31
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Change: 2022-08-01 18:28:46.860071045 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+[student4@frankcastle ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659378526.864:15989): pid=18201 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_ACCT msg=audit(1659378564.886:15990): pid=18205 uid=1004 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="student4" AUID="student4"
+type=USER_CMD msg=audit(1659378564.886:15991): pid=18205 uid=1004 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/0 res=success'UID="student4" AUID="student4"
+type=CRED_REFR msg=audit(1659378564.886:15992): pid=18205 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_START msg=audit(1659378564.888:15993): pid=18205 uid=0 auid=1004 ses=2098 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. T1 is being used as a redirector and SELinux is not going to prevent me from using T1 as a redirector. Low risk. 
+*****End of Report*****
+
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - RSYSLOG
+*PID - 10737/rsyslogd
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - NONE
+*Network connections - LISTENING on 514
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is a rsyslog server that is listening for logs from the clients in the network
+*Recommendation - T1 is a server so all logs are stored in T1. Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+****Abnormal Logging Report*****
+*Target: <T1 and 10.50.28.223 >
+*Name - auditd
+*PID - 9089/auditd
+*PPID - 1
+*User - root
+*Location of config file - /etc/audit/auditd.conf
+*Remote IP (hostname if IP cannot be identified) - NONE
+*Network connections - N/A
+*Documentation - https://linux.die.net/man/8/auditd
+*Description - auditd can listen to and log all audit events based on a set of rules defined via auditctl. auditd rule is configured to record all audit logs to /home/useraccount/student
+*Recommendation - Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+
+####T2####
+
+*****Abnormal Logging Report*****
+*Target: <T2 and 192.168.0.10 >
+*Name - RSYSLOG
+*PID - 1054/rsyslogd
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - NONE
+*Network connections - sending on arbitrary ports
+*Documentation - https://www.rsyslog.com/
+*Description - T2 is a rsyslog client that is sending logs to remote host .99 FrankCastle
+*Recommendation - T2 is a client so logs are stored in T1. Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+*****Malware Report*****
+*Target: <T2 and 192.168.0.10>
+*Name - Netcat
+*Hash - N/A
+*PID - 1519
+*PPID - 1
+*User - root
+*File type - binary
+Supporting files - <>
+Associated Logs - <>
+Network connection - listening on port 31337
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - existing binary in the system
+*Documentation - http://netcat.sourceforge.net/
+*Description - this netcat is listening on 31337 for anyone to catch a /bin/bash shell
+*Recommendation - this netcat is opening up a possibility for other actors to get root level shell. Must be checked occasionally to check for anyone else on the system. 
+*****End of Report*****
+
+
+
+####T3####
+
+*****Abnormal Logging Report*****
+*Target: <T3 and 192.168.0.23 >
+*Name - RSYSLOG
+*PID - 9069/rsyslogd
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 192.168.0.99
+*Network connections - sending on arbitrary ports
+*Documentation - https://www.rsyslog.com/
+*Description - T3 is a rsyslog client that is sending logs to remote host .99 FrankCastle
+*Recommendation - T3 is a client so logs are stored in T1. Log cleaning possible since T1 is accessible. Low risk
+*****End of Report***** 
+
+*****Security Product Report*****
+*Target: <T3 and 192.168.0.23 >
+*Name - SELinux
+*Version - "Permissive" max kernal policy version 31
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Change: 2022-08-03 14:54:46.962937805 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+[student4@frankcastle ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659538290.561:2005): pid=22773 uid=0 auid=1004 ses=204 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+type=USER_ACCT msg=audit(1659538467.105:2006): pid=22781 uid=1004 auid=1004 ses=204 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+type=USER_CMD msg=audit(1659538467.106:2007): pid=22781 uid=1004 auid=1004 ses=204 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/0 res=success'
+type=CRED_REFR msg=audit(1659538467.106:2008): pid=22781 uid=0 auid=1004 ses=204 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+type=USER_START msg=audit(1659538467.110:2009): pid=22781 uid=0 auid=1004 ses=204 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'
+
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. T3 is being used as a redirector and SELinux is not going to prevent me from using T3 as a redirector. Low risk.
+*****End of Report*****
+
+
+####T4####
+
+*****Privileged User Report*****
+*Target: <T4 and 192.168.0.12 >
+*User logged in - administrator
+*Access Time - 7/28/2022 6:10 PM
+*Access Method - console
+*Privileges - Administrator
+*Activity - Has Microsoft Photos, Skype, OneDrive, etc. open. 
+*Recommendation - admin may see our activity. The user does not seem to be active currenly. I do not see any new processes running from the admin.
+*****End of Report*****
+
+
+ *****Abnormal Logging Report*****
+*Target: <T4 and 192.168.0.12 >
+*Name - Spyrix, sfk.exe
+*PID - none
+*PPID - none
+*User - none
+*Location of config file - not found, additionally information in C:/temp/script.ps1 
+*Remote IP (hostname if IP cannot be identified) - none
+*Network connections - none
+*Documentation - https://www.spyrix.com/en/manual.php
+*Description - Commercially available Keylogger, not a malware. It is configured to run in registry, but it could be running as "hidden mode".
+*Recommendation - The executable sfk.exe is not currently running. Low risk.
+*****End of Report*****
+
+####T5####
+
+*****Privileged User Report*****
+*Target: <T5 and 192.168.0.9 >
+*User logged in - administrator
+*Access Time - 7/28/2022 2:00 AM
+*Access Method - console
+*Privileges - Administrator
+*Activity - Powershell, Skype, nc64
+*Recommendation - admin may see our activity. The user does not seem to be active currenly. I do not see any new processes running from the admin.
+*****End of Report*****
+
+*****Malware Report*****
+*Target: <T5 and 192.168.0.9 >
+*Name - beacon.ps1
+*Hash - 3f393850aa8d57464711f4c664f95a66
+*PID - 7004
+*PPID - 1
+*User - Administrator
+*File type - powershell script
+Supporting files - nc64.exe
+Associated Logs - N/A
+Network connection - various ports open via nc64 12301~12324
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - In Registry /run (reg query hklm\software\microsoft\windows\currentversion\run)
+*Documentation - not a known product
+*Description - the ps run in an infinite loop of executing nc64.exe on different ports ranging from 12301~12324
+*Recommendation - The ps is only sending the receiever of the nc texts "Congrats! You are an 31337 H4x0r! Credentials student#::password#". Low risk to our mission.
+*****End of Report*****
+
+####T6####
+
+*****Abnormal Logging Report*****
+*Target: <T6 and 192.168.0.13 >
+*Name - RSYSLOG
+*PID - 5187
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf and /etc/rsyslog.d/50-default.conf
+*Remote IP (hostname if IP cannot be identified) - 192.168.0.99
+*Network connections - sending logs via port 45306
+*Documentation - https://www.rsyslog.com/
+*Description - T6 is a rsyslog client that is sending logs to T1 (server)
+*Recommendation - Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+
+
+*****Malware Report*****
+*Target: <T6 and 192.168.0.13 >
+*Name - Reptile
+*Hash - 8e8d943f55866e10b6a9df04dd94d8a2
+*PID - N/A
+*PPID - N/A
+*User - root
+*File type - tool suite, .sh and .c
+Supporting files - /Reptile/scripts
+Associated Logs - N/A
+Network connection - N/A
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - /
+*Documentation - https://github.com/f0rb1dd3n/Reptile
+*Description - Reptile is a open source tool
+*Recommendation - There is no evidence of Reptile tools being installed or ran (via checking logs and bash history) It is current not actively malicious.(no processes or active network connection) Low risk'
+*****End of Report*****
+
+####T7####
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.168.0.27 >
+*Name - RSYSLOG
+*PID - 1285
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf and /etc/rsyslog.d/50-default.conf
+*Remote IP (hostname if IP cannot be identified) - 192.168.0.99
+*Network connections - sending logs via port 45306
+*Documentation - https://www.rsyslog.com/
+*Description - T7 is a rsyslog client that is sending logs to T1 (server)
+*Recommendation - Log cleaning possible since T1 is accessible. Low risk
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T7 and 192.168.0.27 >
+*Name - SELinux
+*Version - "Permissive" max kernal policy version 31
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Change: 2022-08-03 19:52:32.004445079 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+[student4@frankcastle ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=USER_ACCT msg=audit(1659555808.574:1017): pid=10566 uid=1004 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="student4" AUID="student4"
+type=USER_CMD msg=audit(1659555808.574:1018): pid=10566 uid=1004 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=6C73202D6C617472202F7661722F6C6F672F616E61636F6E6461202F7661722F6C6F672F6175646974202F7661722F6C6F672F626F6F742E6C6F67202F7661722F6C6F672F62746D70202F7661722F6C6F672F6368726F6E79202F7661722F6C6F672F636C6F75642D696E69742E6C6F67202F7661722F6C6F672F636C6F75642D696E69742D6F75747075742E6C6F67202F7661722F6C6F672F63726F6E202F7661722F6C6F672F646E662E6C69627265706F2E6C6F67202F7661722F6C6F672F646E662E6C6F67202F7661722F6C6F672F646E662E72706D2E6C6F67202F7661722F6C6F672F6861776B65792E6C6F67202F7661722F6C6F672F6A6F75726E616C202F7661722F6C6F672F6C6173746C6F67202F7661722F6C6F672F6D61696C6C6F67202F7661722F6C6F672F6D65737361676573202F7661722F6C6F672F70726976617465202F7661722F6C6F672F524541444D45202F7661722F6C6F672F736563757265202F7661722F6C6F672F73706F6F6C6572202F7661722F6C6F672F73737364202F7661722F6C6F672F74616C6C796C6F67202F7661722F6C6F672F77746D70 terminal=pts/0 res=success'UID="student4" AUID="student4"
+type=CRED_REFR msg=audit(1659555808.574:1019): pid=10566 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_localuser,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_START msg=audit(1659555808.576:1020): pid=10566 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_END msg=audit(1659555808.587:1021): pid=10566 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=CRED_DISP msg=audit(1659555808.587:1022): pid=10566 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_localuser,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_ACCT msg=audit(1659555984.457:1023): pid=10569 uid=1004 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="student4" AUID="student4"
+type=USER_CMD msg=audit(1659555984.457:1024): pid=10569 uid=1004 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E203130202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/0 res=success'UID="student4" AUID="student4"
+type=CRED_REFR msg=audit(1659555984.457:1025): pid=10569 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_localuser,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+type=USER_START msg=audit(1659555984.459:1026): pid=10569 uid=0 auid=1004 ses=13 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/0 res=success'UID="root" AUID="student4"
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. We will be conducting effects on T7 and SELinux is not going to prevent me from doing a basic effect. Low risk. 
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.168.0.27 >
+*Name - auditd
+*PID - 414
+*PPID - 1
+*User - root
+*Location of config file - /etc/audit/auditd.conf
+*Remote IP (hostname if IP cannot be identified) - NONE
+*Network connections - NONE
+*Documentation - https://linux.die.net/man/8/auditd
+*Description - auditd is providing additional logging. It can be painful to clean all auditd logs.
+*Recommendation - auditd will most definitely log our T10 effect (deleting a user). the log must be cleaned unless the risk is accepted.
+*****End of Report*****

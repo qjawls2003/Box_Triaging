@@ -1,0 +1,10 @@
+DEBRIEF submitted to MC
+Archive your op station
+All files collected, edited, used by student must be located in STUDENT DIRECTORY
+Save and Close NSDB and opnotes files: <esc>: wq!<enter>
+cd out of the STUDENT DIRECTORY: cd .. 
+Exit terminal scripts by running “exit”
+Zip everything up: tar -cvf <studentdir>.tar <studentdir>
+Push tar to server: scp <studentdir>.tar student#@10.50.23.198:~
+Password: password# (no leading zeros for student# or password#)
+Confirm tarball submission and await feedback

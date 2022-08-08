@@ -1,0 +1,1599 @@
+####notes for 03-08-22####
+
+start:0930
+end:
+
+go through T1 ~ T7 (collect some stuff)  and delete a user account in T7
+
+>T1: 10.50.28.223 / 192.168.0.99
+-> T2: 192.168.0.10
+--> T3: 192.168.0.23
+---> T4: 192.168.0.12
+----> T5: 192.168.0.9
+-----> T6: 192.168.0.13
+------> T7:  192.168.0.27
+
+=========================
+T1: 10.50.28.223 
+=========================
+X-----------------------
+student4::password4
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.28.223 -p 22
+
+2022-08-03 13:37:57-- ON
+
+####Found linux-malware-detect dir#####
+[student4@frankcastle ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Jul 26 13:52 .ssh
+drwxr-xr-x.  8 root root   78 Jul 26 13:54 timestampfun
+drwxr-xr-x.  4 root root  220 Jul 26 14:10 linux-malware-detect
+drwxr-----.  3 root root   19 Jul 26 14:22 .pki
+dr-xr-x---.  6 root root  230 Jul 26 14:22 .
+-rw-------.  1 root root  102 Jul 27 14:21 .bash_history
+
+####found some logging stuff####
+ps -elf
+4 S root     10737     1  0  80   0 - 98257 poll_s Jul26 ?        00:01:31 /usr/sbin/rsyslogd -n
+5 S root      9089     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:02 /sbin/auditd
+4 S root      1164     1  0  80   0 - 31579 hrtime Jul26 ?        00:00:10 /usr/sbin/crond -n
+
+[student4@frankcastle ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:48:09:b1 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.99/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 81846sec preferred_lft 81846sec
+    inet6 fe80::f816:3eff:fe48:9b1/64 scope link 
+       valid_lft forever preferred_lft forever
+
+####rsyslogd on 514, prob a server####
+[student4@frankcastle ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1089/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3169/sshd           
+tcp        0      0 192.168.0.99:22         10.50.33.208:37876      ESTABLISHED 31263/sshd: student 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1089/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      3169/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           898/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           617/chronyd         
+udp        0      0 0.0.0.0:514             0.0.0.0:*                           10737/rsyslogd      
+udp        0      0 0.0.0.0:689             0.0.0.0:*                           555/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                617/chronyd         
+udp6       0      0 :::514                  :::*                                10737/rsyslogd      
+udp6       0      0 :::689                  :::*                                555/rpcbind  
+
+[student4@frankcastle ~]$ date; date -u
+Wed Aug  3 13:42:33 UTC 2022
+Wed Aug  3 13:42:33 UTC 2022
+
+[student4@frankcastle ~]$ uname -a
+Linux frankcastle 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@frankcastle ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service   nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  maldet.service  postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+[student4@frankcastle ~]$ ls -latr /var/*log*/
+total 372
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 chrony
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 qemu-ga
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler-20220731
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 anaconda
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 rhsm
+drwx------.  2 root   root       23 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 ..
+-rw-r--r--.  1 root   root    32750 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 tuned
+-rw-------.  1 root   root      212 Jul 26 13:52 maillog-20220731
+-rw-r--r--.  1 root   root       96 Jul 26 13:52 boot.log
+-rw-r--r--.  1 root   root      202 Jul 26 13:52 cron-20220731
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure-20220731
+-rw-------.  1 root   root     1900 Jul 26 13:54 yum.log
+-rw-------.  1 root   root   103191 Jul 26 13:54 messages-20220731
+-rw-------.  1 root   root   135860 Jul 26 13:57 cloud-init.log
+-rw-------.  1 root   utmp     4224 Jul 26 15:40 btmp-20220801
+drwx------.  2 root   root     4096 Jul 27 17:08 WadeWilson
+drwx------.  2 root   root      168 Jul 29 19:12 MattMurdock
+-rw-------.  1 root   root        0 Jul 31 03:31 spooler
+-rw-------.  1 root   root        0 Jul 31 03:31 secure
+-rw-------.  1 root   root        0 Jul 31 03:31 messages
+-rw-------.  1 root   root        0 Jul 31 03:31 maillog
+-rw-r--r--.  1 root   root        0 Jul 31 03:31 cron
+drwx------.  2 root   root      180 Aug  1 00:24 TonyStark
+drwx------.  2 root   root     4096 Aug  1 00:34 peterparker
+-rw-------.  1 root   utmp        0 Aug  1 03:45 btmp
+drwxr-xr-x. 13 root   root     4096 Aug  1 03:45 .
+drwx------.  2 root   root     4096 Aug  2 17:18 frankcastle
+-rw-rw-r--.  1 root   utmp    24960 Aug  3 13:37 wtmp
+-rw-r--r--.  1 root   root   299008 Aug  3 13:37 lastlog
+
+cat /etc/rsyslog.conf
+$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log"
+*.* ?RemoteLogs
+& ~
+cat /etc/passwd
+[student4@frankcastle ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+####scheduled task here for linux mal detect####
+[student4@frankcastle ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+  10  *  *  *  * root echo -e '\n\n' + Tue Jul 26 13:54:44 UTC 2022 + '\n' >> /root/linux-malware-detect/report.txt && /usr/local/sbin/maldet -a /bin >> /root/linux-malware-detect/report.txt
+
+[student4@frankcastle ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 20
+drwxr-xr-x.  2 root root   39 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+-rw-r--r--.  1 root root   76 Jul 26 14:22 maldet_pub
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   56 Jul 26 13:54 .
+drwxr-xr-x. 77 root root 8192 Jul 26 13:53 ..
+-rwx------.  1 root root  219 Oct 30  2018 logrotate
+-rwxr-xr-x.  1 root root 3777 Jul 26 14:22 maldet
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 man-db.cron
+
+[student4@frankcastle ~]$ sudo cat /etc/cron.daily/maldet
+#!/usr/bin/env bash
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LMDCRON=1
+inspath='/usr/local/maldetect'
+intcnf="$inspath/internals/internals.conf"
+
+
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-r--r--. 1 chrony chrony               42 Aug  3 13:46 /var/lib/chrony/drift
+-rw-r--r--. 1 root   root                  6 Aug  3 13:50 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root   root                  0 Aug  3 13:50 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root   root                 44 Aug  3 13:50 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root   root                201 Aug  3 13:50 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root   root                  0 Aug  3 13:50 /usr/local/maldetect/ignore_file_ext
+-rw-r-----+ 1 root   systemd-journal 8388608 Aug  3 13:54 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[student4@frankcastle ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+####network scanning for OS####
+on kali:  
+ssh -S /tmp/T1 bad -O forward -D 9050
+proxychains nmap -Pn -sT 192.168.0.1-30 -p22,25,111,443 | grep open
+
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.23:22  ...  OK 
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.10:22  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.27:22  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.13:22  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.9:22  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.0.12:22  ...  OK
+
+nc -nv IP 22
+(UNKNOWN) [192.168.0.23] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_7.4
+(UNKNOWN) [192.168.0.12] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_for_Windows_7.9
+(UNKNOWN) [192.168.0.9] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_for_Windows_7.7
+(UNKNOWN) [192.168.0.27] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_7.8
+(UNKNOWN) [192.168.0.13] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.7
+(UNKNOWN) [192.168.0.10] 22 (ssh) open : Operation now in progress
+SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7
+
+
+####don't forget to do disconnect stuff#####
+
+
+
+
+
+
+
+
+------------------------X
+=========================
+=========================
+T2: 192.168.0.10 
+=========================
+X-----------------------
+
+2022-08-03 14:16:50-- ON
+
+####inv hsperfdata_root####
+student4@TonyStark:~$ ls -latr /tmp
+total 40
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 .XIM-unix
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 .Test-unix
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 .ICE-unix
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 .font-unix
+drwxr-xr-x 22 root root 4096 Jul 26 13:54 ..
+drwxrwxrwt  2 root root 4096 Jul 26 13:54 .X11-unix
+-r--r--r--  1 root root   11 Jul 26 13:54 .X0-lock
+drwx------  3 root root 4096 Jul 26 14:19 systemd-private-5bb3a9db03594bb0b36b2af42c28d09f-rtkit-daemon.service-gh40YY
+drwxr-xr-x  2 root root 4096 Jul 26 14:19 hsperfdata_root
+
+####nc is running!####
+ps -elf
+0 S root      1518     1  0  80   0 -  1575 -      Jul26 ?        00:00:00 nc -klvnp 31337 -e /bin/bash
+
+student4@TonyStark:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:e7:c9:1e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.10/24 brd 192.168.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fee7:c91e/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+####notice the nc on 31337####
+student4@TonyStark:~$ sudo netstat -auntp
+sudo: unable to resolve host TonyStark
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:31337           0.0.0.0:*               LISTEN      1518/nc             
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      30441/sshd          
+tcp        0    272 192.168.0.10:22         192.168.0.99:59078      ESTABLISHED 2267/sshd: student4 
+tcp6       0      0 :::22                   :::*                    LISTEN      30441/sshd          
+udp        0      0 0.0.0.0:52526           0.0.0.0:*                           25171/avahi-daemon: 
+udp        0      0 0.0.0.0:57949           0.0.0.0:*                           1096/rsyslogd       
+udp        0      0 0.0.0.0:35465           0.0.0.0:*                           1096/rsyslogd       
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           718/dhclient        
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           660/dhclient        
+udp        0      0 192.168.0.10:123        0.0.0.0:*                           23563/ntpd          
+udp        0      0 127.0.0.1:123           0.0.0.0:*                           23563/ntpd          
+udp        0      0 0.0.0.0:123             0.0.0.0:*                           23563/ntpd          
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           25171/avahi-daemon: 
+udp6       0      0 :::59343                :::*                                25171/avahi-daemon: 
+udp6       0      0 fe80::f816:3eff:fee:123 :::*                                23563/ntpd          
+udp6       0      0 ::1:123                 :::*                                23563/ntpd          
+udp6       0      0 :::123                  :::*                                23563/ntpd          
+udp6       0      0 :::5353                 :::*                                25171/avahi-daemon: 
+
+student4@TonyStark:~$ date; date -u
+Wed Aug  3 14:21:23 UTC 2022
+Wed Aug  3 14:21:23 UTC 2022
+
+student4@TonyStark:~$ uname -a
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+
+student4@TonyStark:~$ ls /etc/systemd/system/multi-user.target.wants
+anacron.service  avahi-daemon.service  cron.service  irqbalance.service  networking.service  remote-fs.target  rsync.service  rsyslog.service  ssh.service  unscd.service
+
+student4@TonyStark:~$ ls -latr /var/*log*/
+total 2544
+drwx------  2 speech-dispatcher root    4096 Aug  7  2017 speech-dispatcher
+drwxr-xr-x  2 ntp               ntp     4096 Aug  8  2017 ntpstats
+drwxr-xr-x 11 root              root    4096 Feb 13  2018 ..
+-rw-------  1 root              utmp       0 Feb 13  2018 btmp.1
+-rw-r--r--  1 root              root  447534 Feb 13  2018 bootstrap.log
+drwxr-xr-x  2 root              root    4096 Jul 26 13:54 wicd
+-rw-r--r--  1 root              root   16797 Jul 26 13:54 Xorg.0.log
+drwx--x--x  2 root              root    4096 Jul 26 13:54 lightdm
+-rw-r--r--  1 root              root    2956 Jul 26 14:15 fontconfig.log
+-rw-r-----  1 root              adm    36243 Jul 26 14:17 messages.1
+-rw-r-----  1 root              adm    43949 Jul 26 14:17 kern.log.1
+-rw-r-----  1 root              adm    10028 Jul 26 14:20 debug.1
+-rw-r-----  1 root              adm     1634 Jul 26 14:20 auth.log.1
+-rw-r--r--  1 root              root   32768 Jul 26 14:21 faillog
+-rw-r--r--  1 root              root   57698 Jul 26 14:21 alternatives.log.1
+-rw-r--r--  1 root              root 1111587 Jul 26 14:21 dpkg.log.1
+-rw-r--r--  1 root              root  175725 Jul 26 14:21 cloud-init-output.log
+-rw-r--r--  1 root              adm   122057 Jul 26 14:21 cloud-init.log
+-rw-r-----  1 root              adm     1596 Jul 26 14:21 user.log.1
+-rw-r-----  1 root              adm     2404 Jul 28 00:07 syslog.7.gz
+-rw-r-----  1 root              adm     1951 Jul 29 00:05 syslog.6.gz
+-rw-rw-r--  1 root              utmp    7680 Jul 29 19:59 wtmp.1
+-rw-r-----  1 root              adm     2361 Jul 30 00:09 syslog.5.gz
+-rw-r-----  1 root              adm   365021 Jul 31 00:01 daemon.log.1
+-rw-r-----  1 root              adm     1917 Jul 31 00:06 syslog.4.gz
+-rw-r-----  1 root              adm        0 Jul 31 00:06 user.log
+-rw-r-----  1 root              adm        0 Jul 31 00:06 messages
+-rw-r-----  1 root              adm        0 Jul 31 00:06 debug
+-rw-r-----  1 root              adm        0 Jul 31 00:06 auth.log
+-rw-r-----  1 root              adm     1944 Aug  1 00:07 syslog.3.gz
+-rw-r--r--  1 root              root       0 Aug  1 00:07 dpkg.log
+drwxr-xr-x  2 root              root    4096 Aug  1 00:07 apt
+-rw-r--r--  1 root              root       0 Aug  1 00:07 alternatives.log
+-rw-rw----  1 root              utmp       0 Aug  1 00:07 btmp
+-rw-r-----  1 root              adm      104 Aug  1 00:24 kern.log
+-rw-r-----  1 root              adm     2736 Aug  2 00:07 syslog.2.gz
+-rw-r-----  1 root              adm    13432 Aug  3 00:05 syslog.1
+drwxr-xr-x  7 root              root    4096 Aug  3 00:05 .
+-rw-r-----  1 root              adm    29262 Aug  3 14:16 daemon.log
+-rw-rw-r--  1 root              utmp    1920 Aug  3 14:16 wtmp
+-rw-rw-r--  1 root              utmp  299008 Aug  3 14:16 lastlog
+-rw-r-----  1 root              adm     8829 Aug  3 14:17 syslog
+
+####sending logs to remote-host####
+cat /etc/rsyslog.conf
+auth,authpriv.*                 @remote-host
+*.*;auth,authpriv.none          -/var/log/syslog
+#cron.*                         /var/log/cron.log
+daemon.*                        -/var/log/daemon.log
+kern.*                          -/var/log/kern.log
+lpr.*                           -/var/log/lpr.log
+mail.*                          -/var/log/mail.log
+user.*                          -/var/log/user.log
+
+cat /etc/hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+192.168.0.99    remote-host
+
+student4@TonyStark:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+student4@TonyStark:~$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sudo: unable to resolve host TonyStark
+find: ‘/run/user/112/gvfs’: Permission denied
+ls: cannot access '/run/log/journal/3c239f5065784b5cb58eb4159356ebe2/system.journal': Permission denied
+ls: cannot access '/var/lib/sudo/ts/student4': Permission denied
+-rw-r--r-- 1 root root     236 Aug  3 14:16 /run/systemd/transient/user-1004.slice
+-rw-r--r-- 1 root root     298 Aug  3 14:16 /run/systemd/transient/session-230.scope
+-rw------- 1 root root     142 Aug  3 14:16 /run/systemd/journal/streams/8:1616026
+-rw-r----- 1 root adm    29262 Aug  3 14:16 /var/log/daemon.log
+-rw-r--r-- 1 root root     237 Aug  3 14:16 /run/systemd/users/1004
+-rw-r--r-- 1 root root     291 Aug  3 14:16 /run/systemd/sessions/230
+-rw-r--r-- 1 root root      80 Aug  3 14:16 /run/motd.dynamic
+-rw-rw-r-- 1 root utmp    1920 Aug  3 14:16 /var/log/wtmp
+-rw-rw-r-- 1 root utmp  299008 Aug  3 14:16 /var/log/lastlog
+-rw-rw-r-- 1 root utmp    1920 Aug  3 14:16 /run/utmp
+-rw-r----- 1 root adm     8829 Aug  3 14:17 /var/log/syslog
+-rw------- 1 root root 1825504 Aug  3 14:24 /var/log/lightdm/seat0-greeter.log
+
+<do the disconnect thing>
+
+------------------------X
+=========================
+=========================
+T3: 192.168.0.23 
+=========================
+X-----------------------
+
+2022-08-03 14:43:20-- ON
+
+####check out the messages files####
+[student4@peterparker ~]$ ls -latr /tmp
+total 180
+drwxrwxrwt.  2 root     root      6 Aug  8  2019 .X11-unix
+drwxrwxrwt.  2 root     root      6 Aug  8  2019 .font-unix
+drwxrwxrwt.  2 root     root      6 Aug  8  2019 .XIM-unix
+drwxrwxrwt.  2 root     root      6 Aug  8  2019 .Test-unix
+drwxrwxrwt.  2 root     root      6 Aug  8  2019 .ICE-unix
+dr-xr-xr-x. 17 root     root    224 Aug  8  2019 ..
+drwx------.  3 root     root     17 Jul 26 13:51 systemd-private-d0329587e97e4789b0802d717a7da58f-chronyd.service-bdPLNN
+-rw-r--r--.  1 student4 wheel 91957 Jul 29 19:50 message_origin
+-rw-r--r--.  1 student4 wheel 86622 Jul 29 19:52 messages
+drwxrwxrwt.  8 root     root    210 Aug  3 08:15 .
+
+ps -elf
+4 S root      9069     1  0  80   0 - 57735 poll_s Jul26 ?        00:00:47 /usr/sbin/rsyslogd -n
+4 S root      1145     1  0  80   0 - 31572 hrtime Jul26 ?        00:00:01 /usr/sbin/crond -n
+5 S root       466     1  0  76  -4 - 13880 ep_pol Jul26 ?        00:00:00 /sbin/auditd
+
+[student4@peterparker ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:4c:67:71 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.23/24 brd 192.168.0.255 scope global dynamic eth0
+       valid_lft 63042sec preferred_lft 63042sec
+    inet6 fe80::f816:3eff:fe4c:6771/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+
+[student4@peterparker ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1084/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3594/sshd           
+tcp        0      0 192.168.0.23:22         192.168.0.10:38458      ESTABLISHED 22668/sshd: student 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1084/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      3594/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           897/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 0.0.0.0:37161           0.0.0.0:*                           9069/rsyslogd       
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           617/chronyd         
+udp        0      0 0.0.0.0:44572           0.0.0.0:*                           9069/rsyslogd       
+udp        0      0 0.0.0.0:726             0.0.0.0:*                           597/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                617/chronyd         
+udp6       0      0 :::726                  :::*                                597/rpcbind  
+
+
+[student4@peterparker ~]$ date; date -u
+Wed Aug  3 14:48:47 UTC 2022
+Wed Aug  3 14:48:47 UTC 2022
+
+[student4@peterparker ~]$ uname -a
+Linux peterparker 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@peterparker ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+[student4@peterparker ~]$ ls -latr /var/*log*/
+total 408
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 chrony
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 qemu-ga
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+-rw-------.  1 root   root        0 Aug  8  2019 spooler-20220731
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 anaconda
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 rhsm
+drwx------.  2 root   root       23 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root      267 Jul 26 13:51 ..
+-rw-r--r--.  1 root   root    32757 Jul 26 13:51 dmesg
+drwxr-xr-x.  2 root   root       23 Jul 26 13:51 tuned
+-rw-------.  1 root   root      212 Jul 26 13:51 maillog-20220731
+-rw-r--r--.  1 root   root       96 Jul 26 13:51 boot.log
+-rw-------.  1 root   root     5025 Jul 26 13:52 secure-20220731
+-rw-------.  1 root   root   133959 Jul 26 13:52 cloud-init.log
+-rw-------.  1 root   utmp      384 Jul 29 19:55 btmp-20220801
+-rw-r--r--.  1 root   root    34183 Jul 31 03:24 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:24 spooler
+-rw-------.  1 root   root        0 Jul 31 03:24 secure
+-rw-------.  1 root   root        0 Jul 31 03:24 maillog
+-rw-------.  1 root   root    94656 Jul 31 03:24 messages-20220731
+-rw-------.  1 root   utmp        0 Aug  1 03:22 btmp
+drwxr-xr-x.  8 root   root     4096 Aug  1 03:22 .
+-rw-r--r--.  1 root   root    24646 Aug  3 14:01 cron
+-rw-------.  1 root   root    22662 Aug  3 14:43 messages
+-rw-rw-r--.  1 root   utmp    10368 Aug  3 14:43 wtmp
+-rw-r--r--.  1 root   root   299008 Aug  3 14:43 lastlog
+
+cat /etc/rsyslog.conf
+authpriv.*                                              @remote-host:514
+*.* @remote-host:514
+
+[student4@peterparker ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.0.99    remote-host
+
+[student4@peterparker ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+[student4@peterparker ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+ls: cannot access /var/lib/rsyslog/imjournal.state: Permission denied
+ls: cannot access /var/log/audit/audit.log: Permission denied
+-rw-r--r--. 1 root root                 42 Aug  3 14:43 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root root                 36 Aug  3 14:43 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 17 Aug  3 14:43 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root root                 26 Aug  3 14:43 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 43 Aug  3 14:43 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 17 Aug  3 14:43 /run/systemd/system/session-204.scope
+-rw-r--r--. 1 root root                 30 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-Slice.conf
+-rw-r--r--. 1 root root                 48 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-Description.conf
+-rw-r--r--. 1 root root                 43 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 36 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 26 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 23 Aug  3 14:43 /run/systemd/system/session-204.scope.d/50-SendSIGHUP.conf
+-rw-------. 1 root root              22662 Aug  3 14:43 /var/log/messages
+-rw-r--r--. 1 root root                259 Aug  3 14:43 /run/systemd/users/1004
+-rw-r--r--. 1 root root                298 Aug  3 14:43 /run/systemd/sessions/204
+-rw-rw-r--. 1 root utmp              10368 Aug  3 14:43 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Aug  3 14:43 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               1920 Aug  3 14:43 /run/utmp
+-rwxr-x---+ 1 root systemd-journal 8388608 Aug  3 14:51 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[student4@peterparker ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+[student4@peterparker ~]$ sudo md5sum /etc/shadow
+51403a3d54913257021773622c31201e  /etc/shadow
+[student4@peterparker ~]$ md5sum /etc/passwd
+86d0de34aeda559db7654e6dc41812bc  /etc/passwd
+
+####IP Tables####
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.12:22
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.12:22023
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.12:22024
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.12 -j SNAT --to-source 192.168.0.23
+
+<do the disconnect things>
+
+
+------------------------X
+=========================
+=========================
+T4: 192.168.0.12 
+=========================
+X-----------------------
+
+2022-08-03 15:08:50-- ON
+
+student4@DESKTOP-14H8G30 C:\Users\student4>date /t                                                                              
+Wed 08/03/2022                                                                                                                  
+
+student4@DESKTOP-14H8G30 C:\Users\student4>time /t                                                                              
+03:09 PM   
+
+####admin is on!####
+student4@DESKTOP-14H8G30 C:\Users\student4>query user                                                                           
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME                                                     
+ administrator         console             1  Active      none   7/28/2022 6:10 PM 
+
+student4@DESKTOP-14H8G30 C:\Users\student4>ipconfig /all                                                                                                                                                            
+                                                                                                                                                                                                                    
+Windows IP Configuration                                                                                                                                                                                            
+                                                                                                                                                                                                                    
+   Host Name . . . . . . . . . . . . : DESKTOP-14H8G30                                                                                                                                                              
+   Primary Dns Suffix  . . . . . . . :                                                                                                                                                                              
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                                                                                                       
+   IP Routing Enabled. . . . . . . . : No                                                                                                                                                                           
+   WINS Proxy Enabled. . . . . . . . : No                                                                                                                                                                           
+   DNS Suffix Search List. . . . . . : vta                                                                                                                                                                          
+                                                                                                                                                                                                                    
+Ethernet adapter Ethernet:                                                                                                                                                                                          
+                                                                                                                                                                                                                    
+   Connection-specific DNS Suffix  . : vta                                                                                                                                                                          
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                                                                                                              
+   Physical Address. . . . . . . . . : FA-16-3E-85-3C-EA                                                                                                                                                            
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                                                                                                          
+   Autoconfiguration Enabled . . . . : Yes                                                                                                                                                                          
+   Link-local IPv6 Address . . . . . : fe80::d9e8:ca2:71e0:af6f%5(Preferred)                                                                                                                                        
+   IPv4 Address. . . . . . . . . . . : 192.168.0.12(Preferred)                                                                                                                                                      
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                                                                                                                
+   Lease Obtained. . . . . . . . . . : Thursday, July 28, 2022 6:01:18 PM                                                                                                                                           
+   Lease Expires . . . . . . . . . . : Thursday, August 4, 2022 8:10:04 AM                                                                                                                                          
+   Default Gateway . . . . . . . . . : 192.168.0.254                                                                                                                                                                
+   DHCP Server . . . . . . . . . . . : 192.168.0.5                                                                                                                                                                  
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                                                                                                                                                    
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-71-AA-13-FA-16-3E-85-3C-EA                                                                                                                                    
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                                                                                                                
+   NetBIOS over Tcpip. . . . . . . . : Enabled    
+
+
+TCP    192.168.0.12:22        192.168.0.23:38850     ESTABLISHED     2652                                                                                                                                         
+ [sshd.exe]                                                                                                                                                                                                         
+  TCP    192.168.0.12:139       0.0.0.0:0              LISTENING       4                                                                                                                                            
+ Can not obtain ownership information                                                                                                                                                                               
+  TCP    192.168.0.12:22022     0.0.0.0:0              LISTENING       2696                                                                                                                                         
+  iphlpsvc                                                                                                                                                                                                          
+ [svchost.exe]                                                                                                                                                                                                      
+  TCP    192.168.0.12:49716     52.226.139.121:443     ESTABLISHED     2592                                                                                                                                         
+  WpnService                                                                                                                                                                                                        
+ [svchost.exe]                                                                                                                                                                                                      
+  TCP    192.168.0.12:49782     23.54.202.30:443       CLOSE_WAIT      3884                                                                                                                                         
+ [WinStore.App.exe]                                                                                                                                                                                                 
+  TCP    [::]:22                [::]:0                 LISTENING       2652                                                                                                                                         
+ [sshd.exe]                                                                                                                                                                                                         
+  TCP    [::]:135               [::]:0                 LISTENING       792                                                                                                                                          
+  RpcSs                                                                                                                                                                                                             
+ [svchost.exe]                                                                                                                                                                                                      
+  TCP    [::]:445               [::]:0                 LISTENING       4                                                                                                                                            
+ Can not obtain ownership information                                                                                                                                                                               
+  TCP    [::]:3389              [::]:0                 LISTENING       972                                                                                                                                          
+  TermService                                                                                                                                                                                                       
+ [svchost.exe]  
+
+student4@DESKTOP-14H8G30 C:\Users\student4>netsh advfirewall show currentprofile                                                                                                                                    
+                                                                                                                                                                                                                    
+Public Profile Settings:                                                                                                                                                                                            
+----------------------------------------------------------------------                                                                                                                                              
+State                                 OFF                                                                                                                                                                           
+Firewall Policy                       BlockInbound,AllowOutbound                                                                                                                                                    
+LocalFirewallRules                    N/A (GPO-store only)                                                                                                                                                          
+LocalConSecRules                      N/A (GPO-store only)                                                                                                                                                          
+InboundUserNotification               Enable                                                                                                                                                                        
+RemoteManagement                      Disable                                                                                                                                                                       
+UnicastResponseToMulticast            Enable                                                                                                                                                                        
+                                                                                                                                                                                                                    
+Logging:                                                                                                                                                                                                            
+LogAllowedConnections                 Disable                                                                                                                                                                       
+LogDroppedConnections                 Disable                                                                                                                                                                       
+FileName                              %systemroot%\system32\LogFiles\Firewall\pfirewall.log                                                                                                                         
+MaxFileSize                           4096                                                                                                                                                                          
+                                                                                                                                                                                                                    
+Ok.                          
+
+student4@DESKTOP-14H8G30 C:\Users\student4>net share                                                                                                                                                                
+                                                                                                                                                                                                                    
+Share name   Resource                        Remark                                                                                                                                                                 
+                                                                                                                                                                                                                    
+-------------------------------------------------------------------------------                                                                                                                                     
+C$           C:\                             Default share                                                                                                                                                          
+IPC$                                         Remote IPC                                                                                                                                                             
+ADMIN$       C:\windows                      Remote Admin                                                                                                                                                           
+The command completed successfully.       
+
+
+student4@DESKTOP-14H8G30 C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run                                                                                                             
+                                                                                                                                                                                                                    
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run                                                                                                                                                    
+    SecurityHealth    REG_EXPAND_SZ    %ProgramFiles%\Windows Defender\MSASCuiL.exe                                                                                                                                 
+    Spyrix    REG_SZ    C:\sfk.exe 
+
+
+student4@DESKTOP-14H8G30 C:\Users\student4>wevtutil qe security /c:100 /rd:true /f:text | findstr .exe                                                                                                              
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Program Files\OpenSSH-Win64\sshd.exe                                                                                                                                             
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\svchost.exe                                                                                                                                                     
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.                                                                                                                                         
+        Process Name:           C:\Windows\System32\services.exe                                                                                                                                                    
+The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as t                                                                                    
+he Server service, or a local process such as Winlogon.exe or Services.exe.  
+
+
+student4@DESKTOP-14H8G30 C:\Users\student4>net user                                                                                                                                                                 
+                                                                                                                                                                                                                    
+User accounts for \\DESKTOP-14H8G30                                                                                                                                                                                 
+                                                                                                                                                                                                                    
+-------------------------------------------------------------------------------                                                                                                                                     
+Admin                    Administrator            cloudbase-init                                                                                                                                                    
+DefaultAccount           Guest                    student1                                                                                                                                                          
+student10                student11                student12                                                                                                                                                         
+student13                student14                student15                                                                                                                                                         
+student16                student17                student18                                                                                                                                                         
+student19                student2                 student20                                                                                                                                                         
+student21                student22                student23                                                                                                                                                         
+student3                 student4                 student5                                                                                                                                                          
+student6                 student7                 student8                                                                                                                                                          
+student9                 WDAGUtilityAccount                                                                                                                                                                         
+The command completed successfully.      
+
+####set up portproxy####
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=22023 listenaddress=192.168.0.12 connectport=22 connectaddress=192.168.0.9 protocol=tcp
+netsh interface portproxy add v4tov4 listenport=22024 listenaddress=192.168.0.12 connectport=22024 connectaddress=192.168.0.9 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=22023 listenaddress=192.168.0.12
+netsh interface portproxy delete v4tov4 listenport=22024 listenaddress=192.168.0.12
+
+<do the disconnect things>
+
+------------------------X
+=========================
+=========================
+T5: 192.168.0.9 
+=========================
+X-----------------------
+
+2022-08-03 17:44:43-- ON
+
+Microsoft Windows [Version 10.0.17763.1935]
+(c) 2018 Microsoft Corporation. All rights reserved.
+
+student4@DESKTOP-F75703C C:\Users\student4>date /t 
+Wed 08/03/2022                              
+                                            
+student4@DESKTOP-F75703C C:\Users\student4>time /t 
+05:43 PM       
+
+student4@DESKTOP-F75703C C:\Users\student4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   7/28/2022 2:00 AM
+
+student4@DESKTOP-F75703C C:\Users\student4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-F75703C
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-78-9E-D0
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::b9f1:6d4a:db87:1dd5%3(Preferred)
+   IPv4 Address. . . . . . . . . . . : 192.168.0.9(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, July 28, 2022 1:56:40 AM
+   Lease Expires . . . . . . . . . . : Thursday, August 4, 2022 1:27:20 PM
+   Default Gateway . . . . . . . . . : 192.168.0.254
+   DHCP Server . . . . . . . . . . . : 192.168.0.5
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-71-AA-29-FA-16-3E-78-9E-D0
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+  TCP    192.168.0.9:22         192.168.0.12:62222     ESTABLISHED     3964 
+ [sshd.exe]
+  TCP    192.168.0.9:139        0.0.0.0:0              LISTENING       4 
+ Can not obtain ownership information
+  TCP    192.168.0.9:49815      23.220.189.207:443     CLOSE_WAIT      7620 
+ [WinStore.App.exe]
+  TCP    192.168.0.9:49817      72.21.91.29:80         CLOSE_WAIT      7620
+ [WinStore.App.exe]
+  TCP    192.168.0.9:49820      23.220.189.207:443     CLOSE_WAIT      7620 
+ [WinStore.App.exe]
+  TCP    192.168.0.9:65071      52.226.139.121:443     ESTABLISHED     2160 
+
+student4@DESKTOP-F75703C C:\Users\student4>net share
+
+Share name   Resource                        Remark
+
+-------------------------------------------------------------------------------
+C$           C:\                             Default share
+IPC$                                         Remote IPC
+ADMIN$       C:\windows                      Remote Admin
+The command completed successfully.
+
+student4@DESKTOP-F75703C C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run
+
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run
+    SecurityHealth    REG_EXPAND_SZ    %windir%\system32\SecurityHealthSystray.exe
+    Beacon    REG_SZ    C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe C:\Tools\beacon.ps1
+
+
+
+student4@DESKTOP-F75703C C:\Users\student4>certutil -hashfile C:\Tools\beacon.ps1 MD5
+MD5 hash of C:\Tools\beacon.ps1:
+3f393850aa8d57464711f4c664f95a66
+CertUtil: -hashfile command completed successfully.
+
+PS C:\Users\student4> Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Program Files\Common Files\system\ado\*.*" -Recurse) -ErrorAction SilentlyContinue
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+MD5             8E0F8C883378CC8185004AC81884729B                                       C:\Program Files\Common Files\system\ado\en-US\msader15.dll.mui
+MD5             B179A31D27F5435E718A83BBDE1338DD                                       C:\Program Files\Common Files\system\ado\adojavas.inc
+MD5             21A8AF873ACC06A30EAC8F5BBB7BCAAB                                       C:\Program Files\Common Files\system\ado\adovbs.inc                                                                         
+MD5             8D3893514FA1E5FC9AC0A10446AF50BE                                       C:\Program Files\Common Files\system\ado\msader15.dll
+MD5             502F513A3095E2A5993DD0BCD8FF31D4                                       C:\Program Files\Common Files\system\ado\msado15.dll                                                                        
+MD5             682F2064C5D2B4B80C84EE581C84E24A                                       C:\Program Files\Common Files\system\ado\msado20.tlb
+MD5             E37D00A723E8843CF8637969CB173DC9                                       C:\Program Files\Common Files\system\ado\msado21.tlb
+MD5             299DBB927B6390C6B925757DD5B2B7FF                                       C:\Program Files\Common Files\system\ado\msado25.tlb
+MD5             6DC7AF48BE23A3333424C351847EDB2D                                       C:\Program Files\Common Files\system\ado\msado26.tlb
+MD5             51B427B3546F630ADFC6C7D4ED7697A7                                       C:\Program Files\Common Files\system\ado\msado27.tlb
+MD5             93A5D4596F38E340B41C1F859B0FCC0E                                       C:\Program Files\Common Files\system\ado\msado28.tlb
+MD5             5EEAF7C59489DE5017639EF9BDE88C3A                                       C:\Program Files\Common Files\system\ado\msado60.tlb
+MD5             B13BCFAF1B2817ECDA80BC884486A3B6                                       C:\Program Files\Common Files\system\ado\msadomd.dll                                                                        
+MD5             9A15FF42957241C763AAC228372A3CDD                                       C:\Program Files\Common Files\system\ado\msadomd28.tlb
+MD5             A2437D50AEC19450F9226B934971DF8D                                       C:\Program Files\Common Files\system\ado\msador15.dll
+MD5             D4581752CF4B726CEB8C06FE46C6FF7F                                       C:\Program Files\Common Files\system\ado\msador28.tlb
+MD5             8F8AFAEA2D82F0DD09BA7F1BCD7BE4A0                                       C:\Program Files\Common Files\system\ado\msadox.dll                                                                         
+MD5             769FC3EF10B35FE7404C76D384CC0380                                       C:\Program Files\Common Files\system\ado\msadox28.tlb
+MD5             8F68D5CE2C1702941D9DDA390D22E665                                       C:\Program Files\Common Files\system\ado\msadrh15.dll
+
+┌──(root㉿kali)-[~/Downloads/an_03-08-22_MM9/T5]
+└─# find -type f -exec md5sum '{}' \; > md5sum.txt
+                                                                                                                                                                                                                    
+┌──(root㉿kali)-[~/Downloads/an_03-08-22_MM9/T5]
+└─# cat md5sum.txt 
+b179a31d27f5435e718a83bbde1338dd  ./adojavas.inc
+8f68d5ce2c1702941d9dda390d22e665  ./msadrh15.dll
+64c533c021eec7dc83e7c264165b7203  ./md5sum.txt
+b179a31d27f5435e718a83bbde1338dd  ./ado/adojavas.inc
+8f68d5ce2c1702941d9dda390d22e665  ./ado/msadrh15.dll
+93a5d4596f38e340b41c1f859b0fcc0e  ./ado/msado28.tlb
+769fc3ef10b35fe7404c76d384cc0380  ./ado/msadox28.tlb
+8d3893514fa1e5fc9ac0a10446af50be  ./ado/msader15.dll
+b51b427b3546f630adfc6c7d4ed7697a7  ./ado/msado27.tlb
+d4581752cf4b726ceb8c06fe46c6ff7f  ./ado/msador28.tlb
+682f2064c5d2b4b80c84ee581c84e24a  ./ado/msado20.tlb
+8f8afaea2d82f0dd09ba7f1bcd7be4a0  ./ado/msadox.dll
+b13bcfaf1b2817ecda80bc884486a3b6  ./ado/msadomd.dll
+5eeaf7c59489de5017639ef9bde88c3a  ./ado/msado60.tlb
+8e0f8c883378cc8185004ac81884729b  ./ado/en-US/msader15.dll.mui
+a2437d50aec19450f9226b934971df8d  ./ado/msador15.dll
+6dc7af48be23a3333424c351847edb2d  ./ado/msado26.tlb
+502f513a3095e2a5993dd0bcd8ff31d4  ./ado/msado15.dll
+e37d00a723e8843cf8637969cb173dc9  ./ado/msado21.tlb
+299dbb927b6390c6b925757dd5b2b7ff  ./ado/msado25.tlb
+9a15ff42957241c763aac228372a3cdd  ./ado/msadomd28.tlb
+21a8af873acc06a30eac8f5bbb7bcaab  ./ado/adovbs.inc
+93a5d4596f38e340b41c1f859b0fcc0e  ./msado28.tlb
+769fc3ef10b35fe7404c76d384cc0380  ./msadox28.tlb
+8d3893514fa1e5fc9ac0a10446af50be  ./msader15.dll
+51b427b3546f630adfc6c7d4ed7697a7  ./msado27.tlb
+d4581752cf4b726ceb8c06fe46c6ff7f  ./msador28.tlb
+682f2064c5d2b4b80c84ee581c84e24a  ./msado20.tlb
+8f8afaea2d82f0dd09ba7f1bcd7be4a0  ./msadox.dll
+b13bcfaf1b2817ecda80bc884486a3b6  ./msadomd.dll
+5eeaf7c59489de5017639ef9bde88c3a  ./msado60.tlb
+8e0f8c883378cc8185004ac81884729b  ./en-US/msader15.dll.mui
+a2437d50aec19450f9226b934971df8d  ./msador15.dll
+6dc7af48be23a3333424c351847edb2d  ./msado26.tlb
+502f513a3095e2a5993dd0bcd8ff31d4  ./msado15.dll
+e37d00a723e8843cf8637969cb173dc9  ./msado21.tlb
+299dbb927b6390c6b925757dd5b2b7ff  ./msado25.tlb
+9a15ff42957241c763aac228372a3cdd  ./msadomd28.tlb
+21a8af873acc06a30eac8f5bbb7bcaab  ./adovbs.inc
+
+
+
+<disconnect things>
+
+
+
+------------------------X
+=========================
+=========================
+T6: 192.168.0.13 
+=========================
+X-----------------------
+
+2022-08-03 19:02:41-- ON
+
+####Reptile####
+student4@MattMurdock:~$ ls -latr /
+total 100
+drwxr-xr-x   2 root root  4096 Mar  4  2020 mnt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 srv
+drwxr-xr-x   2 root root  4096 Mar  4  2020 opt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 media
+drwxr-xr-x  10 root root  4096 Mar  4  2020 usr
+lrwxrwxrwx   1 root root    30 Mar  4  2020 vmlinuz.old -> boot/vmlinuz-4.15.0-88-generic
+lrwxrwxrwx   1 root root    33 Mar  4  2020 initrd.img.old -> boot/initrd.img-4.15.0-88-generic
+drwxr-xr-x  13 root root  4096 Mar  4  2020 var
+drwx------   2 root root 16384 Mar  4  2020 lost+found
+dr-xr-xr-x 106 root root     0 Jul 26 13:51 proc
+drwxr-xr-x  17 root root  3680 Jul 26 13:51 dev
+drwx------   3 root root  4096 Jul 26 13:52 root
+drwxr-xr-x   2 root root  4096 Jul 26 13:52 snap
+drwxr-xr-x   2 root root  4096 Jul 26 13:53 lib64
+drwxr-xr-x  20 root root  4096 Jul 26 13:54 lib
+drwxr-xr-x   2 root root  4096 Jul 26 14:00 bin
+drwxr-xr-x   2 root root 12288 Jul 26 14:02 sbin
+drwxr-xr-x   4 root root  4096 Jul 26 14:11 home
+drwxr-xr-x   7 root root  4096 Jul 26 14:11 Reptile
+
+
+student4@MattMurdock:~$ ps -elf
+4 S syslog    5187     1  0  80   0 - 66820 -      Jul26 ?        00:00:00 /usr/sbin/rsyslogd -n
+4 S root     13230     1  0  80   0 -  7938 -      Jul26 ?        00:00:01 /usr/sbin/cron -f
+
+
+student4@MattMurdock:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:14:90:a8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.13/24 brd 192.168.0.255 scope global dynamic ens3
+       valid_lft 56621sec preferred_lft 56621sec
+    inet6 fe80::f816:3eff:fe14:90a8/64 scope link 
+       valid_lft forever preferred_lft forever
+
+####rsyslogd running####
+student4@MattMurdock:~$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      4162/systemd-resolv 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      5318/sshd           
+tcp        0    340 192.168.0.13:22         192.168.0.9:54434       ESTABLISHED 20947/sshd: student 
+tcp6       0      0 :::22                   :::*                    LISTEN      5318/sshd           
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           4162/systemd-resolv 
+udp        0      0 192.168.0.13:68         0.0.0.0:*                           4138/systemd-networ 
+udp        0      0 0.0.0.0:45306           0.0.0.0:*                           5187/rsyslogd  
+
+student4@MattMurdock:~$ date; date -u
+Wed Aug  3 19:05:15 UTC 2022
+Wed Aug  3 19:05:15 UTC 2022
+
+student4@MattMurdock:~$ uname -a
+Linux MattMurdock 4.15.0-88-generic #88-Ubuntu SMP Tue Feb 11 20:11:34 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+student4@MattMurdock:~$ ls /etc/systemd/system/multi-user.target.wants
+atd.service            irqbalance.service           ondemand.service       rsync.service             snapd.core-fixup.service                ssh.service               unattended-upgrades.service
+console-setup.service  lxcfs.service                open-vm-tools.service  rsyslog.service           snapd.recovery-chooser-trigger.service  systemd-networkd.service
+cron.service           lxd-containers.service       pollinate.service      snapd.apparmor.service    snapd.seeded.service                    systemd-resolved.service
+ebtables.service       networkd-dispatcher.service  remote-fs.target       snapd.autoimport.service  snapd.service                           ufw.service
+
+student4@MattMurdock:~$ ls -latr /var/*log*/
+total 688
+drwxr-xr-x   2 root      root              4096 Nov 23  2018 lxd
+drwxr-xr-x   2 root      root              4096 Jan 24  2020 dist-upgrade
+-rw-rw----   1 root      utmp                 0 Mar  4  2020 btmp.1
+drwxr-xr-x  13 root      root              4096 Mar  4  2020 ..
+drwxr-sr-x+  3 root      systemd-journal   4096 Jul 26 13:51 journal
+-rw-r--r--   1 root      root              7890 Jul 26 14:08 alternatives.log.1
+-rw-r-----   1 syslog    adm               6628 Jul 26 14:11 auth.log.1
+-rw-------   1 root      root             65536 Jul 26 14:11 tallylog
+-rw-r--r--   1 syslog    adm             115311 Jul 26 14:11 cloud-init.log
+-rw-r-----   1 root      adm             122896 Jul 26 14:11 cloud-init-output.log
+drwxr-xr-x   2 landscape landscape         4096 Jul 26 15:57 landscape
+-rw-r-----   1 syslog    adm              53454 Jul 27 06:30 kern.log.1
+-rw-r--r--   1 root      root            236129 Jul 27 06:31 dpkg.log.1
+-rw-r-----   1 syslog    adm              43139 Jul 28 06:17 syslog.7.gz
+-rw-r-----   1 syslog    adm                973 Jul 29 06:25 syslog.6.gz
+-rw-r-----   1 syslog    adm               1381 Jul 30 06:25 syslog.5.gz
+-rw-r-----   1 syslog    adm                928 Jul 31 06:25 syslog.4.gz
+-rw-r-----   1 syslog    adm                  0 Jul 31 06:25 kern.log
+-rw-r-----   1 syslog    adm                  0 Jul 31 06:25 auth.log
+-rw-rw-r--   1 root      utmp              7680 Aug  1 00:36 wtmp.1
+-rw-r--r--   1 root      root                 0 Aug  1 06:25 alternatives.log
+-rw-r--r--   1 root      root                 0 Aug  1 06:25 dpkg.log
+drwxr-xr-x   2 root      root              4096 Aug  1 06:25 apt
+-rw-r-----   1 syslog    adm               1439 Aug  1 06:25 syslog.3.gz
+drwxr-x---   2 root      adm               4096 Aug  1 06:25 unattended-upgrades
+-rw-rw----   1 root      utmp                 0 Aug  1 06:25 btmp
+-rw-r-----   1 syslog    adm               1264 Aug  2 06:25 syslog.2.gz
+-rw-r-----   1 syslog    adm               7343 Aug  3 06:25 syslog.1
+drwxrwxr-x   8 root      syslog            4096 Aug  3 06:25 .
+-rw-r-----   1 syslog    adm               6301 Aug  3 18:57 syslog
+-rw-rw-r--   1 root      utmp              1920 Aug  3 18:57 wtmp
+-rw-rw-r--   1 root      utmp            299008 Aug  3 18:57 lastlog
+
+student4@MattMurdock:~$ cat /etc/rsyslog.d/50-default.conf
+#  Default rules for rsyslog.
+#
+student4@MattMurdock:~$ ls -latr /
+total 100
+drwxr-xr-x   2 root root  4096 Mar  4  2020 mnt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 srv
+drwxr-xr-x   2 root root  4096 Mar  4  2020 opt
+drwxr-xr-x   2 root root  4096 Mar  4  2020 media
+drwxr-xr-x  10 root root  4096 Mar  4  2020 usr
+lrwxrwxrwx   1 root root    30 Mar  4  2020 vmlinuz.old -> boot/vmlinuz-4.15.0-88-generic
+lrwxrwxrwx   1 root root    33 Mar  4  2020 initrd.img.old -> boot/initrd.img-4.15.0-88-generic
+drwxr-xr-x  13 root root  4096 Mar  4  2020 var
+drwx------   2 root root 16384 Mar  4  2020 lost+found
+dr-xr-xr-x 106 root root     0 Jul 26 13:51 proc
+drwxr-xr-x  17 root root  3680 Jul 26 13:51 dev
+drwx------   3 root root  4096 Jul 26 13:52 root
+drwxr-xr-x   2 root root  4096 Jul 26 13:52 snap
+drwxr-xr-x   2 root root  4096 Jul 26 13:53 lib64
+drwxr-xr-x  20 root root  4096 Jul 26 13:54 lib
+drwxr-xr-x   2 root root  4096 Jul 26 14:00 bin
+drwxr-xr-x   2 root root 12288 Jul 26 14:02 sbin
+drwxr-xr-x   4 root root  4096 Jul 26 14:11 home
+drwxr-xr-x   7 root root  4096 Jul 26 14:11 Reptile
+#                       For more information see rsyslog.conf(5) and /etc/rsyslog.conf
+
+#
+# First some standard log files.  Log by facility.
+#
+auth,authpriv.*                 @remote-host
+
+
+student4@MattMurdock:~$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+192.168.0.99    remote-host
+
+student4@MattMurdock:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+-rw-r--r-- 1 root     root  222 Aug  3 18:57  /run/systemd/transient/user-1004.slice
+-rw-r--r-- 1 root     root  278 Aug  3 18:57  /run/systemd/transient/session-235.scope
+-rw-r--r-- 1 root     root  237 Aug  3 18:57  /run/systemd/users/1004
+-rw-r--r-- 1 root     root  291 Aug  3 18:57  /run/systemd/sessions/235
+-rw------- 1 root     root  185 Aug  3 18:57  /run/systemd/journal/streams/9:149628
+-rw------- 1 root     root    0 Aug  3 18:57  /var/lib/update-notifier/hwe-eol
+-rw-r--r-- 1 root     root    0 Aug  3 18:57  /var/lib/update-notifier/fsck-at-reboot
+
+
+<do disconnect>
+
+------------------------X
+=========================
+=========================
+T7: 192.168.0.27 
+=========================
+X-----------------------
+2022-08-03 19:34:22-- ON
+
+[student4@WadeWilson ~]$ ls -latr .
+total 28
+-rw-r--r--.  1 student4 wheel  312 Oct  8  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  141 Oct  8  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct  8  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Jul 26 13:52 ..
+drwx------.  3 student4 wheel 4096 Jul 27 17:08 .config
+drwx------.  3 student4 wheel 4096 Jul 27 17:08 .
+-rw-------.  1 student4 wheel 1691 Aug  2 17:02 .bash_history
+
+[student4@WadeWilson ~]$ sudo ls -latr /root
+total 56
+-rw-r--r--.  1 root root  129 Jul 15  2018 .tcshrc
+-rw-r--r--.  1 root root  100 Jul 15  2018 .cshrc
+-rw-r--r--.  1 root root  176 Jul 15  2018 .bashrc
+-rw-r--r--.  1 root root  176 Jul 15  2018 .bash_profile
+-rw-r--r--.  1 root root   18 Jul 15  2018 .bash_logout
+-rw-------.  1 root root 7778 Oct 24  2018 original-ks.cfg
+-rw-------.  1 root root 7973 Oct 24  2018 anaconda-ks.cfg
+dr-xr-xr-x. 18 root root 4096 Jul 26 13:51 ..
+dr-xr-x---.  3 root root 4096 Jul 26 13:52 .
+drwx------.  2 root root 4096 Jul 26 13:52 .ssh
+
+
+
+ps -elf
+4 S root      1285     1  0  80   0 - 43103 -      Jul26 ?        00:00:39 /usr/sbin/rsyslogd -n
+4 S root       767     1  0  80   0 -  6757 -      Jul26 ?        00:00:00 /usr/sbin/sshd -D -oCiphers=aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr,aes256-cbc,aes128-gcm@openssh.com,aes128-ctr,
+4 S root       458     1  0  80   0 -  7054 -      Jul26 ?        00:00:01 /usr/sbin/sssd -i --logger=files
+5 S root       414     1  0  76  -4 -  6928 -      Jul26 ?        00:00:00 /sbin/auditd
+
+[student4@WadeWilson ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:34:6e:8d brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.27/24 brd 192.168.0.255 scope global dynamic noprefixroute eth0
+       valid_lft 70180sec preferred_lft 70180sec
+    inet6 fe80::f816:3eff:fe34:6e8d/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[student4@WadeWilson ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      767/sshd            
+tcp        0      0 192.168.0.27:22         192.168.0.13:52188      ESTABLISHED 10484/sshd: student 
+tcp6       0      0 :::22                   :::*                    LISTEN      767/sshd            
+udp        0      0 0.0.0.0:58271           0.0.0.0:*                           1285/rsyslogd       
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           555/dhclient        
+udp        0      0 0.0.0.0:52347           0.0.0.0:*                           1285/rsyslogd       
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           464/chronyd         
+udp6       0      0 ::1:323                 :::*                                464/chronyd 
+
+[student4@WadeWilson ~]$ date; date -u
+Wed Aug  3 19:39:00 UTC 2022
+Wed Aug  3 19:39:00 UTC 2022
+
+[student4@WadeWilson ~]$ uname -a
+Linux WadeWilson 4.18.16-300.fc29.x86_64 #1 SMP Sat Oct 20 23:24:08 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@WadeWilson ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service  chronyd.service  dnf-makecache.timer  NetworkManager.service  remote-fs.target  rsyslog.service  sshd.service  sssd.service
+
+
+
+[student4@WadeWilson ~]$ ls -latr /var/*log*/
+total 3172
+-rw-r--r--.  1 root   root               1040 Jul 18  2018 README
+drwxr-xr-x.  2 chrony chrony             4096 Sep 19  2018 chrony
+drwx------.  2 root   root               4096 Oct 24  2018 private
+-rw-r--r--.  1 root   root                  0 Oct 24  2018 cron
+-rw-r--r--.  1 root   root                  0 Oct 24  2018 boot.log
+drwxr-xr-x.  2 root   root               4096 Oct 24  2018 anaconda
+drwxr-sr-x+  3 root   systemd-journal    4096 Jul 26 13:51 journal
+drwx------.  2 root   root               4096 Jul 26 13:51 audit
+drwxr-xr-x. 19 root   root               4096 Jul 26 13:51 ..
+drwxr-x---.  2 root   root               4096 Jul 26 13:51 sssd
+-rw-------.  1 root   root              65536 Jul 26 13:52 tallylog
+-rw-------.  1 root   root                  0 Jul 26 13:53 secure
+-rw-------.  1 root   root                  0 Jul 26 13:53 maillog
+-rw-------.  1 root   root                  0 Jul 26 13:53 spooler
+drwxr-xr-x.  8 root   root               4096 Jul 26 13:53 .
+-rw-r--r--.  1 root   root               7848 Jul 26 13:53 cloud-init-output.log
+-rw-r--r--.  1 root   adm              136502 Jul 26 13:53 cloud-init.log
+-rw-rw----.  1 root   utmp                384 Jul 26 17:18 btmp
+-rw-rw-r--.  1 root   utmp               7296 Aug  3 19:28 wtmp
+-rw-rw-r--.  1 root   utmp             299008 Aug  3 19:28 lastlog
+-rw-r--r--.  1 root   root              11182 Aug  3 19:31 dnf.rpm.log
+-rw-r--r--.  1 root   root            2073052 Aug  3 19:31 dnf.librepo.log
+-rw-r--r--.  1 root   root             126199 Aug  3 19:31 hawkey.log
+-rw-r--r--.  1 root   root             307360 Aug  3 19:31 dnf.log
+-rw-------.  1 root   root             478355 Aug  3 19:38 messages
+
+[student4@WadeWilson ~]$ cat /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# or latest version online at http://www.rsyslog.com/doc/rsyslog_conf.html 
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### GLOBAL DIRECTIVES ####
+
+# Where to place auxiliary files
+global(workDirectory="/var/lib/rsyslog")
+
+# Use default timestamp format
+module(load="builtin:omfile" Template="RSYSLOG_TraditionalFileFormat")
+
+# Include all config files in /etc/rsyslog.d/
+include(file="/etc/rsyslog.d/*.conf" mode="optional")
+
+#### MODULES ####
+
+module(load="imuxsock"    # provides support for local system logging (e.g. via logger command)
+       SysSock.Use="off") # Turn off message reception via local log socket; 
+                          # local messages are retrieved through imjournal now.
+module(load="imjournal"             # provides access to the systemd journal
+       StateFile="imjournal.state") # File to store the position in the journal
+#module(load="imklog") # reads kernel messages (the same are read from journald)
+#module(load="immark") # provides --MARK-- message capability
+
+# Provides UDP syslog reception
+# for parameters see http://www.rsyslog.com/doc/imudp.html
+#module(load="imudp") # needs to be done just once
+#input(type="imudp" port="514")
+
+# Provides TCP syslog reception
+# for parameters see http://www.rsyslog.com/doc/imtcp.html
+#module(load="imtcp") # needs to be done just once
+#input(type="imtcp" port="514")
+
+#### RULES ####
+
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              @remote-host:514
+
+# Log all the mail messages in one place.
+mail.*                                                  -/var/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 :omusrmsg:*
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /var/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /var/log/boot.log
+
+
+# ### sample forwarding rule ###
+#action(type="omfwd"  
+# # An on-disk queue is created for this action. If the remote host is
+# # down, messages are spooled to disk and sent when it is up again.
+#queue.filename="fwdRule1"       # unique name prefix for spool files
+#queue.maxdiskspace="1g"         # 1gb space limit (use as much as possible)
+#queue.saveonshutdown="on"       # save messages to disk on shutdown
+#queue.type="LinkedList"         # run asynchronously
+#action.resumeRetryCount="-1"    # infinite retries if host is down
+# # Remote Logging (we use TCP for reliable delivery)
+# # remote_host is: name/ip, e.g. 192.168.0.1, port optional e.g. 10514
+#Target="remote_host" Port="XXX" Protocol="tcp")
+*.* @remote-host:514
+
+[student4@WadeWilson ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.0.99    remote-host
+
+[student4@WadeWilson ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:65534:65534:Kernel Overflow User:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+systemd-coredump:x:999:997:systemd Core Dumper:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
+tss:x:59:59:Account used by the trousers package to sandbox the tcsd daemon:/dev/null:/sbin/nologin
+polkitd:x:998:996:User for polkitd:/:/sbin/nologin
+unbound:x:997:995:Unbound DNS resolver:/etc/unbound:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+chrony:x:996:993::/var/lib/chrony:/sbin/nologin
+fedora:x:1000:1000:fedora Cloud User:/home/fedora:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+
+[student4@WadeWilson ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+ls: cannot access '/var/lib/rsyslog/imjournal.state': Permission denied
+ls: cannot access '/var/log/audit/audit.log': Permission denied
+-rw-r--r--. 1 root root            8406312 Aug  3 19:46 /var/lib/sss/mc/passwd
+-rw-r--r--. 1 root root            6406312 Aug  3 19:46 /var/lib/sss/mc/group
+-rw-------. 1 root root             492994 Aug  3 19:50 /var/log/messages
+-rw-r-----+ 1 root systemd-journal 8388608 Aug  3 19:50 /var/log/journal/5d6bdcf26da147f6b632bf2ef6354626/system.journal
+
+[student4@WadeWilson ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Memory protection checking:     actual (secure)
+Max kernel policy version:      31
+
+###let's delete a user!####
+sudo userdel student5
+
+2022-08-03 20:08:19-- 
+------------------------X
+=========================
+
+
+
+
+
+
+
+

@@ -1,0 +1,1503 @@
+Script started on 2022-08-03 13:21:47+00:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="212" LINES="42"]
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T1[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 2222:192.168.0.10:22[27m[38;2;153;153;153m       [39m
+[K[A[57C[53D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m1[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m2[27m2[27m2[27m2[27m:[27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m0[27m.[27m1[27m0[27m:[27m2[27m2[39m [39m [39m [39m [39m [39m [39m [1B[K[A[57C[?1l>[?2004l[1B                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h
+[K[K[?1l>[?2004l
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T2 [7m[35m-p[39m[7m 2222 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m[102D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m2[27m [27m[35m-[27m[35mp[39m[27m [27m2[27m2[27m2[27m2[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:2222' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Mon Aug  1 00:42:04 2022 from 192.168.0.99
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /
+total 92
+drwx------   2 root root 16384 Feb 13  2018 [0m[01;34mlost+found[0m
+drwxr-xr-x   2 root root  4096 Feb 13  2018 [01;34msrv[0m
+drwxr-xr-x   2 root root  4096 Feb 13  2018 [01;34mmnt[0m
+drwxr-xr-x   2 root root  4096 Feb 13  2018 [01;34mopt[0m
+drwxr-xr-x   2 root root  4096 Feb 13  2018 [01;34mmedia[0m
+drwxr-xr-x  11 root root  4096 Feb 13  2018 [01;34mvar[0m
+drwxr-xr-x  10 root root  4096 Feb 13  2018 [01;34musr[0m
+lrwxrwxrwx   1 root root    26 Feb 13  2018 [01;36mvmlinuz.old[0m -> boot/vmlinuz-4.9.0-5-amd64
+lrwxrwxrwx   1 root root    26 Feb 13  2018 [01;36mvmlinuz[0m -> boot/vmlinuz-4.9.0-5-amd64
+lrwxrwxrwx   1 root root    29 Feb 13  2018 [01;36minitrd.img.old[0m -> boot/initrd.img-4.9.0-5-amd64
+lrwxrwxrwx   1 root root    29 Feb 13  2018 [01;36minitrd.img[0m -> boot/initrd.img-4.9.0-5-amd64
+dr-xr-xr-x  13 root root     0 Jul 26 13:51 [01;34msys[0m
+dr-xr-xr-x 116 root root     0 Jul 26 13:51 [01;34mproc[0m
+drwxr-xr-x  22 root root  4096 Jul 26 13:54 [01;34m..[0m
+drwxr-xr-x  22 root root  4096 Jul 26 13:54 [01;34m.[0m
+drwxr-xr-x  18 root root  2960 Jul 26 13:54 [01;34mdev[0m
+drwxr-xr-x   2 root root  4096 Jul 26 13:55 [01;34mlib64[0m
+drwxr-xr-x  13 root root  4096 Jul 26 14:09 [01;34mlib[0m
+drwxr-xr-x   2 root root 12288 Jul 26 14:11 [01;34msbin[0m
+drwxr-xr-x   4 root root  4096 Jul 26 14:20 [01;34mboot[0m
+drwxr-xr-x   4 root root  4096 Jul 26 14:20 [01;34mhome[0m
+drwxr-xr-x   2 root root  4096 Jul 26 14:21 [01;34mbin[0m
+drwx------   4 root root  4096 Jul 26 15:50 [01;34mroot[0m
+drwxr-xr-x 115 root root  4096 Aug  3 08:16 [01;34metc[0m
+drwxrwxrwt   9 root root  4096 Aug  3 13:17 [30;42mtmp[0m
+drwxr-xr-x  21 root root   720 Aug  3 14:16 [01;34mrun[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /tmp
+total 40
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [0m[30;42m.XIM-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.Test-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.ICE-unix[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:51 [30;42m.font-unix[0m
+drwxr-xr-x 22 root root 4096 Jul 26 13:54 [01;34m..[0m
+drwxrwxrwt  2 root root 4096 Jul 26 13:54 [30;42m.X11-unix[0m
+-r--r--r--  1 root root   11 Jul 26 13:54 .X0-lock
+drwx------  3 root root 4096 Jul 26 14:19 [01;34msystemd-private-5bb3a9db03594bb0b36b2af42c28d09f-rtkit-daemon.service-gh40YY[0m
+drwxr-xr-x  2 root root 4096 Jul 26 14:19 [01;34mhsperfdata_root[0m
+drwxrwxrwt  9 root root 4096 Aug  3 14:17 [30;42m.[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr .
+total 24
+-rw-r--r--  1 student4 sudo  675 May 15  2017 .profile
+-rw-r--r--  1 student4 sudo 3526 May 15  2017 .bashrc
+-rw-r--r--  1 student4 sudo  220 May 15  2017 .bash_logout
+drwxr-xr-x 25 root     root 4096 Jul 26 14:21 [0m[01;34m..[0m
+drwxr-xr-x  2 student4 sudo 4096 Jul 26 16:31 [01;34m.[0m
+-rw-------  1 student4 sudo 1910 Aug  1 00:53 .bash_history
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr ..
+total 100
+drwxr-xr-x  4 root      root 4096 Jul 26 14:20 [0m[01;34m..[0m
+drwxr-xr-x  2 student1  sudo 4096 Jul 26 14:20 [01;34mstudent1[0m
+drwxr-xr-x  2 student2  sudo 4096 Jul 26 14:20 [01;34mstudent2[0m
+drwxr-xr-x  2 student3  sudo 4096 Jul 26 14:20 [01;34mstudent3[0m
+drwxr-xr-x  2 student5  sudo 4096 Jul 26 14:20 [01;34mstudent5[0m
+drwxr-xr-x  2 student6  sudo 4096 Jul 26 14:20 [01;34mstudent6[0m
+drwxr-xr-x  2 student7  sudo 4096 Jul 26 14:21 [01;34mstudent7[0m
+drwxr-xr-x  2 student8  sudo 4096 Jul 26 14:21 [01;34mstudent8[0m
+drwxr-xr-x  2 student9  sudo 4096 Jul 26 14:21 [01;34mstudent9[0m
+drwxr-xr-x  2 student10 sudo 4096 Jul 26 14:21 [01;34mstudent10[0m
+drwxr-xr-x  2 student11 sudo 4096 Jul 26 14:21 [01;34mstudent11[0m
+drwxr-xr-x  2 student12 sudo 4096 Jul 26 14:21 [01;34mstudent12[0m
+drwxr-xr-x  2 student13 sudo 4096 Jul 26 14:21 [01;34mstudent13[0m
+drwxr-xr-x  2 student14 sudo 4096 Jul 26 14:21 [01;34mstudent14[0m
+drwxr-xr-x  2 student15 sudo 4096 Jul 26 14:21 [01;34mstudent15[0m
+drwxr-xr-x  2 student16 sudo 4096 Jul 26 14:21 [01;34mstudent16[0m
+drwxr-xr-x  2 student17 sudo 4096 Jul 26 14:21 [01;34mstudent17[0m
+drwxr-xr-x  2 student18 sudo 4096 Jul 26 14:21 [01;34mstudent18[0m
+drwxr-xr-x  2 student19 sudo 4096 Jul 26 14:21 [01;34mstudent19[0m
+drwxr-xr-x  2 student20 sudo 4096 Jul 26 14:21 [01;34mstudent20[0m
+drwxr-xr-x  2 student21 sudo 4096 Jul 26 14:21 [01;34mstudent21[0m
+drwxr-xr-x  2 student22 sudo 4096 Jul 26 14:21 [01;34mstudent22[0m
+drwxr-xr-x  2 student23 sudo 4096 Jul 26 14:21 [01;34mstudent23[0m
+drwxr-xr-x 25 root      root 4096 Jul 26 14:21 [01;34m.[0m
+drwxr-xr-x  2 student4  sudo 4096 Jul 26 16:31 [01;34mstudent4[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo ls -latr /root
+sudo: unable to resolve host TonyStark
+[sudo] password for student4: 
+total 28
+-rw-r--r--  1 root root  570 Jan 31  2010 .bashrc
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+drwxr-xr-x 22 root root 4096 Jul 26 13:54 ..
+drwx------  2 root root 4096 Jul 26 13:54 .ssh
+drwx------  2 root root 4096 Jul 26 13:54 .cache
+drwx------  4 root root 4096 Jul 26 15:50 .
+-rw-------  1 root root    5 Jul 26 15:50 .bash_history
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 34752 -      Jul26 ?        00:00:07 /lib/systemd/systemd --system --deserialize 19
+1 S root         2     0  0  80   0 -     0 -      Jul26 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kworker/0:0H]
+1 S root         7     2  0  80   0 -     0 -      Jul26 ?        00:00:10 [rcu_sched]
+1 S root         8     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0 -40   - -     0 -      Jul26 ?        00:00:02 [migration/0]
+1 S root        10     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 -      Jul26 ?        00:00:01 [watchdog/0]
+1 S root        12     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [cpuhp/0]
+1 S root        13     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [cpuhp/1]
+5 S root        14     2  0 -40   - -     0 -      Jul26 ?        00:00:01 [watchdog/1]
+1 S root        15     2  0 -40   - -     0 -      Jul26 ?        00:00:02 [migration/1]
+1 S root        16     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [ksoftirqd/1]
+1 S root        18     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kworker/1:0H]
+5 S root        19     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [kdevtmpfs]
+1 S root        20     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [netns]
+1 S root        21     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [khungtaskd]
+1 S root        22     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [oom_reaper]
+1 S root        23     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [writeback]
+1 S root        24     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [kcompactd0]
+1 S root        26     2  0  85   5 -     0 -      Jul26 ?        00:00:00 [ksmd]
+1 S root        27     2  0  99  19 -     0 -      Jul26 ?        00:00:00 [khugepaged]
+1 S root        28     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [crypto]
+1 S root        29     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kintegrityd]
+1 S root        30     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        31     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kblockd]
+1 S root        32     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [devfreq_wq]
+1 S root        33     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [watchdogd]
+1 S root        34     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [kswapd0]
+1 S root        35     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [vmstat]
+1 S root        47     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kthrotld]
+1 S root        48     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [ipv6_addrconf]
+1 S root        84     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [ata_sff]
+1 S root        85     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        87     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        89     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        90     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        92     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root        98     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root       100     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root       101     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root       120     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [scsi_eh_0]
+1 S root       121     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [scsi_eh_1]
+1 S root       122     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [scsi_tmf_0]
+1 S root       123     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [scsi_tmf_1]
+1 S root       124     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [scsi_eh_2]
+1 S root       125     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [scsi_tmf_2]
+1 S root       126     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [bioset]
+1 S root       385     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [kworker/0:1H]
+1 S root       400     2  0  60 -20 -     0 -      Jul26 ?        00:00:03 [kworker/1:1H]
+1 D root       461     2  0  80   0 -     0 -      Jul26 ?        00:00:07 [jbd2/sda1-8]
+1 S root       462     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [ext4-rsv-conver]
+4 S root       499     1  0  80   0 - 14858 -      Jul26 ?        00:00:06 /lib/systemd/systemd-journald
+1 S root       502     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [kauditd]
+1 S root       548     2  0  80   0 -     0 -      Jul26 ?        00:00:00 [hwrng]
+1 S root       556     2  0  60 -20 -     0 -      Jul26 ?        00:00:00 [ttm_swap]
+1 S root       660     1  0  80   0 -  5117 -      Jul26 ?        00:00:00 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+1 S root       718     1  0  80   0 -  5117 -      Jul26 ?        00:00:00 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+4 S message+   815     1  0  80   0 - 11385 -      Jul26 ?        00:02:26 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+4 S root       826     1  0  80   0 -  9519 -      Jul26 ?        00:00:01 /lib/systemd/systemd-logind
+4 S root       831     1  0  80   0 -  8984 -      Jul26 ?        00:00:22 /usr/sbin/irqbalance --foreground
+4 S unscd      833     1  0  80   0 -  4204 -      Jul26 ?        00:00:01 /usr/sbin/nscd -d
+4 S root       864     1  0  80   0 -  1113 -      Jul26 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root       865     1  0  80   0 -  1057 -      Jul26 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root       868     1  0  80   0 - 72488 -      Jul26 ?        00:00:00 /usr/sbin/lightdm
+4 S root       892   868  0  80   0 - 91860 -      Jul26 tty7     00:00:33 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+4 S root       946   868  0  80   0 - 58812 -      Jul26 ?        00:00:00 lightdm --session-child 16 19
+4 S lightdm    951     1  0  80   0 - 14138 -      Jul26 ?        00:00:00 /lib/systemd/systemd --user
+5 S lightdm    952   951  0  80   0 - 21720 -      Jul26 ?        00:00:00 (sd-pam)
+4 S lightdm    957   946  0  80   0 - 154228 -     Jul26 ?        00:03:06 /usr/sbin/lightdm-gtk-greeter
+0 S root       984     1  0  80   0 -  1072 -      Jul26 ?        00:00:00 /bin/sh -c tee -a /var/log/cloud-init-output.log
+0 S root       985   984  0  80   0 -  1050 -      Jul26 ?        00:00:00 tee -a /var/log/cloud-init-output.log
+0 S lightdm    988     1  0  80   0 - 87165 -      Jul26 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+0 S lightdm    996   951  0  80   0 -  9163 -      Jul26 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+0 S lightdm   1066   988  0  80   0 -  9138 -      Jul26 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+4 S root      1096     1  0  80   0 - 62516 -      Jul26 ?        00:00:00 /usr/sbin/rsyslogd -n
+0 S lightdm   1126     1  0  80   0 - 55079 -      Jul26 ?        00:00:00 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+0 S lightdm   1128   951  0  80   0 - 70639 -      Jul26 ?        00:00:00 /usr/lib/gvfs/gvfsd
+0 S lightdm   1160   951  0  80   0 - 88040 -      Jul26 ?        00:00:00 /usr/lib/gvfs/gvfsd-fuse /run/user/112/gvfs -f -o big_writes
+1 S root      1382     2  0  80   0 -     0 -      13:14 ?        00:00:00 [kworker/0:2]
+1 S root      1383     2  0  80   0 -     0 -      13:14 ?        00:00:00 [kworker/1:1]
+0 S root      1518     1  0  80   0 -  1575 -      Jul26 ?        00:00:00 nc -klvnp 31337 -e /bin/bash
+0 S root      1702   868  0  80   0 - 22397 -      Jul26 ?        00:00:00 lightdm --session-child 15 20
+1 S root      2034     2  0  80   0 -     0 -      14:00 ?        00:00:00 [kworker/1:2]
+1 S root      2231     2  0  80   0 -     0 -      14:13 ?        00:00:00 [kworker/1:0]
+4 S root      2267 30441  0  80   0 - 25354 -      14:16 ?        00:00:00 sshd: student4 [priv]
+4 S student4  2273     1  0  80   0 - 14106 SyS_ep 14:16 ?        00:00:00 /lib/systemd/systemd --user
+5 S student4  2275  2273  0  80   0 - 42171 -      14:16 ?        00:00:00 (sd-pam)
+5 R student4  2283  2267  0  80   0 - 25354 -      14:16 ?        00:00:00 sshd: student4@pts/0
+0 S student4  2285  2283  0  80   0 -  3172 -      14:16 pts/0    00:00:00 -bash
+0 R student4  2349  2285  0  80   0 -  7450 -      14:17 pts/0    00:00:00 ps -elf
+1 S root      3697     2  0  80   0 -     0 -      Jul26 ?        00:00:03 [kworker/u4:1]
+4 S root     16860     1  0  80   0 -  9461 -      Jul26 ?        00:00:01 /lib/systemd/systemd-udevd
+4 S root     22716     1  0  80   0 -  4888 -      Jul26 ?        00:00:01 /usr/sbin/cron -f
+5 S ntp      23563     1  0  80   0 - 24464 -      Jul26 ?        00:00:51 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 105:109
+5 S root     24038     1  0  80   0 - 44182 -      Jul26 ?        00:06:22 /usr/bin/python -O /usr/share/wicd/daemon/wicd-daemon.py --keep-connection
+0 S root     24042 24038  0  80   0 - 25130 -      Jul26 ?        00:02:28 /usr/bin/python -O /usr/share/wicd/daemon/monitor.py
+1 S root     24828     2  0  80   0 -     0 -      Jul27 ?        00:00:02 [kworker/u4:2]
+4 S root     24913     1  0  80   0 - 69420 -      Jul26 ?        00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+4 S rtkit    24981     1  0  81   1 - 44327 -      Jul26 ?        00:00:07 /usr/lib/rtkit/rtkit-daemon
+4 S avahi    25171     1  0  80   0 -  9643 -      Jul26 ?        00:00:00 avahi-daemon: running [box2-tonystark.local]
+1 S avahi    25173 25171  0  80   0 -  9643 -      Jul26 ?        00:00:00 avahi-daemon: chroot helper
+1 S root     28475     2  0  80   0 -     0 -      06:53 ?        00:00:05 [kworker/0:1]
+4 S root     29477     1  0  80   0 - 77112 -      Jul26 ?        00:00:03 /usr/lib/packagekit/packagekitd
+4 S root     30441     1  0  80   0 - 15916 -      Jul26 ?        00:00:00 /usr/sbin/sshd -D
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:e7:c9:1e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.0.10/24 brd 192.168.0.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fee7:c91e/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo netstat -auntp
+sudo: unable to resolve host TonyStark
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:31337           0.0.0.0:*               LISTEN      1518/nc             
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      30441/sshd          
+tcp        0    272 192.168.0.10:22         192.168.0.99:59078      ESTABLISHED 2267/sshd: student4 
+tcp6       0      0 :::22                   :::*                    LISTEN      30441/sshd          
+udp        0      0 0.0.0.0:52526           0.0.0.0:*                           25171/avahi-daemon: 
+udp        0      0 0.0.0.0:57949           0.0.0.0:*                           1096/rsyslogd       
+udp        0      0 0.0.0.0:35465           0.0.0.0:*                           1096/rsyslogd       
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           718/dhclient        
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           660/dhclient        
+udp        0      0 192.168.0.10:123        0.0.0.0:*                           23563/ntpd          
+udp        0      0 127.0.0.1:123           0.0.0.0:*                           23563/ntpd          
+udp        0      0 0.0.0.0:123             0.0.0.0:*                           23563/ntpd          
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           25171/avahi-daemon: 
+udp6       0      0 :::59343                :::*                                25171/avahi-daemon: 
+udp6       0      0 fe80::f816:3eff:fee:123 :::*                                23563/ntpd          
+udp6       0      0 ::1:123                 :::*                                23563/ntpd          
+udp6       0      0 :::123                  :::*                                23563/ntpd          
+udp6       0      0 :::5353                 :::*                                25171/avahi-daemon: 
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ w
+ 14:20:29 up 8 days, 28 min,  1 user,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student4 pts/0    192.168.0.99     14:16    0.00s  0.05s  0.00s w
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo ls -latr /var/spool/cron
+sudo: unable to resolve host TonyStark
+total 12
+drwx-wx--T 2 root crontab 4096 May  3  2015 crontabs
+drwxr-xr-x 3 root root    4096 Feb 13  2018 .
+drwxr-xr-x 6 root root    4096 Feb 19  2018 ..
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo ls -latr /var/spool/cron/crontabs
+sudo: unable to resolve host TonyStark
+total 8
+drwx-wx--T 2 root crontab 4096 May  3  2015 .
+drwxr-xr-x 3 root root    4096 Feb 13  2018 ..
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ date; date -u
+Wed Aug  3 14:21:23 UTC 2022
+Wed Aug  3 14:21:23 UTC 2022
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ uname -a
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev             1014856       0   1014856   0% /dev
+tmpfs             205244    9884    195360   5% /run
+/dev/sda1        8223140 4416948   3412480  57% /
+tmpfs            1026204       0   1026204   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs            1026204       0   1026204   0% /sys/fs/cgroup
+tmpfs             205240       4    205236   1% /run/user/112
+tmpfs             205240       0    205240   0% /run/user/1004
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /var/*/*acc*
+ls: cannot access '/var/*/*acc*': No such file or directory
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls /etc/systemd/system/multi-user.target.wants
+[0m[01;36manacron.service[0m  [01;36mavahi-daemon.service[0m  [01;36mcron.service[0m  [01;36mirqbalance.service[0m  [01;36mnetworking.service[0m  [01;36mremote-fs.target[0m  [01;36mrsync.service[0m  [01;36mrsyslog.service[0m  [01;36mssh.service[0m  [01;36munscd.service[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /var/*log*/
+total 2544
+drwx------  2 speech-dispatcher root    4096 Aug  7  2017 [0m[01;34mspeech-dispatcher[0m
+drwxr-xr-x  2 ntp               ntp     4096 Aug  8  2017 [01;34mntpstats[0m
+drwxr-xr-x 11 root              root    4096 Feb 13  2018 [01;34m..[0m
+-rw-------  1 root              utmp       0 Feb 13  2018 btmp.1
+-rw-r--r--  1 root              root  447534 Feb 13  2018 bootstrap.log
+drwxr-xr-x  2 root              root    4096 Jul 26 13:54 [01;34mwicd[0m
+-rw-r--r--  1 root              root   16797 Jul 26 13:54 Xorg.0.log
+drwx--x--x  2 root              root    4096 Jul 26 13:54 [01;34mlightdm[0m
+-rw-r--r--  1 root              root    2956 Jul 26 14:15 fontconfig.log
+-rw-r-----  1 root              adm    36243 Jul 26 14:17 messages.1
+-rw-r-----  1 root              adm    43949 Jul 26 14:17 kern.log.1
+-rw-r-----  1 root              adm    10028 Jul 26 14:20 debug.1
+-rw-r-----  1 root              adm     1634 Jul 26 14:20 auth.log.1
+-rw-r--r--  1 root              root   32768 Jul 26 14:21 faillog
+-rw-r--r--  1 root              root   57698 Jul 26 14:21 alternatives.log.1
+-rw-r--r--  1 root              root 1111587 Jul 26 14:21 dpkg.log.1
+-rw-r--r--  1 root              root  175725 Jul 26 14:21 cloud-init-output.log
+-rw-r--r--  1 root              adm   122057 Jul 26 14:21 cloud-init.log
+-rw-r-----  1 root              adm     1596 Jul 26 14:21 user.log.1
+-rw-r-----  1 root              adm     2404 Jul 28 00:07 [01;31msyslog.7.gz[0m
+-rw-r-----  1 root              adm     1951 Jul 29 00:05 [01;31msyslog.6.gz[0m
+-rw-rw-r--  1 root              utmp    7680 Jul 29 19:59 wtmp.1
+-rw-r-----  1 root              adm     2361 Jul 30 00:09 [01;31msyslog.5.gz[0m
+-rw-r-----  1 root              adm   365021 Jul 31 00:01 daemon.log.1
+-rw-r-----  1 root              adm     1917 Jul 31 00:06 [01;31msyslog.4.gz[0m
+-rw-r-----  1 root              adm        0 Jul 31 00:06 user.log
+-rw-r-----  1 root              adm        0 Jul 31 00:06 messages
+-rw-r-----  1 root              adm        0 Jul 31 00:06 debug
+-rw-r-----  1 root              adm        0 Jul 31 00:06 auth.log
+-rw-r-----  1 root              adm     1944 Aug  1 00:07 [01;31msyslog.3.gz[0m
+-rw-r--r--  1 root              root       0 Aug  1 00:07 dpkg.log
+drwxr-xr-x  2 root              root    4096 Aug  1 00:07 [01;34mapt[0m
+-rw-r--r--  1 root              root       0 Aug  1 00:07 alternatives.log
+-rw-rw----  1 root              utmp       0 Aug  1 00:07 btmp
+-rw-r-----  1 root              adm      104 Aug  1 00:24 kern.log
+-rw-r-----  1 root              adm     2736 Aug  2 00:07 [01;31msyslog.2.gz[0m
+-rw-r-----  1 root              adm    13432 Aug  3 00:05 syslog.1
+drwxr-xr-x  7 root              root    4096 Aug  3 00:05 [01;34m.[0m
+-rw-r-----  1 root              adm    29262 Aug  3 14:16 daemon.log
+-rw-rw-r--  1 root              utmp    1920 Aug  3 14:16 wtmp
+-rw-rw-r--  1 root              utmp  299008 Aug  3 14:16 lastlog
+-rw-r-----  1 root              adm     8829 Aug  3 14:17 syslog
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /var/log/*
+-rw------- 1 root              utmp       0 Feb 13  2018 /var/log/btmp.1
+-rw-r--r-- 1 root              root  447534 Feb 13  2018 /var/log/bootstrap.log
+-rw-r--r-- 1 root              root   16797 Jul 26 13:54 /var/log/Xorg.0.log
+-rw-r--r-- 1 root              root    2956 Jul 26 14:15 /var/log/fontconfig.log
+-rw-r----- 1 root              adm    36243 Jul 26 14:17 /var/log/messages.1
+-rw-r----- 1 root              adm    43949 Jul 26 14:17 /var/log/kern.log.1
+-rw-r----- 1 root              adm    10028 Jul 26 14:20 /var/log/debug.1
+-rw-r----- 1 root              adm     1634 Jul 26 14:20 /var/log/auth.log.1
+-rw-r--r-- 1 root              root   32768 Jul 26 14:21 /var/log/faillog
+-rw-r--r-- 1 root              root   57698 Jul 26 14:21 /var/log/alternatives.log.1
+-rw-r--r-- 1 root              root 1111587 Jul 26 14:21 /var/log/dpkg.log.1
+-rw-r--r-- 1 root              root  175725 Jul 26 14:21 /var/log/cloud-init-output.log
+-rw-r--r-- 1 root              adm   122057 Jul 26 14:21 /var/log/cloud-init.log
+-rw-r----- 1 root              adm     1596 Jul 26 14:21 /var/log/user.log.1
+-rw-r----- 1 root              adm     2404 Jul 28 00:07 [0m[01;31m/var/log/syslog.7.gz[0m
+-rw-r----- 1 root              adm     1951 Jul 29 00:05 [01;31m/var/log/syslog.6.gz[0m
+-rw-rw-r-- 1 root              utmp    7680 Jul 29 19:59 /var/log/wtmp.1
+-rw-r----- 1 root              adm     2361 Jul 30 00:09 [01;31m/var/log/syslog.5.gz[0m
+-rw-r----- 1 root              adm   365021 Jul 31 00:01 /var/log/daemon.log.1
+-rw-r----- 1 root              adm     1917 Jul 31 00:06 [01;31m/var/log/syslog.4.gz[0m
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/user.log
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/messages
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/debug
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/auth.log
+-rw-r----- 1 root              adm     1944 Aug  1 00:07 [01;31m/var/log/syslog.3.gz[0m
+-rw-r--r-- 1 root              root       0 Aug  1 00:07 /var/log/dpkg.log
+-rw-r--r-- 1 root              root       0 Aug  1 00:07 /var/log/alternatives.log
+-rw-rw---- 1 root              utmp       0 Aug  1 00:07 /var/log/btmp
+-rw-r----- 1 root              adm      104 Aug  1 00:24 /var/log/kern.log
+-rw-r----- 1 root              adm     2736 Aug  2 00:07 [01;31m/var/log/syslog.2.gz[0m
+-rw-r----- 1 root              adm    13432 Aug  3 00:05 /var/log/syslog.1
+-rw-r----- 1 root              adm    29262 Aug  3 14:16 /var/log/daemon.log
+-rw-rw-r-- 1 root              utmp    1920 Aug  3 14:16 /var/log/wtmp
+-rw-rw-r-- 1 root              utmp  299008 Aug  3 14:16 /var/log/lastlog
+-rw-r----- 1 root              adm     8829 Aug  3 14:17 /var/log/syslog
+
+ls: cannot open directory '/var/log/speech-dispatcher': Permission denied
+/var/log/ntpstats:
+total 8
+drwxr-xr-x 2 ntp  ntp  4096 Aug  8  2017 [01;34m.[0m
+drwxr-xr-x 7 root root 4096 Aug  3 00:05 [01;34m..[0m
+
+/var/log/wicd:
+total 16
+drwxr-xr-x 2 root root 4096 Jul 26 13:54 [01;34m.[0m
+-rw-r----- 1 root adm  5378 Jul 26 14:16 wicd.log
+drwxr-xr-x 7 root root 4096 Aug  3 00:05 [01;34m..[0m
+ls: cannot open directory '/var/log/lightdm': Permission denied
+
+/var/log/apt:
+total 124
+-rw-r--r-- 1 root root 48160 Jul 26 14:21 [01;31meipp.log.xz[0m
+-rw-r----- 1 root adm  52556 Jul 26 14:21 [01;31mterm.log.1.gz[0m
+-rw-r--r-- 1 root root 15256 Jul 26 14:21 [01;31mhistory.log.1.gz[0m
+-rw-r----- 1 root adm      0 Aug  1 00:07 term.log
+-rw-r--r-- 1 root root     0 Aug  1 00:07 history.log
+drwxr-xr-x 2 root root  4096 Aug  1 00:07 [01;34m.[0m
+drwxr-xr-x 7 root root  4096 Aug  3 00:05 [01;34m..[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo ls -latr /var/log/*
+sudo: unable to resolve host TonyStark
+-rw------- 1 root              utmp       0 Feb 13  2018 /var/log/btmp.1
+-rw-r--r-- 1 root              root  447534 Feb 13  2018 /var/log/bootstrap.log
+-rw-r--r-- 1 root              root   16797 Jul 26 13:54 /var/log/Xorg.0.log
+-rw-r--r-- 1 root              root    2956 Jul 26 14:15 /var/log/fontconfig.log
+-rw-r----- 1 root              adm    36243 Jul 26 14:17 /var/log/messages.1
+-rw-r----- 1 root              adm    43949 Jul 26 14:17 /var/log/kern.log.1
+-rw-r----- 1 root              adm    10028 Jul 26 14:20 /var/log/debug.1
+-rw-r----- 1 root              adm     1634 Jul 26 14:20 /var/log/auth.log.1
+-rw-r--r-- 1 root              root   32768 Jul 26 14:21 /var/log/faillog
+-rw-r--r-- 1 root              root   57698 Jul 26 14:21 /var/log/alternatives.log.1
+-rw-r--r-- 1 root              root 1111587 Jul 26 14:21 /var/log/dpkg.log.1
+-rw-r--r-- 1 root              root  175725 Jul 26 14:21 /var/log/cloud-init-output.log
+-rw-r--r-- 1 root              adm   122057 Jul 26 14:21 /var/log/cloud-init.log
+-rw-r----- 1 root              adm     1596 Jul 26 14:21 /var/log/user.log.1
+-rw-r----- 1 root              adm     2404 Jul 28 00:07 /var/log/syslog.7.gz
+-rw-r----- 1 root              adm     1951 Jul 29 00:05 /var/log/syslog.6.gz
+-rw-rw-r-- 1 root              utmp    7680 Jul 29 19:59 /var/log/wtmp.1
+-rw-r----- 1 root              adm     2361 Jul 30 00:09 /var/log/syslog.5.gz
+-rw-r----- 1 root              adm   365021 Jul 31 00:01 /var/log/daemon.log.1
+-rw-r----- 1 root              adm     1917 Jul 31 00:06 /var/log/syslog.4.gz
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/user.log
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/messages
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/debug
+-rw-r----- 1 root              adm        0 Jul 31 00:06 /var/log/auth.log
+-rw-r----- 1 root              adm     1944 Aug  1 00:07 /var/log/syslog.3.gz
+-rw-r--r-- 1 root              root       0 Aug  1 00:07 /var/log/dpkg.log
+-rw-r--r-- 1 root              root       0 Aug  1 00:07 /var/log/alternatives.log
+-rw-rw---- 1 root              utmp       0 Aug  1 00:07 /var/log/btmp
+-rw-r----- 1 root              adm      104 Aug  1 00:24 /var/log/kern.log
+-rw-r----- 1 root              adm     2736 Aug  2 00:07 /var/log/syslog.2.gz
+-rw-r----- 1 root              adm    13432 Aug  3 00:05 /var/log/syslog.1
+-rw-r----- 1 root              adm    29262 Aug  3 14:16 /var/log/daemon.log
+-rw-rw-r-- 1 root              utmp    1920 Aug  3 14:16 /var/log/wtmp
+-rw-rw-r-- 1 root              utmp  299008 Aug  3 14:16 /var/log/lastlog
+-rw-r----- 1 root              adm     8829 Aug  3 14:17 /var/log/syslog
+
+/var/log/speech-dispatcher:
+total 8
+drwx------ 2 speech-dispatcher root 4096 Aug  7  2017 .
+drwxr-xr-x 7 root              root 4096 Aug  3 00:05 ..
+
+/var/log/ntpstats:
+total 8
+drwxr-xr-x 2 ntp  ntp  4096 Aug  8  2017 .
+drwxr-xr-x 7 root root 4096 Aug  3 00:05 ..
+
+/var/log/wicd:
+total 16
+drwxr-xr-x 2 root root 4096 Jul 26 13:54 .
+-rw-r----- 1 root adm  5378 Jul 26 14:16 wicd.log
+drwxr-xr-x 7 root root 4096 Aug  3 00:05 ..
+
+/var/log/lightdm:
+total 1808
+-rw------- 1 root root    1141 Jul 26 13:54 x-0.log
+drwx--x--x 2 root root    4096 Jul 26 13:54 .
+-rw------- 1 root root    7361 Jul 26 14:21 lightdm.log
+drwxr-xr-x 7 root root    4096 Aug  3 00:05 ..
+-rw------- 1 root root 1825188 Aug  3 14:22 seat0-greeter.log
+
+/var/log/apt:
+total 124
+-rw-r--r-- 1 root root 48160 Jul 26 14:21 eipp.log.xz
+-rw-r----- 1 root adm  52556 Jul 26 14:21 term.log.1.gz
+-rw-r--r-- 1 root root 15256 Jul 26 14:21 history.log.1.gz
+-rw-r----- 1 root adm      0 Aug  1 00:07 term.log
+-rw-r--r-- 1 root root     0 Aug  1 00:07 history.log
+drwxr-xr-x 2 root root  4096 Aug  1 00:07 .
+drwxr-xr-x 7 root root  4096 Aug  3 00:05 ..
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/rsyslog.conf
+#  /etc/rsyslog.conf	Configuration file for rsyslog.
+#
+#			For more information see
+#			/usr/share/doc/rsyslog-doc/html/rsyslog_conf.html
+
+
+#################
+#### MODULES ####
+#################
+
+module(load="imuxsock") # provides support for local system logging
+module(load="imklog")   # provides kernel logging support
+#module(load="immark")  # provides --MARK-- message capability
+
+# provides UDP syslog reception
+#module(load="imudp")
+#input(type="imudp" port="514")
+
+# provides TCP syslog reception
+#module(load="imtcp")
+#input(type="imtcp" port="514")
+
+
+###########################
+#### GLOBAL DIRECTIVES ####
+###########################
+
+#
+# Use traditional timestamp format.
+# To enable high precision timestamps, comment out the following line.
+#
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+#
+# Set the default permissions for all log files.
+#
+$FileOwner root
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+
+#
+# Where to place spool and state files
+#
+$WorkDirectory /var/spool/rsyslog
+
+#
+# Include all config files in /etc/rsyslog.d/
+#
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+
+###############
+#### RULES ####
+###############
+
+#
+# First some standard log files.  Log by facility.
+#
+auth,authpriv.*			@remote-host
+*.*;auth,authpriv.none		-/var/log/syslog
+#cron.*				/var/log/cron.log
+daemon.*			-/var/log/daemon.log
+kern.*				-/var/log/kern.log
+lpr.*				-/var/log/lpr.log
+mail.*				-/var/log/mail.log
+user.*				-/var/log/user.log
+
+#
+# Logging for the mail system.  Split it up so that
+# it is easy to write scripts to parse these files.
+#
+mail.info			-/var/log/mail.info
+mail.warn			-/var/log/mail.warn
+mail.err			/var/log/mail.err
+
+#
+# Some "catch-all" log files.
+#
+*.=debug;\
+	auth,authpriv.none;\
+	news.none;mail.none	-/var/log/debug
+*.=info;*.=notice;*.=warn;\
+	auth,authpriv.none;\
+	cron,daemon.none;\
+	mail,news.none		@remote-host
+
+#
+# Emergencies are sent to everybody logged in.
+#
+*.emerg				:omusrmsg:*
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/hosts
+# Your system has configured 'manage_etc_hosts' as True.
+# As a result, if you wish for changes to this file to persist
+# then you will need to either
+# a.) make changes to the master file in /etc/cloud/templates/hosts.tmpl
+# b.) change or remove the value of 'manage_etc_hosts' in
+#     /etc/cloud/cloud.cfg or cloud-config from user-data
+#
+127.0.1.1 box2-tonystark.novalocal box2-tonystark
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+192.168.0.99	remote-host
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ .ls -la /etc/*syslog*
+-bash: .ls: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -la /etc/*syslog*
+-rw-r--r-- 1 root root 1952 Jul 26 14:20 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 12
+drwxr-xr-x   2 root root 4096 Jul 26 14:15 [0m[01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rw-r--r--   1 root root  255 Feb  2  2017 21-cloudinit.conf
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+###### root crontab is:
+###### daemon crontab is:
+###### bin crontab is:
+###### sys crontab is:
+###### sync crontab is:
+###### games crontab is:
+###### man crontab is:
+###### lp crontab is:
+###### mail crontab is:
+###### news crontab is:
+###### uucp crontab is:
+###### proxy crontab is:
+###### www-data crontab is:
+###### backup crontab is:
+###### list crontab is:
+###### irc crontab is:
+###### gnats crontab is:
+###### nobody crontab is:
+###### systemd-timesync crontab is:
+###### systemd-network crontab is:
+###### systemd-resolve crontab is:
+###### systemd-bus-proxy crontab is:
+###### unscd crontab is:
+###### ntp crontab is:
+###### _apt crontab is:
+###### messagebus crontab is:
+###### sshd crontab is:
+###### debian crontab is:
+###### rtkit crontab is:
+###### usbmux crontab is:
+###### speech-dispatcher crontab is:
+###### lightdm crontab is:
+###### pulse crontab is:
+###### avahi crontab is:
+###### saned crontab is:
+###### student1 crontab is:
+###### student2 crontab is:
+###### student3 crontab is:
+###### student4 crontab is:
+###### student5 crontab is:
+###### student6 crontab is:
+###### student7 crontab is:
+###### student8 crontab is:
+###### student9 crontab is:
+###### student10 crontab is:
+###### student11 crontab is:
+###### student12 crontab is:
+###### student13 crontab is:
+###### student14 crontab is:
+###### student15 crontab is:
+###### student16 crontab is:
+###### student17 crontab is:
+###### student18 crontab is:
+###### student19 crontab is:
+###### student20 crontab is:
+###### student21 crontab is:
+###### student22 crontab is:
+###### student23 crontab is:
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/crontab
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -la /etc/cron.*
+/etc/cron.d:
+total 16
+drwxr-xr-x   2 root root 4096 Jul 26 14:15 [0m[01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rw-r--r--   1 root root  285 May 29  2017 anacron
+-rw-r--r--   1 root root  102 May  3  2015 .placeholder
+
+/etc/cron.daily:
+total 52
+drwxr-xr-x   2 root root 4096 Jul 26 14:16 [01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rwxr-xr-x   1 root root  311 May 29  2017 [01;32m0anacron[0m
+-rwxr-xr-x   1 root root 1474 Sep 13  2017 [01;32mapt-compat[0m
+-rwxr-xr-x   1 root root  314 Apr 18  2017 [01;32maptitude[0m
+-rwxr-xr-x   1 root root  355 Oct 25  2016 [01;32mbsdmainutils[0m
+-rwxr-xr-x   1 root root  384 Dec 12  2012 [01;32mcracklib-runtime[0m
+-rwxr-xr-x   1 root root 1597 Feb 22  2017 [01;32mdpkg[0m
+-rwxr-xr-x   1 root root   89 May  5  2015 [01;32mlogrotate[0m
+-rwxr-xr-x   1 root root 1065 Dec 13  2016 [01;32mman-db[0m
+-rwxr-xr-x   1 root root 1386 Aug  8  2017 [01;32mntp[0m
+-rwxr-xr-x   1 root root  249 May 17  2017 [01;32mpasswd[0m
+-rw-r--r--   1 root root  102 May  3  2015 .placeholder
+
+/etc/cron.hourly:
+total 12
+drwxr-xr-x   2 root root 4096 Jul 26 14:15 [01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rw-r--r--   1 root root  102 May  3  2015 .placeholder
+
+/etc/cron.monthly:
+total 16
+drwxr-xr-x   2 root root 4096 Jul 26 14:15 [01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rwxr-xr-x   1 root root  313 May 29  2017 [01;32m0anacron[0m
+-rw-r--r--   1 root root  102 May  3  2015 .placeholder
+
+/etc/cron.weekly:
+total 20
+drwxr-xr-x   2 root root 4096 Jul 26 14:15 [01;34m.[0m
+drwxr-xr-x 115 root root 4096 Aug  3 08:16 [01;34m..[0m
+-rwxr-xr-x   1 root root  312 May 29  2017 [01;32m0anacron[0m
+-rwxr-xr-x   1 root root  723 Dec 13  2016 [01;32mman-db[0m
+-rw-r--r--   1 root root  102 May  3  2015 .placeholder
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+find: ‘/run/lightdm’: Permission denied
+find: ‘/run/user/112’: Permission denied
+find: ‘/run/log/journal/3c239f5065784b5cb58eb4159356ebe2’: Permission denied
+find: ‘/run/systemd/inaccessible’: Permission denied
+find: ‘/tmp/systemd-private-5bb3a9db03594bb0b36b2af42c28d09f-rtkit-daemon.service-gh40YY’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/lightdm’: Permission denied
+find: ‘/var/log/speech-dispatcher’: Permission denied
+find: ‘/var/log/lightdm’: Permission denied
+find: ‘/var/tmp/systemd-private-5bb3a9db03594bb0b36b2af42c28d09f-rtkit-daemon.service-J3mIiP’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/sudo’: Permission denied
+find: ‘/var/lib/lightdm’: Permission denied
+find: ‘/home/debian/.ssh’: Permission denied
+^C
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sudo: unable to resolve host TonyStark
+find: ‘/run/user/112/gvfs’: Permission denied
+ls: cannot access '/run/log/journal/3c239f5065784b5cb58eb4159356ebe2/system.journal': Permission denied
+ls: cannot access '/var/lib/sudo/ts/student4': Permission denied
+-rw-r--r-- 1 root root     236 Aug  3 14:16 /run/systemd/transient/user-1004.slice
+-rw-r--r-- 1 root root     298 Aug  3 14:16 /run/systemd/transient/session-230.scope
+-rw------- 1 root root     142 Aug  3 14:16 /run/systemd/journal/streams/8:1616026
+-rw-r----- 1 root adm    29262 Aug  3 14:16 /var/log/daemon.log
+-rw-r--r-- 1 root root     237 Aug  3 14:16 /run/systemd/users/1004
+-rw-r--r-- 1 root root     291 Aug  3 14:16 /run/systemd/sessions/230
+-rw-r--r-- 1 root root      80 Aug  3 14:16 /run/motd.dynamic
+-rw-rw-r-- 1 root utmp    1920 Aug  3 14:16 /var/log/wtmp
+-rw-rw-r-- 1 root utmp  299008 Aug  3 14:16 /var/log/lastlog
+-rw-rw-r-- 1 root utmp    1920 Aug  3 14:16 /run/utmp
+-rw-r----- 1 root adm     8829 Aug  3 14:17 /var/log/syslog
+-rw------- 1 root root 1825504 Aug  3 14:24 /var/log/lightdm/seat0-greeter.log
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sestatus
+-bash: sestatus: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /root/.bash_history
+cat: /root/.bash_history: Permission denied
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ getenforce
+-bash: getenforce: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo cat /root/.bash_history
+sudo: unable to resolve host TonyStark
+exit
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat ~/.bash_history
+exit
+whoami
+w
+hostname
+uname -a
+date -u  
+ip addr  
+netstat -auntp        
+ps -elf  
+service --status-all  
+systemctl status --no-pager
+d
+systemctl
+fdisk -l                                                                                                                
+free
+top
+cat /etc/passwd
+exit
+iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+lssmod
+lsmod
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+sudo iptables -t nat -L
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+ip a
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+v
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -L
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -L
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.23:22024
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22024 -j SNAT --to-source 192.168.0.10
+student4@TonyStark:~$ sudo iptables -t nat -D POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -L
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -L
+ks
+ls
+ip a
+exit
+netstat -auntp
+sudo iptables -t nat -L
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.0.23 -j SNAT --to-source 192.168.0.10
+sudo iptables -t nat -L
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22024 -j DNAT --to-destination 192.168.0.23:22024
+sudo iptables -t nat -L
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22023 -j DNAT --to-destination 192.168.0.23:22
+sudo iptables -t nat -L
+exit
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ 
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat ~/.zsh_history
+cat: /home/useraccounts/student4/.zsh_history: No such file or directory
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=1014856k,nr_inodes=253714,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=205244k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=1968)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
+tmpfs on /run/user/112 type tmpfs (rw,nosuid,nodev,relatime,size=205240k,mode=700,uid=112,gid=115)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+gvfsd-fuse on /run/user/112/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=112,group_id=115)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,size=205240k,mode=700,uid=1004,gid=27)
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lsmod
+Module                  Size  Used by
+xt_nat                 16384  1
+xt_tcpudp              16384  0
+iptable_nat            16384  1
+nf_conntrack_ipv4      16384  1
+nf_defrag_ipv4         16384  1 nf_conntrack_ipv4
+nf_nat_ipv4            16384  1 iptable_nat
+nf_nat                 24576  2 xt_nat,nf_nat_ipv4
+nf_conntrack          114688  3 nf_conntrack_ipv4,nf_nat_ipv4,nf_nat
+dm_mod                118784  0
+fuse                   98304  3
+appletalk              36864  0
+ax25                   57344  0
+ipx                    28672  0
+p8023                  16384  1 ipx
+p8022                  16384  1 ipx
+psnap                  16384  2 appletalk,ipx
+llc                    16384  2 p8022,psnap
+qxl                    69632  2
+ttm                    98304  1 qxl
+kvm_amd              2179072  0
+virtio_balloon         16384  0
+ppdev                  20480  0
+joydev                 20480  0
+sg                     32768  0
+drm_kms_helper        155648  1 qxl
+kvm                   589824  1 kvm_amd
+virtio_rng             16384  0
+virtio_console         24576  0
+rng_core               16384  1 virtio_rng
+irqbypass              16384  1 kvm
+drm                   360448  5 qxl,ttm,drm_kms_helper
+evdev                  24576  5
+crct10dif_pclmul       16384  0
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+serio_raw              16384  0
+parport_pc             28672  0
+parport                49152  2 parport_pc,ppdev
+button                 16384  0
+ip_tables              24576  1 iptable_nat
+x_tables               36864  3 xt_nat,ip_tables,xt_tcpudp
+autofs4                40960  2
+ext4                  585728  1
+crc16                  16384  1 ext4
+jbd2                  106496  1 ext4
+crc32c_generic         16384  0
+fscrypto               28672  1 ext4
+ecb                    16384  0
+mbcache                16384  2 ext4
+sd_mod                 45056  2
+ata_generic            16384  0
+virtio_scsi            20480  1
+virtio_net             28672  0
+crc32c_intel           24576  2
+aesni_intel           167936  0
+aes_x86_64             20480  1 aesni_intel
+glue_helper            16384  1 aesni_intel
+lrw                    16384  1 aesni_intel
+gf128mul               16384  1 lrw
+ablk_helper            16384  1 aesni_intel
+cryptd                 24576  3 ablk_helper,ghash_clmulni_intel,aesni_intel
+psmouse               135168  0
+floppy                 69632  0
+ata_piix               36864  0
+virtio_pci             24576  0
+virtio_ring            24576  6 virtio_net,virtio_rng,virtio_scsi,virtio_balloon,virtio_console,virtio_pci
+virtio                 16384  6 virtio_net,virtio_rng,virtio_scsi,virtio_balloon,virtio_console,virtio_pci
+i2c_piix4              24576  0
+libata                249856  2 ata_piix,ata_generic
+scsi_mod              225280  4 sd_mod,virtio_scsi,libata,sg
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lsmodlsmoduname -a
+-bash: lsmodlsmoduname: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ uname -a
+Linux TonyStark 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /etc/*release*
+lrwxrwxrwx 1 root root 21 Jul 10  2020 [0m[01;36m/etc/os-release[0m -> ../usr/lib/os-release
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/*release*
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero arat npt nrip_save
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero arat npt nrip_save
+bugs		: fxsave_leak sysret_ss_attrs
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ services --status-all || systemctl status --no-pager 
+-bash: services: command not found
+● TonyStark
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Tue 2022-07-26 13:51:45 UTC; 1 weeks 1 days ago
+   CGroup: /
+           ├─user.slice
+           │ ├─user-1004.slice
+           │ │ ├─session-230.scope
+           │ │ │ ├─2267 sshd: student4 [priv]
+           │ │ │ ├─2283 sshd: student4@pts/0
+           │ │ │ ├─2285 -bash
+           │ │ │ └─2601 systemctl status --no-pager
+           │ │ └─user@1004.service
+           │ │   └─init.scope
+           │ │     ├─2273 /lib/systemd/systemd --user
+           │ │     └─2275 (sd-pam)
+           │ └─user-112.slice
+           │   ├─user@112.service
+           │   │ ├─dbus.service
+           │   │ │ └─996 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+           │   │ ├─init.scope
+           │   │ │ ├─951 /lib/systemd/systemd --user
+           │   │ │ └─952 (sd-pam)
+           │   │ └─gvfs-daemon.service
+           │   │   ├─1128 /usr/lib/gvfs/gvfsd
+           │   │   └─1160 /usr/lib/gvfs/gvfsd-fuse /run/user/112/gvfs -f -o big_writes
+           │   └─session-c1.scope
+           │     ├─ 946 lightdm --session-child 16 19
+           │     ├─ 957 /usr/sbin/lightdm-gtk-greeter
+           │     ├─ 988 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+           │     ├─1066 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+           │     └─1126 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+           ├─init.scope
+           │ └─1 /lib/systemd/systemd --system --deserialize 19
+           └─system.slice
+             ├─irqbalance.service
+             │ └─831 /usr/sbin/irqbalance --foreground
+             ├─lightdm.service
+             │ ├─ 868 /usr/sbin/lightdm
+             │ ├─ 892 /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+             │ └─1702 lightdm --session-child 15 20
+             ├─dbus.service
+             │ └─815 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─ssh.service
+             │ └─30441 /usr/sbin/sshd -D
+             ├─avahi-daemon.service
+             │ ├─25171 avahi-daemon: running [box2-tonystark.local]
+             │ └─25173 avahi-daemon: chroot helper
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─865 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─unscd.service
+             │ └─833 /usr/sbin/nscd -d
+             ├─ntp.service
+             │ └─23563 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 105:109
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─864 /sbin/agetty --noclear tty1 linux
+             ├─systemd-logind.service
+             │ └─826 /lib/systemd/systemd-logind
+             ├─rtkit-daemon.service
+             │ └─24981 /usr/lib/rtkit/rtkit-daemon
+             ├─packagekit.service
+             │ └─29477 /usr/lib/packagekit/packagekitd
+             ├─polkit.service
+             │ └─24913 /usr/lib/policykit-1/polkitd --no-debug
+             ├─cron.service
+             │ └─22716 /usr/sbin/cron -f
+             ├─systemd-udevd.service
+             │ └─16860 /lib/systemd/systemd-udevd
+             ├─rsyslog.service
+             │ └─1096 /usr/sbin/rsyslogd -n
+             ├─cloud-final.service
+             │ ├─ 984 /bin/sh -c tee -a /var/log/cloud-init-output.log
+             │ ├─ 985 tee -a /var/log/cloud-init-output.log
+             │ └─1518 nc -klvnp 31337 -e /bin/bash
+             ├─networking.service
+             │ ├─660 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+             │ └─718 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+             ├─systemd-journald.service
+             │ └─499 /lib/systemd/systemd-journald
+             └─wicd.service
+               ├─24038 /usr/bin/python -O /usr/share/wicd/daemon/wicd-daemon.py --keep-connection
+               └─24042 /usr/bin/python -O /usr/share/wicd/daemon/monitor.py
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ services --status-all || systemctl status --no-pager cat /proc/meminfo
+-bash: services: command not found
+Unit cat.service could not be found.
+Unit proc-meminfo.mount could not be found.
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /proc/meminfo
+MemTotal:        2052408 kB
+MemFree:           67732 kB
+MemAvailable:    1732052 kB
+Buffers:          108764 kB
+Cached:          1506948 kB
+SwapCached:            0 kB
+Active:           587508 kB
+Inactive:        1103576 kB
+Active(anon):      75940 kB
+Inactive(anon):    12416 kB
+Active(file):     511568 kB
+Inactive(file):  1091160 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         75416 kB
+Mapped:            87460 kB
+Shmem:             12992 kB
+Slab:             266576 kB
+SReclaimable:     249652 kB
+SUnreclaim:        16924 kB
+KernelStack:        2224 kB
+PageTables:         5960 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1026204 kB
+Committed_AS:     514572 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       57204 kB
+DirectMap2M:     2039808 kB
+DirectMap1G:           0 kB
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ 
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/shadow
+cat: /etc/shadow: Permission denied
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo cat/etc/shadow
+sudo: unable to resolve host TonyStark
+sudo: cat/etc/shadow: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ sudo cat /etc/shadow
+sudo: unable to resolve host TonyStark
+root:$6$r2nNiib9$ePgZPUlMIqdrP5r63ByRXhSRTWztImz6ywMaEtv0KZDR5iWOQ8xLVhHGNFjSVnXpoW6EPInF6T1mYY4LpOGFP0:19199:0:99999:7:::
+daemon:*:17575:0:99999:7:::
+bin:*:17575:0:99999:7:::
+sys:*:17575:0:99999:7:::
+sync:*:17575:0:99999:7:::
+games:*:17575:0:99999:7:::
+man:*:17575:0:99999:7:::
+lp:*:17575:0:99999:7:::
+mail:*:17575:0:99999:7:::
+news:*:17575:0:99999:7:::
+uucp:*:17575:0:99999:7:::
+proxy:*:17575:0:99999:7:::
+www-data:*:17575:0:99999:7:::
+backup:*:17575:0:99999:7:::
+list:*:17575:0:99999:7:::
+irc:*:17575:0:99999:7:::
+gnats:*:17575:0:99999:7:::
+nobody:*:17575:0:99999:7:::
+systemd-timesync:*:17575:0:99999:7:::
+systemd-network:*:17575:0:99999:7:::
+systemd-resolve:*:17575:0:99999:7:::
+systemd-bus-proxy:*:17575:0:99999:7:::
+unscd:*:17575:0:99999:7:::
+ntp:*:17575:0:99999:7:::
+_apt:*:17575:0:99999:7:::
+messagebus:*:17575:0:99999:7:::
+sshd:*:17575:0:99999:7:::
+debian:!*:17575:0:99999:7:::
+rtkit:*:17581:0:99999:7:::
+usbmux:*:17581:0:99999:7:::
+speech-dispatcher:!:17581:0:99999:7:::
+lightdm:*:17581:0:99999:7:::
+pulse:*:17581:0:99999:7:::
+avahi:*:17581:0:99999:7:::
+saned:*:17581:0:99999:7:::
+student1:$1$lcbAlLjz$k99GvJriHo.ne7rtwxxTg1:19199:0:99999:7:::
+student2:$1$gISe12/g$W8/tKq/t17c7c5zL7Nkip.:19199:0:99999:7:::
+student3:$1$U.FA3Jmx$1gbhcbr8qbOeoOTfqmoKI/:19199:0:99999:7:::
+student4:$1$uxFD0dxg$2wBxBrjmtKiAp7w47yvB/.:19199:0:99999:7:::
+student5:$1$yQ83u.W.$K0ZfX0W3BCXOeG3k1RTZ2.:19199:0:99999:7:::
+student6:$1$oezOe92W$YKQoxsuQ0/dM0EgYRLWo//:19199:0:99999:7:::
+student7:$1$Hsy.w2IJ$kI03J6r5ExjdzfN.BTcxf/:19199:0:99999:7:::
+student8:$1$NkZUkri2$GA35GqkRtAcInOmrry94z1:19199:0:99999:7:::
+student9:$1$IpUJ8T7t$u6ribWNIe6diPuKo5Kw3N0:19199:0:99999:7:::
+student10:$1$XsvvCbdo$BQcwj/7.tOeX5862zjYon.:19199:0:99999:7:::
+student11:$1$SAgT5Pdo$AhiGDxQfr044bGU3pxOr80:19199:0:99999:7:::
+student12:$1$tLUTd1Ng$Ulf8lSK67AliOIU39exui/:19199:0:99999:7:::
+student13:$1$8wjkUUg1$9IJ4BJTOUQY5e/m5hHYWM0:19199:0:99999:7:::
+student14:$1$SevEChQu$bxC9TcXW0rLy2RIACxbUm0:19199:0:99999:7:::
+student15:$1$xrWSrOa0$3z5H5w7U0cctlGnYkXraV0:19199:0:99999:7:::
+student16:$1$6k05sc6Z$BLOyC5dAM2kzkwR8c9Ctj1:19199:0:99999:7:::
+student17:$1$PACtpAsJ$dG9E3VDY8THSQeiQXlYk.0:19199:0:99999:7:::
+student18:$1$gX2h9Ujd$ypZNiCQbqBBasryJdmP0W/:19199:0:99999:7:::
+student19:$1$8baoh91Y$a4I1bhyzqCGnO3Cd6wLWX0:19199:0:99999:7:::
+student20:$1$b8pnnPpV$sX.hcp3JT8Ulbo0Rhx/rz.:19199:0:99999:7:::
+student21:$1$i3f5MgBQ$wlaGuIttW.LJsrD6BqWWN1:19199:0:99999:7:::
+student22:$1$en6dFKPh$GN0/yv88Fdseg7AfVV3H7.:19199:0:99999:7:::
+student23:$1$mAmzSpML$R27bmJBeOAJY6yGGA2bFK0:19199:0:99999:7:::
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /etc/passwdcat /etc/passwd
+cat: /etc/passwdcat: No such file or directory
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lspci -vv
+-bash: lspci: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ arp -a
+-bash: arp: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lsusb
+-bash: lsusb: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0   8G  0 disk 
+└─sda1   8:1    0   8G  0 part /
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ fdisk -l
+-bash: fdisk: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           2004         116          65          12        1821        1691
+Swap:             0           0           0
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ dmidecode -t bios
+-bash: dmidecode: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ cat /tmp/hsperfdata_root
+cat: /tmp/hsperfdata_root: Is a directory
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ls -latr /tmp/hsperfdata_root
+total 40
+-rw------- 1 root root 32768 Jul 26 14:19 26197
+drwxr-xr-x 2 root root  4096 Jul 26 14:19 [0m[01;34m.[0m
+drwxrwxrwt 9 root root  4096 Aug  3 14:17 [30;42m..[0m
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ ps -elfH
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+1 S root         2     0  0  80   0 -     0 -      Jul26 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kworker/0:0H]
+1 S root         7     2  0  80   0 -     0 -      Jul26 ?        00:00:10   [rcu_sched]
+1 S root         8     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [rcu_bh]
+1 S root         9     2  0 -40   - -     0 -      Jul26 ?        00:00:02   [migration/0]
+1 S root        10     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 -      Jul26 ?        00:00:01   [watchdog/0]
+1 S root        12     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [cpuhp/0]
+1 S root        13     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [cpuhp/1]
+5 S root        14     2  0 -40   - -     0 -      Jul26 ?        00:00:01   [watchdog/1]
+1 S root        15     2  0 -40   - -     0 -      Jul26 ?        00:00:02   [migration/1]
+1 S root        16     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [ksoftirqd/1]
+1 S root        18     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kworker/1:0H]
+5 S root        19     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [kdevtmpfs]
+1 S root        20     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [netns]
+1 S root        21     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [khungtaskd]
+1 S root        22     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [oom_reaper]
+1 S root        23     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [writeback]
+1 S root        24     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [kcompactd0]
+1 S root        26     2  0  85   5 -     0 -      Jul26 ?        00:00:00   [ksmd]
+1 S root        27     2  0  99  19 -     0 -      Jul26 ?        00:00:00   [khugepaged]
+1 S root        28     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [crypto]
+1 S root        29     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kintegrityd]
+1 S root        30     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        31     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kblockd]
+1 S root        32     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [devfreq_wq]
+1 S root        33     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [watchdogd]
+1 S root        34     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [kswapd0]
+1 S root        35     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [vmstat]
+1 S root        47     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kthrotld]
+1 S root        48     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [ipv6_addrconf]
+1 S root        84     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [ata_sff]
+1 S root        85     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        87     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        89     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        90     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        92     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root        98     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root       100     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root       101     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root       120     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [scsi_eh_0]
+1 S root       121     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [scsi_eh_1]
+1 S root       122     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [scsi_tmf_0]
+1 S root       123     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [scsi_tmf_1]
+1 S root       124     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [scsi_eh_2]
+1 S root       125     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [scsi_tmf_2]
+1 S root       126     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [bioset]
+1 S root       385     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [kworker/0:1H]
+1 S root       400     2  0  60 -20 -     0 -      Jul26 ?        00:00:03   [kworker/1:1H]
+1 S root       461     2  0  80   0 -     0 -      Jul26 ?        00:00:07   [jbd2/sda1-8]
+1 S root       462     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [ext4-rsv-conver]
+1 S root       502     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [kauditd]
+1 S root       548     2  0  80   0 -     0 -      Jul26 ?        00:00:00   [hwrng]
+1 S root       556     2  0  60 -20 -     0 -      Jul26 ?        00:00:00   [ttm_swap]
+1 S root      3697     2  0  80   0 -     0 -      Jul26 ?        00:00:03   [kworker/u4:1]
+1 S root     28475     2  0  80   0 -     0 -      06:53 ?        00:00:05   [kworker/0:1]
+1 S root      1382     2  0  80   0 -     0 -      13:14 ?        00:00:00   [kworker/0:2]
+1 S root      2034     2  0  80   0 -     0 -      14:00 ?        00:00:00   [kworker/1:2]
+1 S root      2231     2  0  80   0 -     0 -      14:13 ?        00:00:00   [kworker/1:0]
+1 S root      2535     2  0  80   0 -     0 -      14:24 ?        00:00:00   [kworker/u4:2]
+4 S root         1     0  0  80   0 - 34752 -      Jul26 ?        00:00:07 /lib/systemd/systemd --system --deserialize 19
+4 S root       499     1  0  80   0 - 14858 -      Jul26 ?        00:00:06   /lib/systemd/systemd-journald
+1 S root       660     1  0  80   0 -  5117 -      Jul26 ?        00:00:00   /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+1 S root       718     1  0  80   0 -  5117 -      Jul26 ?        00:00:00   /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+4 S message+   815     1  0  80   0 - 11385 -      Jul26 ?        00:02:26   /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+4 S root       826     1  0  80   0 -  9519 -      Jul26 ?        00:00:01   /lib/systemd/systemd-logind
+4 S root       831     1  0  80   0 -  8984 -      Jul26 ?        00:00:22   /usr/sbin/irqbalance --foreground
+4 S unscd      833     1  0  80   0 -  4204 -      Jul26 ?        00:00:01   /usr/sbin/nscd -d
+4 S root       864     1  0  80   0 -  1113 -      Jul26 tty1     00:00:00   /sbin/agetty --noclear tty1 linux
+4 S root       865     1  0  80   0 -  1057 -      Jul26 ttyS0    00:00:00   /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root       868     1  0  80   0 - 72488 -      Jul26 ?        00:00:00   /usr/sbin/lightdm
+4 S root       892   868  0  80   0 - 91860 -      Jul26 tty7     00:00:33     /usr/lib/xorg/Xorg :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+4 S root       946   868  0  80   0 - 58812 -      Jul26 ?        00:00:00     lightdm --session-child 16 19
+4 S lightdm    957   946  0  80   0 - 154228 -     Jul26 ?        00:03:06       /usr/sbin/lightdm-gtk-greeter
+0 S root      1702   868  0  80   0 - 22397 -      Jul26 ?        00:00:00     lightdm --session-child 15 20
+4 S lightdm    951     1  0  80   0 - 14138 -      Jul26 ?        00:00:00   /lib/systemd/systemd --user
+5 S lightdm    952   951  0  80   0 - 21720 -      Jul26 ?        00:00:00     (sd-pam)
+0 S lightdm    996   951  0  80   0 -  9163 -      Jul26 ?        00:00:00     /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation
+0 S lightdm   1128   951  0  80   0 - 70639 -      Jul26 ?        00:00:00     /usr/lib/gvfs/gvfsd
+0 S lightdm   1160   951  0  80   0 - 88040 -      Jul26 ?        00:00:00     /usr/lib/gvfs/gvfsd-fuse /run/user/112/gvfs -f -o big_writes
+0 S root       984     1  0  80   0 -  1072 -      Jul26 ?        00:00:00   /bin/sh -c tee -a /var/log/cloud-init-output.log
+0 S root       985   984  0  80   0 -  1050 -      Jul26 ?        00:00:00     tee -a /var/log/cloud-init-output.log
+0 S lightdm    988     1  0  80   0 - 87165 -      Jul26 ?        00:00:00   /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+0 S lightdm   1066   988  0  80   0 -  9138 -      Jul26 ?        00:00:00     /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+0 S lightdm   1126     1  0  80   0 - 55079 -      Jul26 ?        00:00:00   /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+4 S root     16860     1  0  80   0 -  9461 -      Jul26 ?        00:00:01   /lib/systemd/systemd-udevd
+4 S root     22716     1  0  80   0 -  4888 -      Jul26 ?        00:00:01   /usr/sbin/cron -f
+5 S ntp      23563     1  0  80   0 - 24464 -      Jul26 ?        00:00:51   /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 105:109
+5 S root     24038     1  0  80   0 - 44182 -      Jul26 ?        00:06:23   /usr/bin/python -O /usr/share/wicd/daemon/wicd-daemon.py --keep-connection
+0 S root     24042 24038  0  80   0 - 25130 -      Jul26 ?        00:02:29     /usr/bin/python -O /usr/share/wicd/daemon/monitor.py
+4 S root     24913     1  0  80   0 - 69420 -      Jul26 ?        00:00:00   /usr/lib/policykit-1/polkitd --no-debug
+4 S rtkit    24981     1  0  81   1 - 44327 -      Jul26 ?        00:00:07   /usr/lib/rtkit/rtkit-daemon
+4 S avahi    25171     1  0  80   0 -  9643 -      Jul26 ?        00:00:00   avahi-daemon: running [box2-tonystark.local]
+1 S avahi    25173 25171  0  80   0 -  9643 -      Jul26 ?        00:00:00     avahi-daemon: chroot helper
+4 S root     29477     1  0  80   0 - 77112 -      Jul26 ?        00:00:03   /usr/lib/packagekit/packagekitd
+4 S root     30441     1  0  80   0 - 15916 -      Jul26 ?        00:00:00   /usr/sbin/sshd -D
+4 S root      2267 30441  0  80   0 - 25354 -      14:16 ?        00:00:00     sshd: student4 [priv]
+5 S student4  2283  2267  0  80   0 - 25354 -      14:16 ?        00:00:00       sshd: student4@pts/0
+0 S student4  2285  2283  0  80   0 -  3172 -      14:16 pts/0    00:00:00         -bash
+0 R student4  2734  2285  0  80   0 -  7488 -      14:36 pts/0    00:00:00           ps -elfH
+4 S root      1096     1  0  80   0 - 62516 -      Jul26 ?        00:00:00   /usr/sbin/rsyslogd -n
+0 S root      1518     1  0  80   0 -  1575 -      Jul26 ?        00:00:00   nc -klvnp 31337 -e /bin/bash
+4 S student4  2273     1  0  80   0 - 14106 SyS_ep 14:16 ?        00:00:00   /lib/systemd/systemd --user
+5 S student4  2275  2273  0  80   0 - 42171 -      14:16 ?        00:00:00     (sd-pam)
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ lsof
+-bash: lsof: command not found
+]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ [K]0;student4@TonyStark: ~[01;32mstudent4@TonyStark[00m:[01;34m~[00m$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                                                                    ]0;root@kali: ~/Downloads/an_03-08-22_MM9
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_03-08-22_MM9[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-03 20:08:46+00:00 [COMMAND_EXIT_CODE="127"]
