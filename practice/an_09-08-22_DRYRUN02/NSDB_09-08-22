@@ -1,0 +1,212 @@
+NSDB 09-08-22
+
+####T1####
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - rsyslog
+*PID - 1199
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.49.1.4:514 
+*Network connections - sending log to 10.49.1.4:514 
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.49.1.4
+*Recommendation - We are not aware of the 10.49.1.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report*****
+
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-09 13:11:37.197718426 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[student4@dryruns-ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659967088.835:12226): pid=3921 uid=0 auid=1001 ses=1257 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/21 res=success'
+type=USER_ACCT msg=audit(1659967134.300:12227): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_CMD msg=audit(1659967134.301:12228): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/18 res=success'
+type=CRED_REFR msg=audit(1659967134.301:12229): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_START msg=audit(1659967134.303:12230): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing more. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+
+
+####T2####
+*****Abnormal Logging Report*****
+*Target: <T2 and 10.145.117.11 >
+*Name - rsyslog
+*PID - 1061
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.49.1.4:514
+*Network connections - sending log to 10.49.1.4:514 (hostname is upsidedown)
+*Documentation - https://www.rsyslog.com/
+*Description - T2 is sending logs to a remote host 10.49.1.4
+*Recommendation - We are not aware of the 10.49.1.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report*****
+
+
+
+*****Security Product Report*****
+*Target: <T2 and 10.145.117.11 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-09 13:21:37.591314686 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing more. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T3####
+
+*****Security Product Report*****
+*Target: <T3 and 10.145.117.15 / 192.168.117.98 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-09 13:32:50.002364966 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing more. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T4####
+
+*****Malware Report*****
+*Target: <T4 and 192.168.117.104 >
+*Name - Reptile
+*Hash - 8e8d943f55866e10b6a9df04dd94d8a2
+*PID - hidden
+*PPID - unknown
+*User - unknown
+*File type - .sh .c .h
+Supporting files - configs, rules
+Associated Logs - N/A
+Network connection - tcp 666
+*Persistence (mechanism and location) - crontab
+*Documentation - https://github.com/f0rb1dd3n/Reptile/wiki/Local-Usage
+*Description - Reptile is an open source exploitation tool. It comes with a variety of tools to exploit vulnerabilities on the system. The crontab is running "tcp 666 hidden", which mean we cannot not see connections or processes.
+*Recommendation - A malware is actively running via crontab. It is hiding all tcp connection swith port 666. We need to further investigate where it is trying to communicate.
+*****End of Report*****
+
+
+
+####T5####
+
+*****Privileged User Report*****
+*Target: <T5 and 192.168.117.105 >
+*User logged in - administrator
+*Access Time - 8/9/2022 12:25 PM
+*Access Method - local
+*Privileges - administrator
+*Activity - Mirosoft Edge, Wireshark, powershell
+*Recommendation - Admin seems to be just AFK with Edge tabs open. However, there is Wireshark running, so I will report this as abnormal logging.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T5 and 192.168.117.105 >
+*Name - Wireshark
+*PID - 4756
+*PPID - 1
+*User - Administrator
+*Location of config file - "C:\Program Files\Wireshark\Wireshark.exe"
+*Remote IP (hostname if IP cannot be identified) - n/A
+*Network connections - N/A
+*Documentation - https://www.wireshark.org/docs/wsug_html_chunked/ChBuildInstallWinInstall.html
+*Description - Wireshark is on. We cannot tell which interface is being captured. We cannot confirm if the admin is even using Wireshark as a defensive measure.
+*Recommendation - Further investigation is needed to see how the admin is using Wireshark. No visible threat at the moment.
+*****End of Report*****
+
+*****Malware Report*****
+*Target: <T5 and 192.168.117.105 >
+*Name - nmap.exe
+*Hash - 4327397f1854d452a8a4c8dc47767383
+*PID - N/A
+*PPID - N/A
+*User - N/A
+*File type - .exe
+Supporting files - N/A
+Associated Logs - N/A
+Network connection - N/A
+Identifiable text
+Modules loaded by malware
+*Persistence (mechanism and location) - C:\
+*Documentation - https://nmap.org/
+*Description - Nmap is a tool that allows for network connections in a variety of ways. 
+*Recommendation - According to Zillya and Yandex, this hash of nmap.exe can be a trojan. Although there is no evidence of it running via vetting commands, it definitely poses a threat since its usage and purpose are unknown.
+*****End of Report*****
+
+####T6####
+
+
+*****Malware Report*****
+*Target: <T6 and 192.168.117.106 >
+*Name - Netcat
+*Hash - e64c8abed7922d527786523a908215a2
+*PID - 28050
+*PPID - 1
+*User - root
+*File type - bin
+*Persistence (mechanism and location) - N/A root user ran the command
+*Documentation - http://netcat.sourceforge.net/
+*Description - The netcat itself is not malicious. The root user manually ran a nc listener on port 31337. It could be malicious if it is used to catch a bind shell.
+*Recommendation - Netstat tells me that it is only listening. however, an attacker can connect to the host with a bind shell anytime. There is a reasonable suspcion that T6 might've been accessed and the attacker set up a nc listener as a persistence mechnism.
+*****End of Report*****
+
+####T7####
+
+*****Privileged User Report*****
+*Target: <T7 and 192.168.117.107 >
+*User logged in - Administrator::theFORCE
+*Access Time - 8/4/2022 7:27 PM
+*Access Method - console/local
+*Privileges - administrator
+*Activity - Idle
+*Recommendation - This user has been AFK since 04-08-22; however, the keylogger is executed under the admin user. Low risk for now.
+*****End of Report*****
+
+
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.168.117.107 >
+*Name - Spyrix
+*PID - 3084
+*PPID - hidden parentprocess
+*User - administrator
+*Location of config file - "C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spm.exe"
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.spyrix.com/
+*Description - Spyrix is actively being ran via spm.exe and spmm.exe. It may be configured to send alerts via email or other network protocols. We do not know where the logs are going to exactly. Additionally, the box has a mechanism to run the installation exe via registry run. However, the value in the registry points to the wrong directory...c:/sfk.exe vs. the actual c:/temp/sfk.exe
+*Recommendation - Our activities (survey and collection) will most likely not be logged by Spyrix. Low risk.
+*****End of Report*****
+
+

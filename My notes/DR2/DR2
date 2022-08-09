@@ -1,0 +1,112 @@
+
+
+DRYRUN02
+2022-08-09
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Enumerate Krasnovian 1st Artillery BDE network.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999 range. Full tcp connect scans are authorized for 1000 ports or less. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: student#::password# // **administrators documented to frequently implement default creds on internal routers to enable incident response outsourcing
+
+>>If not outlined in Target Section, analysts on operation will make analytical judgment based on their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target<<
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus.
+
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.11
+--> T3: 10.145.117.15
+---> T4: 192.168.117.104
+----> T5: 192.168.117.105
+----> T6: 192.168.117.106
+----> T7: 192.168.117.107
+
+Target Section:
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 // 10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2
+Hostname: SERVER1
+IP: 10.145.117.11
+MAC: fa:16:3e:0d:1a:69
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T3
+Hostname: Unknown
+IP: 10.145.117.15 // 192.168.117.98
+MAC: FA:16:3E:6a:19:a5 // FA:16:3E:0b:1b:cd
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target. Conduct port scans to find ssh ports for the 192.168.117.0/24 network. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999 range.
+
+T4
+Hostname: TARGET4
+IP: 192.168.117.104
+OS: Linux v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+T5
+Hostname: TARGET5
+IP: 192.168.117.105
+OS: Windows v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Windows Defender (Version Unknown)
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+T6
+Hostname: USER6
+IP: 192.168.117.106
+OS: Linux v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+T7
+Hostname: USER7
+IP: 192.168.117.107
+OS: Windows v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Windows Defender (Version Unknown)
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Conclude operation.

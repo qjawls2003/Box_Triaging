@@ -1,0 +1,65 @@
+T1
+
+rsyslog remote logging
+sudo stat /var/log/audit/audit.log
+
+T2 
+sudo cat /var/log/httpd/access_log-20220809
+sudo cat /var/log/httpd/error_log
+sudo stat /var/log/audit/audit.log
+
+
+T3
+
+T4
+
+Reptile
+in crontab
+ls -latr /Reptile
+cat /Reptile/README.md
+cat /Reptile/Makefile
+sudo lsof | grep *del*
+sudo netstat -auntp
+ls -latr /Reptile/configs
+cat /Reptile/Kconfig
+md5sum /Reptile/Kconfig
+sudo ps -elfH
+ls -latr /lib/udev/rules.d
+sudo ls -latrh /var/log/*
+sudo cat /var/log/auth.log
+
+T5
+
+admin on 8/9/2022 12:25 PM
+running wireshark
+msedge
+powershell
+nmap.exe
+wmic process get processid,parentprocessid,commandline,executablepath /value | findstr conhost
+netstat /anob | findstr *nmap*
+certutil -hashfile c:\nmap.exe MD5
+strings 
+
+T6
+
+sudo tail -n 20 /var/log/lightdm/seat0-greeter.log
+sudo ls -latr /var/spool/cron/crontabs
+which nc
+md5sum /bin/nc
+md5sum /etc/passwd
+sudo md5sum /etc/shadow
+
+T7 
+
+admin on 8/4/2022 7:27 PM
+certutil -hashfile c:\temp\sfk.exe MD5
+certutil -hashfile "C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spm.exe" MD5  
+certutil -hashfile "C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spmm.exe" MD5  
+certutil -hashfile c:\firefox.exe MD5
+spmm.exe
+spm.exe
+C:\sfk.exe
+c:\firefox.exe (certutil)
+wmic process get processid,parentprocessid,commandline,executablepath /value | findstr 356
+tasklist /V | findstr 356
+dir /o:d /t:w c:\windows\temp\WinSAT

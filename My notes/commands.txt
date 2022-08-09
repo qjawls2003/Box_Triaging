@@ -1,5 +1,6 @@
 Linux
 Upon Connection:
+clear
 ifconfig -a OR ip addr
 ls -latr /
 ls -latr /tmp
@@ -38,7 +39,6 @@ As needed, examine the files/scripts shown in the directory listing of the cron.
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
 sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
 sestatus OR getenforce
-cat /root/.bash_history
 sudo cat /root/.bash_history
 cat ~/.bash_history
 cat ~/.zsh_history
@@ -92,7 +92,6 @@ cat /etc/*release*
 cat /proc/cpuinfo
 services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
 cat /proc/meminfo
-cat /etc/shadow
 sudo cat /etc/shadow
 cat /etc/passwd
 lspci -vv
@@ -135,14 +134,14 @@ wevtutil qe security /c:25 /rd:true /f:text | findstr "Process Name"
 wevtutil el
 wevtutil gl security
 wevtutil gli security
-wevtutil gl 'windows powershell'
 <extra>
 reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\winlogon"
 Norton_Free.exe
 Avira_Free.exe
 dir /o:d /t:w "C:\Program Files\"
+dir /o:d /t:w "C:\windows\security"
 C:\Windows\security\applications\norton.exe
-C:\temp
+dir /o:d /t:w C:\temp
 C:\Sysinternals
 dir /o:d /t:w c:\windows\prefetch
 
@@ -177,6 +176,7 @@ wmic qfe list full
 wmic service list full
 wmic product get Caption, InstallDate, Vendor
 wmic useraccount where "LocalAccount='TRUE'" get Caption, Disabled, Domain, Lockout, PasswordExpires, SID, Status
+cls
 
 ####Malware Hashing####
 certutil -hashfile beacon.ps1 MD5

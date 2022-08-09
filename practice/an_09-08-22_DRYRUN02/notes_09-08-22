@@ -1,0 +1,896 @@
+####Notes 09-08-22####
+
+Let's do some fun!
+
+> T1: 10.50.27.188
+-> T2: 10.145.117.11
+--> T3: 10.145.117.15
+---> T4: 192.168.117.104
+----> T5: 192.168.117.105
+----> T6: 192.168.117.106
+----> T7: 192.168.117.107
+
+
+
+
+=========================
+T1: 10.50.27.188 
+=========================
+X-----------------------
+
+2022-08-09 13:03:42-- ON
+
+[student4@dryruns-ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:91:7a:88 brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.86/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 64985sec preferred_lft 64985sec
+    inet6 fe80::f816:3eff:fe91:7a88/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1199     1  0  80   0 - 91136 poll_s Jun18 ?        00:05:40 /usr/sbin/rsyslogd -n
+5 S root       610     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+[student4@dryruns-ext-rtr ~]$ date; date -u
+Tue Aug  9 13:06:59 UTC 2022
+Tue Aug  9 13:06:59 UTC 2022
+
+[student4@dryruns-ext-rtr ~]$ uname -a
+Linux dryruns-ext-rtr.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-ext-rtr ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+
+cat /etc/rsyslog.conf
+*.* @@10.49.1.4:514
+
+
+[student4@dryruns-ext-rtr ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+-rw-rw-r--. 1 root utmp              302976 Aug  9 13:07 /var/log/wtmp
+-rw-r--r--. 1 root root              299008 Aug  9 13:07 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               12288 Aug  9 13:07 /run/utmp
+-rw-------. 1 root root               35701 Aug  9 13:08 /var/log/messages
+-rw-------. 1 root root             6543171 Aug  9 13:09 /var/log/audit/audit.log
+-rw-------. 1 root root                 126 Aug  9 13:09 /var/lib/rsyslog/imjournal.state
+-rw-r-----+ 1 root systemd-journal 16777216 Aug  9 13:09 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root            13498362 Aug  9 13:09 /var/log/secure
+
+[student4@dryruns-ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-09 13:13:04-- looking complete
+
+DISCONNECT
+
+2022-08-09 18:17:14-- disconnected
+
+------------------------X
+=========================
+
+=========================
+T2: 10.145.117.11 
+=========================
+X-----------------------
+
+2022-08-09 13:14:39-- ON
+
+[student4@dryruns-server1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:0d:1a:69 brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.11/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 84793sec preferred_lft 84793sec
+    inet6 fe80::f816:3eff:fe0d:1a69/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1061     1  0  80   0 - 60277 poll_s Jun18 ?        00:05:15 /usr/sbin/rsyslogd -n
+4 S root       937     1  0  80   0 - 57628 poll_s Jun18 ?        00:05:48 /usr/sbin/httpd -DFOREGROUND
+5 S root       535     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+tcp        0      1 10.145.117.11:50788     10.49.1.4:514           SYN_SENT    1061/rsyslogd       
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      710/httpd           
+
+[student4@dryruns-server1 ~]$ date; date -u
+Tue Aug  9 13:16:53 UTC 2022
+Tue Aug  9 13:16:53 UTC 2022
+
+[student4@dryruns-server1 ~]$ uname -a
+Linux dryruns-server1.novalocal 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-server1 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   crond.service  irqbalance.service  nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  httpd.service  kdump.service       postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+[student4@dryruns-server1 ~]$ sudo cat /var/log/httpd/access_log-20220809
+10.145.117.86 - - [08/Aug/2022:15:03:50 +0000] "GET / HTTP/1.1" 403 4897 "-" "Wget/1.21.3"
+10.145.117.86 - - [08/Aug/2022:15:07:59 +0000] "GET / HTTP/1.1" 403 4897 "10.145.117.86" "Wget/1.21.3"
+
+cat /etc/rsyslog.conf
+*.* @@upsidedown:514
+
+10.49.1.4 upsidedown
+
+[student4@dryruns-server1 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+
+
+-rw-rw-r--. 1 root utmp             155904 Aug  9 13:18 /var/log/wtmp
+-rw-r--r--. 1 root root             299008 Aug  9 13:18 /var/log/lastlog
+-rw-rw-r--. 1 root utmp              11520 Aug  9 13:18 /run/utmp
+-rw-------. 1 root root            6185029 Aug  9 13:20 /var/log/audit/audit.log
+-rw-------. 1 root root                125 Aug  9 13:20 /var/lib/rsyslog/imjournal.state
+-rw-r-----+ 1 root systemd-journal 8388608 Aug  9 13:20 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root              29028 Aug  9 13:17 /var/log/messages
+-rw-------. 1 root root             383274 Aug  9 13:17 /var/log/secure
+
+
+
+
+
+[student4@dryruns-server1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-09 13:24:38-- finish looking
+
+DISCONNECT!!!
+
+2022-08-09 18:16:18-- disconnected
+
+------------------------X
+=========================
+
+=========================
+T3: 10.145.117.15
+=========================
+X-----------------------
+
+
+2022-08-09 13:26:44-- ON
+
+[student4@dryruns-int-rtr1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:0b:1b:cd brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.15/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 67961sec preferred_lft 67961sec
+    inet6 fe80::f816:3eff:fe0b:1bcd/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:6a:19:a5 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.98/24 brd 192.168.117.255 scope global dynamic eth1
+       valid_lft 67344sec preferred_lft 67344sec
+    inet6 fe80::f816:3eff:fe6a:19a5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+0 S root     31493     1  0  80   0 - 11020 poll_s Aug08 ?        00:00:00 /bin/centOS.rtr.updtr -nlvkp 41481
+4 S root      1323     1  0  80   0 - 84864 poll_s Jun18 ?        00:06:07 /usr/sbin/rsyslogd -n
+5 S root       575     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:04 /sbin/auditd
+
+tcp6       0      0 :::41481                :::*                    LISTEN      31493/centOS.rtr.up 
+tcp        0      0 0.0.0.0:41481           0.0.0.0:*               LISTEN      31493/centOS.rtr.up 
+
+[student4@dryruns-int-rtr1 ~]$ date; date -u
+Tue Aug  9 13:29:44 UTC 2022
+Tue Aug  9 13:29:44 UTC 2022
+
+[student4@dryruns-int-rtr1 ~]$ uname -a
+Linux dryruns-int-rtr1.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[student4@dryruns-int-rtr1 ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   cloud-config.service  cloud-init-local.service  crond.service       kdump.service      postfix.service   rhel-configure.service  rsyslog.service  tuned.service
+chronyd.service  cloud-final.service   cloud-init.service        irqbalance.service  nfs-client.target  remote-fs.target  rpcbind.service         sshd.service
+
+[student4@dryruns-int-rtr1 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+-rw-------. 1 root root               32197 Aug  9 13:25 /var/log/messages
+-rw-rw-r--. 1 root utmp              151680 Aug  9 13:25 /var/log/wtmp
+-rw-r--r--. 1 root root              299008 Aug  9 13:25 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               11136 Aug  9 13:25 /run/utmp
+-rw-------. 1 root root                 126 Aug  9 13:31 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             6018665 Aug  9 13:31 /var/log/audit/audit.log
+-rw-------. 1 root root             9559385 Aug  9 13:31 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 16777216 Aug  9 13:31 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[student4@dryruns-int-rtr1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-09 13:38:41-- scan
+
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.102:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.103:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.104:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.105:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.106:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.107:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.101:22013  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.117.100:22013  ...  OK
+
+
+2022-08-09 13:50:39-- finished
+
+DISCONNECT!
+2022-08-09 18:16:05-- disconnected
+
+
+------------------------X
+=========================
+
+=========================
+T4: 192.168.117.104 
+=========================
+X-----------------------
+
+2022-08-09 13:54:01-- ON
+
+student4@dryruns-target4:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:ef:b0:50 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.104/24 brd 192.168.117.255 scope global dynamic ens3
+       valid_lft 76786sec preferred_lft 76786sec
+    inet6 fe80::f816:3eff:feef:b050/64 scope link 
+       valid_lft forever preferred_lft forever
+
+/
+drwxr-xr-x   7 root root  4096 Feb 11 15:58 Reptile
+
+ps -elf
+4 S syslog   25968     1  0  80   0 - 66820 -      Jul01 ?        00:00:02 /usr/sbin/rsyslogd -n
+
+student4@dryruns-target4:~$ date; date -u
+Tue Aug  9 13:57:31 UTC 2022
+Tue Aug  9 13:57:31 UTC 2022
+
+student4@dryruns-target4:~$ uname -a
+Linux dryruns-target4 4.15.0-187-generic #198-Ubuntu SMP Tue Jun 14 03:23:51 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+student4@dryruns-target4:~$ ls /etc/systemd/system/multi-user.target.wants
+atd.service            irqbalance.service           ondemand.service       rsync.service             snapd.core-fixup.service                ssh.service               unattended-upgrades.service
+console-setup.service  lxcfs.service                open-vm-tools.service  rsyslog.service           snapd.recovery-chooser-trigger.service  systemd-networkd.service
+cron.service           lxd-containers.service       pollinate.service      snapd.apparmor.service    snapd.seeded.service                    systemd-resolved.service
+ebtables.service       networkd-dispatcher.service  remote-fs.target       snapd.autoimport.service  snapd.service                           ufw.service
+
+student4@dryruns-target4:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+student4@dryruns-target4:~$ cat /etc/crontab
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user  command
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6    * * 7   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6    1 * *   root    test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+20 *    * * *   root    /Reptile/reptile_cmd tcp 666 hide
+
+
+
+student4@dryruns-target4:~$ sudo md5sum /var/log/auth.log
+dee323745b6048474f6741aeb1e6550f  /var/log/auth.log
+
+
+student4@dryruns-target4:~$ md5sum /Reptile/Kconfig
+8e8d943f55866e10b6a9df04dd94d8a2  /Reptile/Kconfig
+
+2022-08-09 15:15:21-- done collecting
+
+DISCONNECT
+
+2022-08-09 18:13:21-- disconnected
+
+
+------------------------X
+=========================
+
+=========================
+T5: 192.168.117.105 
+=========================
+X-----------------------
+
+2022-08-09 15:21:51-- ON
+
+student4@DESKTOP-4SIVASU C:\Users\student4>ipconfig /all
+
+Windows IP Configuration                              
+                                                      
+   Host Name . . . . . . . . . . . . : DESKTOP-4SIVASU
+   Primary Dns Suffix  . . . . . . . :                
+   Node Type . . . . . . . . . . . . : Hybrid         
+   IP Routing Enabled. . . . . . . . : No    
+   WINS Proxy Enabled. . . . . . . . : No    
+   DNS Suffix Search List. . . . . . : vta   
+                                             
+Ethernet adapter Ethernet:                   
+                                             
+   Connection-specific DNS Suffix  . : vta   
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter        
+   Physical Address. . . . . . . . . : FA-16-3E-01-50-9B                      
+   DHCP Enabled. . . . . . . . . . . : Yes                                    
+   Autoconfiguration Enabled . . . . : Yes                                    
+   Link-local IPv6 Address . . . . . : fe80::c84e:1ff7:9539:db12%5(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.117.105(Preferred)             
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                        
+   Lease Obtained. . . . . . . . . . : Wednesday, July 13, 2022 6:11:34 PM  
+   Lease Expires . . . . . . . . . . : Wednesday, August 10, 2022 8:19:04 AM
+   Default Gateway . . . . . . . . . : 192.168.117.1                        
+   DHCP Server . . . . . . . . . . . : 192.168.117.3                        
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-3E-C2-FA-16-3E-01-50-9B
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled   
+
+student4@DESKTOP-4SIVASU C:\Users\student4>date /t                              
+Tue 08/09/2022                             
+                                           
+student4@DESKTOP-4SIVASU C:\Users\student4>time /t
+03:22 PM                                   
+                                           
+student4@DESKTOP-4SIVASU C:\Users\student4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   8/9/2022 12:25 PM
+
+student4@DESKTOP-4SIVASU C:\Users\student4>auditpol /get /category:*
+System audit policy
+Category/Subcategory                      Setting
+System
+  Security System Extension               No Auditing
+  System Integrity                        Success and Failure
+  IPsec Driver                            No Auditing
+  Other System Events                     Success and Failure
+  Security State Change                   Success
+Logon/Logoff
+  Logon                                   Success and Failure
+  Logoff                                  Success
+  Account Lockout                         Success
+  IPsec Main Mode                         No Auditing
+  IPsec Quick Mode                        No Auditing
+  IPsec Extended Mode                     No Auditing
+  Special Logon                           Success
+  Other Logon/Logoff Events               No Auditing
+  Network Policy Server                   Success and Failure
+  User / Device Claims                    No Auditing
+  Group Membership                        No Auditing
+
+
+
+  TCP    192.168.117.105:29598  52.226.139.121:443     ESTABLISHED     2564
+
+student4@DESKTOP-4SIVASU C:\Users\student4>net share
+
+Share name   Resource                        Remark
+
+-------------------------------------------------------------------------------
+C$           C:\                             Default share
+IPC$                                         Remote IPC
+ADMIN$       C:\WINDOWS                      Remote Admin
+The command completed successfully.
+
+
+ Directory of c:\
+
+12/07/2019  09:14 AM    <DIR>          PerfLogs
+02/11/2022  04:03 PM        27,530,328 nmap.exe
+03/28/2022  03:32 AM    <DIR>          Program Files (x86)
+05/09/2022  07:59 PM    <DIR>          Program Files
+07/13/2022  05:49 PM    <DIR>          Windows
+08/09/2022  03:09 PM    <DIR>          Users
+
+
+07/13/2022  05:49 PM    <DIR>          Windows
+
+student4@DESKTOP-4SIVASU C:\Users\student4>certutil -hashfile c:\nmap.exe MD5
+MD5 hash of c:\nmap.exe:
+4327397f1854d452a8a4c8dc47767383
+CertUtil: -hashfile command completed successfully.
+
+2022-08-09 16:43:03-- DISCONNECTED
+
+
+------------------------X
+=========================
+
+=========================
+T6: 192.168.117.106 
+=========================
+X-----------------------
+2022-08-09 16:45:28-- ON
+
+student4@dryruns-target6:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:c8:19:ac brd ff:ff:ff:ff:ff:ff
+    inet 192.168.117.106/24 brd 192.168.117.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fec8:19ac/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root       776     1  0  80   0 - 62528 -      Jun18 ?        00:00:02 /usr/sbin/rsyslogd -n
+0 S root     28050     1  0  80   0 -  1575 -      12:43 pts/0    00:00:00 nc -lvnkp 31337
+
+
+tcp        0      0 0.0.0.0:31337           0.0.0.0:*               LISTEN      28050/nc            
+
+student4@dryruns-target6:~$ date; date -u
+Tue Aug  9 16:49:02 UTC 2022
+Tue Aug  9 16:49:02 UTC 2022
+
+student4@dryruns-target6:~$ uname -a
+Linux dryruns-target6 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+
+student4@dryruns-target6:~$ ls /etc/systemd/system/multi-user.target.wants
+anacron.service  avahi-daemon.service  cron.service  irqbalance.service  networking.service  remote-fs.target  rsync.service  rsyslog.service  ssh.service  unscd.service
+
+student4@dryruns-target6:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+student1:x:1001:27::/home/useraccounts/student1:/bin/bash
+student2:x:1002:27::/home/useraccounts/student2:/bin/bash
+student3:x:1003:27::/home/useraccounts/student3:/bin/bash
+student4:x:1004:27::/home/useraccounts/student4:/bin/bash
+student5:x:1005:27::/home/useraccounts/student5:/bin/bash
+student6:x:1006:27::/home/useraccounts/student6:/bin/bash
+student7:x:1007:27::/home/useraccounts/student7:/bin/bash
+student8:x:1008:27::/home/useraccounts/student8:/bin/bash
+student9:x:1009:27::/home/useraccounts/student9:/bin/bash
+student10:x:1010:27::/home/useraccounts/student10:/bin/bash
+student11:x:1011:27::/home/useraccounts/student11:/bin/bash
+student12:x:1012:27::/home/useraccounts/student12:/bin/bash
+student13:x:1013:27::/home/useraccounts/student13:/bin/bash
+student14:x:1014:27::/home/useraccounts/student14:/bin/bash
+student15:x:1015:27::/home/useraccounts/student15:/bin/bash
+student16:x:1016:27::/home/useraccounts/student16:/bin/bash
+student17:x:1017:27::/home/useraccounts/student17:/bin/bash
+student18:x:1018:27::/home/useraccounts/student18:/bin/bash
+student19:x:1019:27::/home/useraccounts/student19:/bin/bash
+student20:x:1020:27::/home/useraccounts/student20:/bin/bash
+student21:x:1021:27::/home/useraccounts/student21:/bin/bash
+student22:x:1022:27::/home/useraccounts/student22:/bin/bash
+student23:x:1023:27::/home/useraccounts/student23:/bin/bash
+
+-rw-rw-r--  1 root utmp                2304 Aug  9 16:45 /var/log/wtmp
+-rw-rw-r--  1 root utmp              299008 Aug  9 16:45 /var/log/lastlog
+-rw-rw-r--  1 root utmp                3072 Aug  9 16:45 /run/utmp
+-rw-------  1 root sudo                  80 Aug  9 16:45 /var/lib/sudo/ts/student18
+-rw-------  1 root sudo                  80 Aug  9 16:47 /var/lib/sudo/ts/student9
+-rw-------  1 root root            12057576 Aug  9 16:53 /var/log/lightdm/seat0-greeter.log
+-rw-r-----  1 root adm                52273 Aug  9 16:53 /var/log/auth.log
+-rw-------  1 root sudo                  80 Aug  9 16:53 /var/lib/sudo/ts/student4
+-rw-r-----+ 1 root systemd-journal  7827456 Aug  9 16:53 /run/log/journal/3c239f5065784b5cb58eb4159356ebe2/system.journal
+
+student4@dryruns-target6:~$ md5sum /bin/nc
+e64c8abed7922d527786523a908215a2  /bin/nc
+
+bed0b553f025d9ee4d1a150b4590b5e1  /etc/passwd
+student4@dryruns-target6:~$ sudo md5sum /etc/shadow
+df10e748eab97fa46f5fa6addd7911ff  /etc/shadow
+
+2022-08-09 17:11:23-- finished looking
+
+2022-08-09 17:16:11-- DISCONNECTED
+
+
+------------------------X
+=========================
+
+=========================
+T7: 192.168.117.107 
+=========================
+X-----------------------
+
+2022-08-09 17:20:39-- ON
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>ipconfig /all                                                                        
+
+Windows IP Configuration                                                                                                        
+
+   Host Name . . . . . . . . . . . . : DESKTOP-4VE5QF9                                                                          
+   Primary Dns Suffix  . . . . . . . :                                                                                          
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                   
+   IP Routing Enabled. . . . . . . . : No                                                                                       
+   WINS Proxy Enabled. . . . . . . . : No                                                                                       
+   DNS Suffix Search List. . . . . . : vta                                                                                      
+
+Ethernet adapter Ethernet:                                                                                                      
+
+   Connection-specific DNS Suffix  . : vta                                                                                      
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                          
+   Physical Address. . . . . . . . . : FA-16-3E-F7-76-F4                                                                        
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                      
+   Autoconfiguration Enabled . . . . : Yes                                                                                      
+   Link-local IPv6 Address . . . . . : fe80::b08f:cbf9:1983:f8d5%3(Preferred)                                                   
+   IPv4 Address. . . . . . . . . . . : 192.168.117.107(Preferred)                                                               
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                            
+   Lease Obtained. . . . . . . . . . : Thursday, August 4, 2022 7:16:27 PM                                                      
+   Lease Expires . . . . . . . . . . : Wednesday, August 10, 2022 10:01:52 AM                                                   
+   Default Gateway . . . . . . . . . : 192.168.117.1                                                                            
+   DHCP Server . . . . . . . . . . . : 192.168.117.3                                                                            
+   DHCPv6 IAID . . . . . . . . . . . : 66721342                                                                                 
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-0A-C4-04-FA-16-3E-F7-76-F4                                                
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled                                                                                  
+
+Tunnel adapter isatap.vta:                                                                                                      
+
+   Media State . . . . . . . . . . . : Media disconnected                                                                       
+   Connection-specific DNS Suffix  . : vta                                                                                      
+   Description . . . . . . . . . . . : Microsoft ISATAP Adapter                                                                 
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0                                                                  
+   DHCP Enabled. . . . . . . . . . . : No                                                                                       
+   Autoconfiguration Enabled . . . . : Yes                                                                                      
+
+Tunnel adapter Teredo Tunneling Pseudo-Interface:                                                                               
+
+   Media State . . . . . . . . . . . : Media disconnected                                                                       
+   Connection-specific DNS Suffix  . :                                                                                          
+   Description . . . . . . . . . . . : Teredo Tunneling Pseudo-Interface                                                        
+   Physical Address. . . . . . . . . : 00-00-00-00-00-00-00-E0                                                                  
+   DHCP Enabled. . . . . . . . . . . : No                                                                                       
+   Autoconfiguration Enabled . . . . : Yes     
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>date /t                                                                                                                                                                  
+Tue 08/09/2022                                                                                                                                                                                                                                                                                                                                            
+student4@DESKTOP-4VE5QF9 C:\Users\student4>time /t                                                                                                                                                                  
+05:20 PM       
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>query user                                                                                                                                                               
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME                                                                                                                                         
+ administrator         console             1  Active      none   8/4/2022 7:27 PM    
+
+
+
+CommandLine="C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spm.exe"                                                                                                                        
+ExecutablePath=C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spm.exe                                                                                                                       
+ParentProcessId=356                                                                                                                                                                                                 
+ProcessId=3084                                                                                                                                                                                                      
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                    
+CommandLine="C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spmm.exe" "Spyrix Personal Monitor 11.5.41"                                                                                     
+ExecutablePath=C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spmm.exe                                                                                                                      
+ParentProcessId=3084                                                                                                                                                                                                
+ProcessId=4956  
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>net share                                                                                                                                                                
+                                                                                                                                                                                                                    
+Share name   Resource                        Remark                                                                                                                                                                 
+                                                                                                                                                                                                                    
+-------------------------------------------------------------------------------                                                                                                                                     
+C$           C:\                             Default share                                                                                                                                                          
+IPC$                                         Remote IPC                                                                                                                                                             
+print$       C:\windows\system32\spool\drivers                                                                                                                                                                      
+                                             Printer Drivers                                                                                                                                                        
+ADMIN$       C:\windows                      Remote Admin                                                                                                                                                           
+The command completed successfully.     
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>reg query hklm\software\microsoft\windows\currentversion\run                                                                                                             
+                                                                                                                                                                                                                    
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run                                                                                                                                                    
+    WindowsDefender    REG_EXPAND_SZ    "%ProgramFiles%\Windows Defender\MSASCuiL.exe"                                                                                                                              
+    Spyrix    REG_SZ    C:\sfk.exe 
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>certutil -hashfile c:\temp\sfk.exe MD5                                                                                                                                   
+MD5 hash of file c:\temp\sfk.exe:                                                                                                                                                                                   
+3210f4140d1d843d2950a9ebdacbdec4   
+
+
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>certutil -hashfile "C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F51                                                                                    
+2FCB}\spm.exe" MD5                                                                                                                                                                                                  
+MD5 hash of file C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spm.exe:                                                                                                                    
+7c0c0a4e080861f109b11230e0d7c59c                                                                                                                                                                                    
+CertUtil: -hashfile command completed successfully. 
+
+
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>certutil -hashfile "C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F51                                                                                    
+2FCB}\spmm.exe" MD5                                                                                                                                                                                                 
+MD5 hash of file C:\ProgramData\Security Monitor\{89DF3612-BE12-A0A6-D34F-FD696F512FCB}\spmm.exe:                                                                                                                   
+08648ec55ede03531fad034d3dc842dd                                                                                                                                                                                    
+CertUtil: -hashfile command completed successfully.     
+
+
+
+
+student4@DESKTOP-4VE5QF9 C:\Users\student4>certutil -hashfile c:\firefox.exe MD5                                                                                                                                    
+MD5 hash of file c:\firefox.exe:                                                                                                                                                                                    
+9ff4059c51fd143d6d03ab608dd16990                                                                                                                                                                                    
+CertUtil: -hashfile command completed successfully.  
+
+
+2022-08-09 18:12:02-- disconnect
+
+
+------------------------X
+=========================
+
+
