@@ -1,0 +1,2583 @@
+Script started on 2022-08-10 12:42:59+00:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="173" LINES="45"]
+                                                                                                                                                                             ]0;root@kali: ~/Downloads/an_10-08-22_DRYRUN03[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_10-08-22_DRYRUN03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T5[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 6666:129.168.117.54:22013[27m[58D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m5[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m6[27m6[27m6[27m6[27m:[27m1[27m2[27m9[27m.[27m1[27m6[27m8[27m.[27m1[27m1[27m7[27m.[27m5[27m4[27m:[27m2[27m2[27m0[27m1[27m3[?1l>[?2004l
+                                                                                                                                                                             ]0;root@kali: ~/Downloads/an_10-08-22_DRYRUN03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_10-08-22_DRYRUN03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T6 [7m[35m-p[39m[7m 6666 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m[102D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m6[27m [27m[35m-[27m[35mp[39m[27m [27m6[27m6[27m6[27m6[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:6666' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Last login: Tue May 10 16:45:11 2022 from 192.169.117.201
+]0;student4@dryruns-targeta-admin:~[?1034h[student4@dryruns-targeta-admin ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:2b:3e:cf brd ff:ff:ff:ff:ff:ff
+    inet 129.168.117.54/24 brd 129.168.117.255 scope global dynamic eth0
+       valid_lft 52927sec preferred_lft 52927sec
+    inet6 fe80::f816:3eff:fe2b:3ecf/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /
+total 16
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [0m[38;5;27msrv[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mopt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmnt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmedia[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mbin[0m -> [38;5;27musr/bin[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mlib[0m -> [38;5;27musr/lib[0m
+lrwxrwxrwx.   1 root root    8 Aug  8  2019 [38;5;51msbin[0m -> [38;5;27musr/sbin[0m
+lrwxrwxrwx.   1 root root    9 Aug  8  2019 [38;5;51mlib64[0m -> [38;5;27musr/lib64[0m
+drwxr-xr-x.  13 root root  155 Aug  8  2019 [38;5;27musr[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m..[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m.[0m
+drwxr-xr-x.  19 root root  267 Feb 11 15:52 [38;5;27mvar[0m
+drwxr-xr-x.   4 root root   40 Feb 11 15:52 [38;5;27mhome[0m
+dr-xr-x---.   5 root root  210 May 10 12:25 [38;5;27mroot[0m
+dr-xr-xr-x.   5 root root 4096 May 27 23:52 [38;5;27mboot[0m
+dr-xr-xr-x. 123 root root    0 Jun 18 01:01 [38;5;27mproc[0m
+dr-xr-xr-x.  13 root root    0 Jun 18 01:02 [38;5;27msys[0m
+drwxr-xr-x.  18 root root 2760 Jun 18 01:02 [38;5;27mdev[0m
+drwxr-xr-x.  77 root root 8192 Jun 18 01:02 [38;5;27metc[0m
+drwxr-xr-x.  24 root root  760 Jun 18 01:02 [38;5;27mrun[0m
+drwxrwxrwt.   8 root root  172 Aug 10 07:09 [48;5;10;38;5;16mtmp[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 01:02 [38;5;27msystemd-private-42abe479c4b14aa89e15345ddaf188c3-chronyd.service-cBaAVA[0m
+drwxrwxrwt.  8 root root 172 Aug 10 07:09 [48;5;10;38;5;16m.[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr .
+total 20
+-rw-r--r--.  1 student4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 student4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 student4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 25 root     root  4096 Feb 11 15:52 [0m[38;5;27m..[0m
+drwx------.  2 student4 wheel   83 Mar  9 18:57 [38;5;27m.[0m
+-rw-------.  1 student4 wheel 3204 May 10 17:01 .bash_history
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root      root    40 Feb 11 15:52 [0m[38;5;27m..[0m
+drwx------.  2 student1  wheel   62 Feb 11 15:52 [38;5;27mstudent1[0m
+drwx------.  2 student2  wheel   62 Feb 11 15:52 [38;5;27mstudent2[0m
+drwx------.  2 student8  wheel   62 Feb 11 15:52 [38;5;27mstudent8[0m
+drwx------.  2 student21 wheel   62 Feb 11 15:52 [38;5;27mstudent21[0m
+drwxr-xr-x. 25 root      root  4096 Feb 11 15:52 [38;5;27m.[0m
+drwx------.  2 student23 wheel   83 Mar  9 13:02 [38;5;27mstudent23[0m
+drwx------.  2 student18 wheel   83 Mar  9 16:08 [38;5;27mstudent18[0m
+drwx------.  2 student5  wheel   83 Mar  9 17:19 [38;5;27mstudent5[0m
+drwx------.  2 student7  wheel   83 Mar  9 17:25 [38;5;27mstudent7[0m
+drwx------.  2 student20 wheel   83 Mar  9 17:45 [38;5;27mstudent20[0m
+drwx------.  2 student16 wheel   83 Mar  9 17:57 [38;5;27mstudent16[0m
+drwx------.  2 student9  wheel   83 Mar  9 17:59 [38;5;27mstudent9[0m
+drwx------.  2 student19 wheel   83 Mar  9 18:01 [38;5;27mstudent19[0m
+drwx------.  2 student14 wheel   83 Mar  9 18:07 [38;5;27mstudent14[0m
+drwx------.  2 student11 wheel   83 Mar  9 18:16 [38;5;27mstudent11[0m
+drwx------.  2 student17 wheel   83 Mar  9 18:33 [38;5;27mstudent17[0m
+drwx------.  2 student22 wheel   83 Mar  9 18:51 [38;5;27mstudent22[0m
+drwx------.  2 student6  wheel   83 Mar  9 18:55 [38;5;27mstudent6[0m
+drwx------.  2 student4  wheel   83 Mar  9 18:57 [38;5;27mstudent4[0m
+drwx------.  2 student15 wheel   83 Mar  9 20:48 [38;5;27mstudent15[0m
+drwx------.  2 student10 wheel   83 Mar  9 20:48 [38;5;27mstudent10[0m
+drwx------.  2 student3  wheel   83 Mar  9 20:49 [38;5;27mstudent3[0m
+drwx------.  2 student13 wheel   83 Mar  9 20:50 [38;5;27mstudent13[0m
+drwx------.  2 student12 wheel   83 May 10 17:21 [38;5;27mstudent12[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11 15:52 .ssh
+drwxr-xr-x.  4 root root  220 Feb 11 16:10 linux-malware-detect
+drwxr-----.  3 root root   19 Feb 11 16:14 .pki
+-rw-------.  1 root root  422 May 10 12:25 .bash_history
+dr-xr-x---.  5 root root  210 May 10 12:25 .
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 11500 ep_pol Jun18 ?        00:04:13 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:03 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:31 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:32 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:27 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:03 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:02 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:27 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:02 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:02 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        45     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        46     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        47     2  0  99  19 -     0 khugep Jun18 ?        00:00:25 [khugepaged]
+1 S root        48     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        56     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        57     2  0  80   0 -     0 worker Jun18 ?        00:00:06 [kworker/u8:1]
+1 S root        58     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        74     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:02 [kauditd]
+1 S root       192     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       193     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       283     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       319     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       325     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       331     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       339     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       371     2  0  80   0 -     0 worker Jun18 ?        00:00:06 [kworker/u8:3]
+1 S root       375     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       376     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       377     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       404     2  0  80   0 -     0 xfsail Jun18 ?        00:03:46 [xfsaild/sda1]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:15 [kworker/2:1H]
+1 S root       471     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+4 S root       487     1  0  80   0 - 14148 ep_pol Jun18 ?        00:00:53 /usr/lib/systemd/systemd-journald
+4 S root       515     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       664     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:11 /sbin/auditd
+1 S root       670     2  0  80   0 -     0 add_hw Jun18 ?        00:00:05 [hwrng]
+1 S root       706     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S polkitd    738     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:39 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       739     1  0  80   0 - 16573 ep_pol Jun18 ?        00:02:31 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+1 S root       743     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+4 S root       753     1  0  80   0 -  6594 ep_pol Jun18 ?        00:01:16 /usr/lib/systemd/systemd-logind
+4 S root       754     1  0  80   0 -  5416 hrtime Jun18 ?        00:03:28 /usr/sbin/irqbalance --foreground
+5 S chrony     770     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:10 /usr/sbin/chronyd
+5 S rpc        777     1  0  80   0 - 17316 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       782     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:1H]
+1 S root       875     2  0  80   0 -     0 worker 08:00 ?        00:00:00 [kworker/0:2]
+5 S root       990     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H 
+4 S root      1053     1  0  80   0 - 143481 poll_s Jun18 ?       00:11:41 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1188     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:33 /usr/libexec/postfix/master -w
+4 S postfix   1192  1188  0  80   0 - 22483 ep_pol Jun18 ?        00:00:08 qmgr -l -t unix -u
+4 S root      1256     1  0  80   0 - 84822 poll_s Jun18 ?        00:06:20 /usr/sbin/rsyslogd -n
+4 S root      1259     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1263     1  0  80   0 - 31571 hrtime Jun18 ?        00:00:23 /usr/sbin/crond -n
+4 S root      1264     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1267     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+1 R root      3571     2  0  80   0 -     0 ?      11:01 ?        00:00:00 [kworker/3:1]
+4 S root      5041  1259  0  80   0 - 39717 poll_s 12:40 ?        00:00:00 sshd: student23 [priv]
+5 S student+  5045  5041  0  80   0 - 39717 poll_s 12:40 ?        00:00:00 sshd: student23@pts/0
+0 S student+  5046  5045  0  80   0 - 28860 n_tty_ 12:40 pts/0    00:00:00 -bash
+1 S root      6880     2  0  80   0 -     0 worker 14:45 ?        00:00:00 [kworker/0:0]
+4 S postfix   7360  1188  0  80   0 - 22439 ep_pol 15:20 ?        00:00:00 pickup -l -t unix -u
+1 S root      7963     2  0  80   0 -     0 worker 16:00 ?        00:00:00 [kworker/1:2]
+1 S root      8127     2  0  80   0 -     0 worker 16:10 ?        00:00:00 [kworker/3:0]
+4 S root      8132  1259  0  80   0 - 39717 poll_s 16:12 ?        00:00:00 sshd: student9 [priv]
+5 S student9  8136  8132  0  80   0 - 39717 poll_s 16:12 ?        00:00:00 sshd: student9@pts/1
+0 S student9  8137  8136  0  80   0 - 28860 n_tty_ 16:12 pts/1    00:00:00 -bash
+1 S root      8161     2  0  80   0 -     0 worker 16:14 ?        00:00:00 [kworker/2:1]
+1 S root      8334     2  0  80   0 -     0 worker 16:20 ?        00:00:00 [kworker/2:0]
+1 S root      8336     2  0  80   0 -     0 worker 16:20 ?        00:00:00 [kworker/1:0]
+1 S root      8568     2  0  80   0 -     0 worker 16:25 ?        00:00:00 [kworker/2:2]
+4 S root      8575  1259  0  80   0 - 39717 poll_s 16:26 ?        00:00:00 sshd: student4 [priv]
+5 D student4  8579  8575  0  80   0 - 39717 flush_ 16:26 ?        00:00:00 sshd: student4@pts/2
+0 S student4  8580  8579  0  80   0 - 28860 do_wai 16:26 pts/2    00:00:00 -bash
+0 R student4  8608  8580  0  80   0 - 38840 -      16:28 pts/2    00:00:00 ps -elf
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1188/master         
+tcp        0      0 0.0.0.0:22013           0.0.0.0:*               LISTEN      1259/sshd           
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 129.168.117.54:22013    129.168.117.45:57630    ESTABLISHED 5041/sshd: student2 
+tcp        0      0 129.168.117.54:22013    129.168.117.45:57632    ESTABLISHED 8132/sshd: student9 
+tcp        0      0 129.168.117.54:22013    129.168.117.45:57634    ESTABLISHED 8575/sshd: student4 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1188/master         
+tcp6       0      0 :::22013                :::*                    LISTEN      1259/sshd           
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           990/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           770/chronyd         
+udp        0      0 0.0.0.0:936             0.0.0.0:*                           777/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                770/chronyd         
+udp6       0      0 :::936                  :::*                                777/rpcbind         
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ who
+student23 pts/0        2022-08-10 12:40 (129.168.117.45)
+student9 pts/1        2022-08-10 16:12 (129.168.117.45)
+student4 pts/2        2022-08-10 16:26 (129.168.117.45)
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /etc/sudoers
+## Sudoers allows particular users to run various commands as
+## the root user, without needing the root password.
+##
+## Examples are provided at the bottom of the file for collections
+## of related commands, which can then be delegated out to particular
+## users or groups.
+## 
+## This file must be edited with the 'visudo' command.
+
+## Host Aliases
+## Groups of machines. You may prefer to use hostnames (perhaps using 
+## wildcards for entire domains) or IP addresses instead.
+# Host_Alias     FILESERVERS = fs1, fs2
+# Host_Alias     MAILSERVERS = smtp, smtp2
+
+## User Aliases
+## These aren't often necessary, as you can use regular groups
+## (ie, from files, LDAP, NIS, etc) in this file - just use %groupname 
+## rather than USERALIAS
+# User_Alias ADMINS = jsmith, mikem
+
+
+## Command Aliases
+## These are groups of related commands...
+
+## Networking
+# Cmnd_Alias NETWORKING = /sbin/route, /sbin/ifconfig, /bin/ping, /sbin/dhclient, /usr/bin/net, /sbin/iptables, /usr/bin/rfcomm, /usr/bin/wvdial, /sbin/iwconfig, /sbin/mii-tool
+
+## Installation and management of software
+# Cmnd_Alias SOFTWARE = /bin/rpm, /usr/bin/up2date, /usr/bin/yum
+
+## Services
+# Cmnd_Alias SERVICES = /sbin/service, /sbin/chkconfig, /usr/bin/systemctl start, /usr/bin/systemctl stop, /usr/bin/systemctl reload, /usr/bin/systemctl restart, /usr/bin/systemctl status, /usr/bin/systemctl enable, /usr/bin/systemctl disable
+
+## Updating the locate database
+# Cmnd_Alias LOCATE = /usr/bin/updatedb
+
+## Storage
+# Cmnd_Alias STORAGE = /sbin/fdisk, /sbin/sfdisk, /sbin/parted, /sbin/partprobe, /bin/mount, /bin/umount
+
+## Delegating permissions
+# Cmnd_Alias DELEGATING = /usr/sbin/visudo, /bin/chown, /bin/chmod, /bin/chgrp 
+
+## Processes
+# Cmnd_Alias PROCESSES = /bin/nice, /bin/kill, /usr/bin/kill, /usr/bin/killall
+
+## Drivers
+# Cmnd_Alias DRIVERS = /sbin/modprobe
+
+# Defaults specification
+
+#
+# Refuse to run if unable to disable echo on the tty.
+#
+Defaults   !visiblepw
+
+#
+# Preserving HOME has security implications since many programs
+# use it when searching for configuration files. Note that HOME
+# is already set when the the env_reset option is enabled, so
+# this option is only effective for configurations where either
+# env_reset is disabled or HOME is present in the env_keep list.
+#
+Defaults    always_set_home
+Defaults    match_group_by_gid
+
+# Prior to version 1.8.15, groups listed in sudoers that were not
+# found in the system group database were passed to the group
+# plugin, if any. Starting with 1.8.15, only groups of the form
+# %:group are resolved via the group plugin by default.
+# We enable always_query_group_plugin to restore old behavior.
+# Disable this option for new behavior.
+Defaults    always_query_group_plugin
+
+Defaults    env_reset
+Defaults    env_keep =  "COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR LS_COLORS"
+Defaults    env_keep += "MAIL PS1 PS2 QTDIR USERNAME LANG LC_ADDRESS LC_CTYPE"
+Defaults    env_keep += "LC_COLLATE LC_IDENTIFICATION LC_MEASUREMENT LC_MESSAGES"
+Defaults    env_keep += "LC_MONETARY LC_NAME LC_NUMERIC LC_PAPER LC_TELEPHONE"
+Defaults    env_keep += "LC_TIME LC_ALL LANGUAGE LINGUAS _XKB_CHARSET XAUTHORITY"
+
+#
+# Adding HOME to env_keep may enable a user to run unrestricted
+# commands via sudo.
+#
+# Defaults   env_keep += "HOME"
+
+Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin
+
+## Next comes the main part: which users can run what software on 
+## which machines (the sudoers file can be shared between multiple
+## systems).
+## Syntax:
+##
+## 	user	MACHINE=COMMANDS
+##
+## The COMMANDS section may have other options added to it.
+##
+## Allow root to run any commands anywhere 
+root	ALL=(ALL) 	ALL
+
+## Allows members of the 'sys' group to run networking, software, 
+## service management apps and more.
+# %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS
+
+## Allows people in group wheel to run all commands
+%wheel	ALL=(ALL)	ALL
+
+## Same thing without a password
+%wheel	ALL=(ALL)	NOPASSWD: ALL
+
+## Allows members of the users group to mount and unmount the 
+## cdrom as root
+# %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+
+## Allows members of the users group to shutdown this system
+# %users  localhost=/sbin/shutdown -h now
+
+## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
+#includedir /etc/sudoers.d
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /var/spool/cron
+total 0
+drwx------. 2 root root  6 Nov 20  2018 .
+drwxr-xr-x. 7 root root 71 Aug  8  2019 ..
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /var/spool/cron/*
+ls: cannot access /var/spool/cron/*: No such file or directory
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ date; date -u
+Wed Aug 10 16:29:35 UTC 2022
+Wed Aug 10 16:29:35 UTC 2022
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ uname -a
+Linux dryruns-targeta-admin.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/sda1       33543148 1191984  32351164   4% /
+devtmpfs         2948952       0   2948952   0% /dev
+tmpfs            2972232       0   2972232   0% /dev/shm
+tmpfs            2972232  123392   2848840   5% /run
+tmpfs            2972232       0   2972232   0% /sys/fs/cgroup
+tmpfs             594448       0    594448   0% /run/user/1023
+tmpfs             594448       0    594448   0% /run/user/1009
+tmpfs             594448       0    594448   0% /run/user/1004
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /var/*/*acc*
+ls: cannot access /var/*/*acc*: No such file or directory
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls /etc/systemd/system/multi-user.target.wants
+[0m[38;5;51mauditd.service[0m        [38;5;51mcloud-final.service[0m       [38;5;51mcrond.service[0m       [38;5;51mmaldet.service[0m     [38;5;51mremote-fs.target[0m        [38;5;51mrsyslog.service[0m
+[38;5;51mchronyd.service[0m       [38;5;51mcloud-init-local.service[0m  [38;5;51mirqbalance.service[0m  [38;5;51mnfs-client.target[0m  [38;5;51mrhel-configure.service[0m  [38;5;51msshd.service[0m
+[38;5;51mcloud-config.service[0m  [38;5;51mcloud-init.service[0m        [38;5;51mkdump.service[0m       [38;5;51mpostfix.service[0m    [38;5;51mrpcbind.service[0m         [38;5;51mtuned.service[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /var/*log*/
+total 4924
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root      267 Feb 11 15:52 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root       23 Feb 11 15:52 [38;5;27mtuned[0m
+-rw-------.  1 root   root     1900 Feb 11 15:53 yum.log
+-rw-r--r--.  1 root   root    33660 Jun  4 02:30 dmesg.old
+-rw-r--r--.  1 root   root    33703 Jun 18 01:02 dmesg
+-rw-r--r--.  1 root   root      405 Jun 18 01:02 boot.log
+-rw-------.  1 root   root   329569 Jun 18 01:02 cloud-init.log
+-rw-------.  1 root   utmp        0 Jul  1 03:35 btmp-20220801
+-rw-------.  1 root   root        0 Jul 10 03:37 spooler-20220717
+-rw-------.  1 root   root        0 Jul 10 03:37 secure-20220717
+-rw-------.  1 root   root   115428 Jul 17 03:10 maillog-20220717
+-rw-------.  1 root   root   548939 Jul 17 03:45 messages-20220717
+-rw-r--r--.  1 root   root   327034 Jul 17 03:45 cron-20220717
+-rw-------.  1 root   root        0 Jul 17 03:45 spooler-20220724
+-rw-------.  1 root   root        0 Jul 17 03:45 secure-20220724
+-rw-------.  1 root   root   115422 Jul 24 03:10 maillog-20220724
+-rw-------.  1 root   root   548846 Jul 24 03:35 messages-20220724
+-rw-r--r--.  1 root   root   326641 Jul 24 03:37 cron-20220724
+-rw-------.  1 root   root        0 Jul 24 03:37 spooler-20220731
+-rw-------.  1 root   root        0 Jul 24 03:37 secure-20220731
+-rw-------.  1 root   root   115428 Jul 31 03:10 maillog-20220731
+-rw-------.  1 root   root   550928 Jul 31 03:45 messages-20220731
+-rw-r--r--.  1 root   root   327116 Jul 31 03:50 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:50 spooler-20220807
+-rw-------.  1 root   root        0 Jul 31 03:50 secure-20220807
+-rw-------.  1 root   utmp        0 Aug  1 03:16 btmp
+-rw-------.  1 root   root   115420 Aug  7 03:10 maillog-20220807
+-rw-------.  1 root   root   548974 Aug  7 03:40 messages-20220807
+-rw-r--r--.  1 root   root   326748 Aug  7 03:42 cron-20220807
+-rw-------.  1 root   root        0 Aug  7 03:42 spooler
+drwxr-xr-x.  8 root   root     4096 Aug  7 03:42 [38;5;27m.[0m
+drwx------.  2 root   root       99 Aug  8 08:25 [38;5;27maudit[0m
+-rw-------.  1 root   root    58390 Aug 10 16:10 maillog
+-rw-rw-r--.  1 root   utmp    39936 Aug 10 16:26 wtmp
+-rw-r--r--.  1 root   root   299008 Aug 10 16:26 lastlog
+-rw-------.  1 root   root    25558 Aug 10 16:29 secure
+-rw-r--r--.  1 root   root   165135 Aug 10 16:30 cron
+-rw-------.  1 root   root   275431 Aug 10 16:30 messages
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root     1900 Feb 11 15:53 /var/log/yum.log
+-rw-r--r--. 1 root   root    33660 Jun  4 02:30 /var/log/dmesg.old
+-rw-r--r--. 1 root   root    33703 Jun 18 01:02 /var/log/dmesg
+-rw-r--r--. 1 root   root      405 Jun 18 01:02 /var/log/boot.log
+-rw-------. 1 root   root   329569 Jun 18 01:02 /var/log/cloud-init.log
+-rw-------. 1 root   utmp        0 Jul  1 03:35 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 10 03:37 /var/log/spooler-20220717
+-rw-------. 1 root   root        0 Jul 10 03:37 /var/log/secure-20220717
+-rw-------. 1 root   root   115428 Jul 17 03:10 /var/log/maillog-20220717
+-rw-------. 1 root   root   548939 Jul 17 03:45 /var/log/messages-20220717
+-rw-r--r--. 1 root   root   327034 Jul 17 03:45 /var/log/cron-20220717
+-rw-------. 1 root   root        0 Jul 17 03:45 /var/log/spooler-20220724
+-rw-------. 1 root   root        0 Jul 17 03:45 /var/log/secure-20220724
+-rw-------. 1 root   root   115422 Jul 24 03:10 /var/log/maillog-20220724
+-rw-------. 1 root   root   548846 Jul 24 03:35 /var/log/messages-20220724
+-rw-r--r--. 1 root   root   326641 Jul 24 03:37 /var/log/cron-20220724
+-rw-------. 1 root   root        0 Jul 24 03:37 /var/log/spooler-20220731
+-rw-------. 1 root   root        0 Jul 24 03:37 /var/log/secure-20220731
+-rw-------. 1 root   root   115428 Jul 31 03:10 /var/log/maillog-20220731
+-rw-------. 1 root   root   550928 Jul 31 03:45 /var/log/messages-20220731
+-rw-r--r--. 1 root   root   327116 Jul 31 03:50 /var/log/cron-20220731
+-rw-------. 1 root   root        0 Jul 31 03:50 /var/log/spooler-20220807
+-rw-------. 1 root   root        0 Jul 31 03:50 /var/log/secure-20220807
+-rw-------. 1 root   utmp        0 Aug  1 03:16 /var/log/btmp
+-rw-------. 1 root   root   115420 Aug  7 03:10 /var/log/maillog-20220807
+-rw-------. 1 root   root   548974 Aug  7 03:40 /var/log/messages-20220807
+-rw-r--r--. 1 root   root   326748 Aug  7 03:42 /var/log/cron-20220807
+-rw-------. 1 root   root        0 Aug  7 03:42 /var/log/spooler
+-rw-------. 1 root   root    58390 Aug 10 16:10 /var/log/maillog
+-rw-rw-r--. 1 root   utmp    39936 Aug 10 16:26 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Aug 10 16:26 /var/log/lastlog
+-rw-------. 1 root   root    25558 Aug 10 16:29 /var/log/secure
+-rw-r--r--. 1 root   root   165135 Aug 10 16:30 /var/log/cron
+-rw-------. 1 root   root   275431 Aug 10 16:30 /var/log/messages
+
+/var/log/chrony:
+total 4
+drwxr-xr-x. 2 chrony chrony    6 Apr 12  2018 [0m[38;5;27m.[0m
+drwxr-xr-x. 8 root   root   4096 Aug  7 03:42 [38;5;27m..[0m
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x. 2 root root    6 Oct 30  2018 [38;5;27m.[0m
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 [38;5;27m..[0m
+
+/var/log/anaconda:
+total 1848
+-rw-------. 1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------. 1 root root  214566 Aug  8  2019 syslog
+-rw-------. 1 root root   38944 Aug  8  2019 program.log
+-rw-------. 1 root root  168908 Aug  8  2019 packaging.log
+-rw-------. 1 root root   50553 Aug  8  2019 storage.log
+-rw-------. 1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------. 1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------. 1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x. 2 root root     191 Aug  8  2019 [38;5;27m.[0m
+-rw-------. 1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 8 root root    4096 Aug  7 03:42 [38;5;27m..[0m
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x. 2 root root    6 Aug  8  2019 [38;5;27m.[0m
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 [38;5;27m..[0m
+
+/var/log/tuned:
+total 12
+drwxr-xr-x. 2 root root   23 Feb 11 15:52 [38;5;27m.[0m
+-rw-r--r--. 1 root root 4597 Jun 18 01:02 tuned.log
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 [38;5;27m..[0m
+ls: cannot open directory /var/log/audit: Permission denied
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root     1900 Feb 11 15:53 /var/log/yum.log
+-rw-r--r--. 1 root   root    33660 Jun  4 02:30 /var/log/dmesg.old
+-rw-r--r--. 1 root   root    33703 Jun 18 01:02 /var/log/dmesg
+-rw-r--r--. 1 root   root      405 Jun 18 01:02 /var/log/boot.log
+-rw-------. 1 root   root   329569 Jun 18 01:02 /var/log/cloud-init.log
+-rw-------. 1 root   utmp        0 Jul  1 03:35 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 10 03:37 /var/log/spooler-20220717
+-rw-------. 1 root   root        0 Jul 10 03:37 /var/log/secure-20220717
+-rw-------. 1 root   root   115428 Jul 17 03:10 /var/log/maillog-20220717
+-rw-------. 1 root   root   548939 Jul 17 03:45 /var/log/messages-20220717
+-rw-r--r--. 1 root   root   327034 Jul 17 03:45 /var/log/cron-20220717
+-rw-------. 1 root   root        0 Jul 17 03:45 /var/log/spooler-20220724
+-rw-------. 1 root   root        0 Jul 17 03:45 /var/log/secure-20220724
+-rw-------. 1 root   root   115422 Jul 24 03:10 /var/log/maillog-20220724
+-rw-------. 1 root   root   548846 Jul 24 03:35 /var/log/messages-20220724
+-rw-r--r--. 1 root   root   326641 Jul 24 03:37 /var/log/cron-20220724
+-rw-------. 1 root   root        0 Jul 24 03:37 /var/log/spooler-20220731
+-rw-------. 1 root   root        0 Jul 24 03:37 /var/log/secure-20220731
+-rw-------. 1 root   root   115428 Jul 31 03:10 /var/log/maillog-20220731
+-rw-------. 1 root   root   550928 Jul 31 03:45 /var/log/messages-20220731
+-rw-r--r--. 1 root   root   327116 Jul 31 03:50 /var/log/cron-20220731
+-rw-------. 1 root   root        0 Jul 31 03:50 /var/log/spooler-20220807
+-rw-------. 1 root   root        0 Jul 31 03:50 /var/log/secure-20220807
+-rw-------. 1 root   utmp        0 Aug  1 03:16 /var/log/btmp
+-rw-------. 1 root   root   115420 Aug  7 03:10 /var/log/maillog-20220807
+-rw-------. 1 root   root   548974 Aug  7 03:40 /var/log/messages-20220807
+-rw-r--r--. 1 root   root   326748 Aug  7 03:42 /var/log/cron-20220807
+-rw-------. 1 root   root        0 Aug  7 03:42 /var/log/spooler
+-rw-------. 1 root   root    58390 Aug 10 16:10 /var/log/maillog
+-rw-rw-r--. 1 root   utmp    39936 Aug 10 16:26 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Aug 10 16:26 /var/log/lastlog
+-rw-r--r--. 1 root   root   165135 Aug 10 16:30 /var/log/cron
+-rw-------. 1 root   root   275431 Aug 10 16:30 /var/log/messages
+-rw-------. 1 root   root    26776 Aug 10 16:30 /var/log/secure
+
+/var/log/chrony:
+total 4
+drwxr-xr-x. 2 chrony chrony    6 Apr 12  2018 .
+drwxr-xr-x. 8 root   root   4096 Aug  7 03:42 ..
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x. 2 root root    6 Oct 30  2018 .
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 ..
+
+/var/log/anaconda:
+total 1848
+-rw-------. 1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------. 1 root root  214566 Aug  8  2019 syslog
+-rw-------. 1 root root   38944 Aug  8  2019 program.log
+-rw-------. 1 root root  168908 Aug  8  2019 packaging.log
+-rw-------. 1 root root   50553 Aug  8  2019 storage.log
+-rw-------. 1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------. 1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------. 1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x. 2 root root     191 Aug  8  2019 .
+-rw-------. 1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 8 root root    4096 Aug  7 03:42 ..
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x. 2 root root    6 Aug  8  2019 .
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 ..
+
+/var/log/tuned:
+total 12
+drwxr-xr-x. 2 root root   23 Feb 11 15:52 .
+-rw-r--r--. 1 root root 4597 Jun 18 01:02 tuned.log
+drwxr-xr-x. 8 root root 4096 Aug  7 03:42 ..
+
+/var/log/audit:
+total 34324
+-r--------. 1 root root 8388812 Jun 27 23:00 audit.log.4
+-r--------. 1 root root 8388649 Jul 11 18:55 audit.log.3
+-r--------. 1 root root 8388822 Jul 25 14:15 audit.log.2
+drwxr-xr-x. 8 root root    4096 Aug  7 03:42 ..
+-r--------. 1 root root 8388715 Aug  8 08:25 audit.log.1
+drwx------. 2 root root      99 Aug  8 08:25 .
+-rw-------. 1 root root 1561259 Aug 10 16:30 audit.log
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ 
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -la /etc/*syslog*
+-rw-r--r--. 1 root root 3232 Oct 30  2018 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 20
+drwxr-xr-x.  2 root root   50 Aug  8  2019 [0m[38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+-rw-r--r--.  1 root root  255 Mar 27  2018 21-cloudinit.conf
+-rw-r--r--.  1 root root   49 Jul 31  2019 listen.conf
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### MODULES ####
+
+# The imjournal module bellow is now used as a message source instead of imuxsock.
+$ModLoad imuxsock # provides support for local system logging (e.g. via logger command)
+$ModLoad imjournal # provides access to the systemd journal
+#$ModLoad imklog # reads kernel messages (the same are read from journald)
+#$ModLoad immark  # provides --MARK-- message capability
+
+# Provides UDP syslog reception
+#$ModLoad imudp
+#$UDPServerRun 514
+
+# Provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+#### GLOBAL DIRECTIVES ####
+
+# Where to place auxiliary files
+$WorkDirectory /var/lib/rsyslog
+
+# Use default timestamp format
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# File syncing capability is disabled by default. This feature is usually not required,
+# not useful and an extreme performance hit
+#$ActionFileEnableSync on
+
+# Include all config files in /etc/rsyslog.d/
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+# Turn off message reception via local log socket;
+# local messages are retrieved through imjournal now.
+$OmitLocalLogging on
+
+# File to store the position in the journal
+$IMJournalStateFile imjournal.state
+
+
+#### RULES ####
+
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              /var/log/secure
+
+# Log all the mail messages in one place.
+mail.*                                                  -/var/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 :omusrmsg:*
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /var/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /var/log/boot.log
+
+
+# ### begin forwarding rule ###
+# The statement between the begin ... end define a SINGLE forwarding
+# rule. They belong together, do NOT split them. If you create multiple
+# forwarding rules, duplicate the whole block!
+# Remote Logging (we use TCP for reliable delivery)
+#
+# An on-disk queue is created for this action. If the remote host is
+# down, messages are spooled to disk and sent when it is up again.
+#$ActionQueueFileName fwdRule1 # unique name prefix for spool files
+#$ActionQueueMaxDiskSpace 1g   # 1gb space limit (use as much as possible)
+#$ActionQueueSaveOnShutdown on # save messages to disk on shutdown
+#$ActionQueueType LinkedList   # run asynchronously
+#$ActionResumeRetryCount -1    # infinite retries if host is down
+# remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+#*.* @@remote-host:514
+# ### end of the forwarding rule ###
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+###### root crontab is:
+###### bin crontab is:
+###### daemon crontab is:
+###### adm crontab is:
+###### lp crontab is:
+###### sync crontab is:
+###### shutdown crontab is:
+###### halt crontab is:
+###### mail crontab is:
+###### operator crontab is:
+###### games crontab is:
+###### ftp crontab is:
+###### nobody crontab is:
+###### systemd-network crontab is:
+###### dbus crontab is:
+###### polkitd crontab is:
+###### rpc crontab is:
+###### rpcuser crontab is:
+###### nfsnobody crontab is:
+###### sshd crontab is:
+###### postfix crontab is:
+###### chrony crontab is:
+###### centos crontab is:
+###### student1 crontab is:
+###### student2 crontab is:
+###### student3 crontab is:
+###### student4 crontab is:
+###### student5 crontab is:
+###### student6 crontab is:
+###### student7 crontab is:
+###### student8 crontab is:
+###### student9 crontab is:
+###### student10 crontab is:
+###### student11 crontab is:
+###### student12 crontab is:
+###### student13 crontab is:
+###### student14 crontab is:
+###### student15 crontab is:
+###### student16 crontab is:
+###### student17 crontab is:
+###### student18 crontab is:
+###### student19 crontab is:
+###### student20 crontab is:
+###### student21 crontab is:
+###### student22 crontab is:
+###### student23 crontab is:
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+  10  *  *  *  * root maldet -a /bin >> /root/linux-malware-detect/report.txt
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 20
+drwxr-xr-x.  2 root root   39 Feb 11 15:53 [0m[38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+-rw-r--r--.  1 root root   76 May 11 03:27 maldet_pub
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   56 Feb 11 15:53 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+-rwx------.  1 root root  219 Oct 30  2018 [38;5;34mlogrotate[0m
+-rwxr-xr-x.  1 root root 3777 May 11 03:27 [38;5;34mmaldet[0m
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 [38;5;34mman-db.cron[0m
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.  2 root root   22 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  392 Nov 20  2018 [38;5;34m0anacron[0m
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+
+/etc/cron.weekly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/cron.daily/maldet
+#!/usr/bin/env bash
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LMDCRON=1
+inspath='/usr/local/maldetect'
+intcnf="$inspath/internals/internals.conf"
+
+if [ -f "$intcnf" ]; then
+	source $intcnf
+else
+	echo "\$intcnf not found."
+	exit 1
+fi
+if [ -f "$cnf" ]; then
+	source $cnf
+	if [ -f "$compatcnf" ]; then
+	        source $compatcnf
+	fi
+else
+	echo "could not find \$cnf, fatal error, bye."
+	exit 1
+fi
+
+if [ -f "/etc/sysconfig/maldet" ]; then
+	. /etc/sysconfig/maldet
+elif [ -f "/etc/default/maldet" ]; then
+	. /etc/default/maldet
+fi
+
+if [ -f "$cron_custom_conf" ]; then
+	. $cron_custom_conf
+fi
+
+if [ -z "$scan_days" ]; then
+	scan_days=1
+fi
+
+if [ -z "$cron_prune_days" ]; then
+	cron_prune_days=21
+fi
+
+if [ "$find" ]; then
+	# prune any quarantine/session/tmp data older than 7 days
+	tmpdirs="$tmpdir $varlibpath/sess $varlibpath/quarantine $varlibpath/pub"
+	for dir in $tmpdirs; do
+	 if [ -d "$dir" ]; then
+	  $find $dir -type f -mtime +${cron_prune_days} -print0 | xargs -0 rm -f >> /dev/null 2>&1
+	 fi
+	done
+fi
+
+if [ "$autoupdate_version" == "1" ] || [ "$autoupdate_signatures" == "1" ]; then
+	# sleep for random 1-999s interval to better distribute upstream load
+	sleep $(echo $RANDOM | cut -c1-3) >> /dev/null 2>&1
+fi
+
+if [ "$autoupdate_version" == "1" ]; then
+	# check for new release version
+	$inspath/maldet -d >> /dev/null 2>&1
+fi
+
+if [ "$autoupdate_signatures" == "1" ]; then
+	# check for new definition set
+	$inspath/maldet -u >> /dev/null 2>&1
+fi
+
+# if we're running inotify monitoring, send daily hit summary
+if [ "$(ps -A --user root -o "cmd" | grep -E maldetect | grep -E inotifywait)" ]; then
+        $inspath/maldet --monitor-report >> /dev/null 2>&1
+elif [ "$cron_daily_scan" == "1" ]; then
+	if [ -d "/home/virtual" ] && [ -d "/usr/lib/opcenter" ]; then
+		# ensim
+	        $inspath/maldet -b -r /home/virtual/?/fst/var/www/html/,/home/virtual/?/fst/home/?/public_html/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/etc/psa" ] && [ -d "/var/lib/psa" ]; then
+		# psa
+		$inspath/maldet -b -r /var/www/vhosts/?/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/local/directadmin" ]; then
+                # DirectAdmin
+                $inspath/maldet -b -r /home?/?/domains/?/public_html/,/var/www/html/?/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/var/www/clients" ]; then
+		# ISPConfig
+                $inspath/maldet -b -r /var/www/clients/?/web?/web,/var/www/clients/?/web?/subdomains,/var/www $scan_days >> /dev/null 2>&1
+	elif [ -d "/etc/webmin/virtual-server" ]; then
+		# Virtualmin
+                $inspath/maldet -b -r /home/?/public_html/,/home/?/domains/?/public_html/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/usr/local/ispmgr" ] || [ -d "/usr/local/mgr5" ]; then
+		# ISPmanager
+		$inspath/maldet -b -r /var/www/?/data/,/home/?/data/ $scan_days >> /dev/null 2>&1
+	elif [ -d "/var/customers/webs" ]; then
+		# froxlor
+		$inspath/maldet -b -r /var/customers/webs/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/local/vesta" ]; then
+                # VestaCP
+                $inspath/maldet -b -r /home/?/web/?/public_html/,/home/?/web/?/public_shtml/,/home/?/tmp/,/home/?/web/?/private/ $scan_days >> /dev/null 2>&1
+        elif [ -d "/usr/share/dtc" ]; then
+                # DTC
+                if [ -f /var/lib/dtc/saved_install_config ]; then
+                    . /var/lib/dtc/saved_install_config
+                fi
+                $inspath/maldet -b -r ${conf_hosting_path:-/var/www/sites}/?/?/subdomains/?/html/ $scan_days >> /dev/null 2>&1
+	else
+		# cpanel, interworx and other standard home/user/public_html setups
+	        $inspath/maldet -b -r /home?/?/public_html/,/var/www/html/,/usr/local/apache/htdocs/ $scan_days >> /dev/null 2>&1
+	fi
+fi
+
+if [ -f "$cron_custom_exec" ]; then
+	. $cron_custom_exec
+fi
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ 
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r--. 1 root root                  42 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root root                  17 Aug 10 16:26 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root root                  26 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                  43 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                  36 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                  17 Aug 10 16:26 /run/systemd/system/session-18027.scope
+-rw-r--r--. 1 root root                  30 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-Slice.conf
+-rw-r--r--. 1 root root                  50 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-Description.conf
+-rw-r--r--. 1 root root                  43 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                  36 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                  26 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                  23 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root root                 268 Aug 10 16:26 /run/systemd/users/1004
+-rw-r--r--. 1 root root                 306 Aug 10 16:26 /run/systemd/sessions/18027
+-rw-rw-r--. 1 root utmp               39936 Aug 10 16:26 /var/log/wtmp
+-rw-r--r--. 1 root root              299008 Aug 10 16:26 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                2688 Aug 10 16:26 /run/utmp
+-rw-r--r--. 1 root root              165135 Aug 10 16:30 /var/log/cron
+-rw-r--r--. 1 root root                   6 Aug 10 16:30 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root root                  44 Aug 10 16:30 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root root                   0 Aug 10 16:30 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root root                 201 Aug 10 16:30 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root root                   0 Aug 10 16:30 /usr/local/maldetect/ignore_file_ext
+-rw-------. 1 root root              275431 Aug 10 16:30 /var/log/messages
+-rw-------. 1 root root                 126 Aug 10 16:30 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             1567229 Aug 10 16:32 /var/log/audit/audit.log
+-rw-r-----+ 1 root systemd-journal 16777216 Aug 10 16:32 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root               28812 Aug 10 16:32 /var/log/secure
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /root/.bash_history
+maldet -a / >> /root/linux-malware-detect/report.txt
+cd /root
+ls -latr
+cd linux-malware-detect/
+maldet -a / >> /root/linux-malware-detect/report.txt
+ls -latr
+which maldet
+./install.sh
+which maldet
+maldet -a / >> /root/linux-malware-detect/report.txt
+ls -latr
+cat README
+ls -latr files
+cd files
+maldet -a / >> /root/linux-malware-detect/report.txt
+./maldet -a / >> /root/linux-malware-detect/report.txt
+cd ..
+ls -latr
+exit
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat ~/.bash_history
+date /t
+ipconfig -a
+ifconfig -a                                                                                                                                                                                                        
+uname -a
+date; date -u
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+ls -latr /root
+sudo ls -latr /root
+ps -elf
+sudo ps -elf -H
+ifconfig -a || ip addr
+netstat -auntp || ss -auntp
+sudo netstat -auntp
+w
+sudo w
+df
+ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab    
+ls -la /etc/cron.*
+ls -latr /var/*/*acc*
+ls -latr /var/*log*/
+ls -latr /var/log/*                                                                                                                                                                                                
+sudo cat /var/log/messages | grep student4
+cat /var/log/lastlog | grep student4
+sudo cat /var/log/secure | grep student4
+sudo ls -la /var/log/audit
+sudo tail -n 5 /var/log/audit/audit.log
+ls -la /etc/rsyslog.conf
+cat /etc/rsyslog.conf
+ls -la /etc/*syslog*
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -13 -type f -print0 | xargs -0 ls -latr                                                                                                              
+sestatus
+cat /root/.bash_history
+sudo cat /root/.bash_history
+cat ~/.bash_history
+sudo ls -ls /root/linux-malware-detect                                                                                                                                                                             
+sudo cat /root/linux-malware-detect/README                                                                                                                                                                         
+date; date -u
+w
+ifconfig -a || ip addr
+ls -latr /
+ls -latr /tmp
+ls -latr .
+ls -latr ..
+sudo ls -latr /root
+sudo ls -latr /root/linux-malware-detect
+ps -elfH
+netstat -auntp || ss -auntp
+sudo ls -latr /var/spool/cron
+uname -a
+df
+ls -latr /var/*/*acc*
+ls -latr /var/*log*/
+sudo ls -latr /var/log/*
+ls -la /etc/*syslog*
+cat /etc/rsyslog.conf
+cat /etc/hosts
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+cat /etc/crontab
+ls -la /etc/cron.*
+ls -latr /usr/local
+ls -latr /usr/local/maldet
+ls -latr /usr/local/maldetect
+cat /usr/local/maldetect/conf.maldet
+cat /usr/local/maldetect/VERSION
+ls -la /etc/cron.*
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+sestatus || getenforce
+sudo cat /root/.bash_history
+cat ~/.bash_history
+mount
+lsmod
+uname -a
+ls -latr /etc/*release*
+cat /etc/*release*
+cat /proc/cpuinfo
+services --status-all || systemctl status --no-pager
+cat /proc/meminfo
+sudo cat /etc/shadow
+cat /etc/passwd
+lspci -vv
+arp -a
+lsusb
+lsblk
+fdisk -l
+free -m
+dmidecode -t bios
+cat /etc/hosts
+w
+ls -latr /tmp
+ps -elf
+netstat -lptn
+ls -latr /var/log
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+exit
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ arp -p
+arp: option requires an argument -- 'p'
+Usage:
+  arp [-vn]  [<HW>] [-i <if>] [-a] [<hostname>]             <-Display ARP cache
+  arp [-v]          [-i <if>] -d  <host> [pub]               <-Delete ARP entry
+  arp [-vnD] [<HW>] [-i <if>] -f  [<filename>]            <-Add entry from file
+  arp [-v]   [<HW>] [-i <if>] -s  <host> <hwaddr> [temp]            <-Add entry
+  arp [-v]   [<HW>] [-i <if>] -Ds <host> <if> [netmask <nm>] pub          <-''-
+
+        -a                       display (all) hosts in alternative (BSD) style
+        -e                       display (all) hosts in default (Linux) style
+        -s, --set                set a new ARP entry
+        -d, --delete             delete a specified entry
+        -v, --verbose            be verbose
+        -n, --numeric            don't resolve names
+        -i, --device             specify network interface (e.g. eth0)
+        -D, --use-device         read <hwaddr> from given device
+        -A, -p, --protocol       specify protocol family
+        -f, --file               read new entries from file or from /etc/ethers
+
+  <HW>=Use '-H <hw>' to specify hardware address type. Default: ether
+  List of possible hardware types (which support ARP):
+    ash (Ash) ether (Ethernet) ax25 (AMPR AX.25) 
+    netrom (AMPR NET/ROM) rose (AMPR ROSE) arcnet (ARCnet) 
+    dlci (Frame Relay DLCI) fddi (Fiber Distributed Data Interface) hippi (HIPPI) 
+    irda (IrLAP) x25 (generic X.25) infiniband (InfiniBand) 
+    eui64 (Generic EUI-64) 
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/rsyslog.d/listen.conf
+$SystemLogSocketName /run/systemd/journal/syslog
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ arp -a
+? (129.168.117.2) at fa:16:3e:22:37:ca [ether] on eth0
+gateway (129.168.117.1) at fa:16:3e:b6:e0:42 [ether] on eth0
+? (129.168.117.45) at fa:16:3e:e1:f9:3d [ether] on eth0
+? (129.168.117.3) at fa:16:3e:c7:52:eb [ether] on eth0
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /etc/sysconfig/
+total 124
+-rw-r--r--.  1 root root    0 Jun  9  2014 run-parts
+-rw-r--r--.  1 root root   15 Aug  4  2017 rdisc
+-rw-r--r--.  1 root root  395 Apr 10  2018 rpc-rquotad
+-rw-r--r--.  1 root root  903 Apr 10  2018 irqbalance
+-rw-r-----.  1 root root  506 Apr 11  2018 sshd
+-rw-r--r--.  1 root root   46 Apr 12  2018 chronyd
+-rw-r--r--.  1 root root  196 Oct 30  2018 rsyslog
+-rw-r--r--.  1 root root  911 Oct 30  2018 qemu-ga
+-rw-r--r--.  1 root root  200 Oct 30  2018 man-db
+-rw-r--r--.  1 root root  905 Oct 30  2018 readonly-root
+-rw-r--r--.  1 root root  634 Oct 30  2018 netconsole
+drwxr-xr-x.  2 root root    6 Oct 30  2018 [0m[38;5;27mmodules[0m
+-rw-r--r--.  1 root root  798 Oct 30  2018 init
+drwxr-xr-x.  2 root root    6 Oct 30  2018 [38;5;27mconsole[0m
+-rw-r--r--.  1 root root   73 Oct 30  2018 rpcbind
+-rw-r--r--.  1 root root  610 Oct 30  2018 wpa_supplicant
+-rw-------.  1 root root 2374 Nov  4  2018 iptables-config
+-rw-------.  1 root root 2393 Nov  4  2018 ip6tables-config
+-rw-r--r--.  1 root root 1679 Nov  7  2018 nfs
+-rw-------.  1 root root  110 Nov 20  2018 crond
+-rw-r--r--.  1 root root   12 Apr 25  2019 rsyncd
+-rw-r--r--.  1 root root 1722 Jul 29  2019 kdump
+-rw-r--r--.  1 root root  150 Jul 29  2019 cpupower
+drwxr-xr-x.  2 root root   43 Aug  8  2019 [38;5;27mcbq[0m
+lrwxrwxrwx.  1 root root   15 Aug  8  2019 [38;5;51mgrub[0m -> ../default/grub
+lrwxrwxrwx.  1 root root   17 Aug  8  2019 [38;5;51mselinux[0m -> ../selinux/config
+-rw-r--r--.  1 root root  483 Aug  8  2019 authconfig
+drwxr-xr-x.  2 root root 4096 Aug  8  2019 [38;5;27mnetwork-scripts[0m
+-rw-r--r--.  1 root root  180 Aug  8  2019 kernel
+-rw-r--r--.  1 root root   17 Aug  8  2019 firstboot
+-rw-r--r--.  1 root root  145 Aug  8  2019 anaconda
+-rw-r--r--.  1 root root   86 Feb 11 15:52 network
+-rw-r--r--.  1 root root  431 Feb 11 15:53 maldet
+drwxr-xr-x.  6 root root 4096 Feb 11 15:53 [38;5;27m.[0m
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 [38;5;27m..[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /etc/audit/rules.d/audit.rules
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## Set failure mode to syslog
+-f 1
+
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /etc/audit/auditd.conf
+#
+# This file controls the configuration of the audit daemon
+#
+
+local_events = yes
+write_logs = yes
+log_file = /var/log/audit/audit.log
+log_group = root
+log_format = RAW
+flush = INCREMENTAL_ASYNC
+freq = 50
+max_log_file = 8
+num_logs = 5
+priority_boost = 4
+disp_qos = lossy
+dispatcher = /sbin/audispd
+name_format = NONE
+##name = mydomain
+max_log_file_action = ROTATE
+space_left = 75
+space_left_action = SYSLOG
+verify_email = yes
+action_mail_acct = root
+admin_space_left = 50
+admin_space_left_action = SUSPEND
+disk_full_action = SUSPEND
+disk_error_action = SUSPEND
+use_libwrap = yes
+##tcp_listen_port = 60
+tcp_listen_queue = 5
+tcp_max_per_addr = 1
+##tcp_client_ports = 1024-65535
+tcp_client_max_idle = 0
+enable_krb5 = no
+krb5_principal = auditd
+##krb5_key_file = /etc/audit/audit.key
+distribute_network = no
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /etc/audit
+total 24
+-rw-r-----.  1 root root  127 Oct 30  2018 audit-stop.rules
+-rw-r-----.  1 root root  805 Oct 30  2018 auditd.conf
+drwxr-x---.  2 root root   25 Aug  8  2019 rules.d
+-rw-r-----.  1 root root   81 Feb 11 15:52 audit.rules
+drwxr-x---.  3 root root   83 Feb 11 15:52 .
+drwxr-xr-x. 77 root root 8192 Jun 18 01:02 ..
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo tail -n 20 /var/log/audit/audit.log
+type=CRED_REFR msg=audit(1660149419.121:126841): pid=8936 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_START msg=audit(1660149419.129:126842): pid=8936 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_END msg=audit(1660149419.132:126843): pid=8936 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=CRED_DISP msg=audit(1660149419.132:126844): pid=8936 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_ACCT msg=audit(1660149422.768:126845): pid=8939 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_CMD msg=audit(1660149422.769:126846): pid=8939 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=636174202F6574632F61756469742F6175646974642E636F6E66 terminal=pts/2 res=success'
+type=CRED_REFR msg=audit(1660149422.769:126847): pid=8939 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_START msg=audit(1660149422.772:126848): pid=8939 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_END msg=audit(1660149422.774:126849): pid=8939 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=CRED_DISP msg=audit(1660149422.774:126850): pid=8939 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_ACCT msg=audit(1660149429.009:126851): pid=8943 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_CMD msg=audit(1660149429.009:126852): pid=8943 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=6C73202D6C617472202F6574632F6175646974 terminal=pts/2 res=success'
+type=CRED_REFR msg=audit(1660149429.010:126853): pid=8943 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_START msg=audit(1660149429.012:126854): pid=8943 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_END msg=audit(1660149429.018:126855): pid=8943 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=CRED_DISP msg=audit(1660149429.018:126856): pid=8943 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_ACCT msg=audit(1660149436.164:126857): pid=8947 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_CMD msg=audit(1660149436.164:126858): pid=8947 uid=1004 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E203230202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/2 res=success'
+type=CRED_REFR msg=audit(1660149436.164:126859): pid=8947 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_START msg=audit(1660149436.167:126860): pid=8947 uid=0 auid=1004 ses=18027 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo ls -latr /root/linux-malware-detect
+total 128
+lrwxrwxrwx. 1 root root    26 Feb 11 15:53 .ca.def -> files/internals/importconf
+-rw-r--r--. 1 root root 24443 Feb 11 15:53 README
+-rw-r--r--. 1 root root    76 Feb 11 15:53 cron.d.pub
+-rwxr-xr-x. 1 root root  3777 Feb 11 15:53 cron.daily
+-rw-r--r--. 1 root root 18093 Feb 11 15:53 COPYING.GPL
+-rw-r--r--. 1 root root  1491 Feb 11 15:53 CHANGELOG.VARIABLES
+-rw-r--r--. 1 root root  3613 Feb 11 15:53 CHANGELOG.RELEASE
+-rw-r--r--. 1 root root 46407 Feb 11 15:53 CHANGELOG
+-rwxr-xr-x. 1 root root  6100 Feb 11 15:53 install.sh
+drwxr-xr-x. 8 root root   163 Feb 11 15:53 .git
+drwxr-xr-x. 6 root root  4096 Feb 11 15:53 files
+drwxr-xr-x. 4 root root   220 Feb 11 16:10 .
+-rw-r--r--. 1 root root  4921 May 10 12:25 report.txt
+dr-xr-x---. 5 root root   210 May 10 12:25 ..
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /root/linux-malware-detect/README
+Linux Malware Detect v1.6.5
+            (C) 2002-2019, R-fx Networks <proj@r-fx.org>
+            (C) 2019, Ryan MacDonald <ryan@r-fx.org>
+This program may be freely redistributed under the terms of the GNU GPL v2
+
+::::::::::::::::::::::::::::::::::
+
+:: CONTENTS ::
+.: 1 [ DESCRIPTION ]
+.: 2 [ FEATURES ]
+.: 3 [ THREAT SOURCE DATA ]
+.: 4 [ RELEASE UPDATES ]
+.: 4.1 [ SIGNATURE UPDATES ]
+.: 5 [ DETECTED THREATS ]
+.: 6 [ THREAT SHARING ]
+.: 7 [ CONFIGURATION ]
+.: 8 [ IGNORE OPTIONS ]
+.: 9 [ CLI USAGE ]
+.: 10 [ CRON DAILY ]
+.: 11 [ INOTIFY MONITORING ]
+.: 12 [ MODSECURITY2 UPLOAD SCANNING ]
+.: 13 [ CLEANER RULES ]
+
+::::::::::::::::::::::::::::::::::
+
+.: 1 [ DESCRIPTION ]
+
+Linux Malware Detect (LMD) is a malware scanner for Linux released under the 
+GNU GPLv2 license, that is designed around the threats faced in shared hosted 
+environments. It uses threat data from network edge intrusion detection 
+systems to extract malware that is actively being used in attacks and 
+generates signatures for detection. In addition, threat data is also derived 
+from user submissions with the LMD checkout feature and from malware 
+community resources. The signatures that LMD uses are MD5 file hashes and HEX 
+pattern matches, they are also easily exported to any number of detection 
+tools such as ClamAV.
+
+The driving force behind LMD is that there is currently limited availability 
+of open source/restriction free tools for Linux systems that focus on malware 
+detection and more important that get it right. Many of the AV products that 
+perform malware detection on Linux have a very poor track record of detecting 
+threats, especially those targeted at shared hosted environments.
+
+The threat landscape in shared hosted environments is unique from that of the 
+standard AV products detection suite in that they are detecting primarily OS 
+level trojans, rootkits and traditional file-infecting viruses but missing 
+the ever increasing variety of malware on the user account level which serves 
+as an attack platform.
+
+Using the CYMRU malware hash registry, which provides malware detection data 
+for 30 major AV packages, we can demonstrate this short coming in current 
+threat detection. The following is an analysis of 8,882 MD5 hashes that ship 
+in LMD 1.5 and the percentage of major AV products that currently detect 
+the hashes.
+
+KNOWN MALWARE:      1951
+ % AV DETECT (AVG):  58
+ % AV DETECT (LOW):  10
+ % AV DETECT (HIGH): 100
+UNKNOWN MALWARE:    6931
+
+What this information means, is that of the 8,883 hashes, 78% or 6,931 malware threats
+are NOT detected by top-30 AV products. The 1,951 detected malware threats that are known
+have an average detection rate of 58% among top-30 AV products with a low and high
+detection rate of 10% and 100% respectively. This clearly demonstrates the significant
+lapse in user space malware detection that top-30 AV products currently provide. It is for
+this reason LMD was created, to fill a void, specifically for shared hosted environments.
+
+.: 2 [ FEATURES ]
+
+- MD5 file hash detection for quick threat identification
+- HEX based pattern matching for identifying threat variants
+- statistical analysis component for detection of obfuscated threats (e.g: base64)
+- integrated detection of ClamAV to use as scanner engine for improved performance
+- integrated signature update feature with -u|--update
+- integrated version update feature with -d|--update-ver
+- scan-recent option to scan only files that have been added/changed in X days
+- scan-all option for full path based scanning
+- checkout option to upload suspected malware to rfxn.com for review / hashing
+- full reporting system to view current and previous scan results
+- quarantine queue that stores threats in a safe fashion with no permissions
+- quarantine batching option to quarantine the results of a current or past scans
+- quarantine restore option to restore files to original path, owner and perms
+- quarantine suspend account option to Cpanel suspend or shell revoke users
+- cleaner rules to attempt removal of malware injected strings
+- cleaner batching option to attempt cleaning of previous scan reports
+- cleaner rules to remove base64 and gzinflate(base64 injected malware
+- daily cron based scanning of all changes in last 24h in user homedirs
+- daily cron script compatible with stock RH style systems, Cpanel & Ensim
+- kernel based inotify real time file scanning of created/modified/moved files
+- kernel inotify monitor that can take path data from STDIN or FILE
+- kernel inotify monitor convenience feature to monitor system users
+- kernel inotify monitor can be restricted to a configurable user html root
+- kernel inotify monitor with dynamic sysctl limits for optimal performance
+- kernel inotify alerting through daily and/or optional weekly reports
+- HTTP upload scanning through mod_security2 inspectFile hook
+- e-mail alert reporting after every scan execution (manual & daily)
+- path, extension and signature based ignore options
+- background scanner option for unattended scan operations
+- verbose logging & output of all actions
+
+
+.: 3 [ THREAT SOURCE DATA ]
+
+The defining difference with LMD is that it doesn't just detect malware based 
+on signatures/hashes that someone else generated but rather it is an 
+encompassing project that actively tracks in the wild threats and generates 
+signatures based on those real world threats that are currently circulating.
+
+There are four main sources for malware data that is used to generate LMD 
+signatures:
+- Network Edge IPS: Through networks managed as part of my day-to-day job,
+primarily web hosting related, our web servers receive a large amount of daily
+abuse events, all of which is logged by our network edge IPS. The IPS events
+are processed to extract malware url's, decode POST payload and base64/gzip
+encoded abuse data and ultimately that malware is retrieved, reviewed, classified
+and then signatures generated as appropriate. The vast majority of LMD signatures
+have been derived from IPS extracted data.
+
+The network I manage hosts over 35,000 web sites and as 
+such receives a large amount of daily abuse, all of which is logged by our 
+network edge IPS. The IPS events are processed to extract malware url's, 
+decode POST payload and base64/gzip encoded abuse data and ultimately that 
+malware is retrieved, reviewed, classified and then signatures generated as 
+appropriate. The vast majority of LMD signatures have been derived from IPS 
+extracted data.
+ - Community Data: Data is aggregated from multiple community malware websites 
+such as clean-mx and malwaredomainlist then processed to retrieve new 
+malware, review, classify and then generate signatures.
+ - ClamAV: The HEX & MD5 detection signatures from ClamAV are monitored for 
+relevant updates that apply to the target user group of LMD and added to the 
+project as appropriate. To date there has been roughly 400 signatures ported 
+from ClamAV while the LMD project has contributed back to ClamAV by 
+submitting over 1,100 signatures and continues to do so on an ongoing basis.
+ - User Submission: LMD has a checkout feature that allows users to submit 
+suspected malware for review, this has grown into a very popular feature and 
+generates on average about 30-50 submissions per week.
+
+.: 4 [ RELEASE UPDATES ]
+Updates to the release version of LMD are not automatically installed but can
+be installed using the --update-ver option. There is good reasons that this is
+not done automatically and I really dont feel like listing them so just think
+about it a bit.
+
+The latest changes in the release version can always be viewed at:
+http://www.rfxn.com/appdocs/CHANGELOG.maldetect
+
+.: 4.1 [ SIGNATURE UPDATES ]
+
+The LMD signatures are updated typically once per day or more frequently
+depending on incoming threat data from the LMD checkout feature, IPS malware
+extraction and other sources. The updating of signatures in LMD installations
+is performed daily through the default cron.daily script with the --update
+option, which can be run manually at any time.
+
+An RSS & XML data source is available for tracking malware threat updates:
+RSS Recent Signatures: http://www.rfxn.com/api/lmd
+XML Recent Signatures: http://www.rfxn.com/api/lmd?id=recent
+XML All Signatures:    http://www.rfxn.com/api/lmd?id=all
+
+.: 5 [ DETECTED THREATS ]
+
+LMD 1.6 has a total of 11,061 (9,121 MD5 / 1940 HEX) signatures (before updates),
+below is a listing of the top 60 threats by prevalence detected by LMD.
+
+base64.inject.unclassed    bin.dccserv.irsexxy      bin.fakeproc.Xnuxer
+bin.ircbot.nbot            bin.ircbot.php3          bin.ircbot.unclassed
+bin.pktflood.ABC123        bin.pktflood.osf         bin.trojan.linuxsmalli
+c.ircbot.tsunami           exp.linux.rstb           exp.linux.unclassed
+exp.setuid0.unclassed      gzbase64.inject          html.phishing.auc61
+html.phishing.hsbc         perl.connback.DataCha0s  perl.connback.N2
+perl.cpanel.cpwrap         perl.mailer.yellsoft     perl.ircbot.atrixteam
+perl.ircbot.bRuNo          perl.ircbot.Clx          perl.ircbot.devil
+perl.ircbot.fx29           perl.ircbot.magnum       perl.ircbot.oldwolf
+perl.ircbot.putr4XtReme    perl.ircbot.rafflesia    perl.ircbot.UberCracker
+perl.ircbot.xdh            perl.ircbot.xscan        perl.shell.cbLorD
+perl.shell.cgitelnet       php.cmdshell.c100        php.cmdshell.c99
+php.cmdshell.cih           php.cmdshell.egyspider   php.cmdshell.fx29
+php.cmdshell.ItsmYarD      php.cmdshell.Ketemu      php.cmdshell.N3tshell
+php.cmdshell.r57           php.cmdshell.unclassed   php.defash.buno
+php.exe.globals            php.include.remote       php.ircbot.InsideTeam
+php.ircbot.lolwut          php.ircbot.sniper        php.ircbot.vj_denie
+php.mailer.10hack          php.mailer.bombam        php.mailer.PostMan
+php.phishing.AliKay        php.phishing.mrbrain     php.phishing.ReZulT
+php.pktflood.oey           php.shell.rc99           php.shell.shellcomm
+
+.: 6 [ THREAT SHARING ]
+
+I am a firm believer in not reinventing the wheel, for my own sanity or that
+of others. As such all unique threat data is submitted to CYMRU & ClamAV so
+that the open source and anti-malware community at large can grow from this
+project.
+
+.: 7 [ CONFIGURATION ]
+
+The configuration of LMD is handled through /usr/local/maldetect/conf.maldet
+and all options are well commented for ease of configuration.
+
+By default LMD has the auto-quarantine of files disabled, this will mean that
+YOU WILL NEED TO ACT on any threats detected or pass the SCANID to the '-q'
+option to batch quarantine the results. To change this please set
+quarantine_hits=1 in conf.maldet.
+
+.: 8 [ IGNORE OPTIONS ]
+
+There are four ignore files available and they break down as follows:
+
+/usr/local/maldetect/ignore_paths
+A line spaced file for paths that are to be excluded from search results
+ Sample ignore entry:
+ /home/user/public_html/cgi-bin
+
+/usr/local/maldetect/ignore_file_ext
+A line spaced file for file extensions to be excluded from search results
+ Sample ignore entry:
+ .js
+ .css
+
+/usr/local/maldetect/ignore_sigs
+A line spaced file for signatures that should be removed from file scanning
+ Sample ignore entry:
+ base64.inject.unclassed
+
+/usr/local/maldetect/ignore_inotify
+A line spaced file for regexp paths that are excluded from inotify monitoring
+ Sample ignore entry:
+ ^/home/user$
+ ^/var/tmp/#sql_.*\.MYD$
+
+.: 9 [ CLI USAGE ]
+
+Once LMD is installed it can be run through the 'maldet' command, the '--help'
+option gives a detailed summary of usage options:
+
+    -b, --background
+      Execute operations in the background, ideal for large scans
+      e.g: maldet -b -r /home/?/public_html 7
+
+    -u, --update [--force]
+       Update malware detection signatures from rfxn.com
+
+    -d, --update-ver [--force]
+       Update the installed version from rfxn.com
+
+    -m, --monitor USERS|PATHS|FILE
+       Run maldet with inotify kernel level file create/modify monitoring
+       If USERS is specified, monitor user homedirs for UID's > 500
+       If FILE is specified, paths will be extracted from file, line spaced
+       If PATHS are specified, must be comma spaced list, NO WILDCARDS!
+       e.g: maldet --monitor users
+       e.g: maldet --monitor /root/monitor_paths
+       e.g: maldet --monitor /home/mike,/home/ashton
+
+    -k, --kill
+       Terminate inotify monitoring service
+
+    -r, --scan-recent PATH DAYS
+       Scan files created/modified in the last X days (default: 7d, wildcard: ?)
+       e.g: maldet -r /home/?/public_html 2
+
+    -a, --scan-all PATH
+       Scan all files in path (default: /home, wildcard: ?)
+       e.g: maldet -a /home/?/public_html
+
+    -c, --checkout FILE
+       Upload suspected malware to rfxn.com for review & hashing into signatures
+
+    -l, --log
+       View maldet log file events
+
+    -e, --report SCANID email
+       View scan report of most recent scan or of a specific SCANID and optionally
+       e-mail the report to a supplied e-mail address
+       e.g: maldet --report
+       e.g: maldet --report list
+       e.g: maldet --report 050910-1534.21135
+       e.g: maldet --report SCANID user@domain.com
+
+    -E, --dump-report SCANID
+       Similar to -e/--report except dumps the report to stdout instead.
+       e.g: maldet --dump-report
+       e.g: maldet --dump-report 050910-1534.21135
+
+    -s, --restore FILE|SCANID
+       Restore file from quarantine queue to orginal path or restore all items from
+       a specific SCANID
+       e.g: maldet --restore /usr/local/maldetect/quarantine/config.php.23754
+       e.g: maldet --restore 050910-1534.21135
+
+    -q, --quarantine SCANID
+       Quarantine all malware from report SCANID
+       e.g: maldet --quarantine 050910-1534.21135
+
+    -n, --clean SCANID
+       Try to clean & restore malware hits from report SCANID
+       e.g: maldet --clean 050910-1534.21135
+
+    -U, --user USER
+       Set execution under specified user, ideal for restoring from user quarantine or
+       to view user reports.
+       e.g: maldet --user nobody --report
+       e.g: maldet --user nobody --restore 050910-1534.21135
+
+    -co, --config-option VAR1=VALUE,VAR2=VALUE,VAR3=VALUE
+       Set or redefine the value of conf.maldet config options
+       e.g: maldet --config-option email_addr=you@domain.com,quarantine_hits=1
+
+    -p, --purge
+       Clear logs, quarantine queue, session and temporary data.
+
+.: 10 [ CRON DAILY ]
+
+The cronjob installed by LMD is located at /etc/cron.daily/maldet and is used
+to perform a daily update of signatures, keep the session, temp and quarantine
+data to no more than 14d old and run a daily scan of recent file system changes.
+
+The daily scan supports a variety of control panel systems or standard Linux
+/home*/user paths. 
+
+If you are running monitor mode, the daily scans will be skipped and instead a
+daily report will be issued for all monitoring events. 
+
+If you need to scan additional paths, you should review the cronjob and use one
+of the customization hook files, such as '/usr/local/maldetect/cron/custom.cron',
+to write in custom scanning execution. For configuration based cron changes, you
+can redefine any conf.maldet variables at '/etc/sysconfig/maldet' or 
+'/usr/local/maldetect/cron/conf.maldet.cron'.
+
+.: 11 [ INOTIFY MONITORING ]
+
+The inotify monitoring feature is designed to monitor users in real-time for
+file creation/modify/move operations. This option requires a kernel that
+supports inotify_watch (CONFIG_INOTIFY) which is found in kernels 2.6.13+
+and CentOS/RHEL 5 by default. If you are running CentOS 4 you should consider
+an inbox upgrade with: http://www.rfxn.com/upgrade-centos-4-8-to-5-3/
+
+There are three modes that the monitor can be executed with and they relate
+to what will be monitored, they are USERS|PATHS|FILES. 
+       e.g: maldet --monitor users
+       e.g: maldet --monitor /root/monitor_paths
+       e.g: maldet --monitor /home/mike,/home/ashton
+
+The options break down as follows:
+USERS -  The users option will take the homedirs of all system users that are
+         above inotify_minuid and monitor them. If inotify_webdir is set then
+         the users webdir, if it exists, will only be monitored.
+PATHS -  A comma spaced list of paths to monitor
+FILE  -  A line spaced file list of paths to monitor
+
+Once you start maldet in monitor mode, it will preprocess the paths based on
+the option specified followed by starting the inotify process. The starting of
+the inotify process can be a time consuming task as it needs to setup a monitor
+hook for every file under the monitored paths. Although the startup process can
+impact the load temporarily, once the process has started it maintains all of
+its resources inside kernel memory and has a very small userspace footprint in
+memory or cpu usage.
+
+The scanner component of the monitor watches for notifications from the inotify
+process and batches items to be scanned, by default, every 30 seconds. If you
+need tighter control of the scanning timer, you can edit inotify_stime in
+conf.maldet.
+
+The alerting of file hits under monitor mode is handled through a daily report
+instead of sending an email on every hit. The cron.daily job installed by LMD
+will call an --alert-daily flag and send an alert for the last days hits. There
+is also an --alert-weekly option that can be used, simply edit the cron at
+/etc/cron.daily/maldet and change the --alert-daily to --alert-weekly.
+
+Terminating the inotify monitoring is done by passing the '-k|--kill-monitor'
+option to maldet, it will touch a file handle monitored by maldet and on the
+next waking cycle of the monitor service, it will terminate itself and all
+inotify processes.
+
+.: 12 [ MODSECURITY2 UPLOAD SCANNING ]
+
+The support for HTTP upload scanning is provided through mod_security2's inspectFile hook.
+This feature allows for a validation script to be used in permitting or denying an upload. 
+
+The convenience script to facilitate this is called hookscan.sh and is located in the
+/usr/local/maldetect installation path. The default setup is to run a standard maldet scan
+with no clamav support, no cleaner rule executions and quarantining enabled; these options
+are set in the interest of performance vs accuracy which is a fair tradeoff. 
+
+The scan options can be modified in the hookscan.sh file if so desired, the default
+scan options are as follows:
+--config-option quarantine_hits=1,quarantine_clean=0,clamav_scan=0 --modsec -a "$file"
+
+There is a tangible performance difference in disabling clamav scanning in this usage
+scenario. The native LMD scanner engine is much faster than the clamav scanner engine
+in single file scans by a wide margin. A single file scan using clamav takes roughly
+3sec on average while the LMD scanner engine takes 0.5sec or less.
+
+To enable upload scanning with mod_security2 you must set enable the scan_user_access option
+in conf.maldet (scan_user_access=1) then add the following rules to your mod_security2 
+configuration. These rules are best placed in your modsec2.user.conf file on cpanel servers
+or at the top of the appropriate rules file for your setup.
+
+/usr/local/apache/conf/modsec2.user.conf (or similar mod_security2 rules file):
+SecRequestBodyAccess On
+SecRule FILES_TMPNAMES "@inspectFile /usr/local/maldetect/hookscan.sh" \
+                "id:'999999',log,auditlog,deny,severity:2,phase:2,t:none"
+
+If using ModSecurity >=2.9, you should set 'SecTmpSaveUploadedFiles On' before the
+'SecRule FILES_TMPNAMES' line.
+
+A restart of the Apache service is required following these changes.
+
+When an upload takes place that is determined to be malware, it will be rejected and an
+entry will appear in the mod_security2 SecAuditLog file. On cpanel servers and most
+configurations this is the modsec_audit.log located under /usr/local/apache/logs or 
+/var/log/httpd.
+
+The log entry will appear similar to the following:
+Message: Access denied with code 406 (phase 2). File "/tmp/20121120-....-file" rejected by
+the approver script "/usr/local/maldetect/hookscan.sh": 0 maldet: {HEX}php.cmdshell.r57.317
+/tmp/20121120-....-file [file "/usr/local/apache/conf/modsec2.user.conf"] [line "3"]
+[severity "CRITICAL"]
+
+The default alerting options will apply and an e-mail will be sent when hits are found. This
+can be changed in the hookscan.sh script by editing the --config-option values.
+
+To disable alerts append email_alert=0 to the --config-option values:
+--config-option quarantine_hits=1,quarantine_clean=0,clamav_scan=0,email_alert=0
+
+To change the e-mail address for alerts on upload hits, append email_addr=you@domain.com
+to the --config-option values:
+--config-option quarantine_hits=1,quarantine_clean=0,clamav_scan=0,email_addr=you@domain.com
+
+The nature of uploads is such that they are performed either under the user that the HTTP
+service is running as or under that of a system user in an suexec style setup (i.e: phpsuexec).
+This required a change to the way LMD stores session, temporary and quarantine data to allow
+for non-root users to perform scans.
+
+Given that the maldetect installation path is owned by user root, we either need to set a pub
+path world writable (777) or populate the pub path with user owned paths. It was undesirable
+to set any path world writable and as such a feature to populate path data was created. This
+feature is controlled with the --mkpubpaths flag and is executed from cron every 10 minutes,
+it will only execute if the scan_user_access variable is enabled in conf.maldet. As such, it is
+important to make sure the scan_user_access variable is set to enabled (1) in conf.maldet and it is
+advised to run 'maldet --mkpubpaths' manually to prepopulate the user paths. There after, the
+cron will ensure new users have paths created no later than 10 minutes after creation.
+
+All non-root scans, such as those performed under mod_security2, will be stored under the
+/usr/local/maldetect/pub/username directory tree. The quarantine paths are relative to the user
+that executes the scan, so user nobody would be under pub/nobody/quar/. The actual paths
+for where files are quarantined and the user which executed the scan, can be verified in the
+e-mail reports for upload hits.
+
+To restore files quarantined under non-root users, you must pass the -U|--user option to LMD,
+for example if user nobody quarantined a file you would like to restore, it can be restored as
+follows:
+maldet --user nobody /usr/local/maldetect/pub/nobody/quar/20121120-file-SFwTeu.22408
+
+Or, as always the scan ID can be used to restore
+maldet --user nobody 112012-0032.13771
+
+.: 13 [ CLEANER RULES ]
+
+The cleaner function looks for signature-named rules under the clean/ path,
+these rules can consist of any command that is designed to clean a file of
+malware. A cleaner rule must result in a file being able to pass a scan
+without tripping a HIT otherwise it will classify the clean action as FAILED.
+
+Let us assume for a moment we have malware that we want to clean and it trips
+with the signature "{HEX}php.cmdshell.r57.89". The actual signature string in
+this is "php.cmdshell.r57", the "{HEX}" just defines the format and ".89" is
+the variant number. So, to create a clean rule for php.cmdshell.r57 we would
+add a file 'clean/php.cmdshell.r57' and this would be executed against any
+file that hits on the signature of the same name.
+
+The actual contents of the rule should be a single line command that will be
+executed against the hit file, for example the execution looks something like:
+
+YOUR_COMMAND MALWARE_FILE
+
+So, for a string based malware injection you could easily throw in a 'sed -i'
+into the rule file with the appropriate pattern to strip the string(s) from
+the file. Once the clean command has run, a rescan will be performed on the
+file and if it causes causes a hit, the clean will be marked as FAILED. A
+successful clean ALWAYS results in the file being restored if possible to
+its original path, owner and mode.
+
+An important note is that the cleaner function is a subfunction of the
+quarantine, so if the quarantine is disabled then by default, malware hits
+will not have clean attempts made. There are two ways around this, apart from
+the obvious of turning on quarantine and rescanning (which is a waste of time).
+The best way is to enable the quarantine and then use the -q|--quarantine flag
+to batch through the scan results, which will quarantine and clean files. The
+second is to use the -n|--clean flag which will try to clean files in place,
+be that in the quarantine or the files original path, wherever it can be found.
+
+e.g: maldet -q SCANID
+e.g: maldet --clean SCANID
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo tail -n 10 /root/linux-malware-detect/report.txt
+
+maldet(1924): {scan} signatures loaded: 17272 (14450 MD5 | 2039 HEX | 783 YARA | 0 USER)
+maldet(1924): {scan} building file list for /, this might take awhile...
+maldet(1924): {scan} setting nice scheduler priorities for all operations: cpunice 19 , ionice 6
+maldet(1924): {scan} file list completed in 1s, found 67 files...
+maldet(1924): {scan} scan of / (67 files) in progress...
+[1Gmaldet(1924): {scan} 1/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 2/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 3/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 4/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 5/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 6/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 7/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 8/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 9/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 10/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 11/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 12/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 13/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 14/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 15/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 16/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 17/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 18/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 19/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 20/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 21/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 22/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 23/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 24/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 25/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 26/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 27/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 28/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 29/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 30/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 31/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 32/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 33/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 34/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 35/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 36/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 37/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 38/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 39/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 40/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 41/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 42/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 43/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 44/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 45/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 46/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 47/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 48/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 49/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 50/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 51/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 52/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 53/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 54/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 55/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 56/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 57/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 58/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 59/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 60/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 61/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 62/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 63/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 64/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 65/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 66/67 files scanned: 0 hits 0 cleaned[1Gmaldet(1924): {scan} 67/67 files scanned: 0 hits 0 cleaned
+
+maldet(1924): {scan} scan completed on /: files 67, malware hits 0, cleaned hits 0, time 2s
+maldet(1924): {scan} scan report saved, to view run: maldet --report 220510-1224.1924
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo tail -n 10 /usr/local/maldetect/ignore_inotify
+^/var/tmp/mysql.sock$
+^/tmp/mysql.sock$
+^/var/cache/buagent/md0.cache.data$
+^/var/tmp/#sql_.*\.MYD$
+^/tmp/#sql_.*\.MYD$
+^/var/tmp/clamav-.*
+^/tmp/clamav-.*
+^/usr/local/maldetect*
+^/dev/pts*
+^/dev/null
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ [K[student4@dryruns-targeta-admin ~]$ 
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo stat /root/linux-malware-detect/report.txt
+  File: ‘/root/linux-malware-detect/report.txt’
+  Size: 4921      	Blocks: 16         IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 4197581     Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: system_u:object_r:admin_home_t:s0
+Access: 2022-08-10 16:29:58.822013122 +0000
+Modify: 2022-05-10 12:25:00.604111971 +0000
+Change: 2022-05-10 12:25:00.604111971 +0000
+ Birth: -
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2948952k,nr_inodes=737238,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=12791)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+tmpfs on /run/user/1023 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1023,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1004,gid=10)
+tmpfs on /run/user/1019 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1019,gid=10)
+tmpfs on /run/user/1021 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1021,gid=10)
+tmpfs on /run/user/1020 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1020,gid=10)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ lsmod
+Module                  Size  Used by
+binfmt_misc            17468  1 
+kvm_amd              2177260  0 
+kvm                   621392  1 kvm_amd
+irqbypass              13503  1 kvm
+crc32_pclmul           13133  0 
+ghash_clmulni_intel    13273  0 
+sg                     40721  0 
+aesni_intel           189415  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+ppdev                  17671  0 
+glue_helper            13990  1 aesni_intel
+virtio_rng             13029  0 
+ablk_helper            13597  1 aesni_intel
+virtio_balloon         18015  0 
+joydev                 17389  0 
+i2c_piix4              22401  0 
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+pcspkr                 12718  0 
+parport_pc             28205  0 
+parport                46395  2 ppdev,parport_pc
+ip_tables              27126  0 
+xfs                   996949  1 
+libcrc32c              12644  1 xfs
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_console         28076  0 
+virtio_scsi            18463  1 
+virtio_net             28063  0 
+ata_piix               35052  0 
+libata                243133  3 pata_acpi,ata_generic,ata_piix
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+crc32c_intel           22094  1 
+serio_raw              13434  0 
+floppy                 69432  0 
+virtio_pci             22985  0 
+virtio_ring            22746  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+sunrpc                353103  1 
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ uname -a
+Linux dryruns-targeta-admin.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root  23 Nov 23  2018 /etc/system-release-cpe
+-rw-r--r--. 1 root root 393 Nov 23  2018 /etc/os-release
+-rw-r--r--. 1 root root  51 Nov 23  2018 /etc/centos-release-upstream
+-rw-r--r--. 1 root root  38 Nov 23  2018 /etc/centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 [0m[38;5;51m/etc/redhat-release[0m -> centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 [38;5;51m/etc/system-release[0m -> centos-release
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 3
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ services --status-all || systemctl status --no-pager
+-bash: services: command not found
+[1;31m●[0m dryruns-targeta-admin.novalocal
+    State: [1;31mdegraded[0m
+     Jobs: 0 queued
+   Failed: 1 units
+    Since: Sat 2022-06-18 01:02:02 UTC; 1 months 23 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1020.slice
+           │ │ └─session-18032.scope
+           │ │   ├─8897 sshd: student20 [priv]
+           │ │   ├─8904 sshd: student20@pts/5
+           │ │   └─8905 -bash
+           │ ├─user-1021.slice
+           │ │ └─session-18030.scope
+           │ │   ├─8796 sshd: student21 [priv]
+           │ │   ├─8800 sshd: student21@pts/4
+           │ │   └─8801 -bash
+           │ ├─user-1019.slice
+           │ │ └─session-18029.scope
+           │ │   ├─8772 sshd: student19 [priv]
+           │ │   ├─8776 sshd: student19@pts/3
+           │ │   └─8777 -bash
+           │ ├─user-1004.slice
+           │ │ └─session-18027.scope
+           │ │   ├─ 8575 sshd: student4 [priv]
+           │ │   ├─ 8579 sshd: student4@pts/2
+           │ │   ├─ 8580 -bash
+           │ │   └─10056 systemctl status --no-pager
+           │ └─user-1023.slice
+           │   └─session-17972.scope
+           │     ├─5041 sshd: student23 [priv]
+           │     ├─5045 sshd: student23@pts/0
+           │     └─5046 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1263 /usr/sbin/crond -n
+             ├─sshd.service
+             │ └─1259 /usr/sbin/sshd -D
+             ├─rsyslog.service
+             │ └─1256 /usr/sbin/rsyslogd -n
+             ├─tuned.service
+             │ └─1053 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─postfix.service
+             │ ├─1188 /usr/libexec/postfix/master -w
+             │ ├─1192 qmgr -l -t unix -u
+             │ └─7360 pickup -l -t unix -u
+             ├─network.service
+             │ └─990 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H dryruns-targeta-admin eth0
+             ├─rpcbind.service
+             │ └─777 /sbin/rpcbind -w
+             ├─chronyd.service
+             │ └─770 /usr/sbin/chronyd
+             ├─irqbalance.service
+             │ └─754 /usr/sbin/irqbalance --foreground
+             ├─systemd-logind.service
+             │ └─753 /usr/lib/systemd/systemd-logind
+             ├─dbus.service
+             │ └─739 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─polkit.service
+             │ └─738 /usr/lib/polkit-1/polkitd --no-debug
+             ├─gssproxy.service
+             │ └─743 /usr/sbin/gssproxy -D
+             ├─auditd.service
+             │ └─664 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─515 /usr/lib/systemd/systemd-udevd
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1267 /sbin/agetty --noclear tty1 linux
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1264 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             └─systemd-journald.service
+               └─487 /usr/lib/systemd/systemd-journald
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /proc/meminfo
+MemTotal:        5944464 kB
+MemFree:         5194100 kB
+MemAvailable:    5367204 kB
+Buffers:            2088 kB
+Cached:           265636 kB
+SwapCached:            0 kB
+Active:           183464 kB
+Inactive:         132632 kB
+Active(anon):     101000 kB
+Inactive(anon):    70876 kB
+Active(file):      82464 kB
+Inactive(file):    61756 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         48424 kB
+Mapped:            33680 kB
+Shmem:            123504 kB
+Slab:             349932 kB
+SReclaimable:     314356 kB
+SUnreclaim:        35576 kB
+KernelStack:        2288 kB
+PageTables:         6696 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972232 kB
+Committed_AS:     369324 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17900 kB
+VmallocChunk:   34359717888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      8192 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       75636 kB
+DirectMap2M:     3069952 kB
+DirectMap1G:     5242880 kB
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo cat /etc/shadow
+root:$6$YhlzZ/5xufhK$QldB0aFnT/I3O0bd3EwEFLDlUAcwp0yqJyRvorcN7Qe0Ibk6i8.3KF0EEs0pef01K25ME/4nIxK1uwUrCRaA10:19034:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19034:0:99999:7:::
+student1:$1$XlEWIed8$rkjjlmVVCpu9R9avjhVlU0:19034:0:99999:7:::
+student2:$1$WHQF3GmF$g6zVxXU/Mf5.T/qDATjQo1:19034:0:99999:7:::
+student3:$1$eEsSR9oZ$6Y4a4RdmlTqiyfkzdGJ6R0:19034:0:99999:7:::
+student4:$1$0njGMpNb$RVdbeqwifCbuzYJPUq0K41:19034:0:99999:7:::
+student5:$1$Z40RRqac$z2ypx8pTjhU.u77dUKDQz0:19034:0:99999:7:::
+student6:$1$xFuwT6qc$b52YD0nYScCwT0MgGhJBR/:19034:0:99999:7:::
+student7:$1$Muz5f3iW$nuTLbPVSvLMyaUPmYa4nf/:19034:0:99999:7:::
+student8:$1$1eXnOMoc$MvwzUZ.mhoCJuhAGvdowC.:19034:0:99999:7:::
+student9:$1$TTw9MLfh$P95tUWzkst5yHqZCfGmNq1:19034:0:99999:7:::
+student10:$1$THHp50fJ$s09NouxG4SX1qOUDsqHO4/:19034:0:99999:7:::
+student11:$1$Yzw5alGH$.T5jVfbc48yLmpV2tOhq//:19034:0:99999:7:::
+student12:$1$11/XOkUC$qgwi2NmeZWLe6ymCK0XkW/:19034:0:99999:7:::
+student13:$1$3SgKsx1k$/.lqFhSxXGjdb3Vethk4u/:19034:0:99999:7:::
+student14:$1$NC2MPEDW$XwD6a7V72hHehvG0Ks8LS0:19034:0:99999:7:::
+student15:$1$0ppS/x/k$oBJHlMyuzWbk4p09QIwIb0:19034:0:99999:7:::
+student16:$1$KKgOWaHc$VaSRxERRiWj1I7J.AoN0Z0:19034:0:99999:7:::
+student17:$1$majzOhuu$2cEDltVJYthrRBUtZoWKg1:19034:0:99999:7:::
+student18:$1$LIOYNVGg$dVQjNXa4SZIDYQqUEFFys0:19034:0:99999:7:::
+student19:$1$31jeHOgM$3RLWttiFEPgy68Ov6ZojG/:19034:0:99999:7:::
+student20:$1$IiKL5cWl$qQGI3K9aRoamPiCeFI4ps1:19034:0:99999:7:::
+student21:$1$pd9qlZfJ$OfxDdZAz8ej4uSxMolDSy1:19034:0:99999:7:::
+student22:$1$c1G1VOPI$LG/X5wJpS/L7hX6HBs3Xq0:19034:0:99999:7:::
+student23:$1$vA21RjOP$SUNWftUT/4ATuDKA6QetX/:19034:0:99999:7:::
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ lspci -vv
+-bash: lspci: command not found
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ arp -a
+? (129.168.117.2) at fa:16:3e:22:37:ca [ether] on eth0
+gateway (129.168.117.1) at fa:16:3e:b6:e0:42 [ether] on eth0
+? (129.168.117.45) at fa:16:3e:e1:f9:3d [ether] on eth0
+? (129.168.117.3) at fa:16:3e:c7:52:eb [ether] on eth0
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ lsusb
+-bash: lsusb: command not found
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5805         130        5071         120         603        5240
+Swap:             0           0           0
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: SeaBIOS
+	Version: 1.13.0-1ubuntu1.1
+	Release Date: 04/01/2014
+	Address: 0xE8000
+	Runtime Size: 96 kB
+	ROM Size: 64 kB
+	Characteristics:
+		BIOS characteristics not supported
+		Targeted content distribution is supported
+	BIOS Revision: 0.0
+
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ w
+ 16:57:20 up 53 days, 15:55,  6 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student2 pts/0    129.168.117.45   12:40   21:44   0.03s  0.03s -bash
+student1 pts/1    129.168.117.45   16:56    8.00s  0.01s  0.01s -bash
+student4 pts/2    129.168.117.45   16:26    0.00s  0.14s  0.01s w
+student1 pts/3    129.168.117.45   16:32    1:12   0.14s  0.14s -bash
+student2 pts/4    129.168.117.45   16:34    2:24   0.08s  0.08s -bash
+student2 pts/5    129.168.117.45   16:35    5:04   0.24s  0.24s -bash
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 01:02 [38;5;27msystemd-private-42abe479c4b14aa89e15345ddaf188c3-chronyd.service-cBaAVA[0m
+drwxrwxrwt.  8 root root 172 Aug 10 07:09 [48;5;10;38;5;16m.[0m
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 13549 ep_pol Jun18 ?        00:04:13 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:03 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:31 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:32 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:27 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:03 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:02 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:27 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:02 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:02 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        45     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        46     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        47     2  0  99  19 -     0 khugep Jun18 ?        00:00:25 [khugepaged]
+1 S root        48     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        56     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        57     2  0  80   0 -     0 worker Jun18 ?        00:00:06 [kworker/u8:1]
+1 S root        58     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        74     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:02 [kauditd]
+1 S root       192     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       193     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       283     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       319     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       325     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       331     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       339     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       371     2  0  80   0 -     0 worker Jun18 ?        00:00:06 [kworker/u8:3]
+1 S root       375     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       376     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       377     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       404     2  0  80   0 -     0 xfsail Jun18 ?        00:03:47 [xfsaild/sda1]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:15 [kworker/2:1H]
+1 S root       471     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+4 S root       487     1  0  80   0 - 14153 ep_pol Jun18 ?        00:00:53 /usr/lib/systemd/systemd-journald
+4 S root       515     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       664     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:11 /sbin/auditd
+1 S root       670     2  0  80   0 -     0 add_hw Jun18 ?        00:00:05 [hwrng]
+1 S root       706     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S polkitd    738     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:39 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       739     1  0  80   0 - 16573 ep_pol Jun18 ?        00:02:31 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+1 S root       743     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+4 S root       753     1  0  80   0 -  6594 ep_pol Jun18 ?        00:01:17 /usr/lib/systemd/systemd-logind
+4 S root       754     1  0  80   0 -  5416 hrtime Jun18 ?        00:03:29 /usr/sbin/irqbalance --foreground
+5 S chrony     770     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:10 /usr/sbin/chronyd
+5 S rpc        777     1  0  80   0 - 17316 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       782     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:1H]
+1 S root       875     2  0  80   0 -     0 worker 08:00 ?        00:00:00 [kworker/0:2]
+5 S root       990     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -
+4 S root      1053     1  0  80   0 - 143481 poll_s Jun18 ?       00:11:41 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1188     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:33 /usr/libexec/postfix/master -w
+4 S postfix   1192  1188  0  80   0 - 22483 ep_pol Jun18 ?        00:00:08 qmgr -l -t unix -u
+4 S root      1256     1  0  80   0 - 84822 poll_s Jun18 ?        00:06:20 /usr/sbin/rsyslogd -n
+4 S root      1259     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1263     1  0  80   0 - 31571 hrtime Jun18 ?        00:00:23 /usr/sbin/crond -n
+4 S root      1264     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1267     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+1 R root      3571     2  0  80   0 -     0 ?      11:01 ?        00:00:00 [kworker/3:1]
+4 S root      5041  1259  0  80   0 - 39717 poll_s 12:40 ?        00:00:00 sshd: student23 [priv]
+5 S student+  5045  5041  0  80   0 - 39717 poll_s 12:40 ?        00:00:00 sshd: student23@pts/0
+0 S student+  5046  5045  0  80   0 - 28860 n_tty_ 12:40 pts/0    00:00:00 -bash
+4 S postfix   7360  1188  0  80   0 - 22439 ep_pol 15:20 ?        00:00:00 pickup -l -t unix -u
+1 S root      7963     2  0  80   0 -     0 worker 16:00 ?        00:00:00 [kworker/1:2]
+1 S root      8336     2  0  80   0 -     0 worker 16:20 ?        00:00:00 [kworker/1:0]
+4 S root      8575  1259  0  80   0 - 39717 poll_s 16:26 ?        00:00:00 sshd: student4 [priv]
+5 D student4  8579  8575  0  80   0 - 39717 flush_ 16:26 ?        00:00:00 sshd: student4@pts/2
+0 S student4  8580  8579  0  80   0 - 28860 do_wai 16:26 pts/2    00:00:00 -bash
+1 S root      8712     2  0  80   0 -     0 worker 16:30 ?        00:00:00 [kworker/2:0]
+4 S root      8772  1259  0  80   0 - 39717 poll_s 16:32 ?        00:00:00 sshd: student19 [priv]
+5 S student+  8776  8772  0  80   0 - 39717 poll_s 16:32 ?        00:00:00 sshd: student19@pts/3
+0 S student+  8777  8776  0  80   0 - 28860 n_tty_ 16:32 pts/3    00:00:00 -bash
+4 S root      8796  1259  0  80   0 - 39717 poll_s 16:34 ?        00:00:00 sshd: student21 [priv]
+5 S student+  8800  8796  0  80   0 - 39717 poll_s 16:34 ?        00:00:00 sshd: student21@pts/4
+0 S student+  8801  8800  0  80   0 - 28860 n_tty_ 16:34 pts/4    00:00:00 -bash
+1 S root      8888     2  0  80   0 -     0 worker 16:35 ?        00:00:00 [kworker/3:2]
+4 S root      8897  1259  0  80   0 - 39717 poll_s 16:35 ?        00:00:00 sshd: student20 [priv]
+5 S student+  8904  8897  0  80   0 - 39717 poll_s 16:35 ?        00:00:00 sshd: student20@pts/5
+0 S student+  8905  8904  0  80   0 - 28860 n_tty_ 16:35 pts/5    00:00:00 -bash
+1 S root      9543     2  0  80   0 -     0 worker 16:45 ?        00:00:00 [kworker/0:0]
+1 S root      9652     2  0  80   0 -     0 worker 16:46 ?        00:00:00 [kworker/2:1]
+1 S root     10100     2  0  80   0 -     0 worker 16:51 ?        00:00:00 [kworker/2:2]
+1 S root     10368     2  0  80   0 -     0 worker 16:55 ?        00:00:00 [kworker/3:0]
+4 S root     10460  1259  0  80   0 - 39717 poll_s 16:56 ?        00:00:00 sshd: student12 [priv]
+5 S student+ 10467 10460  0  80   0 - 39717 poll_s 16:56 ?        00:00:00 sshd: student12@pts/1
+0 S student+ 10468 10467  0  80   0 - 28860 n_tty_ 16:56 pts/1    00:00:00 -bash
+0 R student4 10517  8580  0  80   0 - 38840 -      16:57 pts/2    00:00:00 ps -elf
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ netstat -lptn
+(No info could be read for "-p": geteuid()=1004 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22013           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::22013                :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ ls -latr /var/log
+total 5028
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root      267 Feb 11 15:52 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root       23 Feb 11 15:52 [38;5;27mtuned[0m
+-rw-------.  1 root   root     1900 Feb 11 15:53 yum.log
+-rw-r--r--.  1 root   root    33660 Jun  4 02:30 dmesg.old
+-rw-r--r--.  1 root   root    33703 Jun 18 01:02 dmesg
+-rw-r--r--.  1 root   root      405 Jun 18 01:02 boot.log
+-rw-------.  1 root   root   329569 Jun 18 01:02 cloud-init.log
+-rw-------.  1 root   utmp        0 Jul  1 03:35 btmp-20220801
+-rw-------.  1 root   root        0 Jul 10 03:37 spooler-20220717
+-rw-------.  1 root   root        0 Jul 10 03:37 secure-20220717
+-rw-------.  1 root   root   115428 Jul 17 03:10 maillog-20220717
+-rw-------.  1 root   root   548939 Jul 17 03:45 messages-20220717
+-rw-r--r--.  1 root   root   327034 Jul 17 03:45 cron-20220717
+-rw-------.  1 root   root        0 Jul 17 03:45 spooler-20220724
+-rw-------.  1 root   root        0 Jul 17 03:45 secure-20220724
+-rw-------.  1 root   root   115422 Jul 24 03:10 maillog-20220724
+-rw-------.  1 root   root   548846 Jul 24 03:35 messages-20220724
+-rw-r--r--.  1 root   root   326641 Jul 24 03:37 cron-20220724
+-rw-------.  1 root   root        0 Jul 24 03:37 spooler-20220731
+-rw-------.  1 root   root        0 Jul 24 03:37 secure-20220731
+-rw-------.  1 root   root   115428 Jul 31 03:10 maillog-20220731
+-rw-------.  1 root   root   550928 Jul 31 03:45 messages-20220731
+-rw-r--r--.  1 root   root   327116 Jul 31 03:50 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:50 spooler-20220807
+-rw-------.  1 root   root        0 Jul 31 03:50 secure-20220807
+-rw-------.  1 root   utmp        0 Aug  1 03:16 btmp
+-rw-------.  1 root   root   115420 Aug  7 03:10 maillog-20220807
+-rw-------.  1 root   root   548974 Aug  7 03:40 messages-20220807
+-rw-r--r--.  1 root   root   326748 Aug  7 03:42 cron-20220807
+-rw-------.  1 root   root        0 Aug  7 03:42 spooler
+drwxr-xr-x.  8 root   root     4096 Aug  7 03:42 [38;5;27m.[0m
+drwx------.  2 root   root       99 Aug  8 08:25 [38;5;27maudit[0m
+-rw-------.  1 root   root    58390 Aug 10 16:10 maillog
+-rw-r--r--.  1 root   root   165751 Aug 10 16:55 cron
+-rw-------.  1 root   root   278209 Aug 10 16:56 messages
+-rw-------.  1 root   root    82421 Aug 10 16:56 secure
+-rw-rw-r--.  1 root   utmp    41856 Aug 10 16:56 wtmp
+-rw-r--r--.  1 root   root   299008 Aug 10 16:56 lastlog
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+-rw-------. 1 root     mail             4511498 Aug 10 16:10 /var/spool/mail/root
+-rw-------. 1 root     root               58390 Aug 10 16:10 /var/log/maillog
+-rw-r--r--. 1 root     root                  42 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:26 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root     root                  26 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:26 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:26 /run/systemd/system/session-18027.scope
+-rw-r--r--. 1 root     root                  30 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-Slice.conf
+-rw-r--r--. 1 root     root                  50 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-Description.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  26 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  23 Aug 10 16:26 /run/systemd/system/session-18027.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root     root                 268 Aug 10 16:26 /run/systemd/users/1004
+-rw-r--r--. 1 root     root                 306 Aug 10 16:26 /run/systemd/sessions/18027
+-rw-r--r--. 1 root     root                  43 Aug 10 16:32 /run/systemd/system/user-1019.slice.d/50-Description.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:32 /run/systemd/system/user-1019.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:32 /run/systemd/system/user-1019.slice
+-rw-r--r--. 1 root     root                  26 Aug 10 16:32 /run/systemd/system/user-1019.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:32 /run/systemd/system/user-1019.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  30 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-Slice.conf
+-rw-r--r--. 1 root     root                  51 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-Description.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:32 /run/systemd/system/session-18029.scope
+-rw-r--r--. 1 root     root                  23 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  26 Aug 10 16:32 /run/systemd/system/session-18029.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                 269 Aug 10 16:32 /run/systemd/users/1019
+-rw-r--r--. 1 root     root                 307 Aug 10 16:32 /run/systemd/sessions/18029
+-rw-r--r--. 1 root     root                  17 Aug 10 16:34 /run/systemd/system/user-1021.slice
+-rw-r--r--. 1 root     root                  43 Aug 10 16:34 /run/systemd/system/user-1021.slice.d/50-Description.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:34 /run/systemd/system/user-1021.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  26 Aug 10 16:34 /run/systemd/system/user-1021.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:34 /run/systemd/system/user-1021.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:34 /run/systemd/system/session-18030.scope
+-rw-r--r--. 1 root     root                  30 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-Slice.conf
+-rw-r--r--. 1 root     root                  51 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-Description.conf
+-rw-r--r--. 1 root     root                  23 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  26 Aug 10 16:34 /run/systemd/system/session-18030.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                 269 Aug 10 16:34 /run/systemd/users/1021
+-rw-r--r--. 1 root     root                 307 Aug 10 16:34 /run/systemd/sessions/18030
+-rw-r--r--. 1 root     root                  43 Aug 10 16:35 /run/systemd/system/user-1020.slice.d/50-Description.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:35 /run/systemd/system/user-1020.slice
+-rw-r--r--. 1 root     root                  26 Aug 10 16:35 /run/systemd/system/user-1020.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:35 /run/systemd/system/user-1020.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:35 /run/systemd/system/user-1020.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  30 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-Slice.conf
+-rw-r--r--. 1 root     root                  51 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-Description.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:35 /run/systemd/system/session-18032.scope
+-rw-r--r--. 1 root     root                  26 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  23 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:35 /run/systemd/system/session-18032.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                 307 Aug 10 16:35 /run/systemd/sessions/18032
+-rw-r--r--. 1 root     root                 269 Aug 10 16:35 /run/systemd/users/1020
+-rw-------. 1 student9 wheel               4264 Aug 10 16:43 /home/useraccounts/student9/.bash_history
+-rw-r--r--. 1 chrony   chrony                42 Aug 10 16:45 /var/lib/chrony/drift
+-rw-r--r--. 1 root     root              165751 Aug 10 16:55 /var/log/cron
+-rw-r--r--. 1 root     root                   6 Aug 10 16:55 /usr/local/maldetect/VERSION
+-rw-r--r--. 1 root     root                   0 Aug 10 16:55 /usr/local/maldetect/ignore_sigs
+-rw-r--r--. 1 root     root                  44 Aug 10 16:55 /usr/local/maldetect/ignore_paths
+-rw-r--r--. 1 root     root                 201 Aug 10 16:55 /usr/local/maldetect/ignore_inotify
+-rw-r--r--. 1 root     root                   0 Aug 10 16:55 /usr/local/maldetect/ignore_file_ext
+-rw-r--r--. 1 root     root                  26 Aug 10 16:56 /run/systemd/system/user-1012.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:56 /run/systemd/system/user-1012.slice.d/50-Description.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:56 /run/systemd/system/user-1012.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:56 /run/systemd/system/user-1012.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:56 /run/systemd/system/user-1012.slice
+-rw-r--r--. 1 root     root                  30 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-Slice.conf
+-rw-r--r--. 1 root     root                  17 Aug 10 16:56 /run/systemd/system/session-18037.scope
+-rw-r--r--. 1 root     root                  51 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-Description.conf
+-rw-r--r--. 1 root     root                  36 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root     root                  23 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root     root                  43 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root     root                  26 Aug 10 16:56 /run/systemd/system/session-18037.scope.d/50-TasksMax.conf
+-rw-------. 1 root     root              278209 Aug 10 16:56 /var/log/messages
+-rw-r--r--. 1 root     root                 269 Aug 10 16:56 /run/systemd/users/1012
+-rw-r--r--. 1 root     root                 308 Aug 10 16:56 /run/systemd/sessions/18037
+-rw-rw-r--. 1 root     utmp               41856 Aug 10 16:56 /var/log/wtmp
+-rw-rw-r--. 1 root     utmp                3840 Aug 10 16:56 /run/utmp
+-rw-r--r--. 1 root     root              299008 Aug 10 16:56 /var/log/lastlog
+-rw-------. 1 root     root             1838337 Aug 10 16:57 /var/log/audit/audit.log
+-rw-------. 1 root     root                 126 Aug 10 16:57 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root     root               88015 Aug 10 16:57 /var/log/secure
+-rw-r-----+ 1 root     systemd-journal 16777216 Aug 10 16:57 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+]0;student4@dryruns-targeta-admin:~[student4@dryruns-targeta-admin ~]$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_10-08-22_DRYRUN03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_10-08-22_DRYRUN03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-10 17:04:04+00:00 [COMMAND_EXIT_CODE="0"]

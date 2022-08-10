@@ -1,0 +1,73 @@
+T1
+
+T2
+
+admin on 8/10/2022 12:25 PM
+LogFusion
+"C:\Program Files (x86)\LogFusion\LogFusion.exe"
+dllhost.exe
+CommandLine=C:\WINDOWS\system32\DllHost.exe /Processid:{973D20D7-562D-44B9-B70B-5A0F49CCDF3F}
+c:\lf.exe
+c:\windows\notepad.exe
+dir /o:d /t:w c:\windows\system32\Tasks
+C:\Windows\System32\net1.exe
+HKCU\Software\Binary Fortress Software\LogFusion
+reg query HKEY_LOCAL_MACHINE\Software
+reg query HKU\Software
+dir /o:d /t:w c:\Users\Administrator
+certutil -hashfile c:\lf.exe MD5
+certutil -hashfile  C:\WINDOWS\system32\DllHost.exe MD5
+certutil -hashfile  C:\Windows\System32\net1.exe MD5
+certutil -hashfile  c:\windows\notepad.exe MD5
+
+
+T3
+
+cat /etc/centOS.rtr.updtr.conf
+stat /etc/centOS.rtr.updtr.conf
+
+T4
+
+sudo strings /var/account/pacct
+sudo strings /var/account/pacct-20220810
+sudo stat /var/account/pacct
+date
+sudo stat /var/log/audit/audit.log
+sudo ps -elfH | grep pacct
+sudo systemctl status --no-pager 
+sudo md5sum /etc/shadow
+md5sum /etc/passwd
+md5sum /etc/rsyslog.conf
+
+sudo grep -r .ssh /root
+sudo ls -latr /root/
+sudo grep -r .ssh /home
+which xfreerdp
+ls -latr /bin | grep rdp
+
+T5
+maytheforcebewithyou.txt
+sudo file /maytheforcebewithyou.txt
+hexdump -C /maytheforcebewithyou.txt
+ls -latrh /
+sudo ls -latrh /root/file2.txt
+-rw-r--r--   1 root      root            2490368 Aug 10 15:44 tcpdump.pcap
+
+remote loggin?
+*.* @@10.50.111.4:514
+*.*;auth,authpriv.none          -/var/log/syslog
+
+sudo ls -latr /var/log/journal/af2e540036a04bdeaf6b0ef3cfe217cc
+sudo strings /var/log/journal/af2e540036a04bdeaf6b0ef3cfe217cc/user-1004.journal
+sudo tail -n 20 /var/log/tcpdump.pcap
+stat /var/log/tcpdump.pcap
+
+
+T6
+
+linux-malware-detect
+sudo ls -latr /root/linux-malware-detect
+sudo cat /root/linux-malware-detect/README
+sudo tail -n 10 /root/linux-malware-detect/report.txt
+sudo tail -n 10 /usr/local/maldetect/ignore_inotify
+sudo stat /root/linux-malware-detect/report.txt

@@ -1,0 +1,111 @@
+
+
+DRYRUN03
+2022-08-10
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Enumerate Krasnovian 1st Artillery BDE network mail server and suspected admin workstations.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. Port scans must be 1000 ports or less to minimize network traffic and are suspected to be within the 22000-22999. Full tcp connect scans are authorized for 1000 ports or less. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: student#::password#  // **administrators documented to frequently implement default creds on internal routers to enable incident response outsourcing
+
+>>If not outlined in Target Section, analysts on operation will make analytical judgment based on their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target<<
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus.
+
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.10
+--> T3: 10.145.117.16
+---> T4: 192.169.117.200
+---> T5: 192.169.117.201
+----> T6: 129.168.117.54
+
+Target Section:
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 // 10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Confirm credentials successful in previous operations via SSH masquerade and redirect to the next target.
+
+T2
+Hostname: SERVER0
+IP: 10.145.117.10
+OS: Windows v unknown
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Conduct system wide search for hmailserver credentials, and collect if found. In previous operations, this has been achieved with either:
+dir /s *pass* == *cred* == *vnc* == *.config*
+findstr /si password *.xml *.ini *.txt
+Redirect to the next target.
+
+T3
+Hostname: Suspected networking device
+IP: 10.145.117.16
+OS: Unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4
+Hostname: ADMIN2
+Local IP: 192.169.117.200
+OS: Linux v unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Harvest any credentials found. Perform collection of the following, if found:
+
+    .ssh files from root and users
+    passwd/group/shadow files
+    history file from root user
+    *syslog*.conf
+    /etc/sudoers
+    .ssh files from root and your user
+    RDP Credentials
+
+Collect any additional files identified by analyst. Maneuver to the next target.
+
+T5
+Hostname: TARGETA
+Local IP: 192.169.117.201
+OS: Linux v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Redirect to the next target.
+
+T6
+Hostname: TARGETA_Admin
+Local IP: 129.168.117.54
+OS: Windows v. unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Conclude operation.
