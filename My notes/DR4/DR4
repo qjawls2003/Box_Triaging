@@ -1,0 +1,115 @@
+
+
+DRYRUN04
+2022-08-11
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Enumerate Krasnovian 1st Artillery BDE network further. Maneuver through network and survey end user hosts (T4-T7).
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. Redirection will be conducted through ssh tunnels, iptables, or netsh tunnels. All firewall manipulation requires MC approval prior to execution. File download methods must receive MC approval prior to execution due to unknown administrative posture in this network. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: student#::password# //  **administrators documented to frequently implement default creds on internal routers to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit.
+
+
+Scheme of Maneuver:
+> T1: 10.50.27.188
+-> T2: 10.145.117.10
+--> T3: 10.145.117.16
+---> T4: 192.169.117.200
+----> T5: 192.169.117.201
+-----> T6: 192.169.117.202
+----> T7: 192.169.117.203
+
+Target Section:
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188 //10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2
+Hostname: SERVER0
+IP: 10.145.117.10
+MAC: fa:16:3e:6e:ad:f6
+OS: Windows Server 2019
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Windows Defender (enabled)
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target via netsh. Use port 310## for your netsh rule.
+
+T3
+Hostname: DryRuns-int_rtr2
+IP: 10.145.117.16 // 192.169.117.198
+MAC: fa:16:3e:db:41:dd // fa:16:3e:09:40:00
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4
+Hostname: ADMIN2
+IP: 192.169.117.200
+MAC: fa:16:3e:65:bb:96
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Record any changes since last operation and collect any new files of interest identified by analyst. Redirect to the next target.
+
+T5
+Hostname: TARGETA
+IP: 192.169.117.201 // 129.168.117.45
+MAC: fa:16:3e:a8:95:5f//fa:16:3e:e1:f9:3d
+OS: Ubuntu 18.04
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: Non
+Action: Perform SSH masquerade and conduct device survey. Record any changes since last operation. Find all “.txt” files on system. Reporting suggests there is a specific file of intelligence value on this system. Collect files of interest identified by analyst. Redirect to the next target via iptables. Use port 228## as your forwarding port.
+
+T6
+Hostname: TARGETB
+IP: 192.169.117.202
+MAC: Unknown
+OS: Linux v unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Collect all image files in root’s home directory recursively. Maneuver to the next target.
+
+T7
+Hostname: TARGETC
+IP: 192.169.117.203
+MAC: Unknown
+OS: Windows v. unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Windows Defender (version unknown)
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Collect any files of interest identified by the analyst. Conclude operation.

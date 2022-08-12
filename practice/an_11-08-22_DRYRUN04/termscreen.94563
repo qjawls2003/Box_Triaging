@@ -1,0 +1,526 @@
+Script started on 2022-08-11 13:34:36+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="171" LINES="44"]
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[4mn[24m[4mn[24m[38;2;153;153;153metstat -auntp[39m[13D[24m[1m[31mn[1m[31me[0m[39m[0m[32mn[0m[32me[32mt[39m[1m[31mn[1m[31me[1m[31mt[1m[31ms[0m[39m[1m[31ms[1m[31mt[0m[39m[1m[31mt[1m[31ma[0m[39m[0m[32mn[0m[32me[0m[32mt[0m[32ms[0m[32mt[0m[32ma[32mt[39m[39m [35m-[39m[39m [39m [39m [39m [39m [38;2;153;153;153mauntp[39m[35m-[35ma[39m[35ma[35mu[39m[35mu[35mn[39m[35mn[35mt[39m[35mt[35mp[39m[?1l>[?2004l
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:2222          0.0.0.0:*               LISTEN      94415/ssh           
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      672/sshd: /usr/sbin 
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/init              
+tcp        0      0 127.0.0.1:3333          0.0.0.0:*               LISTEN      94415/ssh           
+tcp        0      0 10.50.33.208:48766      10.50.27.188:22011      ESTABLISHED 94415/ssh           
+tcp6       0      0 ::1:3350                :::*                    LISTEN      4924/xrdp-sesman    
+tcp6       0      0 ::1:3333                :::*                    LISTEN      94415/ssh           
+tcp6       0      0 ::1:2222                :::*                    LISTEN      94415/ssh           
+tcp6       0      0 :::3389                 :::*                    LISTEN      4934/xrdp           
+tcp6       0      0 :::22                   :::*                    LISTEN      672/sshd: /usr/sbin 
+tcp6       0      0 :::111                  :::*                    LISTEN      1/init              
+tcp6       0      0 10.50.33.208:3389       192.168.250.138:46364   ESTABLISHED 80585/xrdp          
+tcp6       0      0 ::1:58214               ::1:3333                TIME_WAIT   -                   
+tcp6       0      0 ::1:38992               ::1:2222                TIME_WAIT   -                   
+tcp6       0      0 ::1:38990               ::1:2222                ESTABLISHED 94500/ssh           
+tcp6       0      0 ::1:2222                ::1:38990               ESTABLISHED 94415/ssh           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           518/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/init              
+udp6       0      0 :::111                  :::*                                1/init              
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mnetstat[39m [35m-auntp[39m[14D[32ms[32mc[32mr[32mi[32mp[32mt[39m[39m [35m-[35ma[35mf[39m[39m [39mt[39me[39mrmscreen.$$
+[K[K[A[4C[32mc[32md[39m[39m [39m[4m~[39m[4m/[39m[4mD[4mo[39m[4mw[39m[4mn[39m[4ml[4mo[4ma[4md[4ms[4m/[4ma[4mn[4m_[4m1[4m1[4m-[4m0[4m8[4m-[4m22_DRYRUN04[24m [1B[A[4C[32ms[32mc[32mr[24m[32mi[24m[32mp[24m[32mt[39m[24m [24m[35m-[24m[35ma[24m[35mf[39m[24m [24mt[24me[24mr[24mm[24ms[24mc[24mr[24me[24me[24mn[24m.[24m$[24m$[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [1B[K[A[28C[24D[32mc[32md[39m[39m [39m[4m~[39m[4m/[39m[4mD[4mo[39m[4mw[39m[4mn[39m[4ml[4mo[4ma[4md[4ms[4m/[4ma[4mn[4m_[4m1[4m1[4m-[4m0[4m8[4m-[4m22_DRYRUN04[24m[35D[32ms[32ms[32mh[39m[24m [24m[35m-[24m[35mM[24m[35mS[39m[24m [4m/[4mt[4mm[4mp[4m/[4mT[4m1[24m[24m [24m[35m-[24m[35mo[39m[24m [24mS[24mt[24mr[24mi[24mc[24mt[24mH[24mo[24ms[24mt[24mK[24me[24my[24mC[24mh[24mecking=no [35m-o[39m UserKnownHostsFile=/dev/null student4@10.50.27.188 [35m-p[39m 22011[106D[32ml[32ms[39m[39m  [39m [39m [39m  [24m [24m [24m [24m [24m [24m [24m  [39m [39m                           [39m [39m                                                     [39m [39m       [104D[32mc[32md[39m an_10-08-22_DRYRUN03[?1l>[?2004l[1Bcd: no such file or directory: an_10-08-22_DRYRUN03
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31ms[0m[39m[1m[31ms[0m[39m[38;2;153;153;153mcript -af termscreen.$$[39m
+[K[A[5C[0m[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[6C[38;2;153;153;153mh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011[39m[104D[32ms[32ms[32mh[39m[39m [35m-[39m[35m-[35mS[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [100D[38;2;153;153;153m /tmp/T1 bad -O forward -L 2222:10.145.117.10:22012[39m[51D[39m [39m[4m/[24m[4m/[39m[4mt[24m[4mt[39m[4mm[24m[4mm[39m[4mp[24m[4mp[39m[4m/[24m[4m/[39m[4mT[24m[4mT[39m[4m1[24m[39m [39mb[39ma[39md[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[?1l>[?2004l[1BLast login: Thu Aug 11 13:32:56 2022 from 10.50.33.208
+]0;student4@dryruns-ext-rtr:~[?1034h[student4@dryruns-ext-rtr ~]$ dir /o:d /t:w c:\windows\temp
+dir: cannot access /o\:d: No such file or directory
+dir: cannot access /t\:w: No such file or directory
+dir: cannot access c\:windowstemp: No such file or directory
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ w
+ 17:00:36 up 54 days, 15:59, 22 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student2 pts/0    10.50.22.173     13:06    3:45m  0.07s  0.07s -bash
+student7 pts/1    10.50.22.147     13:00    3:43m  0.10s  0.10s -bash
+student1 pts/2    10.50.37.63      13:00    3:36m  0.11s  0.11s -bash
+student4 pts/3    10.50.33.208     13:35    4.00s  0.02s  0.01s w
+student1 pts/4    10.50.36.158     13:01    3:50m  0.08s  0.08s -bash
+student5 pts/5    10.50.26.8       13:02    3:38m  0.09s  0.09s -bash
+student2 pts/6    10.50.24.17      13:02    3:45m  0.14s  0.14s -bash
+student1 pts/7    10.50.38.216     13:02    3:46m  0.09s  0.09s -bash
+student1 pts/8    10.50.39.220     13:02   15:40   0.16s  0.16s -bash
+student1 pts/9    10.50.33.197     13:03    3:41m  0.11s  0.11s -bash
+student1 pts/10   10.50.33.31      13:03    3:46m  0.09s  0.09s -bash
+student1 pts/11   10.50.27.155     13:05    3:38m  0.08s  0.08s -bash
+student1 pts/12   10.50.37.11      13:06    3:41m  0.12s  0.12s -bash
+student3 pts/13   10.50.40.118     13:07    3:42m  0.10s  0.10s -bash
+student1 pts/14   10.50.34.106     13:08    3:38m  0.07s  0.07s -bash
+student1 pts/15   10.50.34.16      13:10    3:32m  0.09s  0.09s -bash
+student2 pts/16   10.50.23.198     13:20    2:30m  0.02s  0.02s -bash
+student1 pts/17   10.50.39.151     13:11    3:34m  0.09s  0.09s -bash
+student2 pts/18   10.50.38.210     13:12    3:22m  0.13s  0.13s -bash
+student9 pts/19   10.50.31.197     13:15    1:35m  0.11s  0.11s -bash
+student6 pts/20   10.50.22.252     13:15    2:37m  0.12s  0.12s -bash
+root     pts/21   10.50.23.198     14:28    1:18m  0.08s  0.07s vi Sharknado_VII_Megalodownpour.txt
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 01:01 [38;5;27msystemd-private-de7a0a6fc3044f69ba1325baef3105a7-chronyd.service-K3jQGi[0m
+drwxrwxrwt.  8 root root 172 Aug 11 13:44 [48;5;10;38;5;16m.[0m
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 48432 ep_pol Jun18 ?        00:02:17 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:01 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:35 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:32 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:01 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:29 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:02 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        45     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        46     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        47     2  0  99  19 -     0 khugep Jun18 ?        00:00:24 [khugepaged]
+1 S root        48     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        56     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        58     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        62     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        76     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       193     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       273     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       368     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       369     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       370     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       371     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       373     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       374     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       375     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       393     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       403     2  0  80   0 -     0 xfsail Jun18 ?        00:00:40 [xfsaild/sda1]
+1 S root       404     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+1 S root       469     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+4 S root       485     1  0  80   0 - 13975 ep_pol Jun18 ?        00:01:11 /usr/lib/systemd/systemd-journald
+4 S root       510     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+1 S root       572     2  0  80   0 -     0 add_hw Jun18 ?        00:00:03 [hwrng]
+5 S root       610     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+1 S root       724     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       737     1  0  80   0 -  5416 hrtime Jun18 ?        00:03:36 /usr/sbin/irqbalance --foreground
+4 S root       739     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:16 /usr/lib/systemd/systemd-logind
+4 S polkitd    743     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       744     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:15 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+5 S rpc        747     1  0  80   0 - 17316 poll_s Jun18 ?        00:00:11 /sbin/rpcbind -w
+5 S chrony     749     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:08 /usr/sbin/chronyd
+1 S root       754     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+5 S root       989     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -
+4 S root      1048     1  0  80   0 - 143481 poll_s Jun18 ?       00:11:24 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1141     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:28 /usr/libexec/postfix/master -w
+4 S postfix   1160  1141  0  80   0 - 22456 ep_pol Jun18 ?        00:00:05 qmgr -l -t unix -u
+4 S root      1199     1  0  80   0 - 93184 poll_s Jun18 ?        00:05:57 /usr/sbin/rsyslogd -n
+4 S root      1205     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1206     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1207     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1208     1  0  80   0 - 31572 hrtime Jun18 ?        00:00:11 /usr/sbin/crond -n
+1 S root      1453     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/3:1H]
+4 S root      5475  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student7 [priv]
+5 S student7  5487  5475  0  80   0 - 39751 poll_s 13:00 ?        00:00:00 sshd: student7@pts/1
+0 S student7  5488  5487  0  80   0 - 28885 n_tty_ 13:00 pts/1    00:00:00 -bash
+4 S root      5512  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student14 [priv]
+5 S student+  5520  5512  0  80   0 - 39883 poll_s 13:00 ?        00:00:01 sshd: student14@pts/2
+0 S student+  5521  5520  0  80   0 - 28885 n_tty_ 13:00 pts/2    00:00:00 -bash
+4 S root      5539  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student4 [priv]
+5 D student4  5548  5539  0  80   0 - 39786 flush_ 13:00 ?        00:00:09 sshd: student4@pts/3
+4 S root      5625  1205  0  80   0 - 39717 poll_s 13:01 ?        00:00:00 sshd: student1 [priv]
+5 S student1  5632  5625  0  80   0 - 40025 poll_s 13:01 ?        00:00:01 sshd: student1@pts/4
+0 S student1  5633  5632  0  80   0 - 28860 n_tty_ 13:01 pts/4    00:00:00 -bash
+4 S root      5682  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student5 [priv]
+5 S student5  5687  5682  0  80   0 - 39747 poll_s 13:02 ?        00:00:02 sshd: student5@pts/5
+0 S student5  5688  5687  0  80   0 - 28860 n_tty_ 13:02 pts/5    00:00:00 -bash
+4 S root      5719  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student20 [priv]
+5 S student+  5734  5719  0  80   0 - 39926 poll_s 13:02 ?        00:00:02 sshd: student20@pts/6
+0 S student+  5735  5734  0  80   0 - 28861 n_tty_ 13:02 pts/6    00:00:00 -bash
+4 S root      5754  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student12 [priv]
+5 S student+  5760  5754  0  80   0 - 39911 poll_s 13:02 ?        00:00:01 sshd: student12@pts/7
+0 S student+  5761  5760  0  80   0 - 28887 n_tty_ 13:02 pts/7    00:00:00 -bash
+4 S root      5797  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student15 [priv]
+5 S student+  5806  5797  0  80   0 - 40078 poll_s 13:02 ?        00:00:02 sshd: student15@pts/8
+0 S student+  5807  5806  0  80   0 - 28893 n_tty_ 13:02 pts/8    00:00:00 -bash
+4 S root      5839  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student18 [priv]
+5 S student+  5851  5839  0  80   0 - 39752 poll_s 13:02 ?        00:00:01 sshd: student18@pts/9
+0 S student+  5852  5851  0  80   0 - 28861 n_tty_ 13:02 pts/9    00:00:00 -bash
+4 S root      5884  1205  0  80   0 - 39717 poll_s 13:03 ?        00:00:00 sshd: student17 [priv]
+5 S student+  5905  5884  0  80   0 - 40034 poll_s 13:03 ?        00:00:01 sshd: student17@pts/10
+0 S student+  5906  5905  0  80   0 - 28860 n_tty_ 13:03 pts/10   00:00:00 -bash
+4 S root      6082  1205  0  80   0 - 39717 poll_s 13:05 ?        00:00:00 sshd: student11 [priv]
+5 S student+  6095  6082  0  80   0 - 39751 poll_s 13:05 ?        00:00:01 sshd: student11@pts/11
+0 S student+  6096  6095  0  80   0 - 28860 n_tty_ 13:05 pts/11   00:00:00 -bash
+1 S root      6348     2  0  80   0 -     0 worker 13:06 ?        00:00:00 [kworker/1:2]
+4 S root      6356  1205  0  80   0 - 39717 poll_s 13:06 ?        00:00:00 sshd: student21 [priv]
+5 S student+  6371  6356  0  80   0 - 39852 poll_s 13:06 ?        00:00:02 sshd: student21@pts/0
+0 S student+  6372  6371  0  80   0 - 28860 n_tty_ 13:06 pts/0    00:00:00 -bash
+4 S root      6389  1205  0  80   0 - 39717 poll_s 13:06 ?        00:00:00 sshd: student19 [priv]
+5 S student+  6397  6389  0  80   0 - 39849 poll_s 13:06 ?        00:00:03 sshd: student19@pts/12
+0 S student+  6398  6397  0  80   0 - 28885 n_tty_ 13:06 pts/12   00:00:00 -bash
+4 S root      6587  1205  0  80   0 - 39717 poll_s 13:07 ?        00:00:00 sshd: student3 [priv]
+5 S student3  6599  6587  0  80   0 - 39952 poll_s 13:07 ?        00:00:01 sshd: student3@pts/13
+0 S student3  6600  6599  0  80   0 - 28885 n_tty_ 13:07 pts/13   00:00:00 -bash
+4 S root      7030  1205  0  80   0 - 39717 poll_s 13:08 ?        00:00:00 sshd: student10 [priv]
+5 S student+  7044  7030  0  80   0 - 39908 poll_s 13:08 ?        00:00:01 sshd: student10@pts/14
+0 S student+  7045  7044  0  80   0 - 28860 n_tty_ 13:08 pts/14   00:00:00 -bash
+4 S root      7573  1205  0  80   0 - 39717 poll_s 13:10 ?        00:00:00 sshd: student13 [priv]
+5 S student+  7585  7573  0  80   0 - 39751 poll_s 13:10 ?        00:00:01 sshd: student13@pts/15
+0 S student+  7586  7585  0  80   0 - 28886 n_tty_ 13:10 pts/15   00:00:00 -bash
+4 S root      7750  1205  0  80   0 - 39717 poll_s 13:11 ?        00:00:00 sshd: student16 [priv]
+5 S student+  7782  7750  0  80   0 - 40167 poll_s 13:11 ?        00:00:01 sshd: student16@pts/17
+0 S student+  7783  7782  0  80   0 - 28885 n_tty_ 13:11 pts/17   00:00:00 -bash
+4 S root      7835  1205  0  80   0 - 39717 poll_s 13:12 ?        00:00:00 sshd: student2 [priv]
+5 S student2  7853  7835  0  80   0 - 39752 poll_s 13:12 ?        00:00:01 sshd: student2@pts/18
+0 S student2  7854  7853  0  80   0 - 28886 n_tty_ 13:12 pts/18   00:00:00 -bash
+4 S root      8293  1205  0  80   0 - 39717 poll_s 13:15 ?        00:00:00 sshd: student9 [priv]
+5 S student9  8306  8293  0  80   0 - 39950 poll_s 13:15 ?        00:00:01 sshd: student9@pts/19
+0 S student9  8307  8306  0  80   0 - 28885 n_tty_ 13:15 pts/19   00:00:00 -bash
+4 S root      8352  1205  0  80   0 - 39717 poll_s 13:15 ?        00:00:00 sshd: student6 [priv]
+5 S student6  8362  8352  0  80   0 - 40055 poll_s 13:15 ?        00:00:02 sshd: student6@pts/20
+0 S student6  8363  8362  0  80   0 - 28860 n_tty_ 13:15 pts/20   00:00:00 -bash
+1 S root      8886     2  0  80   0 -     0 worker Aug10 ?        00:00:00 [kworker/2:0]
+4 S root      8908  1205  0  80   0 - 39717 poll_s 13:20 ?        00:00:00 sshd: student23 [priv]
+5 S student+  8922  8908  0  80   0 - 39752 poll_s 13:20 ?        00:00:00 sshd: student23@pts/16
+0 S student+  8923  8922  0  80   0 - 28860 n_tty_ 13:20 pts/16   00:00:00 -bash
+0 S student4 10379  5548  0  80   0 - 28860 do_wai 13:35 pts/3    00:00:00 -bash
+1 S root     11662     2  0  80   0 -     0 worker 14:01 ?        00:00:00 [kworker/0:2]
+4 S root     12976  1205  0  80   0 - 39717 poll_s 14:28 ?        00:00:00 sshd: root@pts/21
+4 S root     12985 12976  0  80   0 - 28860 do_wai 14:28 pts/21   00:00:00 -bash
+4 S root     13004 12985  0  80   0 - 31590 poll_s 14:28 pts/21   00:00:00 vi Sharknado_VII_Megalodownpour.txt
+1 S root     14346     2  0  80   0 -     0 worker Aug10 ?        00:00:03 [kworker/1:1]
+4 S postfix  17842  1141  0  80   0 - 22439 ep_pol 16:08 ?        00:00:00 pickup -l -t unix -u
+1 S root     19622     2  0  80   0 -     0 worker 16:45 ?        00:00:00 [kworker/3:1]
+1 S root     20032     2  0  80   0 -     0 worker 16:53 ?        00:00:00 [kworker/3:2]
+0 R student4 20370 10379  0  80   0 - 38840 -      17:00 pts/3    00:00:00 ps -elf
+1 R root     26632     2  0  80   0 -     0 ?      Aug10 ?        00:00:00 [kworker/0:0]
+4 S root     28795  1205  0  80   0 - 39717 poll_s Aug08 ?        00:00:00 sshd: student6 [priv]
+5 S student6 28806 28795  0  80   0 - 40260 poll_s Aug08 ?        00:01:03 sshd: student6@notty
+1 S root     29061     2  0  80   0 -     0 worker 10:01 ?        00:00:00 [kworker/2:2]
+1 S root     29276     2  0  80   0 -     0 worker Aug08 ?        00:00:00 [kworker/u8:2]
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ 
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ Sharknado_VII_Megalodownpour.txt
+-bash: Sharknado_VII_Megalodownpour.txt: command not found
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ who
+student21 pts/0        2022-08-11 13:06 (10.50.22.173)
+student7 pts/1        2022-08-11 13:00 (10.50.22.147)
+student14 pts/2        2022-08-11 13:00 (10.50.37.63)
+student4 pts/3        2022-08-11 13:35 (10.50.33.208)
+student1 pts/4        2022-08-11 13:01 (10.50.36.158)
+student5 pts/5        2022-08-11 13:02 (10.50.26.8)
+student20 pts/6        2022-08-11 13:02 (10.50.24.17)
+student12 pts/7        2022-08-11 13:02 (10.50.38.216)
+student15 pts/8        2022-08-11 13:02 (10.50.39.220)
+student18 pts/9        2022-08-11 13:03 (10.50.33.197)
+student17 pts/10       2022-08-11 13:03 (10.50.33.31)
+student11 pts/11       2022-08-11 13:05 (10.50.27.155)
+student19 pts/12       2022-08-11 13:06 (10.50.37.11)
+student3 pts/13       2022-08-11 13:07 (10.50.40.118)
+student10 pts/14       2022-08-11 13:08 (10.50.34.106)
+student13 pts/15       2022-08-11 13:10 (10.50.34.16)
+student23 pts/16       2022-08-11 13:20 (10.50.23.198)
+student16 pts/17       2022-08-11 13:11 (10.50.39.151)
+student2 pts/18       2022-08-11 13:12 (10.50.38.210)
+student9 pts/19       2022-08-11 13:15 (10.50.31.197)
+student6 pts/20       2022-08-11 13:15 (10.50.22.252)
+root     pts/21       2022-08-11 14:28 (10.50.23.198)
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 01:01 [38;5;27msystemd-private-de7a0a6fc3044f69ba1325baef3105a7-chronyd.service-K3jQGi[0m
+drwxrwxrwt.  8 root root 172 Aug 11 13:44 [48;5;10;38;5;16m.[0m
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 48432 ep_pol Jun18 ?        00:02:18 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:01 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:36 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:32 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:01 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:29 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:02 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        45     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        46     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        47     2  0  99  19 -     0 khugep Jun18 ?        00:00:24 [khugepaged]
+1 S root        48     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        56     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        58     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        62     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        76     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       193     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       273     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       368     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       369     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       370     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       371     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       373     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       374     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       375     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       393     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       403     2  0  80   0 -     0 xfsail Jun18 ?        00:00:40 [xfsaild/sda1]
+1 S root       404     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+1 S root       469     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+4 S root       485     1  0  80   0 - 13975 ep_pol Jun18 ?        00:01:11 /usr/lib/systemd/systemd-journald
+4 S root       510     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+1 S root       572     2  0  80   0 -     0 add_hw Jun18 ?        00:00:03 [hwrng]
+5 S root       610     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+1 S root       724     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       737     1  0  80   0 -  5416 hrtime Jun18 ?        00:03:36 /usr/sbin/irqbalance --foreground
+4 S root       739     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:16 /usr/lib/systemd/systemd-logind
+4 S polkitd    743     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       744     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:15 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+5 S rpc        747     1  0  80   0 - 17316 poll_s Jun18 ?        00:00:11 /sbin/rpcbind -w
+5 S chrony     749     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:08 /usr/sbin/chronyd
+1 S root       754     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+5 S root       989     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -
+4 S root      1048     1  0  80   0 - 143481 poll_s Jun18 ?       00:11:24 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1141     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:28 /usr/libexec/postfix/master -w
+4 S postfix   1160  1141  0  80   0 - 22456 ep_pol Jun18 ?        00:00:05 qmgr -l -t unix -u
+4 S root      1199     1  0  80   0 - 93184 poll_s Jun18 ?        00:05:57 /usr/sbin/rsyslogd -n
+4 S root      1205     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1206     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1207     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1208     1  0  80   0 - 31572 hrtime Jun18 ?        00:00:11 /usr/sbin/crond -n
+1 S root      1453     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/3:1H]
+4 S root      5475  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student7 [priv]
+5 S student7  5487  5475  0  80   0 - 39751 poll_s 13:00 ?        00:00:00 sshd: student7@pts/1
+0 S student7  5488  5487  0  80   0 - 28885 n_tty_ 13:00 pts/1    00:00:00 -bash
+4 S root      5512  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student14 [priv]
+5 S student+  5520  5512  0  80   0 - 39883 poll_s 13:00 ?        00:00:01 sshd: student14@pts/2
+0 S student+  5521  5520  0  80   0 - 28885 n_tty_ 13:00 pts/2    00:00:00 -bash
+4 S root      5539  1205  0  80   0 - 39717 poll_s 13:00 ?        00:00:00 sshd: student4 [priv]
+5 S student4  5548  5539  0  80   0 - 39786 poll_s 13:00 ?        00:00:09 sshd: student4@pts/3
+4 S root      5625  1205  0  80   0 - 39717 poll_s 13:01 ?        00:00:00 sshd: student1 [priv]
+5 S student1  5632  5625  0  80   0 - 40025 poll_s 13:01 ?        00:00:01 sshd: student1@pts/4
+0 S student1  5633  5632  0  80   0 - 28860 n_tty_ 13:01 pts/4    00:00:00 -bash
+4 S root      5682  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student5 [priv]
+5 S student5  5687  5682  0  80   0 - 39747 poll_s 13:02 ?        00:00:02 sshd: student5@pts/5
+0 S student5  5688  5687  0  80   0 - 28860 n_tty_ 13:02 pts/5    00:00:00 -bash
+4 S root      5719  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student20 [priv]
+5 S student+  5734  5719  0  80   0 - 39926 poll_s 13:02 ?        00:00:02 sshd: student20@pts/6
+0 S student+  5735  5734  0  80   0 - 28861 n_tty_ 13:02 pts/6    00:00:00 -bash
+4 S root      5754  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student12 [priv]
+5 S student+  5760  5754  0  80   0 - 39911 poll_s 13:02 ?        00:00:01 sshd: student12@pts/7
+0 S student+  5761  5760  0  80   0 - 28887 n_tty_ 13:02 pts/7    00:00:00 -bash
+4 S root      5797  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student15 [priv]
+5 S student+  5806  5797  0  80   0 - 40078 poll_s 13:02 ?        00:00:02 sshd: student15@pts/8
+0 S student+  5807  5806  0  80   0 - 28893 n_tty_ 13:02 pts/8    00:00:00 -bash
+4 S root      5839  1205  0  80   0 - 39717 poll_s 13:02 ?        00:00:00 sshd: student18 [priv]
+5 S student+  5851  5839  0  80   0 - 39752 poll_s 13:02 ?        00:00:01 sshd: student18@pts/9
+0 S student+  5852  5851  0  80   0 - 28861 n_tty_ 13:02 pts/9    00:00:00 -bash
+4 S root      5884  1205  0  80   0 - 39717 poll_s 13:03 ?        00:00:00 sshd: student17 [priv]
+5 S student+  5905  5884  0  80   0 - 40034 poll_s 13:03 ?        00:00:01 sshd: student17@pts/10
+0 S student+  5906  5905  0  80   0 - 28860 n_tty_ 13:03 pts/10   00:00:00 -bash
+4 S root      6082  1205  0  80   0 - 39717 poll_s 13:05 ?        00:00:00 sshd: student11 [priv]
+5 S student+  6095  6082  0  80   0 - 39751 poll_s 13:05 ?        00:00:01 sshd: student11@pts/11
+0 S student+  6096  6095  0  80   0 - 28860 n_tty_ 13:05 pts/11   00:00:00 -bash
+1 S root      6348     2  0  80   0 -     0 worker 13:06 ?        00:00:00 [kworker/1:2]
+4 S root      6356  1205  0  80   0 - 39717 poll_s 13:06 ?        00:00:00 sshd: student21 [priv]
+5 S student+  6371  6356  0  80   0 - 39852 poll_s 13:06 ?        00:00:02 sshd: student21@pts/0
+0 S student+  6372  6371  0  80   0 - 28860 n_tty_ 13:06 pts/0    00:00:00 -bash
+4 S root      6389  1205  0  80   0 - 39717 poll_s 13:06 ?        00:00:00 sshd: student19 [priv]
+5 S student+  6397  6389  0  80   0 - 39849 poll_s 13:06 ?        00:00:03 sshd: student19@pts/12
+0 S student+  6398  6397  0  80   0 - 28885 n_tty_ 13:06 pts/12   00:00:00 -bash
+4 S root      6587  1205  0  80   0 - 39717 poll_s 13:07 ?        00:00:00 sshd: student3 [priv]
+5 S student3  6599  6587  0  80   0 - 39952 poll_s 13:07 ?        00:00:01 sshd: student3@pts/13
+0 S student3  6600  6599  0  80   0 - 28885 n_tty_ 13:07 pts/13   00:00:00 -bash
+4 S root      7030  1205  0  80   0 - 39717 poll_s 13:08 ?        00:00:00 sshd: student10 [priv]
+5 S student+  7044  7030  0  80   0 - 39908 poll_s 13:08 ?        00:00:01 sshd: student10@pts/14
+0 S student+  7045  7044  0  80   0 - 28860 n_tty_ 13:08 pts/14   00:00:00 -bash
+4 S root      7573  1205  0  80   0 - 39717 poll_s 13:10 ?        00:00:00 sshd: student13 [priv]
+5 S student+  7585  7573  0  80   0 - 39751 poll_s 13:10 ?        00:00:01 sshd: student13@pts/15
+0 S student+  7586  7585  0  80   0 - 28886 n_tty_ 13:10 pts/15   00:00:00 -bash
+4 S root      7750  1205  0  80   0 - 39717 poll_s 13:11 ?        00:00:00 sshd: student16 [priv]
+5 S student+  7782  7750  0  80   0 - 40167 poll_s 13:11 ?        00:00:01 sshd: student16@pts/17
+0 S student+  7783  7782  0  80   0 - 28885 n_tty_ 13:11 pts/17   00:00:00 -bash
+4 S root      7835  1205  0  80   0 - 39717 poll_s 13:12 ?        00:00:00 sshd: student2 [priv]
+5 S student2  7853  7835  0  80   0 - 39752 poll_s 13:12 ?        00:00:01 sshd: student2@pts/18
+0 S student2  7854  7853  0  80   0 - 28886 n_tty_ 13:12 pts/18   00:00:00 -bash
+4 S root      8293  1205  0  80   0 - 39717 poll_s 13:15 ?        00:00:00 sshd: student9 [priv]
+5 S student9  8306  8293  0  80   0 - 39950 poll_s 13:15 ?        00:00:01 sshd: student9@pts/19
+0 S student9  8307  8306  0  80   0 - 28885 n_tty_ 13:15 pts/19   00:00:00 -bash
+4 S root      8352  1205  0  80   0 - 39717 poll_s 13:15 ?        00:00:00 sshd: student6 [priv]
+5 S student6  8362  8352  0  80   0 - 40055 poll_s 13:15 ?        00:00:02 sshd: student6@pts/20
+0 S student6  8363  8362  0  80   0 - 28860 n_tty_ 13:15 pts/20   00:00:00 -bash
+1 R root      8886     2  0  80   0 -     0 ?      Aug10 ?        00:00:00 [kworker/2:0]
+4 S root      8908  1205  0  80   0 - 39717 poll_s 13:20 ?        00:00:00 sshd: student23 [priv]
+5 S student+  8922  8908  0  80   0 - 39752 poll_s 13:20 ?        00:00:00 sshd: student23@pts/16
+0 S student+  8923  8922  0  80   0 - 28860 n_tty_ 13:20 pts/16   00:00:00 -bash
+0 S student4 10379  5548  0  80   0 - 28860 do_wai 13:35 pts/3    00:00:00 -bash
+1 S root     11662     2  0  80   0 -     0 worker 14:01 ?        00:00:00 [kworker/0:2]
+4 S root     12976  1205  0  80   0 - 39717 poll_s 14:28 ?        00:00:00 sshd: root@pts/21
+4 S root     12985 12976  0  80   0 - 28860 do_wai 14:28 pts/21   00:00:00 -bash
+4 S root     13004 12985  0  80   0 - 31590 poll_s 14:28 pts/21   00:00:00 vi Sharknado_VII_Megalodownpour.txt
+1 S root     14346     2  0  80   0 -     0 worker Aug10 ?        00:00:03 [kworker/1:1]
+4 S postfix  17842  1141  0  80   0 - 22439 ep_pol 16:08 ?        00:00:00 pickup -l -t unix -u
+1 S root     20032     2  0  80   0 -     0 worker 16:53 ?        00:00:00 [kworker/3:2]
+1 S root     20374     2  0  80   0 -     0 worker 17:00 ?        00:00:00 [kworker/3:0]
+0 R student4 20687 10379  0  80   0 - 38840 -      17:06 pts/3    00:00:00 ps -elf
+1 S root     26632     2  0  80   0 -     0 worker Aug10 ?        00:00:00 [kworker/0:0]
+4 S root     28795  1205  0  80   0 - 39717 poll_s Aug08 ?        00:00:00 sshd: student6 [priv]
+5 S student6 28806 28795  0  80   0 - 40260 poll_s Aug08 ?        00:01:03 sshd: student6@notty
+1 S root     29061     2  0  80   0 -     0 worker 10:01 ?        00:00:00 [kworker/2:2]
+1 S root     29276     2  0  80   0 -     0 worker Aug08 ?        00:00:00 [kworker/u8:2]
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ netstat -lptn
+(No info could be read for "-p": geteuid()=1004 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22011           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::22011                :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ ls -latr /var/log
+total 15400
+drwxr-xr-x.  2 chrony chrony        6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root          6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root          0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root        193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root        191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root          6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root        267 Feb 11 15:52 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root         23 Feb 11 15:52 [38;5;27mtuned[0m
+-rw-------.  1 root   root          0 Mar  9 14:23 yum.log
+-rw-r--r--.  1 root   root      33660 Jun  4 02:29 dmesg.old
+-rw-r--r--.  1 root   root      33848 Jun 18 01:01 dmesg
+-rw-------.  1 root   root     526731 Jun 18 01:01 cloud-init.log
+-rw-r--r--.  1 root   root        666 Jun 18 01:06 boot.log
+-rw-------.  1 root   utmp          0 Jul  1 03:49 btmp-20220801
+-rw-------.  1 root   root          0 Jul 10 03:08 spooler-20220717
+-rw-------.  1 root   root          0 Jul 10 03:08 secure-20220717
+-rw-------.  1 root   root          0 Jul 10 03:08 maillog-20220717
+-rw-------.  1 root   root      44591 Jul 17 03:03 messages-20220717
+-rw-r--r--.  1 root   root      52640 Jul 17 03:03 cron-20220717
+-rw-------.  1 root   root          0 Jul 17 03:26 spooler-20220724
+-rw-------.  1 root   root          0 Jul 17 03:26 secure-20220724
+-rw-------.  1 root   root          0 Jul 17 03:26 maillog-20220724
+-rw-------.  1 root   root      45133 Jul 24 03:03 messages-20220724
+-rw-r--r--.  1 root   root      52629 Jul 24 03:03 cron-20220724
+-rw-------.  1 root   root          0 Jul 24 03:07 spooler-20220731
+-rw-------.  1 root   root          0 Jul 24 03:07 secure-20220731
+-rw-------.  1 root   root          0 Jul 24 03:07 maillog-20220731
+-rw-------.  1 root   root      44564 Jul 31 03:03 messages-20220731
+-rw-r--r--.  1 root   root      52457 Jul 31 03:03 cron-20220731
+-rw-------.  1 root   root          0 Jul 31 03:50 spooler-20220807
+-rw-------.  1 root   root          0 Jul 31 03:50 secure-20220807
+-rw-------.  1 root   root          0 Jul 31 03:50 maillog-20220807
+-rw-------.  1 root   root      44592 Aug  7 03:03 messages-20220807
+-rw-r--r--.  1 root   root      52641 Aug  7 03:03 cron-20220807
+-rw-------.  1 root   root          0 Aug  7 03:35 spooler
+-rw-------.  1 root   root          0 Aug  7 03:35 maillog
+drwxr-xr-x.  8 root   root       4096 Aug  7 03:35 [38;5;27m.[0m
+-rw-------.  1 root   utmp       2304 Aug  9 13:01 btmp
+drwx------.  2 root   root         80 Aug 10 17:56 [38;5;27maudit[0m
+-rw-rw-r--.  1 root   utmp     350208 Aug 11 14:28 wtmp
+-rw-r--r--.  1 root   root     299008 Aug 11 14:28 lastlog
+-rw-------.  1 root   root   14266979 Aug 11 16:53 secure
+-rw-------.  1 root   root      73146 Aug 11 17:03 messages
+-rw-r--r--.  1 root   root      34334 Aug 11 17:03 cron
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r--. 1 root   root               12288 Aug 11 15:42 /root/.Sharknado_VII_Megalodownpour.txt.swp
+-rw-------. 1 root   root            14266979 Aug 11 16:53 /var/log/secure
+-rw-r--r--. 1 root   root                 264 Aug 11 17:01 /run/systemd/users/0
+-rw-r--r--. 1 chrony chrony                42 Aug 11 17:02 /var/lib/chrony/drift
+-rw-------. 1 root   root               73146 Aug 11 17:03 /var/log/messages
+-rw-r--r--. 1 root   root               34334 Aug 11 17:03 /var/log/cron
+-rw-------. 1 root   root                 125 Aug 11 17:07 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root   root             1123974 Aug 11 17:07 /var/log/audit/audit.log
+-rw-r-----+ 1 root   systemd-journal 16777216 Aug 11 17:07 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ 
+]0;student4@dryruns-ext-rtr:~[student4@dryruns-ext-rtr ~]$ exit
+logout
+Shared connection to bad closed.
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-11 17:14:38+00:00 [COMMAND_EXIT_CODE="0"]

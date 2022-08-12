@@ -1,0 +1,41 @@
+T1
+
+rsyslog
+SELinux
+
+sudo stat /var/log/audit/audit.log
+cat Sharknado_VII_Megalodownpour.txt
+
+T2
+administrator  8/10/2022 12:25 PM
+LogFusion
+certutil -hashfile C:\Windows\System32\services.exe MD5
+wevtutil qe security /c:300 /rd:true /f:text 
+
+
+T3
+SELinux
+
+T4
+pacct
+
+T5
+/maytheforcebewithyou.txt
+/tmp/file3.txt
+/root/file2.txt
+
+T6
+rsyslog
+ntpd
+md5sum /usr/sbin/ntpd
+
+
+T7
+administrator 8/11/2022 11:49 AM
+avpui
+avp
+ExecutablePath=C:\WINDOWS\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe
+wmic process get processid,parentprocessid,commandline,executablepath /value | findstr avpui
+reg query HKEY_LOCAL_MACHINE\software\KasperskyLab\ExternalPlugins\kiskavpure
+dir /o:d /t:w "C:\Program Files (x86)\Kaspersky Lab\Kaspersky 21.5\x64"
+certutil -hashfile "C:\Program Files (x86)\Kaspersky Lab\Kaspersky 21.5\avpui.exe"

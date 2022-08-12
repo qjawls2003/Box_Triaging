@@ -1,0 +1,314 @@
+Script started on 2022-08-11 13:34:54+00:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="171" LINES="44"]
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T3 [7m[35m-p[39m[7m 3333 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m[102D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m3[27m3[27m3[27m3[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:3333' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Last login: Thu Aug 11 13:33:19 2022 from 10.145.117.10
+]0;student4@dryruns-int-rtr2:~[?1034h[student4@dryruns-int-rtr2 ~]$ exitCloud based?; yes or no - noTimestamp of all associated log files - Modify: 2022-08-11 13:26:57.910309180 +0000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19PDirectory location of associated logs - /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10P*(NIX) Config file or install directory - /etc/selinux[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[34PVersion - enforcing[5PName - SELinuxTarget: <T3 and 10.145.117.16 / 192.168.117.198 >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P****Security Product Report*****[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo stat /var/log/audit/audit.logcat /etc/audit/rules.d/audit.rules[8Pauditd.confrules.d/audit.rules[5Pstat /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P*****Security Product Report*****Target: <T3 and 10.145.117.16 / 192.168.117.198 >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CName - SELinux[KVersion - enforcing(NIX) Config file or install directory - /etc/selinux[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CDirectory location of associated logs - /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CTimestamp of all associated log files - Modify: 2022-08-11 13:26:57.910309180 +0000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[55PCloud based?; yes or no - noexit[K[KexitCloud based?; yes or no - noTimestamp of all associated log files - Modify: 2022-08-11 13:26:57.910309180 +0000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19PDirectory location of associated logs - /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[10P*(NIX) Config file or install directory - /etc/selinux[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[34PVersion - enforcing[5PName - SELinuxTarget: <T3 and 10.145.117.16 / 192.168.117.198 >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17P****Security Product Report*****[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo stat /var/log/audit/audit.logcat /etc/audit/rules.d/audit.rules[8Pauditd.conf[12Pcat ~/.bash_historysudo cat /root/.bash_historyestatus[Kudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /etc/cron.*[K[2Pcat /etc/crontabfor user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /etc/passwd[K[1Phostsrsyslog.conf[1Pls -la /etc/*syslog*sudo ls -latr /var/log/*[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C*log*//etc/systemd/system/multi-user.target.wants[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25P-latr /var/*/*acc*df[Kuname -adate; date -usudo ls -latr /var/spool/cron/*[K[8Pcat /etc/sudoersw[Ksudo netstat -auntp[12Pps -elfsudo ls -latr /root[8Pls -latr ..[K/tmp[K[3Pip addr[3Pexitsudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kip addrls -latr /tmp.[K.sudo ls -latr /root[12Pps -elfsudo netstat -auntpw[Ksudo cat /etc/sudoersls -latr /var/spool/cron/*[18Pdate; date -u[5Puname -adf[Kls -latr /var/*/*acc*/etc/systemd/system/multi-user.target.wants[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26P-latr /var/*log*/[1Plog/*[5@sudo [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pls -la /etc/*syslog*cat /etc/rsyslog.conf[7Phostspasswdfor user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccat /etc/crontab[Kls -la /etc/cron.*sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cestatus[Kudo cat /root/.bash_history[9Pcat ~/.bash_historysudo cat /etc/audit/auditd.confrules.d/audit.rules[5Pstat /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P*****Security Product Report*****Target: <T3 and 10.145.117.16 / 192.168.117.198 >[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CName - SELinux[KVersion - enforcing(NIX) Config file or install directory - /etc/selinux[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CDirectory location of associated logs - /var/log/audit/audit.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CTimestamp of all associated log files - Modify: 2022-08-11 13:26:57.910309180 +0000[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[55PCloud based?; yes or no - noexit[K[K
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ w
+ 16:25:24 up 54 days, 15:23, 21 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+student2 pts/0    10.145.117.10    13:20    1:53m  0.03s  0.03s -bash
+student3 pts/1    10.145.117.10    13:33    2:43m  0.10s  0.10s -bash
+student4 pts/2    10.145.117.10    13:35    4.00s  0.03s  0.01s w
+student1 pts/3    10.145.117.10    13:33    2:43m  0.07s  0.07s -bash
+student1 pts/4    10.145.117.10    13:38    2:38m  0.08s  0.08s -bash
+student1 pts/5    10.145.117.10    13:41    2:32m  0.09s  0.09s -bash
+student2 pts/6    10.145.117.10    13:41    2:33m  0.15s  0.15s -bash
+student1 pts/7    10.145.117.10    13:43    2:26m  0.12s  0.12s -bash
+student2 pts/8    10.145.117.10    13:44    2:30m  0.11s  0.11s -bash
+student1 pts/9    10.145.117.10    13:46    2:25m  0.08s  0.08s -bash
+student9 pts/10   10.145.117.10    13:47    2:15m  0.12s  0.12s -bash
+student7 pts/11   10.145.117.10    13:51    2:26m  0.05s  0.05s -bash
+student1 pts/12   10.145.117.10    13:52    2:20m  0.17s  0.17s -bash
+student1 pts/13   10.145.117.10    13:56    2:14m  0.12s  0.12s -bash
+student1 pts/14   10.145.117.10    14:01    2:12m  0.09s  0.09s -bash
+student1 pts/15   10.145.117.10    14:03    2:05m  0.10s  0.10s -bash
+student6 pts/16   10.145.117.10    14:05    2:01m  0.09s  0.09s -bash
+student1 pts/17   10.145.117.10    14:05    2:11m  0.08s  0.08s -bash
+student2 pts/18   10.145.117.10    14:12    1:52m  0.13s  0.13s -bash
+student5 pts/19   10.145.117.10    14:36    1:34m  0.08s  0.08s -bash
+student1 pts/20   10.145.117.10    14:37    1:21m  0.13s  0.13s -bash
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 01:01 [38;5;27msystemd-private-8bd24eaa1a874353a168c213f863f8cb-chronyd.service-ykLJ6j[0m
+drwxrwxrwt.  8 root root 172 Aug 11 14:00 [48;5;10;38;5;16m.[0m
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 48399 ep_pol Jun18 ?        00:01:15 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:23 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:34 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:28 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:27 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:29 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:02 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        46     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        47     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        48     2  0  99  19 -     0 khugep Jun18 ?        00:00:26 [khugepaged]
+1 S root        49     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        57     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        63     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        76     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       113     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       195     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       267     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       275     2  0  80   0 -     0 worker Jun18 ?        00:00:01 [kworker/u8:2]
+1 S root       277     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       281     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       287     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       291     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       306     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:3]
+1 S root       375     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       376     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       377     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       404     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       405     2  0  80   0 -     0 xfsail Jun18 ?        00:00:26 [xfsaild/sda1]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       407     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+4 S root       485     1  0  80   0 - 10060 ep_pol Jun18 ?        00:00:14 /usr/lib/systemd/systemd-journald
+4 S root       522     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       544     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+4 S dbus       588     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:14 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+4 S root       601     1  0  80   0 -  5418 hrtime Jun18 ?        00:04:13 /usr/sbin/irqbalance --foreground
+4 S polkitd    602     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+1 S root       605     2  0  80   0 -     0 add_hw Jun18 ?        00:00:03 [hwrng]
+4 S root       699     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:17 /usr/lib/systemd/systemd-logind
+5 S rpc        718     1  0  80   0 - 17316 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       719     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+5 S chrony     721     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:09 /usr/sbin/chronyd
+1 S root       764     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+1 S root       781     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/1:1H]
+5 S root       996     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -
+5 S root      1123     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth1.lease -pf /var/run/dhclient-eth1.pid -
+4 S root      1179     1  0  80   0 - 143481 poll_s Jun18 ?       00:11:29 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+4 S root      1305     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1306     1  0  80   0 - 58198 poll_s Jun18 ?        00:05:48 /usr/sbin/rsyslogd -n
+4 S root      1310     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+4 S root      1311     1  0  80   0 - 31572 hrtime Jun18 ?        00:00:12 /usr/sbin/crond -n
+4 S root      1313     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+5 S root      1317     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:29 /usr/libexec/postfix/master -w
+4 S postfix   1319  1317  0  80   0 - 22456 ep_pol Jun18 ?        00:00:05 qmgr -l -t unix -u
+1 S root      1588     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:1H]
+1 S root      5060     2  0  80   0 -     0 worker Aug10 ?        00:00:01 [kworker/0:0]
+4 S root      5651  1305  0  80   0 - 39717 poll_s 13:20 ?        00:00:00 sshd: student23 [priv]
+5 S student+  5656  5651  0  80   0 - 39717 poll_s 13:20 ?        00:00:00 sshd: student23@pts/0
+0 S student+  5657  5656  0  80   0 - 28860 n_tty_ 13:20 pts/0    00:00:00 -bash
+1 R root      6204     2  0  80   0 -     0 ?      13:28 ?        00:00:00 [kworker/2:0]
+1 S root      6226     2  0  80   0 -     0 worker 13:29 ?        00:00:00 [kworker/0:1]
+4 S root      6416  1305  0  80   0 - 39717 poll_s 13:33 ?        00:00:00 sshd: student3 [priv]
+5 S student3  6423  6416  0  80   0 - 39940 poll_s 13:33 ?        00:00:00 sshd: student3@pts/1
+0 S student3  6424  6423  0  80   0 - 28860 n_tty_ 13:33 pts/1    00:00:00 -bash
+4 S root      6471  1305  0  80   0 - 39717 poll_s 13:33 ?        00:00:00 sshd: student1 [priv]
+5 S student1  6483  6471  0  80   0 - 39882 poll_s 13:33 ?        00:00:01 sshd: student1@pts/3
+0 S student1  6484  6483  0  80   0 - 28860 n_tty_ 13:33 pts/3    00:00:00 -bash
+4 S root      6628  1305  0  80   0 - 39717 poll_s 13:35 ?        00:00:00 sshd: student4 [priv]
+5 D student4  6634  6628  0  80   0 - 39740 flush_ 13:35 ?        00:00:01 sshd: student4@pts/2
+0 S student4  6635  6634  0  80   0 - 28860 do_wai 13:35 pts/2    00:00:00 -bash
+4 S root      6795  1305  0  80   0 - 39717 poll_s 13:37 ?        00:00:00 sshd: student17 [priv]
+5 S student+  6817  6795  0  80   0 - 39936 poll_s 13:38 ?        00:00:00 sshd: student17@pts/4
+0 S student+  6818  6817  0  80   0 - 28860 n_tty_ 13:38 pts/4    00:00:00 -bash
+4 S root      7166  1305  0  80   0 - 39717 poll_s 13:41 ?        00:00:00 sshd: student20 [priv]
+4 S root      7169  1305  0  80   0 - 39717 poll_s 13:41 ?        00:00:00 sshd: student12 [priv]
+5 S student+  7179  7169  0  80   0 - 40095 poll_s 13:41 ?        00:00:00 sshd: student12@pts/5
+0 S student+  7180  7179  0  80   0 - 28860 n_tty_ 13:41 pts/5    00:00:00 -bash
+5 S student+  7203  7166  0  80   0 - 40021 poll_s 13:41 ?        00:00:01 sshd: student20@pts/6
+0 S student+  7204  7203  0  80   0 - 28860 n_tty_ 13:41 pts/6    00:00:00 -bash
+4 S root      7404  1305  0  80   0 - 39717 poll_s 13:43 ?        00:00:00 sshd: student19 [priv]
+5 S student+  7421  7404  0  80   0 - 39981 poll_s 13:43 ?        00:00:01 sshd: student19@pts/7
+0 S student+  7422  7421  0  80   0 - 28860 n_tty_ 13:43 pts/7    00:00:00 -bash
+4 S root      7498  1305  0  80   0 - 39717 poll_s 13:44 ?        00:00:00 sshd: student21 [priv]
+5 S student+  7503  7498  0  80   0 - 40367 poll_s 13:44 ?        00:00:00 sshd: student21@pts/8
+0 S student+  7504  7503  0  80   0 - 28860 n_tty_ 13:44 pts/8    00:00:00 -bash
+4 S root      7676  1305  0  80   0 - 39717 poll_s 13:46 ?        00:00:00 sshd: student10 [priv]
+5 S student+  7689  7676  0  80   0 - 39896 poll_s 13:46 ?        00:00:00 sshd: student10@pts/9
+0 S student+  7690  7689  0  80   0 - 28860 n_tty_ 13:46 pts/9    00:00:00 -bash
+4 S root      7822  1305  0  80   0 - 39717 poll_s 13:47 ?        00:00:00 sshd: student9 [priv]
+5 S student9  7839  7822  0  80   0 - 40047 poll_s 13:47 ?        00:00:00 sshd: student9@pts/10
+0 S student9  7840  7839  0  80   0 - 28860 n_tty_ 13:47 pts/10   00:00:00 -bash
+4 S root      8402  1305  0  80   0 - 39717 poll_s 13:51 ?        00:00:00 sshd: student7 [priv]
+5 S student7  8437  8402  0  80   0 - 39717 poll_s 13:51 ?        00:00:00 sshd: student7@pts/11
+0 S student7  8438  8437  0  80   0 - 28860 n_tty_ 13:51 pts/11   00:00:00 -bash
+4 S root      8545  1305  0  80   0 - 39717 poll_s 13:52 ?        00:00:00 sshd: student15 [priv]
+5 S student+  8552  8545  0  80   0 - 39750 poll_s 13:52 ?        00:00:00 sshd: student15@pts/12
+0 S student+  8553  8552  0  80   0 - 28892 n_tty_ 13:52 pts/12   00:00:00 -bash
+4 S root      9047  1305  0  80   0 - 39717 poll_s 13:56 ?        00:00:00 sshd: student18 [priv]
+5 S student+  9054  9047  0  80   0 - 39752 poll_s 13:56 ?        00:00:00 sshd: student18@pts/13
+0 S student+  9055  9054  0  80   0 - 28860 n_tty_ 13:56 pts/13   00:00:00 -bash
+4 S root      9530  1305  0  80   0 - 39717 poll_s 14:01 ?        00:00:00 sshd: student13 [priv]
+5 S student+  9536  9530  0  80   0 - 39750 poll_s 14:01 ?        00:00:00 sshd: student13@pts/14
+0 S student+  9537  9536  0  80   0 - 28860 n_tty_ 14:01 pts/14   00:00:00 -bash
+4 S root      9706  1305  0  80   0 - 39717 poll_s 14:03 ?        00:00:00 sshd: student11 [priv]
+5 S student+  9716  9706  0  80   0 - 39783 poll_s 14:03 ?        00:00:00 sshd: student11@pts/15
+0 S student+  9717  9716  0  80   0 - 28893 n_tty_ 14:03 pts/15   00:00:00 -bash
+4 S root      9889  1305  0  80   0 - 39717 poll_s 14:05 ?        00:00:00 sshd: student6 [priv]
+5 S student6  9897  9889  0  80   0 - 39717 poll_s 14:05 ?        00:00:00 sshd: student6@pts/16
+0 S student6  9898  9897  0  80   0 - 28860 n_tty_ 14:05 pts/16   00:00:00 -bash
+4 S root      9920  1305  0  80   0 - 39717 poll_s 14:05 ?        00:00:00 sshd: student16 [priv]
+5 S student+  9932  9920  0  80   0 - 39717 poll_s 14:05 ?        00:00:00 sshd: student16@pts/17
+0 S student+  9933  9932  0  80   0 - 28860 n_tty_ 14:05 pts/17   00:00:00 -bash
+4 S root     10673  1305  0  80   0 - 39717 poll_s 14:11 ?        00:00:00 sshd: student2 [priv]
+5 S student2 10722 10673  0  80   0 - 39748 poll_s 14:12 ?        00:00:00 sshd: student2@pts/18
+0 S student2 10723 10722  0  80   0 - 28860 n_tty_ 14:12 pts/18   00:00:00 -bash
+4 S root     12216  1305  0  80   0 - 39717 poll_s 14:36 ?        00:00:00 sshd: student5 [priv]
+5 S student5 12222 12216  0  80   0 - 39799 poll_s 14:36 ?        00:00:01 sshd: student5@pts/19
+0 S student5 12223 12222  0  80   0 - 28860 n_tty_ 14:36 pts/19   00:00:00 -bash
+4 S root     12278  1305  0  80   0 - 39717 poll_s 14:37 ?        00:00:00 sshd: student14 [priv]
+5 S student+ 12292 12278  0  80   0 - 39867 poll_s 14:37 ?        00:00:00 sshd: student14@pts/20
+0 S student+ 12293 12292  0  80   0 - 28860 n_tty_ 14:37 pts/20   00:00:00 -bash
+1 R root     13068     2  0  80   0 -     0 ?      14:50 ?        00:00:00 [kworker/3:0]
+1 S root     13681     2  0  80   0 -     0 worker 15:01 ?        00:00:00 [kworker/3:1]
+1 S root     16587     2  0  80   0 -     0 worker 16:01 ?        00:00:00 [kworker/1:0]
+4 S postfix  16922  1317  0  80   0 - 22439 ep_pol 16:07 ?        00:00:00 pickup -l -t unix -u
+1 S root     17238     2  0  80   0 -     0 worker 16:14 ?        00:00:00 [kworker/1:2]
+1 S root     17540     2  0  80   0 -     0 worker 16:20 ?        00:00:00 [kworker/1:1]
+0 R student4 17779  6635  0  80   0 - 38840 -      16:25 pts/2    00:00:00 ps -elf
+1 S root     32236     2  0  80   0 -     0 worker 11:25 ?        00:00:00 [kworker/2:3]
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ 
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ netstat -lptn
+(No info could be read for "-p": geteuid()=1004 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22012           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::22012                :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ ls -latr /var/log
+total 1580
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root      267 Feb 11 15:52 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root       23 Feb 11 15:52 [38;5;27mtuned[0m
+-rw-------.  1 root   root      116 Mar  7 13:14 yum.log
+drwx------.  2 root   root       42 May 11 14:15 [38;5;27maudit[0m
+-rw-r--r--.  1 root   root    34785 Jun  4 02:29 dmesg.old
+-rw-r--r--.  1 root   root    33669 Jun 18 01:01 dmesg
+-rw-r--r--.  1 root   root      773 Jun 18 01:01 boot.log
+-rw-------.  1 root   root   341512 Jun 18 01:01 cloud-init.log
+-rw-------.  1 root   utmp        0 Jul  1 03:26 btmp-20220801
+-rw-------.  1 root   root        0 Jul 10 03:28 spooler-20220717
+-rw-------.  1 root   root        0 Jul 10 03:28 secure-20220717
+-rw-------.  1 root   root        0 Jul 10 03:28 maillog-20220717
+-rw-------.  1 root   root    50282 Jul 17 03:01 messages-20220717
+-rw-r--r--.  1 root   root    53077 Jul 17 03:18 cron-20220717
+-rw-------.  1 root   root        0 Jul 17 03:18 spooler-20220724
+-rw-------.  1 root   root        0 Jul 17 03:18 secure-20220724
+-rw-------.  1 root   root        0 Jul 17 03:18 maillog-20220724
+-rw-------.  1 root   root    50920 Jul 24 03:01 messages-20220724
+-rw-r--r--.  1 root   root    53593 Jul 24 03:10 cron-20220724
+-rw-------.  1 root   root        0 Jul 24 03:10 spooler-20220731
+-rw-------.  1 root   root        0 Jul 24 03:10 secure-20220731
+-rw-------.  1 root   root        0 Jul 24 03:10 maillog-20220731
+-rw-------.  1 root   root    50624 Jul 31 03:01 messages-20220731
+-rw-r--r--.  1 root   root    53076 Jul 31 03:15 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:15 spooler-20220807
+-rw-------.  1 root   root        0 Jul 31 03:15 secure-20220807
+-rw-------.  1 root   root        0 Jul 31 03:15 maillog-20220807
+-rw-------.  1 root   root    50246 Aug  7 03:01 messages-20220807
+-rw-r--r--.  1 root   root    53077 Aug  7 03:36 cron-20220807
+-rw-------.  1 root   root        0 Aug  7 03:36 spooler
+-rw-------.  1 root   root        0 Aug  7 03:36 maillog
+drwxr-xr-x.  8 root   root     4096 Aug  7 03:36 [38;5;27m.[0m
+-rw-------.  1 root   utmp     1920 Aug 10 15:15 btmp
+-rw-rw-r--.  1 root   utmp   178560 Aug 11 14:37 wtmp
+-rw-r--r--.  1 root   root   299008 Aug 11 14:37 lastlog
+-rw-r--r--.  1 root   root    34167 Aug 11 16:01 cron
+-rw-------.  1 root   root    53020 Aug 11 16:01 messages
+-rw-------.  1 root   root   457606 Aug 11 16:20 secure
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r--. 1 root   root                 42 Aug 11 14:36 /run/systemd/system/user-1005.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 11 14:36 /run/systemd/system/user-1005.slice
+-rw-r--r--. 1 root   root                 43 Aug 11 14:36 /run/systemd/system/user-1005.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 11 14:36 /run/systemd/system/user-1005.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 11 14:36 /run/systemd/system/user-1005.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 30 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 49 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 43 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 17 Aug 11 14:36 /run/systemd/system/session-1361.scope
+-rw-r--r--. 1 root   root                 26 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 11 14:36 /run/systemd/system/session-1361.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                264 Aug 11 14:36 /run/systemd/users/1005
+-rw-r--r--. 1 root   root                303 Aug 11 14:36 /run/systemd/sessions/1361
+-rw-r--r--. 1 root   root                 43 Aug 11 14:37 /run/systemd/system/user-1014.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 11 14:37 /run/systemd/system/user-1014.slice
+-rw-r--r--. 1 root   root                 43 Aug 11 14:37 /run/systemd/system/user-1014.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 11 14:37 /run/systemd/system/user-1014.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 11 14:37 /run/systemd/system/user-1014.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 30 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 17 Aug 11 14:37 /run/systemd/system/session-1362.scope
+-rw-r--r--. 1 root   root                 26 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                 50 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 43 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 11 14:37 /run/systemd/system/session-1362.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                265 Aug 11 14:37 /run/systemd/users/1014
+-rw-r--r--. 1 root   root                304 Aug 11 14:37 /run/systemd/sessions/1362
+-rw-rw-r--. 1 root   utmp             178560 Aug 11 14:37 /var/log/wtmp
+-rw-r--r--. 1 root   root             299008 Aug 11 14:37 /var/log/lastlog
+-rw-rw-r--. 1 root   utmp               9600 Aug 11 14:37 /run/utmp
+-rw-r--r--. 1 root   root              34167 Aug 11 16:01 /var/log/cron
+-rw-------. 1 root   root              53020 Aug 11 16:01 /var/log/messages
+-rw-r--r--. 1 chrony chrony               42 Aug 11 16:14 /var/lib/chrony/drift
+-rw-------. 1 root   root                125 Aug 11 16:20 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root   root            7032892 Aug 11 16:25 /var/log/audit/audit.log
+-rw-------. 1 root   root             460236 Aug 11 16:25 /var/log/secure
+-rw-r-----+ 1 root   systemd-journal 8388608 Aug 11 16:25 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_11-08-22_DRYRUN04
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_11-08-22_DRYRUN04[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mexit[27m[39m[27m[32me[27m[32mx[27m[32mi[27m[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-11 17:14:45+00:00 [COMMAND_EXIT_CODE="0"]

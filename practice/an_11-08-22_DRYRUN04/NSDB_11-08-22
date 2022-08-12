@@ -1,0 +1,213 @@
+####NSDB####
+
+
+####T1####
+
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - rsyslog
+*PID - 1199
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.49.1.4:514 
+*Network connections - sending log to 10.49.1.4:514 
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.49.1.4
+*Recommendation - We are not aware of the 10.49.1.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-11 13:09:01.217273835 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[student4@dryruns-ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659967088.835:12226): pid=3921 uid=0 auid=1001 ses=1257 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/21 res=success'
+type=USER_ACCT msg=audit(1659967134.300:12227): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_CMD msg=audit(1659967134.301:12228): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/18 res=success'
+type=CRED_REFR msg=audit(1659967134.301:12229): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_START msg=audit(1659967134.303:12230): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+*****Privileged User Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*User logged in - root
+*Access Time - 14:28
+*Access Method - pts/21
+*Privileges - root
+*Activity - vi Sharknado_VII_Megalodownpour.txt
+*Recommendation - root user is actively on. I would recommend disconnecting as soon as possible.
+*****End of Report*****
+
+####T2####
+
+*****Privileged User Report*****
+*Target: <T2 and 10.145.117.10 >
+*User logged in - administrator
+*Access Time - 8/10/2022 12:25 PM
+*Access Method - console / local
+*Privileges - Administrator
+*Activity - possible monitoring via LogFusion, Internet
+*Recommendation - the admin was on very recently; however, he/she seems to be AFK at the moment.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T2 and 10.145.117.10 >
+*Name - LogFusion
+*PID - 6120
+*PPID - 1
+*User - administrator
+*Location of config file - Not in default location
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.logfusion.ca/
+*Description - LogFusion is a real-time monitoring solution and let's sysadmin and developers to see logs in a nice and neat format. Installation at C:\lf.exe.
+*Recommendation - LogFusion is currently running. However, we are not sure what logs it is collecting and where they are going. The logs are not stored in the default location. Further investigation is needed to determine its activity and purpose.
+*****End of Report*****
+
+*****Malware Report*****
+*Target: <T2 and 10.145.117.10 >
+*Name - Advapi via services.exe
+*Hash - d8e577bf078c45954f4531885478d5a9
+*PID - 0x280
+*PPID - N/A
+*User - SYSTEM
+*File type - Potentially an exe
+Supporting files - services.exe
+Associated Logs - N/A
+Network connection - N/A
+Identifiable text - Advapi
+Modules loaded by malware - possibly Advapi.exe
+*Persistence (mechanism and location) - services.exe
+*Documentation - https://superuser.com/questions/1574474/how-to-tell-which-service-or-task-caused-a-certain-4624-logon-event
+*Description - It is known that if the Service Control Manager ran the process to log on as SYSTEM via IIS Web Server. However, there is no evidence of IIS Web Server running on this device. There is a high chance that this is caused by a malware. Potentially a Trojan or a spyware.
+*Recommendation - This malware ran every couple minutes. The vetting commands of last 25 Security Events did not catch this. Recommend to extend the event log search to 100 to catch events like this.
+*****End of Report*****
+
+
+####T3####
+
+*****Security Product Report*****
+*Target: <T3 and 10.145.117.16 / 192.168.117.198 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-11 13:26:57.910309180 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T4####
+
+*****Security Product Report*****
+*Target: <T4 and  192.169.117.200 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-10 14:38:58.326398505 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as for collection and survey, SELinux will not impact our operation.
+*****End of Report*****
+
+
+*****Abnormal Logging Report*****
+*Target: <T4 and 192.169.117.200 >
+*Name - Process Accounting
+*PID - kernel
+*PPID - kernel
+*User - kernel
+*Location of files - /var/account/pacct
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.networkworld.com/article/3571465/managing-process-accounting-on-linux.html
+*Description - Process accounting is a method of recording and summarizing commands and processes.
+*Recommendation - It is capable of logging all of our commands. There is a method to delete the logs (not all) since we have access to sudo in T4.
+*****End of Report*****
+
+
+####T5####
+
+
+
+*****Abnormal Logging Report*****
+*Target: <T5 and 192.169.117.201 / 129.168.117.45 >
+*Name - rsyslog
+*PID - 1005
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.50.111.4:514 
+*Network connections - not evidently sending log to 10.50.111.4:514 (not seen on netstat) 
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.50.111.4
+*Recommendation - We are not aware of the 10.50.111.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+*****Abnormal Logging Report*****
+*Target: <T5 and 192.169.117.201 >
+*Name - tcpdump
+*PID - 2400
+*PPID - 1
+*User - root
+*Location of config file - /var/log/tcpdump.pcap
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.tcpdump.org/
+*Description - Root user ran the tcpdump on the loopback interface and saves the result to /var/log/tcpdump.pcap
+*Recommendation - tcpdump is actively capturing packets traffic from localhost to localhost. Further investigation needed to figure out the root user's purpose for doing this.
+*****End of Report*****
+
+####T7####
+
+
+*****Privileged User Report*****
+*Target: <T7 and 192.169.117.203 >
+*User logged in - Administrator
+*Access Time - 8/11/2022 11:49 AM
+*Access Method - console/local
+*Privileges - administrator
+*Activity - IDLE, running kasperksy
+*Recommendation - Admin is not a immediate threat since he/she is not active.
+*****End of Report*****
+
+
+*****Security Product Report*****
+*Target: <T7 and 192.169.117.203 >
+*Name - Kaspersky Lab
+*Version - 21.5
+*(WIN) Primary registry key - HKEY_LOCAL_MACHINE\software\KasperskyLab\
+Directory location of associated logs - installation directory C:\Program Files (x86)\Kaspersky Lab\Kaspersky 21.5\
+Timestamp of all associated log files - further investigation is needed to find the log location
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://support.kaspersky.com/help
+*Recommendation - Kaspersky AVP (antivirus) is actively running. Presence of kaspersky is a high threat to FUOPs in this device. Must proceed with caution.
+*****End of Report*****
