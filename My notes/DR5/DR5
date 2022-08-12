@@ -1,0 +1,149 @@
+
+
+DRYRUN05
+2022-08-12
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: TECHOP // Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Conduct TECHOP on T1. If successful, continue mission: Perform access assurance on Krasnovian 1st Artillery BDE network administrator workstations. For initial access targets (T8-T10),  perform device surveys.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change.
+
+Credentials: student#::password#
+
+Prior Approvals: TECHOP will be conducted as outlined in T1 action section. Hashes of any cleaned logs MUST be verified with the MC. Sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit.
+
+Scheme of Maneuver:
+>T1: 10.50.27.188
+->T2: 10.145.117.11
+-->T3: 10.145.117.15
+--->T4: 192.168.117.100
+-->T5: 10.145.117.16
+--->T6: 192.169.117.200
+--->T7: 192.169.117.204
+--->T8: 192.169.117.205
+--->T9: 192.169.117.206
+--->T10: 192.169.117.207
+
+Target Section:
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188//10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and device vetting. Conduct TECHOP (see below) and once complete, maneuver to the next target.
+TECHOP:
+The previous operator left artifacts (log entries) on T1 and they must be cleaned prior to any further action. Modify the secure and messages logs to remove entries meeting the below requirements. Logs were generated during DR3 on 10AUG2022. You may consult previous opnotes to identify access and disconnect times, though we know they should have occurred between 1200 and 2100 target time. You will remove logs for student# and only student# and only for that time frame. You will save your copies in /tmp as [secure|messages].# and [secure|messages].#.clean. Once your files have been cleaned, you will report to the MC who will have a senior verify the clean logs and replace the existing logs. You will not overwrite the existing logs. Once you have the all clear, you will delete your temporary log files.
+
+ 
+
+
+T2
+Hostname: SERVER1
+IP: 10.145.117.11
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T3
+Hostname: DryRuns-int_rtr1
+IP: 10.145.117.15
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T4
+Hostname: ADMIN1
+Local IP: 192.168.117.100
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Record any updates/changes since last access. Maneuver to the next target.
+
+T5
+Hostname: DryRuns-int_rtr2
+IP: 10.145.117.16
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T6
+Hostname: ADMIN2
+IP: 192.169.117.200
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Record any updates/changes since last access.
+
+T7
+Hostname: TARGETD
+IP: 192.169.117.204
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Find all “.txt” files on system. Reporting suggests there is a specific file of intelligence value on this system. Collect any additional files of interest identified by analyst.
+
+T8
+Hostname: TARGETE
+IP: 192.169.117.205
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey.
+
+T9
+Hostname: TARGETF
+IP: 192.169.117.206
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey.
+
+T10
+Hostname: TARGETG
+IP: 192.169.117.207
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and conduct device survey. Conclude operation.

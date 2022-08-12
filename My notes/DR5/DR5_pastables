@@ -1,0 +1,200 @@
+
+    Ping sweeps are not authorized against internal networks without MC authorization. Targeted pings against individual targets are still authorized.
+    SSH is not an approved access method for Fortinet firewall systems.
+    When reporting to your MC for pre-brief and IP verification, ensure to provide the date and mission name to more quickly resolve confusion in the event one person is looking at the wrong mission plan.
+
+10.145.117.16 && 192.169.117.198
+Processes:
+
+   sewerRAT rootkit
+
+PID/PPID:
+
+   Cannot be determind. Concealed from PS, and obfuscated when investigating PROC, but we know it has a PPID of 1
+
+User Context:
+
+   root
+
+Config file:
+
+   /.sewerRAT/rat.config 
+
+IP VERIFICATION
+DRYRUN05
+2022-08-12
+>T1: 10.50.27.188
+->T2: 10.145.117.11
+-->T3: 10.145.117.15
+--->T4: 192.168.117.100
+-->T5: 10.145.117.16
+--->T6: 192.169.117.200
+--->T7: 192.169.117.204
+--->T8: 192.169.117.205
+--->T9: 192.169.117.206
+--->T10: 192.169.117.207
+
+
+T1 >>Entry Router<<
+Hostname: EXT_RTR
+IP: 10.50.27.188//10.145.117.86
+MAC: fa:16:3e:91:7a:88
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22011
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.27.188 -p 22011
+password4
+<vetting>
+<conduct techop>
+Action: Perform SSH masquerade and device vetting. Conduct TECHOP (see below) and once complete, maneuver to the next target.
+###notify MC of the temp files but do not actual replace####
+
+sudo cp /var/log/secure /tmp/secure.4
+sudo cp /var/log/messages /tmp/messages.4
+secure.4.clean
+messages.4.clean
+sudo tail -n 100 /tmp/secure.4
+sudo grep 'Aug 10.*.student4' /tmp/secure.4
+sudo grep -wv 'Aug 10.*.student4' /tmp/secure.4 > /tmp/secure.4.clean
+md5sum /tmp/secure.4.clean
+rm /tmp/secure.4.clean
+
+sudo tail -n 100 /tmp/messages.4
+sudo grep -wv 'Aug 10.*.student4' /tmp/messages.4 > /tmp/messages.4.clean
+md5sum /tmp/messages.4.clean
+
+sudo rm /tmp/secure.4
+sudo rm /tmp/messages.4
+
+T2
+Hostname: SERVER1
+IP: 10.145.117.11
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22012
+ssh -S /tmp/T1 bad -O forward -L 2222:10.145.117.11:22012
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and maneuver to the next target.
+   
+T3
+Hostname: DryRuns-int_rtr1
+IP: 10.145.117.15
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+ssh -S /tmp/T2 bad -O forward -L 3333:10.145.117.15:22012
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and maneuver to the next target.
+DISCONNECT
+
+T4
+Hostname: ADMIN1
+Local IP: 192.168.117.100
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.117.100:22013
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey. Record any updates/changes since last access. Maneuver to the next target.
+<DISCONNECT T4 and T3!!!!!!!>
+
+
+
+#################CANNOT CONTINUE OP################################################################################
+<CONNECT T2 -> T5>
+T5
+Hostname: DryRuns-int_rtr2
+IP: 10.145.117.16
+OS: CentOS 7
+Creds: student#::password#
+Last Known SSH Port: 22012
+ssh -S /tmp/T2 bad -O forward -L 5555:10.145.117.16:22012
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4  
+Action: Perform SSH masquerade and maneuver to the next target.
+
+
+T6
+Hostname: ADMIN2
+IP: 192.169.117.200
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T5 bad -O forward -L 6666:192.169.117.200:22013
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey. Record any updates/changes since last access.
+DISCONNECT FROM T6 before T7!!!!!!
+
+T7
+Hostname: TARGETD
+IP: 192.169.117.204
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T5 bad -O forward -L 7777:192.169.117.204:22013
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey. Find all “.txt” files on system. Reporting suggests there is a specific file of intelligence value on this system. @@@Collect any additional files of interest identified by analyst.
+<report hashes>
+ask for additional files
+DISCONNECT FROM T7 before T8!!!!!!
+
+
+T8
+Hostname: TARGETE
+IP: 192.169.117.205
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T5 bad -O forward -L 8888:192.169.117.205:22013
+ssh -MS /tmp/T8 -p 8888 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey.
+DISCONNECT FROM T8 before T9!!!!!!
+
+
+T9
+Hostname: TARGETF
+IP: 192.169.117.206
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T5 bad -O forward -L 9999:192.169.117.206:22013
+ssh -MS /tmp/T9 -p 9999 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey.
+DISCONNECT FROM T9 before T10!!!!!!
+
+
+T10
+Hostname: TARGETG
+IP: 192.169.117.207
+OS: Unknown
+Creds: student#::password#
+Last Known SSH Port: 22013
+ssh -S /tmp/T5 bad -O forward -L 1111:192.169.117.207:22013
+ssh -MS /tmp/T10 -p 1111 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@localhost
+password4
+Action: Perform SSH masquerade and @@conduct device survey. Conclude operation.
+DISCONNECT T10 -> T5
+
+
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: DRYRUN05
+
+MC: mc2
+
+Analyst: analyst1
+
+Description: DRYRUN05 is a C-ISR mission with TECHOP. On T1, we cleaned logs from 10AUG22 during DRYRUN03. We redirected to T2. On T2, we redirected to T3. On T3, we redirected to T4. On T4, we could not survey device due to a root user presence. Thus, we concluded the operations since T5 was ON HOLD, and we could not redirect to T6-T10.
+
+Non-Standard: Operator accessed on-hold target 10.145.117.16. The operator connected via ssh and disconnected immediately after realizing it was an on-hold target. Connect and disconnect logs are present on T5. 
+

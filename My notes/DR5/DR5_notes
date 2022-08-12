@@ -1,0 +1,17 @@
+T1
+rsyslog
+
+
+T2
+rsyslog 
+http
+selinux
+
+T3 selinux
+
+T4
+lynis in .
+firetools in /root
+/root/.Suspicious_ssh_connections.swp
+selinux
+sudo ls -latr /root/firetools

@@ -1,0 +1,183 @@
+####NSDB DR5####
+
+12-08-22
+
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - rsyslog
+*PID - 1199
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.49.1.4:514 
+*Network connections - sending log to 10.49.1.4:514 
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.49.1.4
+*Recommendation - We are not aware of the 10.49.1.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.27.188 / 10.145.117.86 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-12 15:09:01.217273835 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[student4@dryruns-ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659967088.835:12226): pid=3921 uid=0 auid=1001 ses=1257 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/21 res=success'
+type=USER_ACCT msg=audit(1659967134.300:12227): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_CMD msg=audit(1659967134.301:12228): pid=3962 uid=1004 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/18 res=success'
+type=CRED_REFR msg=audit(1659967134.301:12229): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+type=USER_START msg=audit(1659967134.303:12230): pid=3962 uid=0 auid=1004 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/18 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T2####
+
+####T2####
+*****Abnormal Logging Report*****
+*Target: <T2 and 10.145.117.11 >
+*Name - rsyslog
+*PID - 1061
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.49.1.4:514
+*Network connections - sending log to 10.49.1.4:514 (hostname is upsidedown)
+*Documentation - https://www.rsyslog.com/
+*Description - T2 is sending logs to a remote host 10.49.1.4
+*Recommendation - We are not aware of the 10.49.1.0 network. If log cleaning is neccesary, this new network must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T2 and 10.145.117.11 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-12 16:21:37.591314686 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - 
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing more. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T3####
+
+*****Security Product Report*****
+*Target: <T3 and 10.145.117.15 / 192.168.117.98 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-09 13:32:50.002364966 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+
+####T4####
+
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.117.100 >
+*Name - Lynis
+*Version - Lynis 3.0.7
+*(NIX) Config file or install directory - /usr/bin/lynis
+Directory location of associated logs - /var/log/lynis.log /home/student4/lynis.log
+Timestamp of all associated log files - Modify: 2022-08-12 16:00:32.926070216 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - yes
+2022-08-08 16:00:32 Checking permissions of /usr/share/lynis/include/tool_tips
+2022-08-08 16:00:32 File permissions are OK
+2022-08-08 16:00:32 Tool tips: enabled
+2022-08-08 16:00:32 ================================================================================
+2022-08-08 16:00:32 Tests performed:     243
+2022-08-08 16:00:32 Total tests:         442
+2022-08-08 16:00:32 Active plugins:      0
+2022-08-08 16:00:32 Total plugins:       0
+2022-08-08 16:00:32 ================================================================================
+2022-08-08 16:00:32 Lynis 3.0.7
+2022-08-08 16:00:32 2007-2021, CISOfy - https://cisofy.com/lynis/
+2022-08-08 16:00:32 Enterprise support available (compliance, plugins, interface and tools)
+2022-08-08 16:00:32 Program ended successfully
+2022-08-08 16:00:32 ================================================================================
+2022-08-08 16:00:32 PID file removed (/var/run/lynis.pid)
+2022-08-08 16:00:32 Temporary files:  /tmp/lynis.IjcLqqzVKn /tmp/lynis.aWKlVGirOr /tmp/lynis.pwvOwqOdKT /tmp/lynis.sZHf4MpD8K
+2022-08-08 16:00:32 Action: removing temporary file /tmp/lynis.IjcLqqzVKn
+2022-08-08 16:00:32 Info: temporary file /tmp/lynis.aWKlVGirOr was already removed
+2022-08-08 16:00:32 Info: temporary file /tmp/lynis.pwvOwqOdKT was already removed
+2022-08-08 16:00:32 Action: removing temporary file /tmp/lynis.sZHf4MpD8K
+2022-08-08 16:00:32 Lynis ended successfully.
+*Documentation - https://cisofy.com/lynis/
+*Recommendation - Lynis is configured to run on start from crontab. It is a compliance/hardening software that automatically detect insecure configurations and hardens them. This narrows down the room for vulnerabilities on the system Since T4 is only being used as a redirector, low risk.
+*****End of Report*****
+
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.117.100 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-08 16:19:44.510988641 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+student4@dryruns-server1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1659971052.850:11217): pid=31030 uid=0 auid=1013 ses=1255 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1659971055.026:11218): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1659971055.026:11219): pid=31033 uid=1004 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1659971055.027:11220): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1659971055.029:11221): pid=31033 uid=0 auid=1004 ses=1249 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing more. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.117.100 >
+*Name - Firetool/firejail-ui
+*Version - 9.9.67
+*(NIX) Config file or install directory - /usr/bin/firetools /root/firetools
+Directory location of associated logs - no logging provided 
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no, it is not meant for logging
+*Documentation - https://github.com/netblue30/firetools
+*Recommendation - Firetools is used to create a sandbox to run untrusted application. Currently, there is no evidence of it running. However, the admin has installed/made firetool, shown via bash_history.
+*****End of Report*****
+
+*****Privileged User Report*****
+*Target:  <T4 and 192.168.117.100 >
+*User logged in - root
+*Access Time - Fri Aug 12 16:54:39 +0000 2022
+*Access Method - pts/1
+*Privileges - root
+*Activity - /root/.Suspicious_ssh_connections.swp
+*Recommendation - The root user logged in very recently. He/she seems to be editing a text file. T4 will be disconnected after survey. But is Survey still good to go with the root user on??
+*****End of Report*****
+
+

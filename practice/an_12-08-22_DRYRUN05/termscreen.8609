@@ -1,0 +1,36 @@
+Script started on 2022-08-12 14:59:08+00:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="165" LINES="39"]
+                                                                                                                                                                     ]0;root@kali: ~/Downloads/an_12-08-22_DRYRUN05[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_12-08-22_DRYRUN05[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T2[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 5555:10.145.117.16:22012[27m[57D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m2[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m5[27m5[27m5[27m5[27m:[27m1[27m0[27m.[27m1[27m4[27m5[27m.[27m1[27m1[27m7[27m.[27m1[27m6[27m:[27m2[27m2[27m0[27m1[27m2[?1l>[?2004l
+                                                                                                                                                                     ]0;root@kali: ~/Downloads/an_12-08-22_DRYRUN05
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_12-08-22_DRYRUN05[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T5 [7m[35m-p[39m[7m 5555 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null student4@localhost[27m[102D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m5[27m [27m[35m-[27m[35mp[39m[27m [27m5[27m5[27m5[27m5[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27ms[27mt[27mu[27md[27me[27mn[27mt[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:5555' (ED25519) to the list of known hosts.
+student4@localhost's password: 
+Last login: Thu Aug 11 13:35:53 2022 from 10.145.117.10
+]0;student4@dryruns-int-rtr2:~[?1034h[student4@dryruns-int-rtr2 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:09:40:00 brd ff:ff:ff:ff:ff:ff
+    inet 10.145.117.16/24 brd 10.145.117.255 scope global dynamic eth0
+       valid_lft 83881sec preferred_lft 83881sec
+    inet6 fe80::f816:3eff:fe09:4000/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:db:41:dd brd ff:ff:ff:ff:ff:ff
+    inet 192.169.117.198/24 brd 192.169.117.255 scope global dynamic eth1
+       valid_lft 82981sec preferred_lft 82981sec
+    inet6 fe80::f816:3eff:fedb:41dd/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;student4@dryruns-int-rtr2:~[student4@dryruns-int-rtr2 ~]$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                                                     ]0;root@kali: ~/Downloads/an_12-08-22_DRYRUN05
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_12-08-22_DRYRUN05[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mexit[27m[39m[27m[32me[27m[32mx[27m[32mi[27m[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-12 17:28:08+00:00 [COMMAND_EXIT_CODE="0"]
