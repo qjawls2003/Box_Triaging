@@ -1,0 +1,1852 @@
+####Notes for 16-08-22####
+
+Start: 1300Z
+End: 1900Z
+
+Today's Path
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+--->T4: ADMIN1
+---->T5: Suspected mail server?
+---->T6: Suspected mail server?
+
+Known Creds
+engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::5gftE8DCc8 // user#::P455w0rd
+
+
+=========================
+T1: 10.50.29.166
+=========================
+X-----------------------
+
+2022-08-16 13:02:24-- ON
+
+2022-08-16 13:02:26-- start vetting
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 47991sec preferred_lft 47991sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1176     1  0  80   0 - 62863 poll_s Jun18 ?        00:06:31 /usr/sbin/rsyslogd -n
+5 S root       669     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+tcp        0      1 10.20.169.33:35896      10.50.22.142:514        SYN_SENT    1176/rsyslogd       
+
+[engineer4@ext-rtr ~]$ date; date -u
+Tue Aug 16 13:04:56 UTC 2022
+Tue Aug 16 13:04:56 UTC 2022
+
+[engineer4@ext-rtr ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service        cloud-final.service       crond.service       nfs-client.target  rhel-configure.service  sshd.service
+chronyd.service       cloud-init-local.service  irqbalance.service  postfix.service    rpcbind.service         tuned.service
+cloud-config.service  cloud-init.service        kdump.service       remote-fs.target   rsyslog.service
+
+###remote rsyslog still here####
+*.* @@10.50.22.142:514
+
+
+####me####
+-rw-rw-r--. 1 root utmp              316416 Aug 16 13:04 /var/log/wtmp
+-rw-r--r--. 1 root root              299300 Aug 16 13:04 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                9600 Aug 16 13:04 /run/utmp
+-rw-------. 1 root root               25597 Aug 16 13:06 /var/log/messages
+-rw-------. 1 root root             5211581 Aug 16 13:07 /var/log/audit/audit.log
+-rw-r-----+ 1 root systemd-journal 16777216 Aug 16 13:07 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root                 125 Aug 16 13:07 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root              622357 Aug 16 13:07 /var/log/secure
+
+###SELinux still here###
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-16 13:10:16-- done vetting
+
+
+2022-08-16 18:25:18-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.122
+=========================
+X-----------------------
+
+2022-08-16 13:13:26-- ON
+
+2022-08-16 13:13:28-- start vetting
+
+caisson4@STORAGE1 C:\Users\caisson4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : STORAGE1
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-54-0A-D5
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7954:fd79:4621:888f%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.169.122(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 18, 2022 1:01:32 AM
+   Lease Expires . . . . . . . . . . : Wednesday, August 17, 2022 7:10:54 AM
+   Default Gateway . . . . . . . . . : 10.20.169.1
+   DHCP Server . . . . . . . . . . . : 10.20.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-42-FA-16-3E-54-0A-D5
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+
+caisson4@STORAGE1 C:\Users\caisson4>date /t 
+Tue 08/16/2022                       
+                                     
+caisson4@STORAGE1 C:\Users\caisson4>time /t 
+01:14 PM 
+
+caisson4@STORAGE1 C:\Users\caisson4>certutil -hashfile C:\windows\System32\msdtc.exe MD5
+MD5 hash of C:\windows\System32\msdtc.exe:
+7215ce218bdead41b708f098258cf972
+CertUtil: -hashfile command completed successfully.
+
+
+  TCP    10.20.169.122:61266    10.20.169.238:52230    ESTABLISHED     2640 
+caisson4@STORAGE1 C:\Users\caisson4>dir /o:d /t:w c:\windows\temp 
+ Volume in drive C is OS 
+ Volume Serial Number is D8EC-9581
+
+ Directory of c:\windows\temp
+
+02/11/2022  07:50 PM    <DIR>          tmpgcc3r9sa
+06/18/2022  01:01 AM    <DIR>          DiagTrack_alternativeTrace
+06/18/2022  01:01 AM    <DIR>          DiagTrack_aot
+06/18/2022  01:01 AM    <DIR>          DiagTrack_diag
+06/18/2022  01:01 AM    <DIR>          DiagTrack_miniTrace
+06/18/2022  01:02 AM               102 silconfig.log
+
+2022-08-16 13:43:17-- done vetting
+
+2022-08-16 18:24:59-- OFF
+
+
+
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.238
+=========================
+X-----------------------
+
+
+2022-08-16 13:47:56-- ON
+
+2022-08-16 13:47:58-- start vetting
+
+NOC_Admin4@Vyos1:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:6c:c0:57 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.238/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe6c:c057/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:90:b0:db brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.206/24 brd 192.168.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe90:b0db/64 scope link 
+       valid_lft forever preferred_lft forever
+
+1 S root      2290     1  0  80   0 - 20918 ?      Jun18 ?        00:00:00 /usr/bin/perl /opt/vyatta/sbin/vyos-intfwatchd
+5 S root      1998     1  0  80   0 - 29938 ?      Jun18 ?        00:00:28 /usr/sbin/rsyslogd -c4
+
+tcp        0      0 192.168.169.206:58530   192.168.169.43:33521    ESTABLISHED 12777/0         
+tcp        0      0 192.168.169.206:33782   192.168.169.43:33521    ESTABLISHED 12875/1         
+
+NOC_Admin4@Vyos1:~$ date; date -u
+Tue Aug 16 13:49:37 UTC 2022
+Tue Aug 16 13:49:37 UTC 2022
+
+2022-08-16 13:59:55-- done vetting
+
+2022-08-16 18:21:29-- OFF
+
+
+
+
+
+------------------------X
+=========================
+
+=========================
+T4:
+=========================
+X-----------------------
+
+2022-08-16 14:00:08-- ON
+
+2022-08-16 14:00:10-- start vetting
+
+[user4@desktop-admin1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:05:2c:d6 brd ff:ff:ff:ff:ff:ff
+    inet 10.123.169.5/24 brd 10.123.169.255 scope global dynamic eth0
+       valid_lft 76456sec preferred_lft 76456sec
+    inet6 fe80::f816:3eff:fe05:2cd6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:cd:5d:1c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.43/24 brd 192.168.169.255 scope global dynamic eth1
+       valid_lft 79244sec preferred_lft 79244sec
+    inet6 fe80::f816:3eff:fecd:5d1c/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+
+[user4@desktop-admin1 ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root   root    6 Aug  8  2019 .X11-unix
+drwxrwxrwt.  2 root   root    6 Aug  8  2019 .font-unix
+drwxrwxrwt.  2 root   root    6 Aug  8  2019 .XIM-unix
+drwxrwxrwt.  2 root   root    6 Aug  8  2019 .Test-unix
+drwxrwxrwt.  2 root   root    6 Aug  8  2019 .ICE-unix
+dr-xr-xr-x. 17 root   root  224 Aug  8  2019 ..
+drwxr-xr-x.  6 user23 wheel  58 Apr 13 18:59 firetools
+
+[user4@desktop-admin1 ~]$ ls -latr .
+total 20
+-rw-r--r--.  1 user4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 user4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 user4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 26 root  root  4096 Feb 11  2022 ..
+-rw-r-----.  1 user4 wheel    0 Mar 15 15:28 lynis.log
+-rw-r-----.  1 user4 wheel  603 Mar 16 14:14 lynis-report.dat
+
+
+
+[user4@desktop-admin1 ~]$ sudo ls -latr /root
+total 48
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11  2022 .ssh
+drwxr-----.  3 root root   19 Feb 12  2022 .pki
+drwxr-xr-x.  6 root root 4096 May 16 12:22 firetools
+
+4 S root      1183     1  0  80   0 - 68942 poll_s Jun18 ?        00:06:02 /usr/sbin/rsyslogd -n
+5 S root       585     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:06 /sbin/auditd
+
+[user4@desktop-admin1 ~]$ date; date -u
+Tue Aug 16 14:07:34 UTC 2022
+Tue Aug 16 14:07:34 UTC 2022
+
+[user4@desktop-admin1 ~]$ uname -a
+Linux desktop-admin1 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+-rw-r-----.  1 root   root    40936 Aug 16 14:00 lynis-report.dat
+-rw-r-----.  1 root   root   292195 Aug 16 14:00 lynis.log
+-rw-------.  1 root   root    81737 Aug 16 14:00 maillog
+-rw-r--r--.  1 root   root    22844 Aug 16 14:01 cron
+-rw-------.  1 root   root    32623 Aug 16 14:06 messages
+-rw-rw-r--.  1 root   utmp    97152 Aug 16 14:06 wtmp
+-rw-r--r--.  1 root   root   299300 Aug 16 14:06 lastlog
+-rw-------.  1 root   root    49343 Aug 16 14:07 secure
+
+/var/log/eset:
+total 4
+drwxr-xr-x. 3 root root   33 Apr 12 18:51 .
+drwxr-xr-x. 2 root root   36 Apr 12 18:51 RemoteAdministrator
+drwxr-xr-x. 9 root root 4096 Aug 14 03:49 ..
+
+[user4@desktop-admin1 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+0 * * * * root    /bin/lynis audit system
+
+-rw-------. 1 root root               33260 Aug 16 14:11 /var/log/messages
+-rw-r--r--. 1 root root                 261 Aug 16 14:11 /run/systemd/users/1003
+-rw-r--r--. 1 root root                 300 Aug 16 14:11 /run/systemd/sessions/2868
+-rw-rw-r--. 1 root utmp               97536 Aug 16 14:11 /var/log/wtmp
+-rw-r--r--. 1 root root              299300 Aug 16 14:11 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                5376 Aug 16 14:11 /run/utmp
+-rw-------. 1 root root             5206997 Aug 16 14:11 /var/log/audit/audit.log
+-rw-r-----+ 1 root systemd-journal 25165824 Aug 16 14:11 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root               60539 Aug 16 14:11 /var/log/secure
+-rw-------. 1 root root                 125 Aug 16 14:11 /var/lib/rsyslog/imjournal.state
+
+[user4@desktop-admin1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-16 14:27:15-- done vetting
+
+2022-08-16 14:27:25-- getting more info
+
+2022-08-16 14:41:32-- scanning
+
+? (192.168.169.14) at <incomplete> on eth1
+? (192.168.169.7) at <incomplete> on eth1
+? (10.123.169.35) at fa:16:3e:15:05:1e [ether] on eth0
+? (192.168.169.4) at <incomplete> on eth1
+? (10.123.169.3) at fa:16:3e:20:94:33 [ether] on eth0
+? (192.168.169.111) at fa:16:3e:0f:32:c9 [ether] on eth1
+gateway (192.168.169.1) at fa:16:3e:4b:b6:23 [ether] on eth1
+? (192.168.169.12) at fa:16:3e:ee:dc:c4 [ether] on eth1
+? (192.168.169.5) at fa:16:3e:b9:3d:d6 [ether] on eth1
+? (192.168.169.23) at <incomplete> on eth1
+? (192.168.169.16) at fa:16:3e:69:4f:4e [ether] on eth1
+? (10.123.169.2) at fa:16:3e:98:92:10 [ether] on eth0
+? (192.168.169.220) at fa:16:3e:74:33:3e [ether] on eth1
+? (192.168.169.20) at <incomplete> on eth1
+? (192.168.169.2) at fa:16:3e:0c:35:a8 [ether] on eth1
+? (10.123.169.30) at fa:16:3e:08:8e:66 [ether] on eth0
+? (192.168.169.13) at fa:16:3e:28:82:36 [ether] on eth1
+? (192.168.169.206) at fa:16:3e:90:b0:db [ether] on eth1
+? (192.168.169.17) at <incomplete> on eth1
+? (192.168.169.10) at <incomplete> on eth1
+? (192.168.169.113) at fa:16:3e:15:4b:a0 [ether] on eth1
+? (192.168.169.3) at fa:16:3e:36:cd:d0 [ether] on eth1
+
+###new network####
+? (10.123.169.35) at fa:16:3e:15:05:1e [ether] on eth0
+? (10.123.169.3) at fa:16:3e:20:94:33 [ether] on eth0
+? (10.123.169.2) at fa:16:3e:98:92:10 [ether] on eth0
+? (10.123.169.30) at fa:16:3e:08:8e:66 [ether] on eth0
+
+[user4@desktop-admin1 ~]$ for i in {1..50}; do sudo ping -c 1 -W 1 10.123.169.$i; done | grep 'bytes from'
+64 bytes from 10.123.169.1: icmp_seq=1 ttl=64 time=3.96 ms
+64 bytes from 10.123.169.2: icmp_seq=1 ttl=64 time=2.51 ms
+64 bytes from 10.123.169.3: icmp_seq=1 ttl=64 time=4.80 ms
+64 bytes from 10.123.169.5: icmp_seq=1 ttl=64 time=0.082 ms
+64 bytes from 10.123.169.30: icmp_seq=1 ttl=128 time=2.74 ms
+64 bytes from 10.123.169.35: icmp_seq=1 ttl=64 time=1.94 ms
+
+Host: 10.123.169.5 ()   Ports: 33125/open/tcp/////, 33215/open/tcp/////, 33251/open/tcp/////, 33521/open/tcp/////       Ignored State: closed (996)
+Host: 10.123.169.30 ()  Ports: 33502/open/tcp/////      Ignored State: closed (999)
+Host: 10.123.169.35 ()  Ports: 33502/open/tcp/////      Ignored State: closed (999)
+
+proxychains nc 10.123.169.30 33502
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.123.169.30:33502  ...  OK
+SSH-2.0-OpenSSH_for_Windows_8.1
+
+proxychains nc 10.123.169.35 33502
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.123.169.35:33502  ...  OK
+SSH-2.0-OpenSSH_7.4
+
+2022-08-16 18:20:01-- OFF
+
+------------------------X
+=========================
+
+=========================
+T5: 10.123.169.30
+=========================
+X-----------------------
+
+2022-08-16 15:06:06-- ON
+
+2022-08-16 15:06:08-- start vetting
+
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>ipconfig /all
+
+Windows IP Configuration                             
+                                                     
+   Host Name . . . . . . . . . . . . : DESKTOP-EMAIL1
+   Primary Dns Suffix  . . . . . . . :               
+   Node Type . . . . . . . . . . . . : Hybrid        
+   IP Routing Enabled. . . . . . . . : No    
+   WINS Proxy Enabled. . . . . . . . : No    
+   DNS Suffix Search List. . . . . . : vta   
+
+Ethernet adapter Ethernet:                                            
+                                                                      
+   Connection-specific DNS Suffix  . : vta                            
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-08-8E-66              
+   DHCP Enabled. . . . . . . . . . . : Yes                                    
+   Autoconfiguration Enabled . . . . : Yes                                    
+   Link-local IPv6 Address . . . . . : fe80::9cb4:ce7a:2ee6:c9ff%4(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.123.169.30(Preferred)               
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                          
+   Lease Obtained. . . . . . . . . . : Tuesday, August 9, 2022 8:46:35 PM       
+   Lease Expires . . . . . . . . . . : Wednesday, August 17, 2022 7:22:21 AM    
+   Default Gateway . . . . . . . . . : 10.123.169.1                             
+   DHCP Server . . . . . . . . . . . : 10.123.169.3                             
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-4D-FA-16-3E-08-8E-66
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled    
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>date /t         
+Tue 08/16/2022                      
+                                    
+user4@DESKTOP-EMAIL1 C:\Users\user4>time /t
+03:07 PM
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   8/16/2022 12:08 PM
+
+hMailAdmin.exe                1724 Console                    1     23,044 K Unknown         DESKTOP-EMAIL1\Administrator                            0:00:00 N
+hMailServer.exe               4120 Services                   0     20,128 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N
+MpCopyAccelerator.exe         5520 Services                   0      6,092 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N
+powershell.exe                 700 Console                    1     67,556 K Unknown         DESKTOP-EMAIL1\Administrator                            0:00:04 N
+MoUsoCoreWorker.exe           4380 Services                   0     30,164 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:32 N
+
+CommandLine="C:\Program Files (x86)\hMailServer\Bin\hMailAdmin.exe"
+CommandLine="C:\Program Files (x86)\hMailServer\Bin\hMailServer.exe" RunAsService
+CommandLine="C:\Program Files\WindowsApps\Microsoft.WindowsStore_11910.1002.5.0_x64__8wekyb3d8bbwe\WinStore.App.exe" -ServerName:App.AppXc75wvwned5vhz4xyxxecv
+gdjhdkgsdza.mca
+CommandLine="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+CommandLine=C:\Windows\System32\mousocoreworker.exe -Embedding
+CommandLine="C:\Program Files\Microsoft Update Health Tools\uhssvc.exe"
+
+###me###
+  TCP    10.123.169.30:33502    10.123.169.5:53686     ESTABLISHED     6216
+
+HKEY_LOCAL_MACHINE\software\Classes
+HKEY_LOCAL_MACHINE\software\Clients
+HKEY_LOCAL_MACHINE\software\Cloudbase Solutions
+HKEY_LOCAL_MACHINE\software\CVSM
+HKEY_LOCAL_MACHINE\software\DefaultUserEnvironment
+HKEY_LOCAL_MACHINE\software\Google
+HKEY_LOCAL_MACHINE\software\Intel
+HKEY_LOCAL_MACHINE\software\Macromedia
+HKEY_LOCAL_MACHINE\software\Microsoft
+HKEY_LOCAL_MACHINE\software\ODBC
+HKEY_LOCAL_MACHINE\software\OEM
+HKEY_LOCAL_MACHINE\software\OpenSSH
+HKEY_LOCAL_MACHINE\software\Partner
+HKEY_LOCAL_MACHINE\software\Policies
+HKEY_LOCAL_MACHINE\software\RegisteredApplications
+HKEY_LOCAL_MACHINE\software\Windows
+HKEY_LOCAL_MACHINE\software\WOW6432Node
+
+TaskName:                             \Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh
+TaskName:                             \Microsoft\Windows\BitLocker\BitLocker Encrypt All Drives
+
+ Directory of c:\
+
+12/07/2019  09:14 AM    <DIR>          PerfLogs
+02/11/2022  07:59 PM         4,112,976 hMailServer.exe
+
+08/16/2022  12:46 PM            13,739 SMARTSCREEN.EXE-4BF07096.pf
+
+
+PS C:\Users\user4> Get-MpComputerStatus
+
+
+AMEngineVersion                  : 1.1.19500.2
+AMProductVersion                 : 4.18.2205.7
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>certutil -hashfile c:\windows\system32\BitLockerDeviceEncryption.exe MD5
+MD5 hash of c:\windows\system32\BitLockerDeviceEncryption.exe:
+5887b5ca2ebf9b220bb509c0264e2961
+CertUtil: -hashfile command completed successfully.
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>certutil -hashfile c:\windows\system32\MoUsoCoreWorker.exe MD5
+MD5 hash of c:\windows\system32\MoUsoCoreWorker.exe:
+929c20d5b38c2b08ee5fd4da9a05a5cb
+CertUtil: -hashfile command completed successfully.
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>certutil -hashfile "C:\Program Files (x86)\hMailServer\Bin\hMailAdmin.exe" MD5
+MD5 hash of C:\Program Files (x86)\hMailServer\Bin\hMailAdmin.exe:
+3acb75f5cd8e3ffab7ffa42bb504837c
+CertUtil: -hashfile command completed successfully.
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>certutil -hashfile "C:\hMailServer.exe" MD5
+MD5 hash of C:\hMailServer.exe:
+0a7585129239412e4a7c16a7fec8b67a
+CertUtil: -hashfile command completed successfully.
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>certutil -hashfile "C:\Program Files (x86)\hMailServer\Bin\hMailServer.exe" MD5
+MD5 hash of C:\Program Files (x86)\hMailServer\Bin\hMailServer.exe:
+a0055cd9b16e2bf97dc596d8ee9134f7
+CertUtil: -hashfile command completed successfully.
+
+2022-08-16 16:22:33-- done vetting
+
+2022-08-16 16:22:38-- getting more info
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup"
+ Volume in drive C is OS
+ Volume Serial Number is A214-0667
+
+ Directory of C:\Program Files (x86)\hMailServer\Data\Workgroup
+
+02/11/2022  07:59 PM    <DIR>          ..
+02/11/2022  07:59 PM    <DIR>          .
+02/11/2022  07:59 PM    <DIR>          Air Defense
+02/11/2022  07:59 PM    <DIR>          Armored Cavalry
+02/11/2022  07:59 PM    <DIR>          Command Elements
+02/11/2022  07:59 PM    <DIR>          Cyber-Comms Detachment
+02/11/2022  07:59 PM    <DIR>          Ground Forces
+02/11/2022  07:59 PM    <DIR>          R&D
+02/11/2022  07:59 PM    <DIR>          Supply
+
+user4@DESKTOP-EMAIL1 C:\Users\user4>dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Database"
+ Volume in drive C is OS
+ Volume Serial Number is A214-0667
+
+ Directory of C:\Program Files (x86)\hMailServer\Database
+
+08/16/2022  12:52 PM    <DIR>          ..
+08/16/2022  12:52 PM    <DIR>          .
+08/16/2022  12:52 PM           610,304 hMailServer.sdf
+               1 File(s)        610,304 bytes
+               2 Dir(s)  13,205,327,872 bytes free
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Air Defense"
+143,406 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Armored Cavalry"
+137,764 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Command Elements"
+140,362 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyber-Comms Detachment"
+140,362 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Ground Forces"
+138,178 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D"
+135,618 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Supply"
+142,542 bytes
+
+fec08ab09d1dfeeaedfb8b08ed6c5e47  ./Air Defense/email1.eml
+6043677c5beaa24f41be0a2a4bc25bd0  ./Air Defense/email2.eml
+3dd3d7cb56d96651647d5518a3de5021  ./Air Defense/email3.eml
+526f8d8ce8059c2825b22fa4e375d350  ./Air Defense/email4.eml
+fee2619dc82c1b5142c2131ab4de95a1  ./Air Defense/email5.eml
+5da21565c6098593c8a768eca8e63903  ./Air Defense/email6.eml
+57bff2b7c7ffcad1a0892025df47d365  ./Air Defense/email7.eml
+8c33e565a27cee19685d45c5676c462c  ./Air Defense/email8.eml
+3cb02288ce716be6c5a7c76b06d3006e  ./Air Defense/email9.eml
+b536863dafe9a9dd7f11595f4a8676ea  ./Air Defense/email10.eml
+df30e63c7d700c88f4862de93f1998f0  ./Air Defense/email11.eml
+78eda573786f2b35cb45bef79866e0df  ./Air Defense/email12.eml
+9a5292df0ffe301b6ae19d69f1a4bc73  ./Air Defense/email13.eml
+39bf31741df1729755771708bf43dcb3  ./Air Defense/email14.eml
+306cde558243b800350b067073866f20  ./Air Defense/email15.eml
+5ea43ef2ba5cd3b587830b4b31f00c6e  ./Air Defense/email16.eml
+073d2eeb322a82b8aa83c9766f4284ff  ./Air Defense/email17.eml
+3f1e87b198ed2a8c3b788f75dce39df4  ./Air Defense/email18.eml
+b77bde332b7a42fb0ce71393f7be53de  ./Air Defense/email19.eml
+5507b8fec03ddb5c407c1bfd256dc493  ./Air Defense/email20.eml
+0fe5f6ebdd033b60ba793d4b8b8bbbef  ./Air Defense/email21.eml
+a39ca129def1041d20462ae777d60b7e  ./Air Defense/email22.eml
+d9374e70f93198071a57bf074a1d3b4b  ./Air Defense/email23.eml
+19a8041e5f62a9d8399cb3cb1e0c84b6  ./Air Defense/email24.eml
+c6e8d274642290ee57eb9cca00f38601  ./Air Defense/email25.eml
+777a2984f951ec9b69ba0c9f78cb7fba  ./Air Defense/email26.eml
+fc1418df9b73f8cf26a24449ca6a3c2a  ./Air Defense/email27.eml
+b9a9196a3a7fd29bc8179193732ce81d  ./Air Defense/email28.eml
+c19534122fb2a856aa06ffca3e99adea  ./Air Defense/email29.eml
+9eca0cd1a7b26b78ab0884020a2df67e  ./Air Defense/email30.eml
+a7eb96e2f3920ac2f69bb6c60587c0f6  ./Air Defense/email31.eml
+e85063f49a4b970540ecfbe79d1874a0  ./Air Defense/email32.eml
+1694b8a101b58417622c244dd70c596c  ./Air Defense/email33.eml
+d11403ada0f57589ef47753ddceb3681  ./Air Defense/email34.eml
+655978ca843e3585ef8253d6a2ec7819  ./Air Defense/email35.eml
+c8462744b6b5bc10d256d244e3eb0a26  ./Air Defense/email36.eml
+5e70597bfa4f9fc676738628dbdba82a  ./Air Defense/email37.eml
+5deda9c38da3e3be96db12b77371e324  ./Air Defense/email38.eml
+e01d6eaab1cc1d00ebb06ac79465256b  ./Air Defense/email39.eml
+443ab7428b9599e907421081650ac5e1  ./Air Defense/email40.eml
+7bbafaee0aaff8dafba53855caa5a666  ./Air Defense/email41.eml
+edafead3bb0e7f5ffa87ea2258f9c18f  ./Air Defense/email42.eml
+4e59f234d38d7d8e7aa971612afafe83  ./Air Defense/email43.eml
+78b8a28cfb7fdad9a5906b6fb18637a7  ./Air Defense/email44.eml
+698f46b66566cb24acdd1177804f1630  ./Air Defense/email45.eml
+2363556712e64b827058b41086c23809  ./Air Defense/email46.eml
+91b31f917a4a1a6c262e4f359b2acfc4  ./Air Defense/email47.eml
+7b547deb3b798f4c1bf4d07c6f0d65b7  ./Air Defense/email48.eml
+fcac7de3a27fbabe735012e4610a3139  ./Air Defense/email49.eml
+1ad3f56434b62e7537a7fa1a27e9e04d  ./Air Defense/email50.eml
+3a0fb213a7d5570e2e04c36753e1971a  ./Air Defense/email.eml
+9a77087877b17b25ca92d7495e49d3c2  ./Armored Cavalry/email1.eml
+3958e79168901f4c6068e82b51a9e286  ./Armored Cavalry/email2.eml
+55a0913280e7644d5b326bf54b067299  ./Armored Cavalry/email3.eml
+6d7df38a22058782183d7f7c81a36472  ./Armored Cavalry/email4.eml
+54355aed034532f074d6bde2e93be853  ./Armored Cavalry/email5.eml
+5ad1cf3f421e45156f111e4a3d24debd  ./Armored Cavalry/email6.eml
+8cd0d6f259d7556b2e0deb00fb8b373a  ./Armored Cavalry/email7.eml
+7d5746487ab441b5d5e6d8e22108b60e  ./Armored Cavalry/email8.eml
+dc881b474adda8635e56709429e886e3  ./Armored Cavalry/email9.eml
+2a5556ed6466676ee7d081f42af57778  ./Armored Cavalry/email10.eml
+6992e2ce394a985f8498f6459b4d35e7  ./Armored Cavalry/email11.eml
+385b1995a5061be6b3cb644a995cfa90  ./Armored Cavalry/email12.eml
+05b808b6d66256b950750f2ed8f41e56  ./Armored Cavalry/email13.eml
+41782f56ea2f1cfb876fb672f37f2f0b  ./Armored Cavalry/email14.eml
+4800e2ac74a00c8e404303615b488054  ./Armored Cavalry/email15.eml
+49333112d30b04cda72c140b6546b3d5  ./Armored Cavalry/email16.eml
+a3d4cf880d6e5023c968244c0037c114  ./Armored Cavalry/email17.eml
+e3646b64f6d7f1a687bbc71efc7f407e  ./Armored Cavalry/email18.eml
+f9c3d21879d8744067f5b301bb0002ab  ./Armored Cavalry/email19.eml
+5070e1e46e4376d6c2b14e0ec1c36137  ./Armored Cavalry/email20.eml
+482c88f76d307c0de9b5294b48573227  ./Armored Cavalry/email21.eml
+b692c103474ca28a5ef126a5c07ccece  ./Armored Cavalry/email22.eml
+06bfc6e80bf234207cc2ce6f3b76bbf4  ./Armored Cavalry/email23.eml
+a7310afe85d26e94b05af9c22d560c21  ./Armored Cavalry/email24.eml
+23a4a05075467aa8ed93fcee3379e283  ./Armored Cavalry/email25.eml
+e181a1cbd23270a70b5e85b38024089e  ./Armored Cavalry/email26.eml
+903a13e51c8970733cded9378f83c32f  ./Armored Cavalry/email27.eml
+acff6dafa4d7e0eebe29c0e7da28a1aa  ./Armored Cavalry/email28.eml
+c2473fd88b73081856b39337bd4dce76  ./Armored Cavalry/email29.eml
+e828e67b809109746525d731e73393db  ./Armored Cavalry/email30.eml
+f7c0256f92e017e8077a18b878ac8724  ./Armored Cavalry/email31.eml
+7ab12ba815ebc362f69519c17f28d816  ./Armored Cavalry/email32.eml
+8090fd445f9a61a929156b57a67d933c  ./Armored Cavalry/email33.eml
+05815b5eadbf85e4017b791812782ba0  ./Armored Cavalry/email34.eml
+247973c10348ffc34e8254e30c80eea6  ./Armored Cavalry/email35.eml
+1ffa579e3aff1245125c903ed01a2e93  ./Armored Cavalry/email36.eml
+fa6ef5158eb6b2dcafbb427caeab188f  ./Armored Cavalry/email37.eml
+bc942d24bef1dabea5a77b2f3093a1a4  ./Armored Cavalry/email38.eml
+6e4507bb72dfb4200880b0bd1ebddbb3  ./Armored Cavalry/email39.eml
+6ee72fc4ceb3d4b0750999a81d3cdc18  ./Armored Cavalry/email40.eml
+4fe05405b7315a19bebf9f502db27ecb  ./Armored Cavalry/email41.eml
+4d8e44c915d32c9cc7f2c8487cf498c1  ./Armored Cavalry/email42.eml
+8e94a73f08958b5d635d5abde96b9c7c  ./Armored Cavalry/email43.eml
+d0bafcd34ce268f7bbc7572a1dea6def  ./Armored Cavalry/email44.eml
+ffbdf67465ab41770478a191e2856352  ./Armored Cavalry/email45.eml
+4ed5dc4a71a9ec7bb96bc2573e546924  ./Armored Cavalry/email46.eml
+c85a975185205b4941b57542869d892b  ./Armored Cavalry/email47.eml
+7ebdb7b6d9df66e7db260504ac73d47b  ./Armored Cavalry/email48.eml
+3eb753f16d521045f3380642789cbf9f  ./Armored Cavalry/email49.eml
+9efc9c12543805f173e6f11d9956fa71  ./Armored Cavalry/email50.eml
+72369eeb901959e8bb70098a43f1c2f6  ./Command Elements/email1.eml
+b45e290008a24d571f5eada94baee816  ./Command Elements/email2.eml
+6d819d370e7ec4d4d4b9e433504a629b  ./Command Elements/email3.eml
+5f579834747f26914258f6912a1c9dcd  ./Command Elements/email4.eml
+bb7a98395fb9d9732696963ef201d197  ./Command Elements/email5.eml
+bc65b542a3868982c8e623750f70e6e7  ./Command Elements/email6.eml
+184faada4525a61b54937999cc648760  ./Command Elements/email7.eml
+6c9bb361d0b684247b146d768a83f805  ./Command Elements/email8.eml
+8536239556650dc9c9bec799c3ca6868  ./Command Elements/email9.eml
+28a254f77204a5f9f7eb1b347018f6f2  ./Command Elements/email10.eml
+96c0c363fc3ccdc1e564d466c37de993  ./Command Elements/email11.eml
+13df709e740c7c089a7ce1b4aa9d4285  ./Command Elements/email12.eml
+4c80d83850bc5fac877fb51f5402266b  ./Command Elements/email13.eml
+ac3cfea20e53e8d8e931ab2eef3ba20d  ./Command Elements/email14.eml
+2f778a42881b91ffec0fcd6f407d466d  ./Command Elements/email15.eml
+de0f2920ffe0d1061e70c25076bd43c4  ./Command Elements/email16.eml
+be0ae30e34b0868a6874b4e905ba39b0  ./Command Elements/email17.eml
+c0b99d9441cfc871ff59f5646b4d8215  ./Command Elements/email18.eml
+1b14eb578238a9c6f6efa668d48ca3a6  ./Command Elements/email19.eml
+b5ddbcda49fc1ee1ab81a0fe9e2088e7  ./Command Elements/email20.eml
+3cb10327e5d888a74687ee6f5ef4f288  ./Command Elements/email21.eml
+fed03b7e2b36e9328aebbbfb137991db  ./Command Elements/email22.eml
+d7c2790efd4410eae52ce5bda8af6ec3  ./Command Elements/email23.eml
+b41c33a61722aa75c35c1f0bceecdb83  ./Command Elements/email24.eml
+e4c1732f8e35cdd67fd07516e2a989d8  ./Command Elements/email25.eml
+72675a4dbe58e154aaa3ce13ad976f83  ./Command Elements/email26.eml
+37af0c68585b3e288ac8860f50895d33  ./Command Elements/email27.eml
+6345b6e5f19f393f7005ecb0335103d9  ./Command Elements/email28.eml
+cc113f2f86a09e0b8b412c2b485cb065  ./Command Elements/email29.eml
+c0bc974acd504ffcf2d9331c2bf4a8f8  ./Command Elements/email30.eml
+31d29a7da5cb81a80a6ff862a4317760  ./Command Elements/email31.eml
+d6e6f89bdacf4f527c648eba4b57ab6b  ./Command Elements/email32.eml
+e7aa159372cf9fcc9f8f3d158f64cb20  ./Command Elements/email33.eml
+e7d3693ef74ee4d5f4f25224a1401081  ./Command Elements/email34.eml
+b8d3aa2cf1ff34d8e270714facaaea3c  ./Command Elements/email35.eml
+2e1f7ae01a52142e5efc45d06589372d  ./Command Elements/email36.eml
+58e11f7a80d4fa2d80c878a423e2d820  ./Command Elements/email37.eml
+6bb9571bf7562fe16c89cc03d0a3605c  ./Command Elements/email38.eml
+c3906eb9bc2193b9e46dd9c35829c7f5  ./Command Elements/email39.eml
+f35cec60f76f0edc250ec6ddb7802cc5  ./Command Elements/email40.eml
+94c018b5f7353dc50ccd26003c027cc4  ./Command Elements/email41.eml
+0f811babcfafacd5a6afe34c92a3061d  ./Command Elements/email42.eml
+4687ffdc4dbe159d6d50717302e00c48  ./Command Elements/email43.eml
+aaf9f4db3f448033577e81ebb79eec52  ./Command Elements/email44.eml
+57b92fe97ab088de3c40481be4108cc5  ./Command Elements/email45.eml
+ef8ef8e6b3dee5b144146f2a9e9f69f1  ./Command Elements/email46.eml
+2dea18757156591981d37bd8cdf9a7f4  ./Command Elements/email47.eml
+d3c69ca7557d21fc826677cf8763cb85  ./Command Elements/email48.eml
+e148d6c56d31c26359bfc01cb4264b31  ./Command Elements/email49.eml
+5d02bb9775b71264e47aaf52cfb30f2f  ./Command Elements/email50.eml
+33540ac7d8d3b1ae2e281361a71e841f  ./Cyber-Comms Detachment/email1.eml
+ad2d2b081f9dd9ca343e1290ebaa7121  ./Cyber-Comms Detachment/email2.eml
+9c1886c47db1eca542690dc74083ae71  ./Cyber-Comms Detachment/email3.eml
+5431f856a95f998d33b24c586d35dc7b  ./Cyber-Comms Detachment/email4.eml
+4e46f712a18ba749e54290c87b52367c  ./Cyber-Comms Detachment/email5.eml
+111356b54de30b5c8c8fa1adff5eec84  ./Cyber-Comms Detachment/email6.eml
+117fc0cb16f3890b0f07e4403e82a216  ./Cyber-Comms Detachment/email7.eml
+b61a6d030224220b5816e98b54acf876  ./Cyber-Comms Detachment/email8.eml
+e8d10c884e8eb14d856c0bc80b727931  ./Cyber-Comms Detachment/email9.eml
+4f799c370b5764cefac6c54f7247ef0f  ./Cyber-Comms Detachment/email10.eml
+f59cd994e109b39bb2862798b34ea92e  ./Cyber-Comms Detachment/email11.eml
+681d4916896568110f1a963f69782ccd  ./Cyber-Comms Detachment/email12.eml
+9c4915f65aae05c1c398af4a5969f23c  ./Cyber-Comms Detachment/email13.eml
+dc6e35a1fc9f3283b72e4a8bd40fecf5  ./Cyber-Comms Detachment/email14.eml
+a10ebb5ec6a990b723084647d79c8548  ./Cyber-Comms Detachment/email15.eml
+1b67458433035cb6d086f705a6316248  ./Cyber-Comms Detachment/email16.eml
+4a81b5a0539c3d29d9c8e248d56832fe  ./Cyber-Comms Detachment/email17.eml
+4dffc78fec896c4dc756a6e66e74c647  ./Cyber-Comms Detachment/email18.eml
+a3f4d0bc270adad27de18b00c9063e7c  ./Cyber-Comms Detachment/email19.eml
+82c3460f734da13f3022b8e575557e50  ./Cyber-Comms Detachment/email20.eml
+80425c5a7242abe0b7b62935d911082f  ./Cyber-Comms Detachment/email21.eml
+35462b7c3cb8b79521d77daae31c402a  ./Cyber-Comms Detachment/email22.eml
+5b60756c87f399a49872128f0d1772d2  ./Cyber-Comms Detachment/email23.eml
+56c709de663eacf091c3753005d18680  ./Cyber-Comms Detachment/email24.eml
+16cd996dd59008094e7b721ffa5c6696  ./Cyber-Comms Detachment/email25.eml
+d1027f26084532bb6d73a76eb1ee58e4  ./Cyber-Comms Detachment/email26.eml
+e36cd080140ac3e3224db48663aa5f48  ./Cyber-Comms Detachment/email27.eml
+4b3b15dc695a06338d08e9b5bef8ca9e  ./Cyber-Comms Detachment/email28.eml
+8967632391d4e8c5e2c819d60d4b8fda  ./Cyber-Comms Detachment/email29.eml
+8532fb2193a175e6b864ce53f892e5b6  ./Cyber-Comms Detachment/email30.eml
+55d0796866924586af5ba5ee2f006d00  ./Cyber-Comms Detachment/email31.eml
+69f4bba6d8b5019c0549944d71c542c9  ./Cyber-Comms Detachment/email32.eml
+c0a0bd60ecbe4a92724a50663dcd3f8f  ./Cyber-Comms Detachment/email33.eml
+7c1fb2b7833baf771c4d1532a57e675d  ./Cyber-Comms Detachment/email34.eml
+4fae4a2bac86b7fb0c25e50eb221445f  ./Cyber-Comms Detachment/email35.eml
+844c29617e96ae35702bb5729be7b55f  ./Cyber-Comms Detachment/email36.eml
+a757caeeb0a8ae99563ba942a9e9e419  ./Cyber-Comms Detachment/email37.eml
+af04746e0312f58ee6794af69c51e78b  ./Cyber-Comms Detachment/email38.eml
+e7a326d6ceceee47d5c1df6131b72796  ./Cyber-Comms Detachment/email39.eml
+5493c6e25173eba48bc421ad4a9e6d5c  ./Cyber-Comms Detachment/email40.eml
+ddd954d17df6869a832e9dc6d95570d5  ./Cyber-Comms Detachment/email41.eml
+4221513522951aa63ec0eb58c055e45e  ./Cyber-Comms Detachment/email42.eml
+82c4c966e7520ef73db377097bed5e56  ./Cyber-Comms Detachment/email43.eml
+259d469b1ee753fc093c10409ea50237  ./Cyber-Comms Detachment/email44.eml
+caeec665362a0ae964a34dd50c9e2afb  ./Cyber-Comms Detachment/email45.eml
+492fe9ba1300c2967023dde247c44bf5  ./Cyber-Comms Detachment/email46.eml
+de80f3ba8a83a4d00e4bfc8d65ce1664  ./Cyber-Comms Detachment/email47.eml
+49a8a24702110cd72a5d4f0e1cf1d54a  ./Cyber-Comms Detachment/email48.eml
+6dc73bd9dc1a403488f2d665579a8952  ./Cyber-Comms Detachment/email49.eml
+b9e7a8180fab8e81fb1141d6e24e6c0f  ./Cyber-Comms Detachment/email50.eml
+feda44782b36014f301c770096bd1361  ./Ground Forces/email1.eml
+1e23cb9f7284828fe840e434da594541  ./Ground Forces/email2.eml
+82917f39e82f2ca97e4870bb997e81f6  ./Ground Forces/email3.eml
+42001f9840ad72c8b12192bc7a6aac9d  ./Ground Forces/email4.eml
+726fa2f6cb270b38d5b2cfadaa3ffea9  ./Ground Forces/email5.eml
+c02d90ac9481efde38047f070154b595  ./Ground Forces/email6.eml
+5a9abd81e0c075cb525f499efde99556  ./Ground Forces/email7.eml
+57cc800e4e09f0f5817adba2e039c316  ./Ground Forces/email8.eml
+85d17bf7a5b462396e4af69a096569eb  ./Ground Forces/email9.eml
+bd9fa9349322b910ccff85f485efe735  ./Ground Forces/email10.eml
+fd054606e9b0d38b2fae8a3e254f533c  ./Ground Forces/email11.eml
+83bd8c96da646a82d41ed9fb6882eb42  ./Ground Forces/email12.eml
+a3f33583460f1f6dc635c7a4c0caaf83  ./Ground Forces/email13.eml
+421a84449c66018bf24d53df60770049  ./Ground Forces/email14.eml
+9716c28538430828c7d7728b41d7902e  ./Ground Forces/email15.eml
+98c1f263f0eafa1a197fcbcd03b347cc  ./Ground Forces/email16.eml
+229b29685b555668b549cdcf54a41d81  ./Ground Forces/email17.eml
+5d51d2fb736fc34590ce7f0285b37440  ./Ground Forces/email18.eml
+3f6faacac18ed9750f78addfbd46568d  ./Ground Forces/email19.eml
+112829f3755958db48368bd555d159d8  ./Ground Forces/email20.eml
+0461cfa586559452f9f9d7e657607f1a  ./Ground Forces/email21.eml
+49e28dcc65535bef9e6ea41fd39a5c4d  ./Ground Forces/email22.eml
+2c8e031e24f620d20189a5ce68c67651  ./Ground Forces/email23.eml
+afdfc34d9c39127443656492271dbdc3  ./Ground Forces/email24.eml
+b5771eff2be897d60e08b0eee403bff2  ./Ground Forces/email25.eml
+a52a7d52754951a1680b479f627613a0  ./Ground Forces/email26.eml
+5a245e9e55ad1e1768c3ceb94628d749  ./Ground Forces/email27.eml
+7427f65a83fe620510c3afa9dee96fe6  ./Ground Forces/email28.eml
+3fd30b9e06970e375101269cb7a74249  ./Ground Forces/email29.eml
+ff97e2db35bde04f812618cd3f0dbebd  ./Ground Forces/email30.eml
+4ac714d15099685356c14e7583f1df79  ./Ground Forces/email31.eml
+1ee66a640bbe674152362feaeb37473b  ./Ground Forces/email32.eml
+5a0ddbc91d88fc6d3371327add7a2b1d  ./Ground Forces/email33.eml
+58002faeea50f7edd6fcf4beeffad31c  ./Ground Forces/email34.eml
+7dc0860d686fee3b20813dafa00104dd  ./Ground Forces/email35.eml
+cd5b17406a209e8bdeba167c98d08ce0  ./Ground Forces/email36.eml
+31e9b799b41b2eb43e96e79e594e6d3a  ./Ground Forces/email37.eml
+8ec2266f39722fd33705bcd6b20e51a4  ./Ground Forces/email38.eml
+8035c9007c5e6c1fd9ce9e204ae238cb  ./Ground Forces/email39.eml
+e25d1c53db3d46d76cb21473e7d99682  ./Ground Forces/email40.eml
+7c135081b30ef23aa08b7af1cf74839b  ./Ground Forces/email41.eml
+b2ba7d7166be2a8837976d42f042bd22  ./Ground Forces/email42.eml
+176e2ca6c8a2210b913f1c4a996dfc7a  ./Ground Forces/email43.eml
+bcc637968b146d3d5f01d4e087ce3c69  ./Ground Forces/email44.eml
+460cb5ffcb882487dc62f6cc4c9630e5  ./Ground Forces/email45.eml
+a6f8c839b6ee6241abe5c48a882f6d8a  ./Ground Forces/email46.eml
+547d90c9d667f55fe9f65f1bb4ef4f55  ./Ground Forces/email47.eml
+0354d6f73e72ac3ff83107f0e037a282  ./Ground Forces/email48.eml
+eb1a38f558a3701686f6a9c2413afbfe  ./Ground Forces/email49.eml
+3dde715325747a02ed7db0b77083a90c  ./Ground Forces/email50.eml
+7ea9c293cec3fb2d5db06baa8ed8db8b  ./R&D/email1.eml
+b5a528d41f8a3367421d56c3eace2476  ./R&D/email2.eml
+cb5c31baccdba95bfebf5bfb5d3bc3ee  ./R&D/email3.eml
+7fd15e9977ecc54f6c85976f8bf3cf2c  ./R&D/email4.eml
+8b92b4eefb4b5ee896ce8d05785a5150  ./R&D/email5.eml
+60e6976f9500260b2ef6f7e3bed772cc  ./R&D/email6.eml
+c67f2a03085d030885238d028886ad13  ./R&D/email7.eml
+6255c93006ca9064d1aea5b71fb65bc7  ./R&D/email8.eml
+cc384136820ceedc1dc18b494a7af2ed  ./R&D/email9.eml
+b3711a156d1ffeb32bdf41b07cfc758b  ./R&D/email10.eml
+62027aa72ac15cb026e421a04c5acf80  ./R&D/email11.eml
+8611faf104eb99ba289c499592c7ac5c  ./R&D/email12.eml
+8582f04387d02f7c3f58333c2e163e35  ./R&D/email13.eml
+e0b983d9eaaf92f3830c5e9a4f91c161  ./R&D/email14.eml
+eb30a0ae104be42cd475a209b6e9cfef  ./R&D/email15.eml
+cb2d09df8dc56dd0e124ffb0e23a56d5  ./R&D/email16.eml
+8196956d4631a185166d3c38263d89a8  ./R&D/email17.eml
+9683743fe72161d8f15fb5d105730c60  ./R&D/email18.eml
+bc31faf29dd11fa162910fbaa6494b15  ./R&D/email19.eml
+f6cb232c5effdd842ba9e51657b11606  ./R&D/email20.eml
+5ae78f2305779efdeadb35183b745424  ./R&D/email21.eml
+390c8adfc8bda2019278dd88f66f5106  ./R&D/email22.eml
+f87fa9eae6ca8a0fd8ad506bd4b672b5  ./R&D/email23.eml
+8d20b33f2c4a77a77857a36a59d6c27c  ./R&D/email24.eml
+2cf15e8b7c8254b044e76c6a1152da26  ./R&D/email25.eml
+b91a672d19eff71666ae4ba992f6a9c7  ./R&D/email26.eml
+3f30e33741f655501e3515c86702105d  ./R&D/email27.eml
+74541e53eac8861455b636ac03211cc3  ./R&D/email28.eml
+4ff804f88f159fe722bb816cfdec3204  ./R&D/email29.eml
+053c6216bdff649fe321d795c8f5245a  ./R&D/email30.eml
+adcf03545dac3e4766816fa4a2c92e9d  ./R&D/email31.eml
+e4b0c81fa4d20e628eedde7a48b541d8  ./R&D/email32.eml
+cd6c529ec0e1e6538f158e2011f5e20b  ./R&D/email33.eml
+08ee7d4adc713f213bab1a851d97d0b9  ./R&D/email34.eml
+e66448cfb67ae085a66dd2d53fec991c  ./R&D/email35.eml
+33c655d6312c5a7879e91ed75ac52a73  ./R&D/email36.eml
+bdee2e8ca78dab7e9b0b45b8d302aac7  ./R&D/email37.eml
+b7389435447bda121248904e346fdb61  ./R&D/email38.eml
+5fa7e67409c34cef3cb43189daa3e4f3  ./R&D/email39.eml
+dc372068dbfe8d0a6f9581cda6921885  ./R&D/email40.eml
+a38379f52afa637ab7efe5a0be57da66  ./R&D/email41.eml
+f289955bcb72ebde387e46cbd3244e60  ./R&D/email42.eml
+f000bc32ff1d477bc9a5c24b8576d8dc  ./R&D/email43.eml
+570685fd2897f6386939291c22d70605  ./R&D/email44.eml
+1527e1d3910b1ee99bc7dbd6505433cc  ./R&D/email45.eml
+721001a553154fdcaf38a0d8d836a1a5  ./R&D/email46.eml
+530d401795479cc99de25fb7c35ae35b  ./R&D/email47.eml
+fc7e874b3257dafb8ec9a5b40ac86f4a  ./R&D/email48.eml
+0d428f903278eee828a04df00a5fd6e9  ./R&D/email49.eml
+bc99f67b07815a4be3fa9468f4732458  ./R&D/email50.eml
+f48163330fb9fe26ba6462c5dbefdefe  ./Supply/email1.eml
+27c0f845a97c66dace0264c213f588e9  ./Supply/email2.eml
+1d7a9aa1fbd5ed6edd17a0284e09a8a9  ./Supply/email3.eml
+92d6c58c01c8c33fe05c5c2cbfd0570f  ./Supply/email4.eml
+481b152b8432004f5c0ce2906c65a57b  ./Supply/email5.eml
+de533eebf74b08f6122971bc081f69f3  ./Supply/email6.eml
+966866aeb3064c90cac3495efdee3fd7  ./Supply/email7.eml
+5beeb45e90850830c51af7fd1668b338  ./Supply/email8.eml
+0608f9b81059e77f6d6a3911539ff840  ./Supply/email9.eml
+d30f11763fb92ef0e528c1cc27a049c9  ./Supply/email10.eml
+60e9270a751f428325b9bb3dc8cf4269  ./Supply/email11.eml
+a3873747b56ad9c8788c4686eb09df37  ./Supply/email12.eml
+1066fe098f9dbe472eafd11ee9d51bf7  ./Supply/email13.eml
+ed07351d17a2c71c1b3edfa703530831  ./Supply/email14.eml
+80388687ad48b3b4521b57d067cb19b7  ./Supply/email15.eml
+13ee0febecea7763d717130c969149f4  ./Supply/email16.eml
+a0653fc470abfdb660378b8e697fe1f2  ./Supply/email17.eml
+81a62444c804da1591e78492bb3a2c56  ./Supply/email18.eml
+8a794aa1396f639ed7c44720fe5029e6  ./Supply/email19.eml
+70da6f1ccdb1ebcd0e8782b5d9b9dfc5  ./Supply/email20.eml
+3b8418e1592c908fc20118306cb67d77  ./Supply/email21.eml
+ccc835ac1902aaa52ca9462f5af709ad  ./Supply/email22.eml
+20c5b632c41e853b3b0a3b05f0914687  ./Supply/email23.eml
+2446455eb3cbb3a49f4877d1d760baa7  ./Supply/email24.eml
+c639c4d1d3b6d05d4fd4d033c78e9ad3  ./Supply/email25.eml
+2c3309ac7685eabc35196da7d50acd38  ./Supply/email26.eml
+f0042845428ae6c50cb570dcf71573d5  ./Supply/email27.eml
+cb377486814dae2d27f88db828d8d3e2  ./Supply/email28.eml
+d99f919941e9902b22f52d4f577afbc4  ./Supply/email29.eml
+b09f8b85d7c7439d312b56f6c30c87e8  ./Supply/email30.eml
+201d017ed84bfe6d690e462bd92c51a8  ./Supply/email31.eml
+6c993bfcb9ce2ed22c157fa2861f4250  ./Supply/email32.eml
+f22e89e848345b6757bc7c1751f38570  ./Supply/email33.eml
+50cff16a8d0d02ae2c99941a9511c49d  ./Supply/email34.eml
+0ecbf9ca0b45c806e7800c3fe660889b  ./Supply/email35.eml
+db285dc225afd88469d04f0999660f65  ./Supply/email36.eml
+9f33d1529404c11207602e43d42c589d  ./Supply/email37.eml
+2fc21a7fb745ac1950473b8335e74a5f  ./Supply/email38.eml
+b21a0d723140bd3fc781dbb8a5647b6a  ./Supply/email39.eml
+a3bb26b4475b85bb992dfb1aa97800a8  ./Supply/email40.eml
+c8ae13dd939dac01a3f900f4f6833d6c  ./Supply/email41.eml
+48c3bf05c1902338aa374a8ead08d03b  ./Supply/email42.eml
+f0412d6131be8c3a32f7822911a74717  ./Supply/email43.eml
+c025055d4cf5e2aac9e6c6d4309b06b9  ./Supply/email44.eml
+461ae4beccd65965f2fac1b2ca89be63  ./Supply/email45.eml
+1619bf76a71c93bb1e9678e6f8dd1687  ./Supply/email46.eml
+d52bc890c721b7d213c3388a44ed6eb5  ./Supply/email47.eml
+516ffd4dcbd7f743f01a4fc57ff9a353  ./Supply/email48.eml
+5c03ac2bccb6c3d52bdfa72afb2e80ed  ./Supply/email49.eml
+d38e6ac02da21a5339fb1c908b8288bf  ./Supply/email50.eml
+
+
+2022-08-16 17:07:54-- OFF
+
+------------------------X
+=========================
+
+=========================
+T6:
+=========================
+X-----------------------
+
+2022-08-16 17:09:16-- ON
+
+2022-08-16 17:10:09-- start vetting
+
+[user4@desktop-email3 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:15:05:1e brd ff:ff:ff:ff:ff:ff
+    inet 10.123.169.35/24 brd 10.123.169.255 scope global dynamic eth0
+       valid_lft 80435sec preferred_lft 80435sec
+    inet6 fe80::f816:3eff:fe15:51e/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[user4@desktop-email3 ~]$ ls -latr /
+total 16
+drwxr-xr-x.   2 root root    6 Apr 11  2018 srv
+drwxr-xr-x.   2 root root    6 Apr 11  2018 opt
+drwxr-xr-x.   2 root root    6 Apr 11  2018 mnt
+drwxr-xr-x.   2 root root    6 Apr 11  2018 media
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 bin -> usr/bin
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 lib -> usr/lib
+lrwxrwxrwx.   1 root root    8 Aug  8  2019 sbin -> usr/sbin
+lrwxrwxrwx.   1 root root    9 Aug  8  2019 lib64 -> usr/lib64
+drwxr-xr-x.  13 root root  155 Aug  8  2019 usr
+drwxr-xr-x.  19 root root  267 Feb 11  2022 var
+dr-xr-x---.   3 root root  149 Feb 11  2022 root
+drwxr-xr-x.   4 root root   40 Feb 11  2022 home
+drwxr-xr-x.   2 root root    6 Feb 11  2022 Forces
+
+4 S postfix  25594  1448  0  80   0 - 22440 ep_pol 17:09 ?        00:00:00 trivial-rewrite -n rewrite -t unix -u
+4 S postfix  25596  1448  0  80   0 - 22466 ep_pol 17:09 ?        00:00:00 local -t unix
+4 S postfix  25598  1448  0  80   0 - 22449 ep_pol 17:09 ?        00:00:00 bounce -z -t unix -u
+5 S root     25630  1144  0  80   0 - 45591 pipe_w 17:10 ?        00:00:00 /usr/sbin/CROND -n
+0 S root     25632 25630  0  80   0 - 28055 do_wai 17:10 ?        00:00:00 timeout 270 tcpdump -c 20 -i eth0 port 22 -w /var/log/tcpdump
+4 S tcpdump  25633 25632  0  80   0 -  6684 poll_s 17:10 ?        00:00:00 tcpdump -c 20 -i eth0 port 22 -w /var/log/tcpdump
+0 S root     25634 25630  0  80   0 - 22430 pipe_w 17:10 ?        00:00:00 /usr/sbin/sendmail -FCronDaemon -i -odi -oem -oi -t -f root
+0 S root     25635 25634  0  80   0 - 22423 unix_s 17:10 ?        00:00:00 /usr/sbin/postdrop -r
+
+4 S root      1136     1  0  80   0 - 140496 poll_s Jun18 ?       00:08:36 /usr/sbin/rsyslogd -n
+5 S root       562     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:26 /sbin/auditd
+
+[user4@desktop-email3 ~]$ date; date -u
+Tue Aug 16 17:12:41 UTC 2022
+Tue Aug 16 17:12:41 UTC 2022
+
+[user4@desktop-email3 ~]$ uname -a
+Linux desktop-email3 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+drwx------.  2 root    root          99 Aug 15 00:10 audit
+-rw-rw-r--.  1 root    utmp       46080 Aug 16 17:09 wtmp
+-rw-r--r--.  1 root    root      299300 Aug 16 17:09 lastlog
+-rw-------.  1 root    root    20445841 Aug 16 17:09 maillog
+-rw-r--r--.  1 root    root      107587 Aug 16 17:10 cron
+-rw-------.  1 root    root      292868 Aug 16 17:10 messages
+-rw-r--r--.  1 tcpdump tcpdump        0 Aug 16 17:10 tcpdump
+-rw-------.  1 root    root       61176 Aug 16 17:14 secure
+
+[user4@desktop-email3 ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+10.123.111.35 mail.badguy.com
+
+[user4@desktop-email3 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+dovecot:x:97:97:Dovecot IMAP server:/usr/libexec/dovecot:/sbin/nologin
+dovenull:x:997:994:Dovecot's unauthorized user:/usr/libexec/dovecot:/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+
+[user4@desktop-email3 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+*/5 * * * * root timeout 270 tcpdump -c 20 -i eth0 port 22 -w /var/log/tcpdump
+
+####recent####
+-rw-r--r--. 1 root    root              107707 Aug 16 17:15 /var/log/cron
+-rw-------. 1 root    root              293476 Aug 16 17:15 /var/log/messages
+-rw-r--r--. 1 tcpdump tcpdump                0 Aug 16 17:15 /var/log/tcpdump
+-rw-r--r--. 1 root    postdrop               0 Aug 16 17:15 /var/spool/postfix/maildrop/DE0AF448A20
+-rw-------. 1 root    root                 126 Aug 16 17:16 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root    root             3466255 Aug 16 17:16 /var/log/audit/audit.log
+-rw-------. 1 root    root               67646 Aug 16 17:16 /var/log/secure
+-rw-r-----+ 1 root    systemd-journal 25165824 Aug 16 17:16 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-rw-r--. 1 root    utmp               46464 Aug 16 17:14 /var/log/wtmp
+-rw-r--r--. 1 root    root              299300 Aug 16 17:14 /var/log/lastlog
+-rw-rw-r--. 1 root    utmp                3840 Aug 16 17:14 /run/utmp
+-rw-------. 1 root    mail            51199059 Aug 16 17:14 /var/spool/mail/root
+-rw-------. 1 root    root            20447238 Aug 16 17:14 /var/log/maillog
+
+[user4@desktop-email3 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+
+[user4@desktop-email3 ~]$ md5sum /usr/sbin/sendmail
+dc50faaba9f6d6f0093e6151cf68598c  /usr/sbin/sendmail
+
+[user4@desktop-email3 ~]$ md5sum /usr/sbin/postdrop
+458b48e94c20aa7b6a5deaa6819e7ee1  /usr/sbin/postdrop
+
+2022-08-16 17:43:52-- done vetting
+
+2022-08-16 17:43:55-- getting more info
+
+####REMOTE####
+[user4@desktop-email3 ~]$ md5sum /var/spool/mail/*/*
+1e48d722c17165c398c0c76d44de89cb  /var/spool/mail/Air Defense/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  /var/spool/mail/Air Defense/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  /var/spool/mail/Air Defense/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  /var/spool/mail/Air Defense/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  /var/spool/mail/Air Defense/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  /var/spool/mail/Air Defense/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  /var/spool/mail/Air Defense/email16.eml
+f4132cbf01dc870309eb7e12fb224910  /var/spool/mail/Air Defense/email17.eml
+677c2fcd28ede124ef57a2243145a021  /var/spool/mail/Air Defense/email18.eml
+66fa369738142780ad0d192ecc215311  /var/spool/mail/Air Defense/email19.eml
+8ffdcf191acc4d5aced8a91c789351d6  /var/spool/mail/Air Defense/email1.eml
+762f311b9a6ff5400916ab85a6896cad  /var/spool/mail/Air Defense/email20.eml
+24193148d4f51ef216355f92595837e3  /var/spool/mail/Air Defense/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  /var/spool/mail/Air Defense/email22.eml
+6978e6eace65360cd00839a09a26fd30  /var/spool/mail/Air Defense/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  /var/spool/mail/Air Defense/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  /var/spool/mail/Air Defense/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  /var/spool/mail/Air Defense/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  /var/spool/mail/Air Defense/email27.eml
+5b43a1711878b74c8ce62737549e2e87  /var/spool/mail/Air Defense/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  /var/spool/mail/Air Defense/email29.eml
+dddc8bdccbb47673194057c777213cec  /var/spool/mail/Air Defense/email2.eml
+01670d6fdafcf40de64f0891ece88ec9  /var/spool/mail/Air Defense/email30.eml
+2ea547f786da50578a528978299f4811  /var/spool/mail/Air Defense/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  /var/spool/mail/Air Defense/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  /var/spool/mail/Air Defense/email33.eml
+fc9876d66258753119af7ab7f1344f3d  /var/spool/mail/Air Defense/email34.eml
+736ee47338e8785c76df1e8db1d369c4  /var/spool/mail/Air Defense/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  /var/spool/mail/Air Defense/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  /var/spool/mail/Air Defense/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  /var/spool/mail/Air Defense/email38.eml
+764351aa927b48be70920bb69defab94  /var/spool/mail/Air Defense/email39.eml
+785cc7f082e4f32ce90c17ed47ee44d9  /var/spool/mail/Air Defense/email3.eml
+abbba8009b90c18a0535dae2f7a4ad13  /var/spool/mail/Air Defense/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  /var/spool/mail/Air Defense/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  /var/spool/mail/Air Defense/email42.eml
+b58d756319dbde012d453661854d48f8  /var/spool/mail/Air Defense/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  /var/spool/mail/Air Defense/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  /var/spool/mail/Air Defense/email45.eml
+aba2d180d553604bddbcfc9f1757c264  /var/spool/mail/Air Defense/email46.eml
+b0e16b03624870cccac1712cc66365d7  /var/spool/mail/Air Defense/email47.eml
+06c9690669a0521367591f1072c48e7f  /var/spool/mail/Air Defense/email48.eml
+1168422ef1b35118e286440e49ffcf85  /var/spool/mail/Air Defense/email49.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  /var/spool/mail/Air Defense/email4.eml
+48f74490b60f56d11d16ba57afe7b351  /var/spool/mail/Air Defense/email50.eml
+900adc7502428a1edbd1e5b0c6849f7c  /var/spool/mail/Air Defense/email5.eml
+27ad28d3c64315ae957ee51b6765f184  /var/spool/mail/Air Defense/email6.eml
+55b5fea2ec075776e8b59e41315540c4  /var/spool/mail/Air Defense/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  /var/spool/mail/Air Defense/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  /var/spool/mail/Air Defense/email9.eml
+a400170579910d39e36f894af778ad3c  /var/spool/mail/Armored Cavalry/email10.eml
+8ea528e3cef13e1294334792c36a82fb  /var/spool/mail/Armored Cavalry/email11.eml
+7eeef760bf71d52d0646bf744635092c  /var/spool/mail/Armored Cavalry/email12.eml
+b3884afd79ee4cf3859293477434c0e5  /var/spool/mail/Armored Cavalry/email13.eml
+56c7c289751c9acf2943c97bbc79eb43  /var/spool/mail/Armored Cavalry/email14.eml
+44b63a1f6455221ac91c0c918e24f0de  /var/spool/mail/Armored Cavalry/email15.eml
+3e547312e76d071bcbf0dfd6d2ce1e6c  /var/spool/mail/Armored Cavalry/email16.eml
+a6b2da4758802a8befa7389116450950  /var/spool/mail/Armored Cavalry/email17.eml
+91c60b287004921149aef85d32180e25  /var/spool/mail/Armored Cavalry/email18.eml
+5015f24a2ce486ab52e1f635fb90e84d  /var/spool/mail/Armored Cavalry/email19.eml
+a94db023220b878502099986c3d0348f  /var/spool/mail/Armored Cavalry/email1.eml
+fce391fa28b46af69f385aa8a0ac0c5a  /var/spool/mail/Armored Cavalry/email20.eml
+dced8371a04520bc7305c184c133c3df  /var/spool/mail/Armored Cavalry/email21.eml
+2cef43969bfd277047b5efda499d1498  /var/spool/mail/Armored Cavalry/email22.eml
+692c51441ea22155a58090e4b33cc2b3  /var/spool/mail/Armored Cavalry/email23.eml
+b3cad0ede2f42be95338dac8f566703c  /var/spool/mail/Armored Cavalry/email24.eml
+9c1c51603ba38c52b9318da9cb0bc4fc  /var/spool/mail/Armored Cavalry/email25.eml
+7fa336f4e88539e5e6bf896462d43a5b  /var/spool/mail/Armored Cavalry/email26.eml
+1564d8cd410a88a9973aeeee948249c8  /var/spool/mail/Armored Cavalry/email27.eml
+009b69946da014f86bb52b789362e11d  /var/spool/mail/Armored Cavalry/email28.eml
+3ccf942a6d07b08ec414eddc9facdfe7  /var/spool/mail/Armored Cavalry/email29.eml
+c08e78f50740ddceb441303f07e41f33  /var/spool/mail/Armored Cavalry/email2.eml
+53f33ba2a04ea2c61d6053e4cfbbfcb9  /var/spool/mail/Armored Cavalry/email30.eml
+8606ebb7ed456b7a2fd0d4a29c20cc62  /var/spool/mail/Armored Cavalry/email31.eml
+411be017520dafe4e7bc29c437ac76e0  /var/spool/mail/Armored Cavalry/email32.eml
+69be29d62c9a5abd195f623093ae7f0b  /var/spool/mail/Armored Cavalry/email33.eml
+8ed7c32dfd76db7fe2087d9cb01c3ff2  /var/spool/mail/Armored Cavalry/email34.eml
+1b0db4b805395d270ca9b234ae54509f  /var/spool/mail/Armored Cavalry/email35.eml
+13359c8fc9e416ce222fbc5620d72ac1  /var/spool/mail/Armored Cavalry/email36.eml
+42de44e522ae7e91399ffd0900e4bfef  /var/spool/mail/Armored Cavalry/email37.eml
+a5765836d8d348627e6a61417bd6dd54  /var/spool/mail/Armored Cavalry/email38.eml
+511b51113576e02f2442e83c2d6dc50f  /var/spool/mail/Armored Cavalry/email39.eml
+17b0613cca59d0a30073fa23e8c2e1e8  /var/spool/mail/Armored Cavalry/email3.eml
+c7ccae40c001aec930f1a1b369b25827  /var/spool/mail/Armored Cavalry/email40.eml
+d945194e5618771ffe22ee330d68908e  /var/spool/mail/Armored Cavalry/email41.eml
+edbff5761938350fd81f6e648a94ee4c  /var/spool/mail/Armored Cavalry/email42.eml
+98e75be59e646db77e3315e7587f8f08  /var/spool/mail/Armored Cavalry/email43.eml
+12822a6ee8c07192b947f70a2a76567e  /var/spool/mail/Armored Cavalry/email44.eml
+ca0d6548dd85605b8f3d356396e25ce0  /var/spool/mail/Armored Cavalry/email45.eml
+fcbfb649d1ba5a1039e0c9b3a8a0b8c9  /var/spool/mail/Armored Cavalry/email46.eml
+70d739e6125b2190e4f08a6963603d97  /var/spool/mail/Armored Cavalry/email47.eml
+be75cb507475e68ef9f0f0ba030bc35d  /var/spool/mail/Armored Cavalry/email48.eml
+29472c7b284fc858e84bc7fd71c5a646  /var/spool/mail/Armored Cavalry/email49.eml
+449ff517e9105ec9ec775b917cb247b5  /var/spool/mail/Armored Cavalry/email4.eml
+622d2e1725fac72b0465b9b121e267b7  /var/spool/mail/Armored Cavalry/email50.eml
+eb453353d12634ff81c6922bf5556c48  /var/spool/mail/Armored Cavalry/email5.eml
+f3f9532153aa17669d5c24e657d20d13  /var/spool/mail/Armored Cavalry/email6.eml
+8f02e8a4565e1091b27bb19434f8213a  /var/spool/mail/Armored Cavalry/email7.eml
+f94eb6601aabd63d57d61bac90d9dc7b  /var/spool/mail/Armored Cavalry/email8.eml
+03b90f0a771c7250e00d8e2c20a2a084  /var/spool/mail/Armored Cavalry/email9.eml
+1e48d722c17165c398c0c76d44de89cb  /var/spool/mail/Command Elements/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  /var/spool/mail/Command Elements/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  /var/spool/mail/Command Elements/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  /var/spool/mail/Command Elements/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  /var/spool/mail/Command Elements/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  /var/spool/mail/Command Elements/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  /var/spool/mail/Command Elements/email16.eml
+f4132cbf01dc870309eb7e12fb224910  /var/spool/mail/Command Elements/email17.eml
+677c2fcd28ede124ef57a2243145a021  /var/spool/mail/Command Elements/email18.eml
+66fa369738142780ad0d192ecc215311  /var/spool/mail/Command Elements/email19.eml
+8ffdcf191acc4d5aced8a91c789351d6  /var/spool/mail/Command Elements/email1.eml
+762f311b9a6ff5400916ab85a6896cad  /var/spool/mail/Command Elements/email20.eml
+24193148d4f51ef216355f92595837e3  /var/spool/mail/Command Elements/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  /var/spool/mail/Command Elements/email22.eml
+6978e6eace65360cd00839a09a26fd30  /var/spool/mail/Command Elements/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  /var/spool/mail/Command Elements/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  /var/spool/mail/Command Elements/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  /var/spool/mail/Command Elements/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  /var/spool/mail/Command Elements/email27.eml
+5b43a1711878b74c8ce62737549e2e87  /var/spool/mail/Command Elements/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  /var/spool/mail/Command Elements/email29.eml
+dddc8bdccbb47673194057c777213cec  /var/spool/mail/Command Elements/email2.eml
+01670d6fdafcf40de64f0891ece88ec9  /var/spool/mail/Command Elements/email30.eml
+2ea547f786da50578a528978299f4811  /var/spool/mail/Command Elements/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  /var/spool/mail/Command Elements/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  /var/spool/mail/Command Elements/email33.eml
+fc9876d66258753119af7ab7f1344f3d  /var/spool/mail/Command Elements/email34.eml
+736ee47338e8785c76df1e8db1d369c4  /var/spool/mail/Command Elements/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  /var/spool/mail/Command Elements/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  /var/spool/mail/Command Elements/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  /var/spool/mail/Command Elements/email38.eml
+764351aa927b48be70920bb69defab94  /var/spool/mail/Command Elements/email39.eml
+785cc7f082e4f32ce90c17ed47ee44d9  /var/spool/mail/Command Elements/email3.eml
+abbba8009b90c18a0535dae2f7a4ad13  /var/spool/mail/Command Elements/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  /var/spool/mail/Command Elements/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  /var/spool/mail/Command Elements/email42.eml
+b58d756319dbde012d453661854d48f8  /var/spool/mail/Command Elements/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  /var/spool/mail/Command Elements/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  /var/spool/mail/Command Elements/email45.eml
+aba2d180d553604bddbcfc9f1757c264  /var/spool/mail/Command Elements/email46.eml
+b0e16b03624870cccac1712cc66365d7  /var/spool/mail/Command Elements/email47.eml
+06c9690669a0521367591f1072c48e7f  /var/spool/mail/Command Elements/email48.eml
+1168422ef1b35118e286440e49ffcf85  /var/spool/mail/Command Elements/email49.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  /var/spool/mail/Command Elements/email4.eml
+48f74490b60f56d11d16ba57afe7b351  /var/spool/mail/Command Elements/email50.eml
+900adc7502428a1edbd1e5b0c6849f7c  /var/spool/mail/Command Elements/email5.eml
+27ad28d3c64315ae957ee51b6765f184  /var/spool/mail/Command Elements/email6.eml
+55b5fea2ec075776e8b59e41315540c4  /var/spool/mail/Command Elements/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  /var/spool/mail/Command Elements/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  /var/spool/mail/Command Elements/email9.eml
+1e48d722c17165c398c0c76d44de89cb  /var/spool/mail/Cyber-Comms Detachment/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  /var/spool/mail/Cyber-Comms Detachment/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  /var/spool/mail/Cyber-Comms Detachment/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  /var/spool/mail/Cyber-Comms Detachment/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  /var/spool/mail/Cyber-Comms Detachment/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  /var/spool/mail/Cyber-Comms Detachment/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  /var/spool/mail/Cyber-Comms Detachment/email16.eml
+f4132cbf01dc870309eb7e12fb224910  /var/spool/mail/Cyber-Comms Detachment/email17.eml
+677c2fcd28ede124ef57a2243145a021  /var/spool/mail/Cyber-Comms Detachment/email18.eml
+66fa369738142780ad0d192ecc215311  /var/spool/mail/Cyber-Comms Detachment/email19.eml
+8ffdcf191acc4d5aced8a91c789351d6  /var/spool/mail/Cyber-Comms Detachment/email1.eml
+762f311b9a6ff5400916ab85a6896cad  /var/spool/mail/Cyber-Comms Detachment/email20.eml
+24193148d4f51ef216355f92595837e3  /var/spool/mail/Cyber-Comms Detachment/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  /var/spool/mail/Cyber-Comms Detachment/email22.eml
+6978e6eace65360cd00839a09a26fd30  /var/spool/mail/Cyber-Comms Detachment/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  /var/spool/mail/Cyber-Comms Detachment/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  /var/spool/mail/Cyber-Comms Detachment/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  /var/spool/mail/Cyber-Comms Detachment/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  /var/spool/mail/Cyber-Comms Detachment/email27.eml
+5b43a1711878b74c8ce62737549e2e87  /var/spool/mail/Cyber-Comms Detachment/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  /var/spool/mail/Cyber-Comms Detachment/email29.eml
+dddc8bdccbb47673194057c777213cec  /var/spool/mail/Cyber-Comms Detachment/email2.eml
+01670d6fdafcf40de64f0891ece88ec9  /var/spool/mail/Cyber-Comms Detachment/email30.eml
+2ea547f786da50578a528978299f4811  /var/spool/mail/Cyber-Comms Detachment/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  /var/spool/mail/Cyber-Comms Detachment/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  /var/spool/mail/Cyber-Comms Detachment/email33.eml
+fc9876d66258753119af7ab7f1344f3d  /var/spool/mail/Cyber-Comms Detachment/email34.eml
+736ee47338e8785c76df1e8db1d369c4  /var/spool/mail/Cyber-Comms Detachment/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  /var/spool/mail/Cyber-Comms Detachment/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  /var/spool/mail/Cyber-Comms Detachment/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  /var/spool/mail/Cyber-Comms Detachment/email38.eml
+764351aa927b48be70920bb69defab94  /var/spool/mail/Cyber-Comms Detachment/email39.eml
+785cc7f082e4f32ce90c17ed47ee44d9  /var/spool/mail/Cyber-Comms Detachment/email3.eml
+abbba8009b90c18a0535dae2f7a4ad13  /var/spool/mail/Cyber-Comms Detachment/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  /var/spool/mail/Cyber-Comms Detachment/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  /var/spool/mail/Cyber-Comms Detachment/email42.eml
+b58d756319dbde012d453661854d48f8  /var/spool/mail/Cyber-Comms Detachment/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  /var/spool/mail/Cyber-Comms Detachment/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  /var/spool/mail/Cyber-Comms Detachment/email45.eml
+aba2d180d553604bddbcfc9f1757c264  /var/spool/mail/Cyber-Comms Detachment/email46.eml
+b0e16b03624870cccac1712cc66365d7  /var/spool/mail/Cyber-Comms Detachment/email47.eml
+06c9690669a0521367591f1072c48e7f  /var/spool/mail/Cyber-Comms Detachment/email48.eml
+1168422ef1b35118e286440e49ffcf85  /var/spool/mail/Cyber-Comms Detachment/email49.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  /var/spool/mail/Cyber-Comms Detachment/email4.eml
+48f74490b60f56d11d16ba57afe7b351  /var/spool/mail/Cyber-Comms Detachment/email50.eml
+900adc7502428a1edbd1e5b0c6849f7c  /var/spool/mail/Cyber-Comms Detachment/email5.eml
+27ad28d3c64315ae957ee51b6765f184  /var/spool/mail/Cyber-Comms Detachment/email6.eml
+55b5fea2ec075776e8b59e41315540c4  /var/spool/mail/Cyber-Comms Detachment/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  /var/spool/mail/Cyber-Comms Detachment/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  /var/spool/mail/Cyber-Comms Detachment/email9.eml
+ffa6b1282d3422ad2cfe582223f20bf9  /var/spool/mail/Ground Forces/email10.eml
+920413438b2c56b0a82d30779ab95ac6  /var/spool/mail/Ground Forces/email11.eml
+c8aeb0a09aa8e916e8aa0a869881dc52  /var/spool/mail/Ground Forces/email12.eml
+3badc5050f5bd16e3bd06d36885ea009  /var/spool/mail/Ground Forces/email13.eml
+f08a65d895c8921f2829ad5b30e9e72f  /var/spool/mail/Ground Forces/email14.eml
+a0cc51a05bfaffd204d4ddb5d91edaf7  /var/spool/mail/Ground Forces/email15.eml
+564ce9377b4894eb35f4d13fa6c36b19  /var/spool/mail/Ground Forces/email16.eml
+f330d3022a21a389750af27a88aab6b5  /var/spool/mail/Ground Forces/email17.eml
+54892d14837e4a71cfb00e4f22d30fbd  /var/spool/mail/Ground Forces/email18.eml
+e725d1cbc8ac134c4ba943db3563d55a  /var/spool/mail/Ground Forces/email19.eml
+f5e5954b7a87410205e330b0752b4c08  /var/spool/mail/Ground Forces/email1.eml
+211e588b6f09b175fb528e9f21b38f56  /var/spool/mail/Ground Forces/email20.eml
+0e4051b5030fdf1215437ee5abfee3e9  /var/spool/mail/Ground Forces/email21.eml
+bd4b4cc0037163bea54b63e68545a18a  /var/spool/mail/Ground Forces/email22.eml
+94d0f23ec5c8d063a093c945f19f9595  /var/spool/mail/Ground Forces/email23.eml
+a5a5d6d6ba1cc62efbf31602e415f4da  /var/spool/mail/Ground Forces/email24.eml
+5a8879165c902ea926ac03ca907e4f8c  /var/spool/mail/Ground Forces/email25.eml
+1c4591beca8890c5e865e93dea619da7  /var/spool/mail/Ground Forces/email26.eml
+c5b0547aca31f2129e5f84e18766a500  /var/spool/mail/Ground Forces/email27.eml
+518343626389df9ffb2718e235bd5bb2  /var/spool/mail/Ground Forces/email28.eml
+c2f7604f8351d824f1a955662b1e8db0  /var/spool/mail/Ground Forces/email29.eml
+103803ab93bf48956c3d23bf7daa4ca8  /var/spool/mail/Ground Forces/email2.eml
+66de0a7b4666a8e607fce06dfe4f76a0  /var/spool/mail/Ground Forces/email30.eml
+11dacd7a805c01f7edac3a389090a2df  /var/spool/mail/Ground Forces/email31.eml
+40f46227905ecd0e88eba08607be30e0  /var/spool/mail/Ground Forces/email32.eml
+df098e89e9d74b2f1ff88fd27d097e7d  /var/spool/mail/Ground Forces/email33.eml
+1ec673548a454f5647cb9257bf16ced9  /var/spool/mail/Ground Forces/email34.eml
+226313fe4434197c35dfd560568c6866  /var/spool/mail/Ground Forces/email35.eml
+736a844a2f3db3401ba3f8e3247e0587  /var/spool/mail/Ground Forces/email36.eml
+2ff659a3a652c709c2930f8ed519e6b4  /var/spool/mail/Ground Forces/email37.eml
+7123c76e3c51ea72f9adffa0b33e4eec  /var/spool/mail/Ground Forces/email38.eml
+24c97173a905c2abbd706b5ef2fcc9de  /var/spool/mail/Ground Forces/email39.eml
+beba28ea76a664480bcdc647bea21bc4  /var/spool/mail/Ground Forces/email3.eml
+4926d6e2be0c56e73942ad66db671f0a  /var/spool/mail/Ground Forces/email40.eml
+3fabef3e9565cb0b8abdc99c40e04fab  /var/spool/mail/Ground Forces/email41.eml
+324be026ff30b892d8e9ff11a43ea6bc  /var/spool/mail/Ground Forces/email42.eml
+dcb4ece872f7bc6d51ca760386192c87  /var/spool/mail/Ground Forces/email43.eml
+9b35e6d5fb7370b6c74036775984ac74  /var/spool/mail/Ground Forces/email44.eml
+9085d0cf17583be0d9dd07cbcce4fb54  /var/spool/mail/Ground Forces/email45.eml
+cd5cfb9137e929719d841534c54ada06  /var/spool/mail/Ground Forces/email46.eml
+60e44f2c555d745b5c9413da60fdbcb1  /var/spool/mail/Ground Forces/email47.eml
+2affbaf797d28724c379e351ca651f5e  /var/spool/mail/Ground Forces/email48.eml
+f064ab8c220debcdd22199bf0928f95e  /var/spool/mail/Ground Forces/email49.eml
+4ae50693d8343c74db58b02a9239e7e2  /var/spool/mail/Ground Forces/email4.eml
+c72c00ba6a9f2b03a0360c106101d225  /var/spool/mail/Ground Forces/email50.eml
+4da3f411c719fa0150892530a4287e25  /var/spool/mail/Ground Forces/email5.eml
+bdcdd963abc79f23d0314c276543bcca  /var/spool/mail/Ground Forces/email6.eml
+e5fe23af38343d61eaf042e42c66f57f  /var/spool/mail/Ground Forces/email7.eml
+d1808926c151bf474a3838eee40b145c  /var/spool/mail/Ground Forces/email8.eml
+9f2597109494acbcf3e7e3c14bb00a52  /var/spool/mail/Ground Forces/email9.eml
+1e48d722c17165c398c0c76d44de89cb  /var/spool/mail/R&D/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  /var/spool/mail/R&D/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  /var/spool/mail/R&D/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  /var/spool/mail/R&D/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  /var/spool/mail/R&D/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  /var/spool/mail/R&D/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  /var/spool/mail/R&D/email16.eml
+f4132cbf01dc870309eb7e12fb224910  /var/spool/mail/R&D/email17.eml
+677c2fcd28ede124ef57a2243145a021  /var/spool/mail/R&D/email18.eml
+66fa369738142780ad0d192ecc215311  /var/spool/mail/R&D/email19.eml
+8ffdcf191acc4d5aced8a91c789351d6  /var/spool/mail/R&D/email1.eml
+762f311b9a6ff5400916ab85a6896cad  /var/spool/mail/R&D/email20.eml
+24193148d4f51ef216355f92595837e3  /var/spool/mail/R&D/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  /var/spool/mail/R&D/email22.eml
+6978e6eace65360cd00839a09a26fd30  /var/spool/mail/R&D/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  /var/spool/mail/R&D/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  /var/spool/mail/R&D/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  /var/spool/mail/R&D/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  /var/spool/mail/R&D/email27.eml
+5b43a1711878b74c8ce62737549e2e87  /var/spool/mail/R&D/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  /var/spool/mail/R&D/email29.eml
+dddc8bdccbb47673194057c777213cec  /var/spool/mail/R&D/email2.eml
+01670d6fdafcf40de64f0891ece88ec9  /var/spool/mail/R&D/email30.eml
+2ea547f786da50578a528978299f4811  /var/spool/mail/R&D/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  /var/spool/mail/R&D/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  /var/spool/mail/R&D/email33.eml
+fc9876d66258753119af7ab7f1344f3d  /var/spool/mail/R&D/email34.eml
+736ee47338e8785c76df1e8db1d369c4  /var/spool/mail/R&D/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  /var/spool/mail/R&D/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  /var/spool/mail/R&D/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  /var/spool/mail/R&D/email38.eml
+764351aa927b48be70920bb69defab94  /var/spool/mail/R&D/email39.eml
+785cc7f082e4f32ce90c17ed47ee44d9  /var/spool/mail/R&D/email3.eml
+abbba8009b90c18a0535dae2f7a4ad13  /var/spool/mail/R&D/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  /var/spool/mail/R&D/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  /var/spool/mail/R&D/email42.eml
+b58d756319dbde012d453661854d48f8  /var/spool/mail/R&D/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  /var/spool/mail/R&D/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  /var/spool/mail/R&D/email45.eml
+aba2d180d553604bddbcfc9f1757c264  /var/spool/mail/R&D/email46.eml
+b0e16b03624870cccac1712cc66365d7  /var/spool/mail/R&D/email47.eml
+06c9690669a0521367591f1072c48e7f  /var/spool/mail/R&D/email48.eml
+1168422ef1b35118e286440e49ffcf85  /var/spool/mail/R&D/email49.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  /var/spool/mail/R&D/email4.eml
+48f74490b60f56d11d16ba57afe7b351  /var/spool/mail/R&D/email50.eml
+900adc7502428a1edbd1e5b0c6849f7c  /var/spool/mail/R&D/email5.eml
+27ad28d3c64315ae957ee51b6765f184  /var/spool/mail/R&D/email6.eml
+55b5fea2ec075776e8b59e41315540c4  /var/spool/mail/R&D/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  /var/spool/mail/R&D/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  /var/spool/mail/R&D/email9.eml
+1e48d722c17165c398c0c76d44de89cb  /var/spool/mail/Supply/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  /var/spool/mail/Supply/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  /var/spool/mail/Supply/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  /var/spool/mail/Supply/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  /var/spool/mail/Supply/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  /var/spool/mail/Supply/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  /var/spool/mail/Supply/email16.eml
+f4132cbf01dc870309eb7e12fb224910  /var/spool/mail/Supply/email17.eml
+677c2fcd28ede124ef57a2243145a021  /var/spool/mail/Supply/email18.eml
+66fa369738142780ad0d192ecc215311  /var/spool/mail/Supply/email19.eml
+8ffdcf191acc4d5aced8a91c789351d6  /var/spool/mail/Supply/email1.eml
+762f311b9a6ff5400916ab85a6896cad  /var/spool/mail/Supply/email20.eml
+24193148d4f51ef216355f92595837e3  /var/spool/mail/Supply/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  /var/spool/mail/Supply/email22.eml
+6978e6eace65360cd00839a09a26fd30  /var/spool/mail/Supply/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  /var/spool/mail/Supply/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  /var/spool/mail/Supply/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  /var/spool/mail/Supply/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  /var/spool/mail/Supply/email27.eml
+5b43a1711878b74c8ce62737549e2e87  /var/spool/mail/Supply/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  /var/spool/mail/Supply/email29.eml
+dddc8bdccbb47673194057c777213cec  /var/spool/mail/Supply/email2.eml
+01670d6fdafcf40de64f0891ece88ec9  /var/spool/mail/Supply/email30.eml
+2ea547f786da50578a528978299f4811  /var/spool/mail/Supply/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  /var/spool/mail/Supply/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  /var/spool/mail/Supply/email33.eml
+fc9876d66258753119af7ab7f1344f3d  /var/spool/mail/Supply/email34.eml
+736ee47338e8785c76df1e8db1d369c4  /var/spool/mail/Supply/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  /var/spool/mail/Supply/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  /var/spool/mail/Supply/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  /var/spool/mail/Supply/email38.eml
+764351aa927b48be70920bb69defab94  /var/spool/mail/Supply/email39.eml
+785cc7f082e4f32ce90c17ed47ee44d9  /var/spool/mail/Supply/email3.eml
+abbba8009b90c18a0535dae2f7a4ad13  /var/spool/mail/Supply/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  /var/spool/mail/Supply/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  /var/spool/mail/Supply/email42.eml
+b58d756319dbde012d453661854d48f8  /var/spool/mail/Supply/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  /var/spool/mail/Supply/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  /var/spool/mail/Supply/email45.eml
+aba2d180d553604bddbcfc9f1757c264  /var/spool/mail/Supply/email46.eml
+b0e16b03624870cccac1712cc66365d7  /var/spool/mail/Supply/email47.eml
+06c9690669a0521367591f1072c48e7f  /var/spool/mail/Supply/email48.eml
+1168422ef1b35118e286440e49ffcf85  /var/spool/mail/Supply/email49.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  /var/spool/mail/Supply/email4.eml
+48f74490b60f56d11d16ba57afe7b351  /var/spool/mail/Supply/email50.eml
+900adc7502428a1edbd1e5b0c6849f7c  /var/spool/mail/Supply/email5.eml
+27ad28d3c64315ae957ee51b6765f184  /var/spool/mail/Supply/email6.eml
+55b5fea2ec075776e8b59e41315540c4  /var/spool/mail/Supply/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  /var/spool/mail/Supply/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  /var/spool/mail/Supply/email9.eml
+
+
+###LOCAL####
+
+8ffdcf191acc4d5aced8a91c789351d6  Air Defense/email1.eml
+dddc8bdccbb47673194057c777213cec  Air Defense/email2.eml
+785cc7f082e4f32ce90c17ed47ee44d9  Air Defense/email3.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  Air Defense/email4.eml
+900adc7502428a1edbd1e5b0c6849f7c  Air Defense/email5.eml
+27ad28d3c64315ae957ee51b6765f184  Air Defense/email6.eml
+55b5fea2ec075776e8b59e41315540c4  Air Defense/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  Air Defense/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  Air Defense/email9.eml
+1e48d722c17165c398c0c76d44de89cb  Air Defense/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  Air Defense/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  Air Defense/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  Air Defense/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  Air Defense/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  Air Defense/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  Air Defense/email16.eml
+f4132cbf01dc870309eb7e12fb224910  Air Defense/email17.eml
+677c2fcd28ede124ef57a2243145a021  Air Defense/email18.eml
+66fa369738142780ad0d192ecc215311  Air Defense/email19.eml
+762f311b9a6ff5400916ab85a6896cad  Air Defense/email20.eml
+24193148d4f51ef216355f92595837e3  Air Defense/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  Air Defense/email22.eml
+6978e6eace65360cd00839a09a26fd30  Air Defense/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  Air Defense/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  Air Defense/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  Air Defense/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  Air Defense/email27.eml
+5b43a1711878b74c8ce62737549e2e87  Air Defense/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  Air Defense/email29.eml
+01670d6fdafcf40de64f0891ece88ec9  Air Defense/email30.eml
+2ea547f786da50578a528978299f4811  Air Defense/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  Air Defense/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  Air Defense/email33.eml
+fc9876d66258753119af7ab7f1344f3d  Air Defense/email34.eml
+736ee47338e8785c76df1e8db1d369c4  Air Defense/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  Air Defense/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  Air Defense/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  Air Defense/email38.eml
+764351aa927b48be70920bb69defab94  Air Defense/email39.eml
+abbba8009b90c18a0535dae2f7a4ad13  Air Defense/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  Air Defense/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  Air Defense/email42.eml
+b58d756319dbde012d453661854d48f8  Air Defense/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  Air Defense/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  Air Defense/email45.eml
+aba2d180d553604bddbcfc9f1757c264  Air Defense/email46.eml
+b0e16b03624870cccac1712cc66365d7  Air Defense/email47.eml
+06c9690669a0521367591f1072c48e7f  Air Defense/email48.eml
+1168422ef1b35118e286440e49ffcf85  Air Defense/email49.eml
+48f74490b60f56d11d16ba57afe7b351  Air Defense/email50.eml
+
+8ffdcf191acc4d5aced8a91c789351d6  Command Elements/email1.eml
+dddc8bdccbb47673194057c777213cec  Command Elements/email2.eml
+785cc7f082e4f32ce90c17ed47ee44d9  Command Elements/email3.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  Command Elements/email4.eml
+900adc7502428a1edbd1e5b0c6849f7c  Command Elements/email5.eml
+27ad28d3c64315ae957ee51b6765f184  Command Elements/email6.eml
+55b5fea2ec075776e8b59e41315540c4  Command Elements/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  Command Elements/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  Command Elements/email9.eml
+1e48d722c17165c398c0c76d44de89cb  Command Elements/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  Command Elements/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  Command Elements/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  Command Elements/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  Command Elements/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  Command Elements/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  Command Elements/email16.eml
+f4132cbf01dc870309eb7e12fb224910  Command Elements/email17.eml
+677c2fcd28ede124ef57a2243145a021  Command Elements/email18.eml
+66fa369738142780ad0d192ecc215311  Command Elements/email19.eml
+762f311b9a6ff5400916ab85a6896cad  Command Elements/email20.eml
+24193148d4f51ef216355f92595837e3  Command Elements/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  Command Elements/email22.eml
+6978e6eace65360cd00839a09a26fd30  Command Elements/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  Command Elements/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  Command Elements/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  Command Elements/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  Command Elements/email27.eml
+5b43a1711878b74c8ce62737549e2e87  Command Elements/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  Command Elements/email29.eml
+01670d6fdafcf40de64f0891ece88ec9  Command Elements/email30.eml
+2ea547f786da50578a528978299f4811  Command Elements/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  Command Elements/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  Command Elements/email33.eml
+fc9876d66258753119af7ab7f1344f3d  Command Elements/email34.eml
+736ee47338e8785c76df1e8db1d369c4  Command Elements/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  Command Elements/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  Command Elements/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  Command Elements/email38.eml
+764351aa927b48be70920bb69defab94  Command Elements/email39.eml
+abbba8009b90c18a0535dae2f7a4ad13  Command Elements/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  Command Elements/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  Command Elements/email42.eml
+b58d756319dbde012d453661854d48f8  Command Elements/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  Command Elements/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  Command Elements/email45.eml
+aba2d180d553604bddbcfc9f1757c264  Command Elements/email46.eml
+b0e16b03624870cccac1712cc66365d7  Command Elements/email47.eml
+06c9690669a0521367591f1072c48e7f  Command Elements/email48.eml
+1168422ef1b35118e286440e49ffcf85  Command Elements/email49.eml
+48f74490b60f56d11d16ba57afe7b351  Command Elements/email50.eml
+8ffdcf191acc4d5aced8a91c789351d6  Cyber-Comms Detachment/email1.eml
+dddc8bdccbb47673194057c777213cec  Cyber-Comms Detachment/email2.eml
+785cc7f082e4f32ce90c17ed47ee44d9  Cyber-Comms Detachment/email3.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  Cyber-Comms Detachment/email4.eml
+900adc7502428a1edbd1e5b0c6849f7c  Cyber-Comms Detachment/email5.eml
+27ad28d3c64315ae957ee51b6765f184  Cyber-Comms Detachment/email6.eml
+55b5fea2ec075776e8b59e41315540c4  Cyber-Comms Detachment/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  Cyber-Comms Detachment/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  Cyber-Comms Detachment/email9.eml
+1e48d722c17165c398c0c76d44de89cb  Cyber-Comms Detachment/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  Cyber-Comms Detachment/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  Cyber-Comms Detachment/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  Cyber-Comms Detachment/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  Cyber-Comms Detachment/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  Cyber-Comms Detachment/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  Cyber-Comms Detachment/email16.eml
+f4132cbf01dc870309eb7e12fb224910  Cyber-Comms Detachment/email17.eml
+677c2fcd28ede124ef57a2243145a021  Cyber-Comms Detachment/email18.eml
+66fa369738142780ad0d192ecc215311  Cyber-Comms Detachment/email19.eml
+762f311b9a6ff5400916ab85a6896cad  Cyber-Comms Detachment/email20.eml
+24193148d4f51ef216355f92595837e3  Cyber-Comms Detachment/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  Cyber-Comms Detachment/email22.eml
+6978e6eace65360cd00839a09a26fd30  Cyber-Comms Detachment/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  Cyber-Comms Detachment/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  Cyber-Comms Detachment/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  Cyber-Comms Detachment/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  Cyber-Comms Detachment/email27.eml
+5b43a1711878b74c8ce62737549e2e87  Cyber-Comms Detachment/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  Cyber-Comms Detachment/email29.eml
+01670d6fdafcf40de64f0891ece88ec9  Cyber-Comms Detachment/email30.eml
+2ea547f786da50578a528978299f4811  Cyber-Comms Detachment/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  Cyber-Comms Detachment/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  Cyber-Comms Detachment/email33.eml
+fc9876d66258753119af7ab7f1344f3d  Cyber-Comms Detachment/email34.eml
+736ee47338e8785c76df1e8db1d369c4  Cyber-Comms Detachment/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  Cyber-Comms Detachment/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  Cyber-Comms Detachment/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  Cyber-Comms Detachment/email38.eml
+764351aa927b48be70920bb69defab94  Cyber-Comms Detachment/email39.eml
+abbba8009b90c18a0535dae2f7a4ad13  Cyber-Comms Detachment/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  Cyber-Comms Detachment/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  Cyber-Comms Detachment/email42.eml
+b58d756319dbde012d453661854d48f8  Cyber-Comms Detachment/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  Cyber-Comms Detachment/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  Cyber-Comms Detachment/email45.eml
+aba2d180d553604bddbcfc9f1757c264  Cyber-Comms Detachment/email46.eml
+b0e16b03624870cccac1712cc66365d7  Cyber-Comms Detachment/email47.eml
+06c9690669a0521367591f1072c48e7f  Cyber-Comms Detachment/email48.eml
+1168422ef1b35118e286440e49ffcf85  Cyber-Comms Detachment/email49.eml
+48f74490b60f56d11d16ba57afe7b351  Cyber-Comms Detachment/email50.eml
+f5e5954b7a87410205e330b0752b4c08  Ground Forces/email1.eml
+103803ab93bf48956c3d23bf7daa4ca8  Ground Forces/email2.eml
+beba28ea76a664480bcdc647bea21bc4  Ground Forces/email3.eml
+4ae50693d8343c74db58b02a9239e7e2  Ground Forces/email4.eml
+4da3f411c719fa0150892530a4287e25  Ground Forces/email5.eml
+bdcdd963abc79f23d0314c276543bcca  Ground Forces/email6.eml
+e5fe23af38343d61eaf042e42c66f57f  Ground Forces/email7.eml
+d1808926c151bf474a3838eee40b145c  Ground Forces/email8.eml
+9f2597109494acbcf3e7e3c14bb00a52  Ground Forces/email9.eml
+ffa6b1282d3422ad2cfe582223f20bf9  Ground Forces/email10.eml
+920413438b2c56b0a82d30779ab95ac6  Ground Forces/email11.eml
+c8aeb0a09aa8e916e8aa0a869881dc52  Ground Forces/email12.eml
+3badc5050f5bd16e3bd06d36885ea009  Ground Forces/email13.eml
+f08a65d895c8921f2829ad5b30e9e72f  Ground Forces/email14.eml
+a0cc51a05bfaffd204d4ddb5d91edaf7  Ground Forces/email15.eml
+564ce9377b4894eb35f4d13fa6c36b19  Ground Forces/email16.eml
+f330d3022a21a389750af27a88aab6b5  Ground Forces/email17.eml
+54892d14837e4a71cfb00e4f22d30fbd  Ground Forces/email18.eml
+e725d1cbc8ac134c4ba943db3563d55a  Ground Forces/email19.eml
+211e588b6f09b175fb528e9f21b38f56  Ground Forces/email20.eml
+0e4051b5030fdf1215437ee5abfee3e9  Ground Forces/email21.eml
+bd4b4cc0037163bea54b63e68545a18a  Ground Forces/email22.eml
+94d0f23ec5c8d063a093c945f19f9595  Ground Forces/email23.eml
+a5a5d6d6ba1cc62efbf31602e415f4da  Ground Forces/email24.eml
+5a8879165c902ea926ac03ca907e4f8c  Ground Forces/email25.eml
+1c4591beca8890c5e865e93dea619da7  Ground Forces/email26.eml
+c5b0547aca31f2129e5f84e18766a500  Ground Forces/email27.eml
+518343626389df9ffb2718e235bd5bb2  Ground Forces/email28.eml
+c2f7604f8351d824f1a955662b1e8db0  Ground Forces/email29.eml
+66de0a7b4666a8e607fce06dfe4f76a0  Ground Forces/email30.eml
+11dacd7a805c01f7edac3a389090a2df  Ground Forces/email31.eml
+40f46227905ecd0e88eba08607be30e0  Ground Forces/email32.eml
+df098e89e9d74b2f1ff88fd27d097e7d  Ground Forces/email33.eml
+1ec673548a454f5647cb9257bf16ced9  Ground Forces/email34.eml
+226313fe4434197c35dfd560568c6866  Ground Forces/email35.eml
+736a844a2f3db3401ba3f8e3247e0587  Ground Forces/email36.eml
+2ff659a3a652c709c2930f8ed519e6b4  Ground Forces/email37.eml
+7123c76e3c51ea72f9adffa0b33e4eec  Ground Forces/email38.eml
+24c97173a905c2abbd706b5ef2fcc9de  Ground Forces/email39.eml
+4926d6e2be0c56e73942ad66db671f0a  Ground Forces/email40.eml
+3fabef3e9565cb0b8abdc99c40e04fab  Ground Forces/email41.eml
+324be026ff30b892d8e9ff11a43ea6bc  Ground Forces/email42.eml
+dcb4ece872f7bc6d51ca760386192c87  Ground Forces/email43.eml
+9b35e6d5fb7370b6c74036775984ac74  Ground Forces/email44.eml
+9085d0cf17583be0d9dd07cbcce4fb54  Ground Forces/email45.eml
+cd5cfb9137e929719d841534c54ada06  Ground Forces/email46.eml
+60e44f2c555d745b5c9413da60fdbcb1  Ground Forces/email47.eml
+2affbaf797d28724c379e351ca651f5e  Ground Forces/email48.eml
+f064ab8c220debcdd22199bf0928f95e  Ground Forces/email49.eml
+c72c00ba6a9f2b03a0360c106101d225  Ground Forces/email50.eml
+8ffdcf191acc4d5aced8a91c789351d6  R&D/email1.eml
+dddc8bdccbb47673194057c777213cec  R&D/email2.eml
+785cc7f082e4f32ce90c17ed47ee44d9  R&D/email3.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  R&D/email4.eml
+900adc7502428a1edbd1e5b0c6849f7c  R&D/email5.eml
+27ad28d3c64315ae957ee51b6765f184  R&D/email6.eml
+55b5fea2ec075776e8b59e41315540c4  R&D/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  R&D/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  R&D/email9.eml
+1e48d722c17165c398c0c76d44de89cb  R&D/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  R&D/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  R&D/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  R&D/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  R&D/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  R&D/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  R&D/email16.eml
+f4132cbf01dc870309eb7e12fb224910  R&D/email17.eml
+677c2fcd28ede124ef57a2243145a021  R&D/email18.eml
+66fa369738142780ad0d192ecc215311  R&D/email19.eml
+762f311b9a6ff5400916ab85a6896cad  R&D/email20.eml
+24193148d4f51ef216355f92595837e3  R&D/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  R&D/email22.eml
+6978e6eace65360cd00839a09a26fd30  R&D/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  R&D/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  R&D/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  R&D/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  R&D/email27.eml
+5b43a1711878b74c8ce62737549e2e87  R&D/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  R&D/email29.eml
+01670d6fdafcf40de64f0891ece88ec9  R&D/email30.eml
+2ea547f786da50578a528978299f4811  R&D/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  R&D/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  R&D/email33.eml
+fc9876d66258753119af7ab7f1344f3d  R&D/email34.eml
+736ee47338e8785c76df1e8db1d369c4  R&D/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  R&D/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  R&D/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  R&D/email38.eml
+764351aa927b48be70920bb69defab94  R&D/email39.eml
+abbba8009b90c18a0535dae2f7a4ad13  R&D/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  R&D/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  R&D/email42.eml
+b58d756319dbde012d453661854d48f8  R&D/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  R&D/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  R&D/email45.eml
+aba2d180d553604bddbcfc9f1757c264  R&D/email46.eml
+b0e16b03624870cccac1712cc66365d7  R&D/email47.eml
+06c9690669a0521367591f1072c48e7f  R&D/email48.eml
+1168422ef1b35118e286440e49ffcf85  R&D/email49.eml
+48f74490b60f56d11d16ba57afe7b351  R&D/email50.eml
+8ffdcf191acc4d5aced8a91c789351d6  Supply/email1.eml
+dddc8bdccbb47673194057c777213cec  Supply/email2.eml
+785cc7f082e4f32ce90c17ed47ee44d9  Supply/email3.eml
+fc35dc9ae4c7f08cc0f9f1c28ebf9699  Supply/email4.eml
+900adc7502428a1edbd1e5b0c6849f7c  Supply/email5.eml
+27ad28d3c64315ae957ee51b6765f184  Supply/email6.eml
+55b5fea2ec075776e8b59e41315540c4  Supply/email7.eml
+518192b4ae1ff6a9d53b0c1b7fb64c61  Supply/email8.eml
+64ac258d8b6dad30b57b25dc3a8fc8a6  Supply/email9.eml
+1e48d722c17165c398c0c76d44de89cb  Supply/email10.eml
+ffcad5694554e7eaeaee981b2c46ddcd  Supply/email11.eml
+94ff9e2937ad4fbe4018c3606cb09cad  Supply/email12.eml
+19aa54c4624181d5ac53b2c5f4fb42c8  Supply/email13.eml
+a8d831fbd49ef06948d8275e127b6f8a  Supply/email14.eml
+eae9089f33cfaa4df5690f12652b6c62  Supply/email15.eml
+7d80fd7f875330ae1e44eeaca3fad45b  Supply/email16.eml
+f4132cbf01dc870309eb7e12fb224910  Supply/email17.eml
+677c2fcd28ede124ef57a2243145a021  Supply/email18.eml
+66fa369738142780ad0d192ecc215311  Supply/email19.eml
+762f311b9a6ff5400916ab85a6896cad  Supply/email20.eml
+24193148d4f51ef216355f92595837e3  Supply/email21.eml
+e5c86d5f13c2b4bc1014f4927e6d277d  Supply/email22.eml
+6978e6eace65360cd00839a09a26fd30  Supply/email23.eml
+5dcae06f94d22fe011219eb55d2d5852  Supply/email24.eml
+e10d6a77e445c6aaf380f095c1fc5283  Supply/email25.eml
+e8aa2e1893695e104ef5b3b4e8e0b0ba  Supply/email26.eml
+4873b0a13dc0cb91225c68efb1fee0df  Supply/email27.eml
+5b43a1711878b74c8ce62737549e2e87  Supply/email28.eml
+7f976cbac8da25d9f3f2182ebb905a83  Supply/email29.eml
+01670d6fdafcf40de64f0891ece88ec9  Supply/email30.eml
+2ea547f786da50578a528978299f4811  Supply/email31.eml
+2a2ebf5b000210e9ff120b935eaa15e0  Supply/email32.eml
+f5365720bb391a2d765a8657f7b5eb1e  Supply/email33.eml
+fc9876d66258753119af7ab7f1344f3d  Supply/email34.eml
+736ee47338e8785c76df1e8db1d369c4  Supply/email35.eml
+8b2c36583801604ed0030f9cd0294fa0  Supply/email36.eml
+e1aa67ebb00efe6090ecc311e19b15ab  Supply/email37.eml
+8b7f4a860797d75eb8d47537e6ff0aa6  Supply/email38.eml
+764351aa927b48be70920bb69defab94  Supply/email39.eml
+abbba8009b90c18a0535dae2f7a4ad13  Supply/email40.eml
+70bfe98a7fdfe5c5ab54a4d4bc56b550  Supply/email41.eml
+45c33b5f53281b26bf5b601b204fa7f3  Supply/email42.eml
+b58d756319dbde012d453661854d48f8  Supply/email43.eml
+1d7348d90ea19a4b5e68ee25c9bb26ca  Supply/email44.eml
+b2d3aa1e5d47b448169c4007b9633923  Supply/email45.eml
+aba2d180d553604bddbcfc9f1757c264  Supply/email46.eml
+b0e16b03624870cccac1712cc66365d7  Supply/email47.eml
+06c9690669a0521367591f1072c48e7f  Supply/email48.eml
+1168422ef1b35118e286440e49ffcf85  Supply/email49.eml
+48f74490b60f56d11d16ba57afe7b351  Supply/email50.eml
+a94db023220b878502099986c3d0348f  Armored Cavalry/email1.eml
+c08e78f50740ddceb441303f07e41f33  Armored Cavalry/email2.eml
+17b0613cca59d0a30073fa23e8c2e1e8  Armored Cavalry/email3.eml
+449ff517e9105ec9ec775b917cb247b5  Armored Cavalry/email4.eml
+eb453353d12634ff81c6922bf5556c48  Armored Cavalry/email5.eml
+f3f9532153aa17669d5c24e657d20d13  Armored Cavalry/email6.eml
+8f02e8a4565e1091b27bb19434f8213a  Armored Cavalry/email7.eml
+f94eb6601aabd63d57d61bac90d9dc7b  Armored Cavalry/email8.eml
+03b90f0a771c7250e00d8e2c20a2a084  Armored Cavalry/email9.eml
+a400170579910d39e36f894af778ad3c  Armored Cavalry/email10.eml
+8ea528e3cef13e1294334792c36a82fb  Armored Cavalry/email11.eml
+7eeef760bf71d52d0646bf744635092c  Armored Cavalry/email12.eml
+b3884afd79ee4cf3859293477434c0e5  Armored Cavalry/email13.eml
+56c7c289751c9acf2943c97bbc79eb43  Armored Cavalry/email14.eml
+44b63a1f6455221ac91c0c918e24f0de  Armored Cavalry/email15.eml
+3e547312e76d071bcbf0dfd6d2ce1e6c  Armored Cavalry/email16.eml
+a6b2da4758802a8befa7389116450950  Armored Cavalry/email17.eml
+91c60b287004921149aef85d32180e25  Armored Cavalry/email18.eml
+5015f24a2ce486ab52e1f635fb90e84d  Armored Cavalry/email19.eml
+fce391fa28b46af69f385aa8a0ac0c5a  Armored Cavalry/email20.eml
+dced8371a04520bc7305c184c133c3df  Armored Cavalry/email21.eml
+2cef43969bfd277047b5efda499d1498  Armored Cavalry/email22.eml
+692c51441ea22155a58090e4b33cc2b3  Armored Cavalry/email23.eml
+b3cad0ede2f42be95338dac8f566703c  Armored Cavalry/email24.eml
+9c1c51603ba38c52b9318da9cb0bc4fc  Armored Cavalry/email25.eml
+7fa336f4e88539e5e6bf896462d43a5b  Armored Cavalry/email26.eml
+1564d8cd410a88a9973aeeee948249c8  Armored Cavalry/email27.eml
+009b69946da014f86bb52b789362e11d  Armored Cavalry/email28.eml
+3ccf942a6d07b08ec414eddc9facdfe7  Armored Cavalry/email29.eml
+53f33ba2a04ea2c61d6053e4cfbbfcb9  Armored Cavalry/email30.eml
+8606ebb7ed456b7a2fd0d4a29c20cc62  Armored Cavalry/email31.eml
+411be017520dafe4e7bc29c437ac76e0  Armored Cavalry/email32.eml
+69be29d62c9a5abd195f623093ae7f0b  Armored Cavalry/email33.eml
+8ed7c32dfd76db7fe2087d9cb01c3ff2  Armored Cavalry/email34.eml
+1b0db4b805395d270ca9b234ae54509f  Armored Cavalry/email35.eml
+13359c8fc9e416ce222fbc5620d72ac1  Armored Cavalry/email36.eml
+42de44e522ae7e91399ffd0900e4bfef  Armored Cavalry/email37.eml
+a5765836d8d348627e6a61417bd6dd54  Armored Cavalry/email38.eml
+511b51113576e02f2442e83c2d6dc50f  Armored Cavalry/email39.eml
+c7ccae40c001aec930f1a1b369b25827  Armored Cavalry/email40.eml
+d945194e5618771ffe22ee330d68908e  Armored Cavalry/email41.eml
+edbff5761938350fd81f6e648a94ee4c  Armored Cavalry/email42.eml
+98e75be59e646db77e3315e7587f8f08  Armored Cavalry/email43.eml
+12822a6ee8c07192b947f70a2a76567e  Armored Cavalry/email44.eml
+ca0d6548dd85605b8f3d356396e25ce0  Armored Cavalry/email45.eml
+fcbfb649d1ba5a1039e0c9b3a8a0b8c9  Armored Cavalry/email46.eml
+70d739e6125b2190e4f08a6963603d97  Armored Cavalry/email47.eml
+be75cb507475e68ef9f0f0ba030bc35d  Armored Cavalry/email48.eml
+29472c7b284fc858e84bc7fd71c5a646  Armored Cavalry/email49.eml
+622d2e1725fac72b0465b9b121e267b7  Armored Cavalry/email50.eml
+
+2022-08-16 18:16:28-- collection complete
+
+2022-08-16 18:19:01-- OFF
+
+------------------------X
+=========================
+
+

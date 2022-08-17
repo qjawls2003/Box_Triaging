@@ -1,0 +1,68 @@
+T1
+
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
+ps -elf | grep root
+
+
+T2
+
+certutil -hashfile C:\windows\System32\msdtc.exe MD5
+type c:\windows\temp\silconfig.log
+
+type c:\windows\WindowsUpdate.log
+dir /o:d /t:w c:\windows\Panther\setup.exe
+dir /o:d /t:w c:\windows\security
+dir /o:d /t:w "C:\Program Files\Windows Defender Advanced Threat Protection"
+
+T3 nothing
+
+T4
+
+ls -latr /tmp/firetools
+sudo ls -latr /root/firetools
+.lynis report
+sudo ls -latr /var/log/eset/RemoteAdministrator
+sudo cat /var/log/eset/RemoteAdministrator/EraServerInstaller.log
+selinux permissive
+which lynis
+sudo stat /var/log/lynis.log
+sudo tail -n 5 /var/log/lynis.log
+sudo tail -n 5 ./lynis.log
+
+T5
+
+admin on 8/16/2022 12:08 PM
+certutil -hashfile C:\windows\System32\msdtc.exe MD5
+dir /o:d /t:w "C:\Program Files\Windows Defender\Platform"
+dir /o:d /t:w C:\ProgramData\packages
+certutil -hashfile c:\windows\system32\BitLockerDeviceEncryption.exe MD5
+certutil -hashfile c:\windows\system32\MoUsoCoreWorker.exe MD5
+dir /o:d /t:w c:\ | findstr "MpCopyAccelerator.exe"
+dir C:\ /s /b | findstr "MpCopyAccelerator.exe"
+certutil -hashfile "C:\Program Files (x86)\hMailServer\Bin\hMailAdmin.exe" MD5
+certutil -hashfile "C:\hMailServer.exe" MD5
+certutil -hashfile "C:\Program Files (x86)\hMailServer\Bin\hMailServer.exe" MD5
+reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker 
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Air Defense"
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\PHPWebAdmin"
+type "C:\Program Files (x86)\hMailServer\PHPWebAdmin\robots.txt"
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Database"
+
+T6
+
+/Forces
+tcpdump
+SELinux
+maillog
+
+ls -latr /Forces
+sudo tail -n 25 /var/log/maillog
+md5sum /usr/sbin/sendmail
+md5sum /usr/sbin/postdrop
+sudo ls -latr /var/spool/mail/*
+md5sum /var/spool/mail/*/*
+sudo ls -latr /var/spool/mail/root
+sudo ls -lisaH /var/spool/mail/
+ls -la --block-size=M /var/spool/mail/                                                                                                                                                                             

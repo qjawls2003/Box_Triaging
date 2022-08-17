@@ -1,0 +1,2635 @@
+Script started on 2022-08-17 13:04:46+00:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="142" LINES="39"]
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hvim notes_16-08-22[18Dls                [16D[32mc[32md[39m an_16-08-22_ANGRYAARDVARK02[30D[32m.[32m/[39mpreop.sh                    [20D[8Dsearch_nsdb.sh[16D[32mc[32md[39m Downloads    [9D         [9D[32m.[32m/[39mpostop.sh[11D[32mc[32md[39m [4m.[4m.[24m      [32ml[32ms[39m [4m-[4ml[24matr[8D[32mv[32mi[39mm[4m [4mn[24motes_15-08-22[18D[32mc[32md[39m [24ma[24mn[4P[9C_ANGRYAARDVARK01[30D[32mv[32mi[39mm NSDB_16-08-22             [13D[17D[32mc[32md[39m am_16         [9D[8D[32mv[32mi[32mm[39m NSDB_15-08-22[17D[32mc[32md[32m [39mam_16         [9D[8D[32mv[32mi[32mm[39m NSDB_16-08-22[17D[32mc[32md[39m[39m an_15-08-22_ANGRYAARDVARK01[30D[32mv[32mi[39mm notes_15-08-22            [12D[18D[32ml[32ms[39m -latr          [10D[8D[32mc[32md[39m [4m.[4m.[24m   [4m.[24m[24m [38;2;153;153;153m.[39m[24m [39m [38;2;153;153;153man_16-08-22_ANGRYAARDVARK02[39m[27D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [28D[38;2;153;153;153m an_16-08-22_ANGRYAARDVARK02[39m[28D[1m[31mc[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [29D[1m[31mc[0m[39m[38;2;153;153;153md an_16-08-22_ANGRYAARDVARK02[39m[29D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T4[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 6666:192.168.169.111:60004[27m[59D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m4[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m6[27m6[27m6[27m6[27m:[27m1[27m9[27m2[27m.[27m1[27m6[27m8[27m.[27m1[27m6[27m9[27m.[27m1[27m1[27m1[27m:[27m6[27m0[27m0[27m0[27m4[?1l>[?2004l
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T6 [7m[35m-p[39m[7m 6666 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null user4@localhost[27m[99D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m6[27m [27m[35m-[27m[35mp[39m[27m [27m6[27m6[27m6[27m6[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27mu[27ms[27me[27mr[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:6666' (ED25519) to the list of known hosts.
+user4@localhost's password: 
+Last login: Tue May 17 14:33:01 2022 from 192.168.169.111
+]0;user4@desktop-user12:~[?1034h[user4@desktop-user12 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:74:33:3e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.220/24 brd 192.168.169.255 scope global dynamic eth0
+       valid_lft 85217sec preferred_lft 85217sec
+    inet6 fe80::f816:3eff:fe74:333e/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /
+total 16
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [0m[38;5;27msrv[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mopt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmnt[0m
+drwxr-xr-x.   2 root root    6 Apr 11  2018 [38;5;27mmedia[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mbin[0m -> [38;5;27musr/bin[0m
+lrwxrwxrwx.   1 root root    7 Aug  8  2019 [38;5;51mlib[0m -> [38;5;27musr/lib[0m
+lrwxrwxrwx.   1 root root    8 Aug  8  2019 [38;5;51msbin[0m -> [38;5;27musr/sbin[0m
+lrwxrwxrwx.   1 root root    9 Aug  8  2019 [38;5;51mlib64[0m -> [38;5;27musr/lib64[0m
+drwxr-xr-x.  13 root root  155 Aug  8  2019 [38;5;27musr[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m..[0m
+dr-xr-xr-x.  17 root root  224 Aug  8  2019 [38;5;27m.[0m
+drwxr-xr-x.  19 root root  267 Mar 14 18:07 [38;5;27mvar[0m
+drwxr-xr-x.   4 root root   40 Mar 16 12:41 [38;5;27mhome[0m
+drwxr-xr-x.  78 root root 8192 Mar 16 12:43 [38;5;27metc[0m
+dr-xr-xr-x.   5 root root 4096 Mar 16 12:44 [38;5;27mboot[0m
+dr-xr-x---.   3 root root  170 Mar 16 12:54 [38;5;27mroot[0m
+dr-xr-xr-x. 120 root root    0 Jun 18 00:50 [38;5;27mproc[0m
+dr-xr-xr-x.  13 root root    0 Jun 18 00:51 [38;5;27msys[0m
+drwxr-xr-x.  18 root root 2760 Jun 18 00:51 [38;5;27mdev[0m
+drwxr-xr-x.  24 root root  760 Jun 18 00:51 [38;5;27mrun[0m
+drwxrwxrwt.   8 root root  172 Aug 17 14:40 [48;5;10;38;5;16mtmp[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 00:51 [38;5;27msystemd-private-8f54bdc2bdf948899c05002f71b66d10-chronyd.service-Hm4EuS[0m
+drwxrwxrwt.  8 root root 172 Aug 17 14:40 [48;5;10;38;5;16m.[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr .
+total 16
+-rw-r--r--.  1 user4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 user4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 user4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 26 root  root  4096 Mar 16 12:42 [0m[38;5;27m..[0m
+drwx------.  2 user4 wheel   62 May 17 18:35 [38;5;27m.[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root    root    40 Mar 16 12:41 [0m[38;5;27m..[0m
+drwx------.  2 user21  wheel   62 Mar 16 12:42 [38;5;27muser21[0m
+drwx------.  2 user22  wheel   62 Mar 16 12:42 [38;5;27muser22[0m
+drwx------.  2 radicle wheel   62 Mar 16 12:42 [38;5;27mradicle[0m
+drwxr-xr-x. 26 root    root  4096 Mar 16 12:42 [38;5;27m.[0m
+drwx------.  2 user20  wheel   62 May 17 18:35 [38;5;27muser20[0m
+drwx------.  2 user19  wheel   62 May 17 18:35 [38;5;27muser19[0m
+drwx------.  2 user18  wheel   62 May 17 18:35 [38;5;27muser18[0m
+drwx------.  2 user17  wheel   62 May 17 18:35 [38;5;27muser17[0m
+drwx------.  2 user16  wheel   74 May 17 18:35 [38;5;27muser16[0m
+drwx------.  2 user15  wheel   62 May 17 18:35 [38;5;27muser15[0m
+drwx------.  2 user14  wheel   62 May 17 18:35 [38;5;27muser14[0m
+drwx------.  2 user13  wheel   62 May 17 18:35 [38;5;27muser13[0m
+drwx------.  2 user12  wheel   62 May 17 18:35 [38;5;27muser12[0m
+drwx------.  2 user11  wheel   62 May 17 18:35 [38;5;27muser11[0m
+drwx------.  2 user10  wheel   62 May 17 18:35 [38;5;27muser10[0m
+drwx------.  2 user1   wheel   62 May 17 18:35 [38;5;27muser1[0m
+drwx------.  2 user9   wheel   62 May 17 18:35 [38;5;27muser9[0m
+drwx------.  2 user8   wheel   62 May 17 18:35 [38;5;27muser8[0m
+drwx------.  2 user7   wheel   62 May 17 18:35 [38;5;27muser7[0m
+drwx------.  2 user6   wheel   62 May 17 18:35 [38;5;27muser6[0m
+drwx------.  2 user5   wheel   62 May 17 18:35 [38;5;27muser5[0m
+drwx------.  2 user4   wheel   62 May 17 18:35 [38;5;27muser4[0m
+drwx------.  2 user3   wheel   62 May 17 18:35 [38;5;27muser3[0m
+drwx------.  2 user2   wheel   62 May 17 18:35 [38;5;27muser2[0m
+drwx------.  2 user23  wheel   83 May 17 19:03 [38;5;27muser23[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Mar 14 18:15 .ssh
+dr-xr-x---.  3 root root  170 Mar 16 12:54 .
+-rw-------.  1 root root  201 May 17 19:03 .bash_history
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 11565 ep_pol Jun18 ?        00:00:53 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:59 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:35 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:04 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:30 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:03 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        46     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        47     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        48     2  0  99  19 -     0 khugep Jun18 ?        00:00:29 [khugepaged]
+1 S root        49     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        57     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        58     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:1]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        63     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        77     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       195     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       266     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       369     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       370     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       371     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       372     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       374     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       375     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       376     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       404     2  0  80   0 -     0 xfsail Jun18 ?        00:00:25 [xfsaild/sda1]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/3:1H]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       407     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+4 S root       487     1  0  80   0 -  9771 ep_pol Jun18 ?        00:00:14 /usr/lib/systemd/systemd-journald
+4 S root       526     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       662     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+1 S root       716     2  0  80   0 -     0 add_hw Jun18 ?        00:00:02 [hwrng]
+5 S rpc        730     1  0  80   0 - 17332 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       731     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       741     1  0  80   0 -  5416 hrtime Jun18 ?        00:04:29 /usr/sbin/irqbalance --foreground
+4 S polkitd    742     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       743     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:13 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfi
+5 S chrony     745     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:10 /usr/sbin/chronyd
+1 S root       746     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+4 S root       757     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:18 /usr/lib/systemd/systemd-logind
+1 S root       779     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+5 S root       990     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf
+4 S root      1051     1  0  80   0 - 143481 poll_s Jun18 ?       00:12:06 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1141     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:33 /usr/libexec/postfix/master -w
+4 S postfix   1143  1141  0  80   0 - 22483 ep_pol Jun18 ?        00:00:06 qmgr -l -t unix -u
+4 S root      1187     1  0  80   0 - 59783 poll_s Jun18 ?        00:06:01 /usr/sbin/rsyslogd -n
+4 S root      1191     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1192     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1197     1  0  80   0 - 31571 hrtime Jun18 ?        00:00:13 /usr/sbin/crond -n
+4 S root      1198     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+1 S root     21086     2  0  80   0 -     0 worker Aug15 ?        00:00:06 [kworker/1:2]
+1 S root     21106     2  0  80   0 -     0 worker Aug15 ?        00:00:00 [kworker/0:0]
+1 S root     21934     2  0  80   0 -     0 worker Aug16 ?        00:00:00 [kworker/2:2]
+1 S root     22615     2  0  80   0 -     0 worker 05:01 ?        00:00:00 [kworker/1:0]
+1 S root     22635     2  0  80   0 -     0 worker 06:01 ?        00:00:00 [kworker/2:1]
+4 S root     22763  1191  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23 [priv]
+5 S user23   22767 22763  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23@pts/0
+0 S user23   22768 22767  0  80   0 - 28860 n_tty_ 13:18 pts/0    00:00:00 -bash
+1 S root     22809     2  0  80   0 -     0 worker 14:01 ?        00:00:00 [kworker/0:1]
+1 S root     22812     2  0  80   0 -     0 worker 14:12 ?        00:00:00 [kworker/3:1]
+4 S postfix  22813  1141  0  80   0 - 22439 ep_pol 14:24 ?        00:00:00 pickup -l -t unix -u
+1 S root     22836     2  0  80   0 -     0 worker 14:40 ?        00:00:00 [kworker/3:2]
+4 S root     22837  1191  0  80   0 - 39717 poll_s 14:58 ?        00:00:00 sshd: user4 [priv]
+5 S user4    22841 22837  0  80   0 - 39717 poll_s 14:58 ?        00:00:00 sshd: user4@pts/1
+0 S user4    22842 22841  0  80   0 - 28860 do_wai 14:58 pts/1    00:00:00 -bash
+1 S root     22859     2  0  80   0 -     0 worker 14:59 ?        00:00:00 [kworker/3:0]
+0 R user4    22868 22842  0  80   0 - 38840 -      15:00 pts/1    00:00:00 ps -elf
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1141/master         
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 0.0.0.0:33521           0.0.0.0:*               LISTEN      1191/sshd           
+tcp        0      0 192.168.169.220:33521   192.168.169.111:52080   ESTABLISHED 22763/sshd: user23  
+tcp        0     36 192.168.169.220:33521   192.168.169.111:54646   ESTABLISHED 22837/sshd: user4 [ 
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1141/master         
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::33521                :::*                    LISTEN      1191/sshd           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           990/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/systemd           
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           745/chronyd         
+udp        0      0 0.0.0.0:890             0.0.0.0:*                           730/rpcbind         
+udp6       0      0 :::111                  :::*                                1/systemd           
+udp6       0      0 ::1:323                 :::*                                745/chronyd         
+udp6       0      0 :::890                  :::*                                730/rpcbind         
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ w
+ 15:01:29 up 60 days, 14:10,  2 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+user23   pts/0    192.168.169.111  13:18    1:16m  0.04s  0.04s -bash
+user4    pts/1    192.168.169.111  14:58    1.00s  0.03s  0.00s w
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lastlog
+Username         Port     From             Latest
+root             pts/0                     Tue May 17 19:02:37 +0000 2022
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+sync                                       **Never logged in**
+shutdown                                   **Never logged in**
+halt                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+ftp                                        **Never logged in**
+nobody                                     **Never logged in**
+systemd-network                            **Never logged in**
+dbus                                       **Never logged in**
+polkitd                                    **Never logged in**
+rpc                                        **Never logged in**
+rpcuser                                    **Never logged in**
+nfsnobody                                  **Never logged in**
+sshd                                       **Never logged in**
+postfix                                    **Never logged in**
+chrony                                     **Never logged in**
+centos                                     **Never logged in**
+user1            pts/1    192.168.169.111  Tue May 17 15:06:27 +0000 2022
+user2            pts/1    192.168.169.111  Tue May 17 16:59:11 +0000 2022
+user3            pts/5    192.168.169.111  Tue May 17 16:00:17 +0000 2022
+user4            pts/1    192.168.169.111  Wed Aug 17 14:58:46 +0000 2022
+user5            pts/4    192.168.169.111  Tue May 17 15:15:12 +0000 2022
+user6            pts/2    192.168.169.111  Tue May 17 17:12:22 +0000 2022
+user7            pts/7    192.168.169.111  Wed Mar 16 15:29:05 +0000 2022
+user8            pts/2    192.168.169.111  Tue May 17 16:42:41 +0000 2022
+user9            pts/3    192.168.169.111  Tue May 17 15:59:17 +0000 2022
+user10           pts/4    192.168.169.111  Tue May 17 16:27:38 +0000 2022
+user11           pts/1    192.168.169.111  Tue May 17 16:12:38 +0000 2022
+user12           pts/5    192.168.169.111  Tue May 17 17:15:37 +0000 2022
+user13           pts/4    192.168.169.111  Tue May 17 17:14:01 +0000 2022
+user14           pts/6    192.168.169.111  Tue May 17 15:34:06 +0000 2022
+user15           pts/2    192.168.169.111  Tue May 17 15:32:36 +0000 2022
+user16           pts/7    192.168.169.111  Tue May 17 15:36:06 +0000 2022
+user17           pts/3    192.168.169.111  Tue May 17 16:43:54 +0000 2022
+user18           pts/2    192.168.169.111  Tue May 17 14:57:39 +0000 2022
+user19           pts/5    192.168.169.111  Tue May 17 15:21:16 +0000 2022
+user20           pts/3    192.168.169.111  Tue May 17 15:11:58 +0000 2022
+user21                                     **Never logged in**
+user22                                     **Never logged in**
+user23           pts/0    192.168.169.111  Wed Aug 17 13:18:47 +0000 2022
+radicle                                    **Never logged in**
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo ls -latr /var/spool/cron
+total 0
+drwx------. 2 root root  6 Nov 20  2018 .
+drwxr-xr-x. 7 root root 71 Aug  8  2019 ..
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo ls -latr /var/spool/cron/*
+ls: cannot access /var/spool/cron/*: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ date; date -u
+Wed Aug 17 15:01:53 UTC 2022
+Wed Aug 17 15:01:53 UTC 2022
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ uname -a
+Linux desktop-user12 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/sda1       33543148 1143464  32399684   4% /
+devtmpfs         2948952       0   2948952   0% /dev
+tmpfs            2972232       0   2972232   0% /dev/shm
+tmpfs            2972232   25032   2947200   1% /run
+tmpfs            2972232       0   2972232   0% /sys/fs/cgroup
+tmpfs             594448       0    594448   0% /run/user/1023
+tmpfs             594448       0    594448   0% /run/user/1004
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /var/*/*acc*
+ls: cannot access /var/*/*acc*: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls /etc/systemd/system/multi-user.target.wants
+[0m[38;5;51mauditd.service[0m        [38;5;51mcloud-final.service[0m       [38;5;51mcrond.service[0m       [38;5;51mnfs-client.target[0m  [38;5;51mrhel-configure.service[0m  [38;5;51msshd.service[0m
+[38;5;51mchronyd.service[0m       [38;5;51mcloud-init-local.service[0m  [38;5;51mirqbalance.service[0m  [38;5;51mpostfix.service[0m    [38;5;51mrpcbind.service[0m         [38;5;51mtuned.service[0m
+[38;5;51mcloud-config.service[0m  [38;5;51mcloud-init.service[0m        [38;5;51mkdump.service[0m       [38;5;51mremote-fs.target[0m   [38;5;51mrsyslog.service[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /var/*log*/
+total 1184
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root      267 Mar 14 18:07 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root       23 Mar 14 18:12 [38;5;27mtuned[0m
+-rw-------.  1 root   root     1894 Mar 16 12:43 yum.log
+-rw-r--r--.  1 root   root    34216 Jun  4 02:27 dmesg.old
+-rw-r--r--.  1 root   root    33544 Jun 18 00:51 dmesg
+-rw-r--r--.  1 root   root      469 Jun 18 00:51 boot.log
+-rw-------.  1 root   root   537664 Jun 18 00:51 cloud-init.log
+-rw-------.  1 root   utmp        0 Jul  1 03:48 btmp-20220801
+-rw-------.  1 root   root        0 Jul 17 03:41 spooler-20220724
+-rw-------.  1 root   root        0 Jul 17 03:41 secure-20220724
+-rw-------.  1 root   root        0 Jul 24 03:20 spooler-20220731
+-rw-------.  1 root   root        0 Jul 24 03:20 secure-20220731
+-rw-------.  1 root   root    44755 Jul 24 03:20 messages-20220724
+-rw-r--r--.  1 root   root    53283 Jul 24 03:20 cron-20220724
+-rw-------.  1 root   root     4892 Jul 24 03:20 maillog-20220724
+drwx------.  2 root   root       42 Jul 29 00:01 [38;5;27maudit[0m
+-rw-r--r--.  1 root   root    52404 Jul 31 03:40 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:40 spooler-20220807
+-rw-------.  1 root   root        0 Jul 31 03:40 secure-20220807
+-rw-------.  1 root   root     4026 Jul 31 03:40 maillog-20220731
+-rw-------.  1 root   root    43655 Jul 31 03:40 messages-20220731
+-rw-------.  1 root   utmp        0 Aug  1 03:50 btmp
+-rw-------.  1 root   root        0 Aug  7 03:13 spooler-20220814
+-rw-------.  1 root   root        0 Aug  7 03:13 secure-20220814
+-rw-------.  1 root   root    44009 Aug  7 03:13 messages-20220807
+-rw-r--r--.  1 root   root    52926 Aug  7 03:13 cron-20220807
+-rw-------.  1 root   root     4889 Aug  7 03:13 maillog-20220807
+-rw-------.  1 root   root        0 Aug 14 03:39 spooler
+-rw-------.  1 root   root     4183 Aug 14 03:39 maillog-20220814
+-rw-------.  1 root   root    43944 Aug 14 03:39 messages-20220814
+drwxr-xr-x.  8 root   root     4096 Aug 14 03:39 [38;5;27m.[0m
+-rw-r--r--.  1 root   root    53631 Aug 14 03:39 cron-20220814
+-rw-------.  1 root   root     2198 Aug 17 03:39 maillog
+-rw-rw-r--.  1 root   utmp    54144 Aug 17 14:58 wtmp
+-rw-r--r--.  1 root   root   299300 Aug 17 14:58 lastlog
+-rw-r--r--.  1 root   root    26153 Aug 17 15:01 cron
+-rw-------.  1 root   root    22452 Aug 17 15:01 messages
+-rw-------.  1 root   root     9402 Aug 17 15:01 secure
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root     1894 Mar 16 12:43 /var/log/yum.log
+-rw-r--r--. 1 root   root    34216 Jun  4 02:27 /var/log/dmesg.old
+-rw-r--r--. 1 root   root    33544 Jun 18 00:51 /var/log/dmesg
+-rw-r--r--. 1 root   root      469 Jun 18 00:51 /var/log/boot.log
+-rw-------. 1 root   root   537664 Jun 18 00:51 /var/log/cloud-init.log
+-rw-------. 1 root   utmp        0 Jul  1 03:48 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 17 03:41 /var/log/spooler-20220724
+-rw-------. 1 root   root        0 Jul 17 03:41 /var/log/secure-20220724
+-rw-------. 1 root   root        0 Jul 24 03:20 /var/log/spooler-20220731
+-rw-------. 1 root   root        0 Jul 24 03:20 /var/log/secure-20220731
+-rw-------. 1 root   root    44755 Jul 24 03:20 /var/log/messages-20220724
+-rw-r--r--. 1 root   root    53283 Jul 24 03:20 /var/log/cron-20220724
+-rw-------. 1 root   root     4892 Jul 24 03:20 /var/log/maillog-20220724
+-rw-r--r--. 1 root   root    52404 Jul 31 03:40 /var/log/cron-20220731
+-rw-------. 1 root   root        0 Jul 31 03:40 /var/log/spooler-20220807
+-rw-------. 1 root   root        0 Jul 31 03:40 /var/log/secure-20220807
+-rw-------. 1 root   root     4026 Jul 31 03:40 /var/log/maillog-20220731
+-rw-------. 1 root   root    43655 Jul 31 03:40 /var/log/messages-20220731
+-rw-------. 1 root   utmp        0 Aug  1 03:50 /var/log/btmp
+-rw-------. 1 root   root        0 Aug  7 03:13 /var/log/spooler-20220814
+-rw-------. 1 root   root        0 Aug  7 03:13 /var/log/secure-20220814
+-rw-------. 1 root   root    44009 Aug  7 03:13 /var/log/messages-20220807
+-rw-r--r--. 1 root   root    52926 Aug  7 03:13 /var/log/cron-20220807
+-rw-------. 1 root   root     4889 Aug  7 03:13 /var/log/maillog-20220807
+-rw-------. 1 root   root        0 Aug 14 03:39 /var/log/spooler
+-rw-------. 1 root   root     4183 Aug 14 03:39 /var/log/maillog-20220814
+-rw-------. 1 root   root    43944 Aug 14 03:39 /var/log/messages-20220814
+-rw-r--r--. 1 root   root    53631 Aug 14 03:39 /var/log/cron-20220814
+-rw-------. 1 root   root     2198 Aug 17 03:39 /var/log/maillog
+-rw-rw-r--. 1 root   utmp    54144 Aug 17 14:58 /var/log/wtmp
+-rw-r--r--. 1 root   root   299300 Aug 17 14:58 /var/log/lastlog
+-rw-r--r--. 1 root   root    26153 Aug 17 15:01 /var/log/cron
+-rw-------. 1 root   root    22452 Aug 17 15:01 /var/log/messages
+-rw-------. 1 root   root    10401 Aug 17 15:02 /var/log/secure
+
+/var/log/chrony:
+total 4
+drwxr-xr-x. 2 chrony chrony    6 Apr 12  2018 .
+drwxr-xr-x. 8 root   root   4096 Aug 14 03:39 ..
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x. 2 root root    6 Oct 30  2018 .
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/anaconda:
+total 1848
+-rw-------. 1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------. 1 root root  214566 Aug  8  2019 syslog
+-rw-------. 1 root root   38944 Aug  8  2019 program.log
+-rw-------. 1 root root  168908 Aug  8  2019 packaging.log
+-rw-------. 1 root root   50553 Aug  8  2019 storage.log
+-rw-------. 1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------. 1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------. 1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x. 2 root root     191 Aug  8  2019 .
+-rw-------. 1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 8 root root    4096 Aug 14 03:39 ..
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x. 2 root root    6 Aug  8  2019 .
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/tuned:
+total 12
+drwxr-xr-x. 2 root root   23 Mar 14 18:12 .
+-rw-r--r--. 1 root root 7023 Jun 18 00:51 tuned.log
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/audit:
+total 9352
+-r--------. 1 root root 8388829 Jul 29 00:01 audit.log.1
+drwx------. 2 root root      42 Jul 29 00:01 .
+drwxr-xr-x. 8 root root    4096 Aug 14 03:39 ..
+-rw-------. 1 root root  967919 Aug 17 15:02 audit.log
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo grep -r user4 /var/log/
+Binary file /var/log/wtmp matches
+/var/log/audit/audit.log.1:type=USER_AUTH msg=audit(1647446162.735:2719): pid=18941 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446162.737:2720): pid=18941 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_AUTH msg=audit(1647446162.740:2722): pid=18941 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=success acct="user4" exe="/usr/sbin/sshd" hostname=? addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_ACQ msg=audit(1647446162.741:2723): pid=18941 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_START msg=audit(1647446162.845:2726): pid=18941 uid=0 auid=1004 ses=17 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_selinux,pam_loginuid,pam_selinux,pam_namespace,pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix,pam_lastlog acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_ACQ msg=audit(1647446162.846:2730): pid=18949 uid=0 auid=1004 ses=17 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446404.563:2898): pid=19354 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446404.563:2899): pid=19354 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F726F6F74 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446415.951:2910): pid=19374 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446415.951:2911): pid=19374 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7073202D656C66202D48 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446458.393:2961): pid=19466 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446458.393:2962): pid=19466 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6E657473746174202D61756E7470 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446473.988:2992): pid=19509 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446473.988:2993): pid=19509 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd="w" terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446487.333:3016): pid=19537 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446487.333:3017): pid=19537 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F73706F6F6C2F63726F6E terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446633.616:3109): pid=19906 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446633.616:3110): pid=19906 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F7661722F6C6F672F6D65737361676573 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446648.830:3115): pid=19926 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446648.830:3116): pid=19926 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F7661722F6C6F672F736563757265 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647446885.458:3202): pid=20319 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647446885.458:3203): pid=20319 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F726F6F742F2E626173685F686973746F7279 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447025.670:3274): pid=20504 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447025.670:3275): pid=20504 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F6574632F73656C696E75782F636F6E666967 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447239.293:3340): pid=20748 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447239.293:3341): pid=20748 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447582.473:3385): pid=21071 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447582.473:3386): pid=21071 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7073202D656C66202D48 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447610.611:3391): pid=21102 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447610.611:3392): pid=21102 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F73706F6F6C2F63726F6E terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447828.963:3409): pid=21380 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447828.963:3410): pid=21380 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F6574632F736861646F77 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447894.059:3424): pid=21447 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447894.059:3425): pid=21447 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=666469736B202D6C terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647447917.048:3430): pid=21471 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647447917.048:3431): pid=21471 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=646D696465636F6465202D742062696F73 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647448313.072:3532): pid=21880 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647448313.072:3533): pid=21880 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd="w" terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647448335.373:3553): pid=21930 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647448335.374:3554): pid=21930 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7073202D656C66202D48 terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1647448380.336:3564): pid=21974 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1647448380.336:3565): pid=21974 uid=1004 auid=1004 ses=17 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6E657473746174202D6C70746E terminal=pts/4 res=success'
+/var/log/audit/audit.log.1:type=USER_END msg=audit(1647448500.712:3601): pid=18941 uid=0 auid=1004 ses=17 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_selinux,pam_loginuid,pam_selinux,pam_namespace,pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix,pam_lastlog acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_DISP msg=audit(1647448500.712:3602): pid=18941 uid=0 auid=1004 ses=17 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_AUTH msg=audit(1652797981.726:15572): pid=20291 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652797981.729:15573): pid=20291 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_AUTH msg=audit(1652797981.731:15575): pid=20291 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=success acct="user4" exe="/usr/sbin/sshd" hostname=? addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_ACQ msg=audit(1652797981.732:15576): pid=20291 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_START msg=audit(1652797981.830:15579): pid=20291 uid=0 auid=1004 ses=1514 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_selinux,pam_loginuid,pam_selinux,pam_namespace,pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix,pam_lastlog acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_ACQ msg=audit(1652797981.831:15583): pid=20298 uid=0 auid=1004 ses=1514 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798082.230:15587): pid=20405 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798082.231:15588): pid=20405 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F726F6F74 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798193.050:15593): pid=20499 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798193.050:15594): pid=20499 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6E657473746174202D61756E7470 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798203.651:15599): pid=20510 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798203.652:15600): pid=20510 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F73706F6F6C2F63726F6E terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798222.088:15605): pid=20532 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798222.088:15606): pid=20532 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F6C6F672F616E61636F6E6461202F7661722F6C6F672F6175646974202F7661722F6C6F672F626F6F742E6C6F67202F7661722F6C6F672F62746D70202F7661722F6C6F672F62746D702D3230323230353031202F7661722F6C6F672F6368726F6E79202F7661722F6C6F672F636C6F75642D696E69742E6C6F67202F7661722F6C6F672F63726F6E202F7661722F6C6F672F63726F6E2D3230323230343234202F7661722F6C6F672F63726F6E2D3230323230353031202F7661722F6C6F672F63726F6E2D3230323230353038202F7661722F6C6F672F63726F6E2D3230323230353135202F7661722F6C6F672F646D657367202F7661722F6C6F672F646D6573672E6F6C64202F7661722F6C6F672F6772756262795F7072756E655F6465627567202F7661722F6C6F672F6C6173746C6F67202F7661722F6C6F672F6D61696C6C6F67202F7661722F6C6F672F6D61696C6C6F672D3230323230343234202F7661722F6C6F672F6D61696C6C6F672D3230323230353031202F7661722F6C6F672F6D61696C6C6F672D3230323230353038202F7661722F6C6F672F6D61696C6C6F672D3230323230353135202F7661722F6C6F672F6D65737361676573202F7661722F6C6F672F6D657373616765732D3230323230343234202F7661722F6C6F672F6D657373616765732D3230323230353031202F7661722F6C6F672F6D657373616765732D3230323230353038202F7661722F6C6F672F6D657373616765732D3230323230353135202F7661722F6C6F672F71656D752D6761202F7661722F6C6F672F7268736D202F7661722F6C6F672F736563757265202F7661722F6C6F672F7365637572652D3230323230343234202F7661722F6C6F672F7365637572652D3230323230353031202F7661722F6C6F672F7365637572652D3230323230353038202F7661722F6C6F672F7365637572652D3230323230353135202F7661722F6C6F672F73706F6F6C6572202F7661722F6C6F672F73706F6F6C65722D3230323230343234202F7661722F6C6F672F73706F6F6C65722D3230323230353031202F7661722F6C6F672F73706F6F6C65722D3230323230353038202F7661722F6C6F672F73706F6F6C65722D3230323230353135202F7661722F6C6F672F74616C6C796C6F67202F7661722F6C6F672F74756E6564202F7661722F6C6F672F77746D70202F7661722F6C6F672F79756D2E6C6F67 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798434.958:15611): pid=20762 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798434.958:15612): pid=20762 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F6C6F672F6175646974 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798455.152:15617): pid=20781 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798455.152:15618): pid=20781 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7461696C202D6E203135202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798529.212:15623): pid=20844 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798529.212:15624): pid=20844 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F726F6F742F2E626173685F686973746F7279 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798698.010:15629): pid=20986 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798698.010:15630): pid=20986 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6E657473746174202D61756E7470 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798835.777:15635): pid=21108 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798835.777:15636): pid=21108 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=636174202F6574632F736861646F77 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798849.322:15641): pid=21127 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798849.322:15642): pid=21127 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=666469736B202D6C terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_ACCT msg=audit(1652798853.163:15647): pid=21134 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_CMD msg=audit(1652798853.163:15648): pid=21134 uid=1004 auid=1004 ses=1514 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=646D696465636F6465202D742062696F73 terminal=pts/1 res=success'
+/var/log/audit/audit.log.1:type=USER_END msg=audit(1652799632.637:15683): pid=20291 uid=0 auid=1004 ses=1514 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:session_close grantors=pam_selinux,pam_loginuid,pam_selinux,pam_namespace,pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix,pam_lastlog acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log.1:type=CRED_DISP msg=audit(1652799632.637:15684): pid=20291 uid=0 auid=1004 ses=1514 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=USER_AUTH msg=audit(1660748326.284:10597): pid=22837 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748326.289:10598): pid=22837 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=USER_AUTH msg=audit(1660748326.293:10600): pid=22837 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=success acct="user4" exe="/usr/sbin/sshd" hostname=? addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=CRED_ACQ msg=audit(1660748326.294:10601): pid=22837 uid=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=USER_START msg=audit(1660748326.419:10604): pid=22837 uid=0 auid=1004 ses=1456 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_selinux,pam_loginuid,pam_selinux,pam_namespace,pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix,pam_lastlog acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=CRED_ACQ msg=audit(1660748326.422:10608): pid=22841 uid=0 auid=1004 ses=1456 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="user4" exe="/usr/sbin/sshd" hostname=192.168.169.111 addr=192.168.169.111 terminal=ssh res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748447.329:10612): pid=22865 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748447.331:10613): pid=22865 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F726F6F74 terminal=pts/1 res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748480.557:10625): pid=22884 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748480.557:10626): pid=22884 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6E657473746174202D61756E7470 terminal=pts/1 res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748505.182:10631): pid=22889 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748505.182:10632): pid=22889 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F73706F6F6C2F63726F6E terminal=pts/1 res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748509.901:10637): pid=22892 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748509.901:10638): pid=22892 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F73706F6F6C2F63726F6E2F2A terminal=pts/1 res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748556.223:10643): pid=22902 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748556.223:10644): pid=22902 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=6C73202D6C617472202F7661722F6C6F672F616E61636F6E6461202F7661722F6C6F672F6175646974202F7661722F6C6F672F626F6F742E6C6F67202F7661722F6C6F672F62746D70202F7661722F6C6F672F62746D702D3230323230383031202F7661722F6C6F672F6368726F6E79202F7661722F6C6F672F636C6F75642D696E69742E6C6F67202F7661722F6C6F672F63726F6E202F7661722F6C6F672F63726F6E2D3230323230373234202F7661722F6C6F672F63726F6E2D3230323230373331202F7661722F6C6F672F63726F6E2D3230323230383037202F7661722F6C6F672F63726F6E2D3230323230383134202F7661722F6C6F672F646D657367202F7661722F6C6F672F646D6573672E6F6C64202F7661722F6C6F672F6772756262795F7072756E655F6465627567202F7661722F6C6F672F6C6173746C6F67202F7661722F6C6F672F6D61696C6C6F67202F7661722F6C6F672F6D61696C6C6F672D3230323230373234202F7661722F6C6F672F6D61696C6C6F672D3230323230373331202F7661722F6C6F672F6D61696C6C6F672D3230323230383037202F7661722F6C6F672F6D61696C6C6F672D3230323230383134202F7661722F6C6F672F6D65737361676573202F7661722F6C6F672F6D657373616765732D3230323230373234202F7661722F6C6F672F6D657373616765732D3230323230373331202F7661722F6C6F672F6D657373616765732D3230323230383037202F7661722F6C6F672F6D657373616765732D3230323230383134202F7661722F6C6F672F71656D752D6761202F7661722F6C6F672F7268736D202F7661722F6C6F672F736563757265202F7661722F6C6F672F7365637572652D3230323230373234202F7661722F6C6F672F7365637572652D3230323230373331202F7661722F6C6F672F7365637572652D3230323230383037202F7661722F6C6F672F7365637572652D3230323230383134202F7661722F6C6F672F73706F6F6C6572202F7661722F6C6F672F73706F6F6C65722D3230323230373234202F7661722F6C6F672F73706F6F6C65722D3230323230373331202F7661722F6C6F672F73706F6F6C65722D3230323230383037202F7661722F6C6F672F73706F6F6C65722D3230323230383134202F7661722F6C6F672F74616C6C796C6F67202F7661722F6C6F672F74756E6564202F7661722F6C6F672F77746D70202F7661722F6C6F672F79756D2E6C6F67 terminal=pts/1 res=success'
+/var/log/audit/audit.log:type=USER_ACCT msg=audit(1660748566.642:10649): pid=22905 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+/var/log/audit/audit.log:type=USER_CMD msg=audit(1660748566.642:10650): pid=22905 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=67726570202D72207573657234202F7661722F6C6F672F terminal=pts/1 res=success'
+/var/log/messages:Aug 17 14:58:46 desktop-user12 systemd: Created slice User Slice of user4.
+/var/log/messages:Aug 17 14:58:46 desktop-user12 systemd-logind: New session 1456 of user user4.
+/var/log/messages:Aug 17 14:58:46 desktop-user12 systemd: Started Session 1456 of user user4.
+/var/log/secure:Aug 17 14:58:46 desktop-user12 sshd[22837]: Accepted password for user4 from 192.168.169.111 port 54646 ssh2
+/var/log/secure:Aug 17 14:58:46 desktop-user12 sshd[22837]: pam_unix(sshd:session): session opened for user user4 by (uid=0)
+/var/log/secure:Aug 17 15:00:47 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/secure:Aug 17 15:00:47 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+/var/log/secure:Aug 17 15:01:20 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/secure:Aug 17 15:01:20 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+/var/log/secure:Aug 17 15:01:45 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/secure:Aug 17 15:01:45 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+/var/log/secure:Aug 17 15:01:49 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/*
+/var/log/secure:Aug 17 15:01:49 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+/var/log/secure:Aug 17 15:02:36 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/anaconda /var/log/audit /var/log/boot.log /var/log/btmp /var/log/btmp-20220801 /var/log/chrony /var/log/cloud-init.log /var/log/cron /var/log/cron-20220724 /var/log/cron-20220731 /var/log/cron-20220807 /var/log/cron-20220814 /var/log/dmesg /var/log/dmesg.old /var/log/grubby_prune_debug /var/log/lastlog /var/log/maillog /var/log/maillog-20220724 /var/log/maillog-20220731 /var/log/maillog-20220807 /var/log/maillog-20220814 /var/log/messages /var/log/messages-20220724 /var/log/messages-20220731 /var/log/messages-20220807 /var/log/messages-20220814 /var/log/qemu-ga /var/log/rhsm /var/log/secure /var/log/secure-20220724 /var/log/secure-20220731 /var/log/secure-20220807 /var/log/secure-20220814 /var/log/spooler /var/log/spooler-20220724 /var/log/spooler-20220731 /var/log/spooler-20220807 /var/log/spooler-20220814 /var/log/tallylog /var/log/tuned /var/log/wtmp
+/var/log/secure:Aug 17 15:02:36 desktop-user12 sudo:   user4 : (command continued) /var/log/yum.log
+/var/log/secure:Aug 17 15:02:36 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+/var/log/secure:Aug 17 15:02:46 desktop-user12 sudo:   user4 : TTY=pts/1 ; PWD=/home/useraccounts/user4 ; USER=root ; COMMAND=/bin/grep -r user4 /var/log/
+/var/log/secure:Aug 17 15:02:46 desktop-user12 sudo: pam_unix(sudo:session): session opened for user root by user4(uid=0)
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ 
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -la /etc/*syslog*
+-rw-r--r--. 1 root root 3232 Oct 30  2018 /etc/rsyslog.conf
+
+/etc/rsyslog.d:
+total 20
+drwxr-xr-x.  2 root root   50 Aug  8  2019 [0m[38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rw-r--r--.  1 root root  255 Mar 27  2018 21-cloudinit.conf
+-rw-r--r--.  1 root root   49 Jul 31  2019 listen.conf
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### MODULES ####
+
+# The imjournal module bellow is now used as a message source instead of imuxsock.
+$ModLoad imuxsock # provides support for local system logging (e.g. via logger command)
+$ModLoad imjournal # provides access to the systemd journal
+#$ModLoad imklog # reads kernel messages (the same are read from journald)
+#$ModLoad immark  # provides --MARK-- message capability
+
+# Provides UDP syslog reception
+#$ModLoad imudp
+#$UDPServerRun 514
+
+# Provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+#### GLOBAL DIRECTIVES ####
+
+# Where to place auxiliary files
+$WorkDirectory /var/lib/rsyslog
+
+# Use default timestamp format
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# File syncing capability is disabled by default. This feature is usually not required,
+# not useful and an extreme performance hit
+#$ActionFileEnableSync on
+
+# Include all config files in /etc/rsyslog.d/
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+# Turn off message reception via local log socket;
+# local messages are retrieved through imjournal now.
+$OmitLocalLogging on
+
+# File to store the position in the journal
+$IMJournalStateFile imjournal.state
+
+
+#### RULES ####
+
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              /var/log/secure
+
+# Log all the mail messages in one place.
+mail.*                                                  -/var/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 :omusrmsg:*
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /var/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /var/log/boot.log
+
+
+# ### begin forwarding rule ###
+# The statement between the begin ... end define a SINGLE forwarding
+# rule. They belong together, do NOT split them. If you create multiple
+# forwarding rules, duplicate the whole block!
+# Remote Logging (we use TCP for reliable delivery)
+#
+# An on-disk queue is created for this action. If the remote host is
+# down, messages are spooled to disk and sent when it is up again.
+#$ActionQueueFileName fwdRule1 # unique name prefix for spool files
+#$ActionQueueMaxDiskSpace 1g   # 1gb space limit (use as much as possible)
+#$ActionQueueSaveOnShutdown on # save messages to disk on shutdown
+#$ActionQueueType LinkedList   # run asynchronously
+#$ActionResumeRetryCount -1    # infinite retries if host is down
+# remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+#*.* @@remote-host:514
+# ### end of the forwarding rule ###
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$use r} 2>/dev/null; done
+###### root crontab is:
+###### bin crontab is:
+###### daemon crontab is:
+###### adm crontab is:
+###### lp crontab is:
+###### sync crontab is:
+###### shutdown crontab is:
+###### halt crontab is:
+###### mail crontab is:
+###### operator crontab is:
+###### games crontab is:
+###### ftp crontab is:
+###### nobody crontab is:
+###### systemd-network crontab is:
+###### dbus crontab is:
+###### polkitd crontab is:
+###### rpc crontab is:
+###### rpcuser crontab is:
+###### nfsnobody crontab is:
+###### sshd crontab is:
+###### postfix crontab is:
+###### chrony crontab is:
+###### centos crontab is:
+###### user1 crontab is:
+###### user2 crontab is:
+###### user3 crontab is:
+###### user4 crontab is:
+###### user5 crontab is:
+###### user6 crontab is:
+###### user7 crontab is:
+###### user8 crontab is:
+###### user9 crontab is:
+###### user10 crontab is:
+###### user11 crontab is:
+###### user12 crontab is:
+###### user13 crontab is:
+###### user14 crontab is:
+###### user15 crontab is:
+###### user16 crontab is:
+###### user17 crontab is:
+###### user18 crontab is:
+###### user19 crontab is:
+###### user20 crontab is:
+###### user21 crontab is:
+###### user22 crontab is:
+###### user23 crontab is:
+###### radicle crontab is:
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 16
+drwxr-xr-x.  2 root root   21 Aug  8  2019 [0m[38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   59 Mar 16 12:43 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  434 Aug 16  2018 [38;5;34m0logwatch[0m
+-rwx------.  1 root root  219 Oct 30  2018 [38;5;34mlogrotate[0m
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 [38;5;34mman-db.cron[0m
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.  2 root root   22 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  392 Nov 20  2018 [38;5;34m0anacron[0m
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+
+/etc/cron.weekly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/cron.daily/0logwatch
+#!/bin/sh
+
+#Set logwatch location
+LOGWATCH_SCRIPT="/usr/sbin/logwatch"
+#Add options to this line. Most options should be defined in /etc/logwatch/conf/logwatch.conf,
+#but some are only for the nightly cronrun such as --output mail and should be set here.
+#Other options to consider might be "--format html" or "--encode base64", man logwatch for more details.
+OPTIONS="--output mail"
+
+#Call logwatch
+$LOGWATCH_SCRIPT $OPTIONS
+
+exit 0
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r--. 1 root root                 39 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root root                 36 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 17 Aug 17 14:58 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root root                 26 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                 43 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 30 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-Slice.conf
+-rw-r--r--. 1 root root                 46 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-Description.conf
+-rw-r--r--. 1 root root                 17 Aug 17 14:58 /run/systemd/system/session-1456.scope
+-rw-r--r--. 1 root root                 23 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root root                 43 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root root                 36 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root root                 26 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root root                261 Aug 17 14:58 /run/systemd/users/1004
+-rw-r--r--. 1 root root                302 Aug 17 14:58 /run/systemd/sessions/1456
+-rw-rw-r--. 1 root utmp              54144 Aug 17 14:58 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 17 14:58 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               2304 Aug 17 14:58 /run/utmp
+-rw-r--r--. 1 root root              26153 Aug 17 15:01 /var/log/cron
+-rw-------. 1 root root              22452 Aug 17 15:01 /var/log/messages
+-rw-------. 1 root root                125 Aug 17 15:05 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             975249 Aug 17 15:05 /var/log/audit/audit.log
+-rw-------. 1 root root              12721 Aug 17 15:05 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 17 15:05 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /root/.bash_history
+ifconfig -a
+ifconfig eth0 192.168.169.122
+ifconfig -a
+exit
+rm -rf /home/useraccounts/user*/.bash_history
+exit
+rm -rf /home/useraccounts/*/.bash_history
+ls -latr /home/useraccounts/*/.bash_history
+exit
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat ~/.bash_history
+cat: /home/useraccounts/user4/.bash_history: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/rsyslog.d/listen.conf
+$SystemLogSocketName /run/systemd/journal/syslog
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /etc/sysconfig/
+total 120
+-rw-r--r--.  1 root root    0 Jun  9  2014 run-parts
+-rw-r--r--.  1 root root   15 Aug  4  2017 rdisc
+-rw-r--r--.  1 root root  395 Apr 10  2018 rpc-rquotad
+-rw-r--r--.  1 root root  903 Apr 10  2018 irqbalance
+-rw-r-----.  1 root root  506 Apr 11  2018 sshd
+-rw-r--r--.  1 root root   46 Apr 12  2018 chronyd
+-rw-r--r--.  1 root root  196 Oct 30  2018 rsyslog
+-rw-r--r--.  1 root root  911 Oct 30  2018 qemu-ga
+-rw-r--r--.  1 root root  200 Oct 30  2018 man-db
+-rw-r--r--.  1 root root  905 Oct 30  2018 readonly-root
+-rw-r--r--.  1 root root  634 Oct 30  2018 netconsole
+drwxr-xr-x.  2 root root    6 Oct 30  2018 [0m[38;5;27mmodules[0m
+-rw-r--r--.  1 root root  798 Oct 30  2018 init
+drwxr-xr-x.  2 root root    6 Oct 30  2018 [38;5;27mconsole[0m
+-rw-r--r--.  1 root root   73 Oct 30  2018 rpcbind
+-rw-r--r--.  1 root root  610 Oct 30  2018 wpa_supplicant
+-rw-------.  1 root root 2374 Nov  4  2018 iptables-config
+-rw-------.  1 root root 2393 Nov  4  2018 ip6tables-config
+-rw-r--r--.  1 root root 1679 Nov  7  2018 nfs
+-rw-------.  1 root root  110 Nov 20  2018 crond
+-rw-r--r--.  1 root root   12 Apr 25  2019 rsyncd
+-rw-r--r--.  1 root root 1722 Jul 29  2019 kdump
+-rw-r--r--.  1 root root  150 Jul 29  2019 cpupower
+drwxr-xr-x.  2 root root   43 Aug  8  2019 [38;5;27mcbq[0m
+lrwxrwxrwx.  1 root root   15 Aug  8  2019 [38;5;51mgrub[0m -> ../default/grub
+lrwxrwxrwx.  1 root root   17 Aug  8  2019 [38;5;51mselinux[0m -> ../selinux/config
+-rw-r--r--.  1 root root  483 Aug  8  2019 authconfig
+drwxr-xr-x.  2 root root 4096 Aug  8  2019 [38;5;27mnetwork-scripts[0m
+-rw-r--r--.  1 root root  180 Aug  8  2019 kernel
+-rw-r--r--.  1 root root   17 Aug  8  2019 firstboot
+drwxr-xr-x.  6 root root 4096 Aug  8  2019 [38;5;27m.[0m
+-rw-r--r--.  1 root root  145 Aug  8  2019 anaconda
+-rw-r--r--.  1 root root   86 Mar 16 12:41 network
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/rsyslog.d/00-my_iptables.conf
+cat: /etc/rsyslog.d/00-my_iptables.conf: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /var/log/iptables.log
+cat: /var/log/iptables.log: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/audit/rules.d/audit.rules
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## Set failure mode to syslog
+-f 1
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/audit/auditd.conf
+#
+# This file controls the configuration of the audit daemon
+#
+
+local_events = yes
+write_logs = yes
+log_file = /var/log/audit/audit.log
+log_group = root
+log_format = RAW
+flush = INCREMENTAL_ASYNC
+freq = 50
+max_log_file = 8
+num_logs = 5
+priority_boost = 4
+disp_qos = lossy
+dispatcher = /sbin/audispd
+name_format = NONE
+##name = mydomain
+max_log_file_action = ROTATE
+space_left = 75
+space_left_action = SYSLOG
+verify_email = yes
+action_mail_acct = root
+admin_space_left = 50
+admin_space_left_action = SUSPEND
+disk_full_action = SUSPEND
+disk_error_action = SUSPEND
+use_libwrap = yes
+##tcp_listen_port = 60
+tcp_listen_queue = 5
+tcp_max_per_addr = 1
+##tcp_client_ports = 1024-65535
+tcp_client_max_idle = 0
+enable_krb5 = no
+krb5_principal = auditd
+##krb5_key_file = /etc/audit/audit.key
+distribute_network = no
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRYPTO_KEY_USER msg=audit(1660748931.634:10704): pid=22986 uid=0 auid=1017 ses=1458 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=destroy kind=server fp=SHA256:e3:3f:38:d0:dc:c2:81:83:3e:22:de:58:cb:cf:08:61:7c:a6:cf:31:53:63:f1:5c:06:33:a2:db:1c:35:8c:6d direction=? spid=22991 suid=1017  exe="/usr/sbin/sshd" hostname=? addr=? terminal=? res=success'
+type=USER_ACCT msg=audit(1660748931.713:10705): pid=23008 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_CMD msg=audit(1660748931.714:10706): pid=23008 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/1 res=success'
+type=CRED_REFR msg=audit(1660748931.714:10707): pid=23008 uid=0 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_START msg=audit(1660748931.721:10708): pid=23008 uid=0 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo stat /var/log/audit/audit.log
+  File: ‘/var/log/audit/audit.log’
+  Size: 990577    	Blocks: 1936       IO Block: 4096   regular file
+Device: 801h/2049d	Inode: 8411487     Links: 1
+Access: (0600/-rw-------)  Uid: (    0/    root)   Gid: (    0/    root)
+Context: system_u:object_r:auditd_log_t:s0
+Access: 2022-08-17 15:08:51.724837495 +0000
+Modify: 2022-08-17 15:09:22.036643017 +0000
+Change: 2022-08-17 15:09:22.036643017 +0000
+ Birth: -
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/logwatch/conf/logwatch.conf
+# Local configuration options go here (defaults are in /usr/share/logwatch/default.conf/logwatch.conf)
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /usr/share/logwatch/default.conf/logwatch.conf
+########################################################
+# This was written and is maintained by:
+#    Kirk Bauer <kirk@kaybee.org>
+#
+# Please send all comments, suggestions, bug reports,
+#    etc, to kirk@kaybee.org.
+#
+########################################################
+
+# NOTE:
+#   All these options are the defaults if you run logwatch with no
+#   command-line arguments.  You can override all of these on the
+#   command-line.
+
+# You can put comments anywhere you want to.  They are effective for the
+# rest of the line.
+
+# this is in the format of <name> = <value>.  Whitespace at the beginning
+# and end of the lines is removed.  Whitespace before and after the = sign
+# is removed.  Everything is case *insensitive*.
+
+# Yes = True  = On  = 1
+# No  = False = Off = 0
+
+# Default Log Directory
+# All log-files are assumed to be given relative to this directory.
+LogDir = /var/log
+
+# You can override the default temp directory (/tmp) here
+TmpDir = /var/cache/logwatch
+
+#Output/Format Options
+#By default Logwatch will print to stdout in text with no encoding.
+#To make email Default set Output = mail to save to file set Output = file
+Output = stdout
+#To make Html the default formatting Format = html
+Format = text
+#To make Base64 [aka uuencode] Encode = base64
+Encode = none
+
+# Default person to mail reports to.  Can be a local account or a
+# complete email address.  Variable Output should be set to mail, or
+# --output mail should be passed on command line to enable mail feature.
+MailTo = root
+# WHen using option --multiemail, it is possible to specify a different
+# email recipient per host processed.  For example, to send the report
+# for hostname host1 to user@example.com, use:
+#Mailto_host1 = user@example.com
+# Multiple recipients can be specified by separating them with a space.
+
+# Default person to mail reports from.  Can be a local account or a
+# complete email address.
+MailFrom = Logwatch
+
+# if set, the results will be saved in <filename> instead of mailed
+# or displayed. Be sure to set Output = file also.
+#Filename = /tmp/logwatch
+
+# Use archives?  If set to 'Yes', the archives of logfiles
+# (i.e. /var/log/messages.1 or /var/log/messages.1.gz) will
+# be searched in addition to the /var/log/messages file.
+# This usually will not do much if your range is set to just
+# 'Yesterday' or 'Today'... it is probably best used with Range = All.
+# By default this is now set to Yes. To turn off Archives uncomment this.
+#Archives = No
+
+# The default time range for the report...
+# The current choices are All, Today, Yesterday
+Range = yesterday
+
+# The default detail level for the report.
+# This can either be Low, Med, High or a number.
+# Low = 0
+# Med = 5
+# High = 10
+Detail = Low
+
+
+# The 'Service' option expects either the name of a filter
+# (in /usr/share/logwatch/scripts/services/*) or 'All'.
+# The default service(s) to report on.  This should be left as All for
+# most people.
+Service = All
+# You can also disable certain services (when specifying all)
+Service = "-zz-network"     # Prevents execution of zz-network service, which
+                            # prints useful network configuration info.
+Service = "-zz-sys"         # Prevents execution of zz-sys service, which
+                            # prints useful system configuration info.
+Service = "-eximstats"      # Prevents execution of eximstats service, which
+                            # is a wrapper for the eximstats program.
+# If you only cared about FTP messages, you could use these 2 lines
+# instead of the above:
+#Service = ftpd-messages   # Processes ftpd messages in /var/log/messages
+#Service = ftpd-xferlog    # Processes ftpd messages in /var/log/xferlog
+# Maybe you only wanted reports on PAM messages, then you would use:
+#Service = pam_pwdb        # PAM_pwdb messages - usually quite a bit
+#Service = pam             # General PAM messages... usually not many
+
+# You can also choose to use the 'LogFile' option.  This will cause
+# logwatch to only analyze that one logfile.. for example:
+#LogFile = messages
+# will process /var/log/messages.  This will run all the filters that
+# process that logfile.  This option is probably not too useful to
+# most people.  Setting 'Service' to 'All' above analyzes all LogFiles
+# anyways...
+
+#
+# By default we assume that all Unix systems have sendmail or a sendmail-like MTA.
+# The mailer code prints a header with To: From: and Subject:.
+# At this point you can change the mailer to anything that can handle this output
+# stream.
+# TODO test variables in the mailer string to see if the To/From/Subject can be set
+# From here with out breaking anything. This would allow mail/mailx/nail etc..... -mgt
+mailer = "/usr/sbin/sendmail -t"
+
+#
+# With this option set to a comma separted list of hostnames, only log entries
+# for these particular hosts will be processed.  This can allow a log host to
+# process only its own logs, or Logwatch can be run once per a set of hosts
+# included in the logfiles.
+# Example: HostLimit = hosta,hostb,myhost
+#
+# The default is to report on all log entries, regardless of its source host.
+# Note that some logfiles do not include host information and will not be
+# influenced by this setting.
+#
+#HostLimit = myhost
+
+# vi: shiftwidth=3 tabstop=3 et
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/rsyslog.conf
+# rsyslog configuration file
+
+# For more information see /usr/share/doc/rsyslog-*/rsyslog_conf.html
+# If you experience problems, see http://www.rsyslog.com/doc/troubleshoot.html
+
+#### MODULES ####
+
+# The imjournal module bellow is now used as a message source instead of imuxsock.
+$ModLoad imuxsock # provides support for local system logging (e.g. via logger command)
+$ModLoad imjournal # provides access to the systemd journal
+#$ModLoad imklog # reads kernel messages (the same are read from journald)
+#$ModLoad immark  # provides --MARK-- message capability
+
+# Provides UDP syslog reception
+#$ModLoad imudp
+#$UDPServerRun 514
+
+# Provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+#### GLOBAL DIRECTIVES ####
+
+# Where to place auxiliary files
+$WorkDirectory /var/lib/rsyslog
+
+# Use default timestamp format
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# File syncing capability is disabled by default. This feature is usually not required,
+# not useful and an extreme performance hit
+#$ActionFileEnableSync on
+
+# Include all config files in /etc/rsyslog.d/
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+# Turn off message reception via local log socket;
+# local messages are retrieved through imjournal now.
+$OmitLocalLogging on
+
+# File to store the position in the journal
+$IMJournalStateFile imjournal.state
+
+
+#### RULES ####
+
+# Log all kernel messages to the console.
+# Logging much else clutters up the screen.
+#kern.*                                                 /dev/console
+
+# Log anything (except mail) of level info or higher.
+# Don't log private authentication messages!
+*.info;mail.none;authpriv.none;cron.none                /var/log/messages
+
+# The authpriv file has restricted access.
+authpriv.*                                              /var/log/secure
+
+# Log all the mail messages in one place.
+mail.*                                                  -/var/log/maillog
+
+
+# Log cron stuff
+cron.*                                                  /var/log/cron
+
+# Everybody gets emergency messages
+*.emerg                                                 :omusrmsg:*
+
+# Save news errors of level crit and higher in a special file.
+uucp,news.crit                                          /var/log/spooler
+
+# Save boot messages also to boot.log
+local7.*                                                /var/log/boot.log
+
+
+# ### begin forwarding rule ###
+# The statement between the begin ... end define a SINGLE forwarding
+# rule. They belong together, do NOT split them. If you create multiple
+# forwarding rules, duplicate the whole block!
+# Remote Logging (we use TCP for reliable delivery)
+#
+# An on-disk queue is created for this action. If the remote host is
+# down, messages are spooled to disk and sent when it is up again.
+#$ActionQueueFileName fwdRule1 # unique name prefix for spool files
+#$ActionQueueMaxDiskSpace 1g   # 1gb space limit (use as much as possible)
+#$ActionQueueSaveOnShutdown on # save messages to disk on shutdown
+#$ActionQueueType LinkedList   # run asynchronously
+#$ActionResumeRetryCount -1    # infinite retries if host is down
+# remote host is: name/ip:port, e.g. 192.168.0.1:514, port optional
+#*.* @@remote-host:514
+# ### end of the forwarding rule ###
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /var/log/maillog
+Aug 14 03:39:03 desktop-user12 postfix/local[19739]: 4261AB06E3: to=<root@desktop-user12.localdomain>, orig_to=<root>, relay=local, delay=0.6, delays=0.39/0.02/0/0.2, dsn=2.0.0, status=sent (delivered to mailbox)
+Aug 14 03:39:03 desktop-user12 postfix/qmgr[1143]: 4261AB06E3: removed
+Aug 15 03:25:03 desktop-user12 postfix/pickup[20232]: 1805EB06E3: uid=0 from=<root>
+Aug 15 03:25:03 desktop-user12 postfix/cleanup[20607]: 1805EB06E3: message-id=<20220815032503.1805EB06E3@desktop-user12.localdomain>
+Aug 15 03:25:03 desktop-user12 postfix/qmgr[1143]: 1805EB06E3: from=<root@desktop-user12.localdomain>, size=1993, nrcpt=1 (queue active)
+Aug 15 03:25:03 desktop-user12 postfix/local[20626]: 1805EB06E3: to=<root@desktop-user12.localdomain>, orig_to=<root>, relay=local, delay=0.78, delays=0.54/0.02/0/0.22, dsn=2.0.0, status=sent (delivered to mailbox)
+Aug 15 03:25:03 desktop-user12 postfix/qmgr[1143]: 1805EB06E3: removed
+Aug 16 03:06:03 desktop-user12 postfix/pickup[21190]: DF704B06E3: uid=0 from=<root>
+Aug 16 03:06:03 desktop-user12 postfix/cleanup[21619]: DF704B06E3: message-id=<20220816030603.DF704B06E3@desktop-user12.localdomain>
+Aug 16 03:06:04 desktop-user12 postfix/qmgr[1143]: DF704B06E3: from=<root@desktop-user12.localdomain>, size=1993, nrcpt=1 (queue active)
+Aug 16 03:06:04 desktop-user12 postfix/local[21629]: DF704B06E3: to=<root@desktop-user12.localdomain>, orig_to=<root>, relay=local, delay=1.8, delays=1.6/0.01/0/0.23, dsn=2.0.0, status=sent (delivered to mailbox)
+Aug 16 03:06:04 desktop-user12 postfix/qmgr[1143]: DF704B06E3: removed
+Aug 17 03:39:04 desktop-user12 postfix/pickup[22127]: 38D99B06E3: uid=0 from=<root>
+Aug 17 03:39:04 desktop-user12 postfix/cleanup[22532]: 38D99B06E3: message-id=<20220817033904.38D99B06E3@desktop-user12.localdomain>
+Aug 17 03:39:04 desktop-user12 postfix/qmgr[1143]: 38D99B06E3: from=<root@desktop-user12.localdomain>, size=1993, nrcpt=1 (queue active)
+Aug 17 03:39:05 desktop-user12 postfix/local[22541]: 38D99B06E3: to=<root@desktop-user12.localdomain>, orig_to=<root>, relay=local, delay=2.4, delays=2/0.02/0/0.42, dsn=2.0.0, status=sent (delivered to mailbox)
+Aug 17 03:39:05 desktop-user12 postfix/qmgr[1143]: 38D99B06E3: removed
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 11565 ep_pol Jun18 ?        00:00:53 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:59 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:35 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:04 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:30 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:03 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        46     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        47     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        48     2  0  99  19 -     0 khugep Jun18 ?        00:00:29 [khugepaged]
+1 S root        49     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        57     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        58     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:1]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        63     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        77     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       195     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       266     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       369     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       370     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       371     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       372     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       374     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       375     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       376     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       404     2  0  80   0 -     0 xfsail Jun18 ?        00:00:25 [xfsaild/sda1]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/3:1H]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       407     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+4 S root       487     1  0  80   0 - 10053 ep_pol Jun18 ?        00:00:14 /usr/lib/systemd/systemd-journald
+4 S root       526     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       662     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+1 S root       716     2  0  80   0 -     0 add_hw Jun18 ?        00:00:02 [hwrng]
+5 S rpc        730     1  0  80   0 - 17332 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       731     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       741     1  0  80   0 -  5416 hrtime Jun18 ?        00:04:29 /usr/sbin/irqbalance --foreground
+4 S polkitd    742     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       743     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:14 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfi
+5 S chrony     745     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:10 /usr/sbin/chronyd
+1 S root       746     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+4 S root       757     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:18 /usr/lib/systemd/systemd-logind
+1 S root       779     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+5 S root       990     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf
+4 S root      1051     1  0  80   0 - 143481 poll_s Jun18 ?       00:12:06 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1141     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:33 /usr/libexec/postfix/master -w
+4 S postfix   1143  1141  0  80   0 - 22483 ep_pol Jun18 ?        00:00:06 qmgr -l -t unix -u
+4 S root      1187     1  0  80   0 - 59783 poll_s Jun18 ?        00:06:01 /usr/sbin/rsyslogd -n
+4 S root      1191     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1192     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1197     1  0  80   0 - 31571 hrtime Jun18 ?        00:00:13 /usr/sbin/crond -n
+4 S root      1198     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+1 S root     21086     2  0  80   0 -     0 worker Aug15 ?        00:00:06 [kworker/1:2]
+1 R root     21106     2  0  80   0 -     0 ?      Aug15 ?        00:00:00 [kworker/0:0]
+1 S root     21934     2  0  80   0 -     0 worker Aug16 ?        00:00:00 [kworker/2:2]
+1 S root     22615     2  0  80   0 -     0 worker 05:01 ?        00:00:00 [kworker/1:0]
+1 S root     22635     2  0  80   0 -     0 worker 06:01 ?        00:00:00 [kworker/2:1]
+4 S root     22763  1191  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23 [priv]
+5 S user23   22767 22763  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23@pts/0
+0 S user23   22768 22767  0  80   0 - 28860 n_tty_ 13:18 pts/0    00:00:00 -bash
+4 S postfix  22813  1141  0  80   0 - 22439 ep_pol 14:24 ?        00:00:00 pickup -l -t unix -u
+4 S root     22837  1191  0  80   0 - 39717 poll_s 14:58 ?        00:00:00 sshd: user4 [priv]
+5 D user4    22841 22837  0  80   0 - 39717 flush_ 14:58 ?        00:00:00 sshd: user4@pts/1
+0 S user4    22842 22841  0  80   0 - 28860 do_wai 14:58 pts/1    00:00:00 -bash
+1 S root     22859     2  0  80   0 -     0 worker 14:59 ?        00:00:00 [kworker/3:0]
+1 S root     22882     2  0  80   0 -     0 worker 15:01 ?        00:00:00 [kworker/0:2]
+1 S root     22962     2  0  80   0 -     0 worker 15:04 ?        00:00:00 [kworker/3:1]
+4 S root     22986  1191  0  80   0 - 39717 poll_s 15:08 ?        00:00:00 sshd: user17 [priv]
+5 S user17   22990 22986  0  80   0 - 39717 poll_s 15:08 ?        00:00:00 sshd: user17@pts/2
+0 S user17   22991 22990  0  80   0 - 28860 n_tty_ 15:08 pts/2    00:00:00 -bash
+1 S root     23015     2  0  80   0 -     0 worker 15:09 ?        00:00:00 [kworker/3:2]
+4 S root     23016  1191  0  80   0 - 39717 poll_s 15:10 ?        00:00:00 sshd: user19 [priv]
+5 S user19   23020 23016  0  80   0 - 39717 poll_s 15:10 ?        00:00:00 sshd: user19@pts/3
+0 S user19   23021 23020  0  80   0 - 28860 n_tty_ 15:10 pts/3    00:00:00 -bash
+0 R user4    23158 22842  0  80   0 - 38840 -      15:15 pts/1    00:00:00 ps -elf
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /var/spool/postfix/deffered
+cat: /var/spool/postfix/deffered: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2948952k,nr_inodes=737238,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=30,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=13684)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+tmpfs on /run/user/1023 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1023,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1004,gid=10)
+tmpfs on /run/user/1017 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1017,gid=10)
+tmpfs on /run/user/1019 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1019,gid=10)
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lsmod
+Module                  Size  Used by
+kvm_amd              2177260  0 
+kvm                   621392  1 kvm_amd
+irqbypass              13503  1 kvm
+crc32_pclmul           13133  0 
+ppdev                  17671  0 
+ghash_clmulni_intel    13273  0 
+virtio_rng             13029  0 
+aesni_intel           189415  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+sg                     40721  0 
+virtio_balloon         18015  0 
+joydev                 17389  0 
+parport_pc             28205  0 
+i2c_piix4              22401  0 
+parport                46395  2 ppdev,parport_pc
+pcspkr                 12718  0 
+ip_tables              27126  0 
+xfs                   996949  1 
+libcrc32c              12644  1 xfs
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_scsi            18463  1 
+virtio_console         28076  0 
+virtio_net             28063  0 
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+ata_piix               35052  0 
+crc32c_intel           22094  1 
+libata                243133  3 pata_acpi,ata_generic,ata_piix
+serio_raw              13434  0 
+virtio_pci             22985  0 
+virtio_ring            22746  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+floppy                 69432  0 
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+sunrpc                353103  1 
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ uname -a
+Linux desktop-user12 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root  23 Nov 23  2018 /etc/system-release-cpe
+-rw-r--r--. 1 root root 393 Nov 23  2018 /etc/os-release
+-rw-r--r--. 1 root root  51 Nov 23  2018 /etc/centos-release-upstream
+-rw-r--r--. 1 root root  38 Nov 23  2018 /etc/centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 [0m[38;5;51m/etc/redhat-release[0m -> centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 [38;5;51m/etc/system-release[0m -> centos-release
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 3
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ services --status-all || systemctl status --no-pager
+-bash: services: command not found
+● desktop-user12
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Sat 2022-06-18 00:51:04 UTC; 1 months 30 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1002.slice
+           │ │ └─session-1461.scope
+           │ │   ├─23258 sshd: user2 [priv]
+           │ │   ├─23262 sshd: user2@pts/5
+           │ │   └─23263 -bash
+           │ ├─user-1020.slice
+           │ │ └─session-1460.scope
+           │ │   ├─23235 sshd: user20 [priv]
+           │ │   ├─23239 sshd: user20@pts/4
+           │ │   └─23240 -bash
+           │ ├─user-1019.slice
+           │ │ └─session-1459.scope
+           │ │   ├─23016 sshd: user19 [priv]
+           │ │   ├─23020 sshd: user19@pts/3
+           │ │   └─23021 -bash
+           │ ├─user-1017.slice
+           │ │ └─session-1458.scope
+           │ │   ├─22986 sshd: user17 [priv]
+           │ │   ├─22990 sshd: user17@pts/2
+           │ │   └─22991 -bash
+           │ ├─user-1004.slice
+           │ │ └─session-1456.scope
+           │ │   ├─22837 sshd: user4 [priv]
+           │ │   ├─22841 sshd: user4@pts/1
+           │ │   ├─22842 -bash
+           │ │   └─23284 systemctl status --no-pager
+           │ └─user-1023.slice
+           │   └─session-1454.scope
+           │     ├─22763 sshd: user23 [priv]
+           │     ├─22767 sshd: user23@pts/0
+           │     └─22768 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1197 /usr/sbin/crond -n
+             ├─sshd.service
+             │ └─1191 /usr/sbin/sshd -D
+             ├─rsyslog.service
+             │ └─1187 /usr/sbin/rsyslogd -n
+             ├─tuned.service
+             │ └─1051 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─postfix.service
+             │ ├─ 1141 /usr/libexec/postfix/master -w
+             │ ├─ 1143 qmgr -l -t unix -u
+             │ └─22813 pickup -l -t unix -u
+             ├─network.service
+             │ └─990 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H desktop-user12 eth0
+             ├─systemd-logind.service
+             │ └─757 /usr/lib/systemd/systemd-logind
+             ├─dbus.service
+             │ └─743 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─polkit.service
+             │ └─742 /usr/lib/polkit-1/polkitd --no-debug
+             ├─irqbalance.service
+             │ └─741 /usr/sbin/irqbalance --foreground
+             ├─chronyd.service
+             │ └─745 /usr/sbin/chronyd
+             ├─gssproxy.service
+             │ └─746 /usr/sbin/gssproxy -D
+             ├─rpcbind.service
+             │ └─730 /sbin/rpcbind -w
+             ├─auditd.service
+             │ └─662 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─526 /usr/lib/systemd/systemd-udevd
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1198 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1192 /sbin/agetty --noclear tty1 linux
+             └─systemd-journald.service
+               └─487 /usr/lib/systemd/systemd-journald
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/audit/rules.d/audit.rules
+## First rule - delete all
+-D
+
+## Increase the buffers to survive stress events.
+## Make this bigger for busy systems
+-b 8192
+
+## Set failure mode to syslog
+-f 1
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/audit/auditd.conf
+#
+# This file controls the configuration of the audit daemon
+#
+
+local_events = yes
+write_logs = yes
+log_file = /var/log/audit/audit.log
+log_group = root
+log_format = RAW
+flush = INCREMENTAL_ASYNC
+freq = 50
+max_log_file = 8
+num_logs = 5
+priority_boost = 4
+disp_qos = lossy
+dispatcher = /sbin/audispd
+name_format = NONE
+##name = mydomain
+max_log_file_action = ROTATE
+space_left = 75
+space_left_action = SYSLOG
+verify_email = yes
+action_mail_acct = root
+admin_space_left = 50
+admin_space_left_action = SUSPEND
+disk_full_action = SUSPEND
+disk_error_action = SUSPEND
+use_libwrap = yes
+##tcp_listen_port = 60
+tcp_listen_queue = 5
+tcp_max_per_addr = 1
+##tcp_client_ports = 1024-65535
+tcp_client_max_idle = 0
+enable_krb5 = no
+krb5_principal = auditd
+##krb5_key_file = /etc/audit/audit.key
+distribute_network = no
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ 
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /proc/meminfo
+MemTotal:        5944464 kB
+MemFree:         5586948 kB
+MemAvailable:    5539288 kB
+Buffers:            2088 kB
+Cached:           134296 kB
+SwapCached:            0 kB
+Active:           101992 kB
+Inactive:          85572 kB
+Active(anon):      56196 kB
+Inactive(anon):    20240 kB
+Active(file):      45796 kB
+Inactive(file):    65332 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         51240 kB
+Mapped:            25016 kB
+Shmem:             25256 kB
+Slab:              85632 kB
+SReclaimable:      51344 kB
+SUnreclaim:        34288 kB
+KernelStack:        2288 kB
+PageTables:         7256 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972232 kB
+Committed_AS:     267620 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17900 kB
+VmallocChunk:   34359717888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     10240 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       73588 kB
+DirectMap2M:     4120576 kB
+DirectMap1G:     4194304 kB
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/shadow
+root:$6$6Ybfmtg3S$Wd2uUO3MrjhP5381L83wKf4S5f1waKDH5pt.VSE2UOnAmVP2yxQQK/AIrxVyxRdwFgeeockBj8NcpzPjp6glj0:19067:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19065:0:99999:7:::
+user1:$1$T/UJ0rCH$6z8tIIy0H3yAZBi96ayoQ/:19067:0:99999:7:::
+user2:$1$ftWl6MiI$.vzeKoZHvgaCLYVaXhaYe0:19067:0:99999:7:::
+user3:$1$N1LUSpyw$vJCMGKB3AP2WD.9sesz7A/:19067:0:99999:7:::
+user4:$1$L0P0wn8P$lhwBDGloYS9FBmYFtBp5I1:19067:0:99999:7:::
+user5:$1$DE5kuTTW$t6jCtAZ2HIrKe8L4PYxRz.:19067:0:99999:7:::
+user6:$1$7hPu1p1Q$sG7QbbDhCDDg9l1uVO.7J1:19067:0:99999:7:::
+user7:$1$WO00AvDz$1SJ9ZLU3qbzFnRUdfoAmc0:19067:0:99999:7:::
+user8:$1$JOHsPyE1$PjpLdIv.XmDDmfrwcJpcv.:19067:0:99999:7:::
+user9:$1$vjLzisKK$VZ6UroMbozHfF/rHYpOvT1:19067:0:99999:7:::
+user10:$1$C6jODBnH$NNdxNlirhn8Hn.pq5aHQG/:19067:0:99999:7:::
+user11:$1$YEd3pG1H$r/UTbrJ79mY6coWbkAKMG0:19067:0:99999:7:::
+user12:$1$wE7n5qXx$PZdozd9WbStgxXQasb.3U0:19067:0:99999:7:::
+user13:$1$.cWjjRPV$XCCVfKGvcfHDCNuo3AQb41:19067:0:99999:7:::
+user14:$1$tdNbnl4c$IYMiIftFh1jY5FlvRNa80.:19067:0:99999:7:::
+user15:$1$nkBKMpy/$igJyyjonZD1vm6fwqNDff0:19067:0:99999:7:::
+user16:$1$0KgF.2Kd$qj3pzzQBCBnd68n1eO.Aj/:19067:0:99999:7:::
+user17:$1$3PHwgTRW$I3g4qmm.AuWco6iOCArnI.:19067:0:99999:7:::
+user18:$1$lfyXvqR7$WfwTS9pHkFB.r9jnWBciS/:19067:0:99999:7:::
+user19:$1$C26js/eE$tOmfhQzPC0CArhFHpwK9k1:19067:0:99999:7:::
+user20:$1$gm3AvgCr$hoQ8FfIoA2Dt.lHCGnB610:19067:0:99999:7:::
+user21:$1$KJdNTvrp$AASH53Szlxel2dJ4AW0pt/:19067:0:99999:7:::
+user22:$1$NrfBJEjt$r47xgWlORHoVPD9jFzsX/1:19067:0:99999:7:::
+user23:$1$Hep.4FCd$aAYzoNIjz3fTXG9i.UxUJ1:19067:0:99999:7:::
+radicle:$1$63lSU6S9$BbGXlEqH3aLFmCedh.Ptd.:19067:0:99999:7:::
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lspci -vv
+-bash: lspci: command not found
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ arp -a
+? (192.168.169.2) at fa:16:3e:0c:35:a8 [ether] on eth0
+? (192.168.169.43) at fa:16:3e:cd:5d:1c [ether] on eth0
+? (192.168.169.206) at fa:16:3e:90:b0:db [ether] on eth0
+gateway (192.168.169.1) at fa:16:3e:4b:b6:23 [ether] on eth0
+? (192.168.169.111) at fa:16:3e:0f:32:c9 [ether] on eth0
+? (192.168.169.3) at fa:16:3e:36:cd:d0 [ether] on eth0
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lsusb
+-bash: lsusb: command not found
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5805         132        5441          24         230        5401
+Swap:             0           0           0
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: SeaBIOS
+	Version: 1.13.0-1ubuntu1.1
+	Release Date: 04/01/2014
+	Address: 0xE8000
+	Runtime Size: 96 kB
+	ROM Size: 64 kB
+	Characteristics:
+		BIOS characteristics not supported
+		Targeted content distribution is supported
+	BIOS Revision: 0.0
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root    root    40 Mar 16 12:41 [0m[38;5;27m..[0m
+drwx------.  2 user21  wheel   62 Mar 16 12:42 [38;5;27muser21[0m
+drwx------.  2 user22  wheel   62 Mar 16 12:42 [38;5;27muser22[0m
+drwx------.  2 radicle wheel   62 Mar 16 12:42 [38;5;27mradicle[0m
+drwxr-xr-x. 26 root    root  4096 Mar 16 12:42 [38;5;27m.[0m
+drwx------.  2 user20  wheel   62 May 17 18:35 [38;5;27muser20[0m
+drwx------.  2 user19  wheel   62 May 17 18:35 [38;5;27muser19[0m
+drwx------.  2 user18  wheel   62 May 17 18:35 [38;5;27muser18[0m
+drwx------.  2 user17  wheel   62 May 17 18:35 [38;5;27muser17[0m
+drwx------.  2 user16  wheel   74 May 17 18:35 [38;5;27muser16[0m
+drwx------.  2 user15  wheel   62 May 17 18:35 [38;5;27muser15[0m
+drwx------.  2 user14  wheel   62 May 17 18:35 [38;5;27muser14[0m
+drwx------.  2 user13  wheel   62 May 17 18:35 [38;5;27muser13[0m
+drwx------.  2 user12  wheel   62 May 17 18:35 [38;5;27muser12[0m
+drwx------.  2 user11  wheel   62 May 17 18:35 [38;5;27muser11[0m
+drwx------.  2 user10  wheel   62 May 17 18:35 [38;5;27muser10[0m
+drwx------.  2 user1   wheel   62 May 17 18:35 [38;5;27muser1[0m
+drwx------.  2 user9   wheel   62 May 17 18:35 [38;5;27muser9[0m
+drwx------.  2 user8   wheel   62 May 17 18:35 [38;5;27muser8[0m
+drwx------.  2 user7   wheel   62 May 17 18:35 [38;5;27muser7[0m
+drwx------.  2 user6   wheel   62 May 17 18:35 [38;5;27muser6[0m
+drwx------.  2 user5   wheel   62 May 17 18:35 [38;5;27muser5[0m
+drwx------.  2 user4   wheel   62 May 17 18:35 [38;5;27muser4[0m
+drwx------.  2 user3   wheel   62 May 17 18:35 [38;5;27muser3[0m
+drwx------.  2 user2   wheel   62 May 17 18:35 [38;5;27muser2[0m
+drwx------.  2 user23  wheel   83 May 17 19:03 [38;5;27muser23[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lastlog
+Username         Port     From             Latest
+root             pts/0                     Tue May 17 19:02:37 +0000 2022
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+sync                                       **Never logged in**
+shutdown                                   **Never logged in**
+halt                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+ftp                                        **Never logged in**
+nobody                                     **Never logged in**
+systemd-network                            **Never logged in**
+dbus                                       **Never logged in**
+polkitd                                    **Never logged in**
+rpc                                        **Never logged in**
+rpcuser                                    **Never logged in**
+nfsnobody                                  **Never logged in**
+sshd                                       **Never logged in**
+postfix                                    **Never logged in**
+chrony                                     **Never logged in**
+centos                                     **Never logged in**
+user1            pts/1    192.168.169.111  Tue May 17 15:06:27 +0000 2022
+user2            pts/5    192.168.169.43   Wed Aug 17 15:19:47 +0000 2022
+user3            pts/5    192.168.169.111  Tue May 17 16:00:17 +0000 2022
+user4            pts/1    192.168.169.111  Wed Aug 17 14:58:46 +0000 2022
+user5            pts/4    192.168.169.111  Tue May 17 15:15:12 +0000 2022
+user6            pts/2    192.168.169.111  Tue May 17 17:12:22 +0000 2022
+user7            pts/7    192.168.169.111  Wed Mar 16 15:29:05 +0000 2022
+user8            pts/2    192.168.169.111  Tue May 17 16:42:41 +0000 2022
+user9            pts/3    192.168.169.111  Tue May 17 15:59:17 +0000 2022
+user10           pts/4    192.168.169.111  Tue May 17 16:27:38 +0000 2022
+user11           pts/1    192.168.169.111  Tue May 17 16:12:38 +0000 2022
+user12           pts/5    192.168.169.111  Tue May 17 17:15:37 +0000 2022
+user13           pts/4    192.168.169.111  Tue May 17 17:14:01 +0000 2022
+user14           pts/6    192.168.169.111  Tue May 17 15:34:06 +0000 2022
+user15           pts/2    192.168.169.111  Tue May 17 15:32:36 +0000 2022
+user16           pts/7    192.168.169.111  Tue May 17 15:36:06 +0000 2022
+user17           pts/2    192.168.169.111  Wed Aug 17 15:08:51 +0000 2022
+user18           pts/2    192.168.169.111  Tue May 17 14:57:39 +0000 2022
+user19           pts/3    192.168.169.111  Wed Aug 17 15:10:13 +0000 2022
+user20           pts/4    192.168.169.111  Wed Aug 17 15:19:36 +0000 2022
+user21                                     **Never logged in**
+user22                                     **Never logged in**
+user23           pts/0    192.168.169.111  Wed Aug 17 13:18:47 +0000 2022
+radicle                                    **Never logged in**
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ who
+user23   pts/0        2022-08-17 13:18 (192.168.169.111)
+user4    pts/1        2022-08-17 14:58 (192.168.169.111)
+user17   pts/2        2022-08-17 15:08 (192.168.169.111)
+user19   pts/3        2022-08-17 15:10 (192.168.169.111)
+user20   pts/4        2022-08-17 15:19 (192.168.169.111)
+user2    pts/5        2022-08-17 15:19 (192.168.169.43)
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo ls -latr /var/log/*
+-rw-------. 1 root   root        0 Aug  8  2019 /var/log/tallylog
+-rw-r--r--. 1 root   root      193 Aug  8  2019 /var/log/grubby_prune_debug
+-rw-------. 1 root   root     1894 Mar 16 12:43 /var/log/yum.log
+-rw-r--r--. 1 root   root    34216 Jun  4 02:27 /var/log/dmesg.old
+-rw-r--r--. 1 root   root    33544 Jun 18 00:51 /var/log/dmesg
+-rw-r--r--. 1 root   root      469 Jun 18 00:51 /var/log/boot.log
+-rw-------. 1 root   root   537664 Jun 18 00:51 /var/log/cloud-init.log
+-rw-------. 1 root   utmp        0 Jul  1 03:48 /var/log/btmp-20220801
+-rw-------. 1 root   root        0 Jul 17 03:41 /var/log/spooler-20220724
+-rw-------. 1 root   root        0 Jul 17 03:41 /var/log/secure-20220724
+-rw-------. 1 root   root        0 Jul 24 03:20 /var/log/spooler-20220731
+-rw-------. 1 root   root        0 Jul 24 03:20 /var/log/secure-20220731
+-rw-------. 1 root   root    44755 Jul 24 03:20 /var/log/messages-20220724
+-rw-r--r--. 1 root   root    53283 Jul 24 03:20 /var/log/cron-20220724
+-rw-------. 1 root   root     4892 Jul 24 03:20 /var/log/maillog-20220724
+-rw-r--r--. 1 root   root    52404 Jul 31 03:40 /var/log/cron-20220731
+-rw-------. 1 root   root        0 Jul 31 03:40 /var/log/spooler-20220807
+-rw-------. 1 root   root        0 Jul 31 03:40 /var/log/secure-20220807
+-rw-------. 1 root   root     4026 Jul 31 03:40 /var/log/maillog-20220731
+-rw-------. 1 root   root    43655 Jul 31 03:40 /var/log/messages-20220731
+-rw-------. 1 root   root        0 Aug  7 03:13 /var/log/spooler-20220814
+-rw-------. 1 root   root        0 Aug  7 03:13 /var/log/secure-20220814
+-rw-------. 1 root   root    44009 Aug  7 03:13 /var/log/messages-20220807
+-rw-r--r--. 1 root   root    52926 Aug  7 03:13 /var/log/cron-20220807
+-rw-------. 1 root   root     4889 Aug  7 03:13 /var/log/maillog-20220807
+-rw-------. 1 root   root        0 Aug 14 03:39 /var/log/spooler
+-rw-------. 1 root   root     4183 Aug 14 03:39 /var/log/maillog-20220814
+-rw-------. 1 root   root    43944 Aug 14 03:39 /var/log/messages-20220814
+-rw-r--r--. 1 root   root    53631 Aug 14 03:39 /var/log/cron-20220814
+-rw-------. 1 root   root     2198 Aug 17 03:39 /var/log/maillog
+-rw-r--r--. 1 root   root    26153 Aug 17 15:01 /var/log/cron
+-rw-------. 1 root   utmp      768 Aug 17 15:19 /var/log/btmp
+-rw-rw-r--. 1 root   utmp    55680 Aug 17 15:19 /var/log/wtmp
+-rw-r--r--. 1 root   root   299300 Aug 17 15:19 /var/log/lastlog
+-rw-------. 1 root   root    23692 Aug 17 15:21 /var/log/messages
+-rw-------. 1 root   root    50078 Aug 17 15:27 /var/log/secure
+
+/var/log/chrony:
+total 4
+drwxr-xr-x. 2 chrony chrony    6 Apr 12  2018 .
+drwxr-xr-x. 8 root   root   4096 Aug 14 03:39 ..
+
+/var/log/qemu-ga:
+total 4
+drwxr-xr-x. 2 root root    6 Oct 30  2018 .
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/anaconda:
+total 1848
+-rw-------. 1 root root   11124 Aug  8  2019 anaconda.log
+-rw-------. 1 root root  214566 Aug  8  2019 syslog
+-rw-------. 1 root root   38944 Aug  8  2019 program.log
+-rw-------. 1 root root  168908 Aug  8  2019 packaging.log
+-rw-------. 1 root root   50553 Aug  8  2019 storage.log
+-rw-------. 1 root root    6220 Aug  8  2019 ifcfg.log
+-rw-------. 1 root root    8736 Aug  8  2019 ks-script-nZ3AId.log
+-rw-------. 1 root root       0 Aug  8  2019 ks-script-J5TjBr.log
+drwxr-xr-x. 2 root root     191 Aug  8  2019 .
+-rw-------. 1 root root 1371065 Aug  8  2019 journal.log
+drwxr-xr-x. 8 root root    4096 Aug 14 03:39 ..
+
+/var/log/rhsm:
+total 4
+drwxr-xr-x. 2 root root    6 Aug  8  2019 .
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/tuned:
+total 12
+drwxr-xr-x. 2 root root   23 Mar 14 18:12 .
+-rw-r--r--. 1 root root 7023 Jun 18 00:51 tuned.log
+drwxr-xr-x. 8 root root 4096 Aug 14 03:39 ..
+
+/var/log/audit:
+total 9800
+-r--------. 1 root root 8388829 Jul 29 00:01 audit.log.1
+drwx------. 2 root root      42 Jul 29 00:01 .
+drwxr-xr-x. 8 root root    4096 Aug 14 03:39 ..
+-rw-------. 1 root root 1176478 Aug 17 15:27 audit.log
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ 
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo tail -n 5 /var/btmp
+tail: cannot open ‘/var/btmp’ for reading: No such file or directory
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo tail -n 5 /var/log/btmp
+   �Z  ssh:notty                           student2                        192.168.169.43                                                                                                                                                                                                                                                          ��b    ���+                                   �Z  ssh:notty                           student2                        192.168.169.43                                                                                                                                                                                                                                                          �b    ���+                                ]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ btmp
+-bash: btmp: command not found
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ wtmp
+-bash: wtmp: command not found
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lastb
+lastb: /var/log/btmp: Permission denied
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo lastb
+student2 ssh:notty    192.168.169.43   Wed Aug 17 15:19 - 15:19  (00:00)    
+student2 ssh:notty    192.168.169.43   Wed Aug 17 15:18 - 15:18  (00:00)    
+
+btmp begins Wed Aug 17 15:18:56 2022
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo sulog
+sudo: sulog: command not found
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/shadow
+root:$6$6Ybfmtg3S$Wd2uUO3MrjhP5381L83wKf4S5f1waKDH5pt.VSE2UOnAmVP2yxQQK/AIrxVyxRdwFgeeockBj8NcpzPjp6glj0:19067:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19065:0:99999:7:::
+user1:$1$T/UJ0rCH$6z8tIIy0H3yAZBi96ayoQ/:19067:0:99999:7:::
+user2:$1$ftWl6MiI$.vzeKoZHvgaCLYVaXhaYe0:19067:0:99999:7:::
+user3:$1$N1LUSpyw$vJCMGKB3AP2WD.9sesz7A/:19067:0:99999:7:::
+user4:$1$L0P0wn8P$lhwBDGloYS9FBmYFtBp5I1:19067:0:99999:7:::
+user5:$1$DE5kuTTW$t6jCtAZ2HIrKe8L4PYxRz.:19067:0:99999:7:::
+user6:$1$7hPu1p1Q$sG7QbbDhCDDg9l1uVO.7J1:19067:0:99999:7:::
+user7:$1$WO00AvDz$1SJ9ZLU3qbzFnRUdfoAmc0:19067:0:99999:7:::
+user8:$1$JOHsPyE1$PjpLdIv.XmDDmfrwcJpcv.:19067:0:99999:7:::
+user9:$1$vjLzisKK$VZ6UroMbozHfF/rHYpOvT1:19067:0:99999:7:::
+user10:$1$C6jODBnH$NNdxNlirhn8Hn.pq5aHQG/:19067:0:99999:7:::
+user11:$1$YEd3pG1H$r/UTbrJ79mY6coWbkAKMG0:19067:0:99999:7:::
+user12:$1$wE7n5qXx$PZdozd9WbStgxXQasb.3U0:19067:0:99999:7:::
+user13:$1$.cWjjRPV$XCCVfKGvcfHDCNuo3AQb41:19067:0:99999:7:::
+user14:$1$tdNbnl4c$IYMiIftFh1jY5FlvRNa80.:19067:0:99999:7:::
+user15:$1$nkBKMpy/$igJyyjonZD1vm6fwqNDff0:19067:0:99999:7:::
+user16:$1$0KgF.2Kd$qj3pzzQBCBnd68n1eO.Aj/:19067:0:99999:7:::
+user17:$1$3PHwgTRW$I3g4qmm.AuWco6iOCArnI.:19067:0:99999:7:::
+user18:$1$lfyXvqR7$WfwTS9pHkFB.r9jnWBciS/:19067:0:99999:7:::
+user19:$1$C26js/eE$tOmfhQzPC0CArhFHpwK9k1:19067:0:99999:7:::
+user20:$1$gm3AvgCr$hoQ8FfIoA2Dt.lHCGnB610:19067:0:99999:7:::
+user21:$1$KJdNTvrp$AASH53Szlxel2dJ4AW0pt/:19067:0:99999:7:::
+user22:$1$NrfBJEjt$r47xgWlORHoVPD9jFzsX/1:19067:0:99999:7:::
+user23:$1$Hep.4FCd$aAYzoNIjz3fTXG9i.UxUJ1:19067:0:99999:7:::
+radicle:$1$63lSU6S9$BbGXlEqH3aLFmCedh.Ptd.:19067:0:99999:7:::
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo cat /etc/shadowsudo cat /etc/shadowcat /etc/group
+cat: /etc/shadowsudo: No such file or directory
+cat: cat: No such file or directory
+cat: /etc/shadowcat: No such file or directory
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:centos
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:centos
+cdrom:x:11:
+mail:x:12:postfix
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+systemd-journal:x:190:centos
+systemd-network:x:192:
+dbus:x:81:
+polkitd:x:998:
+rpc:x:32:
+ssh_keys:x:997:
+cgred:x:996:
+rpcuser:x:29:
+nfsnobody:x:65534:
+sshd:x:74:
+postdrop:x:90:
+postfix:x:89:
+chrony:x:995:
+centos:x:1000:
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ 
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:centos
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:centos
+cdrom:x:11:
+mail:x:12:postfix
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+systemd-journal:x:190:centos
+systemd-network:x:192:
+dbus:x:81:
+polkitd:x:998:
+rpc:x:32:
+ssh_keys:x:997:
+cgred:x:996:
+rpcuser:x:29:
+nfsnobody:x:65534:
+sshd:x:74:
+postdrop:x:90:
+postfix:x:89:
+chrony:x:995:
+centos:x:1000:
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ w
+ 15:37:04 up 60 days, 14:46,  7 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+user23   pts/0    192.168.169.111  13:18    1:51m  0.04s  0.04s -bash
+user4    pts/1    192.168.169.111  14:58    0.00s  0.16s  0.00s w
+user17   pts/2    192.168.169.111  15:08    1:04   0.10s  0.10s -bash
+user19   pts/3    192.168.169.111  15:10    1:28   0.13s  0.13s -bash
+user20   pts/4    192.168.169.111  15:19    3:12   0.21s  0.21s -bash
+user2    pts/5    192.168.169.43   15:19    8.00s  0.07s  0.07s -bash
+user21   pts/6    192.168.169.111  15:32   16.00s  0.05s  0.05s -bash
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ lastlog
+Username         Port     From             Latest
+root             pts/0                     Tue May 17 19:02:37 +0000 2022
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+sync                                       **Never logged in**
+shutdown                                   **Never logged in**
+halt                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+ftp                                        **Never logged in**
+nobody                                     **Never logged in**
+systemd-network                            **Never logged in**
+dbus                                       **Never logged in**
+polkitd                                    **Never logged in**
+rpc                                        **Never logged in**
+rpcuser                                    **Never logged in**
+nfsnobody                                  **Never logged in**
+sshd                                       **Never logged in**
+postfix                                    **Never logged in**
+chrony                                     **Never logged in**
+centos                                     **Never logged in**
+user1            pts/1    192.168.169.111  Tue May 17 15:06:27 +0000 2022
+user2            pts/5    192.168.169.43   Wed Aug 17 15:19:47 +0000 2022
+user3            pts/5    192.168.169.111  Tue May 17 16:00:17 +0000 2022
+user4            pts/1    192.168.169.111  Wed Aug 17 14:58:46 +0000 2022
+user5            pts/4    192.168.169.111  Tue May 17 15:15:12 +0000 2022
+user6            pts/2    192.168.169.111  Tue May 17 17:12:22 +0000 2022
+user7            pts/7    192.168.169.111  Wed Mar 16 15:29:05 +0000 2022
+user8            pts/2    192.168.169.111  Tue May 17 16:42:41 +0000 2022
+user9            pts/3    192.168.169.111  Tue May 17 15:59:17 +0000 2022
+user10           pts/4    192.168.169.111  Tue May 17 16:27:38 +0000 2022
+user11           pts/1    192.168.169.111  Tue May 17 16:12:38 +0000 2022
+user12           pts/5    192.168.169.111  Tue May 17 17:15:37 +0000 2022
+user13           pts/4    192.168.169.111  Tue May 17 17:14:01 +0000 2022
+user14           pts/6    192.168.169.111  Tue May 17 15:34:06 +0000 2022
+user15           pts/2    192.168.169.111  Tue May 17 15:32:36 +0000 2022
+user16           pts/7    192.168.169.111  Tue May 17 15:36:06 +0000 2022
+user17           pts/2    192.168.169.111  Wed Aug 17 15:08:51 +0000 2022
+user18           pts/2    192.168.169.111  Tue May 17 14:57:39 +0000 2022
+user19           pts/3    192.168.169.111  Wed Aug 17 15:10:13 +0000 2022
+user20           pts/4    192.168.169.111  Wed Aug 17 15:19:36 +0000 2022
+user21           pts/6    192.168.169.111  Wed Aug 17 15:32:48 +0000 2022
+user22                                     **Never logged in**
+user23           pts/0    192.168.169.111  Wed Aug 17 13:18:47 +0000 2022
+radicle                                    **Never logged in**
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /tmp
+total 0
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [0m[48;5;10;38;5;16m.X11-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.font-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.XIM-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.Test-unix[0m
+drwxrwxrwt.  2 root root   6 Aug  8  2019 [48;5;10;38;5;16m.ICE-unix[0m
+dr-xr-xr-x. 17 root root 224 Aug  8  2019 [38;5;27m..[0m
+drwx------.  3 root root  17 Jun 18 00:51 [38;5;27msystemd-private-8f54bdc2bdf948899c05002f71b66d10-chronyd.service-Hm4EuS[0m
+drwxrwxrwt.  8 root root 172 Aug 17 14:40 [48;5;10;38;5;16m.[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 - 13614 ep_pol Jun18 ?        00:00:53 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+1 S root         2     0  0  80   0 -     0 kthrea Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:0]
+1 S root         7     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/0]
+1 S root         8     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0  80   0 -     0 rcu_gp Jun18 ?        00:00:59 [rcu_sched]
+1 S root        10     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [lru-add-drain]
+5 S root        11     2  0 -40   - -     0 smpboo Jun18 ?        00:00:35 [watchdog/0]
+5 S root        12     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/1]
+1 S root        13     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/1]
+1 S root        14     2  0  80   0 -     0 smpboo Jun18 ?        00:00:04 [ksoftirqd/1]
+1 S root        16     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:0H]
+5 S root        17     2  0 -40   - -     0 smpboo Jun18 ?        00:00:30 [watchdog/2]
+1 S root        18     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/2]
+1 S root        19     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/2]
+1 S root        21     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/2:0H]
+5 S root        22     2  0 -40   - -     0 smpboo Jun18 ?        00:00:31 [watchdog/3]
+1 S root        23     2  0 -40   - -     0 smpboo Jun18 ?        00:00:00 [migration/3]
+1 S root        24     2  0  80   0 -     0 smpboo Jun18 ?        00:00:00 [ksoftirqd/3]
+1 S root        26     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/3:0H]
+5 S root        28     2  0  80   0 -     0 devtmp Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        29     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [netns]
+1 S root        30     2  0  80   0 -     0 watchd Jun18 ?        00:00:03 [khungtaskd]
+1 S root        31     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [writeback]
+1 S root        32     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kintegrityd]
+1 S root        33     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        34     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        35     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root        36     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kblockd]
+1 S root        37     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [md]
+1 S root        38     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [edac-poller]
+1 S root        39     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [watchdogd]
+1 S root        46     2  0  80   0 -     0 kswapd Jun18 ?        00:00:00 [kswapd0]
+1 S root        47     2  0  85   5 -     0 ksm_sc Jun18 ?        00:00:00 [ksmd]
+1 S root        48     2  0  99  19 -     0 khugep Jun18 ?        00:00:29 [khugepaged]
+1 S root        49     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [crypto]
+1 S root        57     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kthrotld]
+1 S root        58     2  0  80   0 -     0 worker Jun18 ?        00:00:00 [kworker/u8:1]
+1 S root        59     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kmpath_rdacd]
+1 S root        60     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kaluad]
+1 S root        61     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kpsmoused]
+1 S root        63     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ipv6_addrconf]
+1 S root        77     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [deferwq]
+1 S root       111     2  0  80   0 -     0 kaudit Jun18 ?        00:00:00 [kauditd]
+1 S root       194     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [rpciod]
+1 S root       195     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xprtiod]
+1 S root       266     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [ata_sff]
+1 S root       369     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       370     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_0]
+1 S root       371     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       372     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_1]
+1 S root       374     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [virtscsi-scan]
+1 S root       375     2  0  80   0 -     0 scsi_e Jun18 ?        00:00:00 [scsi_eh_2]
+1 S root       376     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [scsi_tmf_2]
+1 S root       394     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [bioset]
+1 S root       395     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfsalloc]
+1 S root       396     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs_mru_cache]
+1 S root       397     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-buf/sda1]
+1 S root       398     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-data/sda1]
+1 S root       399     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-conv/sda1]
+1 S root       400     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-cil/sda1]
+1 S root       401     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-reclaim/sda]
+1 S root       402     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-log/sda1]
+1 S root       403     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [xfs-eofblocks/s]
+1 S root       404     2  0  80   0 -     0 xfsail Jun18 ?        00:00:25 [xfsaild/sda1]
+1 S root       405     2  0  60 -20 -     0 worker Jun18 ?        00:00:01 [kworker/3:1H]
+1 S root       406     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       407     2  0  60 -20 -     0 worker Jun18 ?        00:00:02 [kworker/2:1H]
+4 S root       487     1  0  80   0 - 10056 ep_pol Jun18 ?        00:00:14 /usr/lib/systemd/systemd-journald
+4 S root       526     1  0  80   0 - 11917 ep_pol Jun18 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+5 S root       662     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+1 S root       716     2  0  80   0 -     0 add_hw Jun18 ?        00:00:02 [hwrng]
+5 S rpc        730     1  0  80   0 - 17332 poll_s Jun18 ?        00:00:12 /sbin/rpcbind -w
+1 S root       731     2  0  60 -20 -     0 rescue Jun18 ?        00:00:00 [kvm-irqfd-clean]
+4 S root       741     1  0  80   0 -  5416 hrtime Jun18 ?        00:04:30 /usr/sbin/irqbalance --foreground
+4 S polkitd    742     1  0  80   0 - 153057 poll_s Jun18 ?       00:00:04 /usr/lib/polkit-1/polkitd --no-debug
+4 S dbus       743     1  0  80   0 - 16573 ep_pol Jun18 ?        00:00:14 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfi
+5 S chrony     745     1  0  80   0 - 29446 poll_s Jun18 ?        00:00:10 /usr/sbin/chronyd
+1 S root       746     1  0  80   0 - 48774 ep_pol Jun18 ?        00:00:00 /usr/sbin/gssproxy -D
+4 S root       757     1  0  80   0 -  6594 ep_pol Jun18 ?        00:00:18 /usr/lib/systemd/systemd-logind
+1 S root       779     2  0  60 -20 -     0 worker Jun18 ?        00:00:00 [kworker/1:1H]
+5 S root       990     1  0  80   0 - 26866 poll_s Jun18 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf
+4 S root      1051     1  0  80   0 - 143481 poll_s Jun18 ?       00:12:06 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+5 S root      1141     1  0  80   0 - 22413 ep_pol Jun18 ?        00:00:33 /usr/libexec/postfix/master -w
+4 S postfix   1143  1141  0  80   0 - 22483 ep_pol Jun18 ?        00:00:06 qmgr -l -t unix -u
+4 S root      1187     1  0  80   0 - 59783 poll_s Jun18 ?        00:06:01 /usr/sbin/rsyslogd -n
+4 S root      1191     1  0  80   0 - 28216 poll_s Jun18 ?        00:00:00 /usr/sbin/sshd -D
+4 S root      1192     1  0  80   0 - 27526 n_tty_ Jun18 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+4 S root      1197     1  0  80   0 - 31571 hrtime Jun18 ?        00:00:13 /usr/sbin/crond -n
+4 S root      1198     1  0  80   0 - 27526 n_tty_ Jun18 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+1 R root     21086     2  0  80   0 -     0 ?      Aug15 ?        00:00:06 [kworker/1:2]
+1 S root     21106     2  0  80   0 -     0 worker Aug15 ?        00:00:00 [kworker/0:0]
+1 S root     21934     2  0  80   0 -     0 worker Aug16 ?        00:00:00 [kworker/2:2]
+1 S root     22615     2  0  80   0 -     0 worker 05:01 ?        00:00:00 [kworker/1:0]
+1 S root     22635     2  0  80   0 -     0 worker 06:01 ?        00:00:00 [kworker/2:1]
+4 S root     22763  1191  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23 [priv]
+5 S user23   22767 22763  0  80   0 - 39717 poll_s 13:18 ?        00:00:00 sshd: user23@pts/0
+0 S user23   22768 22767  0  80   0 - 28860 n_tty_ 13:18 pts/0    00:00:00 -bash
+4 S postfix  22813  1141  0  80   0 - 22439 ep_pol 14:24 ?        00:00:00 pickup -l -t unix -u
+4 S root     22837  1191  0  80   0 - 39717 poll_s 14:58 ?        00:00:00 sshd: user4 [priv]
+5 S user4    22841 22837  0  80   0 - 39717 poll_s 14:58 ?        00:00:00 sshd: user4@pts/1
+0 S user4    22842 22841  0  80   0 - 28860 do_wai 14:58 pts/1    00:00:00 -bash
+1 S root     22882     2  0  80   0 -     0 worker 15:01 ?        00:00:00 [kworker/0:2]
+4 S root     22986  1191  0  80   0 - 39717 poll_s 15:08 ?        00:00:00 sshd: user17 [priv]
+5 S user17   22990 22986  0  80   0 - 39717 poll_s 15:08 ?        00:00:00 sshd: user17@pts/2
+0 S user17   22991 22990  0  80   0 - 28860 n_tty_ 15:08 pts/2    00:00:00 -bash
+1 S root     23015     2  0  80   0 -     0 worker 15:09 ?        00:00:00 [kworker/3:2]
+4 S root     23016  1191  0  80   0 - 39717 poll_s 15:10 ?        00:00:00 sshd: user19 [priv]
+5 S user19   23020 23016  0  80   0 - 39750 poll_s 15:10 ?        00:00:00 sshd: user19@pts/3
+0 S user19   23021 23020  0  80   0 - 28860 n_tty_ 15:10 pts/3    00:00:00 -bash
+4 S root     23235  1191  0  80   0 - 39717 poll_s 15:19 ?        00:00:00 sshd: user20 [priv]
+5 S user20   23239 23235  0  80   0 - 39717 poll_s 15:19 ?        00:00:00 sshd: user20@pts/4
+0 S user20   23240 23239  0  80   0 - 28860 n_tty_ 15:19 pts/4    00:00:00 -bash
+4 S root     23258  1191  0  80   0 - 39717 poll_s 15:19 ?        00:00:00 sshd: user2 [priv]
+5 S user2    23262 23258  0  80   0 - 39717 poll_s 15:19 ?        00:00:00 sshd: user2@pts/5
+0 S user2    23263 23262  0  80   0 - 28860 n_tty_ 15:19 pts/5    00:00:00 -bash
+1 S root     23514     2  0  80   0 -     0 worker 15:24 ?        00:00:00 [kworker/3:1]
+1 S root     24005     2  0  80   0 -     0 worker 15:29 ?        00:00:00 [kworker/3:0]
+4 S root     24162  1191  0  80   0 - 39717 poll_s 15:32 ?        00:00:00 sshd: user21 [priv]
+5 S user21   24169 24162  0  80   0 - 39717 poll_s 15:32 ?        00:00:00 sshd: user21@pts/6
+0 S user21   24170 24169  0  80   0 - 28860 n_tty_ 15:32 pts/6    00:00:00 -bash
+0 R user4    24625 22842  0  80   0 - 38840 -      15:37 pts/1    00:00:00 ps -elf
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ netstat -lptn
+(No info could be read for "-p": geteuid()=1004 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:33521           0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+tcp6       0      0 :::33521                :::*                    LISTEN      -                   
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -latr /var/log
+total 1304
+drwxr-xr-x.  2 chrony chrony      6 Apr 12  2018 [0m[38;5;27mchrony[0m
+drwxr-xr-x.  2 root   root        6 Oct 30  2018 [38;5;27mqemu-ga[0m
+-rw-------.  1 root   root        0 Aug  8  2019 tallylog
+-rw-r--r--.  1 root   root      193 Aug  8  2019 grubby_prune_debug
+drwxr-xr-x.  2 root   root      191 Aug  8  2019 [38;5;27manaconda[0m
+drwxr-xr-x.  2 root   root        6 Aug  8  2019 [38;5;27mrhsm[0m
+drwxr-xr-x. 19 root   root      267 Mar 14 18:07 [38;5;27m..[0m
+drwxr-xr-x.  2 root   root       23 Mar 14 18:12 [38;5;27mtuned[0m
+-rw-------.  1 root   root     1894 Mar 16 12:43 yum.log
+-rw-r--r--.  1 root   root    34216 Jun  4 02:27 dmesg.old
+-rw-r--r--.  1 root   root    33544 Jun 18 00:51 dmesg
+-rw-r--r--.  1 root   root      469 Jun 18 00:51 boot.log
+-rw-------.  1 root   root   537664 Jun 18 00:51 cloud-init.log
+-rw-------.  1 root   utmp        0 Jul  1 03:48 btmp-20220801
+-rw-------.  1 root   root        0 Jul 17 03:41 spooler-20220724
+-rw-------.  1 root   root        0 Jul 17 03:41 secure-20220724
+-rw-------.  1 root   root        0 Jul 24 03:20 spooler-20220731
+-rw-------.  1 root   root        0 Jul 24 03:20 secure-20220731
+-rw-------.  1 root   root    44755 Jul 24 03:20 messages-20220724
+-rw-r--r--.  1 root   root    53283 Jul 24 03:20 cron-20220724
+-rw-------.  1 root   root     4892 Jul 24 03:20 maillog-20220724
+drwx------.  2 root   root       42 Jul 29 00:01 [38;5;27maudit[0m
+-rw-r--r--.  1 root   root    52404 Jul 31 03:40 cron-20220731
+-rw-------.  1 root   root        0 Jul 31 03:40 spooler-20220807
+-rw-------.  1 root   root        0 Jul 31 03:40 secure-20220807
+-rw-------.  1 root   root     4026 Jul 31 03:40 maillog-20220731
+-rw-------.  1 root   root    43655 Jul 31 03:40 messages-20220731
+-rw-------.  1 root   root        0 Aug  7 03:13 spooler-20220814
+-rw-------.  1 root   root        0 Aug  7 03:13 secure-20220814
+-rw-------.  1 root   root    44009 Aug  7 03:13 messages-20220807
+-rw-r--r--.  1 root   root    52926 Aug  7 03:13 cron-20220807
+-rw-------.  1 root   root     4889 Aug  7 03:13 maillog-20220807
+-rw-------.  1 root   root        0 Aug 14 03:39 spooler
+-rw-------.  1 root   root     4183 Aug 14 03:39 maillog-20220814
+-rw-------.  1 root   root    43944 Aug 14 03:39 messages-20220814
+drwxr-xr-x.  8 root   root     4096 Aug 14 03:39 [38;5;27m.[0m
+-rw-r--r--.  1 root   root    53631 Aug 14 03:39 cron-20220814
+-rw-------.  1 root   root     2198 Aug 17 03:39 maillog
+-rw-r--r--.  1 root   root    26153 Aug 17 15:01 cron
+-rw-------.  1 root   utmp      768 Aug 17 15:19 btmp
+-rw-------.  1 root   root    23925 Aug 17 15:32 messages
+-rw-rw-r--.  1 root   utmp    56064 Aug 17 15:32 wtmp
+-rw-r--r--.  1 root   root   299300 Aug 17 15:32 lastlog
+-rw-------.  1 root   root    72555 Aug 17 15:37 secure
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r--. 1 root   root              14696 Aug 17 14:40 /var/lib/dhclient/dhclient--eth0.lease
+-rw-r--r--. 1 root   root                 39 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 14:58 /run/systemd/system/user-1004.slice
+-rw-r--r--. 1 root   root                 26 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 14:58 /run/systemd/system/user-1004.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 30 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 46 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 14:58 /run/systemd/system/session-1456.scope
+-rw-r--r--. 1 root   root                 23 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 14:58 /run/systemd/system/session-1456.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                261 Aug 17 14:58 /run/systemd/users/1004
+-rw-r--r--. 1 root   root                302 Aug 17 14:58 /run/systemd/sessions/1456
+-rw-r--r--. 1 root   root              26153 Aug 17 15:01 /var/log/cron
+-rw-r--r--. 1 root   root                 40 Aug 17 15:08 /run/systemd/system/user-1017.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:08 /run/systemd/system/user-1017.slice
+-rw-r--r--. 1 root   root                 43 Aug 17 15:08 /run/systemd/system/user-1017.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:08 /run/systemd/system/user-1017.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:08 /run/systemd/system/user-1017.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:08 /run/systemd/system/session-1458.scope
+-rw-r--r--. 1 root   root                 30 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 47 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:08 /run/systemd/system/session-1458.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                262 Aug 17 15:08 /run/systemd/users/1017
+-rw-r--r--. 1 root   root                303 Aug 17 15:08 /run/systemd/sessions/1458
+-rw-r--r--. 1 root   root                 40 Aug 17 15:10 /run/systemd/system/user-1019.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:10 /run/systemd/system/user-1019.slice
+-rw-r--r--. 1 root   root                 26 Aug 17 15:10 /run/systemd/system/user-1019.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:10 /run/systemd/system/user-1019.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:10 /run/systemd/system/user-1019.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 30 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 47 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:10 /run/systemd/system/session-1459.scope
+-rw-r--r--. 1 root   root                 43 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 17 15:10 /run/systemd/system/session-1459.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                262 Aug 17 15:10 /run/systemd/users/1019
+-rw-r--r--. 1 root   root                303 Aug 17 15:10 /run/systemd/sessions/1459
+-rw-------. 1 root   utmp                768 Aug 17 15:19 /var/log/btmp
+-rw-r--r--. 1 root   root                 17 Aug 17 15:19 /run/systemd/system/user-1020.slice
+-rw-r--r--. 1 root   root                 40 Aug 17 15:19 /run/systemd/system/user-1020.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:19 /run/systemd/system/user-1020.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:19 /run/systemd/system/user-1020.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:19 /run/systemd/system/user-1020.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:19 /run/systemd/system/session-1460.scope
+-rw-r--r--. 1 root   root                 30 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 47 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:19 /run/systemd/system/session-1460.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                262 Aug 17 15:19 /run/systemd/users/1020
+-rw-r--r--. 1 root   root                303 Aug 17 15:19 /run/systemd/sessions/1460
+-rw-r--r--. 1 root   root                 39 Aug 17 15:19 /run/systemd/system/user-1002.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:19 /run/systemd/system/user-1002.slice
+-rw-r--r--. 1 root   root                 26 Aug 17 15:19 /run/systemd/system/user-1002.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:19 /run/systemd/system/user-1002.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:19 /run/systemd/system/user-1002.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 30 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 46 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:19 /run/systemd/system/session-1461.scope
+-rw-r--r--. 1 root   root                 26 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 17 15:19 /run/systemd/system/session-1461.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                261 Aug 17 15:19 /run/systemd/users/1002
+-rw-r--r--. 1 root   root                301 Aug 17 15:19 /run/systemd/sessions/1461
+-rw-r--r--. 1 chrony chrony               42 Aug 17 15:20 /var/lib/chrony/drift
+-rw-r--r--. 1 root   root                 40 Aug 17 15:32 /run/systemd/system/user-1021.slice.d/50-Description.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:32 /run/systemd/system/user-1021.slice.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:32 /run/systemd/system/user-1021.slice.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:32 /run/systemd/system/user-1021.slice
+-rw-r--r--. 1 root   root                 26 Aug 17 15:32 /run/systemd/system/user-1021.slice.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 17 Aug 17 15:32 /run/systemd/system/session-1462.scope
+-rw-r--r--. 1 root   root                 30 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-Slice.conf
+-rw-r--r--. 1 root   root                 47 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-Description.conf
+-rw-r--r--. 1 root   root                 43 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-After-systemd-user-sessions\x2eservice.conf
+-rw-r--r--. 1 root   root                 36 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-After-systemd-logind\x2eservice.conf
+-rw-r--r--. 1 root   root                 26 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-TasksMax.conf
+-rw-r--r--. 1 root   root                 23 Aug 17 15:32 /run/systemd/system/session-1462.scope.d/50-SendSIGHUP.conf
+-rw-r--r--. 1 root   root                262 Aug 17 15:32 /run/systemd/users/1021
+-rw-r--r--. 1 root   root                303 Aug 17 15:32 /run/systemd/sessions/1462
+-rw-------. 1 root   root              23925 Aug 17 15:32 /var/log/messages
+-rw-rw-r--. 1 root   utmp              56064 Aug 17 15:32 /var/log/wtmp
+-rw-r--r--. 1 root   root             299300 Aug 17 15:32 /var/log/lastlog
+-rw-rw-r--. 1 root   utmp               4224 Aug 17 15:32 /run/utmp
+-rw-------. 1 root   root                125 Aug 17 15:37 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root   root            1287452 Aug 17 15:37 /var/log/audit/audit.log
+-rw-r-----+ 1 root   systemd-journal 8388608 Aug 17 15:37 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root   root              76787 Aug 17 15:37 /var/log/secure
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ ls -la /etc/cron.*
+-rw-------. 1 root root  0 Nov 20  2018 /etc/cron.deny
+
+/etc/cron.d:
+total 16
+drwxr-xr-x.  2 root root   21 Aug  8  2019 [0m[38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rw-r--r--.  1 root root  128 Nov 20  2018 0hourly
+
+/etc/cron.daily:
+total 24
+drwxr-xr-x.  2 root root   59 Mar 16 12:43 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  434 Aug 16  2018 [38;5;34m0logwatch[0m
+-rwx------.  1 root root  219 Oct 30  2018 [38;5;34mlogrotate[0m
+-rwxr-xr-x.  1 root root  618 Oct 30  2018 [38;5;34mman-db.cron[0m
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.  2 root root   22 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+-rwxr-xr-x.  1 root root  392 Nov 20  2018 [38;5;34m0anacron[0m
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+
+/etc/cron.weekly:
+total 12
+drwxr-xr-x.  2 root root    6 Jun  9  2014 [38;5;27m.[0m
+drwxr-xr-x. 78 root root 8192 Mar 16 12:43 [38;5;27m..[0m
+]0;user4@desktop-user12:~[user4@desktop-user12 ~]$ exit
+logout
+Connection to localhost closed.
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-17 17:34:11+00:00 [COMMAND_EXIT_CODE="0"]

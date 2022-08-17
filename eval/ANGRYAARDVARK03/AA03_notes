@@ -1,0 +1,62 @@
+T1 
+
+rsysylof
+selinux
+
+T2 
+admin  8/17/2022 1:11 PM
+
+T3
+
+T4
+
+firetools
+lynis
+selinux enforcing
+
+
+
+ls -latr .
+ls -latr /tmp/firetools
+sudo ls -latr /root/firetools
+
+T5
+dir /o:d /t:w C:\implant
+dir /A
+certutil -hashfile C:\Windows\System32\notepad.exe MD5
+
+certutil -hashfile "C:\Program Files\WindowsApps\Microsoft.MSPaint_6.1907.29027.0_x64__8wekyb3d8bbwe\PaintStudio.View.exe" MD5
+certutil -hashfile  "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" MD5
+wmic service list full | findstr netsh
+certutil -hashfile C:\Windows\SysWOW64\net1.exe MD5
+T6
+
+0logwatch
+SELinux
+cat /etc/logwatch/conf/logwatch.conf
+cat /usr/share/logwatch/default.conf/logwatch.conf
+sudo cat /var/log/maillog
+sudo cat /var/spool/postfix/deffered
+sudo cat /etc/shadow
+cat /etc/group
+
+sudo tail -n 5 /var/log/btmp
+sudo tail -n 5 /var/log/wtmp
+btmp
+
+sudo lastb
+sudo sulog
+
+T7
+
+bitlocker
+exploitguard
+windows error reporting
+VSSVC.exe
+certutil -hashfile C:\Windows\System32\VSSVC.exe MD5
+wmic process get processid,parentprocessid,commandline,executablepath /value | findstr VSSVC
+reg query hklm\software\DefaultUserEnvironment
+
+powershell
+Get-LocalUser | Select *
+Get-ADUser

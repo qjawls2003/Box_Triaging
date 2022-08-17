@@ -1,0 +1,110 @@
+
+
+ANGRYAARDVARK03
+2022-08-17
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Perform survey of listed user devices within the Krasnovian 1st Artillery BDE internal network  (192.168.169.0/24).  If successfully accessed, add a user to the Administrators or privileged user group on T7 with hostname “USER13” for sustained access assurance.
+
+Tools/Techniques: All connections will be established through SSH masquerades or via implant. Ports in use will be dependent on target location and are subject to change. All scanning must be conducted through secure tunnels. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Netsh tunnels are authorized for use on target 5 for the duration of the connection to target 6. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::5gftE8DCc8 // user#::P455w0rd // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit. Analysts on operation will make analytical judgment based off their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target. If able to successfully access the “USER13” workstation, the added account should attempt to blend in with normal account constructs and belong to the Administrators or privileged user group.. The data collected on ANGRYAARDVARK03 should provide insight into domain standards. Operator is authorized to create an account and password with MC approval based off the knowledge acquired in previous operations and what they currently see on the device.
+
+Scheme of Maneuver:
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+---> T4: 192.168.169.43
+----< T5: 192.168.169.111
+-----> T6: 192.168.169.220
+----> T7: 192.168.169.113
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T3:
+Hostname: Vyos1
+IP: 10.20.169.238
+OS: Vyos
+Creds: NOC_Admin#::5gftE8DCc8
+Last Known SSH Port: 52230
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4:
+Hostname: ADMIN1
+IP: 192.168.169.43
+OS: CentOS 7
+Creds: user#::P455w0rd
+Last Known SSH Port: Ask Analyst
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Conduct device survey if not conducted during previous operation. Collect any files of interest. Maneuver to the next target by catching call-back from T5 (see T5 target section for implant information).
+
+T5:  
+Hostname: Unknown
+IP: 192.168.169.111
+OS: Windows v Unknown
+Creds: N/A
+Last Known SSH Port: None
+Security Product(s): Unknown
+Malware: Unknown
+Implant: T10implant.exe*
+Action: Access via implant call-back. Collect any files of interest. Perform netsh redirection to allow for connection to T6 utilizing a port in the 600## range. (i.e Student8 is 60008 or student 12 is 60012). Maneuver to next target.
+
+*Note* T10implant.exe will call-back to T4/Admin1 on port <8000 + Student#> {i.e. Student8 will use port 8008 or Student12 will use 8012}. This should be redirected back to your Ops Station through secure tunnels. Let the Analyst know when you are ready to catch the Call-Back. Your implant does not require a malware report.
+
+T6:  
+Hostname: Unknown
+IP: 192.168.169.220
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33521
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a device survey. Catalog any user accounts and record applicable login data.
+
+T7:  
+Hostname: Unknown
+IP: 192.168.169.113
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33521
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform device survey. Catalog any user accounts and record applicable login data. Confirm for follow-on T10-effects. Conclude operation.
+ T10 Effect: If device is confirmed  to be "USER13" workstation, add a user account as outlined in Prior Approvals section.

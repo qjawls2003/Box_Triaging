@@ -1,0 +1,550 @@
+Script started on 2022-08-15 13:45:53+00:00 [TERM="xterm-256color" TTY="/dev/pts/13" COLUMNS="137" LINES="39"]
+                                                                                                                                         ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mproxychains[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m 10.20.169.128/25 [7m[35m-p52204[39m[7m [7m[35m-T4[39m[7m [1m[7m[34m|[0m[39m[7m [7m[32mgrep[39m[7m open[27m[65D[27m[32mp[27m[32mr[27m[32mo[27m[32mx[27m[32my[27m[32mc[27m[32mh[27m[32ma[27m[32mi[27m[32mn[27m[32ms[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m1[27m0[27m.[27m2[27m0[27m.[27m1[27m6[27m9[27m.[27m1[27m2[27m8[27m/[27m2[27m5[27m [27m[35m-[27m[35mp[27m[35m5[27m[35m2[27m[35m2[27m[35m0[27m[35m4[39m[27m [27m[35m-[27m[35mT[27m[35m4[39m[27m [27m[1m[34m|[0m[39m[27m [27m[32mg[27m[32mr[27m[32me[27m[32mp[39m[27m [27mo[27mp[27me[27mn[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.136:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.139:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.142:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.143:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.146:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.174:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.177:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.180:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.183:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.186:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.189:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.192:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.195:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.198:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.201:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.204:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.207:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.210:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.213:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.216:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.219:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.222:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.225:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.228:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.231:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.234:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.237:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.240:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.243:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.246:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.249:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.252:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.255:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.128:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.133:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.149:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.154:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.158:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.163:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.167:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.181:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.185:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.190:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.194:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.199:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.203:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.208:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.212:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.217:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.221:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.226:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.230:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.235:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.241:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.245:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.250:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.254:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.134:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.151:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.157:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.164:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.170:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.178:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.184:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.191:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.197:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.205:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.211:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.218:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.224:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.232:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.242:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.248:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.130:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.140:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.152:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.161:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.173:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.193:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.202:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.214:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.223:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.233:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.247:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.131:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.148:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.166:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.196:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.209:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.227:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.244:52204 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.137:52204 
+                                                                                                                                         ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mproxychains[39m nmap [35m-Pn[39m [35m-sT[39m 10.20.169.128/25 [35m-p52204[39m [35m-T4[39m [1m[34m|[0m[39m [32mgrep[39m open[1C[1C[35m0[39m[P[16C [17D[35m0[35m3[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[16D[P[18C [19D[35m3[35m0[35m3[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[18D[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52303 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52303 
+                                                                                                                                         ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mproxychains[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m 10.20.169.128/25 [7m[35m-p52000-52999[39m[7m [7m[35m-T4[39m[7m [1m[7m[34m|[0m[39m[7m [7m[32mgrep[39m[7m open[27m[71D[27m[32mp[27m[32mr[27m[32mo[27m[32mx[27m[32my[27m[32mc[27m[32mh[27m[32ma[27m[32mi[27m[32mn[27m[32ms[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m1[27m0[27m.[27m2[27m0[27m.[27m1[27m6[27m9[27m.[27m1[27m2[27m8[27m/[27m2[27m5[27m [27m[35m-[27m[35mp[27m[35m5[27m[35m2[27m[35m0[27m[35m0[27m[35m0[27m[35m-[27m[35m5[27m[35m2[27m[35m9[27m[35m9[27m[35m9[39m[27m [27m[35m-[27m[35mT[27m[35m4[39m[27m [27m[1m[34m|[0m[39m[27m [27m[32mg[27m[32mr[27m[32me[27m[32mp[39m[27m [27mo[27mp[27me[27mn[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.174:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.177:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.180:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.183:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.186:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.189:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.128:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.131:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.134:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.137:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.140:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.143:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.146:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.149:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.152:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.155:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.158:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.161:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.164:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.167:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.170:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.173:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.185:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.188:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.191:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.130:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.133:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.136:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.139:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.142:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.145:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.148:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.151:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.154:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.157:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.160:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.163:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.166:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.169:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.175:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.178:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.181:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.184:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.187:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.190:52109 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.175:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.185:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.188:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.191:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.130:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.133:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.134:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.151:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.154:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.155:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.158:52249 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52000 <--socket error or timeout!
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.175:52000 <--socket error or timeout!
+RTTVAR has grown to over 2.3 seconds, decreasing to 2.0
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52000 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52000 
+                                                                                                                                         ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [7m[32mproxychains[39m[7m nmap [7m[35m-Pn[39m[7m [7m[35m-sT[39m[7m 10.20.169.128/25 [7m[35m-p52203[39m[7m [7m[35m-T4[39m[7m [1m[7m[34m|[0m[39m[7m [7m[32mgrep[39m[7m open[27m[65D[27m[32mp[27m[32mr[27m[32mo[27m[32mx[27m[32my[27m[32mc[27m[32mh[27m[32ma[27m[32mi[27m[32mn[27m[32ms[39m[27m [27mn[27mm[27ma[27mp[27m [27m[35m-[27m[35mP[27m[35mn[39m[27m [27m[35m-[27m[35ms[27m[35mT[39m[27m [27m1[27m0[27m.[27m2[27m0[27m.[27m1[27m6[27m9[27m.[27m1[27m2[27m8[27m/[27m2[27m5[27m [27m[35m-[27m[35mp[27m[35m5[27m[35m2[27m[35m2[27m[35m0[27m[35m3[39m[27m [27m[35m-[27m[35mT[27m[35m4[39m[27m [27m[1m[34m|[0m[39m[27m [27m[32mg[27m[32mr[27m[32me[27m[32mp[39m[27m [27mo[27mp[27me[27mn[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.133:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.134:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.137:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.151:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.154:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.155:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.158:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.166:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.169:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.175:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.185:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.188:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.191:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.194:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.197:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.200:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.203:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.206:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.209:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.212:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.215:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.218:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.221:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.224:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.227:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.230:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.233:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.236:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.240:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.243:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.246:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.249:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.252:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.255:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.128:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.140:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.145:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.149:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.161:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.167:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.177:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.181:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.186:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.190:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.195:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.199:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.204:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.208:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.213:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.217:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.222:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.226:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.231:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.235:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.241:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.245:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.250:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.254:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.136:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.143:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.152:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.160:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.170:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.173:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.180:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.187:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.193:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.201:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.207:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.214:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.220:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.228:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.234:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.242:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.248:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.130:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.142:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.164:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.183:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.192:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.202:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.211:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.223:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.232:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.244:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.253:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.146:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.163:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.184:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.198:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.216:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.229:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.247:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.139:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.174:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.196:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.219:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.251:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.157:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.205:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.237:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.178:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.225:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.189:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.148:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.210:52203 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.131:52203 <--socket error or timeout!
+                                                                                                                                                       ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mproxychains[39m nmap [35m-Pn[39m [35m-sT[39m 10.20.169.128/25 [35m-p52203[39m [35m-T4[39m [1m[34m|[0m[39m [32mgrep[39m open[35m0[35m0[35m0[35m-[35m5[35m2[35m9[35m9[0m[35m9[39m [35m-[35mT[35m4[39m[39m [1m[34m|[0m[39m [32mg[32mr[32me[32mp[39m open[25D[35m2[35m0[35m3[39m[6P[16C      [65D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m       [39m [39m [39m  [39m [39m [39m                   [39m [39m [39m [39m [39m [39m [39m  [39m [39m [39m  [0m[39m  [39m [39m [39m [39m      [65D[32mproxychains[39m nmap [35m-Pn[39m [35m-sT[39m 10.20.169.128/25 [35m-p52203[39m [35m-T4[39m [1m[34m|[0m[39m [32mgrep[39m open[1C[35m0[39m[P[16C [17D[35m0[35m5[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[16D[35m0[39m[P[16C [17D[35m0[35m3[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[16D[35m0[39m[P[16C [17D[35m2[39m[P[16C [17D[35m2[35m3[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[16D[35m3[35m0[39m[39m [35m-[35mT[35m4[39m[0m[39m [1m[34m|[0m[39m[39m [32mg[32mr[32me[32mp[39m open[16D[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.129:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.132:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.133:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.136:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.137:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.140:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.141:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.142:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.143:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.144:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.145:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.148:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.149:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.150:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.151:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.154:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.157:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.160:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.163:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.164:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.165:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.168:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.169:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.172:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.173:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.174:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.175:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.176:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.179:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.182:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.185:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.188:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.191:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.194:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.197:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.200:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.203:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.206:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.209:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.212:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.215:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.218:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.221:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.224:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.227:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.230:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.233:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.236:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52230  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.240:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.243:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.246:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.249:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.252:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.255:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.128:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.134:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.139:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.146:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.153:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.155:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.159:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.161:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.167:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.170:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.178:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.180:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.184:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.189:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.193:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.198:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.202:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.207:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.211:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.216:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.220:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.225:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.229:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.234:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52230  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.241:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.245:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.250:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.254:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.135:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.152:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.156:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.158:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.171:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.177:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.186:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.192:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.199:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.205:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.213:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.219:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.226:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.232:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.242:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.248:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.130:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.147:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.162:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.166:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.181:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.190:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.201:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.210:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.222:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.231:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.244:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.253:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.183:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.196:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.214:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.228:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.247:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.138:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.204:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.223:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.251:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.195:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.235:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.187:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.237:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.217:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.131:52230 <--socket error or timeout!
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.208:52230 <--socket error or timeout!
+52230/tcp [01;31m[Kopen[m[K  unknown
+52230/tcp [01;31m[Kopen[m[K  unknown
+                                                                                                                                                       ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mproxychains[39m nmap [35m-Pn[39m [35m-sT[39m 10.20.169.128/25 [35m-p52230[39m [35m-T4[39m [1m[34m|[0m[39m [32mgrep[39m open [38;2;153;153;153mn[39m [39m [38;2;153;153;153men[39m [39m [39m [38;2;153;153;153mpen[39m [39m [39m [39m [38;2;153;153;153mopen[39m[39m [39m [39m [39m [38;2;153;153;153m open[39m[1m[31mg[1m[31mr[1m[31me[0m[39m[39m [39m [39m [39m [39m [39m [38;2;153;153;153mp open[39m[1m[31mr[0m[39m[0m[39m [39m [39m [39m [39m [39m [39m [38;2;153;153;153mep open[39m[1m[31mg[0m[39m[0m[39m [39m [39m [39m [39m [39m [39m [39m [8D[38;2;153;153;153mrep open[39m[8D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;2;153;153;153mgrep open[39m[9D[39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153m grep open[39m[10D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;2;153;153;153m| grep open[39m[11D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;2;153;153;153m | grep open[39m[12D[35mT[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[38;2;153;153;153m4 | grep open[39m[13D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[38;2;153;153;153mT4 | grep open[39m[14D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[38;2;153;153;153m-T4 | grep open[39m[15D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [16D[38;2;153;153;153m -T4 | grep open[39m[16D[35m3[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [17D[38;2;153;153;153m0 -T4 | grep open[39m[17D[35m2[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [18D[38;2;153;153;153m30 -T4 | grep open[39m[18D[35m2[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [19D[38;2;153;153;153m230 -T4 | grep open[39m[19D[35m5[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [20D[38;2;153;153;153m2230 -T4 | grep open[39m[20D[35mp[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [21D[38;2;153;153;153m52230 -T4 | grep open[39m[21D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [22D[38;2;153;153;153mp52230 -T4 | grep open[39m[22D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23D[38;2;153;153;153m-p52230 -T4 | grep open[39m[23D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [24D[38;2;153;153;153m -p52230 -T4 | grep open[39m[24D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [25D[38;2;153;153;153m5 -p52230 -T4 | grep open[39m[25D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [26D[38;2;153;153;153m25 -p52230 -T4 | grep open[39m[26D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [27D[38;2;153;153;153m/25 -p52230 -T4 | grep open[39m[27D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [28D[38;2;153;153;153m8/25 -p52230 -T4 | grep open[39m[28D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [29D[38;2;153;153;153m28/25 -p52230 -T4 | grep open[39m[29D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[38;2;153;153;153m128/25 -p52230 -T4 | grep open[39m[30D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [31D[38;2;153;153;153m.128/25 -p52230 -T4 | grep open[39m[31D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [32D[38;2;153;153;153m9.128/25 -p52230 -T4 | grep open[39m[32D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [33D[38;2;153;153;153m69.128/25 -p52230 -T4 | grep open[39m[33D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [34D[38;2;153;153;153m169.128/25 -p52230 -T4 | grep open[39m[34D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [35D[38;2;153;153;153m.169.128/25 -p52230 -T4 | grep open[39m[35D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [36D[38;2;153;153;153m0.169.128/25 -p52230 -T4 | grep open[39m[36D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [37D[38;2;153;153;153m20.169.128/25 -p52230 -T4 | grep open[39m[37D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[38;2;153;153;153m.20.169.128/25 -p52230 -T4 | grep open[39m[38D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39D[38;2;153;153;153m0.20.169.128/25 -p52230 -T4 | grep open[39m[39D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [40D[38;2;153;153;153m10.20.169.128/25 -p52230 -T4 | grep open[39m[40D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [41D[38;2;153;153;153m 10.20.169.128/25 -p52230 -T4 | grep open[39m[41D[35ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [42D[38;2;153;153;153mT 10.20.169.128/25 -p52230 -T4 | grep open[39m[42D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [43D[38;2;153;153;153msT 10.20.169.128/25 -p52230 -T4 | grep open[39m[43D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [44D[38;2;153;153;153m-sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[44D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [45D[38;2;153;153;153m -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[45D[35mP[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [46D[38;2;153;153;153mn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[46D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [47D[38;2;153;153;153mPn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[47D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [48D[38;2;153;153;153m-Pn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[48D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [49D[38;2;153;153;153m -Pn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[49D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [50D[38;2;153;153;153mp -Pn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[50D [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [51D[38;2;153;153;153map -Pn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[51D[4mn[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [52D[38;2;153;153;153mmap -Pn -sT 10.20.169.128/25 -p52230 -T4 | grep open[39m[52D[24mn[39mc[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [51D[38;2;153;153;153m -nlvp 12304[39m[12D[39m [35m-[39m[35m-[35mn[39m[35mn[35ml[39m[35ml[35mv[39m[39m [39m [39m [39m [39m [39m [39m [38;2;153;153;153mp 12304[39m[35ml[39m[39m [39m [39m [39m [39m [39m [39m [39m [8D[38;2;153;153;153mvp 12304[39m[8D[35mn[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;2;153;153;153mlvp 12304[39m[9D[35m-[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153mnlvp 12304[39m[10D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;2;153;153;153m-nlvp 12304[39m[11D[39m1[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153m92.168.0.23[39m[11D[39m0[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D.30.   2. 0.169.239 52230[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52230  ...  OK
+SSH-2.0-OpenSSH_5.5p1 Debian-6+squeeze8
+^C
+                                                                                                                                                       ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mproxychains[39m nc 10.20.169.239 52230 52230 8 52230[?1l>[?2004l
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52230  ...  OK
+SSH-2.0-OpenSSH_5.5p1 Debian-6+squeeze8
+^C
+                                                                                                                                                       ]0;root@kali: ~/Downloads/an_15-08-22_ANGRYAARDVARK01
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_15-08-22_ANGRYAARDVARK01[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-15 16:47:52+00:00 [COMMAND_EXIT_CODE="1"]

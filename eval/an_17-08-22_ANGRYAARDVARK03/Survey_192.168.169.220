@@ -1,0 +1,501 @@
+####T6 survey####
+
+
+user4@desktop-user12 ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2948952k,nr_inodes=737238,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=30,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=13684)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+tmpfs on /run/user/1023 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1023,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1004,gid=10)
+tmpfs on /run/user/1017 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1017,gid=10)
+tmpfs on /run/user/1019 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594448k,mode=700,uid=1019,gid=10)
+
+[user4@desktop-user12 ~]$ lsmod
+Module                  Size  Used by
+kvm_amd              2177260  0 
+kvm                   621392  1 kvm_amd
+irqbypass              13503  1 kvm
+crc32_pclmul           13133  0 
+ppdev                  17671  0 
+ghash_clmulni_intel    13273  0 
+virtio_rng             13029  0 
+aesni_intel           189415  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+sg                     40721  0 
+virtio_balloon         18015  0 
+joydev                 17389  0 
+parport_pc             28205  0 
+i2c_piix4              22401  0 
+parport                46395  2 ppdev,parport_pc
+pcspkr                 12718  0 
+ip_tables              27126  0 
+xfs                   996949  1 
+libcrc32c              12644  1 xfs
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_scsi            18463  1 
+virtio_console         28076  0 
+virtio_net             28063  0 
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+ata_piix               35052  0 
+crc32c_intel           22094  1 
+libata                243133  3 pata_acpi,ata_generic,ata_piix
+serio_raw              13434  0 
+virtio_pci             22985  0 
+virtio_ring            22746  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+floppy                 69432  0 
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+sunrpc                353103  1 
+
+[user4@desktop-user12 ~]$ uname -a
+Linux desktop-user12 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[user4@desktop-user12 ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root  23 Nov 23  2018 /etc/system-release-cpe
+-rw-r--r--. 1 root root 393 Nov 23  2018 /etc/os-release
+-rw-r--r--. 1 root root  51 Nov 23  2018 /etc/centos-release-upstream
+-rw-r--r--. 1 root root  38 Nov 23  2018 /etc/centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/redhat-release -> centos-release
+lrwxrwxrwx. 1 root root  14 Aug  8  2019 /etc/system-release -> centos-release
+[user4@desktop-user12 ~]$ cat /etc/*release*
+CentOS Linux release 7.6.1810 (Core) 
+Derived from Red Hat Enterprise Linux 7.6 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.6.1810 (Core) 
+CentOS Linux release 7.6.1810 (Core) 
+cpe:/o:centos:centos:7
+
+[user4@desktop-user12 ~]$ cat /proc/cpuinfo
+processor       : 0
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 0
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 0
+initial apicid  : 0
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 1
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 1
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 1
+initial apicid  : 1
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 2
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 2
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 2
+initial apicid  : 2
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+processor       : 3
+vendor_id       : AuthenticAMD
+cpu family      : 23
+model           : 49
+model name      : AMD EPYC-Rome Processor
+stepping        : 0
+microcode       : 0x1000065
+cpu MHz         : 2249.998
+cache size      : 512 KB
+physical id     : 3
+siblings        : 1
+core id         : 0
+cpu cores       : 1
+apicid          : 3
+initial apicid  : 3
+fpu             : yes
+fpu_exception   : yes
+cpuid level     : 13
+wp              : yes
+flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl xtopology extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips        : 4499.99
+TLB size        : 1024 4K pages
+clflush size    : 64
+cache_alignment : 64
+address sizes   : 40 bits physical, 48 bits virtual
+power management:
+
+[user4@desktop-user12 ~]$ services --status-all || systemctl status --no-pager
+-bash: services: command not found
+● desktop-user12
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Sat 2022-06-18 00:51:04 UTC; 1 months 30 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1002.slice
+           │ │ └─session-1461.scope
+           │ │   ├─23258 sshd: user2 [priv]
+           │ │   ├─23262 sshd: user2@pts/5
+           │ │   └─23263 -bash
+           │ ├─user-1020.slice
+           │ │ └─session-1460.scope
+           │ │   ├─23235 sshd: user20 [priv]
+           │ │   ├─23239 sshd: user20@pts/4
+           │ │   └─23240 -bash
+           │ ├─user-1019.slice
+           │ │ └─session-1459.scope
+           │ │   ├─23016 sshd: user19 [priv]
+           │ │   ├─23020 sshd: user19@pts/3
+           │ │   └─23021 -bash
+           │ ├─user-1017.slice
+           │ │ └─session-1458.scope
+           │ │   ├─22986 sshd: user17 [priv]
+           │ │   ├─22990 sshd: user17@pts/2
+           │ │   └─22991 -bash
+           │ ├─user-1004.slice
+           │ │ └─session-1456.scope
+           │ │   ├─22837 sshd: user4 [priv]
+           │ │   ├─22841 sshd: user4@pts/1
+           │ │   ├─22842 -bash
+           │ │   └─23284 systemctl status --no-pager
+           │ └─user-1023.slice
+           │   └─session-1454.scope
+           │     ├─22763 sshd: user23 [priv]
+           │     ├─22767 sshd: user23@pts/0
+           │     └─22768 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1197 /usr/sbin/crond -n
+             ├─sshd.service
+             │ └─1191 /usr/sbin/sshd -D
+             ├─rsyslog.service
+             │ └─1187 /usr/sbin/rsyslogd -n
+             ├─tuned.service
+             │ └─1051 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─postfix.service
+             │ ├─ 1141 /usr/libexec/postfix/master -w
+             │ ├─ 1143 qmgr -l -t unix -u
+             │ └─22813 pickup -l -t unix -u
+             ├─network.service
+             │ └─990 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H desktop-user12 eth0
+             ├─systemd-logind.service
+             │ └─757 /usr/lib/systemd/systemd-logind
+             ├─dbus.service
+             │ └─743 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─polkit.service
+             │ └─742 /usr/lib/polkit-1/polkitd --no-debug
+             ├─irqbalance.service
+             │ └─741 /usr/sbin/irqbalance --foreground
+             ├─chronyd.service
+             │ └─745 /usr/sbin/chronyd
+             ├─gssproxy.service
+             │ └─746 /usr/sbin/gssproxy -D
+             ├─rpcbind.service
+             │ └─730 /sbin/rpcbind -w
+             ├─auditd.service
+             │ └─662 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─526 /usr/lib/systemd/systemd-udevd
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1198 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1192 /sbin/agetty --noclear tty1 linux
+             └─systemd-journald.service
+               └─487 /usr/lib/systemd/systemd-journald
+
+[user4@desktop-user12 ~]$ cat /proc/meminfo
+MemTotal:        5944464 kB
+MemFree:         5586948 kB
+MemAvailable:    5539288 kB
+Buffers:            2088 kB
+Cached:           134296 kB
+SwapCached:            0 kB
+Active:           101992 kB
+Inactive:          85572 kB
+Active(anon):      56196 kB
+Inactive(anon):    20240 kB
+Active(file):      45796 kB
+Inactive(file):    65332 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         51240 kB
+Mapped:            25016 kB
+Shmem:             25256 kB
+Slab:              85632 kB
+SReclaimable:      51344 kB
+SUnreclaim:        34288 kB
+KernelStack:        2288 kB
+PageTables:         7256 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972232 kB
+Committed_AS:     267620 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17900 kB
+VmallocChunk:   34359717888 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     10240 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       73588 kB
+DirectMap2M:     4120576 kB
+DirectMap1G:     4194304 kB
+
+root:$6$6Ybfmtg3S$Wd2uUO3MrjhP5381L83wKf4S5f1waKDH5pt.VSE2UOnAmVP2yxQQK/AIrxVyxRdwFgeeockBj8NcpzPjp6glj0:19067:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19065:0:99999:7:::
+user1:$1$T/UJ0rCH$6z8tIIy0H3yAZBi96ayoQ/:19067:0:99999:7:::
+user2:$1$ftWl6MiI$.vzeKoZHvgaCLYVaXhaYe0:19067:0:99999:7:::
+user3:$1$N1LUSpyw$vJCMGKB3AP2WD.9sesz7A/:19067:0:99999:7:::
+user4:$1$L0P0wn8P$lhwBDGloYS9FBmYFtBp5I1:19067:0:99999:7:::
+user5:$1$DE5kuTTW$t6jCtAZ2HIrKe8L4PYxRz.:19067:0:99999:7:::
+user6:$1$7hPu1p1Q$sG7QbbDhCDDg9l1uVO.7J1:19067:0:99999:7:::
+user7:$1$WO00AvDz$1SJ9ZLU3qbzFnRUdfoAmc0:19067:0:99999:7:::
+user8:$1$JOHsPyE1$PjpLdIv.XmDDmfrwcJpcv.:19067:0:99999:7:::
+user9:$1$vjLzisKK$VZ6UroMbozHfF/rHYpOvT1:19067:0:99999:7:::
+user10:$1$C6jODBnH$NNdxNlirhn8Hn.pq5aHQG/:19067:0:99999:7:::
+user11:$1$YEd3pG1H$r/UTbrJ79mY6coWbkAKMG0:19067:0:99999:7:::
+user12:$1$wE7n5qXx$PZdozd9WbStgxXQasb.3U0:19067:0:99999:7:::
+user13:$1$.cWjjRPV$XCCVfKGvcfHDCNuo3AQb41:19067:0:99999:7:::
+user14:$1$tdNbnl4c$IYMiIftFh1jY5FlvRNa80.:19067:0:99999:7:::
+user15:$1$nkBKMpy/$igJyyjonZD1vm6fwqNDff0:19067:0:99999:7:::
+user16:$1$0KgF.2Kd$qj3pzzQBCBnd68n1eO.Aj/:19067:0:99999:7:::
+user17:$1$3PHwgTRW$I3g4qmm.AuWco6iOCArnI.:19067:0:99999:7:::
+user18:$1$lfyXvqR7$WfwTS9pHkFB.r9jnWBciS/:19067:0:99999:7:::
+user19:$1$C26js/eE$tOmfhQzPC0CArhFHpwK9k1:19067:0:99999:7:::
+user20:$1$gm3AvgCr$hoQ8FfIoA2Dt.lHCGnB610:19067:0:99999:7:::
+user21:$1$KJdNTvrp$AASH53Szlxel2dJ4AW0pt/:19067:0:99999:7:::
+user22:$1$NrfBJEjt$r47xgWlORHoVPD9jFzsX/1:19067:0:99999:7:::
+user23:$1$Hep.4FCd$aAYzoNIjz3fTXG9i.UxUJ1:19067:0:99999:7:::
+radicle:$1$63lSU6S9$BbGXlEqH3aLFmCedh.Ptd.:19067:0:99999:7:::
+[user4@desktop-user12 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+
+[user4@desktop-user12 ~]$ lspci -vv
+-bash: lspci: command not found
+[user4@desktop-user12 ~]$ arp -a
+? (192.168.169.2) at fa:16:3e:0c:35:a8 [ether] on eth0
+? (192.168.169.43) at fa:16:3e:cd:5d:1c [ether] on eth0
+? (192.168.169.206) at fa:16:3e:90:b0:db [ether] on eth0
+gateway (192.168.169.1) at fa:16:3e:4b:b6:23 [ether] on eth0
+? (192.168.169.111) at fa:16:3e:0f:32:c9 [ether] on eth0
+? (192.168.169.3) at fa:16:3e:36:cd:d0 [ether] on eth0
+[user4@desktop-user12 ~]$ lsusb
+-bash: lsusb: command not found
+[user4@desktop-user12 ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+[user4@desktop-user12 ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+
+[user4@desktop-user12 ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5805         132        5441          24         230        5401
+Swap:             0           0           0
+[user4@desktop-user12 ~]$ sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+        Vendor: SeaBIOS
+        Version: 1.13.0-1ubuntu1.1
+        Release Date: 04/01/2014
+        Address: 0xE8000
+        Runtime Size: 96 kB
+        ROM Size: 64 kB
+        Characteristics:
+                BIOS characteristics not supported
+                Targeted content distribution is supported
+        BIOS Revision: 0.0
+
+

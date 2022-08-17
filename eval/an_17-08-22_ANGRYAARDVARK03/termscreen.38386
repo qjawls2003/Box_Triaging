@@ -1,0 +1,43 @@
+Script started on 2022-08-17 13:04:47+00:00 [TERM="xterm-256color" TTY="/dev/pts/7" COLUMNS="142" LINES="39"]
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004hvim notes_16-08-22[18Dls                [16D[32mc[32md[39m an_16-08-22_ANGRYAARDVARK02[30D[32m.[32m/[39mpreop.sh                    [20D[8Dsearch_nsdb.sh[16D[32mc[32md[39m Downloads    [9D         [9D[32m.[32m/[39mpostop.sh[11D[32mc[32md[39m [4m.[4m.[24m      [4m.[24m[24m [38;2;153;153;153m.[39m[24m [39m [38;2;153;153;153man_16-08-22_ANGRYAARDVARK02[39m[27D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [28D[38;2;153;153;153m an_16-08-22_ANGRYAARDVARK02[39m[28D[1m[31mc[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [29D[1m[31mc[0m[39m[38;2;153;153;153md an_16-08-22_ANGRYAARDVARK02[39m[29D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [30D[4mn[24m[4mn[24m[38;2;153;153;153metstat -auntp[39m[13D[24m[1m[31mn[1m[31me[0m[39m[0m[32mn[0m[32me[32mt[39m[1m[31mn[1m[31me[1m[31mt[1m[31ms[0m[39m[1m[31ms[1m[31mt[0m[39m[1m[31mt[1m[31ma[0m[39m[0m[32mn[0m[32me[0m[32mt[0m[32ms[0m[32mt[0m[32ma[32mt[39m[39m [35m-[39m[35m-[35ma[39m[35ma[35mu[39m[35mu[35mn[39m[35mn[35mt[39m[35mt[35mp[39m[?1l>[?2004l
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 127.0.0.1:3333          0.0.0.0:*               LISTEN      38703/ssh           
+tcp        0      0 127.0.0.1:2222          0.0.0.0:*               LISTEN      38662/ssh           
+tcp        0      0 127.0.0.1:4444          0.0.0.0:*               LISTEN      38751/ssh           
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/init              
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      664/sshd: /usr/sbin 
+tcp        0      0 10.50.33.208:37438      10.50.29.166:10123      ESTABLISHED 38662/ssh           
+tcp        0      0 127.0.0.1:59724         127.0.0.1:8004          ESTABLISHED 38831/ssh           
+tcp        0      0 127.0.0.1:8004          127.0.0.1:59724         ESTABLISHED 39045/nc            
+tcp6       0      0 ::1:2222                :::*                    LISTEN      38662/ssh           
+tcp6       0      0 ::1:3333                :::*                    LISTEN      38703/ssh           
+tcp6       0      0 ::1:3350                :::*                    LISTEN      1897/xrdp-sesman    
+tcp6       0      0 :::111                  :::*                    LISTEN      1/init              
+tcp6       0      0 :::22                   :::*                    LISTEN      664/sshd: /usr/sbin 
+tcp6       0      0 ::1:4444                :::*                    LISTEN      38751/ssh           
+tcp6       0      0 :::3389                 :::*                    LISTEN      1907/xrdp           
+tcp6       0      0 ::1:4444                ::1:60688               ESTABLISHED 38751/ssh           
+tcp6       0      0 ::1:60688               ::1:4444                ESTABLISHED 38831/ssh           
+tcp6       0      0 ::1:53682               ::1:2222                ESTABLISHED 38703/ssh           
+tcp6       0      0 ::1:3333                ::1:45170               ESTABLISHED 38703/ssh           
+tcp6       0      0 10.50.33.208:3389       192.168.250.138:56734   ESTABLISHED 2102/xrdp           
+tcp6       0      0 ::1:45170               ::1:3333                ESTABLISHED 38751/ssh           
+tcp6       0      0 ::1:2222                ::1:53682               ESTABLISHED 38662/ssh           
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           520/dhclient        
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1/init              
+udp6       0      0 :::111                  :::*                                1/init              
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m[?1l>[?2004l
+notes_17-08-22  Survey_192.168.169.113  [0m[01;34mT4[0m                termscreen.38362  termscreen.38374  termscreen.38386  termscreen.38398
+NSDB_17-08-22   Survey_192.168.169.220  termscreen.38356  termscreen.38368  termscreen.38380  termscreen.38392  termscreen.38404
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-S[39m[7m /tmp/T5 bad [7m[33m'wmic service list full'[39m[7m [1m[7m[34m>>[0m[39m[7m Survey_10.123.169.30[27m[67D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m5[27m [27mb[27ma[27md[27m [27m[33m'[27m[33mw[27m[33mm[27m[33mi[27m[33mc[27m[33m [27m[33ms[27m[33me[27m[33mr[27m[33mv[27m[33mi[27m[33mc[27m[33me[27m[33m [27m[33ml[27m[33mi[27m[33ms[27m[33mt[27m[33m [27m[33mf[27m[33mu[27m[33ml[27m[33ml[27m[33m'[39m[27m [27m[1m[34m>[27m[1m[34m>[0m[39m[27m [27mS[27mu[27mr[27mv[27me[27my[27m_[27m1[27m0[27m.[27m1[27m2[27m3[27m.[27m1[27m6[27m9[27m.[27m3[27m0[1C[P[53C [54D[4m/[4mt[4mm[4mp[4m/[4mT[4m7[24m bad[39m [33m'[33mw[33mm[33mi[33mc[33m [33ms[33me[33mr[33mv[33mi[33mc[33me[33m [33ml[33mi[33ms[33mt[33m [33mf[33mu[33ml[33ml[33m'[39m[0m[39m [1m[34m>[1m[34m>[0m[39m Survey_10.123.169.30[53D[24m/[24mt[24mm[24mp[24m/[24mT[24m7~ bad[39m [33m'[33mw[33mm[33mi[33mc[33m [33ms[33me[33mr[33mv[33mi[33mc[33me[33m [33ml[33mi[33ms[33mt[33m [33mf[33mu[33ml[33ml[33m'[39m[0m[39m [1m[34m>[1m[34m>[0m[39m Survey_10.123.169.30[53D[8D[4m/[4mt[4mm[4mp[4m/[4mT[4m7[24m[P[53C [54D[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C           [9D[4mS[4mu[4mr[4mv[4me[4my[4m_[4m1[24m [38;2;153;153;153m92.168.117.203[39m[14D[4m1[39m[4m9[24m[4m9[39m[4m2[24m[4m2[39m[4m.[24m[4m.[39m[4m1[24m[4m1[39m[4m6[24m[4m6[39m[4m8[24m[4m8[39m[4m.[24m[4m.[39m[4m1[24m[4m1[39m[4m6[24m[39m [39m [39m [39m [39m [4m6[4m9[24m[4m9[4m.[24m[4m.[4m1[24m[4m1[4m1[24m[4m1[4m3[24m[?1l>[?2004l
+                                                                                                                                              ]0;root@kali: ~/Downloads/an_17-08-22_ANGRYAARDVARK03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_17-08-22_ANGRYAARDVARK03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-17 17:34:07+00:00 [COMMAND_EXIT_CODE="0"]

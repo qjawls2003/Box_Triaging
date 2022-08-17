@@ -12,6 +12,7 @@ netstat -auntp OR ss -auntp
 sudo netstat -auntp
 w
 who
+lastlog
 sudo cat /etc/sudoers
 ls -latr /var/spool/cron
 sudo ls -latr /var/spool/cron
@@ -22,11 +23,15 @@ uname -a
 df
 ls -latr /var/*/*acc*
 stat/date <check timestamp>
+sudo stat /var/account/pacct
 ls /etc/systemd/system/multi-user.target.wants
 ls -latr /var/*log*/
 ls -latr /var/log/*
 sudo ls -latr /var/log/*
 cat out relevant files (grep for your logged in user account)
+######change user##########
+sudo grep -r user4 /var/log/
+##########################3
 ls -la /etc/*syslog*
 cat /etc/rsyslog.conf
 cat /etc/hosts
@@ -35,6 +40,8 @@ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat 
 cat /etc/crontab
 ls -la /etc/cron.*
 cat /etc/cron.hourly/0anacron
+cat /etc/cron.daily/maldet
+cat /etc/cron.daily/0logwatch
 As needed, examine the files/scripts shown in the directory listing of the cron.* directories
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr (NOTE there is a "-" a.k.a minus symbol preceding the "<duration in minutes since initial connection">
 sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
@@ -69,12 +76,14 @@ cat /etc/selinux/targeted/setrans.conf
 cat /etc/selinux/targeted/seusers
 ls -latr /etc/selinux/targeted/logins
 sudo tail -n 20 /var/log/audit/auth.log
-
-
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
 
 
 Before Disconnect:
 w
+who
+lastlog
 ls -latr /tmp
 ps -elf
 netstat -lptn
@@ -90,7 +99,7 @@ uname -a
 ls -latr /etc/*release*
 cat /etc/*release*
 cat /proc/cpuinfo
-services --status-all || systemctl status --no-pager (depending on systemd vs not systemd)
+services --status-all || systemctl status --no-pager
 cat /proc/meminfo
 sudo cat /etc/shadow
 cat /etc/passwd
@@ -123,6 +132,8 @@ reg query hklm\software
 schtasks /query /v  
 schtasks /query /v /fo list | findstr TaskName
 dir /o:d /t:w c:\
+dir /o:d /t:w c:\Users
+dir /o:d /t:w c:\Users\Administrator
 dir /o:d /t:w c:\windows\temp
 dir /o:d /t:w c:\windows\
 dir /o:d /t:w c:\windows\system32
@@ -131,6 +142,7 @@ dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
 wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir) (get the 25 newest logs)
 wevtutil qe security /c:25 /rd:true /f:text | findstr Event
 wevtutil qe security /c:25 /rd:true /f:text | findstr "Process Name"
+wevtutil qe security /c:100 /rd:true /f:text | findstr "Process Name"
 wevtutil el
 wevtutil gl security
 wevtutil gli security
@@ -144,7 +156,7 @@ C:\Windows\security\applications\norton.exe
 dir /o:d /t:w C:\temp
 C:\Sysinternals
 dir /o:d /t:w c:\windows\prefetch
-
+wmic cpu get loadpercentage
 
 
 Before Disconnect
@@ -187,5 +199,15 @@ find -type f -exec md5sum '{}' \; > md5sum.txt
 ###Windows searching####
 dir /b/s *.txt <might be slow>
 Get-MpComputerStatus
+dir C:\ /s /b | findstr /c:"password" /c:"cred" 
+dir /s *pass* == *cred* == *vnc* == *.config*
+findstr /si password *.xml *.ini *.txt
+dir C:\ /s /b | findstr /e ".txt"
 
+###scanning####
 
+##router##
+show arp
+show arp interface eth1
+show arp | grep eth1 | grep establish
+ping <ip> interface eth count 1

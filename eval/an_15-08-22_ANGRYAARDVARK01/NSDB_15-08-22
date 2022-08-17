@@ -1,0 +1,78 @@
+####NSDB 15-08-22####
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - rsyslog
+*PID - 1176
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.50.22.142:514 
+*Network connections - was not seen in netstat yet
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.50.22.142:514
+*Recommendation - We are not aware of the 10.50.22.142 device. If log cleaning is neccesary, this new device must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-15 13:16:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1660569402.900:12132): pid=2565 uid=0 auid=1006 ses=1422 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/16 res=success'
+type=USER_ACCT msg=audit(1660569408.387:12133): pid=2573 uid=1004 auid=1004 ses=1418 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="engineer4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/12 res=success'
+type=USER_CMD msg=audit(1660569408.387:12134): pid=2573 uid=1004 auid=1004 ses=1418 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/engineer4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/12 res=success'
+type=CRED_REFR msg=audit(1660569408.388:12135): pid=2573 uid=0 auid=1004 ses=1418 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/12 res=success'
+type=USER_START msg=audit(1660569408.390:12136): pid=2573 uid=0 auid=1004 ses=1418 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/12 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+
+
+####T2####
+
+
+*Target: <T2 and 10.20.169.121 >
+*Name - rsyslog
+*PID - 1053
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - badguy:514 10.111.23.4 badguy
+*Network connections - was not seen in netstat yet
+*Documentation - https://www.rsyslog.com/
+*Description - T2 is sending logs to a remote host 10.111.23.4:514
+*Recommendation - We are not aware of the 10.111.23.4 device. If log cleaning is neccesary, this new device must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report**** 
+
+
+*****Security Product Report*****
+*Target: <T2 and 10.20.169.121 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-15 13:36:54.194352602 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[caisson4@webserver ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1660570593.113:11411): pid=1546 uid=0 auid=1010 ses=1420 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/15 res=success'
+type=USER_ACCT msg=audit(1660570608.407:11412): pid=1553 uid=1004 auid=1004 ses=1411 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="caisson4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/6 res=success'
+type=USER_CMD msg=audit(1660570608.407:11413): pid=1553 uid=1004 auid=1004 ses=1411 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/caisson4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/6 res=success'
+type=CRED_REFR msg=audit(1660570608.407:11414): pid=1553 uid=0 auid=1004 ses=1411 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/6 res=success'
+type=USER_START msg=audit(1660570608.409:11415): pid=1553 uid=0 auid=1004 ses=1411 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/6 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector and scanning, SELinux will not impact our operation.
+*****End of Report*****
+
+####T3####
+
+

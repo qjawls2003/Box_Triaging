@@ -1,0 +1,62 @@
+Pre-Mission:
+set up opstation
+review daily reads and nsdb ####LOOK FOR ANY ON HOLD or RESTRICTED####
+request Mc and EA
+verify IPs V
+adhere to mission start time V
+
+Just to confirm for NSDB:
+On-Hold: do not access it at all
+Restricted: you may access with restricted actions
+Release: access with no initial problem
+
+Targets:
+report unexpected OS
+use correct creds
+single access authentication
+notify MC of access
+report interface to analyst
+non-standard reporting
+Survey
+report completion of survey
+report EA result to analyst
+follow-on with EA
+permission to make changes (timestamp it)
+reset changes
+notify MC of disconnect
+
+actions:
+adhere to all specfic guidance V
+adhere to SOM V
+no unecessary connections
+followed order of operations V
+no unauthorized changes to system V
+uses man pages to find answers
+collecting an individual file >= 10MB
+file HASHES!!!
+file of interest check
+timestamp all effects
+
+Post-mission:
+adhere to missin end time V
+DEBRIEF submitted V
+tar submitted V
+
+mission archive:
+tar properly formatted
+all files (Opnotes, termscreens, collection, surveys) V
+NSDB complete
+all vetting commands
+
+opnotes:
+mission start time 
+all access time
+all vetting times
+all disconnect times
+mission end time
+no dirty words
+
+
+
+
+

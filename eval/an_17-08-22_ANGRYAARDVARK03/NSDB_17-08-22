@@ -1,0 +1,254 @@
+####T1####
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - rsyslog
+*PID - 1176
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.50.22.142:514 
+*Network connections - was not seen in netstat yet
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.50.22.142:514
+*Recommendation - We are not aware of the 10.50.22.142 device. If log cleaning is neccesary, this new device must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-17 13:16:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1660655373.870:14615): pid=5910 uid=0 auid=1014 ses=1457 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/6 res=success'
+type=USER_ACCT msg=audit(1660655376.403:14616): pid=5917 uid=1004 auid=1004 ses=1460 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="engineer4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/9 res=success'
+type=USER_CMD msg=audit(1660655376.403:14617): pid=5917 uid=1004 auid=1004 ses=1460 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/engineer4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/9 res=success'
+type=CRED_REFR msg=audit(1660655376.404:14618): pid=5917 uid=0 auid=1004 ses=1460 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/9 res=success'
+type=USER_START msg=audit(1660655376.407:14619): pid=5917 uid=0 auid=1004 ses=1460 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/9 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T2####
+
+*****Privileged User Report*****
+*Target: <T2 and 10.20.169.122 >
+*User logged in - administrator
+*Access Time - 8/17/2022 1:11 PM
+*Access Method - console
+*Privileges - Administrator
+*Activity - powershell
+*Recommendation - Admin seems to be AFK since to new process is running. Might need to investigate why he is running powershell for.
+*****End of Report*****
+
+
+####T3####
+
+
+####T4####
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.169.43 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-17 13:48:57.295573108 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+[user4@desktop-admin1 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1660659203.819:21995): pid=753 uid=0 auid=1009 ses=2859 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/2 res=success'
+type=USER_ACCT msg=audit(1660659234.474:21996): pid=782 uid=1004 auid=1004 ses=2861 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+type=USER_CMD msg=audit(1660659234.474:21997): pid=782 uid=1004 auid=1004 ses=2861 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/4 res=success'
+type=CRED_REFR msg=audit(1660659234.474:21998): pid=782 uid=0 auid=1004 ses=2861 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+type=USER_START msg=audit(1660659234.477:21999): pid=782 uid=0 auid=1004 ses=2861 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will may directly prevent activities from happening. however, since this device is only being used as a redirector and file collection, SELinux will not impact our operation.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.169.43 >
+*Name - Lynis
+*Version - Lynis 3.0.7
+*(NIX) Config file or install directory - /usr/bin/lynis
+Directory location of associated logs - /var/log/lynis.log /home/user4/lynis.log
+Timestamp of all associated log files - Modify: 2022-08-17 13:49:36.998857799 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - yes
+[user4@desktop-admin1 ~]$ sudo tail -n 5 /var/log/lynis.log
+[user4@desktop-admin1 ~]$ sudo tail -n 5 /var/log/lynis.log
+2022-08-17 13:00:38 Action: removing temporary file /tmp/lynis.0EFPaxJmDB
+2022-08-17 13:00:38 Info: temporary file /tmp/lynis.eEVYmsZWRs was already removed
+2022-08-17 13:00:38 Info: temporary file /tmp/lynis.rn8fbY9BcD was already removed
+2022-08-17 13:00:38 Action: removing temporary file /tmp/lynis.noZcTWRZom
+2022-08-17 13:00:38 Lynis ended successfully.
+Documentation - https://cisofy.com/lynis/
+*Recommendation - Lynis is configured to run on start from crontab. It is a compliance/hardening software that automatically detect insecure configurations and hardens them. This narrows down the room for vulnerabilities on the system Since T4 is only being used as a redirector, low risk.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T4 and 192.168.169.43 >
+*Name - Firetool/firejail-ui
+*Version - 9.9.67
+*(NIX) Config file or install directory - /usr/bin/firetools /root/firetools /tmp/firetools
+Directory location of associated logs - no logging provided 
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no, it is not meant for logging
+*Documentation - https://github.com/netblue30/firetools
+*Recommendation - Firetools is used to create a sandbox to run untrusted application. Currently, there is no evidence of it running. However, the admin has installed/made firetool.
+*****End of Report*****
+
+
+####T5####
+
+
+*****Privileged User Report*****
+*Target: <T5 and 192.168.169.111 >
+*User logged in - Administrator
+*Access Time - unknown
+*Access Method - RDP /v:Workstation17
+*Privileges - Administrator
+*Activity - running MS Edge, Paint, notepad, powershell script Loop_Launcher (implant), 
+*Recommendation - This Admin is us.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T5 and 192.168.169.111 >
+*Name - BitLocker
+*Version - N/A
+*(WIN) Primary registry key - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker 
+Directory location of associated logs - N/A
+Timestamp of all associated log files - n/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview
+*Recommendation - BitLocker was not seen in any other Windows device so far. Althought it may be a common features of Windows, we should know that BitLocker is present. BitLocker helps mitigate unauthorized data access by enhancing file and system protections. BitLocker also helps render data inaccessible when BitLocker-protected computers are decommissioned or recycled.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T5 and 192.168.169.111 >
+*Name - Exploit Guard
+*Version - N/A
+*(WIN) Primary registry key - unknown
+Directory location of associated logs - N/A
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.techtarget.com/searchsecurity/definition/Windows-Defender-Exploit-Guard
+*Recommendation - Microsoft Windows Defender Exploit Guard (EG) is an anti-malware software that provides intrusion protection for users. It has a suite of tools that can prevent us from conducting effects or other activities. Need to proceed with caution.
+*****End of Report*****
+
+####T6####
+
+
+*****Security Product Report*****
+*Target: <T6 and 192.168.169.220 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-17 15:09:22.036643017 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) -
+[user4@desktop-user12 ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRYPTO_KEY_USER msg=audit(1660748931.634:10704): pid=22986 uid=0 auid=1017 ses=1458 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=destroy kind=server fp=SHA256:e3:3f:38:d0:dc:c2:81:83:3e:22:de:58:cb:cf:08:61:7c:a6:cf:31:53:63:f1:5c:06:33:a2:db:1c:35:8c:6d direction=? spid=22991 suid=1017  exe="/usr/sbin/sshd" hostname=? addr=? terminal=? res=success'
+type=USER_ACCT msg=audit(1660748931.713:10705): pid=23008 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="user4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_CMD msg=audit(1660748931.714:10706): pid=23008 uid=1004 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/user4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/1 res=success'
+type=CRED_REFR msg=audit(1660748931.714:10707): pid=23008 uid=0 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_START msg=audit(1660748931.721:10708): pid=23008 uid=0 auid=1004 ses=1456 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will may directly prevent activities from happening. however, since this device is only being used as survey and  collection, SELinux will not impact our operation.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T6 and 192.168.169.220 >
+*Name - Logwatch
+*PID - cron
+*PPID - root
+*User - root
+*Location of config file - /etc/logwatch/conf/logwatch.conf
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://wiki.archlinux.org/title/Logwatch
+*Description - Logwatch is configured to send logs to root and looks like the logs in /var/log/maillog
+*Recommendation - We do not know why is is just configure as default. We do not know the POL enough to fully assess the risk. There is a reasonable suspicion that the emails are getting sent. 
+*****End of Report*****
+
+
+####T7####
+
+
+*****Security Product Report*****
+*Target: <T7 and 192.168.169.113 >
+*Name - BitLocker
+*Version - N/A
+*(WIN) Primary registry key - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker
+Directory location of associated logs - N/A
+Timestamp of all associated log files - n/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-overview
+*Recommendation - BitLocker was not seen in any other Windows device so far. Althought it may be a common features of Windows, we should know that BitLocker is present. BitLocker helps mitigate unauthorized data access by enhancing file and system protections. BitLocker also helps render data inaccessible when BitLocker-protected computers are decommissioned or recycled.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T7 and 192.168.169.113 >
+*Name - Exploit Guard
+*Version - N/A
+*(WIN) Primary registry key - unknown
+Directory location of associated logs - N/A
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.techtarget.com/searchsecurity/definition/Windows-Defender-Exploit-Guard
+*Recommendation - Microsoft Windows Defender Exploit Guard (EG) is an anti-malware software that provides intrusion protection for users. It has a suite of tools that can prevent us from conducting effects or other activities. Need to proceed with caution.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.168.169.113 >
+*Name - VSSCV (Volume Shadow Copy)
+*PID - 0x143c
+*PPID - unknown
+*User - DESKTOP-USER13/Admistrator
+*Location of config file - unknown
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.file.net/process/vssvc.exe.html
+*Description - Shadow copy allows you to revert back to previous versions of the file.
+*Recommendation - There is a chance that if we modify any file, the sysadmin can check the previous version of the file. This feature is typical for Windows. I just have not seen it run constantly (seen in security logs)
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.168.169.113 >
+*Name - Windows Error Reporting
+*PID - scheduled task
+*PPID - N/A
+*User - SYSTEM
+*Location of config file - HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\Windows Error Reporting
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - to Microsoft
+*Documentation - https://docs.microsoft.com/en-us/windows/win32/wer/about-wer
+*Description - Windows Error Reporting (WER) is a flexible event-based feedback infrastructure designed to gather information about the hardware and software problems that Windows can detect, report the information to Microsoft, and provide users with any available solutions. 
+*Recommendation - Problem detected in this device may be reported to Microsoft. I would caution breaking this system.
+*****End of Report*****
+
+
+*****Security Product Report*****
+*Target: <T7 and 192.168.169.113 >
+*Name - NisSrv.exe Windows Defender Antivirus Network Inspection Service.
+*Version - N/A
+*(WIN) Primary registry key - unknown
+Directory location of associated logs - N/A
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.howtogeek.com/357184/what-is-microsoft-network-realtime-inspection-service-nissrv.exe-and-why-is-it-running-on-my-pc/
+*Recommendation - According to Microsoft’s description of the service, it “helps guard against intrusion attempts targeting known and newly discovered vulnerabilities in network protocols.” Seeing that it did not guard against our access attempt, it could be harmless for our purpose.
+*****End of Report*****
+

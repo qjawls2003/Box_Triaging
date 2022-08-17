@@ -1,0 +1,658 @@
+####Notes for 15-08-22####
+
+Start:1300Z
+End:1900Z
+
+>T1:  10.50.29.166
+->T2: 10.20.169.121
+-->T3: Unknown internal router (this router should be utilized to perform any further network enumeration inside the 192.168.169.0/24 private IP space)
+
+Have fun!
+
+=========================
+T1:  10.50.29.166
+=========================
+X-----------------------
+
+2022-08-15 13:02:11-- ON
+
+2022-08-15 13:02:19-- start vetting
+
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 68401sec preferred_lft 68401sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[engineer4@ext-rtr ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 engineer4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 engineer4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 engineer4 wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x.  2 engineer4 wheel    6 Feb 11  2022 LOGS
+drwxr-xr-x. 26 root      root  4096 Feb 11  2022 ..
+drwx------.  3 engineer4 wheel   95 May 13 15:13 .
+-rw-------.  1 engineer4 wheel 7424 May 25 16:49 .bash_history
+
+[engineer4@ext-rtr ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root       root    40 Feb 11  2022 ..
+drwx------.  3 engineer22 wheel   74 Feb 11  2022 engineer22
+drwx------.  2 radicle    wheel   62 Feb 11  2022 radicle
+
+[engineer4@ext-rtr ~]$ sudo ls -latr ../radicle
+total 16
+-rw-r--r--.  1 radicle wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 radicle wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 radicle wheel   18 Oct 30  2018 .bash_logout
+drwxr-xr-x. 26 root    root  4096 Feb 11  2022 ..
+drwx------.  2 radicle wheel   62 Feb 11  2022 .
+
+4 S root      1176     1  0  80   0 - 61333 poll_s Jun18 ?        00:06:23 /usr/sbin/rsyslogd -n
+
+[engineer4@ext-rtr ~]$ date; date -u
+Mon Aug 15 13:08:16 UTC 2022
+Mon Aug 15 13:08:16 UTC 2022
+
+[engineer4@ext-rtr ~]$ uname -a
+Linux ext-rtr 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+[engineer4@ext-rtr ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service        cloud-final.service       crond.service       nfs-client.target  rhel-configure.service  sshd.service
+chronyd.service       cloud-init-local.service  irqbalance.service  postfix.service    rpcbind.service         tuned.service
+cloud-config.service  cloud-init.service        kdump.service       remote-fs.target   rsyslog.service
+
+
+cat /etc/rsyslog.conf
+*.* @@10.50.22.142:514
+####remote rsyslog!!#####
+
+
+[engineer4@ext-rtr ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+engineer1:x:1001:10::/home/useraccounts/engineer1:/bin/bash
+engineer2:x:1002:10::/home/useraccounts/engineer2:/bin/bash
+engineer3:x:1003:10::/home/useraccounts/engineer3:/bin/bash
+engineer4:x:1004:10::/home/useraccounts/engineer4:/bin/bash
+engineer5:x:1005:10::/home/useraccounts/engineer5:/bin/bash
+engineer6:x:1006:10::/home/useraccounts/engineer6:/bin/bash
+engineer7:x:1007:10::/home/useraccounts/engineer7:/bin/bash
+engineer8:x:1008:10::/home/useraccounts/engineer8:/bin/bash
+engineer9:x:1009:10::/home/useraccounts/engineer9:/bin/bash
+engineer10:x:1010:10::/home/useraccounts/engineer10:/bin/bash
+engineer11:x:1011:10::/home/useraccounts/engineer11:/bin/bash
+engineer12:x:1012:10::/home/useraccounts/engineer12:/bin/bash
+engineer13:x:1013:10::/home/useraccounts/engineer13:/bin/bash
+engineer14:x:1014:10::/home/useraccounts/engineer14:/bin/bash
+engineer15:x:1015:10::/home/useraccounts/engineer15:/bin/bash
+engineer16:x:1016:10::/home/useraccounts/engineer16:/bin/bash
+engineer17:x:1017:10::/home/useraccounts/engineer17:/bin/bash
+engineer18:x:1018:10::/home/useraccounts/engineer18:/bin/bash
+engineer19:x:1019:10::/home/useraccounts/engineer19:/bin/bash
+engineer20:x:1020:10::/home/useraccounts/engineer20:/bin/bash
+engineer21:x:1021:10::/home/useraccounts/engineer21:/bin/bash
+engineer22:x:1022:10::/home/useraccounts/engineer22:/bin/bash
+engineer23:x:1023:10::/home/useraccounts/engineer23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+
+-rw-rw-r--. 1 root utmp             301440 Aug 15 13:09 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 15 13:09 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               9216 Aug 15 13:09 /run/utmp
+-rw-------. 1 root root              12752 Aug 15 13:09 /var/log/messages
+-rw-------. 1 root root            4221226 Aug 15 13:10 /var/log/audit/audit.log
+-rw-------. 1 root root                125 Aug 15 13:10 /var/lib/rsyslog/imjournal.state
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 15 13:10 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root             103935 Aug 15 13:10 /var/log/secure
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+
+2022-08-15 13:19:02-- done vetting
+
+
+2022-08-15 16:46:44-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.121
+=========================
+X-----------------------
+
+2022-08-15 13:26:01-- ON
+
+2022-08-15 13:26:05-- start vetting
+
+[caisson4@webserver ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:36:64:84 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.121/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 75369sec preferred_lft 75369sec
+    inet6 fe80::f816:3eff:fe36:6484/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[caisson4@webserver ~]$ ls -latr ..
+total 4
+drwxr-xr-x.  4 root      root    40 Feb 11  2022 ..
+drwx------.  2 caisson22 wheel   62 Feb 11  2022 caisson22
+drwx------.  2 radicle   wheel   62 Feb 11  2022 radicle
+
+####webserver####
+
+5 S apache   31493   948  0  80   0 - 57628 inet_c Aug14 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   31494   948  0  80   0 - 57628 inet_c Aug14 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   31495   948  0  80   0 - 57628 inet_c Aug14 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   31496   948  0  80   0 - 57628 inet_c Aug14 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+5 S apache   31498   948  0  80   0 - 57628 inet_c Aug14 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+
+4 S root      1053     1  0  80   0 - 61331 poll_s Jun18 ?        00:06:32 /usr/sbin/rsyslogd -n
+5 S root       580     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+[caisson4@webserver ~]$ uname -a
+Linux webserver 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+[caisson4@webserver ~]$ ls /etc/systemd/system/multi-user.target.wants
+auditd.service   crond.service  irqbalance.service  nfs-client.target  remote-fs.target        rpcbind.service  sshd.service
+chronyd.service  httpd.service  kdump.service       postfix.service    rhel-configure.service  rsyslog.service  tuned.service
+
+cat /etc/rsyslog.conf
+*.* @@badguy:514
+
+[caisson4@webserver ~]$ cat /etc/hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+10.111.23.4 badguy
+
+[caisson4@webserver ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+caisson1:x:1001:10::/home/useraccounts/caisson1:/bin/bash
+caisson2:x:1002:10::/home/useraccounts/caisson2:/bin/bash
+caisson3:x:1003:10::/home/useraccounts/caisson3:/bin/bash
+caisson4:x:1004:10::/home/useraccounts/caisson4:/bin/bash
+caisson5:x:1005:10::/home/useraccounts/caisson5:/bin/bash
+caisson6:x:1006:10::/home/useraccounts/caisson6:/bin/bash
+caisson7:x:1007:10::/home/useraccounts/caisson7:/bin/bash
+caisson8:x:1008:10::/home/useraccounts/caisson8:/bin/bash
+caisson9:x:1009:10::/home/useraccounts/caisson9:/bin/bash
+caisson10:x:1010:10::/home/useraccounts/caisson10:/bin/bash
+caisson11:x:1011:10::/home/useraccounts/caisson11:/bin/bash
+caisson12:x:1012:10::/home/useraccounts/caisson12:/bin/bash
+caisson13:x:1013:10::/home/useraccounts/caisson13:/bin/bash
+caisson14:x:1014:10::/home/useraccounts/caisson14:/bin/bash
+caisson15:x:1015:10::/home/useraccounts/caisson15:/bin/bash
+caisson16:x:1016:10::/home/useraccounts/caisson16:/bin/bash
+caisson17:x:1017:10::/home/useraccounts/caisson17:/bin/bash
+caisson18:x:1018:10::/home/useraccounts/caisson18:/bin/bash
+caisson19:x:1019:10::/home/useraccounts/caisson19:/bin/bash
+caisson20:x:1020:10::/home/useraccounts/caisson20:/bin/bash
+caisson21:x:1021:10::/home/useraccounts/caisson21:/bin/bash
+caisson22:x:1022:10::/home/useraccounts/caisson22:/bin/bash
+caisson23:x:1023:10::/home/useraccounts/caisson23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+
+-rw-rw-r--. 1 root utmp              91008 Aug 15 13:31 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 15 13:31 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               8064 Aug 15 13:31 /run/utmp
+-rw-------. 1 root root              13234 Aug 15 13:32 /var/log/messages
+-rw-------. 1 root root                125 Aug 15 13:32 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root            5402092 Aug 15 13:32 /var/log/audit/audit.log
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 15 13:32 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root              90186 Aug 15 13:32 /var/log/secure
+
+[caisson4@webserver ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-15 13:33:43-- done vetting
+
+2022-08-15 14:14:14-- scanning result
+
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52230  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52230  ...  OK
+Host: 10.20.169.239 ()  Ports: 52230/open/tcp//unknown///
+Host: 10.20.169.238 ()  Ports: 52230/open/tcp//unknown///
+
+nc 10.20.169.239 52230                               
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.239:52230  ...  OK
+SSH-2.0-OpenSSH_5.5p1 Debian-6+squeeze8
+
+nc 10.20.169.238 52230
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  10.20.169.238:52230  ...  OK
+SSH-2.0-OpenSSH_5.5p1 Debian-6+squeeze8
+
+2022-08-15 14:24:53-- done scanning
+
+2022-08-15 16:45:11-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.238
+=========================
+X-----------------------
+
+
+2022-08-15 14:26:17-- ON
+
+2022-08-15 14:27:23-- start vetting
+
+NOC_Admin4@Vyos1:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:6c:c0:57 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.238/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe6c:c057/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:90:b0:db brd ff:ff:ff:ff:ff:ff
+    inet 192.168.169.206/24 brd 192.168.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe90:b0db/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+NOC_Admin4@Vyos1:~$ ls -latr /
+total 92
+drwxr-xr-x   2 root root       4096 Jul 21  2010 selinux
+drwxr-xr-x  10 root root       4096 Feb 16  2016 usr
+lrwxrwxrwx   1 root root          4 Feb 16  2016 lib64 -> /lib
+drwxr-xr-x   2 root root       4096 Feb 16  2016 srv
+drwxr-xr-x   2 root root       4096 Feb 16  2016 media
+drwxr-xr-x   3 root root       4096 Feb 17  2016 opt
+drwxr-xr-x  12 root root       4096 Feb 17  2016 lib
+drwxr-xr-x  15 root root       4096 Feb 17  2016 var
+drwxr-xr-x   2 root root       4096 Feb 17  2016 sbin
+drwxr-xr-x   2 root root       4096 Feb 17  2016 bin
+drwx------   2 root root      16384 Oct 12  2017 lost+found
+drwxr-xr-x   3 root root       4096 Oct 12  2017 boot
+-rw-r--r--   1 root root        245 Oct 12  2017 install.log
+
+NOC_Admin4@Vyos1:~$ cat /install.log
+turning off swaps...
+Creating root partition on /dev/vda
+Creating filesystem on /dev/vda1...
+Marking /dev/vda partition 1 as bootable
+Mounting /dev/vda1...
+Copying /mnt/squashfs/* to 
+Setting up grub...
+Installation finished. No error reported.
+
+NOC_Admin4@Vyos1:~$ ls -latr /tmp
+total 8
+drwxr-xr-x 22 root root      4096 Jun 18 01:08 ..
+-rw-------  1 root vyattacfg    0 Jun 18 01:08 DWkBOq-ssh-key
+drwxrwxrwt  2 root root      4096 Aug 15 14:18 .
+
+NOC_Admin4@Vyos1:~$ ls -latr .
+total 24
+-rw-r--r--  1 NOC_Admin4 users  675 Sep 25  2014 .profile
+-rw-r--r--  1 NOC_Admin4 users 3184 Sep 25  2014 .bashrc
+-rw-r--r--  1 NOC_Admin4 users  220 Sep 25  2014 .bash_logout
+drwxr-x---  2 NOC_Admin4 users 4096 Feb 11  2022 .ssh
+
+NOC_Admin4@Vyos1:~$ ls -latr ..
+total 108
+drwxr-xr-x  3 NOC_Admin22 users 4096 Feb 11  2022 NOC_Admin22
+drwxr-xr-x  3 radicle     users 4096 Feb 11  2022 radicle
+drwxr-xr-x 27 root        root  4096 Feb 11  2022 .
+drwxr-xr-x  3        1000 users 4096 May 13 12:36 vyos
+
+5 S root      1998     1  0  80   0 - 29938 ?      Jun18 ?        00:00:09 /usr/sbin/rsyslogd -c4
+###c4???####
+
+1 S root      2290     1  0  80   0 - 20918 ?      Jun18 ?        00:00:00 /usr/bin/perl /opt/vyatta/sbin/vyos-intfwatchd
+####intfwatchd???###
+
+
+0 S root      2291  2290  0  80   0 -  1584 ?      Jun18 ?        00:00:00 ip monitor link
+####ip monitor link?####
+
+
+1 S root      2308     1  0  80   0 -  7999 ?      Jun18 ?        00:00:00 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2287=
+1 S root      3976     1  0  80   0 - 44933 ?      Jun18 ?        00:00:00 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2364=
+1 S root      4104     1  0  80   0 -  7999 ?      Jun18 ?        00:00:00 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_4091=
+
+5 S quagga    1740     1  0  80   0 -  9864 ?      Jun18 ?        00:00:01 /usr/sbin/zebra -d -P 0 -i /var/run/quagga/zebra.pid -S -s 1048576
+####zebra?####
+
+1 S root      1663     1  0  80   0 -   992 ?      Jun18 ?        00:00:00 /sbin/netplugd -P -p /var/run/netplugd.pid
+1 S root      1705     1  0  80   0 -  5250 ?      Jun18 ?        00:00:08 /usr/sbin/cron
+5 S quagga    1740     1  0  80   0 -  9864 ?      Jun18 ?        00:00:01 /usr/sbin/zebra -d -P 0 -i /var/run/quagga/zebra.pid -S -s 1048576
+1 S root      1744     1  0  80   0 -  1003 ?      Jun18 ?        00:00:00 /usr/sbin/acpid
+1 S quagga    1748     1  0  80   0 -  9836 ?      Jun18 ?        00:03:46 /usr/sbin/ripd -d -P 0 -i /var/run/quagga/ripd.pid
+1 S quagga    1752     1  0  80   0 -  9788 ?      Jun18 ?        00:00:00 /usr/sbin/ripngd -d -P 0 -i /var/run/quagga/ripngd.pid
+1 S quagga    1754     1  0  80   0 - 10529 ?      Jun18 ?        00:03:48 /usr/sbin/ospfd -d -P 0 -i /var/run/quagga/ospfd.pid
+1 S quagga    1756     1  0  80   0 -  9885 ?      Jun18 ?        00:00:00 /usr/sbin/ospf6d -d -P 0 -i /var/run/quagga/ospf6d.pid
+1 S quagga    1758     1  0  80   0 - 10977 ?      Jun18 ?        00:04:16 /usr/sbin/bgpd -d -P 0 -i /var/run/quagga/bgpd.pid -I
+
+
+NOC_Admin4@Vyos1:~$ date; date -u
+Mon Aug 15 14:31:04 UTC 2022
+Mon Aug 15 14:31:04 UTC 2022
+
+
+NOC_Admin4@Vyos1:~$ uname -a
+Linux Vyos1 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64 GNU/Linux
+
+NOC_Admin4@Vyos1:~$ df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/vda1              1015672    807352    139512  86% /
+tmpfs                  2027276         0   2027276   0% /lib/init/rw
+udev                   2019500       116   2019384   1% /dev
+tmpfs                  2027276         4   2027272   1% /dev/shm
+none                   2027276       316   2026960   1% /opt/vyatta/config
+unionfs-fuse           2027276       316   2026960   1% /opt/vyatta/config/tmp/new_config_2287
+unionfs-fuse           2027276       316   2026960   1% /opt/vyatta/config/tmp/new_config_2364
+unionfs-fuse           2027276       316   2026960   1% /opt/vyatta/config/tmp/new_config_4091
+
+drwxr-xr-x  2 proxy    proxy         4096 Aug 15 00:17 squid3
+###what is squid3?####
+
+/var/log/squid3:
+total 8
+drwxr-xr-x 13 root  root  4096 Aug  1 00:17 ..
+-rw-r-----  1 proxy adm      0 Aug 13 00:17 cache.log.2
+-rw-r-----  1 proxy adm      0 Aug 14 00:17 cache.log.1
+-rw-r-----  1 proxy adm      0 Aug 15 00:17 cache.log
+drwxr-xr-x  2 proxy proxy 4096 Aug 15 00:17 .
+
+/etc/rsyslog.d:
+total 12
+drwxr-xr-x  2 root root 4096 Feb 17  2016 .
+drwxr-xr-x 96 root root 4096 Jun 18 01:08 ..
+-rw-r--r--  1 root root  127 Oct 12  2017 vyatta-log.conf
+
+NOC_Admin4@Vyos1:~$ cat /etc/rsyslog.d/vyatta-log.conf
+$outchannel global,/var/log/messages,261120,/usr/sbin/logrotate /opt/vyatta/etc/logrotate/global
+*.notice;local7.debug $global
+
+NOC_Admin4@Vyos1:~$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+127.0.1.1         Vyos1  #vyatta entry
+
+NOC_Admin4@Vyos1:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/vbash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+quagga:x:101:103:Vyatta Quagga routing suite,,,:/var/run/quagga/:/bin/false
+ntp:x:102:107::/home/ntp:/bin/false
+snmp:x:103:108::/var/lib/snmp:/bin/false
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin
+dnsmasq:x:105:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+radvd:x:106:65534::/var/run/radvd:/bin/false
+_lldpd:x:107:111::/var/run/lldpd:/bin/false
+hacluster:x:108:113:Heartbeat System Account,,,:/usr/lib/heartbeat:/bin/false
+tss:x:109:114::/var/lib/tpm:/usr/sbin/nologin
+NOC_Admin9:x:1001:100::/home/NOC_Admin9:/bin/vbash
+NOC_Admin10:x:1002:100::/home/NOC_Admin10:/bin/vbash
+NOC_Admin17:x:1003:100::/home/NOC_Admin17:/bin/vbash
+NOC_Admin22:x:1004:100::/home/NOC_Admin22:/bin/vbash
+NOC_Admin6:x:1005:100::/home/NOC_Admin6:/bin/vbash
+NOC_Admin13:x:1006:100::/home/NOC_Admin13:/bin/vbash
+NOC_Admin19:x:1007:100::/home/NOC_Admin19:/bin/vbash
+NOC_Admin12:x:1008:100::/home/NOC_Admin12:/bin/vbash
+NOC_Admin4:x:1009:100::/home/NOC_Admin4:/bin/vbash
+radicle:x:1010:100::/home/radicle:/bin/vbash
+NOC_Admin3:x:1011:100::/home/NOC_Admin3:/bin/vbash
+NOC_Admin18:x:1012:100::/home/NOC_Admin18:/bin/vbash
+NOC_Admin20:x:1013:100::/home/NOC_Admin20:/bin/vbash
+NOC_Admin23:x:1014:100::/home/NOC_Admin23:/bin/vbash
+NOC_Admin15:x:1015:100::/home/NOC_Admin15:/bin/vbash
+NOC_Admin5:x:1016:100::/home/NOC_Admin5:/bin/vbash
+NOC_Admin16:x:1017:100::/home/NOC_Admin16:/bin/vbash
+NOC_Admin21:x:1018:100::/home/NOC_Admin21:/bin/vbash
+NOC_Admin7:x:1019:100::/home/NOC_Admin7:/bin/vbash
+NOC_Admin14:x:1020:100::/home/NOC_Admin14:/bin/vbash
+NOC_Admin1:x:1021:100::/home/NOC_Admin1:/bin/vbash
+NOC_Admin2:x:1022:100::/home/NOC_Admin2:/bin/vbash
+NOC_Admin11:x:1023:100::/home/NOC_Admin11:/bin/vbash
+NOC_Admin8:x:1024:100::/home/NOC_Admin8:/bin/vbash
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 17  2016 .
+drwxr-xr-x 96 root root 4096 Jun 18 01:08 ..
+-rw-r--r--  1 root root  102 Dec 19  2010 .placeholder
+-rwxr-xr-x  1 root root   90 Aug 16  2015 vyatta-logrotate-hourly
+
+NOC_Admin4@Vyos1:~$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r-- 1 root        root      1007 Aug 15 14:26 /dev/.udev/queue.bin
+-rw-r----- 1 root        adm      96896 Aug 15 14:27 /var/log/messages
+-rw-rw-r-- 1 root        utmp     10368 Aug 15 14:30 /var/run/utmp
+-rw-rw-r-- 1 root        utmp      7680 Aug 15 14:30 /var/log/wtmp
+-rw-rw-r-- 1 root        utmp    299300 Aug 15 14:30 /var/log/lastlog
+-rw------- 1 NOC_Admin21 users     1799 Aug 15 14:32 /home/NOC_Admin21/.bash_history
+-rw------- 1 NOC_Admin20 users     6928 Aug 15 14:35 /home/NOC_Admin20/.bash_history
+-rw-r----- 1 root        adm   36425815 Aug 15 14:36 /var/log/auth.log
+
+
+
+
+NOC_Admin4@Vyos1:~$ sudo cat /var/lib/logrotate/status
+logrotate state -- version 2
+"/var/log/lighttpd/*.log" 2022-2-11
+"/var/log/dpkg.log" 2022-3-1
+"/var/log/iptraf/*.log" 2022-2-11
+"/var/log/apt/term.log" 2022-2-11
+"/var/log/ppp-connect-errors" 2022-2-11
+"/var/log/apt/history.log" 2022-3-1
+"/var/log/alternatives.log" 2022-3-1
+"/var/log/conntrackd-stats.log" 2022-2-11
+"/var/log/aptitude" 2022-3-1
+"/var/log/wtmp" 2022-8-1
+"/var/log/mgetty/*.log" 2022-2-11
+"/var/log/vyatta/ipsec.log" 2022-2-11
+"/var/log/btmp" 2022-8-1
+"/var/log/vyatta/cfg-stdout.log" 2022-2-11
+"/var/log/vyatta/vyatta-commit.log" 2022-2-11
+"/var/log/ha-log" 2022-2-11
+"/var/log/vyatta/vyatta-config-loader.log" 2022-2-11
+"/var/log/vyatta/cfg-stderr.log" 2022-2-11
+"/var/log/messages" 2022-8-15
+"/var/log/squid3/cache.log" 2022-8-15
+"/var/log/ha-debug" 2022-2-11
+
+2022-08-15 15:57:12-- done vetting
+
+2022-08-15 16:12:18-- scanning
+
+for i in {1..255}; do sudo ping -c 1 -W 1 192.168.169.$i; done | grep 'bytes from'
+
+64 bytes from 192.168.169.1: icmp_req=1 ttl=64 time=0.419 ms
+64 bytes from 192.168.169.2: icmp_req=1 ttl=64 time=0.547 ms
+64 bytes from 192.168.169.3: icmp_req=1 ttl=64 time=0.493 ms
+64 bytes from 192.168.169.5: icmp_req=1 ttl=64 time=0.455 ms
+64 bytes from 192.168.169.12: icmp_req=1 ttl=128 time=0.371 ms
+64 bytes from 192.168.169.13: icmp_req=1 ttl=128 time=0.573 ms
+64 bytes from 192.168.169.16: icmp_req=1 ttl=64 time=0.213 ms
+64 bytes from 192.168.169.43: icmp_req=1 ttl=64 time=0.392 ms
+64 bytes from 192.168.169.111: icmp_req=1 ttl=128 time=0.361 ms
+64 bytes from 192.168.169.113: icmp_req=1 ttl=128 time=0.419 ms
+64 bytes from 192.168.169.206: icmp_req=1 ttl=255 time=0.063 ms
+
+33521/tcp open  unknown
+33521/tcp open  unknown
+33521/tcp open  unknown
+33125/tcp open  unknown
+33215/tcp open  unknown
+33251/tcp open  unknown
+33521/tcp open  unknown
+
+Host: 192.168.169.5 ()  Ports: 33521/open/tcp/////      Ignored State: closed (999)
+Host: 192.168.169.12 () Ports: 33521/open/tcp/////      Ignored State: closed (999)
+Host: 192.168.169.16 () Ports: 33521/open/tcp/////      Ignored State: closed (999)
+Host: 192.168.169.43 () Ports: 33125/open/tcp/////, 33215/open/tcp/////, 33251/open/tcp/////, 33521/open/tcp///// 
+
+
+proxychains nc 192.168.169.5 33521
+proxychains nc 192.168.169.12 33521
+proxychains nc 192.168.169.16 33521
+proxychains nc 192.168.169.43 33521
+proxychains nc 192.168.169.43 33125
+proxychains nc 192.168.169.43 33215
+proxychains nc 192.168.169.43 33251
+
+
+
+nc 192.168.169.5 33521
+
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.169.5:33521  ...  OK
+SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.7
+
+proxychains nc 192.168.169.12 33521
+
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.169.12:33521  ...  OK
+SSH-2.0-OpenSSH_for_Windows_7.9
+
+proxychains nc 192.168.169.16 33521
+
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.169.16:33521  ...  OK
+SSH-2.0-OpenSSH_7.4p1 Debian-10+deb9u7
+
+proxychains nc 192.168.169.43 33521
+
+[proxychains] config file found: /etc/proxychains4.conf
+[proxychains] preloading /usr/lib/x86_64-linux-gnu/libproxychains.so.4
+[proxychains] DLL init: proxychains-ng 4.16
+[proxychains] Strict chain  ...  127.0.0.1:9050  ...  192.168.169.43:33521  ...  OK
+SSH-2.0-OpenSSH_7.4
+
+2022-08-15 16:27:37-- done scanning
+
+2022-08-15 16:43:36-- OFF
+
+
+------------------------X
+=========================
+
+
+                                                
+~                                          

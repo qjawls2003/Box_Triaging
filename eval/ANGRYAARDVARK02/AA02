@@ -1,0 +1,95 @@
+
+
+ANGRYAARDVARK02
+
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR) / Collection
+
+Objective: Enumerate Krasnovian 1st Artillery BDE internal network (192.168.169.0/24) further. Identify path to ADMIN1 workstation. If successfully accessed, pivot from ADMIN1 to any discovered mail servers. Intelligence reporting suggests there are two operational mail servers in a separate internal network connected to ADMIN1.
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. All scanning must be conducted through secure tunnels. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::5gftE8DCc8 // user#::P455w0rd **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus.
+
+Scheme of Maneuver:
+>T1:
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+--->T4: ADMIN1
+---->T5: Suspected mail server?
+---->T6: Suspected mail server?
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP:
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T3:
+Hostname: Vyos1
+IP: 10.20.169.238
+OS: Vyos
+Creds: NOC_Admin#::5gftE8DCc8
+Last Known SSH Port: 52230
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4:
+Hostname: ADMIN1
+IP: Unknown
+OS: CentOS 7
+Creds: user#::P455w0rd
+Last Known SSH Port: Request analyst input
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials via SSH masquerade. If successful, perform a device survey. Collect any files of interest. Conduct network discovery to locate any mail servers in the ADMIN1’s internal network. Network discovery will at a minimum consist of scanning to determine all potential target IP’s, OS’s, and SSH Ports.  SSH ports for the potential target devices in this network are usually in the 33000-33999 range. Redirect to any additional targets of interest.
+
+T5:  >>Suspected mail server<<
+Hostname: Unknown
+IP: Unknown
+OS: Unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a device survey. Locate email accounts and collect all emails contained therein. Maneuver to the next target, if applicable.
+
+T6:  >>Suspected mail server<<
+Hostname: Unknown
+IP: Unknown
+OS: Unknown
+Creds: Unknown
+Last Known SSH Port: Unknown
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a device survey. Locate email accounts and collect all emails contained therein. Conclude operation.

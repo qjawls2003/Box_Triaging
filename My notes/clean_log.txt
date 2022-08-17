@@ -56,6 +56,6 @@ cat /tmp/mess.log > /var/log/messages
 touch -t 1610210501.01 /var/log/messages
 rm -rf /tmp/mess.log
 
+sudo grep -wv 'Aug 10.*.student4' /tmp/messages.4 > /tmp/messages.4.clean
 
-
-
+wevtutil clear-log Application /bu:c:\app.log

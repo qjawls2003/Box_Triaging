@@ -1,0 +1,43 @@
+T1
+
+./LOGS
+ls -latr ./LOGS
+../radicle
+sudo ls -latr ../radicle
+sudo cat ../radicle/.bash_logout
+rsyslog remote!
+SELINUX! enforcing
+
+sudo tail -n 5 /var/log/audit/audit.log
+sudo stat /var/log/audit/audit.log
+
+
+T2
+
+rsyslog remote!!
+SELINUX!
+
+T3
+cat /install.log
+sudo cat /tmp/DWkBOq-ssh-key
+sudo ls -latr ../vyos
+
+heartbeat
+cat /etc/cron.hourly/vyatta-logrotate-hourly
+sudo ls -latr /opt/vyatta/config/tmp
+sudo cat /var/log/squid3/cache.log
+
+cat /etc/rsyslog.d/vyatta-log.conf
+cat /etc/netplug*/netplugd.conf
+quagga
+sudo cat /var/lib/logrotate/status
+ls -latr /etc/squid*
+cat /etc/squid/squidGuard.conf
+cat /etc/squid3/squid.conf
+file /dev/.udev/queue.bin
+
+sudo cat /var/log/vyatta/ipsec.log
+ls -latr /selinux
+cat /etc/rsyslog.conf.orig
+show firewall
+show interface

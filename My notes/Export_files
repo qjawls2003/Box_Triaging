@@ -6,7 +6,7 @@ ssh -S /tmp/T# <user>@<Remote_IP > -p <ssh_Port> "cat > <file>" < hist
 
 ssh -S /tmp/T4 bad "sudo cat /root/.bash_history" > ./T4_bash_history.txt
 scp -o ControlPath=/tmp/T5 -P 5555 student4@localhost:/etc/passwd ./T5_passwd 
-
+ssh -S /tmp/T4 student4@localhost -p 4444 -t "sudo cat /var/log/auth.log" > auth.log
 ssh student4@10.50.28.223 'cat /etc/passwd' >> Export_files
 
 Windows:
@@ -16,4 +16,18 @@ scp -o ControlPath=/tmp/T2 -P 3333 -r student4@localhost:'C:\Windows\prefetch\*'
 
 scp -o ControlPath=/tmp/T5 -P 5555 -r student4@localhost:"'C:/Program Files/Common Files/system/ado/'" ~/Downloads/an_03-08-22_MM9/T5 
 
-scp -o ControlPath=/tmp/T5 -P 5555 -T 'student4@localhost:"C:/windows/system32/winevt/logs/Windows PowerShell.evtx"' .
+scp -o ControlPath=/tmp/T5 -P 5555 -T 'student4@localhost:"C:/windows/system32/winevt/logs/Windows PowerShell.evtx"' .
+
+for i in `sudo find /root -type f -name "*.txt"`; do (md5sum $i); done 
+
+for i in `ssh -S /tmp/T# -p <remote ssh port not tunnel port> student5@<remote IP> 'sudo find /root -type f -name "*.txt"'`; do (ssh -S /tmp/T# -p <remote ssh port not tunnel port> student5@<remote IP> "sudo cat $i") > `echo ./$i | rev | cut -d "/" -f 1 | rev`; done
+
+####SIZE####
+ls -la --block-size=M /var/spool/mail/  
+
+####HASH FIRST#####
+certutil -hashfile beacon.ps1 MD5
+for /R "C:\Tools" %f in (*.*) do certutil -hashfile "%f" MD5
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Path\To\Data\*.*" -Recurse)
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Windows\prefetch\*.*" -Recurse) -ErrorAction SilentlyContinue
+find -type f -exec md5sum '{}' \; > md5sum.txt
