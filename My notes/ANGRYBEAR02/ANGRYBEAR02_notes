@@ -1,0 +1,30 @@
+LP
+
+md5sum /usr/local/bin/pypykatz
+which leafpad
+md5sum /usr/bin/leafpad
+which galculator
+md5sum /usr/bin/galculator
+which clipit
+md5sum /usr/bin/clipit
+md5sum /usr/bin/x-www-browser
+sudo tail -n 5 /var/log/maillog
+root user!!!
+
+T1
+
+rsyslog remote
+root login
+selinux
+\
+
+T2
+admin
+certutil -hashfile c:\windows\system32\MRT.exe MD5
+
+
+T3
+certutil -hashfile "C:\Program Files (x86)\Windows Media Player\setup_wm.exe" MD5
+certutil -hashfile "C:\firefox.exe" MD5
+type c:\windows\temp\PowerPlan.log
+type c:\windows\temp\HighPerformancePlan.log

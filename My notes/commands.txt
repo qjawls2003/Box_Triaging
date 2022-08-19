@@ -11,8 +11,11 @@ ps -elf
 netstat -auntp OR ss -auntp
 sudo netstat -auntp
 w
-who
+w | grep root
+who 
+who | grep root
 lastlog
+lastlog | grep root
 sudo cat /etc/sudoers
 ls -latr /var/spool/cron
 sudo ls -latr /var/spool/cron
@@ -24,16 +27,18 @@ df
 ls -latr /var/*/*acc*
 stat/date <check timestamp>
 sudo stat /var/account/pacct
+sudo lastcomm
 ls /etc/systemd/system/multi-user.target.wants
 ls -latr /var/*log*/
 ls -latr /var/log/*
 sudo ls -latr /var/log/*
 cat out relevant files (grep for your logged in user account)
 ######change user##########
-sudo grep -r user4 /var/log/
+sudo grep -r NOC_admin4 /var/log/
 ##########################3
 ls -la /etc/*syslog*
 cat /etc/rsyslog.conf
+cat /etc/rsyslog.conf | grep @
 cat /etc/hosts
 cat /etc/passwd
 for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
@@ -89,7 +94,7 @@ ps -elf
 netstat -lptn
 ls -latr /var/log
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<yourminutesontarget> -type f -print0 | xargs -0 ls -latr
-sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -120 -type f -print0 | xargs -0 sudo ls -latr
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -180 -type f -print0 | xargs -0 sudo ls -latr
 
 
 Linux Survey Commands:
@@ -143,6 +148,7 @@ wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous 
 wevtutil qe security /c:25 /rd:true /f:text | findstr Event
 wevtutil qe security /c:25 /rd:true /f:text | findstr "Process Name"
 wevtutil qe security /c:100 /rd:true /f:text | findstr "Process Name"
+wevtutil qe application /c:100 /rd:true /f:text | findstr "Source"
 wevtutil el
 wevtutil gl security
 wevtutil gli security
@@ -193,6 +199,7 @@ cls
 ####Malware Hashing####
 certutil -hashfile beacon.ps1 MD5
 for /R "C:\Tools" %f in (*.*) do certutil -hashfile "%f" MD5
+for %x in ("C:\Program Files\Windows Defender*.dll") do certutil -hashfile "%x" MD5 | find /v "hashfile command complete"
 Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Path\To\Data\*.*" -Recurse)
 Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Windows\prefetch\*.*" -Recurse) -ErrorAction SilentlyContinue
 find -type f -exec md5sum '{}' \; > md5sum.txt

