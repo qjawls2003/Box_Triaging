@@ -1,0 +1,153 @@
+
+BELLIGERENTBADGER04
+2022-08-25
+Start Time: 0900
+Duration: 6 hours
+MC: <MC>
+Operator: student#
+Analyst: <analyst>
+
+Type of Operation: Operational Preparation of the Environment (OPE) // Offensive Cyber Operation (OCO)
+
+Objective: Confirm health and status of all previously accessed targets. Intelligence reports suggest T9 (129.168.169.186) is a new, unidentified admin workstation and T10 (10.20.169.121) is the network web server. Once connected and confirmed on the correct target web server, deliver the approved cyber effect to deny port #80 traffic.
+
+Tools/Techniques:  All connections will be established through SSH masquerades or netcat connections. Ports in use will be dependent on target location and are subject to change. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm. Iptable configuration is authorized on target 8 for the duration of the connection to target9. Iptable configuration is authorized on the web server ONLY for a period of time determined by the MC and in coordination with TASK FORCE ALPHA (MC is in contact with their representative).
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::AhmdLxu29D // askar#::DaXedayLasarah // **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus. Analysts on operation will make analytical judgment based off of their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target.
+
+Iptable modification is approved as configured below and ONLY for the confirmed web server:
+
+iptables -A OUTPUT -p tcp --dport #80 -j REJECT
+iptables -A INPUT -p tcp --dport #80 -j REJECT
+
+Verification with MC prior to delivery is required. Removing rules will also be directed by the MC.
+
+Scheme of Maneuver:
+
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+->T3: 10.20.169.10
+->T4: 10.20.169.13 
+->T5: 10.20.169.30
+-->T6: 10.20.169.239
+--->T7: 192.186.169.41
+---->T8: 192.186.169.201
+----->T9: 129.168.169.186
+->T10: 10.20.169.121
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T2:
+Hostname: STORAGE1
+IP: 10.20.169.122
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T3:
+Hostname: CHATSVR
+IP: 10.20.169.10
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T4:
+Hostname: FILESVR
+IP: 10.20.169.13
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T5:
+Hostname: STORAGE2
+IP: 10.20.169.30
+OS: Windows Server 2019
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T6:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of the device and maneuver to the next target.
+
+T7:
+Hostname: ADMIN2
+IP: 192.186.169.41//10.101.169.93
+OS: CentOS7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action:  Perform SSH masquerade with credentials successful in previous operation. Confirm health and status of device. Collect any new files of interest. Maneuver to next target.
+
+T8:
+Hostname: DESKTOP-USER21
+IP: 192.186.169.201
+OS: Linux v Unknown
+Creds: N/A
+Last Known SSH Port: None
+Security Product(s): Unknown
+Malware: Unknown
+Implant: Netcat listener
+Action: Perform netcat connection via port 447# (i.e Student8 is 4478 or student 12 is 44712). If successful, confirm health and status of the device. Perform IPtables redirection (utilizing Network Address Translation) to allow for connection to T9 utilizing port 123## (i.e Student8 is 12308 or student 12 is 12312) and connecting to follow-on target’s ssh port.  Collect any new files of interest. Maneuver to next target.
+**Note: The processes “ncat -knvlp 447## -e /bin/sh” is your entry point and should not be treated as malware.
+
+T9:
+Hostname: Unknown
+IP: 129.168.169.52
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. Conduct device survey. Collect any files of interest, particularly any credentials.
+
+T10: >>web server<<
+Hostname: WEBSERVER
+IP: 10.20.169.121
+OS: CentOS7
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. Conduct device survey. Confirm device is the correct web server with analyst. Apply T10 effect. Conclude operation.
+T10 effect: Modify iptables as outlined in Prior Approvals section. Confirm rules are in place and operating as desired. Remove rules at MC direction.
+

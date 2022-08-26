@@ -1,0 +1,122 @@
+
+
+BELLIGERENTBADGER003
+2022-08-24
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR) // Operational Preparation of the Environment (OPE) // T10 Effect
+
+Objective: Perform survey of identified user devices within Krasnovian 3rd Armour BDE internal network (192.186.169.0/24). Once successfully accessed, add a user to the root group on T8 (192.186.169.142 // hostname “DESKTOP-USER24") for sustained access assurance.
+
+Tools/Techniques: All connections will be established through SSH masquerades or netcat connection. Ports in use will be dependent on target location and are subject to change. All scanning must be conducted through secure tunnels. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Secure Copy (scp) is preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::AhmdLxu29D // askar#::DaXedayLasarah // previously collected ssh keys
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 3rd Armour BDE internal network.MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus. Operator must confirm ssh key hashes with MC prior to connection attempt. Analysts on operation will make analytical judgment based off their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target. If able to successfully access the "DESKTOP-USER24" workstation, the added account should attempt to blend in with normal account constructs and be added to the device’s privileged users group. The data collected on target should provide insight into domain standards. Operator is authorized to create an account and password with MC approval based off the knowledge acquired in previous operations and what they currently see on the device. MC will approve your user prior to creation. You will confirm the user with the MC after.
+
+Scheme of Maneuver:
+>T1: 10.50.29.166
+->T2: 10.20.169.30
+-->T3: 10.20.169.239
+--->T4: 192.186.169.41
+---->T5: 192.186.169.201
+---->T6: 192.186.169.134
+---->T7: 192.186.169.144
+---->T8: 192.186.169.142
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2
+Hostname: STORAGE2
+IP:  10.20.169.30
+OS: Windows v unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T3:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T4:
+Hostname: ADMIN2
+IP: 192.186.169.133//10.101.169.38
+OS: CentOS 7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: Ask Analyst
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with credentials successful in previous operation. Report any new files of interest. Collect ssh keys for your “askar#” user for access to T8 if not already recorded from previous operations. Maneuver to next target.
+
+T5:
+Hostname: DESKTOP-USER21
+IP: 192.186.169.201 & 129.168.169.201
+OS: Linux v Ubuntu 18.04
+Creds: N/A
+Last Known SSH Port: None
+Security Product(s): Unknown
+Malware: Unknown
+Implant: Netcat listener
+Action: Perform netcat connection via port 447#. If not conducted previously, perform device survey. Confirm with analyst regarding bypassing survey commands with large outputs that may bog down netcat connection. Catalog any user accounts and record applicable login data. Maneuver to next target.
+**Note: The processes “ncat -knvlp 447# -e /bin/sh” is your entry point and should not be treated as malware.
+
+T6:  
+Hostname: Unknown
+IP: 192.186.169.134
+OS: Linux v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform device survey. Maneuver to next target.
+
+T7:  
+Hostname: Unknown
+IP: 192.186.169.144
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform device survey. Maneuver to next target.
+
+T8:  
+Hostname: DESKTOP-USER24
+IP: 192.186.169.142
+OS: Linux v Unknown
+Creds: Previously collected ssh key
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade with previously collected SSH keys. If successful, perform device survey. If device is confirmed to be "DESKTOP-USER24" workstation, review /etc/passwd, /etc/shadow, and /etc/group to identify common user profile requirements. Execute T10 Effect and add a user account as outlined in Prior Approvals section. Su into created user to verify creation. Conclude operation.
+T10 Effect Note: Ignore other students when determining what standard users look like.
+

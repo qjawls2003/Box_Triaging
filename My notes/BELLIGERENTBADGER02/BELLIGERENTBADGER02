@@ -1,0 +1,109 @@
+
+
+BELLIGERENTBADGER002
+2022-08-23
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Perform survey of listed user devices within the Krasnovian 3rd Armour BDE internal network (192.186.169.0/24).
+
+Tools/Techniques: All connections will be established through SSH masquerades or netcat. Ports in use will be dependent on target location and are subject to change. All scanning must be conducted through secure tunnels. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Secure Copy (scp) is the preferred method for file transfers <10MB. All secure hash functions are authorized with the exception of SHA-0 algorithm.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::AhmdLxu29D // askar#::DaXedayLasarah
+
+Prior Approvals: sudo is authorized for use sparingly at operator discretion unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 3rd Armour BDE internal network. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus. Analysts on operation will make analytical judgment based on their target knowledge when providing credentials to test. Only three sets of credentials can be tested per target.
+
+Scheme of Maneuver:
+>T1: 10.50.29.166
+->T2: 10.20.169.10
+-->T3: 10.20.169.239
+---> T4: 192.186.169.41
+----> T5: 192.186.169.201
+----> T6: 192.186.169.202
+----> T7: 192.186.169.203
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T2:
+Hostname: CHATSVR
+IP: 10.20.169.10
+OS: Windows v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T3:
+Hostname: Vyos2
+IP: 10.20.169.239
+OS: Vyos
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and maneuver to the next target.
+
+T4:
+Hostname: ADMIN2
+IP: 192.186.169.41
+OS: CentOS 7
+Creds: askar#::DaXedayLasarah
+Last Known SSH Port: Ask Analyst
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Conduct device survey. Collect any files of interest to include private ssh keys (for your user# only). Maneuver to the next target.
+
+T5:
+Hostname: Unknown
+IP: 192.186.169.201
+OS: Linux v Unknown
+Creds: N/A
+Last Known SSH Port: None
+Security Product(s): Unknown
+Malware: Unknown
+Implant: Netcat listener
+Action: Perform netcat connection via port 447# (no leading zero). If successful, perform device survey. Confirm with analyst regarding bypassing specific survey commands with large outputs that may bog down the netcat connection. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Maneuver to next target.
+**Note: The processes on target “ncat -knvlp 447# -e /bin/sh” is your entry point and should not be treated as malware.
+
+T6:  
+Hostname: Unknown
+IP: 192.186.169.202
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform device survey. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Maneuver to the next target.
+
+T7:  
+Hostname: Unknown
+IP: 192.186.169.203
+OS: Windows v Unknown
+Creds: Unknown - Request analyst input
+Last Known SSH Port: 33715
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform a device survey. Catalog any user accounts, report results to the analyst, and record applicable login data in opnotes. Conclude operation.
+

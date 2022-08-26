@@ -12,6 +12,8 @@ lsmod
 sudo iptables -t nat -A PREROUTING -p tcp --dport 22022 -j DNAT --to-destination 192.168.0.10:22
 iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source 192.168.0.99
 sudo iptables -t nat -L
+sudo iptables -S
+sudo iptables -L -v -n | more
 cat /proc/sys/net/ipv4/ip_forward
 <confirm with MC>
 sudo sysctl -w net.ipv4.ip_forward=1

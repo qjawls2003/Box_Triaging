@@ -1,0 +1,2571 @@
+Script started on 2022-08-24 12:54:17+00:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="152" LINES="29"]
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [7m[32mssh[39m[7m [7m[35m-S[39m[7m [7m[4m/tmp/T2[24m bad [7m[35m-O[39m[7m forward [7m[35m-L[39m[7m 3333:10.20.169.239:52230[27m[57D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mS[39m[27m [27m[4m/[27m[4mt[27m[4mm[27m[4mp[27m[4m/[27m[4mT[27m[4m2[24m[27m [27mb[27ma[27md[27m [27m[35m-[27m[35mO[39m[27m [27mf[27mo[27mr[27mw[27ma[27mr[27md[27m [27m[35m-[27m[35mL[39m[27m [27m3[27m3[27m3[27m3[27m:[27m1[27m0[27m.[27m2[27m0[27m.[27m1[27m6[27m9[27m.[27m2[27m3[27m9[27m:[27m5[27m2[27m2[27m3[27m0[?1l>[?2004l
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mssh[39m[7m [7m[35m-MS[39m[7m /tmp/T3 [7m[35m-p[39m[7m 3333 [7m[35m-o[39m[7m StrictHostKeyChecking=no [7m[35m-o[39m[7m UserKnownHostsFile=/dev/null NOC_Admin4@localhost[27m[104D[27m[32ms[27m[32ms[27m[32mh[39m[27m [27m[35m-[27m[35mM[27m[35mS[39m[27m [27m/[27mt[27mm[27mp[27m/[27mT[27m3[27m [27m[35m-[27m[35mp[39m[27m [27m3[27m3[27m3[27m3[27m [27m[35m-[27m[35mo[39m[27m [27mS[27mt[27mr[27mi[27mc[27mt[27mH[27mo[27ms[27mt[27mK[27me[27my[27mC[27mh[27me[27mc[27mk[27mi[27mn[27mg[27m=[27mn[27mo[27m [27m[35m-[27m[35mo[39m[27m [27mU[27ms[27me[27mr[27mK[27mn[27mo[27mw[27mn[27mH[27mo[27ms[27mt[27ms[27mF[27mi[27ml[27me[27m=[27m/[27md[27me[27mv[27m/[27mn[27mu[27ml[27ml[27m [27mN[27mO[27mC[27m_[27mA[27md[27mm[27mi[27mn[27m4[27m@[27ml[27mo[27mc[27ma[27ml[27mh[27mo[27ms[27mt[?1l>[?2004l
+Warning: Permanently added '[localhost]:3333' (RSA) to the list of known hosts.
+AhmdLxu29D          
+		KRASNOVIAN VYOS
+
+***********************************************
+*UNAUTHORIZED USE OF THIS SYSTEM IS PROHIBITED*
+*Any attempt to access this device without    *
+*authorization will result in immediate       *
+*retribution.                                 *
+*		You have been warned...       *
+***********************************************
+
+NOC_Admin4@localhost's password: 
+Linux Vyos2 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64
+Welcome to VyOS.
+This system is open-source software. The exact distribution terms for 
+each module comprising the full system are described in the individual 
+files in /usr/share/doc/*/copyright.
+Last login: Tue Aug 23 13:56:24 2022 from 10.20.169.10
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:32:1d:b6 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.239/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe32:1db6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:1d:e8:81 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.206/24 brd 192.186.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe1d:e881/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /
+total 92
+drwxr-xr-x  2 root root       4096 Jul 21  2010 [0m[01;34mselinux[0m
+drwxr-xr-x 10 root root       4096 Feb 16  2016 [01;34musr[0m
+lrwxrwxrwx  1 root root          4 Feb 16  2016 [01;36mlib64[0m -> [01;34m/lib[0m
+drwxr-xr-x  2 root root       4096 Feb 16  2016 [01;34msrv[0m
+drwxr-xr-x  2 root root       4096 Feb 16  2016 [01;34mmedia[0m
+drwxr-xr-x  3 root root       4096 Feb 17  2016 [01;34mopt[0m
+drwxr-xr-x 12 root root       4096 Feb 17  2016 [01;34mlib[0m
+drwxr-xr-x 15 root root       4096 Feb 17  2016 [01;34mvar[0m
+drwxr-xr-x  2 root root       4096 Feb 17  2016 [01;34msbin[0m
+drwxr-xr-x  2 root root       4096 Feb 17  2016 [01;34mbin[0m
+drwx------  2 root root      16384 Oct 12  2017 [01;34mlost+found[0m
+drwxr-xr-x  3 root root       4096 Oct 12  2017 [01;34mboot[0m
+-rw-r--r--  1 root root        245 Oct 12  2017 install.log
+drwxrwsr-x  8 root vyattacfg  4096 Oct 12  2017 [01;34mconfig[0m
+drwx------  3 root root       4096 Feb 11  2022 [01;34mroot[0m
+drwxr-xr-x 27 root root       4096 Feb 11  2022 [01;34mhome[0m
+dr-xr-xr-x 13 root root          0 Jun 18 01:00 [01;34msys[0m
+dr-xr-xr-x 97 root root          0 Jun 18 01:00 [01;34mproc[0m
+drwxr-xr-x 16 root root       3280 Jun 18 01:00 [01;34mdev[0m
+drwxr-xr-x 22 root root       4096 Jun 18 01:09 [01;34m..[0m
+drwxr-xr-x 22 root root       4096 Jun 18 01:09 [01;34m.[0m
+drwxr-xr-x  2 root root       4096 Jun 18 01:09 [01;34mmnt[0m
+drwxr-xr-x 96 root root       4096 Jun 18 01:09 [01;34metc[0m
+drwxrwxrwt  2 root root       4096 Aug 24 13:23 [30;42mtmp[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /tmp
+total 8
+drwxr-xr-x 22 root root      4096 Jun 18 01:09 [0m[01;34m..[0m
+-rw-------  1 root vyattacfg    0 Jun 18 01:09 uny2c3-ssh-key
+drwxrwxrwt  2 root root      4096 Aug 24 13:23 [30;42m.[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr .
+total 52
+-rw-r--r--  1 NOC_Admin4 users   675 Sep 25  2014 .profile
+-rw-r--r--  1 NOC_Admin4 users  3184 Sep 25  2014 .bashrc
+-rw-r--r--  1 NOC_Admin4 users   220 Sep 25  2014 .bash_logout
+drwxr-x---  2 NOC_Admin4 users  4096 Feb 11  2022 [0m[01;34m.ssh[0m
+drwxr-xr-x 27 root       root   4096 Feb 11  2022 [01;34m..[0m
+drwxr-xr-x  3 NOC_Admin4 users  4096 Mar 21 18:39 [01;34m.[0m
+-rw-------  1 NOC_Admin4 users 23324 Aug 24 13:25 .bash_history
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr ..
+total 108
+drwxr-xr-x  3 vyos        users 4096 Oct 12  2017 [0m[01;34mvyos[0m
+drwxr-xr-x  3 NOC_Admin22 users 4096 Feb 11  2022 [01;34mNOC_Admin22[0m
+drwxr-xr-x 27 root        root  4096 Feb 11  2022 [01;34m.[0m
+drwxr-xr-x  3 NOC_Admin5  users 4096 Mar 21 17:09 [01;34mNOC_Admin5[0m
+drwxr-xr-x  3 NOC_Admin18 users 4096 Mar 21 17:18 [01;34mNOC_Admin18[0m
+drwxr-xr-x  3 NOC_Admin3  users 4096 Mar 21 17:20 [01;34mNOC_Admin3[0m
+drwxr-xr-x  3 NOC_Admin20 users 4096 Mar 21 17:23 [01;34mNOC_Admin20[0m
+drwxr-xr-x  3 NOC_Admin17 users 4096 Mar 21 17:59 [01;34mNOC_Admin17[0m
+drwxr-xr-x  3 NOC_Admin9  users 4096 Mar 21 18:01 [01;34mNOC_Admin9[0m
+drwxr-xr-x  3 NOC_Admin11 users 4096 Mar 21 18:07 [01;34mNOC_Admin11[0m
+drwxr-xr-x  3 NOC_Admin14 users 4096 Mar 21 18:15 [01;34mNOC_Admin14[0m
+drwxr-xr-x  3 NOC_Admin6  users 4096 Mar 21 18:21 [01;34mNOC_Admin6[0m
+drwxr-xr-x  3 NOC_Admin7  users 4096 Mar 21 18:26 [01;34mNOC_Admin7[0m
+drwxr-xr-x  3 NOC_Admin15 users 4096 Mar 21 18:31 [01;34mNOC_Admin15[0m
+drwxr-xr-x  3 NOC_Admin1  users 4096 Mar 21 18:34 [01;34mNOC_Admin1[0m
+drwxr-xr-x  3 NOC_Admin2  users 4096 Mar 21 18:35 [01;34mNOC_Admin2[0m
+drwxr-xr-x  3 NOC_Admin4  users 4096 Mar 21 18:39 [01;34mNOC_Admin4[0m
+drwxr-xr-x  3 NOC_Admin12 users 4096 Mar 21 18:44 [01;34mNOC_Admin12[0m
+drwxr-xr-x  3 NOC_Admin10 users 4096 Mar 21 18:45 [01;34mNOC_Admin10[0m
+drwxr-xr-x  3 NOC_Admin13 users 4096 Mar 21 18:47 [01;34mNOC_Admin13[0m
+drwxr-xr-x  3 NOC_Admin19 users 4096 Mar 21 19:00 [01;34mNOC_Admin19[0m
+drwxr-xr-x  3 NOC_Admin23 users 4096 Mar 22 19:30 [01;34mNOC_Admin23[0m
+drwxr-xr-x  3 NOC_Admin16 users 4096 May 20 15:12 [01;34mNOC_Admin16[0m
+drwxr-xr-x  3 NOC_Admin8  users 4096 May 20 18:21 [01;34mNOC_Admin8[0m
+drwxr-xr-x  3 radicle     users 4096 May 23 12:06 [01;34mradicle[0m
+drwxr-xr-x  3 NOC_Admin21 users 4096 May 23 14:08 [01;34mNOC_Admin21[0m
+drwxr-xr-x 22 root        root  4096 Jun 18 01:09 [01;34m..[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo ls -latr /root
+total 20
+-rw-r--r--  1 root root  140 Nov 19  2007 .profile
+-rw-r--r--  1 root root  599 Feb 17  2016 .bashrc
+drwxr-x---  2 root root 4096 Feb 11  2022 .ssh
+drwx------  3 root root 4096 Feb 11  2022 .
+drwxr-xr-x 22 root root 4096 Jun 18 01:09 ..
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 -  2112 -      Jun18 ?        00:01:18 init [2]  
+1 S root         2     0  0  80   0 -     0 -      Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 -      Jun18 ?        00:02:35 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kworker/u4:0]
+1 S root         7     2  0  80   0 -     0 -      Jun18 ?        00:00:34 [rcu_sched]
+1 S root         8     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0 -40   - -     0 -      Jun18 ?        00:00:00 [migration/0]
+1 S root        10     2  0 -40   - -     0 -      Jun18 ?        00:00:00 [migration/1]
+1 S root        11     2  0  80   0 -     0 -      Jun18 ?        02:23:12 [ksoftirqd/1]
+1 S root        13     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kworker/1:0H]
+1 S root        14     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [khelper]
+5 S root        15     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        16     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [netns]
+1 S root        17     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kworker/u4:1]
+1 S root       169     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [writeback]
+1 S root       171     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kintegrityd]
+1 S root       172     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [bioset]
+1 S root       174     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kblockd]
+1 S root       282     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [ata_sff]
+1 S root       292     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [khubd]
+1 S root       396     2  0  80   0 -     0 -      Jun18 ?        00:00:49 [kworker/1:1]
+1 S root       413     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kswapd0]
+1 S root       477     2  0  99  19 -     0 -      Jun18 ?        00:00:17 [khugepaged]
+1 S root       478     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [fsnotify_mark]
+1 S root       488     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [crypto]
+1 S root       585     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [deferwq]
+1 S root       779     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       809     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       814     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kworker/0:2]
+1 S root       827     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       844     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [md]
+1 S root       851     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [raid5wq]
+1 S root       868     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [jbd2/vda1-8]
+1 S root       869     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [ext4-rsv-conver]
+5 S root       929     1  0  76  -4 -  4305 -      Jun18 ?        00:00:00 udevd --daemon
+5 S root      1104   929  0  78  -2 -  4274 -      Jun18 ?        00:00:00 udevd --daemon
+5 S root      1105   929  0  78  -2 -  4274 -      Jun18 ?        00:00:00 udevd --daemon
+1 S root      1148     2  0  80   0 -     0 -      Jun18 ?        00:12:38 [vballoon]
+1 S root      1152     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kpsmoused]
+1 S daemon    1679     1  0  80   0 -  4702 -      Jun18 ?        00:00:00 /usr/sbin/atd
+1 S root      1683     1  0  80   0 -   992 -      Jun18 ?        00:00:00 /sbin/netplugd -P -p /var/run/netplugd.pid
+1 S root      1726     1  0  80   0 -  5250 -      Jun18 ?        00:00:10 /usr/sbin/cron
+1 S root      1754     1  0  80   0 -  1003 -      Jun18 ?        00:00:00 /usr/sbin/acpid
+5 S quagga    1763     1  0  80   0 -  9864 -      Jun18 ?        00:00:02 /usr/sbin/zebra -d -P 0 -i /var/run/quagga/zebra.pid -S -s 1048576
+1 S quagga    1765     1  0  80   0 -  9836 -      Jun18 ?        00:04:18 /usr/sbin/ripd -d -P 0 -i /var/run/quagga/ripd.pid
+1 S quagga    1767     1  0  80   0 -  9788 -      Jun18 ?        00:00:00 /usr/sbin/ripngd -d -P 0 -i /var/run/quagga/ripngd.pid
+1 S quagga    1769     1  0  80   0 - 10529 -      Jun18 ?        00:04:19 /usr/sbin/ospfd -d -P 0 -i /var/run/quagga/ospfd.pid
+1 S quagga    1771     1  0  80   0 -  9885 -      Jun18 ?        00:00:00 /usr/sbin/ospf6d -d -P 0 -i /var/run/quagga/ospf6d.pid
+1 S quagga    1773     1  0  80   0 - 10977 -      Jun18 ?        00:04:51 /usr/sbin/bgpd -d -P 0 -i /var/run/quagga/bgpd.pid -I
+1 S root      1958     2  0  60 -20 -     0 -      Jun18 ?        00:00:00 [kworker/1:1H]
+5 S root      2005     1  0  80   0 - 29938 -      Jun18 ?        00:00:10 /usr/sbin/rsyslogd -c4
+5 S root      2371     1  0  80   0 - 12300 -      Jun18 ?        00:00:00 /usr/sbin/sshd -p 52230
+1 S root      2431     1  0  80   0 - 20949 -      Jun18 ?        00:00:00 /usr/bin/perl /opt/vyatta/sbin/vyos-intfwatchd
+0 S root      2432  2431  0  80   0 -  1585 -      Jun18 ?        00:00:00 ip monitor link
+1 S root      2449     1  0  80   0 - 47016 -      Jun18 ?        00:00:02 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2428=RW:/opt/vyatta/config/active=RO /opt
+1 S root      4231     1  0  80   0 - 44933 -      Jun18 ?        00:00:02 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2505=RW:/opt/vyatta/config/active=RO /opt
+1 S root      4359     1  0  80   0 - 44933 -      Jun18 ?        00:00:02 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_4346=RW:/opt/vyatta/config/active=RO /opt
+1 S root      4405     2  0  80   0 -     0 -      Jun18 ?        00:00:34 [kworker/0:0]
+1 S root      4412     2  0  80   0 -     0 -      Jun18 ?        00:00:00 [kworker/1:0]
+0 S root      4434     1  0  80   0 -  1506 -      Jun18 tty1     00:00:00 /sbin/getty 38400 tty1
+0 S root      4435     1  0  80   0 -  1506 -      Jun18 tty2     00:00:00 /sbin/getty 38400 tty2
+0 S root      4436     1  0  80   0 -  1506 -      Jun18 tty3     00:00:00 /sbin/getty 38400 tty3
+0 S root      4437     1  0  80   0 -  1506 -      Jun18 tty4     00:00:00 /sbin/getty 38400 tty4
+0 S root      4438     1  0  80   0 -  1506 -      Jun18 tty5     00:00:00 /sbin/getty 38400 tty5
+0 S root      4439     1  0  80   0 -  1506 -      Jun18 tty6     00:00:00 /sbin/getty 38400 tty6
+0 S root      4440     1  0  80   0 -  1506 -      Jun18 ttyS0    00:00:00 /sbin/getty -L ttyS0 9600 vt100
+4 S root     31215  2371  0  80   0 - 19179 -      11:47 ?        00:00:00 sshd: NOC_Admin23 [priv]  
+5 S 1014     31218 31215  0  80   0 - 19179 -      11:48 ?        00:00:00 sshd: NOC_Admin23@pts/0   
+0 S 1014     31219 31218  0  80   0 -  5953 -      11:48 pts/0    00:00:00 -vbash
+4 S root     31326  2371  0  80   0 - 19179 -      13:20 ?        00:00:00 sshd: NOC_Admin3 [priv]   
+5 S 1011     31329 31326  0  80   0 - 19179 -      13:20 ?        00:00:00 sshd: NOC_Admin3@pts/1    
+0 S 1011     31330 31329  0  80   0 -  5956 -      13:20 pts/1    00:00:00 -vbash
+4 S root     31412  2371  0  80   0 - 19179 -      13:21 ?        00:00:00 sshd: NOC_Admin16 [priv]  
+5 S 1017     31415 31412  0  80   0 - 19179 -      13:21 ?        00:00:00 sshd: NOC_Admin16@pts/2   
+0 S 1017     31416 31415  0  80   0 -  5947 -      13:21 pts/2    00:00:00 -vbash
+4 S root     31499  2371  0  80   0 - 19179 -      13:21 ?        00:00:00 sshd: NOC_Admin14 [priv]  
+5 S 1020     31503 31499  0  80   0 - 19179 -      13:21 ?        00:00:00 sshd: NOC_Admin14@pts/3   
+0 S 1020     31504 31503  0  80   0 -  5958 -      13:21 pts/3    00:00:00 -vbash
+4 S root     31651  2371  0  80   0 - 19179 -      13:23 ?        00:00:00 sshd: NOC_Admin4 [priv]   
+5 S 1009     31657 31651  0  80   0 - 19179 -      13:24 ?        00:00:00 sshd: NOC_Admin4@pts/4    
+0 S 1009     31658 31657  0  80   0 -  5947 -      13:24 pts/4    00:00:00 -vbash
+4 S root     31750  2371  0  80   0 - 19179 -      13:24 ?        00:00:00 sshd: NOC_Admin15 [priv]  
+5 S 1015     31766 31750  0  80   0 - 19179 -      13:24 ?        00:00:00 sshd: NOC_Admin15@pts/5   
+0 S 1015     31767 31766  0  80   0 -  5945 -      13:24 pts/5    00:00:00 -vbash
+4 S root     31855 31658  0  80   0 -  5256 -      13:25 pts/4    00:00:00 sudo ps -elf
+4 R root     31856 31855  0  80   0 -  3728 -      13:25 pts/4    00:00:00 ps -elf
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo netstat -auntp
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:52230           0.0.0.0:*               LISTEN      2371/sshd       
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62570      ESTABLISHED 31499/sshd: NOC_Adm
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62574      ESTABLISHED 31860/sshd: [accept
+tcp        0      0 192.186.169.206:60428   192.186.169.41:33175    ESTABLISHED 31218/0         
+tcp        0    264 10.20.169.239:52230     10.20.169.30:62572      ESTABLISHED 31651/sshd: NOC_Adm
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62569      ESTABLISHED 31412/sshd: NOC_Adm
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62567      ESTABLISHED 31326/sshd: NOC_Adm
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62551      ESTABLISHED 31215/sshd: NOC_Adm
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62573      ESTABLISHED 31750/sshd: NOC_Adm
+tcp6       0      0 :::52230                :::*                    LISTEN      2371/sshd       
+udp        0      0 10.20.169.239:40118     8.8.8.8:53              ESTABLISHED 31860/sshd: [accept
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ w
+ 13:26:09 up 67 days, 12:25,  7 users,  load average: 0.04, 0.06, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+NOC_Admi pts/0    10.20.169.30     11:48    1:36m  0.10s  0.10s -vbash
+NOC_Admi pts/1    10.20.169.30     13:20   17.00s  0.12s  0.12s -vbash
+NOC_Admi pts/2    10.20.169.30     13:21    9.00s  0.10s  0.10s -vbash
+NOC_Admi pts/3    10.20.169.30     13:21   25.00s  0.10s  0.10s -vbash
+NOC_Admi pts/4    10.20.169.30     13:24    1.00s  0.10s  0.00s w
+NOC_Admi pts/5    10.20.169.30     13:24   25.00s  0.08s  0.08s -vbash
+NOC_Admi pts/6    10.20.169.30     13:25   11.00s  0.09s  0.09s -vbash
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ who
+NOC_Admin23 pts/0        Aug 24 11:48 (10.20.169.30)
+NOC_Admin3 pts/1        Aug 24 13:20 (10.20.169.30)
+NOC_Admin16 pts/2        Aug 24 13:21 (10.20.169.30)
+NOC_Admin14 pts/3        Aug 24 13:21 (10.20.169.30)
+NOC_Admin4 pts/4        Aug 24 13:24 (10.20.169.30)
+NOC_Admin15 pts/5        Aug 24 13:24 (10.20.169.30)
+NOC_Admin12 pts/6        Aug 24 13:25 (10.20.169.30)
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo ls -latr /var/spool/cron
+total 20
+drwx-wx--T 2 root   crontab 4096 Dec 19  2010 crontabs
+drwxrwx--T 2 daemon daemon  4096 Mar  2  2012 atspool
+drwxr-xr-x 5 root   root    4096 Feb 17  2016 .
+drwxr-xr-x 5 root   root    4096 Feb 17  2016 ..
+drwxrwx--T 2 daemon daemon  4096 Feb 17  2016 atjobs
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Ksudo ls -latr /var/spool/cron/*
+/var/spool/cron/crontabs:
+total 8
+drwx-wx--T 2 root crontab 4096 Dec 19  2010 .
+drwxr-xr-x 5 root root    4096 Feb 17  2016 ..
+
+/var/spool/cron/atspool:
+total 8
+drwxrwx--T 2 daemon daemon 4096 Mar  2  2012 .
+drwxr-xr-x 5 root   root   4096 Feb 17  2016 ..
+
+/var/spool/cron/atjobs:
+total 12
+drwxr-xr-x 5 root   root   4096 Feb 17  2016 ..
+-rw------- 1 daemon daemon    2 Feb 17  2016 .SEQ
+drwxrwx--T 2 daemon daemon 4096 Feb 17  2016 .
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kdate; date -u
+Wed Aug 24 13:26:24 UTC 2022
+Wed Aug 24 13:26:24 UTC 2022
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ uname -a
+Linux Vyos2 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64 GNU/Linux
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ df
+Filesystem           1K-blocks      Used Available Use% Mounted on
+/dev/vda1              1015672    737676    209188  78% /
+tmpfs                  2027276         0   2027276   0% /lib/init/rw
+udev                   2019500       116   2019384   1% /dev
+tmpfs                  2027276         4   2027272   1% /dev/shm
+none                   2027276       328   2026948   1% /opt/vyatta/config
+unionfs-fuse           2027276       328   2026948   1% /opt/vyatta/config/tmp/new_config_2428
+unionfs-fuse           2027276       328   2026948   1% /opt/vyatta/config/tmp/new_config_2505
+unionfs-fuse           2027276       328   2026948   1% /opt/vyatta/config/tmp/new_config_4346
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /var/*/*acc*
+total 8
+drwxr-xr-x  2 root root 4096 Mar 10  2015 [0m[01;34m.[0m
+drwxr-xr-x 32 root root 4096 Feb 17  2016 [01;34m..[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo stat /var/account/pacct
+stat: cannot stat `/var/account/pacct': No such file or directory
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kls /etc/systemd/system/multi-user.target.wants
+ls: cannot access /etc/systemd/system/multi-user.target.wants: No such file or directory
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kls -latr /var/*log*/
+total 2460
+drwx------  2 root     root         4096 Sep 13  2009 [0m[01;34miptraf[0m
+drwxr-xr-x  2 root     root         4096 Apr  4  2010 [01;34mmgetty[0m
+drwxr-xr-x  2 ntp      ntp          4096 Dec 26  2014 [01;34mntpstats[0m
+drwxr-xr-x  2 proxy    adm          4096 Jan  6  2015 [01;34msquid[0m
+drwxr-x---  2 www-data www-data     4096 Jul 25  2015 [01;34mlighttpd[0m
+drwxr-xr-x  2 root     root         4096 Feb 16  2016 [01;34mfsck[0m
+-rw-r-----  1 root     adm            59 Feb 16  2016 [01;31mdmesg.4.gz[0m
+-rw-r-----  1 root     adm            31 Feb 16  2016 boot
+-rw-r--r--  1 root     root        27710 Feb 16  2016 bootstrap.log
+-rw-r--r--  1 root     root         2204 Feb 17  2016 [01;31maptitude.1.gz[0m
+drwxrwxr-x  2 quagga   quagga       4096 Feb 17  2016 [01;34mquagga[0m
+-rw-r--r--  1 root     root            0 Feb 17  2016 pycentral.log
+drwxr-xr-x  2 root     root         4096 Feb 17  2016 [01;34muser[0m
+drwxr-xr-x 15 root     root         4096 Feb 17  2016 [01;34m..[0m
+-rw-r--r--  1 root     root        17084 Feb 17  2016 alternatives.log.1
+-rw-r--r--  1 root     root       258762 Feb 17  2016 dpkg.log.1
+-rw-r-----  1 root     adm          7704 Oct 12  2017 [01;31mdmesg.3.gz[0m
+drwxrwxr-x  2 root     vyattacfg    4096 Oct 12  2017 [01;34mvyatta[0m
+-rw-r-----  1 root     adm          7774 Feb 11  2022 [01;31mdmesg.2.gz[0m
+-rw-r--r--  1 root     root        32800 Feb 11  2022 faillog
+-rw-r--r--  1 root     root            0 Mar  1 00:17 dpkg.log
+-rw-r--r--  1 root     root            0 Mar  1 00:17 aptitude
+drwxr-xr-x  2 root     root         4096 Mar  1 00:17 [01;34mapt[0m
+-rw-r--r--  1 root     root            0 Mar  1 00:17 alternatives.log
+-rw-r-----  1 root     adm          7817 May 27 23:51 [01;31mdmesg.1.gz[0m
+-rw-r-----  1 root     adm         26314 Jun  4 02:34 dmesg.0
+-rw-r-----  1 root     adm         26314 Jun 18 01:00 dmesg
+-rw-rw-r--  1 root     utmp            0 Jul  1 00:17 wtmp.1
+-rw-rw----  1 root     utmp            0 Jul  1 00:17 btmp.1
+-rw-rw----  1 root     utmp            0 Aug  1 00:17 btmp
+drwxr-xr-x 13 root     root         4096 Aug  1 00:17 [01;34m.[0m
+-rw-r-----  1 root     adm         34706 Aug 23 16:02 messages
+drwxr-xr-x  2 proxy    proxy        4096 Aug 24 00:17 [01;34msquid3[0m
+-rw-rw-r--  1 root     utmp        34944 Aug 24 13:25 wtmp
+-rw-rw-r--  1 root     utmp       299300 Aug 24 13:25 lastlog
+-rw-r-----  1 root     adm       1947974 Aug 24 13:26 auth.log
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /var/log/*
+-rw-r----- 1 root     adm            59 Feb 16  2016 [0m[01;31m/var/log/dmesg.4.gz[0m
+-rw-r----- 1 root     adm            31 Feb 16  2016 /var/log/boot
+-rw-r--r-- 1 root     root        27710 Feb 16  2016 /var/log/bootstrap.log
+-rw-r--r-- 1 root     root         2204 Feb 17  2016 [01;31m/var/log/aptitude.1.gz[0m
+-rw-r--r-- 1 root     root            0 Feb 17  2016 /var/log/pycentral.log
+-rw-r--r-- 1 root     root        17084 Feb 17  2016 /var/log/alternatives.log.1
+-rw-r--r-- 1 root     root       258762 Feb 17  2016 /var/log/dpkg.log.1
+-rw-r----- 1 root     adm          7704 Oct 12  2017 [01;31m/var/log/dmesg.3.gz[0m
+-rw-r----- 1 root     adm          7774 Feb 11  2022 [01;31m/var/log/dmesg.2.gz[0m
+-rw-r--r-- 1 root     root        32800 Feb 11  2022 /var/log/faillog
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/dpkg.log
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/aptitude
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/alternatives.log
+-rw-r----- 1 root     adm          7817 May 27 23:51 [01;31m/var/log/dmesg.1.gz[0m
+-rw-r----- 1 root     adm         26314 Jun  4 02:34 /var/log/dmesg.0
+-rw-r----- 1 root     adm         26314 Jun 18 01:00 /var/log/dmesg
+-rw-rw-r-- 1 root     utmp            0 Jul  1 00:17 /var/log/wtmp.1
+-rw-rw---- 1 root     utmp            0 Jul  1 00:17 /var/log/btmp.1
+-rw-rw---- 1 root     utmp            0 Aug  1 00:17 /var/log/btmp
+-rw-r----- 1 root     adm         34706 Aug 23 16:02 /var/log/messages
+-rw-rw-r-- 1 root     utmp        34944 Aug 24 13:25 /var/log/wtmp
+-rw-rw-r-- 1 root     utmp       299300 Aug 24 13:25 /var/log/lastlog
+-rw-r----- 1 root     adm       1948111 Aug 24 13:26 /var/log/auth.log
+
+ls: cannot open directory /var/log/iptraf: Permission denied
+/var/log/mgetty:
+total 8
+drwxr-xr-x  2 root root 4096 Apr  4  2010 [01;34m.[0m
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/ntpstats:
+total 8
+drwxr-xr-x  2 ntp  ntp  4096 Dec 26  2014 [01;34m.[0m
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/squid:
+total 8
+drwxr-xr-x  2 proxy adm  4096 Jan  6  2015 [01;34m.[0m
+drwxr-xr-x 13 root  root 4096 Aug  1 00:17 [01;34m..[0m
+ls: cannot open directory /var/log/lighttpd: Permission denied
+
+/var/log/fsck:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 16  2016 [01;34m.[0m
+-rw-r-----  1 root adm   125 Jun 18 01:00 checkfs
+-rw-r-----  1 root adm   195 Jun 18 01:00 checkroot
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/quagga:
+total 8
+drwxrwxr-x  2 quagga quagga 4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 13 root   root   4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/user:
+total 8
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/vyatta:
+total 40
+-rw-rw----  1 root vyattacfg     0 Oct 12  2017 cfg-stderr.log
+drwxrwxr-x  2 root vyattacfg  4096 Oct 12  2017 [01;34m.[0m
+-rw-rw-r--  1 root vyattacfg 13977 Jun 18 01:01 vyatta-commit.log
+-rw-rw-r--  1 root vyattacfg  1440 Jun 18 01:01 vyatta-config-loader.log
+-rw-rw----  1 root vyattacfg  8289 Jun 18 01:01 cfg-stdout.log
+drwxr-xr-x 13 root root       4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/apt:
+total 12
+-rw-r--r--  1 root root 3801 Feb 17  2016 [01;31mhistory.log.1.gz[0m
+-rw-r--r--  1 root root    0 Mar  1 00:17 history.log
+drwxr-xr-x  2 root root 4096 Mar  1 00:17 [01;34m.[0m
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 [01;34m..[0m
+
+/var/log/squid3:
+total 8
+drwxr-xr-x 13 root  root  4096 Aug  1 00:17 [01;34m..[0m
+-rw-r-----  1 proxy adm      0 Aug 22 00:17 cache.log.2
+-rw-r-----  1 proxy adm      0 Aug 23 00:17 cache.log.1
+-rw-r-----  1 proxy adm      0 Aug 24 00:17 cache.log
+drwxr-xr-x  2 proxy proxy 4096 Aug 24 00:17 [01;34m.[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo ls -latr /var/log/*
+-rw-r----- 1 root     adm            59 Feb 16  2016 /var/log/dmesg.4.gz
+-rw-r----- 1 root     adm            31 Feb 16  2016 /var/log/boot
+-rw-r--r-- 1 root     root        27710 Feb 16  2016 /var/log/bootstrap.log
+-rw-r--r-- 1 root     root         2204 Feb 17  2016 /var/log/aptitude.1.gz
+-rw-r--r-- 1 root     root            0 Feb 17  2016 /var/log/pycentral.log
+-rw-r--r-- 1 root     root        17084 Feb 17  2016 /var/log/alternatives.log.1
+-rw-r--r-- 1 root     root       258762 Feb 17  2016 /var/log/dpkg.log.1
+-rw-r----- 1 root     adm          7704 Oct 12  2017 /var/log/dmesg.3.gz
+-rw-r----- 1 root     adm          7774 Feb 11  2022 /var/log/dmesg.2.gz
+-rw-r--r-- 1 root     root        32800 Feb 11  2022 /var/log/faillog
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/dpkg.log
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/aptitude
+-rw-r--r-- 1 root     root            0 Mar  1 00:17 /var/log/alternatives.log
+-rw-r----- 1 root     adm          7817 May 27 23:51 /var/log/dmesg.1.gz
+-rw-r----- 1 root     adm         26314 Jun  4 02:34 /var/log/dmesg.0
+-rw-r----- 1 root     adm         26314 Jun 18 01:00 /var/log/dmesg
+-rw-rw-r-- 1 root     utmp            0 Jul  1 00:17 /var/log/wtmp.1
+-rw-rw---- 1 root     utmp            0 Jul  1 00:17 /var/log/btmp.1
+-rw-rw---- 1 root     utmp            0 Aug  1 00:17 /var/log/btmp
+-rw-r----- 1 root     adm         34706 Aug 23 16:02 /var/log/messages
+-rw-rw-r-- 1 root     utmp        35328 Aug 24 13:26 /var/log/wtmp
+-rw-rw-r-- 1 root     utmp       299300 Aug 24 13:26 /var/log/lastlog
+-rw-r----- 1 root     adm       1949298 Aug 24 13:26 /var/log/auth.log
+
+/var/log/iptraf:
+total 8
+drwx------  2 root root 4096 Sep 13  2009 .
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/mgetty:
+total 8
+drwxr-xr-x  2 root root 4096 Apr  4  2010 .
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/ntpstats:
+total 8
+drwxr-xr-x  2 ntp  ntp  4096 Dec 26  2014 .
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/squid:
+total 8
+drwxr-xr-x  2 proxy adm  4096 Jan  6  2015 .
+drwxr-xr-x 13 root  root 4096 Aug  1 00:17 ..
+
+/var/log/lighttpd:
+total 8
+drwxr-x---  2 www-data www-data 4096 Jul 25  2015 .
+drwxr-xr-x 13 root     root     4096 Aug  1 00:17 ..
+
+/var/log/fsck:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 16  2016 .
+-rw-r-----  1 root adm   125 Jun 18 01:00 checkfs
+-rw-r-----  1 root adm   195 Jun 18 01:00 checkroot
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/quagga:
+total 8
+drwxrwxr-x  2 quagga quagga 4096 Feb 17  2016 .
+drwxr-xr-x 13 root   root   4096 Aug  1 00:17 ..
+
+/var/log/user:
+total 8
+drwxr-xr-x  2 root root 4096 Feb 17  2016 .
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/vyatta:
+total 40
+-rw-rw----  1 root vyattacfg     0 Oct 12  2017 cfg-stderr.log
+drwxrwxr-x  2 root vyattacfg  4096 Oct 12  2017 .
+-rw-rw-r--  1 root vyattacfg 13977 Jun 18 01:01 vyatta-commit.log
+-rw-rw-r--  1 root vyattacfg  1440 Jun 18 01:01 vyatta-config-loader.log
+-rw-rw----  1 root vyattacfg  8289 Jun 18 01:01 cfg-stdout.log
+drwxr-xr-x 13 root root       4096 Aug  1 00:17 ..
+
+/var/log/apt:
+total 12
+-rw-r--r--  1 root root 3801 Feb 17  2016 history.log.1.gz
+-rw-r--r--  1 root root    0 Mar  1 00:17 history.log
+drwxr-xr-x  2 root root 4096 Mar  1 00:17 .
+drwxr-xr-x 13 root root 4096 Aug  1 00:17 ..
+
+/var/log/squid3:
+total 8
+drwxr-xr-x 13 root  root  4096 Aug  1 00:17 ..
+-rw-r-----  1 proxy adm      0 Aug 22 00:17 cache.log.2
+-rw-r-----  1 proxy adm      0 Aug 23 00:17 cache.log.1
+-rw-r-----  1 proxy adm      0 Aug 24 00:17 cache.log
+drwxr-xr-x  2 proxy proxy 4096 Aug 24 00:17 .
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo grep -r NOC_Admin4 /var/log/
+Binary file /var/log/wtmp matches
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: new user: name=NOC_Admin4, UID=1009, GID=100, home=/home/NOC_Admin4, shell=/bin/vbash
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'adm'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'disk'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'sudo'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'dip'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'quaggavty'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'vyattacfg'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to group 'fuse'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'adm'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'disk'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'sudo'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'dip'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'quaggavty'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'vyattacfg'
+/var/log/auth.log:Feb 11 19:50:01 Vyos2 useradd[3908]: add 'NOC_Admin4' to shadow group 'fuse'
+/var/log/auth.log:Mar 21 14:14:56 Vyos2 sudo: NOC_Admin3 : TTY=pts/2 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 14:33:05 Vyos2 sudo: NOC_Admin1 : TTY=pts/4 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 14:33:26 Vyos2 sudo: NOC_Admin20 : TTY=pts/5 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 14:39:09 Vyos2 sshd[16261]: Accepted password for NOC_Admin4 from 10.20.169.13 port 56711 ssh2
+/var/log/auth.log:Mar 21 14:39:09 Vyos2 sshd[16261]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Mar 21 14:42:02 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Mar 21 14:42:22 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 21 14:43:25 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Mar 21 14:43:53 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 21 14:48:05 Vyos2 sudo: NOC_Admin19 : TTY=pts/9 ; PWD=/home/NOC_Admin19 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 14:48:33 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Mar 21 14:48:51 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 21 14:50:02 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / -name tcp
+/var/log/auth.log:Mar 21 14:50:28 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / -name tcpdump
+/var/log/auth.log:Mar 21 14:51:14 Vyos2 sudo: NOC_Admin2 : TTY=pts/12 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 15:07:35 Vyos2 sudo: NOC_Admin12 : TTY=pts/17 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 21 18:37:29 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 21 18:37:54 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 21 18:38:24 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -lptn
+/var/log/auth.log:Mar 21 18:39:31 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 21 18:39:35 Vyos2 sshd[16261]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:Mar 21 18:44:05 Vyos2 sudo: NOC_Admin12 : TTY=pts/17 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Mar 21 18:47:01 Vyos2 sudo: NOC_Admin13 : TTY=pts/15 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 13:36:40 Vyos2 sudo: NOC_Admin20 : TTY=pts/4 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 13:44:43 Vyos2 sshd[21798]: Accepted password for NOC_Admin4 from 10.20.169.10 port 57178 ssh2
+/var/log/auth.log:Mar 22 13:44:43 Vyos2 sshd[21798]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Mar 22 13:47:36 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Mar 22 13:47:49 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 22 13:48:58 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Mar 22 13:49:54 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 22 13:50:57 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/tail -n 1000 /var/spool/cron/atjobs
+/var/log/auth.log:Mar 22 13:51:53 Vyos2 sudo: NOC_Admin12 : TTY=pts/9 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 13:52:45 Vyos2 sudo: NOC_Admin12 : TTY=pts/9 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 13:53:49 Vyos2 sudo: NOC_Admin2 : TTY=pts/8 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 13:53:54 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /var/log/messages
+/var/log/auth.log:Mar 22 13:54:00 Vyos2 sudo: NOC_Admin2 : TTY=pts/8 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 13:54:26 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 13:55:20 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 13:56:54 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Mar 22 13:59:45 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Mar 22 14:09:28 Vyos2 sudo: NOC_Admin9 : TTY=pts/17 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 14:11:09 Vyos2 sudo: NOC_Admin3 : TTY=pts/16 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 14:13:02 Vyos2 sudo: NOC_Admin19 : TTY=pts/18 ; PWD=/home/NOC_Admin19 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 22 17:59:23 Vyos2 sudo: NOC_Admin12 : TTY=pts/9 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 18:21:46 Vyos2 sudo: NOC_Admin2 : TTY=pts/8 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 22 18:28:04 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 22 18:28:21 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 22 18:28:47 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -lptn
+/var/log/auth.log:Mar 22 18:31:10 Vyos2 sshd[21798]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:Mar 23 13:28:25 Vyos2 sshd[26010]: Accepted password for NOC_Admin4 from 10.20.169.30 port 57395 ssh2
+/var/log/auth.log:Mar 23 13:28:25 Vyos2 sshd[26010]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Mar 23 13:31:03 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Mar 23 13:31:09 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 23 13:32:23 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Mar 23 13:38:50 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Mar 23 13:39:38 Vyos2 sudo: NOC_Admin12 : TTY=pts/7 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 13:40:36 Vyos2 sudo: NOC_Admin12 : TTY=pts/7 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 23 13:47:02 Vyos2 sudo: NOC_Admin20 : TTY=pts/12 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 13:53:01 Vyos2 sudo: NOC_Admin1 : TTY=pts/14 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 13:58:44 Vyos2 sudo: NOC_Admin1 : TTY=pts/14 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 23 14:03:57 Vyos2 sudo: NOC_Admin3 : TTY=pts/17 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 14:04:59 Vyos2 sudo: NOC_Admin19 : TTY=pts/16 ; PWD=/home/NOC_Admin19 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 14:16:14 Vyos2 sudo: NOC_Admin2 : TTY=pts/18 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 23 18:45:28 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 23 18:45:38 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 23 18:45:51 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -lptn
+/var/log/auth.log:Mar 23 18:46:58 Vyos2 sshd[26010]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:Mar 23 18:48:51 Vyos2 sudo: NOC_Admin13 : TTY=pts/19 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 23 18:54:26 Vyos2 sudo: NOC_Admin12 : TTY=pts/7 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 23 18:56:47 Vyos2 sudo: NOC_Admin2 : TTY=pts/18 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 13:47:21 Vyos2 sudo: NOC_Admin20 : TTY=pts/1 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 24 14:17:37 Vyos2 sshd[456]: Accepted password for NOC_Admin4 from 10.20.169.30 port 57620 ssh2
+/var/log/auth.log:Mar 24 14:17:37 Vyos2 sshd[456]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Mar 24 14:20:14 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Mar 24 14:20:20 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:21:01 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Mar 24 14:21:15 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 24 14:21:33 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:Mar 24 14:23:32 Vyos2 sudo: NOC_Admin9 : TTY=pts/7 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:26:11 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Mar 24 14:28:06 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:28:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:28:13 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 24 14:29:48 Vyos2 sudo: NOC_Admin12 : TTY=pts/13 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 24 14:30:43 Vyos2 sudo: NOC_Admin12 : TTY=pts/13 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:33:48 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:33:51 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:34:58 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 14:36:45 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:40:31 Vyos2 sudo: NOC_Admin2 : TTY=pts/15 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 24 14:40:52 Vyos2 sudo: NOC_Admin2 : TTY=pts/15 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:41:06 Vyos2 sudo: NOC_Admin2 : TTY=pts/15 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:45:08 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 14:53:56 Vyos2 sudo: NOC_Admin3 : TTY=pts/17 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Mar 24 16:40:43 Vyos2 sudo: NOC_Admin12 : TTY=pts/13 ; PWD=/home/NOC_Admin12 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 17:05:36 Vyos2 sudo: NOC_Admin2 : TTY=pts/15 ; PWD=/home/NOC_Admin2 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Mar 24 17:12:15 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/w
+/var/log/auth.log:Mar 24 17:13:13 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf -H
+/var/log/auth.log:Mar 24 17:13:57 Vyos2 sudo: NOC_Admin4 : TTY=pts/11 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -lptn
+/var/log/auth.log:Mar 24 17:14:52 Vyos2 sshd[456]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:May 20 14:32:21 Vyos2 sshd[19648]: Accepted password for NOC_Admin4 from 10.20.169.13 port 52239 ssh2
+/var/log/auth.log:May 20 14:32:21 Vyos2 sshd[19648]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:May 20 14:37:52 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 20 14:39:01 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:May 20 14:40:10 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:May 20 14:40:17 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 20 14:40:42 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 20 14:41:27 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:May 20 14:44:26 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/audit
+/var/log/auth.log:May 20 14:44:29 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:May 20 14:50:06 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 20 14:51:21 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:May 20 14:51:51 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:May 20 14:51:53 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 20 14:56:24 Vyos2 sudo: NOC_Admin13 : TTY=pts/12 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:May 20 17:42:26 Vyos2 sshd[19648]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:May 23 13:28:44 Vyos2 sshd[25009]: Accepted password for NOC_Admin4 from 10.20.169.10 port 53932 ssh2
+/var/log/auth.log:May 23 13:28:44 Vyos2 sshd[25009]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:May 23 13:30:16 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 23 13:32:07 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:May 23 13:33:04 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:May 23 13:33:08 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 23 13:34:07 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:May 23 13:37:36 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/audit
+/var/log/auth.log:May 23 13:37:39 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:May 23 13:38:29 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 23 14:18:53 Vyos2 sudo: NOC_Admin13 : TTY=pts/17 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:May 23 14:22:46 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/md5sum /root/Sup3rS3cr3t/S3cr3tSqu1r1.stuff
+/var/log/auth.log:May 23 14:23:01 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root/Sup3rS3cr3t
+/var/log/auth.log:May 23 14:23:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/2 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 23 17:37:30 Vyos2 sshd[25009]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:May 24 13:27:16 Vyos2 sshd[30700]: Accepted password for NOC_Admin4 from 10.20.169.30 port 53407 ssh2
+/var/log/auth.log:May 24 13:27:16 Vyos2 sshd[30700]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:May 24 13:28:14 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 24 13:29:38 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:May 24 13:31:17 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:May 24 13:31:19 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 24 13:31:37 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:May 24 13:34:02 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/audit
+/var/log/auth.log:May 24 13:34:07 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:May 24 13:35:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/5 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:May 24 13:53:19 Vyos2 sudo: NOC_Admin13 : TTY=pts/15 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:May 24 17:31:27 Vyos2 sshd[30700]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:May 25 14:05:33 Vyos2 sshd[3731]: Accepted password for NOC_Admin4 from 10.20.169.30 port 53618 ssh2
+/var/log/auth.log:May 25 14:05:33 Vyos2 sshd[3731]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:May 25 14:08:49 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:May 25 14:10:24 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:May 25 14:10:59 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:May 25 14:11:01 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 25 14:11:04 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/tail -n 100 /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:May 25 14:11:28 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:May 25 14:14:02 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/audit
+/var/log/auth.log:May 25 14:14:04 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/tail -n 15 /var/log/audit/audit.log
+/var/log/auth.log:May 25 14:14:09 Vyos2 sudo: NOC_Admin4 : TTY=pts/3 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:May 25 14:31:19 Vyos2 sudo: NOC_Admin13 : TTY=pts/15 ; PWD=/home/NOC_Admin13 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:May 25 15:51:02 Vyos2 sshd[3731]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:May 27 23:51:30 Vyos2 usermod[2142]: change user 'NOC_Admin4' password
+/var/log/auth.log:May 27 23:52:05 Vyos2 usermod[4071]: change user 'NOC_Admin4' password
+/var/log/auth.log:Jun  4 02:35:46 Vyos2 usermod[2257]: change user 'NOC_Admin4' password
+/var/log/auth.log:Jun  4 02:36:34 Vyos2 usermod[4186]: change user 'NOC_Admin4' password
+/var/log/auth.log:Jun 18 01:00:58 Vyos2 usermod[2198]: change user 'NOC_Admin4' password
+/var/log/auth.log:Jun 18 01:01:26 Vyos2 usermod[4126]: change user 'NOC_Admin4' password
+/var/log/auth.log:Aug 22 14:03:25 Vyos2 sshd[21656]: Accepted password for NOC_Admin4 from 10.20.169.13 port 62672 ssh2
+/var/log/auth.log:Aug 22 14:03:25 Vyos2 sshd[21656]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Aug 22 14:06:41 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Aug 22 14:07:11 Vyos2 sudo: NOC_Admin20 : TTY=pts/3 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Aug 22 14:07:11 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Aug 22 14:07:38 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/sudoers
+/var/log/auth.log:Aug 22 14:07:43 Vyos2 sudo: NOC_Admin20 : TTY=pts/3 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Aug 22 14:07:45 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:Aug 22 14:07:48 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:Aug 22 14:08:20 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/stat /var/account/pacct
+/var/log/auth.log:Aug 22 14:08:47 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dmesg.2.gz /var/log/dmesg.3.gz /var/log/dmesg.4.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:Aug 22 14:09:09 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/grep -r NOC_admin4 /var/log/
+/var/log/auth.log:Aug 22 14:09:21 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/grep -r NOC_Admin4 /var/log/
+/var/log/auth.log:Aug 22 14:11:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / ( -path /proc -prune -o -path /sys -prune ) -o -mmin -15 -type f -print0
+/var/log/auth.log:Aug 22 14:11:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Aug 22 14:11:28 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Aug 22 14:14:11 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Aug 22 14:15:43 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/audit/rules.d/audit.rules
+/var/log/auth.log:Aug 22 14:15:46 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/audit/auditd.conf
+/var/log/auth.log:Aug 22 14:16:01 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf
+/var/log/auth.log:Aug 22 14:16:41 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/tail -n 5 /var/log/audit/audit.log
+/var/log/auth.log:Aug 22 14:18:01 Vyos2 sudo: NOC_Admin9 : TTY=pts/8 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Aug 22 14:18:51 Vyos2 sudo: NOC_Admin9 : TTY=pts/8 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin12/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Aug 22 14:32:32 Vyos2 sudo: NOC_Admin3 : TTY=pts/10 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin1/.bash_history /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Aug 22 17:35:16 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / ( -path /proc -prune -o -path /sys -prune ) -o -mmin -180 -type f -print0
+/var/log/auth.log:Aug 22 17:35:16 Vyos2 sudo: NOC_Admin4 : TTY=pts/6 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 22 17:35:40 Vyos2 sshd[21656]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:Aug 22 17:43:38 Vyos2 sudo: NOC_Admin20 : TTY=pts/3 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin2/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 22 17:43:56 Vyos2 sudo: NOC_Admin20 : TTY=pts/3 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin2/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 22 17:48:26 Vyos2 sudo: NOC_Admin3 : TTY=pts/10 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin23/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp /dev/.udev/queue.bin
+/var/log/auth.log:Aug 22 18:26:36 Vyos2 sudo: NOC_Admin16 : TTY=pts/16 ; PWD=/home/NOC_Admin16 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 22 18:50:14 Vyos2 sudo: NOC_Admin1 : TTY=pts/12 ; PWD=/home/NOC_Admin1 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 13:56:24 Vyos2 sshd[27093]: Accepted password for NOC_Admin4 from 10.20.169.10 port 53951 ssh2
+/var/log/auth.log:Aug 23 13:56:24 Vyos2 sshd[27093]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Aug 23 13:58:52 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Aug 23 13:59:21 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Aug 23 14:00:10 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:Aug 23 14:00:13 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:Aug 23 14:00:30 Vyos2 sudo: NOC_Admin3 : TTY=pts/2 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 14:00:44 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/stat /var/account/pacct
+/var/log/auth.log:Aug 23 14:01:02 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dmesg.2.gz /var/log/dmesg.3.gz /var/log/dmesg.4.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:Aug 23 14:01:19 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/grep -r NOC_Admin4 /var/log/
+/var/log/auth.log:Aug 23 14:02:26 Vyos2 sudo: NOC_Admin9 : TTY=pts/1 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Aug 23 14:02:42 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / ( -path /proc -prune -o -path /sys -prune ) -o -mmin -15 -type f -print0
+/var/log/auth.log:Aug 23 14:02:42 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 14:02:53 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /root/.bash_history
+/var/log/auth.log:Aug 23 14:03:26 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/audit/rules.d/audit.rules
+/var/log/auth.log:Aug 23 14:03:28 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/audit/auditd.conf
+/var/log/auth.log:Aug 23 14:03:38 Vyos2 sudo: NOC_Admin9 : TTY=pts/1 ; PWD=/home/NOC_Admin9 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 14:04:12 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/cat /etc/audit/auditd.confcat /etc/rsyslog.d/vyatta-log.conf
+/var/log/auth.log:Aug 23 14:04:17 Vyos2 sudo: NOC_Admin5 : TTY=pts/7 ; PWD=/home/NOC_Admin5 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 14:05:06 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Aug 23 14:05:20 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Aug 23 14:23:38 Vyos2 sudo: NOC_Admin16 : TTY=pts/16 ; PWD=/home/NOC_Admin16 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Aug 23 14:38:18 Vyos2 sudo: NOC_Admin20 : TTY=pts/18 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/cat /var/spool/cron/crontabs/NOC_Admin4 /var/spool/cron/NOC_Admin4
+/var/log/auth.log:Aug 23 14:38:52 Vyos2 sudo: NOC_Admin20 : TTY=pts/18 ; PWD=/home/NOC_Admin20 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 17:14:07 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/find / ( -path /proc -prune -o -path /sys -prune ) -o -mmin -180 -type f -print0
+/var/log/auth.log:Aug 23 17:14:07 Vyos2 sudo: NOC_Admin4 : TTY=pts/8 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 23 17:14:19 Vyos2 sshd[27093]: pam_unix(sshd:session): session closed for user NOC_Admin4
+/var/log/auth.log:Aug 23 17:43:39 Vyos2 sudo: NOC_Admin3 : TTY=pts/2 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin19/.bash_history /home/NOC_Admin21/.bash_history /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin13/.bash_history /home/NOC_Admin5/.bash_history /home/NOC_Admin11/.bash_history /home/NOC_Admin20/.bash_history /home/NOC_Admin6/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin17/.bash_history /home/NOC_Admin9/.bash_history /home/NOC_Admin18/.bash_history /home/NOC_Admin10/.bash_history /home/NOC_Admin2/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin7/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /home/NOC_Admin1/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/messages /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 24 13:24:05 Vyos2 sshd[31651]: Accepted password for NOC_Admin4 from 10.20.169.30 port 62572 ssh2
+/var/log/auth.log:Aug 24 13:24:05 Vyos2 sshd[31651]: pam_unix(sshd:session): session opened for user NOC_Admin4 by (uid=0)
+/var/log/auth.log:Aug 24 13:25:19 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /root
+/var/log/auth.log:Aug 24 13:25:22 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ps -elf
+/var/log/auth.log:Aug 24 13:25:50 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/netstat -auntp
+/var/log/auth.log:Aug 24 13:26:19 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron
+/var/log/auth.log:Aug 24 13:26:21 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/crontabs
+/var/log/auth.log:Aug 24 13:26:39 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/usr/bin/stat /var/account/pacct
+/var/log/auth.log:Aug 24 13:26:41 Vyos2 sudo: NOC_Admin3 : TTY=pts/1 ; PWD=/home/NOC_Admin3 ; USER=root ; COMMAND=/bin/ls -latr /home/NOC_Admin4/.bash_history /home/NOC_Admin15/.bash_history /home/NOC_Admin14/.bash_history /home/NOC_Admin3/.bash_history /home/NOC_Admin12/.bash_history /home/NOC_Admin16/.bash_history /var/lib/logrotate/status /var/log/wtmp /var/log/lastlog /var/log/auth.log /var/run/utmp
+/var/log/auth.log:Aug 24 13:26:59 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/ls -latr /var/log/alternatives.log /var/log/alternatives.log.1 /var/log/apt /var/log/aptitude /var/log/aptitude.1.gz /var/log/auth.log /var/log/boot /var/log/bootstrap.log /var/log/btmp /var/log/btmp.1 /var/log/dmesg /var/log/dmesg.0 /var/log/dmesg.1.gz /var/log/dmesg.2.gz /var/log/dmesg.3.gz /var/log/dmesg.4.gz /var/log/dpkg.log /var/log/dpkg.log.1 /var/log/faillog /var/log/fsck /var/log/iptraf /var/log/lastlog /var/log/lighttpd /var/log/messages /var/log/mgetty /var/log/ntpstats /var/log/pycentral.log /var/log/quagga /var/log/squid /var/log/squid3 /var/log/user /var/log/vyatta /var/log/wtmp /var/log/wtmp.1
+/var/log/auth.log:Aug 24 13:27:08 Vyos2 sudo: NOC_Admin4 : TTY=pts/4 ; PWD=/home/NOC_Admin4 ; USER=root ; COMMAND=/bin/grep -r NOC_Admin4 /var/log/
+/var/log/vyatta/vyatta-commit.log:[ system login user NOC_Admin4 ]
+/var/log/vyatta/vyatta-commit.log:NOC_Admin4: username contains unusual characters
+/var/log/vyatta/vyatta-commit.log:[ system login user NOC_Admin4 ]
+/var/log/vyatta/vyatta-commit.log:NOC_Admin4: username contains unusual characters
+/var/log/vyatta/vyatta-commit.log:[ system login user NOC_Admin4 ]
+/var/log/vyatta/vyatta-commit.log:NOC_Admin4: username contains unusual characters
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kls -la /etc/*syslog*
+-rw-r--r-- 1 root root 1277 Feb 17  2016 /etc/rsyslog.conf
+-rw-r--r-- 1 root root 2572 Nov 30  2010 /etc/rsyslog.conf.orig
+
+/etc/rsyslog.d:
+total 12
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [0m[01;34m.[0m
+drwxr-xr-x 96 root root 4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root  127 Oct 12  2017 vyatta-log.conf
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ cat /etc/rsyslog.conf
+#  /etc/rsyslog.conf	Configuration file for rsyslog.
+#
+#			For more information see
+#			/usr/share/doc/rsyslog-doc/html/rsyslog_conf.html
+
+
+#################
+#### MODULES ####
+#################
+
+$ModLoad imuxsock # provides support for local system logging
+$ModLoad imklog   # provides kernel logging support (previously done by rklogd)
+#$ModLoad immark  # provides --MARK-- message capability
+
+$KLogPath /proc/kmsg
+
+# provides UDP syslog reception
+#$ModLoad imudp
+#$UDPServerRun 514
+
+# provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+###########################
+#### GLOBAL DIRECTIVES ####
+###########################
+
+#
+# Use traditional timestamp format.
+# To enable high precision timestamps, comment out the following line.
+#
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+# Filter duplicated messages
+$RepeatedMsgReduction on
+
+#
+# Set the default permissions for all log files.
+#
+$FileOwner root
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+
+#
+# Include all config files in /etc/rsyslog.d/
+#
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+###############
+#### RULES ####
+###############
+
+# Log authorization failure messages
+auth,authpriv.*			/var/log/auth.log
+
+# Emergencies are sent to everybody logged in.
+*.emerg				*
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ cat /etc/rsyslog.conf | grep @
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kcat /etc/rsyslog.conf.orig
+#  /etc/rsyslog.conf	Configuration file for rsyslog.
+#
+#			For more information see
+#			/usr/share/doc/rsyslog-doc/html/rsyslog_conf.html
+
+
+#################
+#### MODULES ####
+#################
+
+$ModLoad imuxsock # provides support for local system logging
+$ModLoad imklog   # provides kernel logging support (previously done by rklogd)
+#$ModLoad immark  # provides --MARK-- message capability
+
+# provides UDP syslog reception
+#$ModLoad imudp
+#$UDPServerRun 514
+
+# provides TCP syslog reception
+#$ModLoad imtcp
+#$InputTCPServerRun 514
+
+
+###########################
+#### GLOBAL DIRECTIVES ####
+###########################
+
+#
+# Use traditional timestamp format.
+# To enable high precision timestamps, comment out the following line.
+#
+$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat
+
+#
+# Set the default permissions for all log files.
+#
+$FileOwner root
+$FileGroup adm
+$FileCreateMode 0640
+$DirCreateMode 0755
+$Umask 0022
+
+#
+# Include all config files in /etc/rsyslog.d/
+#
+$IncludeConfig /etc/rsyslog.d/*.conf
+
+
+###############
+#### RULES ####
+###############
+
+#
+# First some standard log files.  Log by facility.
+#
+auth,authpriv.*			/var/log/auth.log
+*.*;auth,authpriv.none		-/var/log/syslog
+#cron.*				/var/log/cron.log
+daemon.*			-/var/log/daemon.log
+kern.*				-/var/log/kern.log
+lpr.*				-/var/log/lpr.log
+mail.*				-/var/log/mail.log
+user.*				-/var/log/user.log
+
+#
+# Logging for the mail system.  Split it up so that
+# it is easy to write scripts to parse these files.
+#
+mail.info			-/var/log/mail.info
+mail.warn			-/var/log/mail.warn
+mail.err			/var/log/mail.err
+
+#
+# Logging for INN news system.
+#
+news.crit			/var/log/news/news.crit
+news.err			/var/log/news/news.err
+news.notice			-/var/log/news/news.notice
+
+#
+# Some "catch-all" log files.
+#
+*.=debug;\
+	auth,authpriv.none;\
+	news.none;mail.none	-/var/log/debug
+*.=info;*.=notice;*.=warn;\
+	auth,authpriv.none;\
+	cron,daemon.none;\
+	mail,news.none		-/var/log/messages
+
+#
+# Emergencies are sent to everybody logged in.
+#
+*.emerg				*
+
+#
+# I like to have messages displayed on the console, but only on a virtual
+# console I usually leave idle.
+#
+#daemon,mail.*;\
+#	news.=crit;news.=err;news.=notice;\
+#	*.=debug;*.=info;\
+#	*.=notice;*.=warn	/dev/tty8
+
+# The named pipe /dev/xconsole is for the `xconsole' utility.  To use it,
+# you must invoke `xconsole' with the `-file' option:
+# 
+#    $ xconsole -file /dev/xconsole [...]
+#
+# NOTE: adjust the list below, or you'll go crazy if you have a reasonably
+#      busy site..
+#
+daemon.*;mail.*;\
+	news.err;\
+	*.=debug;*.=info;\
+	*.=notice;*.=warn	|/dev/xconsole
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [K
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ cat /etc/hosts
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+127.0.1.1	  Vyos2	 #vyatta entry
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/vbash
+daemon:x:1:1:daemon:/usr/sbin:/bin/sh
+bin:x:2:2:bin:/bin:/bin/sh
+sys:x:3:3:sys:/dev:/bin/sh
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/bin/sh
+man:x:6:12:man:/var/cache/man:/bin/sh
+lp:x:7:7:lp:/var/spool/lpd:/bin/sh
+mail:x:8:8:mail:/var/mail:/bin/sh
+news:x:9:9:news:/var/spool/news:/bin/sh
+uucp:x:10:10:uucp:/var/spool/uucp:/bin/sh
+proxy:x:13:13:proxy:/bin:/bin/sh
+www-data:x:33:33:www-data:/var/www:/bin/sh
+backup:x:34:34:backup:/var/backups:/bin/sh
+list:x:38:38:Mailing List Manager:/var/list:/bin/sh
+irc:x:39:39:ircd:/var/run/ircd:/bin/sh
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/bin/sh
+nobody:x:65534:65534:nobody:/nonexistent:/bin/sh
+libuuid:x:100:101::/var/lib/libuuid:/bin/sh
+quagga:x:101:103:Vyatta Quagga routing suite,,,:/var/run/quagga/:/bin/false
+ntp:x:102:107::/home/ntp:/bin/false
+snmp:x:103:108::/var/lib/snmp:/bin/false
+sshd:x:104:65534::/var/run/sshd:/usr/sbin/nologin
+dnsmasq:x:105:65534:dnsmasq,,,:/var/lib/misc:/bin/false
+radvd:x:106:65534::/var/run/radvd:/bin/false
+_lldpd:x:107:111::/var/run/lldpd:/bin/false
+hacluster:x:108:113:Heartbeat System Account,,,:/usr/lib/heartbeat:/bin/false
+tss:x:109:114::/var/lib/tpm:/usr/sbin/nologin
+vyos:x:1000:100::/home/vyos:/bin/vbash
+NOC_Admin9:x:1001:100::/home/NOC_Admin9:/bin/vbash
+NOC_Admin10:x:1002:100::/home/NOC_Admin10:/bin/vbash
+NOC_Admin17:x:1003:100::/home/NOC_Admin17:/bin/vbash
+NOC_Admin22:x:1004:100::/home/NOC_Admin22:/bin/vbash
+NOC_Admin6:x:1005:100::/home/NOC_Admin6:/bin/vbash
+NOC_Admin13:x:1006:100::/home/NOC_Admin13:/bin/vbash
+NOC_Admin19:x:1007:100::/home/NOC_Admin19:/bin/vbash
+NOC_Admin12:x:1008:100::/home/NOC_Admin12:/bin/vbash
+NOC_Admin4:x:1009:100::/home/NOC_Admin4:/bin/vbash
+radicle:x:1010:100::/home/radicle:/bin/vbash
+NOC_Admin3:x:1011:100::/home/NOC_Admin3:/bin/vbash
+NOC_Admin18:x:1012:100::/home/NOC_Admin18:/bin/vbash
+NOC_Admin20:x:1013:100::/home/NOC_Admin20:/bin/vbash
+NOC_Admin23:x:1014:100::/home/NOC_Admin23:/bin/vbash
+NOC_Admin15:x:1015:100::/home/NOC_Admin15:/bin/vbash
+NOC_Admin5:x:1016:100::/home/NOC_Admin5:/bin/vbash
+NOC_Admin16:x:1017:100::/home/NOC_Admin16:/bin/vbash
+NOC_Admin21:x:1018:100::/home/NOC_Admin21:/bin/vbash
+NOC_Admin7:x:1019:100::/home/NOC_Admin7:/bin/vbash
+NOC_Admin14:x:1020:100::/home/NOC_Admin14:/bin/vbash
+NOC_Admin1:x:1021:100::/home/NOC_Admin1:/bin/vbash
+NOC_Admin2:x:1022:100::/home/NOC_Admin2:/bin/vbash
+NOC_Admin11:x:1023:100::/home/NOC_Admin11:/bin/vbash
+NOC_Admin8:x:1024:100::/home/NOC_Admin8:/bin/vbash
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+###### root crontab is:
+###### daemon crontab is:
+###### bin crontab is:
+###### sys crontab is:
+###### sync crontab is:
+###### games crontab is:
+###### man crontab is:
+###### lp crontab is:
+###### mail crontab is:
+###### news crontab is:
+###### uucp crontab is:
+###### proxy crontab is:
+###### www-data crontab is:
+###### backup crontab is:
+###### list crontab is:
+###### irc crontab is:
+###### gnats crontab is:
+###### nobody crontab is:
+###### libuuid crontab is:
+###### quagga crontab is:
+###### ntp crontab is:
+###### snmp crontab is:
+###### sshd crontab is:
+###### dnsmasq crontab is:
+###### radvd crontab is:
+###### _lldpd crontab is:
+###### hacluster crontab is:
+###### tss crontab is:
+###### vyos crontab is:
+###### NOC_Admin9 crontab is:
+###### NOC_Admin10 crontab is:
+###### NOC_Admin17 crontab is:
+###### NOC_Admin22 crontab is:
+###### NOC_Admin6 crontab is:
+###### NOC_Admin13 crontab is:
+###### NOC_Admin19 crontab is:
+###### NOC_Admin12 crontab is:
+###### NOC_Admin4 crontab is:
+###### radicle crontab is:
+###### NOC_Admin3 crontab is:
+###### NOC_Admin18 crontab is:
+###### NOC_Admin20 crontab is:
+###### NOC_Admin23 crontab is:
+###### NOC_Admin15 crontab is:
+###### NOC_Admin5 crontab is:
+###### NOC_Admin16 crontab is:
+###### NOC_Admin21 crontab is:
+###### NOC_Admin7 crontab is:
+###### NOC_Admin14 crontab is:
+###### NOC_Admin1 crontab is:
+###### NOC_Admin2 crontab is:
+###### NOC_Admin11 crontab is:
+###### NOC_Admin8 crontab is:
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kcat /etc/crontab
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+#
+
+
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -la /etc/cron.*
+/etc/cron.d:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [0m[01;34m.[0m
+drwxr-xr-x 96 root root 4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root  102 Dec 19  2010 .placeholder
+-rw-r--r--  1 root root  589 Jan 18  2012 mdadm
+
+/etc/cron.daily:
+total 68
+drwxr-xr-x  2 root root  4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 96 root root  4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root   102 Dec 19  2010 .placeholder
+-rwxr-xr-x  1 root root 14799 Oct 17  2014 [01;32mapt[0m
+-rwxr-xr-x  1 root root   314 Aug 10  2011 [01;32maptitude[0m
+-rwxr-xr-x  1 root root   502 Jun 17  2010 [01;32mbsdmainutils[0m
+-rwxr-xr-x  1 root root   256 May 15  2015 [01;32mdpkg[0m
+-rwxr-xr-x  1 root root   338 Jul 25  2015 [01;32mlighttpd[0m
+-rwxr-xr-x  1 root root    89 Apr 17  2010 [01;32mlogrotate[0m
+-rwxr-xr-x  1 root root  1335 Jan  3  2011 [01;32mman-db[0m
+-rwxr-xr-x  1 root root   539 Jan 18  2012 [01;32mmdadm[0m
+-rwxr-xr-x  1 root root  1154 Dec 26  2014 [01;32mntp[0m
+-rwxr-xr-x  1 root root   249 Feb 15  2011 [01;32mpasswd[0m
+-rwxr-xr-x  1 root root  3594 Dec 19  2010 [01;32mstandard[0m
+
+/etc/cron.hourly:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 96 root root 4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root  102 Dec 19  2010 .placeholder
+-rwxr-xr-x  1 root root   90 Aug 16  2015 [01;32mvyatta-logrotate-hourly[0m
+
+/etc/cron.monthly:
+total 12
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 96 root root 4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root  102 Dec 19  2010 .placeholder
+
+/etc/cron.weekly:
+total 16
+drwxr-xr-x  2 root root 4096 Feb 17  2016 [01;34m.[0m
+drwxr-xr-x 96 root root 4096 Jun 18 01:09 [01;34m..[0m
+-rw-r--r--  1 root root  102 Dec 19  2010 .placeholder
+-rwxr-xr-x  1 root root  895 Jan  3  2011 [01;32mman-db[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r-- 1 root        root      749 Aug 24 13:17 /var/lib/logrotate/status
+-rw-rw-r-- 1 root        utmp    12288 Aug 24 13:26 /var/run/utmp
+-rw-rw-r-- 1 root        utmp    35328 Aug 24 13:26 /var/log/wtmp
+-rw-rw-r-- 1 root        utmp   299300 Aug 24 13:26 /var/log/lastlog
+-rw------- 1 NOC_Admin3  users   20004 Aug 24 13:27 /home/NOC_Admin3/.bash_history
+-rw------- 1 NOC_Admin19 users   20481 Aug 24 13:27 /home/NOC_Admin19/.bash_history
+-rw------- 1 NOC_Admin15 users   14862 Aug 24 13:27 /home/NOC_Admin15/.bash_history
+-rw------- 1 NOC_Admin12 users   18250 Aug 24 13:27 /home/NOC_Admin12/.bash_history
+-rw------- 1 NOC_Admin4  users   24333 Aug 24 13:27 /home/NOC_Admin4/.bash_history
+-rw------- 1 NOC_Admin14 users   20727 Aug 24 13:27 /home/NOC_Admin14/.bash_history
+-rw------- 1 NOC_Admin16 users   21980 Aug 24 13:27 /home/NOC_Admin16/.bash_history
+-rw-r----- 1 root        adm   1952334 Aug 24 13:27 /var/log/auth.log
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Ksestatus
+
+  Invalid command: [sestatus]
+
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ getenforce
+
+  Invalid command: [getenforce]
+
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo cat /root/.bash_history
+cat: /root/.bash_history: No such file or directory
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kcat ~/.bash_history
+#1647873577
+ifconfig -a || ip addr
+#1647873653
+date; date -u
+#1647873654
+uname -a
+#1647873664
+ls -latr /
+#1647873668
+ls -latr /tmp
+#1647873698
+ls -latr .
+#1647873702
+ls -latr ..
+#1647873720
+ls -latr /root
+#1647873722
+sudo ls -latr /root
+#1647873740
+ps -elf
+#1647873742
+sudo ps -elf -H
+#1647873802
+netstat -auntp || ss -auntp
+#1647873805
+sudo netstat -auntp
+#1647873815
+w
+#1647873833
+sudo w
+#1647873842
+df
+#1647873848
+ls -latr /var/spool/cron
+#1647873856
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1647873862
+cat /etc/crontab
+#1647873869
+ls -la /etc/cron.*
+#1647873900
+ls -latr /var/*/*acc*
+#1647873904
+ls -latr /var/*log*/
+#1647873918
+ls -latr /var/log/*
+#1647874000
+cat /var/log/wtmp | grep NOC_Admin4
+#1647874002
+cat /var/log/lastlog | grep NOC_Admin4
+#1647874005
+cat /var/log/auth.log | grep NOC_Admin4                                                                                                                                                                            
+#1647874019
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1647874044
+ls -la /etc/*syslog*
+#1647874049
+cat /etc/rsyslog.conf
+#1647874058
+cat /etc/rsyslog.d/*.conf
+#1647874093
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -9 -type f -print0 | xargs -0 ls -latr                                                                                                               
+#1647874107
+sestatus
+#1647874110
+getenforce
+#1647874112
+cat /root/.bash_history
+#1647874113
+sudo cat /root/.bash_history
+#1647874116
+cat ~/.bash_history
+#1647874131
+sudo ps -elf -H | grep tcp                                                                                                                                                                                         
+#1647874156
+find / -name tcp
+#1647874191
+find / -name tcp_dump
+#1647874202
+sudo find / -name tcp
+#1647874228
+sudo find / -name tcpdump
+#1647874245
+ps -elf | grep tcp
+#1647874266
+file /usr/sbin/tcpdump
+#1647874276
+ps -elf -H
+#1647874324
+ps -elf | grep tty
+#1647874330
+which tcpdump
+#1647874368
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1647874386
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|reptile'
+#1647874399
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|reptile|wireshark'
+#1647887804
+ifconfig -a || ip addr
+#1647887848
+w
+#1647887849
+sudo w
+#1647887862
+ls -latr /tmp
+#1647887867
+drwxrwxrwt  2 root root      4096 Mar 21 18:17 .
+#1647887872
+ps -elf
+#1647887874
+sudo ps -elf -H
+#1647887901
+netstat -lptn
+#1647887904
+sudo netstat -lptn
+#1647887909
+ls -latr /var/log
+#1647887917
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -240 -type f -print0 | xargs -0 ls -latr
+#1647887953
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1647887971
+sudo w
+#1647887975
+exit
+#1647956712
+ifconfig -a || ip addr
+#1647956768
+date; date -u
+#1647956770
+uname -a
+#1647956779
+ls -latr /
+#1647956809
+ls -latr /tmp
+#1647956829
+ls -latr .
+#1647956839
+ls -latr ..
+#1647956855
+ls -latr /root 
+#1647956856
+sudo ls -latr /root
+#1647956867
+ps -elf
+#1647956869
+sudo ps -elf -H
+#1647956936
+netstat -auntp || ss -auntp
+#1647956938
+sudo netstat -auntp
+#1647956992
+w
+#1647956994
+sudo w
+#1647957011
+df
+#1647957019
+ls -latr /var/spool/cron
+#1647957042
+tail -n 1000 atjobs
+#1647957052
+tail -n 1000 /var/spool/cron/atjobs
+#1647957057
+sudo tail -n 1000 /var/spool/cron/atjobs
+#1647957065
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1647957080
+cat /etc/crontab
+#1647957093
+ls -la /etc/cron.*
+#1647957172
+ls -latr /var/*/*acc*
+#1647957181
+ls -latr /var/*log*/
+#1647957234
+sudo cat /var/log/messages | grep NOC_Admin4
+#1647957242
+cat /var/log/wtmp | grep NOC_Admin4
+#1647957246
+cat /var/log/lastlog | grep NOC_Admin4
+#1647957253
+cat /var/log/auth.log | grep NOC_Admin4                                                                                                                                                                            
+#1647957284
+ls -latr /var/log/*
+#1647957321
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1647957326
+ls -la /etc/*syslog*
+#1647957329
+cat /etc/rsyslog.conf
+#1647957358
+cat /etc/rsyslog.d/*.conf
+#1647957388
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -11 -type f -print0 | xargs -0 ls -latr                                                                                                              
+#1647957407
+sestatus
+#1647957409
+getenforce
+#1647957412
+cat /root/.bash_history                                                                                                                                                                                            
+#1647957414
+sudo cat /root/.bash_history
+#1647957416
+cat ~/.bash_history
+#1647957455
+ps -elf | grep tcp
+#1647957472
+ps -elf | grep tty
+#1647957477
+which tcpdump
+#1647957585
+sudo netstat -auntp
+#1647973661
+ifconfig -a || ip addr
+#1647973682
+w
+#1647973684
+sudo w
+#1647973692
+ls -latr /tmp
+#1647973698
+ps -elf
+#1647973701
+sudo ps -elf -H
+#1647973726
+netstat -lptn
+#1647973727
+sudo netstat -lptn
+#1647973731
+ls -latr /var/log
+#1647973757
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -284 -type f -print0 | xargs -0 ls -latr                                                                                                             
+#1647973790
+dir /var/lib/logrotate/status 
+#1647973793
+dir /var/lib/logrotate/
+#1647973802
+cat /var/lib/logrotate/status
+#1647973819
+cat /var/lib/logrotate/status | grep 2022-3
+#1647973870
+exit
+#1648042137
+ifconfig -a || ip addr
+#1648042221
+date; date -u
+#1648042223
+uname -a
+#1648042232
+ls -latr /
+#1648042235
+ls -latr /tmp 
+#1648042240
+ls -latr .
+#1648042245
+ls -latr ..
+#1648042261
+ls -latr /root
+#1648042263
+sudo ls -latr /root
+#1648042267
+ps -elf
+#1648042269
+sudo ps -elf -H
+#1648042341
+netstat -auntp || ss -auntp
+#1648042343
+sudo netstat -auntp
+#1648042369
+df
+#1648042372
+ls -latr /var/spool/cron
+#1648042378
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1648042382
+cat /etc/crontab    
+#1648042387
+ls -la /etc/cron.*
+#1648042418
+ls -latr /var/*/*acc*
+#1648042422
+ls -latr /var/*log*/
+#1648042490
+cat /var/log/messages | grep NOC_Admin4
+#1648042495
+cat /var/log/wtmp | grep NOC_Admin4
+#1648042503
+cat /var/log/lastlog | grep NOC_Admin4
+#1648042505
+cat /var/log/auth.log | grep NOC_Admin4
+#1648042539
+ls -latr /var/*/*acc*
+#1648042542
+ls -latr /var/*log*/
+#1648042544
+ls -latr /var/log/*
+#1648042579
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1648042585
+which tcpdump
+#1648042594
+ps -elf | grep tcp
+#1648042598
+ps -elf | grep dump
+#1648042607
+ps
+#1648042609
+ps -e
+#1648042615
+ls -la /etc/*syslog*
+#1648042620
+cat /etc/rsyslog.conf
+#1648042635
+cat /etc/rsyslog.conf | @
+#1648042637
+cat /etc/rsyslog.conf | grep @
+#1648042641
+cat /etc/rsyslog.d/*.conf
+#1648042709
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -10 -type f -print0 | xargs -0 ls -latr                                                                                                              
+#1648042724
+sestatus
+#1648042726
+getenforce
+#1648042728
+cat /root/.bash_history                                                                                                                                                                                            
+#1648042730
+sudo cat /root/.bash_history
+#1648042732
+cat ~/.bash_history
+#1648061127
+w
+#1648061128
+sudo w
+#1648061132
+ls -latr /tmp
+#1648061136
+ps -elf
+#1648061138
+sudo ps -elf -H
+#1648061149
+netstat -lptn
+#1648061151
+sudo netstat -lptn
+#1648061162
+ls -latr /var/log
+#1648061175
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -318 -type f -print0 | xargs -0 ls -latr                                                                                                             
+#1648061218
+exit
+#1648131476
+ifconfig -a || ip addr
+#1648131553
+date; date -u
+#1648131554
+uname -a
+#1648131565
+ls -latr /
+#1648131567
+ls -latr /tmp
+#1648131598
+ls -latr .
+#1648131605
+ls -latr ..
+#1648131613
+ls -latr /root
+#1648131614
+sudo ls -latr /root
+#1648131618
+ps -elf
+#1648131620
+sudo ps -elf -H
+#1648131658
+netstat -auntp || ss -auntp
+#1648131661
+sudo netstat -auntp
+#1648131673
+w
+#1648131675
+sudo w
+#1648131687
+df
+#1648131692
+ls -latr /var/spool/cron
+#1648131693
+sudo ls -latr /var/spool/cron
+#1648131700
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1648131704
+cat /etc/crontab
+#1648131710
+ls -la /etc/cron.*
+#1648131726
+ls -latr /var/*/*acc*
+#1648131730
+ls -latr /var/*log*/
+#1648131770
+cat /var/log/wtmp | grep NOC_Admin4
+#1648131772
+cat /var/log/auth.log | grep NOC_Admin4                                                                                                                                                                            
+#1648131785
+ls -latr /var/log/*
+#1648131814
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1648131818
+which tcpdump
+#1648131821
+ls -la /etc/*syslog*
+#1648131823
+cat /etc/rsyslog.conf
+#1648131837
+cat /etc/rsyslog.d/*.conf
+#1648131851
+ls -la /etc/rsyslog.d/
+#1648131858
+ls -la /etc/rsyslog.d/vyatta-log.conf 
+#1648131865
+cat /etc/rsyslog.d/vyatta-log.conf 
+#1648131876
+cat /etc/rsyslog.conf | grep @
+#1648131878
+cat /etc/rsyslog.conf | grep ip
+#1648131883
+cat /etc/rsyslog.conf | grep -i ip
+#1648131920
+cat /etc/hosts
+#1648131952
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -8 -type f -print0 | xargs -0 ls -latr                                                                                                               
+#1648131966
+sestatus
+#1648131968
+getenforce
+#1648131970
+cat /root/.bash_history                                                                                                                                                                                            
+#1648131971
+sudo cat /root/.bash_history
+#1648131973
+cat ~/.bash_history
+#1648132059
+ps -elf | grep /bin/bash
+#1648132064
+ps -elf | grep bash
+#1648132073
+ps -elf | grep radicle
+#1648132086
+sudo ps -elf -H | grep radicle
+#1648132092
+sudo ps -elf -H
+#1648132267
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1648132285
+compgen -c | egrep 'wireshark|reptile'
+#1648132301
+compgen -c | egrep 'wireshark|reptile'
+#1648132428
+sudo ps -elf -H | radicle
+#1648132431
+sudo ps -elf -H | grep radicle
+#1648132498
+sudo ps -elf -H | grep bashbd
+#1648141915
+ifconfig -a
+#1648141917
+ip a
+#1648141932
+w
+#1648141935
+sudo w
+#1648141968
+ps -elf | grep 4261
+#1648141986
+ls -latr /tmp
+#1648141992
+ps -elf
+#1648141993
+sudo ps -elf -H
+#1648142014
+sudo ps -elf -H | grep tty
+#1648142023
+sudo ps -elf -H | grep bash
+#1648142035
+netstat -lptn
+#1648142037
+sudo netstat -lptn
+#1648142041
+ls -latr /var/log
+#1648142072
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -176 -type f -print0 | xargs -0 ls -latr                                                                                                             
+#1648142092
+exit
+#1653057161
+date; date -u
+#1653057163
+w
+#1653057179
+w radicle
+#1653057191
+cat /etc/passwd
+#1653057311
+ps -elf
+#1653057341
+ps -elf | grep radicle
+#1653057462
+ls -latr /tmp
+#1653057465
+ls -latr .
+#1653057467
+ls -latr ..
+#1653057472
+sudo ls -latr /root
+#1653057474
+ps -elf
+#1653057519
+ifconfig -a || ip addr
+#1653057541
+sudo netstat -auntp || ss -auntp
+#1653057610
+sudo ls -latr /var/spool/cron
+#1653057617
+sudo tail -n 100 /var/spool/cron/*
+#1653057642
+sudo ls -latr /var/spool/cron/*
+#1653057662
+uname -a
+#1653057664
+df
+#1653057674
+ls -latr /var/*/*acc*
+#1653057682
+ls -latr /var/*log*/
+#1653057687
+sudo ls -latr /var/log/*
+#1653057691
+ls -la /etc/*syslog*
+#1653057695
+cat /etc/rsyslog.conf
+#1653057770
+cat /etc/rsyslog.conf*
+#1653057827
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1653057831
+cat /etc/crontab
+#1653057837
+ls -la /etc/cron.*
+#1653057857
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+#1653057864
+sestatus || getenforce
+#1653057866
+sudo ls -latr /var/log/audit
+#1653057869
+sudo cat /root/.bash_history
+#1653057871
+cat ~/.bash_history
+#1653057976
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm'
+#1653057996
+compgen -c | egrep 'wireshark|reptile'
+#1653058161
+date; date -u
+#1653058163
+w
+#1653058166
+ls -latr /
+#1653058185
+cat /install.log
+#1653058193
+ls -latr /tmp
+#1653058200
+ls -latr .
+#1653058203
+ls -latr ..
+#1653058206
+sudo ls -latr /root
+#1653058213
+ps -elf
+#1653058278
+ifconfig -a || ip addr
+#1653058281
+sudo netstat -auntp || ss -auntp
+#1653058311
+sudo ls -latr /var/spool/cron
+#1653058313
+sudo ls -latr /var/spool/cron/*
+#1653058316
+uname -a
+#1653058318
+df
+#1653058323
+ls -latr /var/*/*acc*
+#1653058326
+ls -latr /var/*log*/
+#1653068487
+w
+#1653068490
+ls -latr /tmp
+#1653068496
+ps -elf
+#1653068504
+netstat -lptn
+#1653068508
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+#1653068520
+ls -latr /var/log
+#1653068546
+exit
+#1653312563
+date; date -u
+#1653312565
+w
+#1653312580
+ls -latr /
+#1653312584
+ls -latr /tmp
+#1653312587
+ls -latr .
+#1653312605
+ls -latr ..
+#1653312616
+sudo ls -latr /root
+#1653312619
+ps -elf
+#1653312659
+w
+#1653312666
+ifconfig -a || ip addr
+#1653312727
+sudo netstat -auntp || ss -auntp
+#1653312784
+sudo ls -latr /var/spool/cron
+#1653312788
+sudo ls -latr /var/spool/cron/*
+#1653312792
+uname -a
+#1653312801
+df
+#1653312807
+ls -latr /var/*/*acc*
+#1653312812
+ls -latr /var/*log*/
+#1653312843
+ls -latr /var/*log*/
+#1653312847
+sudo ls -latr /var/log/*
+#1653312854
+ls -la /etc/*syslog*
+#1653312857
+cat /etc/rsyslog.conf
+#1653312867
+cat /etc/hosts
+#1653312873
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1653312878
+cat /etc/crontab
+#1653312881
+ls -la /etc/cron.*
+#1653312911
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+#1653312918
+sestatus || getenforce
+#1653313056
+sudo ls -latr /var/log/audit
+#1653313059
+sudo cat /root/.bash_history
+#1653313061
+cat ~/.bash_history
+#1653313096
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|wireshark|reptile'
+#1653313109
+sudo ls -latr /root
+#1653313112
+ps -elf
+#1653313232
+cat ~/.bash_history
+#1653315766
+sudo md5sum /root/Sup3rS3cr3t/S3cr3tSqu1r1.stuff
+#1653315781
+sudo ls -latr /root/Sup3rS3cr3t
+#1653315792
+sudo ls -latr /root
+#1653327421
+w
+#1653327425
+ls -latr /tmp
+#1653327427
+ps -elf
+#1653327434
+netstat -lptn
+#1653327436
+ls -latr /var/log
+#1653327441
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+#1653327450
+exit
+#1653398855
+date /t
+#1653398862
+date; date -u
+#1653398864
+w
+#1653398880
+ls -latr /
+#1653398885
+ls -latr /tmp
+#1653398887
+ls -latr .
+#1653398890
+ls -latr ..
+#1653398894
+sudo ls -latr /root
+#1653398896
+ps -elf
+#1653398913
+w
+#1653398933
+ifconfig -a || ip addr
+#1653398978
+sudo netstat -auntp || ss -auntp
+#1653399077
+sudo ls -latr /var/spool/cron
+#1653399079
+sudo ls -latr /var/spool/cron/*
+#1653399084
+uname -a
+#1653399087
+df
+#1653399090
+ls -latr /var/*/*acc*
+#1653399092
+ls -latr /var/*log*/
+#1653399097
+sudo ls -latr /var/log/*
+#1653399108
+ls -latr /var/*log*/
+#1653399111
+ls -la /etc/*syslog*
+#1653399114
+cat /etc/rsyslog.conf
+#1653399151
+cat /etc/rsyslog.conf.orig
+#1653399183
+cat /etc/hosts
+#1653399194
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1653399200
+cat /etc/crontab
+#1653399207
+ls -la /etc/cron.*
+#1653399215
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+#1653399220
+sestatus || getenforce
+#1653399242
+sudo ls -latr /var/log/audit
+#1653399247
+sudo cat /root/.bash_history
+#1653399249
+cat ~/.bash_history
+#1653399257
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|wireshark|reptile'
+#1653399308
+ls -latr /var/*log*/
+#1653399312
+sudo ls -latr /var/log/*
+#1653399325
+ls -la /etc/cron.*
+#1653399341
+w
+#1653399344
+ps -elf
+#1653413438
+w
+#1653413450
+ls -latr /tmp
+#1653413452
+ps -elf
+#1653413466
+netstat -lptn
+#1653413469
+ls -latr /var/log
+#1653413475
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+#1653413487
+exit
+#1653487560
+date; date -u
+#1653487563
+w
+#1653487567
+ls -latr /
+#1653487572
+ls -latr /tmp
+#1653487588
+w radicle
+#1653487699
+ps -elf
+#1653487721
+ls -latr /tmp
+#1653487723
+ls -latr .
+#1653487726
+ls -latr ..
+#1653487729
+sudo ls -latr /root
+#1653487732
+ifconfig -a || ip addr
+#1653487824
+sudo netstat -auntp || ss -auntp
+#1653487859
+sudo ls -latr /var/spool/cron
+#1653487861
+sudo ls -latr /var/spool/cron/*
+#1653487864
+sudo tail -n 100 /var/spool/cron/*
+#1653487866
+uname -a
+#1653487869
+df
+#1653487874
+ls -latr /var/*/*acc*
+#1653487877
+ls -latr /var/*log*/
+#1653487888
+sudo ls -latr /var/log/*
+#1653487897
+ls -la /etc/*syslog*
+#1653487900
+cat /etc/rsyslog.conf
+#1653487915
+cat /etc/rsyslog.conf.orig
+#1653488018
+cat /etc/hosts
+#1653488022
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1653488026
+cat /etc/crontab
+#1653488028
+ls -la /etc/cron.*
+#1653488036
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 ls -latr
+#1653488040
+sestatus || getenforce
+#1653488042
+sudo ls -latr /var/log/audit
+#1653488044
+sudo tail -n 15 /var/log/audit/audit.log
+#1653488049
+sudo cat /root/.bash_history
+#1653488051
+cat ~/.bash_history
+#1653488130
+uname -a
+#1653493686
+w
+#1653493695
+ls -latr /tmp
+#1653493698
+ps -elf
+#1653493733
+w
+#1653493789
+ls -latr /tmp
+#1653493791
+ps -elf
+#1653493806
+sestatus || getenforce
+#1653493809
+ls -la /etc/*syslog*
+#1653493816
+cat /etc/rsyslog.conf.orig
+#1653493821
+w
+#1653493823
+ls -latr /tmp
+#1653493825
+ps -elf
+#1653493827
+netstat -lptn
+#1653493830
+ls -latr /var/log
+#1653493845
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+#1653493862
+exit
+#1661177043
+ip addr
+#1661177159
+ls -latr /
+#1661177167
+ls -latr /tmp
+#1661177188
+ls -latr .
+#1661177194
+ls -latr ..
+#1661177201
+sudo ls -latr /root
+#1661177204
+ps -elf
+#1661177231
+sudo netstat -auntp
+#1661177244
+w
+#1661177252
+w | grep root
+#1661177258
+sudo cat /etc/sudoers
+#1661177265
+sudo ls -latr /var/spool/cron
+#1661177268
+sudo ls -latr /var/spool/cron/*
+#1661177271
+date; date -u
+#1661177277
+uname -a
+#1661177285
+df
+#1661177289
+ls -latr /var/*/*acc*
+#1661177294
+ls /etc/systemd/system/multi-user.target.wants
+#1661177300
+sudo stat /var/account/pacct
+#1661177305
+sudo lastcomm
+#1661177311
+ls -latr /var/*log*/
+#1661177327
+sudo ls -latr /var/log/*
+#1661177349
+sudo grep -r NOC_admin4 /var/log/
+#1661177361
+sudo grep -r NOC_Admin4 /var/log/
+#1661177378
+ls -la /etc/*syslog*
+#1661177383
+cat /etc/rsyslog.conf
+#1661177392
+cat /etc/rsyslog.conf | grep @
+#1661177406
+cat /etc/rsyslog.conf.orig | grep @
+#1661177410
+cat /etc/rsyslog.conf.orig
+#1661177425
+cat /etc/hosts
+#1661177428
+cat /etc/passwd
+#1661177439
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1661177446
+cat /etc/crontab
+#1661177463
+ls -la /etc/cron.*
+#1661177472
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+#1661177481
+sestatus
+#1661177484
+getenforce
+#1661177488
+sudo cat /root/.bash_history
+#1661177491
+cat ~/.bash_history
+#1661177629
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|wireshark|reptile'
+#1661177644
+which tcpdump
+#1661177651
+sudo ls -latr /root
+#1661177743
+sudo cat /etc/audit/rules.d/audit.rules
+#1661177746
+sudo cat /etc/audit/auditd.conf
+#1661177751
+ps -elf
+#1661177761
+sudo ps -elf
+#1661177801
+sudo tail -n 5 /var/log/audit/audit.log
+#1661177868
+ls -latr /
+#1661177874
+ls -latr /tmp
+#1661177877
+ls -latr .
+#1661177882
+ls -latr ..
+#1661177901
+ls -latr ../radicle
+#1661177924
+ls -latr /selinux
+#1661177964
+w
+#1661178109
+ps -elf | grep tcp
+#1661189673
+w
+#1661189677
+who
+#1661189683
+ls -latr /tmp
+#1661189686
+ps -elf
+#1661189705
+netstat -lptn
+#1661189709
+ls -latr /var/log
+#1661189716
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -180 -type f -print0 | xargs -0 sudo ls -latr
+#1661189739
+exit
+#1661263059
+ip addr
+#1661263098
+ls -latr /
+#1661263105
+ls -latr /tmp
+#1661263108
+ls -latr .
+#1661263128
+ls -latr ..
+#1661263132
+sudo ls -latr /root
+#1661263135
+ps -elf
+#1661263161
+sudo netstat -auntp
+#1661263178
+w
+#1661263182
+who | grep root
+#1661263188
+lastlog
+#1661263203
+who
+#1661263210
+sudo ls -latr /var/spool/cron
+#1661263213
+sudo ls -latr /var/spool/cron/*
+#1661263216
+date; date -u
+#1661263224
+uname -a
+#1661263230
+df
+#1661263235
+ls -latr /var/*/*acc*
+#1661263241
+ls /etc/systemd/system/multi-user.target.wants
+#1661263244
+sudo stat /var/account/pacct
+#1661263247
+sudo lastcomm
+#1661263251
+ls -latr /var/*log*/
+#1661263262
+sudo ls -latr /var/log/*
+#1661263279
+sudo grep -r NOC_Admin4 /var/log/
+#1661263285
+ls -la /etc/*syslog*
+#1661263288
+cat /etc/rsyslog.conf
+#1661263297
+cat /etc/rsyslog.conf | grep @
+#1661263300
+cat /etc/hosts
+#1661263304
+cat /etc/passwd
+#1661263313
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1661263334
+cat /etc/rsyslog.conf.orig
+#1661263350
+cat /etc/crontab
+#1661263355
+ls -la /etc/cron.*
+#1661263362
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+#1661263367
+sestatus
+#1661263371
+getenforce
+#1661263373
+sudo cat /root/.bash_history
+#1661263376
+cat ~/.bash_history
+#1661263396
+compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|wireshark|reptile'
+#1661263406
+sudo cat /etc/audit/rules.d/audit.rules
+#1661263408
+sudo cat /etc/audit/auditd.conf
+#1661263452
+sudo cat /etc/audit/auditd.confcat /etc/rsyslog.d/vyatta-log.conf 
+#1661263457
+cat /etc/rsyslog.d/vyatta-log.conf 
+#1661263506
+sudo ls -latr /root
+#1661263510
+ps -elf
+#1661263520
+sudo netstat -auntp
+#1661263581
+w
+#1661274792
+w
+#1661274796
+w | grep root
+#1661274801
+who
+#1661274809
+lastlog
+#1661274820
+ls -latr /tmp
+#1661274824
+ps -elf
+#1661274839
+netstat -lptn
+#1661274843
+ls -latr /var/log
+#1661274847
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -180 -type f -print0 | xargs -0 sudo ls -latr
+#1661274859
+exit
+#1661347460
+ip addr
+#1661347505
+ls -latr /
+#1661347510
+ls -latr /tmp
+#1661347513
+ls -latr .
+#1661347516
+ls -latr ..
+#1661347519
+sudo ls -latr /root
+#1661347522
+sudo ps -elf
+#1661347550
+sudo netstat -auntp
+#1661347569
+w
+#1661347572
+who
+#1661347578
+sudo ls -latr /var/spool/cron
+#1661347581
+sudo ls -latr /var/spool/cron/*
+#1661347584
+date; date -u
+#1661347590
+uname -a
+#1661347593
+df
+#1661347596
+ls -latr /var/*/*acc*
+#1661347599
+sudo stat /var/account/pacct
+#1661347602
+ls /etc/systemd/system/multi-user.target.wants
+#1661347605
+ls -latr /var/*log*/
+#1661347609
+ls -latr /var/log/*
+#1661347619
+sudo ls -latr /var/log/*
+#1661347628
+sudo grep -r NOC_Admin4 /var/log/
+#1661347631
+ls -la /etc/*syslog*
+#1661347635
+cat /etc/rsyslog.conf
+#1661347646
+cat /etc/rsyslog.conf | grep @
+#1661347651
+cat /etc/rsyslog.conf.orig
+#1661347659
+cat /etc/hosts
+#1661347662
+cat /etc/passwd
+#1661347664
+for user in $(cut -f1 -d: /etc/passwd); do echo "###### $user crontab is:"; cat /var/spool/cron/{crontabs/$user,$user} 2>/dev/null; done
+#1661347668
+cat /etc/crontab
+#1661347671
+ls -la /etc/cron.*
+#1661347676
+sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -15 -type f -print0 | xargs -0 sudo ls -latr
+#1661347681
+sestatus
+#1661347683
+getenforce
+#1661347686
+sudo cat /root/.bash_history
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ compgen -c | egrep 'sestatus|getenforce|ausearch|ufw|maldet|lynis|clamscan|tcpdump|logwatch|lastcomm|wireshark|reptile'
+_tcpdump
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Ksudo cat /etc/audit/rules.d/audit.rules
+cat: /etc/audit/rules.d/audit.rules: No such file or directory
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Ksudo cat /etc/audit/auditd.conf
+cat: /etc/audit/auditd.conf: No such file or directory
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kw
+ 17:21:32 up 67 days, 16:20, 21 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+NOC_Admi pts/0    10.20.169.30     11:48    5:32m  0.10s  0.10s -vbash
+NOC_Admi pts/1    10.20.169.30     13:20    3:54m  0.15s  0.15s -vbash
+NOC_Admi pts/2    10.20.169.30     13:21    3:52m  0.13s  0.13s -vbash
+NOC_Admi pts/3    10.20.169.30     13:21    3:49m  0.20s  0.20s -vbash
+NOC_Admi pts/4    10.20.169.30     13:24    4.00s  0.14s  0.02s sshd: NOC_Admin4 [priv]   
+NOC_Admi pts/5    10.20.169.30     13:24    3:46m  0.15s  0.15s -vbash
+NOC_Admi pts/6    10.20.169.30     13:25    3:43m  0.18s  0.18s -vbash
+NOC_Admi pts/7    10.20.169.30     13:26    3:46m  0.17s  0.17s -vbash
+NOC_Admi pts/8    10.20.169.30     13:29    3:33m  0.10s  0.10s -vbash
+NOC_Admi pts/9    10.20.169.30     13:29    3:45m  0.14s  0.14s -vbash
+NOC_Admi pts/10   10.20.169.30     13:30    3:43m  0.13s  0.13s -vbash
+NOC_Admi pts/11   10.20.169.30     13:31    3:42m  0.15s  0.15s -vbash
+NOC_Admi pts/12   10.20.169.30     13:32    3:42m  0.14s  0.14s -vbash
+NOC_Admi pts/13   10.20.169.30     13:32    3:38m  0.14s  0.14s -vbash
+NOC_Admi pts/14   10.20.169.30     13:33    3:40m  0.12s  0.12s -vbash
+NOC_Admi pts/15   10.20.169.30     13:33    3:25m  0.15s  0.15s -vbash
+NOC_Admi pts/16   10.20.169.30     13:34    3:38m  0.13s  0.13s -vbash
+NOC_Admi pts/17   10.20.169.30     13:35    3:38m  0.15s  0.15s -vbash
+NOC_Admi pts/18   10.20.169.30     13:36    3:38m  0.12s  0.12s -vbash
+NOC_Admi pts/19   10.20.169.30     13:41    3:32m  0.12s  0.12s -vbash
+NOC_Admi pts/20   10.20.169.30     14:02    2:59m  0.22s  0.22s -vbash
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /tmp
+total 8
+drwxr-xr-x 22 root root      4096 Jun 18 01:09 [0m[01;34m..[0m
+-rw-------  1 root vyattacfg    0 Jun 18 01:09 uny2c3-ssh-key
+drwxrwxrwt  2 root root      4096 Aug 24 17:17 [30;42m.[0m
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ps -elf
+F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+4 S root         1     0  0  80   0 -  2112 ?      Jun18 ?        00:01:18 init [2]  
+1 S root         2     0  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kthreadd]
+1 S root         3     2  0  80   0 -     0 ?      Jun18 ?        00:02:53 [ksoftirqd/0]
+1 S root         5     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kworker/0:0H]
+1 S root         6     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kworker/u4:0]
+1 S root         7     2  0  80   0 -     0 ?      Jun18 ?        00:00:34 [rcu_sched]
+1 S root         8     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [rcu_bh]
+1 S root         9     2  0 -40   - -     0 ?      Jun18 ?        00:00:00 [migration/0]
+1 S root        10     2  0 -40   - -     0 ?      Jun18 ?        00:00:00 [migration/1]
+1 S root        11     2  0  80   0 -     0 ?      Jun18 ?        02:23:13 [ksoftirqd/1]
+1 S root        13     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kworker/1:0H]
+1 S root        14     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [khelper]
+5 S root        15     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kdevtmpfs]
+1 S root        16     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [netns]
+1 S root        17     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kworker/u4:1]
+1 S root       169     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [writeback]
+1 S root       171     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kintegrityd]
+1 S root       172     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [bioset]
+1 S root       174     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kblockd]
+1 S root       282     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [ata_sff]
+1 S root       292     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [khubd]
+4 S root       321  2371  0  80   0 - 19179 ?      13:30 ?        00:00:00 sshd: NOC_Admin5 [priv]   
+5 S 1016       328   321  0  80   0 - 19179 ?      13:30 ?        00:00:01 sshd: NOC_Admin5@pts/10   
+0 S 1016       329   328  0  80   0 -  5948 ?      13:30 pts/10   00:00:00 -vbash
+1 S root       396     2  0  80   0 -     0 ?      Jun18 ?        00:00:49 [kworker/1:1]
+1 S root       413     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kswapd0]
+4 S root       436  2371  0  80   0 - 19179 ?      13:31 ?        00:00:00 sshd: NOC_Admin20 [priv]  
+5 S 1013       442   436  0  80   0 - 19179 ?      13:31 ?        00:00:01 sshd: NOC_Admin20@pts/11  
+0 S 1013       443   442  0  80   0 -  5947 ?      13:31 pts/11   00:00:00 -vbash
+1 S root       477     2  0  99  19 -     0 ?      Jun18 ?        00:00:17 [khugepaged]
+1 S root       478     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [fsnotify_mark]
+1 S root       488     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [crypto]
+4 S root       561  2371  0  80   0 - 19179 ?      13:31 ?        00:00:00 sshd: NOC_Admin2 [priv]   
+4 S root       565  2371  0  80   0 - 19179 ?      13:31 ?        00:00:00 sshd: NOC_Admin21 [priv]  
+5 S 1018       577   565  0  80   0 - 19258 ?      13:32 ?        00:00:01 sshd: NOC_Admin21@pts/12  
+0 S 1018       578   577  0  80   0 -  5945 ?      13:32 pts/12   00:00:00 -vbash
+1 S root       585     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [deferwq]
+5 S 1022       661   561  0  80   0 - 19264 ?      13:32 ?        00:00:03 sshd: NOC_Admin2@pts/13   
+0 S 1022       662   661  0  80   0 -  5948 ?      13:32 pts/13   00:00:00 -vbash
+1 S root       779     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [scsi_eh_0]
+1 S root       809     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [scsi_eh_1]
+1 S root       814     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kworker/0:2]
+4 S root       821  2371  0  80   0 - 19202 ?      13:32 ?        00:00:00 sshd: NOC_Admin13 [priv]  
+1 S root       827     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kworker/0:1H]
+1 S root       844     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [md]
+1 S root       851     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [raid5wq]
+1 S root       868     2  0  80   0 -     0 ?      Jun18 ?        00:00:01 [jbd2/vda1-8]
+1 S root       869     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [ext4-rsv-conver]
+5 S root       929     1  0  76  -4 -  4305 ?      Jun18 ?        00:00:00 udevd --daemon
+4 S root       930  2371  0  80   0 - 19179 ?      13:33 ?        00:00:00 sshd: NOC_Admin17 [priv]  
+5 S 1003      1016   930  0  80   0 - 19179 ?      13:33 ?        00:00:00 sshd: NOC_Admin17@pts/14  
+0 S 1003      1017  1016  0  80   0 -  5945 ?      13:33 pts/14   00:00:00 -vbash
+5 S 1006      1081   821  0  80   0 - 19202 ?      13:33 ?        00:00:01 sshd: NOC_Admin13@pts/15  
+0 S 1006      1087  1081  0  80   0 -  5955 ?      13:33 pts/15   00:00:00 -vbash
+5 S root      1104   929  0  78  -2 -  4274 ?      Jun18 ?        00:00:00 udevd --daemon
+5 S root      1105   929  0  78  -2 -  4274 ?      Jun18 ?        00:00:00 udevd --daemon
+1 S root      1148     2  0  80   0 -     0 ?      Jun18 ?        00:12:40 [vballoon]
+1 S root      1152     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kpsmoused]
+4 S root      1281  2371  0  80   0 - 19179 ?      13:34 ?        00:00:00 sshd: NOC_Admin1 [priv]   
+5 S 1021      1293  1281  0  80   0 - 19361 ?      13:34 ?        00:00:01 sshd: NOC_Admin1@pts/16   
+0 S 1021      1294  1293  0  80   0 -  5945 ?      13:34 pts/16   00:00:00 -vbash
+4 S root      1429  2371  0  80   0 - 19179 ?      13:35 ?        00:00:00 sshd: NOC_Admin9 [priv]   
+5 S 1001      1507  1429  0  80   0 - 19258 ?      13:35 ?        00:00:01 sshd: NOC_Admin9@pts/17   
+0 S 1001      1508  1507  0  80   0 -  5948 ?      13:35 pts/17   00:00:00 -vbash
+4 S root      1638  2371  0  80   0 - 19179 ?      13:36 ?        00:00:00 sshd: NOC_Admin11 [priv]  
+5 S 1023      1651  1638  0  80   0 - 19258 ?      13:36 ?        00:00:00 sshd: NOC_Admin11@pts/18  
+0 S 1023      1652  1651  0  80   0 -  5945 ?      13:36 pts/18   00:00:00 -vbash
+1 S daemon    1679     1  0  80   0 -  4702 ?      Jun18 ?        00:00:00 /usr/sbin/atd
+1 S root      1683     1  0  80   0 -   992 ?      Jun18 ?        00:00:00 /sbin/netplugd -P -p /var/run/netplugd.pid
+1 S root      1726     1  0  80   0 -  5250 ?      Jun18 ?        00:00:10 /usr/sbin/cron
+1 S root      1754     1  0  80   0 -  1003 ?      Jun18 ?        00:00:00 /usr/sbin/acpid
+5 S quagga    1763     1  0  80   0 -  9864 ?      Jun18 ?        00:00:02 /usr/sbin/zebra -d -P 0 -i /var/run/quagga/zebra.pid -S -s 1048576
+1 S quagga    1765     1  0  80   0 -  9836 ?      Jun18 ?        00:04:18 /usr/sbin/ripd -d -P 0 -i /var/run/quagga/ripd.pid
+1 S quagga    1767     1  0  80   0 -  9788 ?      Jun18 ?        00:00:00 /usr/sbin/ripngd -d -P 0 -i /var/run/quagga/ripngd.pid
+1 S quagga    1769     1  0  80   0 - 10529 ?      Jun18 ?        00:04:20 /usr/sbin/ospfd -d -P 0 -i /var/run/quagga/ospfd.pid
+1 S quagga    1771     1  0  80   0 -  9885 ?      Jun18 ?        00:00:00 /usr/sbin/ospf6d -d -P 0 -i /var/run/quagga/ospf6d.pid
+1 S quagga    1773     1  0  80   0 - 10977 ?      Jun18 ?        00:04:52 /usr/sbin/bgpd -d -P 0 -i /var/run/quagga/bgpd.pid -I
+1 S root      1958     2  0  60 -20 -     0 ?      Jun18 ?        00:00:00 [kworker/1:1H]
+5 S root      2005     1  0  80   0 - 29938 ?      Jun18 ?        00:00:10 /usr/sbin/rsyslogd -c4
+5 S root      2371     1  0  80   0 - 12300 ?      Jun18 ?        00:00:00 /usr/sbin/sshd -p 52230
+1 S root      2431     1  0  80   0 - 20949 ?      Jun18 ?        00:00:00 /usr/bin/perl /opt/vyatta/sbin/vyos-intfwatchd
+0 S root      2432  2431  0  80   0 -  1585 ?      Jun18 ?        00:00:00 ip monitor link
+1 S root      2449     1  0  80   0 - 47016 ?      Jun18 ?        00:00:02 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2428=RW:/opt/vyatta/config/active=RO /opt
+4 S root      2501  2371  0  80   0 - 19179 ?      13:41 ?        00:00:00 sshd: NOC_Admin10 [priv]  
+5 S 1002      2514  2501  0  80   0 - 19224 ?      13:41 ?        00:00:00 sshd: NOC_Admin10@pts/19  
+0 S 1002      2515  2514  0  80   0 -  5946 ?      13:41 pts/19   00:00:00 -vbash
+4 S root      2937  2371  0  80   0 - 19179 ?      14:02 ?        00:00:00 sshd: NOC_Admin6 [priv]   
+5 S 1005      2940  2937  0  80   0 - 19224 ?      14:02 ?        00:00:01 sshd: NOC_Admin6@pts/20   
+0 S 1005      2941  2940  0  80   0 -  5968 ?      14:02 pts/20   00:00:00 -vbash
+0 R 1009      3229 31658  0  80   0 -  3728 -      17:21 pts/4    00:00:00 ps -elf
+1 S root      4231     1  0  80   0 - 44933 ?      Jun18 ?        00:00:02 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_2505=RW:/opt/vyatta/config/active=RO /opt
+1 S root      4359     1  0  80   0 - 44933 ?      Jun18 ?        00:00:03 unionfs-fuse -o cow -o allow_other /opt/vyatta/config/tmp/changes_only_4346=RW:/opt/vyatta/config/active=RO /opt
+1 S root      4405     2  0  80   0 -     0 ?      Jun18 ?        00:00:34 [kworker/0:0]
+1 S root      4412     2  0  80   0 -     0 ?      Jun18 ?        00:00:00 [kworker/1:0]
+0 S root      4434     1  0  80   0 -  1506 ?      Jun18 tty1     00:00:00 /sbin/getty 38400 tty1
+0 S root      4435     1  0  80   0 -  1506 ?      Jun18 tty2     00:00:00 /sbin/getty 38400 tty2
+0 S root      4436     1  0  80   0 -  1506 ?      Jun18 tty3     00:00:00 /sbin/getty 38400 tty3
+0 S root      4437     1  0  80   0 -  1506 ?      Jun18 tty4     00:00:00 /sbin/getty 38400 tty4
+0 S root      4438     1  0  80   0 -  1506 ?      Jun18 tty5     00:00:00 /sbin/getty 38400 tty5
+0 S root      4439     1  0  80   0 -  1506 ?      Jun18 tty6     00:00:00 /sbin/getty 38400 tty6
+0 S root      4440     1  0  80   0 -  1506 ?      Jun18 ttyS0    00:00:00 /sbin/getty -L ttyS0 9600 vt100
+4 S root     31215  2371  0  80   0 - 19179 ?      11:47 ?        00:00:00 sshd: NOC_Admin23 [priv]  
+5 S 1014     31218 31215  0  80   0 - 19179 ?      11:48 ?        00:00:00 sshd: NOC_Admin23@pts/0   
+0 S 1014     31219 31218  0  80   0 -  5953 ?      11:48 pts/0    00:00:00 -vbash
+4 S root     31326  2371  0  80   0 - 19179 ?      13:20 ?        00:00:00 sshd: NOC_Admin3 [priv]   
+5 S 1011     31329 31326  0  80   0 - 19179 ?      13:20 ?        00:00:01 sshd: NOC_Admin3@pts/1    
+0 S 1011     31330 31329  0  80   0 -  5956 ?      13:20 pts/1    00:00:00 -vbash
+4 S root     31412  2371  0  80   0 - 19179 ?      13:21 ?        00:00:00 sshd: NOC_Admin16 [priv]  
+5 S 1017     31415 31412  0  80   0 - 19179 ?      13:21 ?        00:00:01 sshd: NOC_Admin16@pts/2   
+0 S 1017     31416 31415  0  80   0 -  5947 ?      13:21 pts/2    00:00:00 -vbash
+4 S root     31499  2371  0  80   0 - 19179 ?      13:21 ?        00:00:00 sshd: NOC_Admin14 [priv]  
+5 S 1020     31503 31499  0  80   0 - 19266 ?      13:21 ?        00:00:01 sshd: NOC_Admin14@pts/3   
+0 S 1020     31504 31503  0  80   0 -  5967 ?      13:21 pts/3    00:00:00 -vbash
+4 S root     31651  2371  0  80   0 - 19179 ?      13:23 ?        00:00:00 sshd: NOC_Admin4 [priv]   
+5 R 1009     31657 31651  0  80   0 - 19272 ?      13:24 ?        00:00:01 sshd: NOC_Admin4@pts/4    
+0 S 1009     31658 31657  0  80   0 -  5947 -      13:24 pts/4    00:00:00 -vbash
+4 S root     31750  2371  0  80   0 - 19179 ?      13:24 ?        00:00:00 sshd: NOC_Admin15 [priv]  
+5 S 1015     31766 31750  0  80   0 - 19258 ?      13:24 ?        00:00:01 sshd: NOC_Admin15@pts/5   
+0 S 1015     31767 31766  0  80   0 -  5954 ?      13:24 pts/5    00:00:00 -vbash
+4 S root     31860  2371  0  80   0 - 19179 ?      13:25 ?        00:00:00 sshd: NOC_Admin12 [priv]  
+5 S 1008     31875 31860  0  80   0 - 19179 ?      13:25 ?        00:00:02 sshd: NOC_Admin12@pts/6   
+0 S 1008     31876 31875  0  80   0 -  5965 ?      13:25 pts/6    00:00:00 -vbash
+4 S root     32039  2371  0  80   0 - 19179 ?      13:26 ?        00:00:00 sshd: NOC_Admin19 [priv]  
+5 S 1007     32069 32039  0  80   0 - 19473 ?      13:26 ?        00:00:01 sshd: NOC_Admin19@pts/7   
+0 S 1007     32070 32069  0  80   0 -  5967 ?      13:26 pts/7    00:00:00 -vbash
+4 S root     32515  2371  0  80   0 - 19179 ?      13:28 ?        00:00:00 sshd: NOC_Admin7 [priv]   
+5 S 1019     32526 32515  0  80   0 - 19258 ?      13:29 ?        00:00:00 sshd: NOC_Admin7@pts/8    
+0 S 1019     32527 32526  0  80   0 -  5948 ?      13:29 pts/8    00:00:00 -vbash
+4 S root     32611  2371  0  80   0 - 19179 ?      13:29 ?        00:00:00 sshd: NOC_Admin18 [priv]  
+5 S 1012     32620 32611  0  80   0 - 19272 ?      13:29 ?        00:00:01 sshd: NOC_Admin18@pts/9   
+0 S 1012     32621 32620  0  80   0 -  5954 ?      13:29 pts/9    00:00:00 -vbash
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ netstat -lptn
+(No info could be read for "-p": geteuid()=1009 but you should be root.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:52230           0.0.0.0:*               LISTEN      -               
+tcp6       0      0 :::52230                :::*                    LISTEN      -               
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ ls -latr /var/log
+total 2536
+drwx------  2 root     root         4096 Sep 13  2009 [0m[01;34miptraf[0m
+drwxr-xr-x  2 root     root         4096 Apr  4  2010 [01;34mmgetty[0m
+drwxr-xr-x  2 ntp      ntp          4096 Dec 26  2014 [01;34mntpstats[0m
+drwxr-xr-x  2 proxy    adm          4096 Jan  6  2015 [01;34msquid[0m
+drwxr-x---  2 www-data www-data     4096 Jul 25  2015 [01;34mlighttpd[0m
+drwxr-xr-x  2 root     root         4096 Feb 16  2016 [01;34mfsck[0m
+-rw-r-----  1 root     adm            59 Feb 16  2016 [01;31mdmesg.4.gz[0m
+-rw-r-----  1 root     adm            31 Feb 16  2016 boot
+-rw-r--r--  1 root     root        27710 Feb 16  2016 bootstrap.log
+-rw-r--r--  1 root     root         2204 Feb 17  2016 [01;31maptitude.1.gz[0m
+drwxrwxr-x  2 quagga   quagga       4096 Feb 17  2016 [01;34mquagga[0m
+-rw-r--r--  1 root     root            0 Feb 17  2016 pycentral.log
+drwxr-xr-x  2 root     root         4096 Feb 17  2016 [01;34muser[0m
+drwxr-xr-x 15 root     root         4096 Feb 17  2016 [01;34m..[0m
+-rw-r--r--  1 root     root        17084 Feb 17  2016 alternatives.log.1
+-rw-r--r--  1 root     root       258762 Feb 17  2016 dpkg.log.1
+-rw-r-----  1 root     adm          7704 Oct 12  2017 [01;31mdmesg.3.gz[0m
+drwxrwxr-x  2 root     vyattacfg    4096 Oct 12  2017 [01;34mvyatta[0m
+-rw-r-----  1 root     adm          7774 Feb 11  2022 [01;31mdmesg.2.gz[0m
+-rw-r--r--  1 root     root        32800 Feb 11  2022 faillog
+-rw-r--r--  1 root     root            0 Mar  1 00:17 dpkg.log
+-rw-r--r--  1 root     root            0 Mar  1 00:17 aptitude
+drwxr-xr-x  2 root     root         4096 Mar  1 00:17 [01;34mapt[0m
+-rw-r--r--  1 root     root            0 Mar  1 00:17 alternatives.log
+-rw-r-----  1 root     adm          7817 May 27 23:51 [01;31mdmesg.1.gz[0m
+-rw-r-----  1 root     adm         26314 Jun  4 02:34 dmesg.0
+-rw-r-----  1 root     adm         26314 Jun 18 01:00 dmesg
+-rw-rw-r--  1 root     utmp            0 Jul  1 00:17 wtmp.1
+-rw-rw----  1 root     utmp            0 Jul  1 00:17 btmp.1
+-rw-rw----  1 root     utmp            0 Aug  1 00:17 btmp
+drwxr-xr-x 13 root     root         4096 Aug  1 00:17 [01;34m.[0m
+drwxr-xr-x  2 proxy    proxy        4096 Aug 24 00:17 [01;34msquid3[0m
+-rw-r-----  1 root     adm         35032 Aug 24 13:51 messages
+-rw-rw-r--  1 root     utmp        40320 Aug 24 14:02 wtmp
+-rw-rw-r--  1 root     utmp       299300 Aug 24 14:02 lastlog
+-rw-r-----  1 root     adm       2022629 Aug 24 17:17 auth.log
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ sudo find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -180 -type f -print0 | xargs -0 sudo ls -latr
+-rw-r--r-- 1 root       root      749 Aug 24 17:17 /var/lib/logrotate/status
+-rw------- 1 NOC_Admin4 users   24918 Aug 24 17:22 /home/NOC_Admin4/.bash_history
+-rw-r----- 1 root       adm   2023000 Aug 24 17:22 /var/log/auth.log
+]0;NOC_Admin4@Vyos2: ~NOC_Admin4@Vyos2:~$ [Kexit
+logout
+Connection to localhost closed.
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mexit[27m[39m[27m[32me[27m[32mx[27m[32mi[27m[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-24 17:31:10+00:00 [COMMAND_EXIT_CODE="0"]

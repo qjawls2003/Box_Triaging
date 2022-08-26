@@ -1,0 +1,566 @@
+####T10 survey#####
+
+
+[caisson4@webserver ~]$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=2947168k,nr_inodes=736792,mode=755)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,hugetlb)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,net_prio,net_cls)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,freezer)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,pids)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,devices)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,memory)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuacct,cpu)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,perf_event)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,cpuset)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,seclabel,blkio)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/sda1 on / type xfs (rw,relatime,seclabel,attr2,inode64,noquota)
+rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)
+selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=30,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=11836)
+mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tmpfs on /run/user/1023 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594428k,mode=700,uid=1023,gid=10)
+tmpfs on /run/user/1004 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=594428k,mode=700,uid=1004,gid=10)
+
+[caisson4@webserver ~]$ lsmod
+Module                  Size  Used by
+binfmt_misc            17468  1 
+iptable_filter         12810  0 
+tcp_diag               12591  0 
+udp_diag               12801  0 
+inet_diag              18949  2 tcp_diag,udp_diag
+iptable_nat            12875  0 
+nf_conntrack_ipv4      15053  1 
+nf_defrag_ipv4         12729  1 nf_conntrack_ipv4
+nf_nat_ipv4            14115  1 iptable_nat
+nf_nat                 26583  1 nf_nat_ipv4
+nf_conntrack          139264  3 nf_nat,nf_nat_ipv4,nf_conntrack_ipv4
+kvm_amd              2177304  0 
+kvm                   637515  1 kvm_amd
+i2c_piix4              22401  0 
+irqbypass              13503  1 kvm
+sg                     40719  0 
+virtio_rng             13029  0 
+virtio_balloon         18015  0 
+joydev                 17389  0 
+ppdev                  17671  0 
+crc32_pclmul           13133  0 
+ghash_clmulni_intel    13273  0 
+aesni_intel           189456  0 
+lrw                    13286  1 aesni_intel
+gf128mul               15139  1 lrw
+glue_helper            13990  1 aesni_intel
+ablk_helper            13597  1 aesni_intel
+pcspkr                 12718  0 
+parport_pc             28205  0 
+cryptd                 21190  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+parport                46395  2 ppdev,parport_pc
+ip_tables              27126  2 iptable_filter,iptable_nat
+xfs                   997768  1 
+libcrc32c              12644  3 xfs,nf_nat,nf_conntrack
+sd_mod                 46281  2 
+crc_t10dif             12912  1 sd_mod
+crct10dif_generic      12647  0 
+ata_generic            12923  0 
+pata_acpi              13053  0 
+virtio_net             27994  0 
+net_failover           18147  1 virtio_net
+virtio_console         28076  0 
+failover               13374  1 net_failover
+virtio_scsi            18463  1 
+ata_piix               35052  0 
+crct10dif_pclmul       14307  1 
+crct10dif_common       12595  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+crc32c_intel           22094  1 
+libata                243094  3 pata_acpi,ata_generic,ata_piix
+serio_raw              13434  0 
+virtio_pci             22985  0 
+floppy                 69424  0 
+virtio_ring            22991  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+virtio                 14959  6 virtio_net,virtio_pci,virtio_rng,virtio_balloon,virtio_console,virtio_scsi
+sunrpc                358543  1 
+
+[caisson4@webserver ~]$ uname -a
+Linux webserver 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+[caisson4@webserver ~]$ ls -latr /etc/*release*
+-rw-r--r--. 1 root root 23 Nov 23  2020 /etc/system-release-cpe
+-rw-r--r--. 1 root root 51 Nov 23  2020 /etc/centos-release-upstream
+-rw-r--r--. 1 root root 37 Nov 23  2020 /etc/centos-release
+lrwxrwxrwx. 1 root root 21 Feb 11  2022 /etc/os-release -> ../usr/lib/os-release
+lrwxrwxrwx. 1 root root 14 Feb 11  2022 /etc/system-release -> centos-release
+lrwxrwxrwx. 1 root root 14 Feb 11  2022 /etc/redhat-release -> centos-release
+[caisson4@webserver ~]$ cat /etc/*release*
+CentOS Linux release 7.9.2009 (Core)
+Derived from Red Hat Enterprise Linux 7.9 (Source)
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+CentOS Linux release 7.9.2009 (Core)
+CentOS Linux release 7.9.2009 (Core)
+cpe:/o:centos:centos:7
+
+[caisson4@webserver ~]$ cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2249.998
+cache size	: 512 KB
+physical id	: 3
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm art rep_good nopl extd_apicid eagerfpu pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core retpoline_amd ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt nrip_save umip spec_ctrl intel_stibp arch_capabilities
+bogomips	: 4499.99
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+[caisson4@webserver ~]$ services --status-all || systemctl status --no-pager
+-bash: services: command not found
+● webserver
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Sat 2022-06-18 01:01:12 UTC; 2 months 7 days ago
+   CGroup: /
+           ├─1 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+           ├─user.slice
+           │ ├─user-1004.slice
+           │ │ └─session-1670.scope
+           │ │   ├─29993 sshd: caisson4 [priv]
+           │ │   ├─30001 sshd: caisson4@pts/1
+           │ │   ├─30002 -bash
+           │ │   └─30743 systemctl status --no-pager
+           │ └─user-1023.slice
+           │   └─session-1665.scope
+           │     ├─17418 sshd: caisson23 [priv]
+           │     ├─17422 sshd: caisson23@pts/0
+           │     └─17423 -bash
+           └─system.slice
+             ├─crond.service
+             │ └─1110 /usr/sbin/crond -n
+             ├─rsyslog.service
+             │ └─1053 /usr/sbin/rsyslogd -n
+             ├─sshd.service
+             │ └─1049 /usr/sbin/sshd -D
+             ├─postfix.service
+             │ ├─ 1202 /usr/libexec/postfix/master -w
+             │ ├─ 1208 qmgr -l -t unix -u
+             │ └─27126 pickup -l -t unix -u
+             ├─httpd.service
+             │ ├─ 948 /usr/sbin/httpd -DFOREGROUND
+             │ ├─5306 /usr/sbin/httpd -DFOREGROUND
+             │ ├─5307 /usr/sbin/httpd -DFOREGROUND
+             │ ├─5308 /usr/sbin/httpd -DFOREGROUND
+             │ ├─5309 /usr/sbin/httpd -DFOREGROUND
+             │ └─5310 /usr/sbin/httpd -DFOREGROUND
+             ├─tuned.service
+             │ └─937 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+             ├─network.service
+             │ └─877 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/dhclient-eth0.pid -H webserver eth0
+             ├─dbus.service
+             │ └─612 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+             ├─chronyd.service
+             │ └─617 /usr/sbin/chronyd
+             ├─gssproxy.service
+             │ └─634 /usr/sbin/gssproxy -D
+             ├─systemd-logind.service
+             │ └─608 /usr/lib/systemd/systemd-logind
+             ├─polkit.service
+             │ └─607 /usr/lib/polkit-1/polkitd --no-debug
+             ├─irqbalance.service
+             │ └─606 /usr/sbin/irqbalance --foreground
+             ├─rpcbind.service
+             │ └─622 /sbin/rpcbind -w
+             ├─auditd.service
+             │ └─580 /sbin/auditd
+             ├─systemd-udevd.service
+             │ └─487 /usr/lib/systemd/systemd-udevd
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1111 /sbin/agetty --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─system-getty.slice
+             │ └─getty@tty1.service
+             │   └─1113 /sbin/agetty --noclear tty1 linux
+             └─systemd-journald.service
+               └─450 /usr/lib/systemd/systemd-journald
+
+[caisson4@webserver ~]$ cat /proc/meminfo
+MemTotal:        5944252 kB
+MemFree:         5440584 kB
+MemAvailable:    5410136 kB
+Buffers:            2088 kB
+Cached:           216300 kB
+SwapCached:            0 kB
+Active:           175636 kB
+Inactive:         103224 kB
+Active(anon):     108284 kB
+Inactive(anon):    47260 kB
+Active(file):      67352 kB
+Inactive(file):    55964 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         60472 kB
+Mapped:            23980 kB
+Shmem:             95072 kB
+Slab:             112392 kB
+SReclaimable:      73584 kB
+SUnreclaim:        38808 kB
+KernelStack:        2176 kB
+PageTables:         7316 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2972124 kB
+Committed_AS:     350752 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       17944 kB
+VmallocChunk:   34359717888 kB
+Percpu:              704 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:     22528 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      104308 kB
+DirectMap2M:     3041280 kB
+DirectMap1G:     5242880 kB
+
+
+[caisson4@webserver ~]$ sudo cat /etc/shadow
+root:$6$CZxWU/4FRcCzH$LL6U5.i4rG5osmLqwrDCFNsT4qA8IlPG5ukBXxtbDRuLWkbmwMaJpmWA4.9zzYXFL2wZygd8TYItlXN0nzePr.:19034:0:99999:7:::
+bin:*:17834:0:99999:7:::
+daemon:*:17834:0:99999:7:::
+adm:*:17834:0:99999:7:::
+lp:*:17834:0:99999:7:::
+sync:*:17834:0:99999:7:::
+shutdown:*:17834:0:99999:7:::
+halt:*:17834:0:99999:7:::
+mail:*:17834:0:99999:7:::
+operator:*:17834:0:99999:7:::
+games:*:17834:0:99999:7:::
+ftp:*:17834:0:99999:7:::
+nobody:*:17834:0:99999:7:::
+systemd-network:!!:18116::::::
+dbus:!!:18116::::::
+polkitd:!!:18116::::::
+rpc:!!:18116:0:99999:7:::
+rpcuser:!!:18116::::::
+nfsnobody:!!:18116::::::
+sshd:!!:18116::::::
+postfix:!!:18116::::::
+chrony:!!:18116::::::
+centos:!!:19034:0:99999:7:::
+caisson1:$1$Kw6rfoK/$5Ae//Sk4JrPGOKxuc3v.D/:19034:0:99999:7:::
+caisson2:$1$xMPFgpqr$j.nzce6Zo.wj9ZW.GmkH60:19034:0:99999:7:::
+caisson3:$1$kOK9hd7G$rteoWP01dRBOc3mDMxCs11:19034:0:99999:7:::
+caisson4:$1$vY400Eb8$lYjTWoKiYVt4DeM4v2jqR/:19034:0:99999:7:::
+caisson5:$1$qX9iyA5u$nlQJ0itMhSLoQcgJMDStF.:19034:0:99999:7:::
+caisson6:$1$9bmmy6EH$1mq9p87A3c7jyNUCz6tfv0:19034:0:99999:7:::
+caisson7:$1$h9jdSYXD$Ls9bjvVWatSo0QTwA/rVq/:19034:0:99999:7:::
+caisson8:$1$7uHxGsx6$ocxSLP7KdElx5IjRCHz/c1:19034:0:99999:7:::
+caisson9:$1$RWDir7kT$9gEu7gdORL.FGRKsAj7Qf/:19034:0:99999:7:::
+caisson10:$1$W0zapQPj$y/wVn9BZ8a/vcATcGulrj0:19034:0:99999:7:::
+caisson11:$1$oPNE6baK$nY0KxgWLQoFE7MqtGmS3y1:19034:0:99999:7:::
+caisson12:$1$fp7f.ZU.$EtXJZEn.fHl8FCpuI3oNG0:19034:0:99999:7:::
+caisson13:$1$Sq5741j/$tnHaFHiAK6GXJDRmkv26l0:19034:0:99999:7:::
+caisson14:$1$f/zKYtsu$JrPRyzSDi2KHpDEh/68EQ.:19034:0:99999:7:::
+caisson15:$1$JbtVsBN0$NESSVrJJ4h2G.QokgT024.:19034:0:99999:7:::
+caisson16:$1$SeyJAeWR$jpt7UgR7F5iBpKHsv8WuF.:19034:0:99999:7:::
+caisson17:$1$QHSwiKAp$uRHNz0qDSu229uppVNqck1:19034:0:99999:7:::
+caisson18:$1$/dm.NiJm$Ey5Ird.imiWCEKUo4bX.B1:19034:0:99999:7:::
+caisson19:$1$uWe04Yi1$wOo/5XLNc9KA6plHgNrC/.:19034:0:99999:7:::
+caisson20:$1$6IhZvpRp$W80nCZYIex.G3vzY1UnxP.:19034:0:99999:7:::
+caisson21:$1$HkRKdNj/$QHakaWmGTDWFnepQUSRpC/:19034:0:99999:7:::
+caisson22:$1$V5EUgCed$beSmIbywz8UoGhKGCH18X/:19034:0:99999:7:::
+caisson23:$1$L9YUDf2Y$feH4WnYyG9t4eMMEFcTI0/:19034:0:99999:7:::
+radicle:$1$33O/rrLi$5cwcqlVmCobfqMLK3anz//:19034:0:99999:7:::
+apache:!!:19034::::::
+[caisson4@webserver ~]$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+nobody:x:99:99:Nobody:/:/sbin/nologin
+systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin
+dbus:x:81:81:System message bus:/:/sbin/nologin
+polkitd:x:999:998:User for polkitd:/:/sbin/nologin
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
+sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+postfix:x:89:89::/var/spool/postfix:/sbin/nologin
+chrony:x:998:995::/var/lib/chrony:/sbin/nologin
+centos:x:1000:1000:Cloud User:/home/centos:/bin/bash
+caisson1:x:1001:10::/home/useraccounts/caisson1:/bin/bash
+caisson2:x:1002:10::/home/useraccounts/caisson2:/bin/bash
+caisson3:x:1003:10::/home/useraccounts/caisson3:/bin/bash
+caisson4:x:1004:10::/home/useraccounts/caisson4:/bin/bash
+caisson5:x:1005:10::/home/useraccounts/caisson5:/bin/bash
+caisson6:x:1006:10::/home/useraccounts/caisson6:/bin/bash
+caisson7:x:1007:10::/home/useraccounts/caisson7:/bin/bash
+caisson8:x:1008:10::/home/useraccounts/caisson8:/bin/bash
+caisson9:x:1009:10::/home/useraccounts/caisson9:/bin/bash
+caisson10:x:1010:10::/home/useraccounts/caisson10:/bin/bash
+caisson11:x:1011:10::/home/useraccounts/caisson11:/bin/bash
+caisson12:x:1012:10::/home/useraccounts/caisson12:/bin/bash
+caisson13:x:1013:10::/home/useraccounts/caisson13:/bin/bash
+caisson14:x:1014:10::/home/useraccounts/caisson14:/bin/bash
+caisson15:x:1015:10::/home/useraccounts/caisson15:/bin/bash
+caisson16:x:1016:10::/home/useraccounts/caisson16:/bin/bash
+caisson17:x:1017:10::/home/useraccounts/caisson17:/bin/bash
+caisson18:x:1018:10::/home/useraccounts/caisson18:/bin/bash
+caisson19:x:1019:10::/home/useraccounts/caisson19:/bin/bash
+caisson20:x:1020:10::/home/useraccounts/caisson20:/bin/bash
+caisson21:x:1021:10::/home/useraccounts/caisson21:/bin/bash
+caisson22:x:1022:10::/home/useraccounts/caisson22:/bin/bash
+caisson23:x:1023:10::/home/useraccounts/caisson23:/bin/bash
+radicle:x:1024:10::/home/useraccounts/radicle:/bin/bash
+apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
+
+[caisson4@webserver ~]$ arp -a
+? (10.20.169.222) at <incomplete> on eth0
+? (10.20.169.153) at <incomplete> on eth0
+? (10.20.169.239) at fa:16:3e:32:1d:b6 [ether] on eth0
+? (10.20.169.132) at <incomplete> on eth0
+? (10.20.169.174) at <incomplete> on eth0
+? (10.20.169.235) at <incomplete> on eth0
+? (10.20.169.128) at <incomplete> on eth0
+? (10.20.169.204) at <incomplete> on eth0
+? (10.20.169.214) at <incomplete> on eth0
+? (10.20.169.248) at <incomplete> on eth0
+? (10.20.169.187) at <incomplete> on eth0
+? (10.20.169.231) at <incomplete> on eth0
+? (10.20.169.156) at <incomplete> on eth0
+? (10.20.169.166) at <incomplete> on eth0
+? (10.20.169.210) at <incomplete> on eth0
+? (10.20.169.244) at <incomplete> on eth0
+? (10.20.169.183) at <incomplete> on eth0
+? (10.20.169.162) at <incomplete> on eth0
+? (10.20.169.196) at <incomplete> on eth0
+? (10.20.169.238) at fa:16:3e:6c:c0:57 [ether] on eth0
+? (10.20.169.240) at <incomplete> on eth0
+? (10.20.169.135) at <incomplete> on eth0
+? (10.20.169.213) at <incomplete> on eth0
+gateway (10.20.169.1) at fa:16:3e:b7:e2:4f [ether] on eth0
+? (10.20.169.190) at <incomplete> on eth0
+? (10.20.169.192) at <incomplete> on eth0
+? (10.20.169.234) at <incomplete> on eth0
+? (10.20.169.131) at <incomplete> on eth0
+? (10.20.169.165) at <incomplete> on eth0
+? (10.20.169.207) at <incomplete> on eth0
+? (10.20.169.251) at <incomplete> on eth0
+? (10.20.169.144) at <incomplete> on eth0
+? (10.20.169.186) at <incomplete> on eth0
+? (10.20.169.159) at <incomplete> on eth0
+? (10.20.169.161) at <incomplete> on eth0
+? (10.20.169.237) at <incomplete> on eth0
+? (10.20.169.247) at <incomplete> on eth0
+? (10.20.169.138) at <incomplete> on eth0
+? (10.20.169.216) at <incomplete> on eth0
+? (10.20.169.226) at <incomplete> on eth0
+? (10.20.169.189) at <incomplete> on eth0
+? (10.20.169.168) at <incomplete> on eth0
+? (10.20.169.141) at <incomplete> on eth0
+? (10.20.169.195) at <incomplete> on eth0
+? (10.20.169.130) at <incomplete> on eth0
+? (10.20.169.208) at <incomplete> on eth0
+? (10.20.169.147) at <incomplete> on eth0
+? (10.20.169.181) at <incomplete> on eth0
+? (10.20.169.223) at <incomplete> on eth0
+? (10.20.169.225) at <incomplete> on eth0
+? (10.20.169.160) at <incomplete> on eth0
+? (10.20.169.177) at <incomplete> on eth0
+? (10.20.169.219) at <incomplete> on eth0
+? (10.20.169.253) at <incomplete> on eth0
+? (10.20.169.198) at <incomplete> on eth0
+? (10.20.169.232) at <incomplete> on eth0
+? (10.20.169.242) at <incomplete> on eth0
+? (10.20.169.129) at <incomplete> on eth0
+? (10.20.169.171) at <incomplete> on eth0
+? (10.20.169.3) at fa:16:3e:67:89:b8 [ether] on eth0
+? (10.20.169.150) at <incomplete> on eth0
+? (10.20.169.228) at <incomplete> on eth0
+? (10.20.169.167) at <incomplete> on eth0
+? (10.20.169.201) at <incomplete> on eth0
+? (10.20.169.33) at fa:16:3e:21:12:c5 [ether] on eth0
+? (10.20.169.180) at <incomplete> on eth0
+
+[caisson4@webserver ~]$ lsusb
+-bash: lsusb: command not found
+[caisson4@webserver ~]$ lsblk
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda      8:0    0  32G  0 disk 
+└─sda1   8:1    0  32G  0 part /
+
+[caisson4@webserver ~]$ sudo fdisk -l
+
+Disk /dev/sda: 34.4 GB, 34359738368 bytes, 67108864 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk label type: dos
+Disk identifier: 0x000b6061
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *        2048    67108830    33553391+  83  Linux
+
+[caisson4@webserver ~]$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5804         206        5313          92         285        5283
+Swap:             0           0           0
+
+[caisson4@webserver ~]$ sudo dmidecode -t bios
+# dmidecode 3.2
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: SeaBIOS
+	Version: 1.13.0-1ubuntu1.1
+	Release Date: 04/01/2014
+	Address: 0xE8000
+	Runtime Size: 96 kB
+	ROM Size: 64 kB
+	Characteristics:
+		BIOS characteristics not supported
+		Targeted content distribution is supported
+	BIOS Revision: 0.0
+
+

@@ -1,0 +1,279 @@
+Script started on 2022-08-24 12:54:25+00:00 [TERM="xterm-256color" TTY="/dev/pts/10" COLUMNS="152" LINES="29"]
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m[?1l>[?2004l
+notes_24-08-22  termscreen.74571  termscreen.74583  termscreen.74595  termscreen.74612  termscreen.74624
+NSDB_24-08-22   termscreen.74577  termscreen.74589  termscreen.74603  termscreen.74618  termscreen.74630
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31mm[0m[39m[1m[31mm[0m[39m[38;2;153;153;153man xargs[39m[8D[1m[31mm[1m[31mk[0m[39m[39m [39m [39m [39m [39m [39m [39m [38;2;153;153;153mdir T6[39m[1m[31mm[1m[31mk[1m[31md[0m[39m[1m[31md[1m[31mi[0m[39m[0m[32mm[0m[32mk[0m[32md[0m[32mi[32mr[39m[39m [39ms[39m sh_keys[?1l>[?2004l
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m [38;2;153;153;153m-latr[39m[35m-[39m[35m-[35ml[39m[35ml[35ma[39m[35ma[35mt[39m[35mt[35mr[39m [38;2;153;153;153m/etc/sysconfig/[39m[15D[39m[4m/[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[?1l>[?2004l
+total 81
+drwx------   2 root root 16384 Mar 24 23:45 [0m[01;34mlost+found[0m
+drwxr-xr-x   3 root root  4096 Mar 24 23:45 [01;34mmedia[0m
+lrwxrwxrwx   1 root root     8 Mar 24 23:45 [01;36msbin[0m -> [01;34musr/sbin[0m
+lrwxrwxrwx   1 root root     7 Mar 24 23:45 [01;36mlib[0m -> [01;34musr/lib[0m
+lrwxrwxrwx   1 root root     7 Mar 24 23:45 [01;36mbin[0m -> [01;34musr/bin[0m
+lrwxrwxrwx   1 root root    10 Mar 24 23:45 [01;36mlibx32[0m -> [01;34musr/libx32[0m
+lrwxrwxrwx   1 root root     9 Mar 24 23:45 [01;36mlib64[0m -> [01;34musr/lib64[0m
+lrwxrwxrwx   1 root root     9 Mar 24 23:45 [01;36mlib32[0m -> [01;34musr/lib32[0m
+drwxr-xr-x   2 root root  4096 Mar 24 23:45 [01;34mmnt[0m
+drwxr-xr-x  14 root root  4096 Mar 24 23:45 [01;34musr[0m
+lrwxrwxrwx   1 root root    31 Mar 24 23:46 [01;36mvmlinuz.old[0m -> boot/vmlinuz-5.15.0-kali3-amd64
+lrwxrwxrwx   1 root root    34 Mar 24 23:46 [01;36minitrd.img.old[0m -> boot/initrd.img-5.15.0-kali3-amd64
+drwxr-xr-x  12 root root  4096 Mar 24 23:47 [01;34mvar[0m
+drwxr-xr-x   3 root root  4096 Mar 24 23:52 [01;34mopt[0m
+drwxr-xr-x   3 root root  4096 Mar 24 23:53 [01;34msrv[0m
+drwx------   2 root root  4096 Mar 24 23:53 [01;34m.cache[0m
+drwxr-xr-x   3 root root  4096 Mar 24 23:58 [01;34mhome[0m
+lrwxrwxrwx   1 root root    31 Mar 25 00:05 [01;36mvmlinuz[0m -> boot/vmlinuz-5.16.0-kali5-amd64
+lrwxrwxrwx   1 root root    34 Mar 25 00:05 [01;36minitrd.img[0m -> boot/initrd.img-5.16.0-kali5-amd64
+-rw-r--r--   1 root root     0 Jul 25 20:44 0
+drwxr-xr-x   4 root root  1024 Jul 25 20:50 [01;34mboot[0m
+drwxr-xr-x   2 root root  4096 Jul 26 19:27 [01;34m1[0m
+dr-xr-xr-x  13 root root     0 Aug 11 17:24 [01;34msys[0m
+dr-xr-xr-x 277 root root     0 Aug 11 17:24 [01;34mproc[0m
+drwxr-xr-x  20 root root  4096 Aug 11 17:24 [01;34m..[0m
+drwxr-xr-x  20 root root  4096 Aug 11 17:24 [01;34m.[0m
+drwxr-xr-x  17 root root  3140 Aug 11 17:24 [01;34mdev[0m
+drwxr-xr-x  37 root root  1060 Aug 18 01:33 [01;34mrun[0m
+drwxr-xr-x 164 root root 12288 Aug 24 07:48 [01;34metc[0m
+drwxrwxrwt  13 root root  4096 Aug 24 12:49 [30;42mtmp[0m
+drwx------  22 root root  4096 Aug 24 12:55 [01;34mroot[0m
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mls[39m [35m-latr[39m [4m/[24m[4m/[4mr[24m[4mr[4mo[24m[4mo[4mo[24m[4mo[4mt[24m[?1l>[?2004l
+total 2228
+-rw-r--r--  1 root root     161 Feb  3  2022 .profile
+-rw-r--r--  1 root root     571 Mar 24 23:52 .bashrc.original
+-rw-r--r--  1 root root    5551 Mar 24 23:52 .bashrc
+-rw-r--r--  1 root root   10875 Mar 24 23:52 .zshrc
+-rw-r--r--  1 root root   11656 Mar 24 23:56 .face
+-rw-r--r--  1 root root      35 Jul 25 20:20 .dmrc
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [0m[01;34mVideos[0m
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [01;34mTemplates[0m
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [01;34mPublic[0m
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [01;34mPictures[0m
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [01;34mMusic[0m
+drwxr-xr-x  2 root root    4096 Jul 25 20:20 [01;34mDesktop[0m
+-rw-------  1 root root       0 Jul 25 20:20 .ICEauthority
+drwx------  3 root root    4096 Jul 25 20:20 [01;34m.gnupg[0m
+lrwxrwxrwx  1 root root      11 Jul 25 20:48 [01;36m.face.icon[0m -> /root/.face
+-rw-r--r--  1 root root     220 Jul 26 12:23 .bash_logout
+drwxr-xr-x  3 root root    4096 Jul 26 12:23 [01;34m.java[0m
+drwx------  5 root root    4096 Jul 27 18:43 [01;34m.mozilla[0m
+drwxr-xr-x  2 root root    4096 Jul 27 18:46 [01;34m.rpmdb[0m
+-rw-r--r--  1 root root      39 Aug  8 12:28 .gitconfig
+drwx------  3 root root    4096 Aug  9 12:45 [01;34m.dbus[0m
+drwx------ 11 root root    4096 Aug  9 12:45 [01;34m.cache[0m
+drwxr-xr-x 20 root root    4096 Aug 11 17:24 [01;34m..[0m
+-rw-------  1 root root    6515 Aug 11 17:28 .xsession-errors.old
+-rw-r--r--  1 root root   16068 Aug 11 17:29 .xorgxrdp.10.log.old
+-rw-------  1 root root      99 Aug 11 17:29 .Xauthority
+-rw-r--r--  1 root root       0 Aug 12 14:54 a.out
+-rw-r--r--  1 root root    1595 Aug 12 15:12 .vimrc
+drwxr-xr-x  4 root root    4096 Aug 14 23:43 [01;34m.local[0m
+drwxr-xr-x  6 root root    4096 Aug 17 13:06 [01;34m.vim[0m
+drwx------ 17 root root    4096 Aug 19 16:25 [01;34m.config[0m
+drwx------  1 root root       0 Aug 22 12:19 [01;34mthinclient_drives[0m
+drwxrwxrwt  2 root root    4096 Aug 22 12:19 [30;42m.pcsc10[0m
+-rw-------  1 root root      20 Aug 22 17:56 .lesshst
+-rw-------  1 root root   53621 Aug 23 17:24 .viminfo
+drwx------  2 root root    4096 Aug 23 17:27 [01;34m.ssh[0m
+drwxr-xr-x 26 root root    4096 Aug 24 12:29 [01;34mDocuments[0m
+-rw-------  1 root root   79146 Aug 24 12:31 .zsh_history
+drwxr-xr-x 26 root root    4096 Aug 24 12:33 [01;34mDownloads[0m
+-rw-r--r--  1 root root   22243 Aug 24 12:38 .xorgxrdp.10.log
+drwx------ 22 root root    4096 Aug 24 12:55 [01;34m.[0m
+-rw-------  1 root root 1941251 Aug 24 12:59 .xsession-errors
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mls[39m [35m-latr[39m [4m/root[24m[4mt[4m/[24m[4m/[4m.[24m[4m.[4ms[24m[4ms[4ms[24m[4ms[4mh[24m[?1l>[?2004l
+total 20
+-rw-------  1 root root    0 Jul 25 20:13 authorized_keys
+-rw-------  1 root root 3588 Aug  5 15:12 known_hosts.old
+-rw-------  1 root root 4238 Aug 11 17:17 known_hosts
+drwx------  2 root root 4096 Aug 23 17:27 [0m[01;34m.[0m
+drwx------ 22 root root 4096 Aug 24 12:55 [01;34m..[0m
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mls[39m [35m-latr[39m [4m/root/.ssh[24m[35mt[39m[P[11C [12D[35ma[39m[P[11C [12D[35ml[39m[P[11C [12D[35m-[39m[P[11C [12D[P[11C [12D[P[10C [12D[32ml[39m[P[11C [12D[P[11C [12D[1m[31mc[0m[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[1m[31mc[1m[31ma[0m[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[0m[32mc[0m[32ma[32mt[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C aut[18D[39mc[39ma[39mt [24m/[24mr[24mo[24mo[24mt[24m/[24m.[24ms[24ms[24mh[4C
+[JCompleting `file'[A[0m[27m[24m[0m[39m[4Ccat /root/.ssh aut[K[0m[39m[18D[32mc[32ma[32mt[39m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[3C   [4mh[4m/[24m[4m/[4ma[24m[4ma[4mu[24m[4mu[4mt[24m[4mt[4mhorized_keys[24m[1m [0m[0m [?1l>[?2004l
+[J                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[4ms[24m[4ms[24m[38;2;153;153;153mcript -af termscreen.$$[39m
+[K[A[5C[24m[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[6C[38;2;153;153;153mh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost[39m[98D[32ms[32ms[32mh[39m[1m[31ms[1m[31ms[1m[31mh[1m[31m-[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [96D[1m[31m-[1m[31mk[0m[39m[1m[31mk[1m[31me[0m[39m[1m[31me[1m[31my[0m[39m[1m[31me[0m[39m[0m[39m [1m[31mk[0m[39m[0m[39m [1m[31m-[0m[39m[0m[39m [0m[32ms[0m[32ms[0m[32mh[39m[0m[39m [38;2;153;153;153m -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost[39m[97D[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [98D[38;2;153;153;153mh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost[39m[98D[39m[4ms[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [99D[4ms[24m[38;2;153;153;153mcript -af termscreen.$$[1B[39m[K[A[5C[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[4C[4ms[24m[4ms[24m[38;2;153;153;153mcript -af termscreen.$$[1B[39m[K[A[5C[24m[32ms[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[6C[38;2;153;153;153mh -MS /tmp/T7 -p 7777 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost[39m[98D[32ms[32ms[32mh[39m[1m[31ms[1m[31ms[1m[31mh[1m[31m-[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [96D[1m[31m-[1m[31mk[0m[39m[1m[31mk[1m[31me[0m[39m[1m[31me[1m[31my[0m[39m[1m[31my[1m[31mg[0m[39m[1m[31mg[1m[31me[0m[39m[9D[0m[32ms[0m[32ms[0m[32mh[0m[32m-[0m[32mk[0m[32me[0m[32my[0m[32mg[0m[32me[32mn[39m[?1l>[?2004l[1BGenerating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa
+Your public key has been saved in /root/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:lP75JkJjg1+pgDMwrxustknh8c6i/5CJL0gUXlUDzes root@kali
+The key's randomart image is:
++---[RSA 3072]----+
+|    .o=o         |
+| . .   o..       |
+|. o     +        |
+| oo    +         |
+|.o + ...S  .     |
+|.++o= oE=.o.     |
+|+o*o o = =o      |
+|+==o    + ...    |
+|==*=.    . o.    |
++----[SHA256]-----+
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mssh-keygen[39m[10D[32mc[32ma[32mt[39m[39m [39m[4m/[39m[4mr[39m[4mo[39m[4mo[39m[4mt[39m[4m/[4m.ssh/authorized_keys[24m[30D[32ml[32ms[39m[39m [35m-[24m[35ml[24m[35ma[24m[35mt[24m[35mr[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [24m [11D[?1l>[?2004l
+total 28
+-rw-------  1 root root    0 Jul 25 20:13 authorized_keys
+-rw-------  1 root root 3588 Aug  5 15:12 known_hosts.old
+-rw-------  1 root root 4238 Aug 11 17:17 known_hosts
+drwx------ 22 root root 4096 Aug 24 12:55 [0m[01;34m..[0m
+-rw-r--r--  1 root root  563 Aug 24 13:01 id_rsa.pub
+-rw-------  1 root root 2590 Aug 24 13:01 id_rsa
+drwx------  2 root root 4096 Aug 24 13:01 [01;34m.[0m
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mls[39m [35m-latr[39m [4m/root/.ssh[24m[1C[1C[1C[1C[1C[1C[35mt[39m[P[11C [12D[35ma[39m[P[11C [12D[35ml[39m[P[11C [12D[35m-[39m[P[11C [12D[P[11C [12D[P[10C [12D[32ml[39m[P[11C [12D[P[11C [12D[1m[31mc[0m[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[1m[31mc[1m[31ma[0m[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[0m[32mc[0m[32ma[32mt[39m[24m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[24m[11D[11C[38;2;153;153;153m/authorized_keys[39m[27D[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[4mh[39m[4m/[39m[4ma[39m[4mu[39m[4mt[39m[4mh[39m[4mo[39m[4mr[39m[4mi[39m[4mz[39m[4me[39m[4md[39m[4m_[39m[4mk[39m[4me[39m[4my[39m[4ms[24m[26D[24m/[24mr[24mo[24mo[24mt[24m/[24m.[24ms[24ms[24mh[24m/[24ma[24mu[24mt[24mh[24mo[24mr[24mi[24mz[24me[24md[24m_[24mk[24me[24my[24msid_rsa     [27D[4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[4m/[4ma[4mu[4mt[4mh[4mo[4mr[4mi[4mz[4me[4md[4m_[4mk[4me[4my[4ms[24m [4my[24m[24m [38;2;153;153;153ms[39m[4me[24m[24m [39m [38;2;153;153;153mys[39m[4mk[24m[24m [39m [39m [38;2;153;153;153meys[39m[4m_[24m[24m[38;2;153;153;153me[38;2;153;153;153my[38;2;153;153;153ms[39m[39m [4md[24m[24m [39m [39m [39m [38;2;153;153;153m_keys[39m[4me[24m[24m [39m [39m [39m [39m [39m [38;2;153;153;153md_keys[39m[4mz[24m[24m [39m [39m [39m [39m [39m [39m [38;2;153;153;153med_keys[39m[4mi[24m[24m [39m [39m [39m [39m [39m [39m [39m [8D[38;2;153;153;153mzed_keys[39m[8D[4mr[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [9D[38;2;153;153;153mized_keys[39m[9D[4mo[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[38;2;153;153;153mrized_keys[39m[10D[4mh[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[38;2;153;153;153morized_keys[39m[11D[4mt[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;2;153;153;153mhorized_keys[39m[12D[4mu[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [13D[38;2;153;153;153mthorized_keys[39m[13D[4ma[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[38;2;153;153;153muthorized_keys[39m[14D[4m/[24m[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[38;2;153;153;153mauthorized_keys[39m[15D[4m/[39m[4mi[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [14D[12D[24m/[24mr[24mo[24mo[24mt[24m/[24m.[24ms[24ms[24mh[24m/[24mis[17D[39mc[39ma[39mt[14C
+[JCompleting `file'[A[0m[27m[24m[0m[39m[4Ccat /root/.ssh/is[K[0m[39m[17D[32mc[32ma[32mt[39m [4m/[4mr[4mo[4mo[4mt[4m/[4m.[4ms[4ms[4mh[4m/[4mi[24m [4mi[4md[24m
+[J[A[21C[4md[4m_rsa[24m[?1l>[?2004l
+[J-----BEGIN OPENSSH PRIVATE KEY-----
+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
+xphLs0/4IoFHLdAAAACXJvb3RAa2FsaQE=
+-----END OPENSSH PRIVATE KEY-----
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mcat[39m [4m/root/.ssh/id_rsa[24m[4ma[4m.[24m[4m.[4mp[24m[4mp[4mu[24m[4mu[4mb[24m[1m [0m[0m [?1l>[?2004l
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDYaQOQEy6O1Xcr40qA3Wt4Q5AyYQvlgJXH/W5wB36nJ+kZ1Iq2QRrWTe1BVlisD5YShqx2ENza8rxorYWQytDPWR8tcJUqxffe+rdLOz+8J0rciWOVsTvsf7L8gum2WIescFdhQ5mJGWGU5amFBJUU2THbG+uYsOctkV8txOdoNdJVuQlt+nSb/swLMQ1lsAFFenF2D0H9L8ISzVObXTZ1+pvZZAo35xz7bM6WDZ2JIcm0A/tytLYZrJkoVr5lZCNRihkAfIASDgRNy+g57uuxMk/t6ouPHy1n5eLuh4/Vnf4p4WDwjUqcmcBZ/3NOKJsVAfImULoxLq78BAwxKCfwC1blcgDhgABHD8Tpgy1P6ih60X37BOdxz+3QLnoM5uW8v+599gxxB8pTk3oxbYlGb+QARl56+RmLzZJC3kPqmJVvyv6eR6MIvXpQ+1klCe4rPKO+DXs7wN+5MP58wkq1x3iIpho5nWzLRDlpufqso17Iq/ayp2G4C9HB5aU7qlE= root@kali
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms -latr /root/.ssh[39m[18D[32ml[32ms[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [17D[?1l>[?2004l
+notes_24-08-22  [0m[01;34mssh_keys[0m          termscreen.74577  termscreen.74589  termscreen.74603  termscreen.74618  termscreen.74630
+NSDB_24-08-22   termscreen.74571  termscreen.74583  termscreen.74595  termscreen.74612  termscreen.74624
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[0m[39m[38;2;153;153;153mat /root/.ssh/id_rsa.pub[39m[24D[0m[32mc[32md[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [23D[38;2;153;153;153m ~/Downloads/an_23-08-22_BELLIGERENTBADGER02 [39m
+[K[A[6C[39m [1B[K[A[7C[39m[4ms[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[8C[38;2;153;153;153mudo iptables -t nat -A POSTROUTING -p tcp -d 192.169.117.202 -j SNAT --to-source 192.168.1[39m[90D[4ms[39m[4ms[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [89D[4ms[4mh[24m[4mh[4m_keys[1m[4m/[0m[24m[4ms[24m[0m[24m [?1l>[?2004l[1B                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31ms[0m[39m[1m[31ms[0m[39m[38;2;153;153;153msh-keygen[39m[9D[1m[31ms[1m[31mm[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [8D[1m[31ms[1m[31mm[1m[31m5[0m[39m[1m[31ms[1m[31mm[0m[39m[0m[39m [1m[31ms[0m[39m[0m[39m [1m[31ms[0m[39m[38;2;153;153;153msh-keygen[39m[9D[0m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [10D[1m[31mm[0m[39m[1m[31mm[0m[39m[38;2;153;153;153mkdir ssh_keys[39m[13D[1m[31mm[1m[31md[0m[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12D[38;2;153;153;153m5sum ./*/*[39m[10D[1m[31mm[1m[31md[1m[31m5[0m[39m[1m[31m5[1m[31ms[0m[39m[1m[31ms[1m[31mu[0m[39m[0m[32mm[0m[32md[0m[32m5[0m[32ms[0m[32mu[32mm[39m[39m [39m[4mi[24m[39m [39m [39m [39m [38;2;153;153;153md_rsa.pub[39m[9D[4mi[39m[4md[24m[4md[39m[4m_[39m[4mr[39m[4ms[39m[4ma[24m[39m [39m [39m [39m [?1l>[?2004l
+b273c57ab1577af97fd5b51c8a884a7c  id_rsa
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mmd5sum[39m [4mid_rsa[24m[4ma[4m.[24m[38;2;153;153;153mpub[39m[4m.[39m[4mp[24m[8D[24mi[24md[24m_[24mr[24ms[24ma[24m.[24mp[39mp[39m [9D[4mi[4md[4m_[4mr[4ms[4ma[4m.[4mp[24m [38;2;153;153;153mub[39m[4mp[39m[4mu[39m[4mb[24m[1m [0m[0m [?1l>[?2004l
+a02525d5a2e1ba26e0e89f6229e8986f  id_rsa.pub
+                                                                                                                                                        ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m[?1l>[?2004l
+id_rsa  id_rsa.pub
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m [38;2;153;153;153m-latr /root/.ssh[39m[16D[35m-[39m[35m-[35ml[39m[35ml[35ma[39m[35ma[35mt[39m[35mt[35mr[39m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [11D[?1l>[?2004l
+total 16
+-rw------- 1 root root 1675 Aug 22 14:56 id_rsa
+-rw-r--r-- 1 root root  403 Aug 22 14:56 id_rsa.pub
+drwxr-xr-x 2 root root 4096 Aug 24 12:59 [0m[01;34m.[0m
+drwxr-xr-x 3 root root 4096 Aug 24 16:23 [01;34m..[0m
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03/ssh_keys[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[1m[31mc[0m[39m[1m[31mc[0m[39m[38;2;153;153;153md ssh_keys[39m[10D[0m[32mc[32md[39m[39m [39m[4m.[24m[39m [39m [39m [39m [39m [39m [39m [38;2;153;153;153m.[39m[4m.[39m[4m.[24m[?1l>[?2004l
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms -latr[39m[32ml[32ms[39m[39m [35m-[39m[35m-[35ml[39m[35ml[35ma[39m[35ma[35mt[39m[35mt[35mr[39m[?1l>[?2004l
+total 5052
+drwxr-xr-x 26 root root    4096 Aug 24 12:33 [0m[01;34m..[0m
+drwxr-xr-x  2 root root    4096 Aug 24 12:59 [01;34mssh_keys[0m
+-rw-r--r--  1 root root    1073 Aug 24 13:19 termscreen.74624
+-rw-r--r--  1 root root    1073 Aug 24 13:19 termscreen.74618
+-rw-r--r--  1 root root  535707 Aug 24 13:19 termscreen.74571
+-rw-r--r--  1 root root  413850 Aug 24 13:25 termscreen.74577
+-rw-r--r--  1 root root  133365 Aug 24 13:30 termscreen.74583
+-rw-r--r--  1 root root  286016 Aug 24 13:45 termscreen.74589
+-rw-r--r--  1 root root 1427281 Aug 24 14:15 termscreen.74595
+-rw-r--r--  1 root root   32007 Aug 24 14:15 Survey_192.186.169.201
+-rw-r--r--  1 root root   11381 Aug 24 15:00 NSDB_24-08-22
+-rw-r--r--  1 root root   26621 Aug 24 15:00 notes_24-08-22
+-rw-r--r--  1 root root   29534 Aug 24 15:25 Survey_192.186.169.134
+-rw-r--r--  1 root root  466375 Aug 24 15:27 termscreen.74603
+-rw-r--r--  1 root root  165766 Aug 24 15:54 Survey_192.186.169.144
+-rw-r--r--  1 root root   32768 Aug 24 16:15 .NSDB_24-08-22.swp
+-rw-r--r--  1 root root   22470 Aug 24 16:23 Survey_192.186.169.142
+drwxr-xr-x  3 root root    4096 Aug 24 16:23 [01;34m.[0m
+-rw-r--r--  1 root root   57344 Aug 24 17:05 .notes_24-08-22.swp
+-rw-r--r--  1 root root 1422445 Aug 24 17:06 termscreen.74612
+-rw-r--r--  1 root root   32217 Aug 24 17:09 termscreen.74630
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mtouch[39m[7m [7m[35m-a[39m[7m [7m[35m-m[39m[7m [7m[35m-t[39m[7m 20220211[27m[23D[27m[32mt[27m[32mo[27m[32mu[27m[32mc[27m[32mh[39m[27m [27m[35m-[27m[35ma[39m[27m [27m[35m-[27m[35mm[39m[27m [27m[35m-[27m[35mt[39m[27m [27m2[27m0[27m2[27m2[27m0[27m2[27m1[27m1 [4ms[24m[4ms[4ms[24m[4ms[4mh[24m[4mh[4m_keys[1m[4m/[0m[24m[4ms[24m[0m[24m [?1l>[?2004l
+touch: invalid date format ‘20220211’
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32mtouch[39m [35m-a[39m [35m-m[39m [35m-t[39m 20220211 [4mssh_keys[24m[1C0[24m [4ms[4ms[4mh[4m_[4mk[4me[4my[4ms[24m[9D0[24m [4ms[4ms[4mh[4m_[4mk[4me[4my[4ms[24m[9D0[24m [4ms[4ms[4mh[4m_[4mk[4me[4my[4ms[24m[9D0[24m [4ms[4ms[4mh[4m_[4mk[4me[4my[4ms[24m[9D[?1l>[?2004l
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms -latr[39m[32ml[32ms[39m[39m [35m-[39m[35m-[35ma[39m[39m [39m [39m [35ma[35ml[39m[35ml[35mt[39m[35mt[35mr[39m[?1l>[?2004l
+total 5056
+drwxr-xr-x  2 root root    4096 Feb 11  2022 [0m[01;34mssh_keys[0m
+drwxr-xr-x 26 root root    4096 Aug 24 12:33 [01;34m..[0m
+-rw-r--r--  1 root root    1073 Aug 24 13:19 termscreen.74624
+-rw-r--r--  1 root root    1073 Aug 24 13:19 termscreen.74618
+-rw-r--r--  1 root root  535707 Aug 24 13:19 termscreen.74571
+-rw-r--r--  1 root root  413850 Aug 24 13:25 termscreen.74577
+-rw-r--r--  1 root root  133365 Aug 24 13:30 termscreen.74583
+-rw-r--r--  1 root root  286016 Aug 24 13:45 termscreen.74589
+-rw-r--r--  1 root root 1427281 Aug 24 14:15 termscreen.74595
+-rw-r--r--  1 root root   32007 Aug 24 14:15 Survey_192.186.169.201
+-rw-r--r--  1 root root   11381 Aug 24 15:00 NSDB_24-08-22
+-rw-r--r--  1 root root   26621 Aug 24 15:00 notes_24-08-22
+-rw-r--r--  1 root root   29534 Aug 24 15:25 Survey_192.186.169.134
+-rw-r--r--  1 root root  466375 Aug 24 15:27 termscreen.74603
+-rw-r--r--  1 root root  165766 Aug 24 15:54 Survey_192.186.169.144
+-rw-r--r--  1 root root   32768 Aug 24 16:15 .NSDB_24-08-22.swp
+-rw-r--r--  1 root root   22470 Aug 24 16:23 Survey_192.186.169.142
+drwxr-xr-x  3 root root    4096 Aug 24 16:23 [01;34m.[0m
+-rw-r--r--  1 root root   57344 Aug 24 17:05 .notes_24-08-22.swp
+-rw-r--r--  1 root root 1422445 Aug 24 17:06 termscreen.74612
+-rw-r--r--  1 root root   35945 Aug 24 17:09 termscreen.74630
+                                                                                                                                                                                           ]0;root@kali: ~/Downloads/an_24-08-22_BELLIGERENTBADGER03
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_24-08-22_BELLIGERENTBADGER03[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[7m[32mexit[27m[39m[27m[32me[27m[32mx[27m[32mi[27m[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-24 17:31:22+00:00 [COMMAND_EXIT_CODE="0"]

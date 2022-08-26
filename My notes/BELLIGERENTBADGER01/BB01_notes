@@ -1,0 +1,93 @@
+T1
+
+rsyslog remote
+selinux
+
+T2
+
+sshd.exe                      4424 Services                   0      6,884 K Unknown         VIRTUAL USERS\sshd_4176
+
+Get-ChildItem c:\windows\system32 -Force
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "c:\windows\WIN.INTRUDER.DOSKEY")
+Get-Content c:\windows\WIN.INTRUDER.DOSKEY
+Get-Content IntruderLog.txt
+powershell
+Get-ChildItem c:\windows\security -Force
+Get-ChildItem c:\Users\caisson4 -Force
+del /f c:\Users\caisson4\IntruderLog.txt
+exit
+Get-ChildItem "%appdata%\microsoft\windows\start menu\programs\startup" -Force
+Get-ChildItem c:\windows\temp -Force
+Get-ChildItem c:\windows\system32\winevt\logs -Force
+
+T3
+
+cat /etc/rsyslog.conf.orig
+which tcpdump
+ls -latr ../radicle
+ls -latr /selinux
+
+T4
+
+/root/suersecret
+pacct
+md5sum .ssh/id_rsa
+md5sum .ssh/id_rsa.pub
+ls -latr .ssh
+cat .ssh/id_rsa
+cat .ssh/id_rsa.pub
+
+T5
+dragon_updater.exe            1452 Services                   0      6,884 K Unknown         NT AUTHORITY\SYSTEM
+cavwp.exe                     1804 Services                   0     44,896 K Unknown         NT AUTHORITY\SYSTEM
+cmdagent.exe                  2348 Services                   0     32,196 K Unknown         NT AUTHORITY\SYSTEM
+
+CommandLine="C:\Program Files (x86)\Comodo\Dragon\dragon_updater.exe"
+CommandLine="C:\Program Files\COMODO\COMODO Internet Security\cavwp.exe" /ModeAvMonitor -Embedding
+CommandLine="C:\Program Files (x86)\COMODO\COMODO Secure Shopping\csssrv64.exe" -service
+CommandLine="C:\Program Files (x86)\COMODO\Internet Security Essentials\isesrv.exe" -service
+CommandLine="C:\Program Files\COMODO\COMODO Internet Security\cmdagent.exe"
+
+type c:\windows\temp\dragon_version.inf
+dir /o:d /t:w "c:\windows\temp\Comodo LogsFolder"
+certutil -hashfile c:\comodo.exe MD5
+
+certutil -hashfile  "C:\Program Files (x86)\Comodo\Dragon\dragon_updater.exe" MD5
+certutil -hashfile c:\hmailServer.exe MD5
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup"
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Air Defense"
+138,201 bytes
+
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Armored Cavalry"
+ 138,178
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Command Elements"
+ 135,998 bytes
+
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyber-Comms Detachment"
+ 139,078 bytes
+
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Ground Forces"
+143,442 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D"
+138,233 bytes
+
+dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup\Supply"
+135,567 bytes
+
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Program Files (x86)\hMailServer\Data\Workgroup\*.*" -Recurse)
+
+scp -o ControlPath=/tmp/T5 -P 5555 -r 'student4@localhost:"C:/Program Files (x86)/hMailServer/Data/Workgroup/"' ~/Downloads/an_16-08-22_ANGRYAARDVARK02/T5 
+
+T6
+
+rsyslog
+selinux
+
+sudo ls -latrM /var/spool/mail/*
+sudo md5sum /var/spool/mail/*/*

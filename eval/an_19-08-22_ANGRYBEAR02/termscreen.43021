@@ -1,0 +1,35 @@
+Script started on 2022-08-19 12:43:02+00:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="135" LINES="37"]
+                                                                                                                                       ]0;root@kali: ~/Downloads/an_19-08-22_ANGRYBEAR02[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[32ml[39m[32ml[39m[38;2;153;153;153ms[39m[32ml[32ms[39m [38;2;153;153;153m-latr[39m[35m-[39m[35m-[35ml[39m[35ml[35ma[39m[35ma[35mt[39m[35mt[35mr[39m[?1l>[?2004l
+total 120
+drwxr-xr-x 23 root root  4096 Aug 19 12:32 [0m[01;34m..[0m
+-rw-r--r--  1 root root   488 Aug 19 12:42 termscreen.42980
+-rw-r--r--  1 root root   488 Aug 19 12:42 termscreen.43015
+-rw-r--r--  1 root root   488 Aug 19 12:43 termscreen.43009
+-rw-r--r--  1 root root  1170 Aug 19 12:46 notes_19-08-22
+-rw-r--r--  1 root root 12288 Aug 19 12:46 .notes_19-08-22.swp
+-rw-r--r--  1 root root    25 Aug 19 12:48 Survey_10.180.169.20
+-rw-r--r--  1 root root    23 Aug 19 12:48 Survey_10.180.169.9
+-rw-r--r--  1 root root 12288 Aug 19 12:48 .Survey_10.180.169.20.swp
+-rw-r--r--  1 root root    20 Aug 19 12:48 Survey_10.180.169.16
+-rw-r--r--  1 root root 12288 Aug 19 12:48 .Survey_10.180.169.9.swp
+-rw-r--r--  1 root root    21 Aug 19 12:48 Survey_10.180.169.17
+-rw-r--r--  1 root root 12288 Aug 19 12:48 .Survey_10.180.169.16.swp
+-rw-r--r--  1 root root  3301 Aug 19 12:48 NSDB_19-08-22
+-rw-r--r--  1 root root 12288 Aug 19 12:48 .Survey_10.180.169.17.swp
+drwxr-xr-x  2 root root  4096 Aug 19 12:48 [01;34m.[0m
+-rw-r--r--  1 root root 12288 Aug 19 12:48 .NSDB_19-08-22.swp
+-rw-r--r--  1 root root   691 Aug 19 12:50 termscreen.43021
+                                                                                                                                       ]0;root@kali: ~/Downloads/an_19-08-22_ANGRYBEAR02
+[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [K[?1h=[?2004h[A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [A[0m[27m[24m[J[34m┌──([1m[34m[31mroot㉿kali[0m[31m[34m)-[[1m[34m[39m~/Downloads/an_19-08-22_ANGRYBEAR02[0m[34m]
+└─[1m[34m[31m#[0m[31m[39m [1m[31me[0m[39m[1m[31me[0m[39m[38;2;153;153;153mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+
+Script done on 2022-08-19 16:13:56+00:00 [COMMAND_EXIT_CODE="0"]

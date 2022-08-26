@@ -1,0 +1,40 @@
+T1
+
+rsyslog
+selinux
+
+T2
+
+administrator 8/25/2022 12:29 PM
+
+
+T3
+
+ administrator         console             1  Active      none   8/25/2022 12:31 PM
+reg query HKEY_CURRENT_USER\Software\
+
+
+T5
+
+
+T6
+sudo cat /home/radicle/.bash_history
+
+T7
+stat cat /etc/passwd
+sudo cat /home/radicle/.bash_history
+sudo cat /root/NetworkUpdates.txt
+
+T9
+
+sudo ps -elfH | grep radicle
+sudo cat /root/.password_list
+sudo ls -latr /var/kerberos/krb5
+ls -latr /etc
+which httpd
+md5sum /usr/bin/httpd
+md5sum /etc/rc.d/init.d/httpd
+sudo md5sum /root/.password_list
+
+
+T10

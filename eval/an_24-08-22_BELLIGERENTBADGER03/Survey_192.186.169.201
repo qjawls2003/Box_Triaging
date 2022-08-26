@@ -1,0 +1,689 @@
+####T5 survey####
+
+mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=3038172k,nr_inodes=759543,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=610304k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/unified type cgroup2 (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/rdma type cgroup (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=38,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=11169)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+/dev/sda15 on /boot/efi type vfat (rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+lxcfs on /var/lib/lxcfs type fuse.lxcfs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
+tmpfs on /run/user/1024 type tmpfs (rw,nosuid,nodev,relatime,size=610300k,mode=700,uid=1024,gid=27)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tracefs on /sys/kernel/debug/tracing type tracefs (rw,relatime)
+
+lsmod
+Module                  Size  Used by
+iptable_filter         16384  0
+iptable_nat            16384  0
+nf_conntrack_ipv4      16384  1
+nf_defrag_ipv4         16384  1 nf_conntrack_ipv4
+nf_nat_ipv4            16384  1 iptable_nat
+nf_nat                 32768  1 nf_nat_ipv4
+nf_conntrack          135168  3 nf_conntrack_ipv4,nf_nat,nf_nat_ipv4
+binfmt_misc            20480  1
+tcp_diag               16384  0
+udp_diag               16384  0
+inet_diag              24576  2 tcp_diag,udp_diag
+nls_iso8859_1          16384  1
+kvm_amd                86016  0
+joydev                 24576  0
+kvm                   614400  1 kvm_amd
+input_leds             16384  0
+serio_raw              16384  0
+irqbypass              16384  1 kvm
+sch_fq_codel           20480  9
+ib_iser                49152  0
+rdma_cm                61440  1 ib_iser
+iw_cm                  45056  1 rdma_cm
+ib_cm                  53248  1 rdma_cm
+ib_core               225280  4 rdma_cm,iw_cm,ib_iser,ib_cm
+iscsi_tcp              20480  0
+libiscsi_tcp           20480  1 iscsi_tcp
+libiscsi               53248  3 libiscsi_tcp,iscsi_tcp,ib_iser
+scsi_transport_iscsi    98304  3 iscsi_tcp,ib_iser,libiscsi
+virtio_rng             16384  0
+ip_tables              28672  2 iptable_filter,iptable_nat
+x_tables               40960  2 iptable_filter,ip_tables
+autofs4                40960  2
+btrfs                1159168  0
+zstd_compress         163840  1 btrfs
+raid10                 53248  0
+raid456               147456  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+async_pq               16384  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+async_tx               16384  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    24576  2 async_xor,btrfs
+raid6_pq              114688  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              16384  3 nf_conntrack,nf_nat,raid456
+raid1                  40960  0
+raid0                  20480  0
+multipath              16384  0
+linear                 16384  0
+crct10dif_pclmul       16384  0
+crc32_pclmul           16384  0
+ghash_clmulni_intel    16384  0
+pcbc                   16384  0
+aesni_intel           188416  0
+aes_x86_64             20480  1 aesni_intel
+crypto_simd            16384  1 aesni_intel
+glue_helper            16384  1 aesni_intel
+floppy                 77824  0
+cryptd                 24576  3 crypto_simd,ghash_clmulni_intel,aesni_intel
+psmouse               151552  0
+virtio_scsi            20480  2
+virtio_net             49152  0
+
+uname -a
+Linux DESKTOP-USER21 4.15.0-180-generic #189-Ubuntu SMP Wed May 18 14:13:57 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
+ls -latr /etc/*release*
+-rw-r--r-- 1 root root 105 Jan 30  2020 /etc/lsb-release
+lrwxrwxrwx 1 root root  21 Jan 30  2020 /etc/os-release -> ../usr/lib/os-release
+cat /etc/*release*
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.4 LTS"
+NAME="Ubuntu"
+VERSION="18.04.4 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.4 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+
+cat /proc/cpuinfo
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2250.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl xtopology cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save umip rdpid arch_capabilities
+bugs		: sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4500.00
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2250.000
+cache size	: 512 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl xtopology cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save umip rdpid arch_capabilities
+bugs		: sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4500.00
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2250.000
+cache size	: 512 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl xtopology cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save umip rdpid arch_capabilities
+bugs		: sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4500.00
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 49
+model name	: AMD EPYC-Rome Processor
+stepping	: 0
+microcode	: 0x1000065
+cpu MHz		: 2250.000
+cache size	: 512 KB
+physical id	: 3
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl xtopology cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext perfctr_core ssbd ibrs ibpb stibp vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save umip rdpid arch_capabilities
+bugs		: sysret_ss_attrs spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 4500.00
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+services --status-all || systemctl status --no-pager
+● DESKTOP-USER21
+    State: running
+     Jobs: 0 queued
+   Failed: 0 units
+    Since: Tue 2022-08-23 13:05:14 UTC; 1 day 1h ago
+   CGroup: /
+           ├─user.slice
+           │ └─user-1024.slice
+           │   ├─user@1024.service
+           │   │ └─init.scope
+           │   │   ├─1458 /lib/systemd/systemd --user
+           │   │   └─1466 (sd-pam)
+           │   └─session-1.scope
+           │     ├─1022 /bin/login -p --
+           │     ├─1491 -bash
+           │     ├─1514 sudo -u askar23 nc -knlvp 44723 -e /bin/sh
+           │     ├─1517 sudo -u askar23 nc -knlvp 44723
+           │     ├─1550 sudo -u askar23 ncat -knlvp 44723 -e /bin/sh
+           │     ├─1552 ncat -knlvp 44723 -e /bin/sh
+           │     ├─1559 sudo -u askar1 ncat -knlvp 4471 -e /bin/sh
+           │     ├─1560 ncat -knlvp 4471 -e /bin/sh
+           │     ├─1561 sudo -u askar2 ncat -knlvp 4472 -e /bin/sh
+           │     ├─1562 ncat -knlvp 4472 -e /bin/sh
+           │     ├─1563 sudo -u askar3 ncat -knlvp 4473 -e /bin/sh
+           │     ├─1564 ncat -knlvp 4473 -e /bin/sh
+           │     ├─1565 sudo -u askar4 ncat -knlvp 4474 -e /bin/sh
+           │     ├─1566 ncat -knlvp 4474 -e /bin/sh
+           │     ├─1567 sudo -u askar5 ncat -knlvp 4475 -e /bin/sh
+           │     ├─1568 ncat -knlvp 4475 -e /bin/sh
+           │     ├─1574 sudo -u askar6 ncat -knlvp 4476 -e /bin/sh
+           │     ├─1575 ncat -knlvp 4476 -e /bin/sh
+           │     ├─1590 sudo -u askar7 ncat -knlvp 4477 -e /bin/sh
+           │     ├─1591 ncat -knlvp 4477 -e /bin/sh
+           │     ├─1592 sudo -u askar8 ncat -knlvp 4478 -e /bin/sh
+           │     ├─1593 ncat -knlvp 4478 -e /bin/sh
+           │     ├─1595 sudo -u askar9 ncat -knlvp 4479 -e /bin/sh
+           │     ├─1596 ncat -knlvp 4479 -e /bin/sh
+           │     ├─1597 sudo -u askar10 ncat -knlvp 44710 -e /bin/sh
+           │     ├─1598 ncat -knlvp 44710 -e /bin/sh
+           │     ├─1599 sudo -u askar11 ncat -knlvp 44711 -e /bin/sh
+           │     ├─1600 ncat -knlvp 44711 -e /bin/sh
+           │     ├─1604 sudo -u askar12 ncat -knlvp 44712 -e /bin/sh
+           │     ├─1605 ncat -knlvp 44712 -e /bin/sh
+           │     ├─1606 sudo -u askar13 ncat -knlvp 44713 -e /bin/sh
+           │     ├─1607 ncat -knlvp 44713 -e /bin/sh
+           │     ├─1608 sudo -u askar14 ncat -knlvp 44714 -e /bin/sh
+           │     ├─1609 ncat -knlvp 44714 -e /bin/sh
+           │     ├─1610 sudo -u askar15 ncat -knlvp 44715 -e /bin/sh
+           │     ├─1611 ncat -knlvp 44715 -e /bin/sh
+           │     ├─1612 sudo -u askar16 ncat -knlvp 44716 -e /bin/sh
+           │     ├─1613 ncat -knlvp 44716 -e /bin/sh
+           │     ├─1614 sudo -u askar17 ncat -knlvp 44717 -e /bin/sh
+           │     ├─1615 ncat -knlvp 44717 -e /bin/sh
+           │     ├─1616 sudo -u askar18 ncat -knlvp 44718 -e /bin/sh
+           │     ├─1617 ncat -knlvp 44718 -e /bin/sh
+           │     ├─1618 sudo -u askar19 ncat -knlvp 44719 -e /bin/sh
+           │     ├─1619 ncat -knlvp 44719 -e /bin/sh
+           │     ├─1620 sudo -u askar20 ncat -knlvp 44720 -e /bin/sh
+           │     ├─1621 ncat -knlvp 44720 -e /bin/sh
+           │     ├─1622 sudo -u askar21 ncat -knlvp 44721 -e /bin/sh
+           │     ├─1623 ncat -knlvp 44721 -e /bin/sh
+           │     ├─1624 sudo -u askar22 ncat -knlvp 44722 -e /bin/sh
+           │     ├─1625 ncat -knlvp 44722 -e /bin/sh
+           │     ├─1640 sudo tcpdump -i lo -w /var/log/tcpdump.pcap
+           │     ├─1641 tcpdump -i lo -w /var/log/tcpdump.pcap
+           │     ├─6077 ncat -knlvp 44723 -e /bin/sh
+           │     ├─6078 /bin/sh
+           │     ├─6103 ssh -p 33715 radicle@129.168.169.52
+           │     ├─6245 ncat -knlvp 44716 -e /bin/sh
+           │     ├─6246 /bin/sh
+           │     ├─6261 ncat -knlvp 4474 -e /bin/sh
+           │     ├─6262 /bin/sh
+           │     ├─6270 ncat -knlvp 4473 -e /bin/sh
+           │     ├─6271 /bin/sh
+           │     ├─6292 ncat -knlvp 4472 -e /bin/sh
+           │     ├─6293 /bin/sh
+           │     └─6320 systemctl status --no-pager
+           ├─init.scope
+           │ └─1 /sbin/init
+           └─system.slice
+             ├─irqbalance.service
+             │ └─976 /usr/sbin/irqbalance --foreground
+             ├─systemd-networkd.service
+             │ └─802 /lib/systemd/systemd-networkd
+             ├─systemd-udevd.service
+             │ └─473 /lib/systemd/systemd-udevd
+             ├─cron.service
+             │ └─969 /usr/sbin/cron -f
+             ├─system-serial\x2dgetty.slice
+             │ └─serial-getty@ttyS0.service
+             │   └─1003 /sbin/agetty -o -p -- \u --keep-baud 115200,38400,9600 ttyS0 vt220
+             ├─polkit.service
+             │ └─1049 /usr/lib/policykit-1/polkitd --no-debug
+             ├─networkd-dispatcher.service
+             │ └─964 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+             ├─accounts-daemon.service
+             │ └─978 /usr/lib/accountsservice/accounts-daemon
+             ├─systemd-journald.service
+             │ └─450 /lib/systemd/systemd-journald
+             ├─atd.service
+             │ └─981 /usr/sbin/atd -f
+             ├─unattended-upgrades.service
+             │ └─1075 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+             ├─rsyslog.service
+             │ └─984 /usr/sbin/rsyslogd -n
+             ├─lxcfs.service
+             │ └─995 /usr/bin/lxcfs /var/lib/lxcfs/
+             ├─lvm2-lvmetad.service
+             │ └─470 /sbin/lvmetad -f
+             ├─systemd-resolved.service
+             │ └─825 /lib/systemd/systemd-resolved
+             ├─dbus.service
+             │ └─927 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+             ├─systemd-timesyncd.service
+             │ └─629 /lib/systemd/systemd-timesyncd
+             └─systemd-logind.service
+               └─994 /lib/systemd/systemd-logind
+
+cat /proc/meminfo
+MemTotal:        6103036 kB
+MemFree:         4838580 kB
+MemAvailable:    5639588 kB
+Buffers:          160756 kB
+Cached:           701496 kB
+SwapCached:            0 kB
+Active:           586128 kB
+Inactive:         345664 kB
+Active(anon):      69916 kB
+Inactive(anon):      240 kB
+Active(file):     516212 kB
+Inactive(file):   345424 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         69576 kB
+Mapped:            49152 kB
+Shmem:               612 kB
+Slab:             278320 kB
+SReclaimable:     237000 kB
+SUnreclaim:        41320 kB
+KernelStack:        3008 kB
+PageTables:         9436 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3051516 kB
+Committed_AS:     326416 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      108404 kB
+DirectMap2M:     3037184 kB
+DirectMap1G:     5242880 kB
+
+sudo cat /etc/shadow
+root:$6$wkTEo8CR$lzQYtKQGSZLOHiHnUVViCol8dO2Um4jg8N0eKu1/L0qg6ZAS01h2NqcrFGHCEKneJ4doHrmVnLoOGYXLOEpET1:19034:0:99999:7:::
+daemon:*:18325:0:99999:7:::
+bin:*:18325:0:99999:7:::
+sys:*:18325:0:99999:7:::
+sync:*:18325:0:99999:7:::
+games:*:18325:0:99999:7:::
+man:*:18325:0:99999:7:::
+lp:*:18325:0:99999:7:::
+mail:*:18325:0:99999:7:::
+news:*:18325:0:99999:7:::
+uucp:*:18325:0:99999:7:::
+proxy:*:18325:0:99999:7:::
+www-data:*:18325:0:99999:7:::
+backup:*:18325:0:99999:7:::
+list:*:18325:0:99999:7:::
+irc:*:18325:0:99999:7:::
+gnats:*:18325:0:99999:7:::
+nobody:*:18325:0:99999:7:::
+systemd-network:*:18325:0:99999:7:::
+systemd-resolve:*:18325:0:99999:7:::
+syslog:*:18325:0:99999:7:::
+messagebus:*:18325:0:99999:7:::
+_apt:*:18325:0:99999:7:::
+lxd:*:18325:0:99999:7:::
+uuidd:*:18325:0:99999:7:::
+dnsmasq:*:18325:0:99999:7:::
+landscape:*:18325:0:99999:7:::
+sshd:*:18325:0:99999:7:::
+pollinate:*:18325:0:99999:7:::
+ubuntu:!:19034:0:99999:7:::
+askar1:$1$mdv4K.vH$rS0f7jY3QQ.zock.fev/v0:19034:0:99999:7:::
+askar2:$1$6IraLPvB$tfs8b8YRYLnEmZUio4LLk0:19034:0:99999:7:::
+askar3:$1$rFVT76Tq$xd0lbpM0pumgmuq5u1Xf8.:19034:0:99999:7:::
+askar4:$1$sdl7nyyT$VlocoOkfnRviepMWoeYez1:19034:0:99999:7:::
+askar5:$1$xrgl6DwM$kQtI8gvmjiHvh/c8mg.Jk0:19034:0:99999:7:::
+askar6:$1$KdLemPUe$7uDVEy/zwih5DYvXExE6x.:19034:0:99999:7:::
+askar7:$1$d8hhrBNE$Yb/AT9HiZTK0RQ7Bik6HO/:19034:0:99999:7:::
+askar8:$1$oLBLSy3F$CHT6HV8KYzWm/mkd21c5C.:19034:0:99999:7:::
+askar9:$1$2j8b.Zl4$w7T9M4dxqk/x4mWg71rYS/:19034:0:99999:7:::
+askar10:$1$FCZWt7a3$JAHbDwczx.bj8eALvAaYl/:19034:0:99999:7:::
+askar11:$1$nJoeMvXb$7b5yNimTyMYDq50Ki5.x7.:19034:0:99999:7:::
+askar12:$1$nDUwYCvm$bOLFmyfIVSxx3trhdx2Od0:19034:0:99999:7:::
+askar13:$1$KOr7c3Dm$M2hojOM9/QIZIikbIyP8G0:19034:0:99999:7:::
+askar14:$1$blXPiFek$iz16cuCReghtJ4YIzhKjn1:19034:0:99999:7:::
+askar15:$1$Jn4T6lrZ$Hz1/d9Wf6LTQX0QBB0ZJI/:19034:0:99999:7:::
+askar16:$1$IAaffR8H$Rc7YF3.VHnuzh9bwPyPN80:19034:0:99999:7:::
+askar17:$1$.LLp1QZW$kG/6sAtk67tln2BhDGOKB/:19034:0:99999:7:::
+askar18:$1$cSZQSN0Q$bFShyzI5tuBgRuqlO9C.V0:19034:0:99999:7:::
+askar19:$1$Cs7N4twX$9tjHHX0JwAarPgJ6.xzwN.:19034:0:99999:7:::
+askar20:$1$NRDCTTZE$hLKUSrMRbh9gTMFbcenFW.:19034:0:99999:7:::
+askar21:$1$YC7wmjwY$s0Ip9.1RSFQiIQxZ4kBSk/:19034:0:99999:7:::
+askar22:$1$DiH/rw54$0ma7NXvGTTC4Zrk4wn/je1:19034:0:99999:7:::
+askar23:$1$ShVdtpt7$npzJUfZCuX.1thmK3XxJg/:19034:0:99999:7:::
+radicle:$1$sVpjA7FH$lVOR9EyN71RzoIasP0yIB1:19034:0:99999:7:::
+cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:100:102:systemd Network Management,,,:/run/systemd/netif:/usr/sbin/nologin
+systemd-resolve:x:101:103:systemd Resolver,,,:/run/systemd/resolve:/usr/sbin/nologin
+syslog:x:102:106::/home/syslog:/usr/sbin/nologin
+messagebus:x:103:107::/nonexistent:/usr/sbin/nologin
+_apt:x:104:65534::/nonexistent:/usr/sbin/nologin
+lxd:x:105:65534::/var/lib/lxd/:/bin/false
+uuidd:x:106:110::/run/uuidd:/usr/sbin/nologin
+dnsmasq:x:107:65534:dnsmasq,,,:/var/lib/misc:/usr/sbin/nologin
+landscape:x:108:112::/var/lib/landscape:/usr/sbin/nologin
+sshd:x:109:65534::/run/sshd:/usr/sbin/nologin
+pollinate:x:110:1::/var/cache/pollinate:/bin/false
+ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash
+askar1:x:1001:27::/home/useraccounts/askar1:/bin/bash
+askar2:x:1002:27::/home/useraccounts/askar2:/bin/bash
+askar3:x:1003:27::/home/useraccounts/askar3:/bin/bash
+askar4:x:1004:27::/home/useraccounts/askar4:/bin/bash
+askar5:x:1005:27::/home/useraccounts/askar5:/bin/bash
+askar6:x:1006:27::/home/useraccounts/askar6:/bin/bash
+askar7:x:1007:27::/home/useraccounts/askar7:/bin/bash
+askar8:x:1008:27::/home/useraccounts/askar8:/bin/bash
+askar9:x:1009:27::/home/useraccounts/askar9:/bin/bash
+askar10:x:1010:27::/home/useraccounts/askar10:/bin/bash
+askar11:x:1011:27::/home/useraccounts/askar11:/bin/bash
+askar12:x:1012:27::/home/useraccounts/askar12:/bin/bash
+askar13:x:1013:27::/home/useraccounts/askar13:/bin/bash
+askar14:x:1014:27::/home/useraccounts/askar14:/bin/bash
+askar15:x:1015:27::/home/useraccounts/askar15:/bin/bash
+askar16:x:1016:27::/home/useraccounts/askar16:/bin/bash
+askar17:x:1017:27::/home/useraccounts/askar17:/bin/bash
+askar18:x:1018:27::/home/useraccounts/askar18:/bin/bash
+askar19:x:1019:27::/home/useraccounts/askar19:/bin/bash
+askar20:x:1020:27::/home/useraccounts/askar20:/bin/bash
+askar21:x:1021:27::/home/useraccounts/askar21:/bin/bash
+askar22:x:1022:27::/home/useraccounts/askar22:/bin/bash
+askar23:x:1023:27::/home/useraccounts/askar23:/bin/bash
+radicle:x:1024:27::/home/useraccounts/radicle:/bin/bash
+lspci -vv
+00:00.0 Host bridge: Intel Corporation 440FX - 82441FX PMC [Natoma] (rev 02)
+	Subsystem: Red Hat, Inc. Qemu virtual machine
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+
+00:01.0 ISA bridge: Intel Corporation 82371SB PIIX3 ISA [Natoma/Triton II]
+	Subsystem: Red Hat, Inc. Qemu virtual machine
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+
+00:01.1 IDE interface: Intel Corporation 82371SB PIIX3 IDE [Natoma/Triton II] (prog-if 80 [ISA Compatibility mode-only controller, supports bus mastering])
+	Subsystem: Red Hat, Inc. Qemu virtual machine
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B+ ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Region 0: [virtual] Memory at 000001f0 (32-bit, non-prefetchable) [size=8]
+	Region 1: [virtual] Memory at 000003f0 (type 3, non-prefetchable)
+	Region 2: [virtual] Memory at 00000170 (32-bit, non-prefetchable) [size=8]
+	Region 3: [virtual] Memory at 00000370 (type 3, non-prefetchable)
+	Region 4: I/O ports at c160 [size=16]
+	Kernel driver in use: ata_piix
+
+00:01.3 Bridge: Intel Corporation 82371AB/EB/MB PIIX4 ACPI (rev 03)
+	Subsystem: Red Hat, Inc. Qemu virtual machine
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B+ ParErr- DEVSEL=medium >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Interrupt: pin A routed to IRQ 9
+
+00:02.0 VGA compatible controller: Red Hat, Inc. QXL paravirtual graphic card (rev 04) (prog-if 00 [VGA controller])
+	Subsystem: Red Hat, Inc. QEMU Virtual Machine
+	Control: I/O+ Mem+ BusMaster- SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap- 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Interrupt: pin A routed to IRQ 10
+	Region 0: Memory at f4000000 (32-bit, non-prefetchable) [size=64M]
+	Region 1: Memory at f8000000 (32-bit, non-prefetchable) [size=64M]
+	Region 2: Memory at fc110000 (32-bit, non-prefetchable) [size=8K]
+	Region 3: I/O ports at c100 [size=32]
+	Expansion ROM at 000c0000 [disabled] [size=128K]
+
+00:03.0 Ethernet controller: Red Hat, Inc. Virtio network device
+	Subsystem: Red Hat, Inc. Virtio network device
+	Physical Slot: 3
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 11
+	Region 0: I/O ports at c000 [size=64]
+	Region 1: Memory at fc112000 (32-bit, non-prefetchable) [size=4K]
+	Region 4: Memory at febe8000 (64-bit, prefetchable) [size=16K]
+	Expansion ROM at fc000000 [disabled] [size=512K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+00:04.0 Ethernet controller: Red Hat, Inc. Virtio network device
+	Subsystem: Red Hat, Inc. Virtio network device
+	Physical Slot: 4
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 10
+	Region 0: I/O ports at c040 [size=64]
+	Region 1: Memory at fc113000 (32-bit, non-prefetchable) [size=4K]
+	Region 4: Memory at febec000 (64-bit, prefetchable) [size=16K]
+	Expansion ROM at fc080000 [disabled] [size=512K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+00:05.0 SCSI storage controller: Red Hat, Inc. Virtio SCSI
+	Subsystem: Red Hat, Inc. Virtio SCSI
+	Physical Slot: 5
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 10
+	Region 0: I/O ports at c080 [size=64]
+	Region 1: Memory at fc114000 (32-bit, non-prefetchable) [size=4K]
+	Region 4: Memory at febf0000 (64-bit, prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+00:06.0 Communication controller: Red Hat, Inc. Virtio console
+	Subsystem: Red Hat, Inc. Virtio console
+	Physical Slot: 6
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 11
+	Region 0: I/O ports at c0c0 [size=64]
+	Region 1: Memory at fc115000 (32-bit, non-prefetchable) [size=4K]
+	Region 4: Memory at febf4000 (64-bit, prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+00:07.0 Unclassified device [00ff]: Red Hat, Inc. Virtio memory balloon
+	Subsystem: Red Hat, Inc. Virtio memory balloon
+	Physical Slot: 7
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 11
+	Region 0: I/O ports at c120 [size=32]
+	Region 4: Memory at febf8000 (64-bit, prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+00:08.0 Unclassified device [00ff]: Red Hat, Inc. Virtio RNG
+	Subsystem: Red Hat, Inc. Virtio RNG
+	Physical Slot: 8
+	Control: I/O+ Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR+ FastB2B- DisINTx-
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0
+	Interrupt: pin A routed to IRQ 10
+	Region 0: I/O ports at c140 [size=32]
+	Region 4: Memory at febfc000 (64-bit, prefetchable) [size=16K]
+	Capabilities: <access denied>
+	Kernel driver in use: virtio-pci
+
+arp -a
+? (129.168.169.186) at <incomplete> on ens4
+? (192.186.169.202) at fa:16:3e:7e:f9:f4 [ether] on ens3
+? (192.186.169.41) at fa:16:3e:7f:c9:bf [ether] on ens3
+? (129.168.169.52) at fa:16:3e:96:33:38 [ether] on ens4
+? (192.186.169.142) at fa:16:3e:ec:05:a8 [ether] on ens3
+lsusb
+lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda       8:0    0   32G  0 disk 
+├─sda1    8:1    0 31.9G  0 part /
+├─sda14   8:14   0    4M  0 part 
+└─sda15   8:15   0  106M  0 part /boot/efi
+sudo fdisk -l
+Disk /dev/sda: 32 GiB, 34359738368 bytes, 67108864 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: E8F42FBD-B080-4630-8075-288F523CE46A
+
+Device      Start      End  Sectors  Size Type
+/dev/sda1  227328 67108830 66881503 31.9G Linux filesystem
+/dev/sda14   2048    10239     8192    4M BIOS boot
+/dev/sda15  10240   227327   217088  106M EFI System
+
+Partition table entries are not in disk order.
+free -m
+              total        used        free      shared  buff/cache   available
+Mem:           5959         161        4725           0        1073        5507
+Swap:             0           0           0
+sudo dmidecode -t bios
+# dmidecode 3.1
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: SeaBIOS
+	Version: 1.13.0-1ubuntu1.1
+	Release Date: 04/01/2014
+	Address: 0xE8000
+	Runtime Size: 96 kB
+	ROM Size: 64 kB
+	Characteristics:
+		BIOS characteristics not supported
+		Targeted content distribution is supported
+	BIOS Revision: 0.0
+
+
+
+

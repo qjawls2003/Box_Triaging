@@ -1,0 +1,46 @@
+T1
+
+rsyslog
+selinux
+
+T2
+
+admin on 8/23/2022 12:11 PM 
+baretail
+lf
+certutil -hashfile c:\lf.exe MD5
+certutil -hashfile c:\Users\Administrator\Downloads\baretail.exe MD5
+certutil -hashfile c:\baretail.exe MD5
+reg query HKEY_CURRENT_USER\Software
+
+
+T4
+sudo ls -latr /root/Sup3rS3cr3t
+ls -latr ./.ssh
+
+T5
+tcpdump
+radicle user
+ps -elf | grep radicle
+cat ./.bash_logout
+
+
+T6
+ls -latr /.malice
+cat /.malice/malice.sh
+cat /.malice/alias
+cat /etc/cron.hourly/malice
+SecurityNotice.txt
+sudo ls -latr /root/Desktop
+rsyslog @remote-host:1514
+md5sum /.malice/malice.sh
+cat /.malice/.bashrc_malice
+cat ./SecurityNotice.txt
+cat ./.bashrc
+
+
+T7
+Kaspersky
+certutil -hashfile c:\kaspersky.exe MD5
+dir /o:d /t:w "C:\Program Files (x86)"
+

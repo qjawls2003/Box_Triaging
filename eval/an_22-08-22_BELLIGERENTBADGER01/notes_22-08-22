@@ -1,0 +1,2089 @@
+####Notes 22-08-22
+
+Start: 1300Z
+End: 1900Z
+
+>T1: 10.50.29.166
+->T2: 10.20.169.13
+-->T3: 10.20.169.239
+--->T4: 192.186.169.133
+---->T5: Suspected mail server?
+---->T6: Suspected mail server?
+
+2022-08-22 17:55:35-- DONE
+
+=========================
+T1: 10.50.29.166
+=========================
+X-----------------------
+
+2022-08-22 13:01:55-- ON
+
+2022-08-22 13:01:58-- start vetting
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 53367sec preferred_lft 53367sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[engineer4@ext-rtr ~]$ ls -latr .
+total 28
+-rw-r--r--.  1 engineer4 wheel   231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 engineer4 wheel   193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 engineer4 wheel    18 Oct 30  2018 .bash_logout
+drwxr-xr-x.  2 engineer4 wheel     6 Feb 11  2022 LOGS
+drwxr-xr-x. 26 root      root   4096 Feb 11  2022 ..
+drwx------.  3 engineer4 wheel    95 May 13 15:13 .
+-rw-------.  1 engineer4 wheel 10986 Aug 17 17:32 .bash_history
+
+4 S root      1176     1  0  80   0 - 66523 poll_s Jun18 ?        00:07:15 /usr/sbin/rsyslogd -n
+5 S root       669     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:06 /sbin/auditd
+
+[engineer4@ext-rtr ~]$ date; date -u
+Mon Aug 22 13:04:34 UTC 2022
+Mon Aug 22 13:04:34 UTC 2022
+
+[engineer4@ext-rtr ~]$ uname -a
+Linux ext-rtr 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+-rw-------.  1 root   root         0 Aug 21 03:28 spooler
+-rw-------.  1 root   root         0 Aug 21 03:28 maillog
+drwxr-xr-x.  8 root   root      4096 Aug 21 03:28 .
+-rw-r--r--.  1 root   root      9823 Aug 22 13:02 cron
+-rw-------.  1 root   root     12062 Aug 22 13:03 messages
+-rw-------.  1 root   root      8511 Aug 22 13:04 secure
+-rw-rw-r--.  1 root   utmp    350208 Aug 22 13:05 wtmp
+-rw-r--r--.  1 root   root    299300 Aug 22 13:05 lastlog
+
+####remote rsyslog####
+*.* @@10.50.22.142:514
+
+-rw-------. 1 root root              13110 Aug 22 13:06 /var/log/messages
+-rw-rw-r--. 1 root utmp             350976 Aug 22 13:06 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 22 13:06 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               9600 Aug 22 13:06 /run/utmp
+-rw-------. 1 root root            7657296 Aug 22 13:06 /var/log/audit/audit.log
+-rw-------. 1 root root                124 Aug 22 13:06 /var/lib/rsyslog/imjournal.state
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 22 13:06 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+-rw-------. 1 root root              52591 Aug 22 13:06 /var/log/secure
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-22 13:18:06-- done vetting
+
+2022-08-22 17:55:25-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.13
+=========================
+X-----------------------
+
+2022-08-22 13:19:28-- ON
+
+2022-08-22 13:21:03-- start vetting
+
+caisson4@FILESERVER C:\Users\caisson4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : FILESERVER
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-F1-DF-BF
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::bdfc:a978:7731:1c89%5(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.169.13(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 18, 2022 1:01:37 AM
+   Lease Expires . . . . . . . . . . : Tuesday, August 23, 2022 9:56:56 AM
+   Default Gateway . . . . . . . . . : 10.20.169.1
+   DHCP Server . . . . . . . . . . . : 10.20.169.3
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-43-FA-16-3E-F1-DF-BF
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+caisson4@FILESERVER C:\Users\caisson4>systeminfo
+
+Host Name:                 FILESERVER
+OS Name:                   Microsoft Windows Server 2019 Datacenter
+OS Version:                10.0.17763 N/A Build 17763
+
+caisson4@FILESERVER C:\Users\caisson4>date /t 
+Mon 08/22/2022  
+
+caisson4@FILESERVER C:\Users\caisson4>time /t 
+01:22 PM 
+
+
+
+sshd.exe                      4424 Services                   0      6,884 K Unknown         VIRTUAL USERS\sshd_4176
+  TCP    10.20.169.13:62649     10.20.169.239:52230    ESTABLISHED     2628 
+
+caisson4@FILESERVER C:\Users\caisson4>dir /o:d /t:w c:\
+Hello Intruder!
+
+
+PS C:\Users\caisson4> Get-FileHash -Algorithm MD5 -Path (Get-ChildItem "c:\windows\WIN.INTRUDER.DOSKEY")
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+MD5             35147B53D068392C052E19F120B9E5E9                                       C:\windows\WIN.INTRUDER.DOSKEY
+
+PS C:\Users\caisson4> Get-Content c:\windows\WIN.INTRUDER.DOSKEY
+dir=echo Hello Intruder! && echo *** >> %HOMEPATH%\IntruderLog.txt && date /t >> %HOMEPATH%\IntruderLog.txt && time /t >> %HOMEPATH%\Int
+ruderLog.txt && echo Unauthorized Access Detected; Intrusion Logged and Threat Detection Team Notified of User: >> %HOMEPATH%\IntruderLo
+g.txt && whoami >> %HOMEPATH%\IntruderLog.txt && echo *** >> %HOMEPATH%\IntruderLog.txt
+
+
+2022-08-22 13:52:36-- done vetting
+
+Delete this file
+'C:\Users\caisson4\IntruderLog.txt'
+
+del /f 'C:\Users\caisson4\IntruderLog.txt'
+
+Time deleted:
+2022-08-22 17:43:15-- deleted
+
+2022-08-22 17:53:19-- OFF
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.239
+=========================
+X-----------------------
+
+2022-08-22 14:05:51-- ON
+
+2022-08-22 14:06:31-- start vetting
+
+NOC_Admin4@Vyos2:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:32:1d:b6 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.239/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe32:1db6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:1d:e8:81 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.206/24 brd 192.186.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe1d:e881/64 scope link 
+       valid_lft forever preferred_lft forever
+
+NOC_Admin4@Vyos2:~$ ls -latr /tmp
+total 8
+drwxr-xr-x 22 root root      4096 Jun 18 01:09 ..
+-rw-------  1 root vyattacfg    0 Jun 18 01:09 uny2c3-ssh-key
+
+5 S root      2005     1  0  80   0 - 29938 ?      Jun18 ?        00:00:09 /usr/sbin/rsyslogd -c4
+
+NOC_Admin4@Vyos2:~$ date; date -u
+Mon Aug 22 14:07:51 UTC 2022
+Mon Aug 22 14:07:51 UTC 2022
+
+NOC_Admin4@Vyos2:~$ uname -a
+Linux Vyos2 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64 GNU/Linux
+
+2022-08-22 14:30:10-- done vetting
+
+2022-08-22 17:38:08-- OFF
+
+------------------------X
+=========================
+
+=========================
+T4: 192.186.169.133
+=========================
+X-----------------------
+
+
+2022-08-22 14:30:17-- ON
+
+2022-08-22 14:30:20-- start vetting
+
+[askar4@desktop-admin2 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:d3:b6:f8 brd ff:ff:ff:ff:ff:ff
+    inet 10.101.169.93/8 brd 10.255.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fed3:b6f8/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7f:c9:bf brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.41/24 brd 192.186.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe7f:c9bf/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+[askar4@desktop-admin2 ~]$ ls -latr .
+total 24
+-rw-r--r--.  1 askar4 wheel  231 Oct 30  2018 .bashrc
+-rw-r--r--.  1 askar4 wheel  193 Oct 30  2018 .bash_profile
+-rw-r--r--.  1 askar4 wheel   18 Oct 30  2018 .bash_logout
+drwx------.  2 askar4 wheel   57 May 20 13:00 .ssh
+drwxr-xr-x. 26 root   root  4096 May 20 13:01 ..
+drwx------.  3 askar4 wheel   95 May 20 17:41 .
+-rw-------.  1 askar4 wheel 5763 May 25 15:50 .bash_history
+
+[askar4@desktop-admin2 ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 May 20 13:00 .ssh
+drwxr-xr-x.  2 root root  191 May 20 13:01 Sup3rS3cr3t
+dr-xr-x---.  4 root root  189 May 20 13:25 .
+-rw-------.  1 root root  805 Aug 22 13:47 .bash_history
+
+4 S root      1360     1  0  80   0 - 61831 poll_s Jun18 ?        00:06:36 /usr/sbin/rsyslogd -n
+5 S root       564     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:05 /sbin/auditd
+
+[askar4@desktop-admin2 ~]$ date; date -u
+Mon Aug 22 14:33:26 UTC 2022
+Mon Aug 22 14:33:26 UTC 2022
+
+[askar4@desktop-admin2 ~]$ uname -a
+Linux desktop-admin2 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+-rw-------. 1 root root 51200 Aug 22 03:15 /var/account/pacct-20220822
+-rw-------. 1 root root 92352 Aug 22 14:33 /var/account/pacct
+
+-rw-rw-r--. 1 root utmp              97536 Aug 22 14:29 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 22 14:29 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               5376 Aug 22 14:29 /run/utmp
+-rw-------. 1 root root              13602 Aug 22 14:30 /var/log/messages
+-rw-------. 1 root root                125 Aug 22 14:37 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root             103616 Aug 22 14:37 /var/account/pacct
+-rw-------. 1 root root             578618 Aug 22 14:37 /var/log/audit/audit.log
+-rw-------. 1 root root              74866 Aug 22 14:37 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 8388608 Aug 22 14:37 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[askar4@desktop-admin2 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+? (10.50.255.254) at <incomplete> on eth0
+? (10.101.169.35) at fa:16:3e:93:96:a4 [ether] on eth0
+? (192.186.169.206) at fa:16:3e:1d:e8:81 [ether] on eth1
+? (10.101.169.30) at fa:16:3e:26:73:11 [ether] on eth0
+
+2022-08-22 14:47:42-- done vetting
+
+[askar4@desktop-admin2 ~]$ sudo ls -latr /root/Sup3rS3cr3t
+total 28
+-rw-r--r--. 1 root root 1014 May 20 13:01 S3cr3tSqu1r1.stuff
+-rw-r--r--. 1 root root   17 May 20 13:01 S3cr3tSqu1r12.stuff
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r2.stuff
+-rw-r--r--. 1 root root   12 May 20 13:01 S3cr3tSqu1r13.stuff
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r3.stuff
+-rw-r--r--. 1 root root   20 May 20 13:01 S3cr3tSqu1r14.stuff
+drwxr-xr-x. 2 root root  191 May 20 13:01 .
+-rw-r--r--. 1 root root 1000 May 20 13:01 S3cr3tSqu1r4.stuff
+dr-xr-x---. 4 root root  189 May 20 13:25 ..
+[askar4@desktop-admin2 ~]$ 
+
+collecting
+2022-08-22 14:53:49-- 
+REMOTE
+[askar4@desktop-admin2 ~]$ md5sum .ssh/id_rsa
+b273c57ab1577af97fd5b51c8a884a7c  .ssh/id_rsa
+
+[askar4@desktop-admin2 ~]$ md5sum .ssh/id_rsa.pub
+a02525d5a2e1ba26e0e89f6229e8986f  .ssh/id_rsa.pub
+
+LOCAL
+md5sum id_rsa
+b273c57ab1577af97fd5b51c8a884a7c  id_rsa
+md5sum id_rsa.pub
+a02525d5a2e1ba26e0e89f6229e8986f  id_rsa.pub
+
+2022-08-22 15:02:46-- scanning
+
+[askar4@desktop-admin2 ~]$ for i in {1..50}; do sudo ping -c 1 -W 1 10.101.169.$i; done | grep 'bytes from'
+64 bytes from 10.101.169.1: icmp_seq=1 ttl=64 time=2.11 ms
+64 bytes from 10.101.169.2: icmp_seq=1 ttl=64 time=2.84 ms
+64 bytes from 10.101.169.4: icmp_seq=1 ttl=64 time=4.20 ms
+64 bytes from 10.101.169.30: icmp_seq=1 ttl=128 time=1.96 ms
+64 bytes from 10.101.169.35: icmp_seq=1 ttl=64 time=7.39 ms
+
+grep tcp proxychains_nmap
+Host: 10.101.169.30 ()	Ports: 33501/open/tcp/////
+
+proxychains nc 10.101.169.35 33501
+SSH-2.0-OpenSSH_7.4
+
+
+proxychains nc 10.101.169.30 33501
+SSH-2.0-OpenSSH_for_Windows_8.1
+
+2022-08-22 15:40:42-- done scanning
+
+2022-08-22 17:36:28-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T5: 10.101.169.30
+=========================
+X-----------------------
+
+2022-08-22 15:45:20-- ON
+
+2022-08-22 15:45:23-- start vetting
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-EMAIL2
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No    
+   WINS Proxy Enabled. . . . . . . . : No    
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-26-73-11
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::f53d:6e11:eb15:face%5(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.101.169.30(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Tuesday, August 9, 2022 10:43:45 PM
+   Lease Expires . . . . . . . . . . : Tuesday, August 23, 2022 6:32:56 AM
+   Default Gateway . . . . . . . . . : 10.101.169.1
+   DHCP Server . . . . . . . . . . . : 10.101.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-4B-FA-16-3E-26-73-11
+   DNS Servers . . . . . . . . . . . : 156.154.70.22
+                                       156.154.71.22
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>date /t 
+Mon 08/22/2022
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>time /t
+03:46 PM
+
+dragon_updater.exe            1452 Services                   0      6,884 K Unknown         NT AUTHORITY\SYSTEM
+
+cavwp.exe                     1804 Services                   0     44,896 K Unknown         NT AUTHORITY\SYSTEM
+
+csssrv64.exe                  2476 Services                   0     11,332 K Unknown         NT AUTHORITY\SYSTEM
+
+cmdagent.exe                  2348 Services                   0     32,196 K Unknown         NT AUTHORITY\SYSTEM
+
+CommandLine="C:\Program Files (x86)\Comodo\Dragon\dragon_updater.exe"
+CommandLine="C:\Program Files\COMODO\COMODO Internet Security\cavwp.exe" /ModeAvMonitor -Embedding
+
+COMODO Autostart {D5EFF3B3-E126-4AF6-BCE9-852A72129E10}    REG_SZ    C:\Program Files\COMODO\COMODO Internet Security\cis.exe --cistrayUI
+
+HKEY_LOCAL_MACHINE\software\COMODO
+
+TaskName:                             \COMODO\COMODO Autostart {D5EFF3B3-E126-4AF6-BCE9-852A72129E10}
+TaskName:                             \COMODO\COMODO CMC {06A09C0F-DD9C-4191-A670-71115CD78627}
+TaskName:                             \COMODO\COMODO CMC {06A09C0F-DD9C-4191-A670-71115CD78627}
+TaskName:                             \COMODO\COMODO Maintenance {947247B5-026A-4437-9371-770782BE839D}
+TaskName:                             \COMODO\COMODO Scan {F140D794-60B6-4F00-9235-D6457AA25B22}
+TaskName:                             \COMODO\COMODO Signature Update {B9D5C6F9-17D2-4917-8BD0-614BAA1C6A59}
+TaskName:                             \COMODO\COMODO Signature Update {B9D5C6F9-17D2-4917-8BD0-614BAA1C6A59}
+TaskName:                             \COMODO\COMODO Telemetry {18AD3DFA-30C0-4B5F-84F7-F1870B1A4921}
+TaskName:                             \COMODO\COMODO Telemetry {18AD3DFA-30C0-4B5F-84F7-F1870B1A4921}
+TaskName:                             \COMODO\COMODO Update {A6D52E4F-569B-4756-B3D8-DF217313DA85}
+TaskName:                             \COMODO\COMODO Update {A6D52E4F-569B-4756-B3D8-DF217313DA85}
+
+ Directory of c:\
+
+12/07/2019  09:14 AM    <DIR>          PerfLogs
+02/11/2022  07:59 PM         4,112,976 hMailServer.exe
+02/11/2022  07:59 PM         5,637,360 comodo.exe
+
+Directory of c:\windows\temp
+08/22/2022  01:04 PM    <DIR>          Comodo LogsFolder
+08/22/2022  01:05 PM               156 dragon_version.inf
+08/10/2022  04:52 AM       120,204,832 dragon_setup.exe
+
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>type c:\windows\temp\dragon_version.inf
+<?xml version='1.0' encoding='UTF-8'?>
+<DragonVersion version='103.0.5060.114' url='http://download.comodo.com/browser/release/dragon/x64/dragonsetup.exe'/>
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>certutil -hashfile c:\comodo.exe MD5
+MD5 hash of c:\comodo.exe:
+36ea4d3e5331812f6d045e2bfc893f05
+CertUtil: -hashfile command completed successfully.
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>certutil -hashfile c:\hmailServer.exe MD5
+MD5 hash of c:\hmailServer.exe:
+0a7585129239412e4a7c16a7fec8b67a
+CertUtil: -hashfile command completed successfully.
+
+2022-08-22 16:32:26-- done vetting
+
+2022-08-22 16:32:28-- catalog accounts
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>net user
+
+User accounts for \\DESKTOP-EMAIL2
+
+-------------------------------------------------------------------------------
+Admin                    Administrator            askar1
+askar10                  askar11                  askar12
+askar13                  askar14                  askar15
+askar16                  askar17                  askar18
+askar19                  askar2                   askar20
+askar21                  askar22                  askar23
+askar3                   askar4                   askar5
+askar6                   askar7                   askar8
+askar9                   cloudbase-init           DefaultAccount
+Guest                    sshd                     WDAGUtilityAccount
+The command completed successfully.
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>net localgroup
+
+Aliases for \\DESKTOP-EMAIL2
+
+-------------------------------------------------------------------------------
+*Access Control Assistance Operators
+*Administrators
+*Backup Operators
+*Cryptographic Operators
+*Device Owners
+*Distributed COM Users
+*Event Log Readers
+*Guests
+*Hyper-V Administrators
+*IIS_IUSRS
+*Network Configuration Operators
+*Performance Log Users
+*Performance Monitor Users
+*Power Users
+*Remote Desktop Users
+*Remote Management Users
+*Replicator
+*System Managed Accounts Group
+*Users
+The command completed successfully.
+
+askar4@DESKTOP-EMAIL2 C:\Users\askar4>dir /o:d /t:w "C:\Program Files (x86)\hMailServer\Data\Workgroup"
+ Volume in drive C is OS
+ Volume Serial Number is A214-0667
+
+ Directory of C:\Program Files (x86)\hMailServer\Data\Workgroup
+
+02/11/2022  07:59 PM    <DIR>          ..
+02/11/2022  07:59 PM    <DIR>          .
+02/11/2022  07:59 PM    <DIR>          Air Defense
+02/11/2022  07:59 PM    <DIR>          Command Elements
+02/11/2022  07:59 PM    <DIR>          Cyber-Comms Detachment
+02/11/2022  07:59 PM    <DIR>          Ground Forces
+02/11/2022  07:59 PM    <DIR>          R&D
+02/11/2022  07:59 PM    <DIR>          Supply
+03/21/2022  04:42 PM    <DIR>          Armored Cavalry
+               0 File(s)              0 bytes
+               9 Dir(s)  11,834,462,208 bytes free
+
+
+2022-08-22 16:42:46-- hashes
+
+REMOTE
+
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+MD5             3A0FB213A7D5570E2E04C36753E1971A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             60789BF7BE516CEBB36E6C0779327B1E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             0517217D241BB87799AD9068CAB0A848                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             3175712DE3E1A43574105F8C6F9F2F6F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             C2CE2E7E3B581A27135D902780FF3196                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             CB2351BD579F4FC22DE8601FE660168F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             CF6D3FA0C4E1F14AE50FFFD97CBB9EEC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             F77ABB8AEFB704932CB8A45064D98B97                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             C0CDF8B48A0595C04B7A45F2FD70B994                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             5D6131018C35887377190A6DDF426595                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             32F6E5BAA9BF61707CE761281F317A48                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             90C8063989ECB9E8DF95C20F0AF55891                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             97A63BA09D9FAC44462AF6B585D428A4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             71A88BAEDCFBB6276752DC4197D3174F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             B20922644030B94834B9A7AB76E53C29                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             2FB99B23B47378A375D5DA2B794207E3                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             C3ACD27453B1DF86C2C7691BF48FAFFA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             625667EEC84E1A7E4CE05B0E506988F2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             7E8FD61119C295A8C1F754A9F0C3F55F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             A4858BE94F6D3CEAAAC29BF828D263F2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             108AFC25F878CACE0914B9468E2178BF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             D4ABB1FA69DE259573E2230355B26610                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             11494D752BB0189F51D44294184B2ACD                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             32DB1465E8FBAC3AA1925CD7B6CA0326                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             3BC41DF19B0F7C47C47EEF0FFCD718D0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             88CE9B65D3962F0364BA961C35B5906C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             F47E5CE08AC1F1D44A8621BE3D46AA30                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             ED9597B494F2ECA2C371E7E63ACE3696                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             EFCFD4AF8D1A79DDB06823FCE573D1BB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             135689A60891E2AFE7FFB26751533A6C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             0BD637628F9C5E45422AE95BA1FFFA82                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             36FE982310EE27A8ED8E00AB44B9F50B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             4A0BAF3096128F3C56DAC3E085217873                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             1D9E4FB10246213F889FA35BE444AD79                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             D51ECC97C09EBD22827A92942881F524                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             325DB0E6072355DB69E433BBD89C4626                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             E5E0501D1E7021D11986D72C5126AD51                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             9F9CEEBB480487FE2351711F81B96607                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             A82EF825560625DAE507292B96B02073                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             DA0147B7B1474FC6C5EEF8C32A5B90C4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             1595425998F557986A5786F79B213D8E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             B2301F2C753524A9F354AE7A7CDB497B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             E9CE34395C176A9BEABF8F6344A06C4F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             7D25C24A27FBD6C94AD0866070557703                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             F0C973CD6E9CA475EB52165D34B25222                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             DB4DE1D3B9E240BB362BD08C4741A48C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air...
+MD5             A1B424EA548D9BFE76774EF48A054662                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             499FFD749FACD04AEC65BF00E78DA949                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             DDF13F3DB0C2BB0676BF1010400C6D4D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             08D4DD228ACB5AB2A4B55A4E2F680DE0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             F456A2AD9D499D36C67F8EB08A0B298D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Air... 
+MD5             460FC684EB3D49C3B20A218AA55AF436                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             11BA3AEEB06C9621FABF6E3447CF5556                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             339390D0FEEC3B119466717FB6095D69                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             18DF20BB824B1C240720A74C4BC4C9F4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             1CAED48FF975E5C1E30AF161A725C995                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             612BE32EB97B89FA12108A23E47C5743                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             7E0EDC1A95C1D13662DDD388DD485149                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             65E5D085990C955DB45A6F1504ABA8D0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             F464C1C70C83A09DB6D7B3193415A0AC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             31BEB5E5B6BE8107B33F56E422A3412E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             589BB3731CA8038646771EA822FD452E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             2ACFF9B1E6B3EB0083774703A7A5A288                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             F4BF3A86106A11926470A002616F6779                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             38BAA1213DB6B0DEB5A04C5DDAC89F2A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             D87BAFA3F14846D9036F2E342F36D5F1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             D44ED4789B2D5B89057EE1F885916A49                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             C45174AAFCC1A4CB562986A653A1D422                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             3AD72189F2D305191127BD04363799AF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             95E9B5719B3F0A1444D37C57F070DEC9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             99D6AC0F96507CEEA48A9A79D1706FD3                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             DCF3903551CD227105303EE7DB7AB175                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             5FD4E35594E655CA31C12359B21D0846                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             F6FF1BA48A902DEB2C99208530CB20FA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             8B4CFA5746CC4D69DE2D42EA56C97432                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             54424A2BF42E98EE6BAB8AEF3F1AC2B4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             D8120E31097AECDFD0F0B908F014E001                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             6A8F9D9526D5F6749A7A090222DB0EBC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             5A3EBA98F65BDB7F9932D19B63D42517                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             459459A7167E7AA4921D000A0727FD0C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             0733A17174898A09034EB54F97C8167A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             1AB96F596001ED277E35997EF67DDD50                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             6D42EDCEA1F57E3C3BE99B8753B248ED                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             230EC769A1BC4FCF1456A3E21D63A5E1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             87D2F82EE477B6C9B042FEB2DEFDEF7F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             C62AF78FC1F55E341F42775E21BD649C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             56534F55B9EC7AD9C38DEED639C6E8C1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             5978E7F5A6D9709DEC509D67A9D2C31C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             29E98D60F661F38156D022AA54799541                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             397B0B6161C052BDD51324B68DBDD29A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             76EE6AE3A9053BCBEBF4643AD8C7590C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             D2D84E0C459147F749268538DB8E1158                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             ED87F02D74232FB30A5D524FBF29F540                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             DE402D1E747D2974A0796D44A225E5E2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             CC3B146693AEEE6083341366E357674C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             3E3B423411575297304ACFC74BD6B49B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm...
+MD5             C1550CF9B8CE3A6B600E09DEDADED226                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             78D99DA4936B400266C7B2CB00B75C3C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             D7D9CC697591B61E535E940BFC191448                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             5E1F0C426CA780DACCD1A212AAB50350                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             FE08CA289F0515EDF5FA8983DE0A3388                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Arm... 
+MD5             8817327AB37ADA51F3A0A2B9C8352C0E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             6E3151909A0A2D4745A7E9DD238DF759                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             F1F080D1DFE58C371D573262CC307357                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             8F212C1549F30203D236E1AE0B8DD9CF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             8C3B95D9E163F5139E338FD6A9138DA3                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             6799D9A12E0EA7D624018EEDA53D740A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             BAB532430AA5979AA1EEFCA850EAEE75                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             4EE9420F97463F5BEDCDD83361F882B7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             E5CF2D822AA27B2FD4F94E6ACF4F1BA9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             08E1E2AF28FCB832649653793D84EA51                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             537F74295EDB1FA1B7781FF0C78344B2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             1EDE4D101DE0EE034B4D509EA3BA8A31                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             6A564D14F293E530F3402FFBFE4B8089                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             E54C95880050E2D348189A1FD942107A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             A9106C967728B6C592CFDCB09CEB0CA3                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             628CF8E776098ED6A7AA03FE4E00784C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             BF829C99653BC48A0471BC385142D55D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             BD02F4A639030591C21DF2A9B4918E48                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             43B7DEADC23EAB96DC26A34ADBDA1F28                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             471E51839634704A715147140AAA69F7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             08930D708F67441A76AED0098A66D02A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             F1EEEF93B46C42CBEB9BD34A00003587                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             5FADE03AB12C8EC940EA17BC75E12B3D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             088C0491E4DF30F059ACBD4FEA740795                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             F6DB7D84FAF508BB93D1B51707F6BBEE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             066CA29431B4D2BB2DEAA3E48ECA749D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             90A1C3E676625E2A9CC9BCC46C5170AB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             638988917E0EB9C4D509332A84F4E66C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             68EC48D5EC617FB5044A80013420FBB8                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             AA1767338D898920DB9CBC06B0D136C0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             23D7FF1F5382405EB23C8D0758833920                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             1DACA58F359A6EC050AC338F9DBEBA96                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             733EA2BAF704D197D7F3C68303C1CF1A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             5DCCA1645B2DD3C9F9B494924FAD0C65                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             3C31EC88452830F860DA0F73021AB252                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             3C4AD7FD2BDE6859EA0688470F5B8A8D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             577FDE44D83051091234E2CD43269D1B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             DB9160BD635CE1BA126180977D5068BA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             83859CC85B1F32AA55F88F22183DB84D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             6971ED210A44E92A763359183CB0D3FF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             8A3C226F3C5C3BCC60B2C61DC507A52B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             3F908D9E51BC6331AB2580BB54685B21                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             7E2CA98D4B91CE95AF483C30FF6E1DA0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             82962BA290B87CB3B40DC4C82CD6967D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             1B8621323634C75943034C577C89B760                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             17BCE7E7A4CD96938E6D65D3A9EC9E02                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             5AAEB399EBCA384649F91A52927D6A83                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             7DF641CC07E77EEF2DB25C40B7E5D96A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             00D8F70F602648C00D519165BB2F0358                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com... 
+MD5             5D6339559D236BC0F742D44FB6E244A1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Com...
+MD5             B3D5E196414EA27DC80BA5D9E5D866C0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             A8EFC713C52B946393F7B28109F21C3C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             64A470BBA2F646B45279BF715331ED5D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             2A996AB13DF43251711F69D6493BE19D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             8C3B2DCAF62C1F70383B3B2104364897                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             2DBF5DFE0843FA0005FDB704779F6B06                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             6D190B185598D69B4073E66F2E369DE6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             D3D17D006F4C2710797BC25D23EDE393                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             B72A03B998C6846CB753107D8565B028                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             75C00CBA037676723C040B6A5B23AE15                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             378184DA5F043A691E3985A5C41574C9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             0F5E6E3E3C085B860D5A7296249CF65E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             C9549D75E3C6016488BCE4597F2143A6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             1702A00922D056FD6C944869F5C0A7C4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             621A44D457D5BA609FE3ECF167EE052B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             964F520B5BEBC7C2EBC6E044CA0E9D5A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             723FF45FA3E45299783A9797CC17F989                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             D4E3E050F77193C0D3D51424F59E4AEE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             9567261D5FA7B690285B6618E183BDD6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             B6084D83226580CC9DBC6D18CA38197A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             2B568015CF28ECB2AEFE3084D5A1EFCA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             3A55EC77216E7337E799C33D8E1FA42E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             8EEE991EA6D4183BD4FD4B7DD74027DF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             D99BD5C3111B76290148CCCE3BF50E0D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             228E4C2DE18FBF0F6B044CF072D62BFB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             FD975D34A98231A59C963B52E4068049                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             E934B81AC410A57DD1E2B40BC42603A4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             6AA7AE07E03154E0287ABA9A39F239F5                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             7AFADC0C950BAB8416A6955F08109D3C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             9DD35539970B4C3C80D16FAD90022A91                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             34B7B8DBD5386492D9AC784EB02646DB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             ED40F9933FF4D819A43247AE67DB9C31                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             F610F399DA4D2567B985B55AF3D49E7E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             19F06E398B6D023C4AA6B002CEB5BA96                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             758560537BBC0C5C2ADE14125359D543                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             F1953BA6004DD1FBB9EFCDEE9230BAD6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             868AC50709D3366BB0115EEB4E7B2012                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             90376B065262D7758120169CD9393C27                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             BCCCDA1265399A39E80E16ABF4329164                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             06985E6A8F01D85C3F2F69C791D5EF3A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             C737CB898041DBCCAB7654347D932D3F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             E2DF30FE89F4AFC8835369C795FE37E7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             A541C410D8BCA496042C40190DB5F192                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb...
+MD5             F2D7E51BEFA57F17B9FC420476DDF729                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             0603398C085C1FCD3271F126C304643C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             82C018EF34C91F0144DA2E156947EB81                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             234827F1C10B4A854CC4040592C199C5                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             5C3FB089B343CF3BC258A9457754687F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             3CFAD04A6966DBA80FF44A50DDECD09C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             43F9C96E11CB6FD08A1BDCEAAEC0F2F0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Cyb... 
+MD5             4775F56C899A3DA7469D9E13CC1FFE87                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             9B97A965B46A098371D24B0C8FAF276E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             B6062A3A9C2AF770C1459222D1476ABD                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             34E9F7B7BEBFE2E06A403850F83C1E1A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             3F1003E40CE9F8B778D005CF6911DD31                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             CC4992A238D115CE109F68D6E2CBC24E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             C992C22726570F2C15A90256D12BEEA4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             BA9A4E83A4FDEF93E343F10ED858A752                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             1DF1E5F6CD5BA16711217BD1C7E4FDEE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             A74879E80D52A1EED71F52596300B0B0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             010D13AFAE7C4680B219E0868EDDBF8E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             53E79AA2A906FDD24CDD15E393D0BA4D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             6FE92727F604A742C52E9EB884887E69                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             451C62EFAC016FFFF389009AAC7B231C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             718EDC96DCC600888200EBF4164449C6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             22DCC5D37ED6A5E2B9053A2F740CF218                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             C24857D90C43037B4EB913D98E840D27                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             331DC8602740C8D2802031FBD88CA1D6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             D34D282800F2F413E98F3436FD877A56                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             A7557B333502E5DEF75FCFF06E3243B1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             061F014B00B2E8B9A3B0383137A3C1F7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             B511D88B76CBC9151AC240275065D413                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             58B8A735C988EE19975E032903A0C1AA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             883CC1E2BF1B81DFFDF87B0CDC4681D6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             D31C9F10A590A86EB89ABC6FE3D04982                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             6AD983C517780399E710763019B7302C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             C6821E5C36C3989EF0568EDBF1F62845                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             8D5FE0611436E34BA3AB6DFACE116184                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             6E1A8CD20D528709ADC2E537CCCA61AB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             F8148D8F551059907624A09C2BCF68C2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             485F135DAE51758AF7BFF07AA292C58D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             CDA0022DA2FEC1B343A9965A2B78A899                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             5E73D912F978581CF7D5F7BF835725C0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             6DA7002688ECD6A0DA6DD36EBFC0F9AC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             997F04092E77BD5D68BB75D038A15987                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             E19405237DE309863FB0B21D6DF720B1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             ECD8C5B588424EF4434AB3C3B1C2070B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             9598734FA609E982530B55D9F9E545F1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             E5C658E515D47A766EDAFB0867CC401E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             7F1C4A95EADFADC2A1F28D2B16E21317                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             67099F283F1760C67419AFB5B4A92825                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             11BDB0AF784D87295A9743FC71735205                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             F7648CA159B6D881667A6058BC71ABC6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             C5E41A515B7DB8376F2CAE1AC49A55A9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             284C15D8F916C4A990FE66FD4AE09B9C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             458A70603CD4DE8D73D8C03F452C7299                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             0BEFB81A5D66E21590D426CCDFE284E9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             526A465532298858C477412AD4C638BA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro...
+MD5             FE70B992B879A313178BC7B7C27BC5FE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             5BB40BC79FF5CF6ABB199586C392045C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Gro... 
+MD5             4A21D26704787915E46D8CE1D3943027                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             79B4FD06D32C4851855BDBC6789C7CC2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             D597621448317AC49B82F1C3E2437562                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             CB657C22F480E7F52B00C5A6241036CE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             D7FFD7FBFD0D3E07CAFF3781C32D93FF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             1FAB91EECC56A95CB37675094915AD2C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             62601825E36E4D4B6FAFB95C685F7168                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             04D9691FF93BEE349B041E0E5AB0054C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             6D5334A1EAAD7FBB8E0A25559DC8E753                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             5ED002418CCFE8B387E96287AF51C88E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             F64E1A5DAE7613059ED360FB1B0758DB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             30E20F66A0D175F22480AC33D444E8D4                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             9627751D18E2B05B2E44FFB9DDEC572D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             0BB0376B3D56FCBC74A378D92F1B6C4F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             EAFE9196ED862308CE729D22E21ADD08                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             D56D60D1B67194D66B9360A4B72BB7DF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             29B861BB66BC66C375926E16434871C0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             952BB298E9306117AD213DF3456E9667                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             C4F8EE3BB8233A9A75CFF449731DB9C1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             607D545795B8D10BEFEC2B03ADE7A6D1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             4683C3D10A0B97643548E29792888DFC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             38078FF284019BABB58A39AC31D8224F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             E3EC7BFF04D4C8C9B872A9921CED8EAF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             1D0C61B27EAF996A4D40215C0ABC2412                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             D29095BCB72D574D20135DE021A947F0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             E3FC4C3EEDC2700A2D0855877B43BC3C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             3A766027567333BD93281E028BBD0268                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             654B887695B69C83FB8EC0CD1F35D22D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             CAD96859394D53D86ACDFBFE060D2DAF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             BCA436F83E9FCD180AC4E9A897864A6F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             2B2491D44EEEB1D6FA3826E1C67E94B6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             314BA673DB23FAB173052FEE28053BA2                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             57B541D6659000B9481222BC2D27FFCC                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             029B22A0FE419DA69344C81F156BA948                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             49E81A170F2EF5AFE6241C9F87471E1C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             07BA4F1308FF76D40B405F9188ABCA1A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             4A334B5DBDAEA5578B9C9BB45F4C0F04                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             0305945AA007113671E2F2463AFFCDAA                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             5937AC114C266E7A0F67AA230FC953FF                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             408F4C6C2C3230D0536575C5C8F2EBC6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             CAA3FDBCD62C31F74E0CA797B19F44DD                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             16AED6141D57209FB6441149F44C3F5B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D...
+MD5             AD14BE3A09D57FBF368F3DCA3D6A2C5D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             4571CE740BB7176E8143BC84AA01135F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             2685EF72AE2C9888A1C1154290BF4DE9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             52E5B1915F6EE742F5454637DC9A9E14                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             F81AFC424E89923CB365D91F3C18091A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             C7F07D9052FEB449C227639530A6C168                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             ACCB40EBF3F866C16AFB5EBD67AFFD4B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             71A6567D34DB86590B4F14CEAC3AD830                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\R&D... 
+MD5             6CF73EEE0F21D573761CF245E85D111E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             F2B4DB17B92AFC7B815FD3C7C8ECBF1E                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             A64A8BB9C2929D4C3F547B86F5F09F58                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             1F3A7B35701DCEAA5EAD543E04562FB1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             25C8654E4624B7A067817CF73299AE87                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             D0792AB8FD17293AA30A0DD63FFADEA1                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             092ADA31290E866541F415DE619797D9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             80CE1A61DF007980FCCFD35AC642D23F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             1745B0901D0E86F5BB201FD8DFC0D4A9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             EC253B5D2CEC5C6021984D6E2182B017                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             9861027E7B8874512241EE0B26094747                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             2BF69EC28BFDB5F2543F3515B0823710                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             6D0AC5A9F680ECEED529F6465812DD36                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             6EBFF3B9996182C17AF92D4787055AFE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             D1F2854810D25E3F3FFCA77D69B3CFD9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             093B7E225989508476C96343D16A0296                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             B6C015E2187CAD314C8D4764E7573616                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             98ECC8BDA46BF0A48FC65980D39D952B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             3C41B2AFC9D0638E653C19DEC968F64D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             EAA0E2623F005511745FB24068FB9AC9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             FFE4C19C51C625DBBFB8D61C3082896A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             1B889DA5174F78C936F65AE4E5350AFB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             68D0C3907F29DDE359F4BC488109FE5C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             710D292F2558DB44114CC7136BBBCEC9                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             4BDB4DA575C1B5E13713E4AB62169B5F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             9FB236D95671FB85C4336BE30F2E6FA7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             0995EB3864CF9F6F199D99187D0468A0                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             62DD6125D52B26C55B5FC6D819D3ECB8                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             B8A650A32B0B910BDAC50CDE707ED3EE                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             BD96B938932A5ECE095E8707408D8A60                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             091B41D028DD18EDF1C9B2546F524FDB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             5752B67E08639A95BC1004A18230BEDB                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             2EDED52C264C69BD1B179D2EBF3F708A                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             8D889E2EA3DF6700B45CA59958D6B925                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             B0517CD601BE629EA8E729FE61F0B014                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             4EE59F5FA167BE6A26E0CA3AA4BC015B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             32F8BC84E23E97AF1E527410A02778F6                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             AC893F9E836E8C601928F57324295E68                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             902B5FFD2FC643277296AB50E9412415                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             76EB21855167C4AA9564BB6A001C9D23                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             3CF7C6D829165957D6A9329A607E5657                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             61BF0E67AC7606403B9BF014F7428E1F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             4377E83343E5984BCBCFE4510568B23D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             8283FA32773ACE6BC0D24B85076C4E4B                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             E8C5389B18C6D2B2CB7D282EE84C74F7                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             A597F3E1DC8EADFD9DEC340931D3FD6C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+MD5             E8FB45345F99CEE59A8DE748A9758039                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             27F2DD2B3EDFFE81FA9CE317369DBB0F                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             F0EC84C7AE7B9C1EE721EF5B8AE9DA5D                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup... 
+MD5             5409B1785389941CDC491D2B3074D42C                                       C:\Program Files (x86)\hMailServer\Data\Workgroup\Sup...
+
+
+60789bf7be516cebb36e6c0779327b1e  ./Workgroup/Air Defense/email1.eml
+97a63ba09d9fac44462af6b585d428a4  ./Workgroup/Air Defense/email2.eml
+32db1465e8fbac3aa1925cd7b6ca0326  ./Workgroup/Air Defense/email3.eml
+d51ecc97c09ebd22827a92942881f524  ./Workgroup/Air Defense/email4.eml
+db4de1d3b9e240bb362bd08c4741a48c  ./Workgroup/Air Defense/email5.eml
+499ffd749facd04aec65bf00e78da949  ./Workgroup/Air Defense/email6.eml
+ddf13f3db0c2bb0676bf1010400c6d4d  ./Workgroup/Air Defense/email7.eml
+08d4dd228acb5ab2a4b55a4e2f680de0  ./Workgroup/Air Defense/email8.eml
+f456a2ad9d499d36c67f8eb08a0b298d  ./Workgroup/Air Defense/email9.eml
+0517217d241bb87799ad9068cab0a848  ./Workgroup/Air Defense/email10.eml
+3175712de3e1a43574105f8c6f9f2f6f  ./Workgroup/Air Defense/email11.eml
+c2ce2e7e3b581a27135d902780ff3196  ./Workgroup/Air Defense/email12.eml
+cb2351bd579f4fc22de8601fe660168f  ./Workgroup/Air Defense/email13.eml
+cf6d3fa0c4e1f14ae50fffd97cbb9eec  ./Workgroup/Air Defense/email14.eml
+f77abb8aefb704932cb8a45064d98b97  ./Workgroup/Air Defense/email15.eml
+c0cdf8b48a0595c04b7a45f2fd70b994  ./Workgroup/Air Defense/email16.eml
+5d6131018c35887377190a6ddf426595  ./Workgroup/Air Defense/email17.eml
+32f6e5baa9bf61707ce761281f317a48  ./Workgroup/Air Defense/email18.eml
+90c8063989ecb9e8df95c20f0af55891  ./Workgroup/Air Defense/email19.eml
+71a88baedcfbb6276752dc4197d3174f  ./Workgroup/Air Defense/email20.eml
+b20922644030b94834b9a7ab76e53c29  ./Workgroup/Air Defense/email21.eml
+2fb99b23b47378a375d5da2b794207e3  ./Workgroup/Air Defense/email22.eml
+c3acd27453b1df86c2c7691bf48faffa  ./Workgroup/Air Defense/email23.eml
+625667eec84e1a7e4ce05b0e506988f2  ./Workgroup/Air Defense/email24.eml
+7e8fd61119c295a8c1f754a9f0c3f55f  ./Workgroup/Air Defense/email25.eml
+a4858be94f6d3ceaaac29bf828d263f2  ./Workgroup/Air Defense/email26.eml
+108afc25f878cace0914b9468e2178bf  ./Workgroup/Air Defense/email27.eml
+d4abb1fa69de259573e2230355b26610  ./Workgroup/Air Defense/email28.eml
+11494d752bb0189f51d44294184b2acd  ./Workgroup/Air Defense/email29.eml
+3bc41df19b0f7c47c47eef0ffcd718d0  ./Workgroup/Air Defense/email30.eml
+88ce9b65d3962f0364ba961c35b5906c  ./Workgroup/Air Defense/email31.eml
+f47e5ce08ac1f1d44a8621be3d46aa30  ./Workgroup/Air Defense/email32.eml
+ed9597b494f2eca2c371e7e63ace3696  ./Workgroup/Air Defense/email33.eml
+efcfd4af8d1a79ddb06823fce573d1bb  ./Workgroup/Air Defense/email34.eml
+135689a60891e2afe7ffb26751533a6c  ./Workgroup/Air Defense/email35.eml
+0bd637628f9c5e45422ae95ba1fffa82  ./Workgroup/Air Defense/email36.eml
+36fe982310ee27a8ed8e00ab44b9f50b  ./Workgroup/Air Defense/email37.eml
+4a0baf3096128f3c56dac3e085217873  ./Workgroup/Air Defense/email38.eml
+1d9e4fb10246213f889fa35be444ad79  ./Workgroup/Air Defense/email39.eml
+325db0e6072355db69e433bbd89c4626  ./Workgroup/Air Defense/email40.eml
+e5e0501d1e7021d11986d72c5126ad51  ./Workgroup/Air Defense/email41.eml
+9f9ceebb480487fe2351711f81b96607  ./Workgroup/Air Defense/email42.eml
+a82ef825560625dae507292b96b02073  ./Workgroup/Air Defense/email43.eml
+da0147b7b1474fc6c5eef8c32a5b90c4  ./Workgroup/Air Defense/email44.eml
+1595425998f557986a5786f79b213d8e  ./Workgroup/Air Defense/email45.eml
+b2301f2c753524a9f354ae7a7cdb497b  ./Workgroup/Air Defense/email46.eml
+e9ce34395c176a9beabf8f6344a06c4f  ./Workgroup/Air Defense/email47.eml
+7d25c24a27fbd6c94ad0866070557703  ./Workgroup/Air Defense/email48.eml
+f0c973cd6e9ca475eb52165d34b25222  ./Workgroup/Air Defense/email49.eml
+a1b424ea548d9bfe76774ef48a054662  ./Workgroup/Air Defense/email50.eml
+3a0fb213a7d5570e2e04c36753e1971a  ./Workgroup/Air Defense/email.eml
+460fc684eb3d49c3b20a218aa55af436  ./Workgroup/Armored Cavalry/email1.eml
+2acff9b1e6b3eb0083774703a7a5a288  ./Workgroup/Armored Cavalry/email2.eml
+f6ff1ba48a902deb2c99208530cb20fa  ./Workgroup/Armored Cavalry/email3.eml
+87d2f82ee477b6c9b042feb2defdef7f  ./Workgroup/Armored Cavalry/email4.eml
+3e3b423411575297304acfc74bd6b49b  ./Workgroup/Armored Cavalry/email5.eml
+78d99da4936b400266c7b2cb00b75c3c  ./Workgroup/Armored Cavalry/email6.eml
+d7d9cc697591b61e535e940bfc191448  ./Workgroup/Armored Cavalry/email7.eml
+5e1f0c426ca780daccd1a212aab50350  ./Workgroup/Armored Cavalry/email8.eml
+fe08ca289f0515edf5fa8983de0a3388  ./Workgroup/Armored Cavalry/email9.eml
+11ba3aeeb06c9621fabf6e3447cf5556  ./Workgroup/Armored Cavalry/email10.eml
+339390d0feec3b119466717fb6095d69  ./Workgroup/Armored Cavalry/email11.eml
+18df20bb824b1c240720a74c4bc4c9f4  ./Workgroup/Armored Cavalry/email12.eml
+1caed48ff975e5c1e30af161a725c995  ./Workgroup/Armored Cavalry/email13.eml
+612be32eb97b89fa12108a23e47c5743  ./Workgroup/Armored Cavalry/email14.eml
+7e0edc1a95c1d13662ddd388dd485149  ./Workgroup/Armored Cavalry/email15.eml
+65e5d085990c955db45a6f1504aba8d0  ./Workgroup/Armored Cavalry/email16.eml
+f464c1c70c83a09db6d7b3193415a0ac  ./Workgroup/Armored Cavalry/email17.eml
+31beb5e5b6be8107b33f56e422a3412e  ./Workgroup/Armored Cavalry/email18.eml
+589bb3731ca8038646771ea822fd452e  ./Workgroup/Armored Cavalry/email19.eml
+f4bf3a86106a11926470a002616f6779  ./Workgroup/Armored Cavalry/email20.eml
+38baa1213db6b0deb5a04c5ddac89f2a  ./Workgroup/Armored Cavalry/email21.eml
+d87bafa3f14846d9036f2e342f36d5f1  ./Workgroup/Armored Cavalry/email22.eml
+d44ed4789b2d5b89057ee1f885916a49  ./Workgroup/Armored Cavalry/email23.eml
+c45174aafcc1a4cb562986a653a1d422  ./Workgroup/Armored Cavalry/email24.eml
+3ad72189f2d305191127bd04363799af  ./Workgroup/Armored Cavalry/email25.eml
+95e9b5719b3f0a1444d37c57f070dec9  ./Workgroup/Armored Cavalry/email26.eml
+99d6ac0f96507ceea48a9a79d1706fd3  ./Workgroup/Armored Cavalry/email27.eml
+dcf3903551cd227105303ee7db7ab175  ./Workgroup/Armored Cavalry/email28.eml
+5fd4e35594e655ca31c12359b21d0846  ./Workgroup/Armored Cavalry/email29.eml
+8b4cfa5746cc4d69de2d42ea56c97432  ./Workgroup/Armored Cavalry/email30.eml
+54424a2bf42e98ee6bab8aef3f1ac2b4  ./Workgroup/Armored Cavalry/email31.eml
+d8120e31097aecdfd0f0b908f014e001  ./Workgroup/Armored Cavalry/email32.eml
+6a8f9d9526d5f6749a7a090222db0ebc  ./Workgroup/Armored Cavalry/email33.eml
+5a3eba98f65bdb7f9932d19b63d42517  ./Workgroup/Armored Cavalry/email34.eml
+459459a7167e7aa4921d000a0727fd0c  ./Workgroup/Armored Cavalry/email35.eml
+0733a17174898a09034eb54f97c8167a  ./Workgroup/Armored Cavalry/email36.eml
+1ab96f596001ed277e35997ef67ddd50  ./Workgroup/Armored Cavalry/email37.eml
+6d42edcea1f57e3c3be99b8753b248ed  ./Workgroup/Armored Cavalry/email38.eml
+230ec769a1bc4fcf1456a3e21d63a5e1  ./Workgroup/Armored Cavalry/email39.eml
+c62af78fc1f55e341f42775e21bd649c  ./Workgroup/Armored Cavalry/email40.eml
+56534f55b9ec7ad9c38deed639c6e8c1  ./Workgroup/Armored Cavalry/email41.eml
+5978e7f5a6d9709dec509d67a9d2c31c  ./Workgroup/Armored Cavalry/email42.eml
+29e98d60f661f38156d022aa54799541  ./Workgroup/Armored Cavalry/email43.eml
+397b0b6161c052bdd51324b68dbdd29a  ./Workgroup/Armored Cavalry/email44.eml
+76ee6ae3a9053bcbebf4643ad8c7590c  ./Workgroup/Armored Cavalry/email45.eml
+d2d84e0c459147f749268538db8e1158  ./Workgroup/Armored Cavalry/email46.eml
+ed87f02d74232fb30a5d524fbf29f540  ./Workgroup/Armored Cavalry/email47.eml
+de402d1e747d2974a0796d44a225e5e2  ./Workgroup/Armored Cavalry/email48.eml
+cc3b146693aeee6083341366e357674c  ./Workgroup/Armored Cavalry/email49.eml
+c1550cf9b8ce3a6b600e09dedaded226  ./Workgroup/Armored Cavalry/email50.eml
+d41d8cd98f00b204e9800998ecf8427e  ./Workgroup/Armored Cavalry/for
+8817327ab37ada51f3a0a2b9c8352c0e  ./Workgroup/Command Elements/email1.eml
+1ede4d101de0ee034b4d509ea3ba8a31  ./Workgroup/Command Elements/email2.eml
+5fade03ab12c8ec940ea17bc75e12b3d  ./Workgroup/Command Elements/email3.eml
+5dcca1645b2dd3c9f9b494924fad0c65  ./Workgroup/Command Elements/email4.eml
+1b8621323634c75943034c577c89b760  ./Workgroup/Command Elements/email5.eml
+5aaeb399ebca384649f91a52927d6a83  ./Workgroup/Command Elements/email6.eml
+7df641cc07e77eef2db25c40b7e5d96a  ./Workgroup/Command Elements/email7.eml
+00d8f70f602648c00d519165bb2f0358  ./Workgroup/Command Elements/email8.eml
+5d6339559d236bc0f742d44fb6e244a1  ./Workgroup/Command Elements/email9.eml
+6e3151909a0a2d4745a7e9dd238df759  ./Workgroup/Command Elements/email10.eml
+f1f080d1dfe58c371d573262cc307357  ./Workgroup/Command Elements/email11.eml
+8f212c1549f30203d236e1ae0b8dd9cf  ./Workgroup/Command Elements/email12.eml
+8c3b95d9e163f5139e338fd6a9138da3  ./Workgroup/Command Elements/email13.eml
+6799d9a12e0ea7d624018eeda53d740a  ./Workgroup/Command Elements/email14.eml
+bab532430aa5979aa1eefca850eaee75  ./Workgroup/Command Elements/email15.eml
+4ee9420f97463f5bedcdd83361f882b7  ./Workgroup/Command Elements/email16.eml
+e5cf2d822aa27b2fd4f94e6acf4f1ba9  ./Workgroup/Command Elements/email17.eml
+08e1e2af28fcb832649653793d84ea51  ./Workgroup/Command Elements/email18.eml
+537f74295edb1fa1b7781ff0c78344b2  ./Workgroup/Command Elements/email19.eml
+6a564d14f293e530f3402ffbfe4b8089  ./Workgroup/Command Elements/email20.eml
+e54c95880050e2d348189a1fd942107a  ./Workgroup/Command Elements/email21.eml
+a9106c967728b6c592cfdcb09ceb0ca3  ./Workgroup/Command Elements/email22.eml
+628cf8e776098ed6a7aa03fe4e00784c  ./Workgroup/Command Elements/email23.eml
+bf829c99653bc48a0471bc385142d55d  ./Workgroup/Command Elements/email24.eml
+bd02f4a639030591c21df2a9b4918e48  ./Workgroup/Command Elements/email25.eml
+43b7deadc23eab96dc26a34adbda1f28  ./Workgroup/Command Elements/email26.eml
+471e51839634704a715147140aaa69f7  ./Workgroup/Command Elements/email27.eml
+08930d708f67441a76aed0098a66d02a  ./Workgroup/Command Elements/email28.eml
+f1eeef93b46c42cbeb9bd34a00003587  ./Workgroup/Command Elements/email29.eml
+088c0491e4df30f059acbd4fea740795  ./Workgroup/Command Elements/email30.eml
+f6db7d84faf508bb93d1b51707f6bbee  ./Workgroup/Command Elements/email31.eml
+066ca29431b4d2bb2deaa3e48eca749d  ./Workgroup/Command Elements/email32.eml
+90a1c3e676625e2a9cc9bcc46c5170ab  ./Workgroup/Command Elements/email33.eml
+638988917e0eb9c4d509332a84f4e66c  ./Workgroup/Command Elements/email34.eml
+68ec48d5ec617fb5044a80013420fbb8  ./Workgroup/Command Elements/email35.eml
+aa1767338d898920db9cbc06b0d136c0  ./Workgroup/Command Elements/email36.eml
+23d7ff1f5382405eb23c8d0758833920  ./Workgroup/Command Elements/email37.eml
+1daca58f359a6ec050ac338f9dbeba96  ./Workgroup/Command Elements/email38.eml
+733ea2baf704d197d7f3c68303c1cf1a  ./Workgroup/Command Elements/email39.eml
+3c31ec88452830f860da0f73021ab252  ./Workgroup/Command Elements/email40.eml
+3c4ad7fd2bde6859ea0688470f5b8a8d  ./Workgroup/Command Elements/email41.eml
+577fde44d83051091234e2cd43269d1b  ./Workgroup/Command Elements/email42.eml
+db9160bd635ce1ba126180977d5068ba  ./Workgroup/Command Elements/email43.eml
+83859cc85b1f32aa55f88f22183db84d  ./Workgroup/Command Elements/email44.eml
+6971ed210a44e92a763359183cb0d3ff  ./Workgroup/Command Elements/email45.eml
+8a3c226f3c5c3bcc60b2c61dc507a52b  ./Workgroup/Command Elements/email46.eml
+3f908d9e51bc6331ab2580bb54685b21  ./Workgroup/Command Elements/email47.eml
+7e2ca98d4b91ce95af483c30ff6e1da0  ./Workgroup/Command Elements/email48.eml
+82962ba290b87cb3b40dc4c82cd6967d  ./Workgroup/Command Elements/email49.eml
+17bce7e7a4cd96938e6d65d3a9ec9e02  ./Workgroup/Command Elements/email50.eml
+b3d5e196414ea27dc80ba5d9e5d866c0  ./Workgroup/Cyber-Comms Detachment/email1.eml
+0f5e6e3e3c085b860d5a7296249cf65e  ./Workgroup/Cyber-Comms Detachment/email2.eml
+8eee991ea6d4183bd4fd4b7dd74027df  ./Workgroup/Cyber-Comms Detachment/email3.eml
+19f06e398b6d023c4aa6b002ceb5ba96  ./Workgroup/Cyber-Comms Detachment/email4.eml
+0603398c085c1fcd3271f126c304643c  ./Workgroup/Cyber-Comms Detachment/email5.eml
+234827f1c10b4a854cc4040592c199c5  ./Workgroup/Cyber-Comms Detachment/email6.eml
+5c3fb089b343cf3bc258a9457754687f  ./Workgroup/Cyber-Comms Detachment/email7.eml
+3cfad04a6966dba80ff44a50ddecd09c  ./Workgroup/Cyber-Comms Detachment/email8.eml
+43f9c96e11cb6fd08a1bdceaaec0f2f0  ./Workgroup/Cyber-Comms Detachment/email9.eml
+a8efc713c52b946393f7b28109f21c3c  ./Workgroup/Cyber-Comms Detachment/email10.eml
+64a470bba2f646b45279bf715331ed5d  ./Workgroup/Cyber-Comms Detachment/email11.eml
+2a996ab13df43251711f69d6493be19d  ./Workgroup/Cyber-Comms Detachment/email12.eml
+8c3b2dcaf62c1f70383b3b2104364897  ./Workgroup/Cyber-Comms Detachment/email13.eml
+2dbf5dfe0843fa0005fdb704779f6b06  ./Workgroup/Cyber-Comms Detachment/email14.eml
+6d190b185598d69b4073e66f2e369de6  ./Workgroup/Cyber-Comms Detachment/email15.eml
+d3d17d006f4c2710797bc25d23ede393  ./Workgroup/Cyber-Comms Detachment/email16.eml
+b72a03b998c6846cb753107d8565b028  ./Workgroup/Cyber-Comms Detachment/email17.eml
+75c00cba037676723c040b6a5b23ae15  ./Workgroup/Cyber-Comms Detachment/email18.eml
+378184da5f043a691e3985a5c41574c9  ./Workgroup/Cyber-Comms Detachment/email19.eml
+c9549d75e3c6016488bce4597f2143a6  ./Workgroup/Cyber-Comms Detachment/email20.eml
+1702a00922d056fd6c944869f5c0a7c4  ./Workgroup/Cyber-Comms Detachment/email21.eml
+621a44d457d5ba609fe3ecf167ee052b  ./Workgroup/Cyber-Comms Detachment/email22.eml
+964f520b5bebc7c2ebc6e044ca0e9d5a  ./Workgroup/Cyber-Comms Detachment/email23.eml
+723ff45fa3e45299783a9797cc17f989  ./Workgroup/Cyber-Comms Detachment/email24.eml
+d4e3e050f77193c0d3d51424f59e4aee  ./Workgroup/Cyber-Comms Detachment/email25.eml
+9567261d5fa7b690285b6618e183bdd6  ./Workgroup/Cyber-Comms Detachment/email26.eml
+b6084d83226580cc9dbc6d18ca38197a  ./Workgroup/Cyber-Comms Detachment/email27.eml
+2b568015cf28ecb2aefe3084d5a1efca  ./Workgroup/Cyber-Comms Detachment/email28.eml
+3a55ec77216e7337e799c33d8e1fa42e  ./Workgroup/Cyber-Comms Detachment/email29.eml
+d99bd5c3111b76290148ccce3bf50e0d  ./Workgroup/Cyber-Comms Detachment/email30.eml
+228e4c2de18fbf0f6b044cf072d62bfb  ./Workgroup/Cyber-Comms Detachment/email31.eml
+fd975d34a98231a59c963b52e4068049  ./Workgroup/Cyber-Comms Detachment/email32.eml
+e934b81ac410a57dd1e2b40bc42603a4  ./Workgroup/Cyber-Comms Detachment/email33.eml
+6aa7ae07e03154e0287aba9a39f239f5  ./Workgroup/Cyber-Comms Detachment/email34.eml
+7afadc0c950bab8416a6955f08109d3c  ./Workgroup/Cyber-Comms Detachment/email35.eml
+9dd35539970b4c3c80d16fad90022a91  ./Workgroup/Cyber-Comms Detachment/email36.eml
+34b7b8dbd5386492d9ac784eb02646db  ./Workgroup/Cyber-Comms Detachment/email37.eml
+ed40f9933ff4d819a43247ae67db9c31  ./Workgroup/Cyber-Comms Detachment/email38.eml
+f610f399da4d2567b985b55af3d49e7e  ./Workgroup/Cyber-Comms Detachment/email39.eml
+758560537bbc0c5c2ade14125359d543  ./Workgroup/Cyber-Comms Detachment/email40.eml
+f1953ba6004dd1fbb9efcdee9230bad6  ./Workgroup/Cyber-Comms Detachment/email41.eml
+868ac50709d3366bb0115eeb4e7b2012  ./Workgroup/Cyber-Comms Detachment/email42.eml
+90376b065262d7758120169cd9393c27  ./Workgroup/Cyber-Comms Detachment/email43.eml
+bcccda1265399a39e80e16abf4329164  ./Workgroup/Cyber-Comms Detachment/email44.eml
+06985e6a8f01d85c3f2f69c791d5ef3a  ./Workgroup/Cyber-Comms Detachment/email45.eml
+c737cb898041dbccab7654347d932d3f  ./Workgroup/Cyber-Comms Detachment/email46.eml
+e2df30fe89f4afc8835369c795fe37e7  ./Workgroup/Cyber-Comms Detachment/email47.eml
+a541c410d8bca496042c40190db5f192  ./Workgroup/Cyber-Comms Detachment/email48.eml
+f2d7e51befa57f17b9fc420476ddf729  ./Workgroup/Cyber-Comms Detachment/email49.eml
+82c018ef34c91f0144da2e156947eb81  ./Workgroup/Cyber-Comms Detachment/email50.eml
+4775f56c899a3da7469d9e13cc1ffe87  ./Workgroup/Ground Forces/email1.eml
+53e79aa2a906fdd24cdd15e393d0ba4d  ./Workgroup/Ground Forces/email2.eml
+58b8a735c988ee19975e032903a0c1aa  ./Workgroup/Ground Forces/email3.eml
+6da7002688ecd6a0da6dd36ebfc0f9ac  ./Workgroup/Ground Forces/email4.eml
+284c15d8f916c4a990fe66fd4ae09b9c  ./Workgroup/Ground Forces/email5.eml
+0befb81a5d66e21590d426ccdfe284e9  ./Workgroup/Ground Forces/email6.eml
+526a465532298858c477412ad4c638ba  ./Workgroup/Ground Forces/email7.eml
+fe70b992b879a313178bc7b7c27bc5fe  ./Workgroup/Ground Forces/email8.eml
+5bb40bc79ff5cf6abb199586c392045c  ./Workgroup/Ground Forces/email9.eml
+9b97a965b46a098371d24b0c8faf276e  ./Workgroup/Ground Forces/email10.eml
+b6062a3a9c2af770c1459222d1476abd  ./Workgroup/Ground Forces/email11.eml
+34e9f7b7bebfe2e06a403850f83c1e1a  ./Workgroup/Ground Forces/email12.eml
+3f1003e40ce9f8b778d005cf6911dd31  ./Workgroup/Ground Forces/email13.eml
+cc4992a238d115ce109f68d6e2cbc24e  ./Workgroup/Ground Forces/email14.eml
+c992c22726570f2c15a90256d12beea4  ./Workgroup/Ground Forces/email15.eml
+ba9a4e83a4fdef93e343f10ed858a752  ./Workgroup/Ground Forces/email16.eml
+1df1e5f6cd5ba16711217bd1c7e4fdee  ./Workgroup/Ground Forces/email17.eml
+a74879e80d52a1eed71f52596300b0b0  ./Workgroup/Ground Forces/email18.eml
+010d13afae7c4680b219e0868eddbf8e  ./Workgroup/Ground Forces/email19.eml
+6fe92727f604a742c52e9eb884887e69  ./Workgroup/Ground Forces/email20.eml
+451c62efac016ffff389009aac7b231c  ./Workgroup/Ground Forces/email21.eml
+718edc96dcc600888200ebf4164449c6  ./Workgroup/Ground Forces/email22.eml
+22dcc5d37ed6a5e2b9053a2f740cf218  ./Workgroup/Ground Forces/email23.eml
+c24857d90c43037b4eb913d98e840d27  ./Workgroup/Ground Forces/email24.eml
+331dc8602740c8d2802031fbd88ca1d6  ./Workgroup/Ground Forces/email25.eml
+d34d282800f2f413e98f3436fd877a56  ./Workgroup/Ground Forces/email26.eml
+a7557b333502e5def75fcff06e3243b1  ./Workgroup/Ground Forces/email27.eml
+061f014b00b2e8b9a3b0383137a3c1f7  ./Workgroup/Ground Forces/email28.eml
+b511d88b76cbc9151ac240275065d413  ./Workgroup/Ground Forces/email29.eml
+883cc1e2bf1b81dffdf87b0cdc4681d6  ./Workgroup/Ground Forces/email30.eml
+d31c9f10a590a86eb89abc6fe3d04982  ./Workgroup/Ground Forces/email31.eml
+6ad983c517780399e710763019b7302c  ./Workgroup/Ground Forces/email32.eml
+c6821e5c36c3989ef0568edbf1f62845  ./Workgroup/Ground Forces/email33.eml
+8d5fe0611436e34ba3ab6dface116184  ./Workgroup/Ground Forces/email34.eml
+6e1a8cd20d528709adc2e537ccca61ab  ./Workgroup/Ground Forces/email35.eml
+f8148d8f551059907624a09c2bcf68c2  ./Workgroup/Ground Forces/email36.eml
+485f135dae51758af7bff07aa292c58d  ./Workgroup/Ground Forces/email37.eml
+cda0022da2fec1b343a9965a2b78a899  ./Workgroup/Ground Forces/email38.eml
+5e73d912f978581cf7d5f7bf835725c0  ./Workgroup/Ground Forces/email39.eml
+997f04092e77bd5d68bb75d038a15987  ./Workgroup/Ground Forces/email40.eml
+e19405237de309863fb0b21d6df720b1  ./Workgroup/Ground Forces/email41.eml
+ecd8c5b588424ef4434ab3c3b1c2070b  ./Workgroup/Ground Forces/email42.eml
+9598734fa609e982530b55d9f9e545f1  ./Workgroup/Ground Forces/email43.eml
+e5c658e515d47a766edafb0867cc401e  ./Workgroup/Ground Forces/email44.eml
+7f1c4a95eadfadc2a1f28d2b16e21317  ./Workgroup/Ground Forces/email45.eml
+67099f283f1760c67419afb5b4a92825  ./Workgroup/Ground Forces/email46.eml
+11bdb0af784d87295a9743fc71735205  ./Workgroup/Ground Forces/email47.eml
+f7648ca159b6d881667a6058bc71abc6  ./Workgroup/Ground Forces/email48.eml
+c5e41a515b7db8376f2cae1ac49a55a9  ./Workgroup/Ground Forces/email49.eml
+458a70603cd4de8d73d8c03f452c7299  ./Workgroup/Ground Forces/email50.eml
+4a21d26704787915e46d8ce1d3943027  ./Workgroup/R&D/email1.eml
+30e20f66a0d175f22480ac33d444e8d4  ./Workgroup/R&D/email2.eml
+e3ec7bff04d4c8c9b872a9921ced8eaf  ./Workgroup/R&D/email3.eml
+029b22a0fe419da69344c81f156ba948  ./Workgroup/R&D/email4.eml
+2685ef72ae2c9888a1c1154290bf4de9  ./Workgroup/R&D/email5.eml
+f81afc424e89923cb365d91f3c18091a  ./Workgroup/R&D/email6.eml
+c7f07d9052feb449c227639530a6c168  ./Workgroup/R&D/email7.eml
+accb40ebf3f866c16afb5ebd67affd4b  ./Workgroup/R&D/email8.eml
+71a6567d34db86590b4f14ceac3ad830  ./Workgroup/R&D/email9.eml
+79b4fd06d32c4851855bdbc6789c7cc2  ./Workgroup/R&D/email10.eml
+d597621448317ac49b82f1c3e2437562  ./Workgroup/R&D/email11.eml
+cb657c22f480e7f52b00c5a6241036ce  ./Workgroup/R&D/email12.eml
+d7ffd7fbfd0d3e07caff3781c32d93ff  ./Workgroup/R&D/email13.eml
+1fab91eecc56a95cb37675094915ad2c  ./Workgroup/R&D/email14.eml
+62601825e36e4d4b6fafb95c685f7168  ./Workgroup/R&D/email15.eml
+04d9691ff93bee349b041e0e5ab0054c  ./Workgroup/R&D/email16.eml
+6d5334a1eaad7fbb8e0a25559dc8e753  ./Workgroup/R&D/email17.eml
+5ed002418ccfe8b387e96287af51c88e  ./Workgroup/R&D/email18.eml
+f64e1a5dae7613059ed360fb1b0758db  ./Workgroup/R&D/email19.eml
+9627751d18e2b05b2e44ffb9ddec572d  ./Workgroup/R&D/email20.eml
+0bb0376b3d56fcbc74a378d92f1b6c4f  ./Workgroup/R&D/email21.eml
+eafe9196ed862308ce729d22e21add08  ./Workgroup/R&D/email22.eml
+d56d60d1b67194d66b9360a4b72bb7df  ./Workgroup/R&D/email23.eml
+29b861bb66bc66c375926e16434871c0  ./Workgroup/R&D/email24.eml
+952bb298e9306117ad213df3456e9667  ./Workgroup/R&D/email25.eml
+c4f8ee3bb8233a9a75cff449731db9c1  ./Workgroup/R&D/email26.eml
+607d545795b8d10befec2b03ade7a6d1  ./Workgroup/R&D/email27.eml
+4683c3d10a0b97643548e29792888dfc  ./Workgroup/R&D/email28.eml
+38078ff284019babb58a39ac31d8224f  ./Workgroup/R&D/email29.eml
+1d0c61b27eaf996a4d40215c0abc2412  ./Workgroup/R&D/email30.eml
+d29095bcb72d574d20135de021a947f0  ./Workgroup/R&D/email31.eml
+e3fc4c3eedc2700a2d0855877b43bc3c  ./Workgroup/R&D/email32.eml
+3a766027567333bd93281e028bbd0268  ./Workgroup/R&D/email33.eml
+654b887695b69c83fb8ec0cd1f35d22d  ./Workgroup/R&D/email34.eml
+cad96859394d53d86acdfbfe060d2daf  ./Workgroup/R&D/email35.eml
+bca436f83e9fcd180ac4e9a897864a6f  ./Workgroup/R&D/email36.eml
+2b2491d44eeeb1d6fa3826e1c67e94b6  ./Workgroup/R&D/email37.eml
+314ba673db23fab173052fee28053ba2  ./Workgroup/R&D/email38.eml
+57b541d6659000b9481222bc2d27ffcc  ./Workgroup/R&D/email39.eml
+49e81a170f2ef5afe6241c9f87471e1c  ./Workgroup/R&D/email40.eml
+07ba4f1308ff76d40b405f9188abca1a  ./Workgroup/R&D/email41.eml
+4a334b5dbdaea5578b9c9bb45f4c0f04  ./Workgroup/R&D/email42.eml
+0305945aa007113671e2f2463affcdaa  ./Workgroup/R&D/email43.eml
+5937ac114c266e7a0f67aa230fc953ff  ./Workgroup/R&D/email44.eml
+408f4c6c2c3230d0536575c5c8f2ebc6  ./Workgroup/R&D/email45.eml
+caa3fdbcd62c31f74e0ca797b19f44dd  ./Workgroup/R&D/email46.eml
+16aed6141d57209fb6441149f44c3f5b  ./Workgroup/R&D/email47.eml
+ad14be3a09d57fbf368f3dca3d6a2c5d  ./Workgroup/R&D/email48.eml
+4571ce740bb7176e8143bc84aa01135f  ./Workgroup/R&D/email49.eml
+52e5b1915f6ee742f5454637dc9a9e14  ./Workgroup/R&D/email50.eml
+6cf73eee0f21d573761cf245e85d111e  ./Workgroup/Supply/email1.eml
+2bf69ec28bfdb5f2543f3515b0823710  ./Workgroup/Supply/email2.eml
+68d0c3907f29dde359f4bc488109fe5c  ./Workgroup/Supply/email3.eml
+8d889e2ea3df6700b45ca59958d6b925  ./Workgroup/Supply/email4.eml
+e8c5389b18c6d2b2cb7d282ee84c74f7  ./Workgroup/Supply/email5.eml
+e8fb45345f99cee59a8de748a9758039  ./Workgroup/Supply/email6.eml
+27f2dd2b3edffe81fa9ce317369dbb0f  ./Workgroup/Supply/email7.eml
+f0ec84c7ae7b9c1ee721ef5b8ae9da5d  ./Workgroup/Supply/email8.eml
+5409b1785389941cdc491d2b3074d42c  ./Workgroup/Supply/email9.eml
+f2b4db17b92afc7b815fd3c7c8ecbf1e  ./Workgroup/Supply/email10.eml
+a64a8bb9c2929d4c3f547b86f5f09f58  ./Workgroup/Supply/email11.eml
+1f3a7b35701dceaa5ead543e04562fb1  ./Workgroup/Supply/email12.eml
+25c8654e4624b7a067817cf73299ae87  ./Workgroup/Supply/email13.eml
+d0792ab8fd17293aa30a0dd63ffadea1  ./Workgroup/Supply/email14.eml
+092ada31290e866541f415de619797d9  ./Workgroup/Supply/email15.eml
+80ce1a61df007980fccfd35ac642d23f  ./Workgroup/Supply/email16.eml
+1745b0901d0e86f5bb201fd8dfc0d4a9  ./Workgroup/Supply/email17.eml
+ec253b5d2cec5c6021984d6e2182b017  ./Workgroup/Supply/email18.eml
+9861027e7b8874512241ee0b26094747  ./Workgroup/Supply/email19.eml
+6d0ac5a9f680eceed529f6465812dd36  ./Workgroup/Supply/email20.eml
+6ebff3b9996182c17af92d4787055afe  ./Workgroup/Supply/email21.eml
+d1f2854810d25e3f3ffca77d69b3cfd9  ./Workgroup/Supply/email22.eml
+093b7e225989508476c96343d16a0296  ./Workgroup/Supply/email23.eml
+b6c015e2187cad314c8d4764e7573616  ./Workgroup/Supply/email24.eml
+98ecc8bda46bf0a48fc65980d39d952b  ./Workgroup/Supply/email25.eml
+3c41b2afc9d0638e653c19dec968f64d  ./Workgroup/Supply/email26.eml
+eaa0e2623f005511745fb24068fb9ac9  ./Workgroup/Supply/email27.eml
+ffe4c19c51c625dbbfb8d61c3082896a  ./Workgroup/Supply/email28.eml
+1b889da5174f78c936f65ae4e5350afb  ./Workgroup/Supply/email29.eml
+710d292f2558db44114cc7136bbbcec9  ./Workgroup/Supply/email30.eml
+4bdb4da575c1b5e13713e4ab62169b5f  ./Workgroup/Supply/email31.eml
+9fb236d95671fb85c4336be30f2e6fa7  ./Workgroup/Supply/email32.eml
+0995eb3864cf9f6f199d99187d0468a0  ./Workgroup/Supply/email33.eml
+62dd6125d52b26c55b5fc6d819d3ecb8  ./Workgroup/Supply/email34.eml
+b8a650a32b0b910bdac50cde707ed3ee  ./Workgroup/Supply/email35.eml
+bd96b938932a5ece095e8707408d8a60  ./Workgroup/Supply/email36.eml
+091b41d028dd18edf1c9b2546f524fdb  ./Workgroup/Supply/email37.eml
+5752b67e08639a95bc1004a18230bedb  ./Workgroup/Supply/email38.eml
+2eded52c264c69bd1b179d2ebf3f708a  ./Workgroup/Supply/email39.eml
+b0517cd601be629ea8e729fe61f0b014  ./Workgroup/Supply/email40.eml
+4ee59f5fa167be6a26e0ca3aa4bc015b  ./Workgroup/Supply/email41.eml
+32f8bc84e23e97af1e527410a02778f6  ./Workgroup/Supply/email42.eml
+ac893f9e836e8c601928f57324295e68  ./Workgroup/Supply/email43.eml
+902b5ffd2fc643277296ab50e9412415  ./Workgroup/Supply/email44.eml
+76eb21855167c4aa9564bb6a001c9d23  ./Workgroup/Supply/email45.eml
+3cf7c6d829165957d6a9329a607e5657  ./Workgroup/Supply/email46.eml
+61bf0e67ac7606403b9bf014f7428e1f  ./Workgroup/Supply/email47.eml
+4377e83343e5984bcbcfe4510568b23d  ./Workgroup/Supply/email48.eml
+8283fa32773ace6bc0d24b85076c4e4b  ./Workgroup/Supply/email49.eml
+a597f3e1dc8eadfd9dec340931d3fd6c  ./Workgroup/Supply/email50.eml
+
+2022-08-22 16:58:28-- done collecting
+
+2022-08-22 16:59:34-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T6: 10.101.169.35
+=========================
+X-----------------------
+
+2022-08-22 17:03:04-- ON
+
+2022-08-22 17:03:07-- start vetting
+
+[askar4@desktop-email4 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:93:96:a4 brd ff:ff:ff:ff:ff:ff
+    inet 10.101.169.35/24 brd 10.101.169.255 scope global dynamic eth0
+       valid_lft 58847sec preferred_lft 58847sec
+    inet6 fe80::f816:3eff:fe93:96a4/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+[askar4@desktop-email4 ~]$ ls -latr /
+drwxr-xr-x.   2 root root    6 Feb 11  2022 Forces
+
+4 S root      1180     1  0  80   0 - 63381 poll_s Jun18 ?        00:07:52 /usr/sbin/rsyslogd -n
+5 S root       546     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:06 /sbin/auditd
+
+tcp        0      1 10.101.169.35:43604     10.123.111.35:514       SYN_SENT    1180/rsyslogd       
+
+askar4@desktop-email4 ~]$ date; date -u
+Mon Aug 22 17:05:40 UTC 2022
+Mon Aug 22 17:05:40 UTC 2022
+
+[askar4@desktop-email4 ~]$ uname -a
+Linux desktop-email4 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+*.* @@mail.badguy.com:514
+10.123.111.35 mail.badguy.com
+
+[askar4@desktop-email4 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+
+
+2022-08-22 17:19:09-- done vetting
+
+
+2022-08-22 17:19:58-- catalog accounts
+
+[askar4@desktop-email4 ~]$ sudo ls -latr /var/spool/mail
+total 32
+-rw-rw----. 1 rpc     mail    0 Aug  8  2019 rpc
+drwxr-xr-x. 7 root    root   71 Aug  8  2019 ..
+-rw-rw----. 1 centos  mail    0 Feb 11  2022 centos
+-rw-rw----. 1 askar1  mail    0 Feb 11  2022 askar1
+-rw-rw----. 1 askar2  mail    0 Feb 11  2022 askar2
+-rw-rw----. 1 askar3  mail    0 Feb 11  2022 askar3
+-rw-rw----. 1 askar4  mail    0 Feb 11  2022 askar4
+-rw-rw----. 1 askar5  mail    0 Feb 11  2022 askar5
+-rw-rw----. 1 askar6  mail    0 Feb 11  2022 askar6
+-rw-rw----. 1 askar7  mail    0 Feb 11  2022 askar7
+-rw-rw----. 1 askar8  mail    0 Feb 11  2022 askar8
+-rw-rw----. 1 askar9  mail    0 Feb 11  2022 askar9
+-rw-rw----. 1 askar10 mail    0 Feb 11  2022 askar10
+-rw-rw----. 1 askar11 mail    0 Feb 11  2022 askar11
+-rw-rw----. 1 askar12 mail    0 Feb 11  2022 askar12
+-rw-rw----. 1 askar13 mail    0 Feb 11  2022 askar13
+-rw-rw----. 1 askar14 mail    0 Feb 11  2022 askar14
+-rw-rw----. 1 askar15 mail    0 Feb 11  2022 askar15
+-rw-rw----. 1 askar16 mail    0 Feb 11  2022 askar16
+-rw-rw----. 1 askar17 mail    0 Feb 11  2022 askar17
+-rw-rw----. 1 askar18 mail    0 Feb 11  2022 askar18
+-rw-rw----. 1 askar19 mail    0 Feb 11  2022 askar19
+-rw-rw----. 1 askar20 mail    0 Feb 11  2022 askar20
+-rw-rw----. 1 askar21 mail    0 Feb 11  2022 askar21
+-rw-rw----. 1 askar22 mail    0 Feb 11  2022 askar22
+-rw-rw----. 1 askar23 mail    0 Feb 11  2022 askar23
+-rw-rw----. 1 radicle mail    0 Feb 11  2022 radicle
+drwxrwxr-x. 9 root    mail 4096 Feb 11  2022 .
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 Air Defense
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 Armored Cavalry
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 Command Elements
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 Cyber-Comms Detachment
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 R&D
+drwxr-xr-x. 2 root    root 4096 Feb 11  2022 Supply
+drwxr-xr-x. 2 root    root 4096 Mar 21 13:00 Ground
+
+2022-08-22 17:24:42-- hashes
+
+REMOTE
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Air Defense/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Air Defense/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Air Defense/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Air Defense/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Air Defense/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Air Defense/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Air Defense/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Air Defense/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Air Defense/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Air Defense/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Air Defense/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Air Defense/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Air Defense/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Air Defense/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Air Defense/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Air Defense/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Air Defense/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Air Defense/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Air Defense/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Air Defense/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Air Defense/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Air Defense/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Air Defense/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Air Defense/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Air Defense/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Air Defense/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Air Defense/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Air Defense/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Air Defense/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Air Defense/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Air Defense/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Air Defense/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Air Defense/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Air Defense/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Air Defense/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Air Defense/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Air Defense/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Air Defense/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Air Defense/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Air Defense/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Air Defense/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Air Defense/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Air Defense/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Air Defense/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Air Defense/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Air Defense/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Air Defense/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Air Defense/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Air Defense/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Air Defense/email9.eml
+d41d8cd98f00b204e9800998ecf8427e  /var/spool/mail/Air Defense/email.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Armored Cavalry/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Armored Cavalry/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Armored Cavalry/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Armored Cavalry/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Armored Cavalry/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Armored Cavalry/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Armored Cavalry/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Armored Cavalry/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Armored Cavalry/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Armored Cavalry/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Armored Cavalry/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Armored Cavalry/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Armored Cavalry/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Armored Cavalry/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Armored Cavalry/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Armored Cavalry/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Armored Cavalry/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Armored Cavalry/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Armored Cavalry/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Armored Cavalry/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Armored Cavalry/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Armored Cavalry/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Armored Cavalry/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Armored Cavalry/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Armored Cavalry/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Armored Cavalry/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Armored Cavalry/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Armored Cavalry/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Armored Cavalry/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Armored Cavalry/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Armored Cavalry/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Armored Cavalry/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Armored Cavalry/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Armored Cavalry/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Armored Cavalry/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Armored Cavalry/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Armored Cavalry/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Armored Cavalry/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Armored Cavalry/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Armored Cavalry/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Armored Cavalry/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Armored Cavalry/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Armored Cavalry/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Armored Cavalry/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Armored Cavalry/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Armored Cavalry/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Armored Cavalry/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Armored Cavalry/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Armored Cavalry/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Armored Cavalry/email9.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Command Elements/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Command Elements/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Command Elements/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Command Elements/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Command Elements/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Command Elements/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Command Elements/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Command Elements/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Command Elements/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Command Elements/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Command Elements/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Command Elements/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Command Elements/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Command Elements/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Command Elements/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Command Elements/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Command Elements/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Command Elements/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Command Elements/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Command Elements/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Command Elements/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Command Elements/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Command Elements/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Command Elements/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Command Elements/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Command Elements/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Command Elements/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Command Elements/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Command Elements/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Command Elements/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Command Elements/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Command Elements/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Command Elements/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Command Elements/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Command Elements/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Command Elements/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Command Elements/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Command Elements/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Command Elements/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Command Elements/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Command Elements/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Command Elements/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Command Elements/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Command Elements/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Command Elements/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Command Elements/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Command Elements/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Command Elements/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Command Elements/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Command Elements/email9.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Cyber-Comms Detachment/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Cyber-Comms Detachment/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Cyber-Comms Detachment/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Cyber-Comms Detachment/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Cyber-Comms Detachment/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Cyber-Comms Detachment/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Cyber-Comms Detachment/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Cyber-Comms Detachment/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Cyber-Comms Detachment/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Cyber-Comms Detachment/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Cyber-Comms Detachment/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Cyber-Comms Detachment/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Cyber-Comms Detachment/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Cyber-Comms Detachment/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Cyber-Comms Detachment/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Cyber-Comms Detachment/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Cyber-Comms Detachment/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Cyber-Comms Detachment/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Cyber-Comms Detachment/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Cyber-Comms Detachment/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Cyber-Comms Detachment/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Cyber-Comms Detachment/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Cyber-Comms Detachment/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Cyber-Comms Detachment/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Cyber-Comms Detachment/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Cyber-Comms Detachment/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Cyber-Comms Detachment/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Cyber-Comms Detachment/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Cyber-Comms Detachment/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Cyber-Comms Detachment/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Cyber-Comms Detachment/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Cyber-Comms Detachment/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Cyber-Comms Detachment/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Cyber-Comms Detachment/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Cyber-Comms Detachment/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Cyber-Comms Detachment/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Cyber-Comms Detachment/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Cyber-Comms Detachment/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Cyber-Comms Detachment/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Cyber-Comms Detachment/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Cyber-Comms Detachment/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Cyber-Comms Detachment/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Cyber-Comms Detachment/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Cyber-Comms Detachment/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Cyber-Comms Detachment/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Cyber-Comms Detachment/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Cyber-Comms Detachment/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Cyber-Comms Detachment/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Cyber-Comms Detachment/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Cyber-Comms Detachment/email9.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Ground/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Ground/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Ground/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Ground/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Ground/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Ground/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Ground/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Ground/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Ground/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Ground/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Ground/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Ground/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Ground/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Ground/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Ground/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Ground/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Ground/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Ground/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Ground/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Ground/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Ground/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Ground/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Ground/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Ground/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Ground/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Ground/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Ground/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Ground/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Ground/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Ground/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Ground/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Ground/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Ground/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Ground/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Ground/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Ground/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Ground/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Ground/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Ground/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Ground/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Ground/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Ground/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Ground/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Ground/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Ground/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Ground/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Ground/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Ground/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Ground/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Ground/email9.eml
+d41d8cd98f00b204e9800998ecf8427e  /var/spool/mail/Ground/email.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/R&D/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/R&D/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/R&D/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/R&D/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/R&D/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/R&D/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/R&D/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/R&D/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/R&D/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/R&D/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/R&D/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/R&D/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/R&D/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/R&D/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/R&D/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/R&D/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/R&D/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/R&D/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/R&D/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/R&D/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/R&D/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/R&D/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/R&D/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/R&D/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/R&D/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/R&D/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/R&D/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/R&D/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/R&D/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/R&D/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/R&D/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/R&D/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/R&D/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/R&D/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/R&D/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/R&D/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/R&D/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/R&D/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/R&D/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/R&D/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/R&D/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/R&D/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/R&D/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/R&D/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/R&D/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/R&D/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/R&D/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/R&D/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/R&D/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/R&D/email9.eml
+d5d309f709db85fdb86e8737423379c9  /var/spool/mail/Supply/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  /var/spool/mail/Supply/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  /var/spool/mail/Supply/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  /var/spool/mail/Supply/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  /var/spool/mail/Supply/email14.eml
+52b0db5287d45c5238e830101b8df766  /var/spool/mail/Supply/email15.eml
+ff848763a0e98715745a78943be8c919  /var/spool/mail/Supply/email16.eml
+35938ba5ae1094777e793de70249e0e4  /var/spool/mail/Supply/email17.eml
+769621841b56a474921c6a2f5d1d5907  /var/spool/mail/Supply/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  /var/spool/mail/Supply/email19.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  /var/spool/mail/Supply/email1.eml
+28148b567a621e2ea5d84fc0e5479eac  /var/spool/mail/Supply/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  /var/spool/mail/Supply/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  /var/spool/mail/Supply/email22.eml
+8fbef3d2619fb050165de10a4e38f745  /var/spool/mail/Supply/email23.eml
+2f2de96934286d74128a4ab006fe309f  /var/spool/mail/Supply/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  /var/spool/mail/Supply/email25.eml
+7bb93dd1937910e57486b421432a08fb  /var/spool/mail/Supply/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  /var/spool/mail/Supply/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  /var/spool/mail/Supply/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  /var/spool/mail/Supply/email29.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  /var/spool/mail/Supply/email2.eml
+cef29af3139fcb41d49dfec6192beee1  /var/spool/mail/Supply/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  /var/spool/mail/Supply/email31.eml
+8562c3fcb2a707d6141341b0f6027628  /var/spool/mail/Supply/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  /var/spool/mail/Supply/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  /var/spool/mail/Supply/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  /var/spool/mail/Supply/email35.eml
+17288a6dc817f1a9db1e1802f298882d  /var/spool/mail/Supply/email36.eml
+930f4f24551dd2139881a96ab0607a14  /var/spool/mail/Supply/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  /var/spool/mail/Supply/email38.eml
+168e7907fd103f065f0cb032c48334cb  /var/spool/mail/Supply/email39.eml
+6e1b25b0018cd86e67421f9741256c1e  /var/spool/mail/Supply/email3.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  /var/spool/mail/Supply/email40.eml
+f534a9c41cecd268f438a201868ba802  /var/spool/mail/Supply/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  /var/spool/mail/Supply/email42.eml
+b54719467fb5c2d56bf2382b644ca703  /var/spool/mail/Supply/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  /var/spool/mail/Supply/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  /var/spool/mail/Supply/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  /var/spool/mail/Supply/email46.eml
+e0520f421552f615572fd866ea89f5fa  /var/spool/mail/Supply/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  /var/spool/mail/Supply/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  /var/spool/mail/Supply/email49.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  /var/spool/mail/Supply/email4.eml
+c3054d14df020b827bec1aebef426d25  /var/spool/mail/Supply/email50.eml
+853b81291f212534919daf7737bea9a4  /var/spool/mail/Supply/email5.eml
+6c2458c94be399b6496f2f35597c72f7  /var/spool/mail/Supply/email6.eml
+6364a9a17403630bbb53bb438951b57f  /var/spool/mail/Supply/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  /var/spool/mail/Supply/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  /var/spool/mail/Supply/email9.eml
+
+
+LOCAL
+
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Air Defense/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Air Defense/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Air Defense/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Air Defense/email4.eml
+853b81291f212534919daf7737bea9a4  ./Air Defense/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Air Defense/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Air Defense/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Air Defense/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Air Defense/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Air Defense/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Air Defense/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Air Defense/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Air Defense/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Air Defense/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Air Defense/email15.eml
+ff848763a0e98715745a78943be8c919  ./Air Defense/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Air Defense/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Air Defense/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Air Defense/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Air Defense/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Air Defense/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Air Defense/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Air Defense/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Air Defense/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Air Defense/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Air Defense/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Air Defense/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Air Defense/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Air Defense/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Air Defense/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Air Defense/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Air Defense/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Air Defense/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Air Defense/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Air Defense/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Air Defense/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Air Defense/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Air Defense/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Air Defense/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Air Defense/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Air Defense/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Air Defense/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Air Defense/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Air Defense/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Air Defense/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Air Defense/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Air Defense/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Air Defense/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Air Defense/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Air Defense/email50.eml
+d41d8cd98f00b204e9800998ecf8427e  ./Air Defense/email.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Armored Cavalry/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Armored Cavalry/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Armored Cavalry/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Armored Cavalry/email4.eml
+853b81291f212534919daf7737bea9a4  ./Armored Cavalry/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Armored Cavalry/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Armored Cavalry/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Armored Cavalry/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Armored Cavalry/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Armored Cavalry/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Armored Cavalry/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Armored Cavalry/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Armored Cavalry/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Armored Cavalry/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Armored Cavalry/email15.eml
+ff848763a0e98715745a78943be8c919  ./Armored Cavalry/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Armored Cavalry/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Armored Cavalry/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Armored Cavalry/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Armored Cavalry/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Armored Cavalry/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Armored Cavalry/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Armored Cavalry/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Armored Cavalry/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Armored Cavalry/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Armored Cavalry/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Armored Cavalry/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Armored Cavalry/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Armored Cavalry/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Armored Cavalry/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Armored Cavalry/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Armored Cavalry/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Armored Cavalry/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Armored Cavalry/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Armored Cavalry/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Armored Cavalry/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Armored Cavalry/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Armored Cavalry/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Armored Cavalry/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Armored Cavalry/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Armored Cavalry/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Armored Cavalry/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Armored Cavalry/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Armored Cavalry/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Armored Cavalry/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Armored Cavalry/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Armored Cavalry/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Armored Cavalry/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Armored Cavalry/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Armored Cavalry/email50.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Command Elements/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Command Elements/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Command Elements/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Command Elements/email4.eml
+853b81291f212534919daf7737bea9a4  ./Command Elements/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Command Elements/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Command Elements/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Command Elements/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Command Elements/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Command Elements/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Command Elements/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Command Elements/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Command Elements/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Command Elements/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Command Elements/email15.eml
+ff848763a0e98715745a78943be8c919  ./Command Elements/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Command Elements/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Command Elements/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Command Elements/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Command Elements/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Command Elements/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Command Elements/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Command Elements/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Command Elements/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Command Elements/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Command Elements/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Command Elements/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Command Elements/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Command Elements/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Command Elements/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Command Elements/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Command Elements/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Command Elements/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Command Elements/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Command Elements/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Command Elements/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Command Elements/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Command Elements/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Command Elements/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Command Elements/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Command Elements/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Command Elements/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Command Elements/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Command Elements/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Command Elements/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Command Elements/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Command Elements/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Command Elements/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Command Elements/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Command Elements/email50.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Cyber-Comms Detachment/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Cyber-Comms Detachment/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Cyber-Comms Detachment/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Cyber-Comms Detachment/email4.eml
+853b81291f212534919daf7737bea9a4  ./Cyber-Comms Detachment/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Cyber-Comms Detachment/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Cyber-Comms Detachment/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Cyber-Comms Detachment/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Cyber-Comms Detachment/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Cyber-Comms Detachment/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Cyber-Comms Detachment/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Cyber-Comms Detachment/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Cyber-Comms Detachment/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Cyber-Comms Detachment/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Cyber-Comms Detachment/email15.eml
+ff848763a0e98715745a78943be8c919  ./Cyber-Comms Detachment/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Cyber-Comms Detachment/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Cyber-Comms Detachment/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Cyber-Comms Detachment/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Cyber-Comms Detachment/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Cyber-Comms Detachment/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Cyber-Comms Detachment/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Cyber-Comms Detachment/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Cyber-Comms Detachment/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Cyber-Comms Detachment/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Cyber-Comms Detachment/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Cyber-Comms Detachment/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Cyber-Comms Detachment/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Cyber-Comms Detachment/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Cyber-Comms Detachment/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Cyber-Comms Detachment/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Cyber-Comms Detachment/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Cyber-Comms Detachment/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Cyber-Comms Detachment/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Cyber-Comms Detachment/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Cyber-Comms Detachment/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Cyber-Comms Detachment/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Cyber-Comms Detachment/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Cyber-Comms Detachment/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Cyber-Comms Detachment/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Cyber-Comms Detachment/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Cyber-Comms Detachment/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Cyber-Comms Detachment/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Cyber-Comms Detachment/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Cyber-Comms Detachment/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Cyber-Comms Detachment/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Cyber-Comms Detachment/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Cyber-Comms Detachment/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Cyber-Comms Detachment/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Cyber-Comms Detachment/email50.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Ground/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Ground/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Ground/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Ground/email4.eml
+853b81291f212534919daf7737bea9a4  ./Ground/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Ground/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Ground/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Ground/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Ground/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Ground/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Ground/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Ground/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Ground/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Ground/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Ground/email15.eml
+ff848763a0e98715745a78943be8c919  ./Ground/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Ground/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Ground/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Ground/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Ground/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Ground/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Ground/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Ground/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Ground/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Ground/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Ground/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Ground/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Ground/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Ground/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Ground/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Ground/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Ground/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Ground/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Ground/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Ground/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Ground/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Ground/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Ground/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Ground/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Ground/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Ground/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Ground/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Ground/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Ground/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Ground/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Ground/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Ground/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Ground/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Ground/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Ground/email50.eml
+d41d8cd98f00b204e9800998ecf8427e  ./Ground/email.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./R&D/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./R&D/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./R&D/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./R&D/email4.eml
+853b81291f212534919daf7737bea9a4  ./R&D/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./R&D/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./R&D/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./R&D/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./R&D/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./R&D/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./R&D/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./R&D/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./R&D/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./R&D/email14.eml
+52b0db5287d45c5238e830101b8df766  ./R&D/email15.eml
+ff848763a0e98715745a78943be8c919  ./R&D/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./R&D/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./R&D/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./R&D/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./R&D/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./R&D/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./R&D/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./R&D/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./R&D/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./R&D/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./R&D/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./R&D/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./R&D/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./R&D/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./R&D/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./R&D/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./R&D/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./R&D/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./R&D/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./R&D/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./R&D/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./R&D/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./R&D/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./R&D/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./R&D/email40.eml
+f534a9c41cecd268f438a201868ba802  ./R&D/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./R&D/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./R&D/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./R&D/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./R&D/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./R&D/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./R&D/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./R&D/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./R&D/email49.eml
+c3054d14df020b827bec1aebef426d25  ./R&D/email50.eml
+ce6008dc77ea6b2e21dd3f23ed790a93  ./Supply/email1.eml
+1b2b66aa5fbec022486e3bd9ef06fc55  ./Supply/email2.eml
+6e1b25b0018cd86e67421f9741256c1e  ./Supply/email3.eml
+e7fbd8ffdcdf4ba7fad61c9057add92f  ./Supply/email4.eml
+853b81291f212534919daf7737bea9a4  ./Supply/email5.eml
+6c2458c94be399b6496f2f35597c72f7  ./Supply/email6.eml
+6364a9a17403630bbb53bb438951b57f  ./Supply/email7.eml
+ee2da478801f4fb0daa26af6b0f3cc86  ./Supply/email8.eml
+5fc7016bc0cd7176d19de3737c34cd2b  ./Supply/email9.eml
+d5d309f709db85fdb86e8737423379c9  ./Supply/email10.eml
+c5cd74a01df91e793dba63f46f7c32fb  ./Supply/email11.eml
+07ea26c77c765bb19c4416a7112e11e5  ./Supply/email12.eml
+7e8537cb3f48d322dbb0b89455ae7b23  ./Supply/email13.eml
+e5ea6b4dde06ba03ccf09789ee56d182  ./Supply/email14.eml
+52b0db5287d45c5238e830101b8df766  ./Supply/email15.eml
+ff848763a0e98715745a78943be8c919  ./Supply/email16.eml
+35938ba5ae1094777e793de70249e0e4  ./Supply/email17.eml
+769621841b56a474921c6a2f5d1d5907  ./Supply/email18.eml
+c0f71c27edbd43816da6bf96e31e5f18  ./Supply/email19.eml
+28148b567a621e2ea5d84fc0e5479eac  ./Supply/email20.eml
+88dbe88b3f9eead1089c9a1a95cd59be  ./Supply/email21.eml
+f58fa6e94ce4db035b54f634cc19eff6  ./Supply/email22.eml
+8fbef3d2619fb050165de10a4e38f745  ./Supply/email23.eml
+2f2de96934286d74128a4ab006fe309f  ./Supply/email24.eml
+895adfb96ced3c7d07b66e82dbb4336c  ./Supply/email25.eml
+7bb93dd1937910e57486b421432a08fb  ./Supply/email26.eml
+7daf24fc3bc719d27cd79d1635b64357  ./Supply/email27.eml
+4212a5868a1eb46b68db1c88aa01c266  ./Supply/email28.eml
+4c0a7fc96ac6af9b7bac71e197102e89  ./Supply/email29.eml
+cef29af3139fcb41d49dfec6192beee1  ./Supply/email30.eml
+c2530d5439c6784ccb4f2fa5a8c5e117  ./Supply/email31.eml
+8562c3fcb2a707d6141341b0f6027628  ./Supply/email32.eml
+55b4210be1bae5cdba3ac4ea8f8c50e1  ./Supply/email33.eml
+7c7136cdfaec4657daa2e09097811fe1  ./Supply/email34.eml
+0a2091f4cb6f5beaea98b693bf93b356  ./Supply/email35.eml
+17288a6dc817f1a9db1e1802f298882d  ./Supply/email36.eml
+930f4f24551dd2139881a96ab0607a14  ./Supply/email37.eml
+de3dc7df85396d24049609b5d0e3cd71  ./Supply/email38.eml
+168e7907fd103f065f0cb032c48334cb  ./Supply/email39.eml
+d8a9a71d5d88ab83b82f8dce6fb8003b  ./Supply/email40.eml
+f534a9c41cecd268f438a201868ba802  ./Supply/email41.eml
+489f6ddbb9e8d073e454bd30b160b056  ./Supply/email42.eml
+b54719467fb5c2d56bf2382b644ca703  ./Supply/email43.eml
+90760be0897ff29c0cef92d6e0b2e14a  ./Supply/email44.eml
+d64f9862f9d984af8ff6a63a93a058c1  ./Supply/email45.eml
+84c516ce3c5236b001ba31cd2d9d0171  ./Supply/email46.eml
+e0520f421552f615572fd866ea89f5fa  ./Supply/email47.eml
+49d6bcc6ad452ab8a0d812ba225d1b43  ./Supply/email48.eml
+3f816da3f73777f53221e9cfc9e37c1b  ./Supply/email49.eml
+c3054d14df020b827bec1aebef426d25  ./Supply/email50.eml
+
+2022-08-22 17:35:03-- OFF
+
+------------------------X
+=========================
+
+

@@ -1,0 +1,247 @@
+####NSDB 25-08-22####
+
+####T1####
+
+*****Abnormal Logging Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - rsyslog
+*PID - 1176
+*PPID - 1
+*User - root
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.50.66.13:514 
+*Network connections - was not seen in netstat yet
+*Documentation - https://www.rsyslog.com/
+*Description - T1 is sending logs to a remote host 10.50.66.13:514
+*Recommendation - We are not aware of the 10.50.66.13 device. If log cleaning is neccesary, this new device must be identified and accessed to delete our logs. Moderate risk.
+*****End of Report****
+
+*****Security Product Report*****
+*Target: <T1 and 10.50.29.166 >
+*Name - SELinux
+*Version - permissive
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-25 13:20:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1661173909.363:23112): pid=16911 uid=0 auid=1003 ses=1651 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/13 res=success'
+type=USER_ACCT msg=audit(1661173924.859:23113): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="engineer4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1661173924.859:23114): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/engineer4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1661173924.860:23115): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1661173924.864:23116): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. It will not prevent activities from happening. Since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+####T2####
+
+*****Privileged User Report*****
+*Target: <T2 and 10.20.169.122 >
+*User logged in - administrator
+*Access Time - 8/25/2022 12:29 PM
+*Access Method - console
+*Privileges - administrator
+*Activity - Currently inactive, cmd.exe open. Does not seem to be executing any commands.
+*Recommendation - This admin got on this morning. I would caution and watch out any new processes the user might run.
+*****End of Report*****
+
+####T3####
+
+*****Privileged User Report*****
+*Target: <T3 and 10.20.169.10 >
+*User logged in - administrator
+*Access Time - 8/25/2022 12:31 PM
+*Access Method - console
+*Privileges - Administrator
+*Activity - BareTail real time monitoring (I will send a report this for abnormal logging)
+*Recommendation - Admin Does not seem to be active; however, he/she is running a real time log file monitoring software. Moderate risk.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T3 and 10.20.169.10 >
+*Name - Baretail
+*PID - 6708
+*PPID - 1
+*User - administrator
+*Location of config file - the executable is in C:\
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.baremetalsoft.com/baretail/
+*Description - It is a real-time monitoring software that allows user to monitor log files in real time.
+*Recommendation - If the user is actively monitoring on this software, there is a high chance that our activities are detected. However, admin does not seem to be active, but I would proceed with caution. This Baretail does not seem to be installed in the default registry or folders. 
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T3 and 10.20.169.10 >
+*Name - LogFusion
+*PID - not seen on process list
+*PPID - N/A
+*User - N/A
+*Location of config file - the installation exe is in C:\lf.exe
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.logfusion.ca/
+*Description - LogFusion allows the user to format the logs nicely. There are other functions on LogFusion that allows real-time monitoring of the system.
+*Recommendation - There is a high chance that this application is not running. However, it is present on the system so much be cautious if we see that it is running.
+*****End of Report*****
+
+####T5####
+
+####T6####
+
+*****Privileged User Report*****
+*Target: <T6 and 10.20.169.239 >
+*User logged in - radicle
+*Access Time - Thu Aug 25 11:38:47 +0000 2022
+*Access Method - ssh (pts/2)
+*Privileges - radicle
+*Activity - This user ssh-ed to T6 from T5 just like how we are doing it. 
+*Recommendation - Need to further investigate what other devices this user is coming from. There is a high chance that this user is utilizing ssh masquerade. Moderate risk.
+*****End of Report*****
+
+####T7####
+
+*****Abnormal Logging Report*****
+*Target: <T7 and 192.186.169.41 >
+*Name - Process Accounting
+*PID - kernel
+*PPID - kernel
+*User - kernel
+*Location of config file - log is at /var/account/pacct
+*Remote IP (hostname if IP cannot be identified) - N/A
+*Network connections - N/A
+*Documentation - https://www.networkworld.com/article/3571465/managing-process-accounting-on-linux.html
+*Description - Process accounting is a method of recording and summarizing commands and processes. It's an option on Linux systems, but you have to enable it and use a particular command to view the details collected.
+*Recommendation - Process accounting is active on this system. I would proceed with caution. Since we are only using this device for survey collection and scanning, risk is moderate.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T7 and 192.186.169.41 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-25 14:37:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1661173909.363:23112): pid=16911 uid=0 auid=1003 ses=1651 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/13 res=success'
+type=USER_ACCT msg=audit(1661173924.859:23113): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="engineer4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1661173924.859:23114): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/engineer4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1661173924.860:23115): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1661173924.864:23116): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+
+####T8####
+
+*****Privileged User Report*****
+*Target: <T8 and 192.186.169.201 >
+*User logged in - radicle
+*Access Time - 2022-08-23 13:08
+*Access Method - tty1
+*Privileges - radicle
+*Activity - this user is ssh to 129.168.169.52 port 33715
+*Recommendation - this user logged in on Tuesday and does not seem active right now. I would watch out for when this user changes its behavior. Low risk for now. Need to investigate further what host it ssh-ed to.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T8 and 192.186.169.201 >
+*Name - tcpdump
+*PID - 1640
+*PPID - 1491
+*User - radicle
+*Location of config file - /var/log/tcpdump.pcap
+*Remote IP (hostname if IP cannot be identified) - n/a
+*Network connections - pcap-ing loopback interface
+*Documentation - https://www.tcpdump.org/
+*Description - user radicle is running a tcpdump on loopback interface.
+*Recommendation - The tcpdump is only collecting packets in/out of loopback. Since we are not using loopback interface, risk is low.
+*****End of Report*****
+
+*****Abnormal Logging Report*****
+*Target: <T8 and 192.186.169.201 >
+*Name - rsyslog
+*PID - 984
+*PPID - 1
+*User - syslog
+*Location of config file - /etc/rsyslog.d/50-default.conf
+*Remote IP (hostname if IP cannot be identified) - *.* @129.168.169.52:514
+*Network connections - *.* @129.168.169.52:514
+*Documentation - https://www.rsyslog.com/
+*Description - T8 is sending logs to a remote host 129.168.169.52:514, which is the same device user radicle is ssh-ed to.
+*Recommendation - We are not aware of the 129.168.169.52 host. Log cleaning will be difficult if needed. Must proceed with caution. Moderate risk.
+*****End of Report*****
+
+
+####T9####
+
+*****Privileged User Report*****
+*Target: <T9 and 129.168.169.52 >
+*User logged in - radicle
+*Access Time - Thu Aug 25 15:04:04 +0000 2022
+*Access Method - ssh
+*Privileges - radicle
+*Activity - ssh-ed in, running httpd, possibly looking at the logs in this device
+*Recommendation - This user may be some sort a sysadmin. It is currently not active, since it is not running any commands. Low risk.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T9 and 129.168.169.52 >
+*Name - SELinux
+*Version - permissive
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - Modify: 2022-08-25 15:45:16.384995230 +0000
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[engineer4@ext-rtr ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1661173909.363:23112): pid=16911 uid=0 auid=1003 ses=1651 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/13 res=success'
+type=USER_ACCT msg=audit(1661173924.859:23113): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="engineer4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_CMD msg=audit(1661173924.859:23114): pid=16973 uid=1004 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/engineer4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/11 res=success'
+type=CRED_REFR msg=audit(1661173924.860:23115): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+type=USER_START msg=audit(1661173924.864:23116): pid=16973 uid=0 auid=1004 ses=1649 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_limits,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/11 res=success'
+*Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at permissive mode. It will not prevent activities from happening. Since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+#####T10#####
+
+*****Abnormal Logging Report*****
+*Target: <T10 and 10.20.169.121 >
+*Name - rsyslog
+*PID - 1053
+*PPID - 1
+*User - syslog
+*Location of config file - /etc/rsyslog.conf
+*Remote IP (hostname if IP cannot be identified) - 10.111.23.4
+*Network connections - 10.111.23.4:514
+*Documentation - https://www.rsyslog.com/
+*Description - T10 is sending logs to a remote host 10.111.23.4.
+*Recommendation - We are not aware of the 10.111.23.4 host. Log cleaning will be difficult if needed. Must proceed with caution. Moderate risk.
+*****End of Report*****
+
+*****Security Product Report*****
+*Target: <T10 and 10.20.169.121 >
+*Name - SELinux
+*Version - enforcing
+*(NIX) Config file or install directory - /etc/selinux
+Directory location of associated logs - /var/log/audit/audit.log
+Timestamp of all associated log files - 2022-08-25 16:30:46
+Cloud based?; yes or no - no
+Can we read the logs?; yes or no  (If yes, 5 most recent, if no, why?) - <>
+[caisson4@webserver ~]$ sudo tail -n 5 /var/log/audit/audit.log
+type=CRED_DISP msg=audit(1661444867.235:16138): pid=30383 uid=0 auid=1004 ses=1670 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_ACCT msg=audit(1661445044.233:16139): pid=30530 uid=1004 auid=1004 ses=1670 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:accounting grantors=pam_unix,pam_localuser acct="caisson4" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_CMD msg=audit(1661445044.233:16140): pid=30530 uid=1004 auid=1004 ses=1670 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='cwd="/home/useraccounts/caisson4" cmd=7461696C202D6E2035202F7661722F6C6F672F61756469742F61756469742E6C6F67 terminal=pts/1 res=success'
+type=CRED_REFR msg=audit(1661445044.233:16141): pid=30530 uid=0 auid=1004 ses=1670 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:setcred grantors=pam_env,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+type=USER_START msg=audit(1661445044.236:16142): pid=30530 uid=0 auid=1004 ses=1670 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:session_open grantors=pam_keyinit,pam_keyinit,pam_limits,pam_systemd,pam_unix acct="root" exe="/usr/bin/sudo" hostname=? addr=? terminal=/dev/pts/1 res=success'
+Documentation - http://www.selinuxproject.org/page/Main_Page
+*Recommendation - SELinux is at enforcing mode. It will prevent certain activities from happening. however, since this device is only being used as a redirector, SELinux will not impact our operation.
+*****End of Report*****
+
+

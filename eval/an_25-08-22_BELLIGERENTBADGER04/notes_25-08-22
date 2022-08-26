@@ -1,0 +1,671 @@
+####Notes 25-08-22####
+
+>T1: 10.50.29.166
+->T2: 10.20.169.122
+->T3: 10.20.169.10
+->T4: 10.20.169.13 (no) 
+->T5: 10.20.169.30
+-->T6: 10.20.169.239
+--->T7: 192.186.169.41
+---->T8: 192.186.169.201
+----->T9: 129.168.169.186 (changed to .52)
+->T10: 10.20.169.121
+
+Start:1300Z
+End:1900Z
+2022-08-25 16:54:20-- done
+=========================
+T1: 10.50.29.166
+=========================
+X-----------------------
+
+2022-08-25 13:14:17-- ON
+
+2022-08-25 13:14:19-- start vetting
+
+[engineer4@ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:21:12:c5 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.33/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 66185sec preferred_lft 66185sec
+    inet6 fe80::f816:3eff:fe21:12c5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1176     1  0  80   0 - 66523 poll_s Jun18 ?        00:07:38 /usr/sbin/rsyslogd -n
+5 S root       669     1  0  76  -4 - 13880 ep_pol Jun18 ?        00:00:07 /sbin/auditd
+
+[engineer4@ext-rtr ~]$ date; date -u
+Thu Aug 25 13:15:59 UTC 2022
+Thu Aug 25 13:15:59 UTC 2022
+
+*.* @@10.50.66.13:514
+
+[engineer4@ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-25 13:24:43-- done vetting
+
+
+2022-08-25 16:54:10-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T2: 10.20.169.122
+=========================
+X-----------------------
+
+
+2022-08-25 13:30:30-- ON
+
+2022-08-25 13:30:32-- start vetting
+
+caisson4@STORAGE1 C:\Users\caisson4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : STORAGE1
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-54-0A-D5
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7954:fd79:4621:888f%6(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.169.122(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 18, 2022 1:01:32 AM
+   Lease Expires . . . . . . . . . . : Friday, August 26, 2022 10:21:05 AM
+   Default Gateway . . . . . . . . . : 10.20.169.1
+   DHCP Server . . . . . . . . . . . : 10.20.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-42-FA-16-3E-54-0A-D5
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+caisson4@STORAGE1 C:\Users\caisson4>date /t 
+Thu 08/25/2022  
+
+caisson4@STORAGE1 C:\Users\caisson4>time /t 
+01:31 PM 
+
+caisson4@STORAGE1 C:\Users\caisson4>query user
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+ administrator         console             2  Active      none   8/25/2022 12:29 PM
+
+2022-08-25 13:41:48-- done vetting
+
+2022-08-25 13:41:50-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.20.169.10
+=========================
+X-----------------------
+
+
+2022-08-25 13:42:45-- ON
+
+2022-08-25 13:42:46-- start vetting
+
+caisson4@CHATSERVER C:\Users\caisson4>ipconfig /all                                                                             
+
+Windows IP Configuration                                                                                                        
+
+   Host Name . . . . . . . . . . . . : CHATSERVER                                                                               
+   Primary Dns Suffix  . . . . . . . :                                                                                          
+   Node Type . . . . . . . . . . . . : Hybrid                                                                                   
+   IP Routing Enabled. . . . . . . . : No                                                                                       
+   WINS Proxy Enabled. . . . . . . . : No                                                                                       
+   DNS Suffix Search List. . . . . . : vta                                                                                      
+
+Ethernet adapter Ethernet:                                                                                                      
+
+   Connection-specific DNS Suffix  . : vta                                                                                      
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter                                                          
+   Physical Address. . . . . . . . . : FA-16-3E-27-BF-DF                                                                        
+   DHCP Enabled. . . . . . . . . . . : Yes                                                                                      
+   Autoconfiguration Enabled . . . . : Yes                                                                                      
+   Link-local IPv6 Address . . . . . : fe80::f0c7:b83e:7f79:f11a%6(Preferred)                                                   
+   IPv4 Address. . . . . . . . . . . : 10.20.169.10(Preferred)                                                                  
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0                                                                            
+   Lease Obtained. . . . . . . . . . : Tuesday, August 23, 2022 9:36:01 PM                                                      
+   Lease Expires . . . . . . . . . . : Friday, August 26, 2022 7:41:03 AM                                                       
+   Default Gateway . . . . . . . . . : 10.20.169.1                                                                              
+   DHCP Server . . . . . . . . . . . : 10.20.169.3                                                                              
+   DHCPv6 IAID . . . . . . . . . . . : 117052990                                                                                
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-E9-F1-8B-FA-16-3E-27-BF-DF                                                
+   DNS Servers . . . . . . . . . . . : 10.50.255.254                                                                            
+   NetBIOS over Tcpip. . . . . . . . : Enabled     
+
+caisson4@CHATSERVER C:\Users\caisson4>date /t                                                                                   
+Thu 08/25/2022                                                                                                                  
+
+caisson4@CHATSERVER C:\Users\caisson4>time /t                                                                                   
+01:43 PM      
+
+caisson4@CHATSERVER C:\Users\caisson4>query user                                                                                
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME                                                     
+ administrator         console             1  Active      none   8/25/2022 12:31 PM  
+
+dllhost.exe                   6256 Console                    1      9,436 K Unknown         CHATSERVER\Administrator           
+                     0:00:00 N/A                                                                                                
+OneDrive.exe                  5628 Console                    1     77,452 K Unknown         CHATSERVER\Administrator           
+                     0:00:01 N/A                                                                                                
+baretail.exe                  6708 Console                    1     13,472 K Unknown         CHATSERVER\Administrator   
+
+
+CommandLine="C:\Users\Administrator\Downloads\baretail.exe"  
+
+
+ Directory of c:\                                                                                                               
+
+04/14/2022  03:27 PM           225,280 baretail.exe                                                                             
+04/17/2022  01:13 AM    <DIR>          PerfLogs                                                                                 
+04/17/2022  01:20 AM    <DIR>          Program Files (x86)                                                                      
+04/26/2022  01:38 AM    <DIR>          windows                                                                                  
+05/20/2022  02:32 PM    <DIR>          Program Files                                                                            
+08/23/2022  01:24 PM    <DIR>          Users                                                                                    
+08/23/2022  08:56 PM         5,912,248 lf.exe 
+
+
+2022-08-25 13:57:11-- done vetting
+
+
+2022-08-25 14:03:28-- OFF
+
+------------------------X
+=========================
+
+=========================
+T5: 10.20.169.30
+=========================
+X-----------------------
+
+2022-08-25 14:03:34-- ON
+
+2022-08-25 14:03:35-- start vetting
+
+caisson4@STORAGE2 C:\Users\caisson4>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : STORAGE2
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-4C-C7-17
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::2de7:ccc2:508d:ab47%4(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.20.169.30(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Saturday, June 18, 2022 1:01:36 AM
+   Lease Expires . . . . . . . . . . : Friday, August 26, 2022 4:14:05 AM
+   Default Gateway . . . . . . . . . : 10.20.169.1
+   DHCP Server . . . . . . . . . . . : 10.20.169.3
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-98-76-43-FA-16-3E-4C-C7-17
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+caisson4@STORAGE2 C:\Users\caisson4>date /t 
+Thu 08/25/2022  
+
+caisson4@STORAGE2 C:\Users\caisson4>time /t 
+02:03 PM 
+
+2022-08-25 14:12:05-- done vetting
+
+2022-08-25 16:21:03-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T6: 10.20.169.239
+=========================
+X-----------------------
+
+2022-08-25 14:12:18-- ON
+
+2022-08-25 14:12:21-- start vetting
+
+NOC_Admin4@Vyos2:~$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:32:1d:b6 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.239/24 brd 10.20.169.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe32:1db6/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether fa:16:3e:1d:e8:81 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.206/24 brd 192.186.169.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe1d:e881/64 scope link 
+       valid_lft forever preferred_lft forever
+
+5 S root      2005     1  0  80   0 - 29938 -      Jun18 ?        00:00:10 /usr/sbin/rsyslogd -c4
+
+NOC_Admin4@Vyos2:~$ w
+ 14:12:09 up 68 days, 13:11,  6 users,  load average: 0.08, 0.03, 0.05
+USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT
+radicle  pts/0    10.20.169.30     12:35   25:05   0.10s  0.10s -vbash
+
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:52230           0.0.0.0:*               LISTEN      2371/sshd       
+tcp        0      0 10.20.169.239:52230     10.20.169.30:62778      ESTABLISHED 4049/sshd: radicle 
+
+ NOC_Admin4@Vyos2:~$ date; date -u
+Thu Aug 25 14:13:36 UTC 2022
+Thu Aug 25 14:13:36 UTC 2022
+
+NOC_Admin4@Vyos2:~$ uname -a
+Linux Vyos2 3.13.11-1-amd64-vyos #1 SMP Wed Aug 12 02:08:05 UTC 2015 x86_64 GNU/Linux
+
+2022-08-25 14:27:57-- done vetting
+
+2022-08-25 16:19:13-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T7: 192.186.169.41
+=========================
+X-----------------------
+
+2022-08-25 14:28:01-- ON
+
+2022-08-25 14:28:03-- start vetting
+
+[askar4@desktop-admin2 ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:d3:b6:f8 brd ff:ff:ff:ff:ff:ff
+    inet 10.101.169.93/8 brd 10.255.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet 10.101.169.93/24 brd 10.101.169.255 scope global dynamic eth0
+       valid_lft 64353sec preferred_lft 64353sec
+    inet6 fe80::f816:3eff:fed3:b6f8/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7f:c9:bf brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.41/24 brd 192.186.169.255 scope global dynamic eth1
+       valid_lft 83712sec preferred_lft 83712sec
+    inet6 fe80::f816:3eff:fe7f:c9bf/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[askar4@desktop-admin2 ~]$ sudo ls -latr /root
+total 40
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 May 20 13:00 .ssh
+drwxr-xr-x.  2 root root  191 May 20 13:01 Sup3rS3cr3t
+
+4 S root      1360     1  0  80   0 - 81288 poll_s Jun18 ?        00:07:14 /usr/sbin/rsyslogd -n
+
+[askar4@desktop-admin2 ~]$ date; date -u
+Thu Aug 25 14:31:28 UTC 2022
+Thu Aug 25 14:31:28 UTC 2022
+
+[askar4@desktop-admin2 ~]$ uname -a
+Linux desktop-admin2 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+-rw-------. 1 root root 276608 Aug 25 03:10 /var/account/pacct-20220825
+-rw-------. 1 root root  42240 Aug 25 14:32 /var/account/pacct
+
+-r--r--. 1 root root              299300 Aug 25 14:32 /var/log/lastlog
+-rw-------. 1 root root                 126 Aug 25 14:33 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root root               49984 Aug 25 14:33 /var/account/pacct
+-rw-------. 1 root root             4346803 Aug 25 14:33 /var/log/audit/audit.log
+-rw-------. 1 root root             5998347 Aug 25 14:33 /var/log/secure
+-rw-r-----+ 1 root systemd-journal 33554432 Aug 25 14:33 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[askar4@desktop-admin2 ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-25 14:37:53-- done vetting
+
+
+2022-08-25 16:17:28-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T8: 192.186.169.201
+=========================
+X-----------------------
+
+
+2022-08-25 14:47:29-- On
+
+2022-08-25 14:47:30-- start vetting
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: ens3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:7a:9b:d1 brd ff:ff:ff:ff:ff:ff
+    inet 192.186.169.201/24 brd 192.186.169.255 scope global ens3
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe7a:9bd1/64 scope link 
+       valid_lft forever preferred_lft forever
+3: ens4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:2e:c7:9b brd ff:ff:ff:ff:ff:ff
+    inet 129.168.169.201/16 brd 129.168.255.255 scope global ens4
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe2e:c79b/64 scope link 
+       valid_lft forever preferred_lft forever
+
+sudo ls -latr /root
+total 32
+-rw-r--r--  1 root root  148 Aug 17  2015 .profile
+-rw-r--r--  1 root root 3106 Apr  9  2018 .bashrc
+drwx------  2 root root 4096 Feb 11  2022 .ssh
+drwxr-xr-x 23 root root 4096 Aug 23 13:05 ..
+-rw-r--r--  1 root root  488 Aug 25 13:40 NetworkUpdates.txt
+-rw-------  1 root root 1298 Aug 25 13:43 .bash_history
+-rw-------  1 root root 1309 Aug 25 13:52 .viminfo
+drwx------  3 root root 4096 Aug 25 13:52 .
+
+0 S radicle  10012  1491  0  80   0 - 12285 poll_s 13:53 tty1     00:00:00 ssh -p 33715 radicle@129.168.169.52
+
+4 S root      1640  1491  0  80   0 - 17076 poll_s Aug23 tty1     00:00:00 sudo tcpdump -i lo -w /var/log/tcpdump.pcap
+4 S root      1641  1640  0  80   0 -  5700 poll_s Aug23 tty1     00:00:01 tcpdump -i lo -w /var/log/tcpdump.pcap
+
+4 S syslog     984     1  0  80   0 - 66819 poll_s Aug23 ?        00:00:00 /usr/sbin/rsyslogd -n
+
+udp        0   2048 0.0.0.0:41668           0.0.0.0:*                           984/rsyslogd        
+tcp        0      0 129.168.169.201:49716   129.168.169.52:33715    ESTABLISHED 10012/ssh           
+
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+radicle  tty1     -                Tue13    4.00s  2.32s  0.09s ssh -p 33715 radicle@129.168.169.52
+
+date; date -u
+Thu Aug 25 14:51:14 UTC 2022
+Thu Aug 25 14:51:14 UTC 2022
+
+-rw-r--r--   1 root      root            49651712 Aug 25 14:51 tcpdump.pcap
+
+*.* @129.168.169.52:514
+
+2022-08-25 15:16:24-- done vetting
+
+2022-08-25 15:18:02-- interesting file
+
+sudo cat /root/NetworkUpdates.txt
+Due to infrastructure updates, need to revise the 129 network for possible future expansion. 
+
+To Do (not yet done):
+Create a standalone log server
+Change ssh port from 33715 to 54623
+Create additional internal storage servers for more sensitive documents (not in the 10.20... DMZ)
+
+Already Done:
+Rebuild User21_Admin host
+Change User21_Admin host from 129.168.169.186 to 129.168.169.52 (all the 6's and 8's and 9's kept messing me up. The .52 is so much better)
+change my admin password
+
+####added iptable rule####
+2022-08-25 15:25:11-- sudo iptables -t nat -A PREROUTING -p tcp --dport 12304 -j DNAT --to-destination 129.168.169.52:33715
+
+
+####deleted iptable rule####
+2022-08-25 16:14:28-- sudo iptables -t nat -D PREROUTING -p tcp --dport 12304 -j DNAT --to-destination 129.168.169.52:33715
+
+2022-08-25 16:15:45-- OFF
+
+------------------------X
+=========================
+
+=========================
+T9: 129.168.169.52
+=========================
+X-----------------------
+
+2022-08-25 15:29:39-- On
+
+2022-08-25 15:29:41-- start vetting
+
+[askar4@desktop-user21_admin ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:96:33:38 brd ff:ff:ff:ff:ff:ff
+    inet 129.168.169.52/16 brd 129.168.255.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:fe96:3338/64 scope link 
+       valid_lft forever preferred_lft forever
+
+[askar4@desktop-user21_admin ~]$ sudo ls -latr /root
+[sudo] password for askar4: 
+total 44
+-rw-r--r--.  1 root root  129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root  100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root  176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root   18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root  224 Aug  8  2019 ..
+-rw-------.  1 root root 6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root 6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root   29 May 20 15:26 .ssh
+-rw-r--r--.  1 root root  105 May 20 15:40 .password_list
+dr-xr-x---.  3 root root  192 May 20 15:40 .
+-rw-------.  1 root root  602 Aug 25 13:25 .bash_history
+
+0 S radicle   1878  1841  0  80   0 -    36 inet_c 15:06 pts/1    00:00:00 httpd
+4 S root      1836  1202  0  80   0 - 39717 poll_s 15:03 ?        00:00:00 sshd: radicle [priv]
+5 S radicle   1840  1836  0  80   0 - 39717 poll_s 15:04 ?        00:00:00 sshd: radicle@pts/1
+
+4 S root      1205     1  0  80   0 - 75729 poll_s 13:16 ?        00:00:00 /usr/sbin/rsyslogd -n
+5 S root       562     1  0  76  -4 - 13880 ep_pol 13:16 ?        00:00:00 /sbin/auditd
+tcp        0      0 129.168.169.52:33715    129.168.169.201:49718   ESTABLISHED 1836/sshd: radicle  
+
+udp        0      0 0.0.0.0:514             0.0.0.0:*                           1205/rsyslogd       
+tcp        0      0 0.0.0.0:47040           0.0.0.0:*               LISTEN      1878/httpd          
+
+radicle  pts/1    129.168.169.201  15:04   19:50   0.04s  0.04s -bash
+
+radicle  pts/1        2022-08-25 15:04 (129.168.169.201)
+
+radicle          pts/1    129.168.169.201  Thu Aug 25 15:04:04 +0000 2022
+
+[askar4@desktop-user21_admin ~]$ date; date -u
+Thu Aug 25 15:34:36 UTC 2022
+Thu Aug 25 15:34:36 UTC 2022
+
+[askar4@desktop-user21_admin ~]$ uname -a
+Linux desktop-user21_admin 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+
+drwx------.  2 root   root      151 May 25 17:25 DESKTOP-USER24
+drwx------.  2 root   root       26 May 26 00:01 DESKTOP-USER26
+drwx------.  2 root   root     4096 May 27 22:06 desktop-user21_admin
+
+-rw-------. 1 root root               7482 Aug 25 15:29 /var/log/desktop-user21_admin/systemd-logind.log
+-rw-------. 1 root root              24041 Aug 25 15:29 /var/log/desktop-user21_admin/sshd.log
+-rw-rw-r--. 1 root utmp              57984 Aug 25 15:29 /var/log/wtmp
+-rw-r--r--. 1 root root             299300 Aug 25 15:29 /var/log/lastlog
+-rw-rw-r--. 1 root utmp               3072 Aug 25 15:29 /run/utmp
+-rw-------. 1 root root                122 Aug 25 15:38 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root wheel               112 Aug 25 15:39 /run/sudo/ts/askar4
+-rw-------. 1 root root            6320087 Aug 25 15:39 /var/log/audit/audit.log
+-rw-------. 1 root root             265856 Aug 25 15:39 /var/log/desktop-user21_admin/sudo.log
+-rwxr-x---+ 1 root systemd-journal 8388608 Aug 25 15:39 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+[askar4@desktop-user21_admin ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+[askar4@desktop-user21_admin ~]$ sudo cat /root/.password_list
+engineer - enshallah
+caisson - tread_depth
+NOC_Admin - AhmdLxu29D
+user - P455w0rd
+askar - DaXedayLasarah
+
+[askar4@desktop-user21_admin ~]$ md5sum /usr/bin/httpd
+8238fb87b4d5ca4bd53b683cfcf4ec34  /usr/bin/httpd
+
+2022-08-25 16:06:15-- done vetting
+
+REMOTE
+[askar4@desktop-user21_admin ~]$ sudo md5sum /root/.password_list
+4dea82e65d5ed6d7598ab8a63d0f6173  /root/.password_list
+
+LOCAL
+ md5sum .password_list 
+4dea82e65d5ed6d7598ab8a63d0f6173  .password_list
+
+2022-08-25 16:12:59-- OFF
+
+------------------------X
+=========================
+
+=========================
+T10: 10.20.169.121
+=========================
+X-----------------------
+
+
+2022-08-25 16:23:03-- ON
+
+2022-08-25 16:23:07-- start vetting
+
+
+[caisson4@webserver ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:36:64:84 brd ff:ff:ff:ff:ff:ff
+    inet 10.20.169.121/24 brd 10.20.169.255 scope global dynamic eth0
+       valid_lft 83793sec preferred_lft 83793sec
+    inet6 fe80::f816:3eff:fe36:6484/64 scope link 
+       valid_lft forever preferred_lft forever
+
+4 S root      1053     1  0  80   0 - 75129 poll_s Jun18 ?        00:07:51 /usr/sbin/rsyslogd -n
+5 S root       580     1  0  76  -4 - 13883 ep_pol Jun18 ?        00:00:06 /sbin/auditd
+
+[caisson4@webserver ~]$ date; date -u
+Thu Aug 25 16:25:30 UTC 2022
+Thu Aug 25 16:25:30 UTC 2022
+
+###remote rsyslog####
+*.* @@badguy:514
+10.111.23.4 badguy
+                                                                                                    
+[caisson4@webserver ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-25 16:40:49-- done vetting
+
+
+setting up IPTABLE rules
+
+2022-08-25 16:41:55-- sudo iptables -A OUTPUT -p tcp --dport 480 -j REJECT
+
+2022-08-25 16:42:03-- sudo iptables -A INPUT -p tcp --dport 480 -j REJECT
+
+delete them
+
+2022-08-25 16:47:55-- sudo iptables -D OUTPUT -p tcp --dport 480 -j REJECT
+
+2022-08-25 16:48:03-- sudo iptables -D INPUT -p tcp --dport 480 -j REJECT
+
+2022-08-25 16:52:45-- OFF
+
+
+------------------------X
+=========================
+
+

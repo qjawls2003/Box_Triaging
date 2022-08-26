@@ -1,0 +1,436 @@
+####Notes for 19-08-22####
+
+Here we go again!
+
+LP: 10.50.40.222
+-------------------------------
+->T1: 10.50.28.166
+--<T2: 10.180.169.17
+--<T3: 10.180.169.16
+--<T4: 10.180.169.9
+--<T5: 10.180.169.20
+
+Start: 1300Z
+End: 1900Z
+2022-08-19 16:23:19-- end
+=========================
+LP: 10.50.40.222
+=========================
+X-----------------------
+
+2022-08-19 13:01:25-- ON
+
+2022-08-19 13:01:27-- start vetting
+
+[student4@koa-lp-centos ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:a9:80:7a brd ff:ff:ff:ff:ff:ff
+    inet 10.50.40.222/16 brd 10.50.255.255 scope global dynamic eth0
+       valid_lft 82351sec preferred_lft 82351sec
+    inet6 fe80::f816:3eff:fea9:807a/64 scope link 
+       valid_lft forever preferred_lft forever
+
+drwxr-xr-x.   7 root root  240 Aug 19 12:05 koadic
+
+4 S root      1095     1  0  80   0 - 56148 poll_s 11:54 ?        00:00:00 /usr/sbin/rsyslogd -n
+5 S root       576     1  0  76  -4 - 13883 ep_pol 11:54 ?        00:00:00 /sbin/auditd
+
+[student4@koa-lp-centos ~]$ date; date -u
+Fri Aug 19 13:07:45 UTC 2022
+Fri Aug 19 13:07:45 UTC 2022
+
+-rw-------. 1 root   root      791 Aug 19 11:54 /var/log/maillog
+-rw-------. 1 root   root   211516 Aug 19 11:54 /var/log/cloud-init.log
+-rw-------. 1 root   root    14622 Aug 19 12:02 /var/log/yum.log
+-rw-r--r--. 1 root   root     3739 Aug 19 13:01 /var/log/cron
+-rw-------. 1 root   root   556703 Aug 19 13:05 /var/log/messages
+-rw-rw-r--. 1 root   utmp    16128 Aug 19 13:05 /var/log/wtmp
+-rw-r--r--. 1 root   root   299008 Aug 19 13:05 /var/log/lastlog
+-rw-------. 1 root   root    35219 Aug 19 13:08 /var/log/secure
+
+[student4@koa-lp-centos ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   enforcing
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+2022-08-19 13:24:55-- done vetting
+
+
+2022-08-19 16:10:54-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T1: 10.50.28.166
+=========================
+X-----------------------
+
+2022-08-19 13:25:07-- ON
+
+2022-08-19 13:25:09-- start vetting
+
+[NOC_admin4@koa-ext-rtr ~]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:aa:60:e2 brd ff:ff:ff:ff:ff:ff
+    inet 10.50.28.166/16 brd 10.50.255.255 scope global dynamic eth0
+       valid_lft 82809sec preferred_lft 82809sec
+    inet6 fe80::f816:3eff:feaa:60e2/64 scope link 
+       valid_lft forever preferred_lft forever
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1450 qdisc mq state UP group default qlen 1000
+    link/ether fa:16:3e:ca:22:3e brd ff:ff:ff:ff:ff:ff
+    inet 10.180.169.253/8 brd 10.255.255.255 scope global eth1
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f816:3eff:feca:223e/64 scope link 
+       valid_lft forever preferred_lft forever
+
+
+
+[NOC_admin4@koa-ext-rtr ~]$ sudo ls -latr /root
+total 56
+-rw-r--r--.  1 root root   129 Dec 29  2013 .tcshrc
+-rw-r--r--.  1 root root   100 Dec 29  2013 .cshrc
+-rw-r--r--.  1 root root   176 Dec 29  2013 .bashrc
+-rw-r--r--.  1 root root   176 Dec 29  2013 .bash_profile
+-rw-r--r--.  1 root root    18 Dec 29  2013 .bash_logout
+dr-xr-xr-x. 17 root root   224 Aug  8  2019 ..
+-rw-------.  1 root root  6577 Aug  8  2019 original-ks.cfg
+-rw-------.  1 root root  6921 Aug  8  2019 anaconda-ks.cfg
+drwx------.  2 root root    29 Aug 18 12:01 .ssh
+-rw-------.  1 root root   196 Aug 19 12:56 .bash_history
+-rw-r--r--.  1 root root   590 Aug 19 13:05 Dear_Boss.eml
+dr-xr-x---.  3 root root   217 Aug 19 13:05 .
+-rw-------.  1 root root 12288 Aug 19 13:05 .Dear_Boss.eml.swp
+
+4 S root      1168     1  0  80   0 - 57700 poll_s 12:25 ?        00:00:00 /usr/sbin/rsyslogd -n
+5 S root       713     1  0  76  -4 - 13880 ep_pol 12:25 ?        00:00:00 /sbin/auditd
+
+tcp        0      1 10.50.28.166:47036      10.50.22.142:514        SYN_SENT    1168/rsyslogd       
+
+[NOC_admin4@koa-ext-rtr ~]$ date; date -u
+Fri Aug 19 13:28:47 UTC 2022
+Fri Aug 19 13:28:47 UTC 2022
+
+[NOC_admin4@koa-ext-rtr ~]$ sestatus
+SELinux status:                 enabled
+SELinuxfs mount:                /sys/fs/selinux
+SELinux root directory:         /etc/selinux
+Loaded policy name:             targeted
+Current mode:                   permissive
+Mode from config file:          enforcing
+Policy MLS status:              enabled
+Policy deny_unknown status:     allowed
+Max kernel policy version:      31
+
+###root is on####
+root     tty1                      12:58   22:27   0.28s  0.27s vi Dear_Boss.eml
+
+
+-rw-r--r--. 1 root   root                256 Aug 19 13:29 /run/systemd/users/1018
+-rw-r--r--. 1 root   root                296 Aug 19 13:29 /run/systemd/sessions/13
+-rw-rw-r--. 1 root   utmp              34560 Aug 19 13:29 /var/log/wtmp
+-rw-r--r--. 1 root   root             299008 Aug 19 13:29 /var/log/lastlog
+-rw-rw-r--. 1 root   utmp               5760 Aug 19 13:29 /run/utmp
+-rw-------. 1 root   root                121 Aug 19 13:31 /var/lib/rsyslog/imjournal.state
+-rw-------. 1 root   root              28992 Aug 19 13:31 /var/account/pacct
+-rw-------. 1 root   root            1407952 Aug 19 13:31 /var/log/audit/audit.log
+-rwxr-x---+ 1 root   systemd-journal 8388608 Aug 19 13:31 /run/log/journal/65113b1a0d2f6087d515e6a8cd0ee7ef/system.journal
+
+###pacct###
+[NOC_admin4@koa-ext-rtr ~]$ ls -latr /var/*/*acc*
+-rw-------. 1 root root 84224 Aug 19 13:41 /var/account/pacct
+[NOC_admin4@koa-ext-rtr ~]$ sudo stat /var/account/pacct
+
+Modify: 2022-08-19 13:41:19.836611713 +0000
+
+2022-08-19 13:53:28-- done vetting
+
+2022-08-19 16:05:15-- OFF
+
+------------------------X
+=========================
+
+=========================
+T2: 10.180.169.17
+=========================
+X-----------------------
+
+using koadic
+
+2022-08-19 14:04:51-- ON
+
+2022-08-19 14:05:24-- start vetting
+
+Result for `cd /d C:\Users\Administrator & ipconfig /all`:
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-51SPHBF
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-D2-FA-9B
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::e480:1435:91b8:424e%4(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.180.169.17(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Friday, August 19, 2022 1:14:04 AM
+   Lease Expires . . . . . . . . . . : Saturday, August 20, 2022 12:22:49 PM
+   Default Gateway . . . . . . . . . : 10.180.169.1
+   DHCP Server . . . . . . . . . . . : 10.180.169.3
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-8F-E2-A7-FA-16-3E-D2-FA-9B
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Result for `cd /d C:\Users\Administrator & date /t`:
+Fri 08/19/2022 
+
+Result for `cd /d C:\Users\Administrator & time /t`:
+02:05 PM
+
+
+Result for `cd /d C:\Users\Administrator & query user`:
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>administrator         console             1  Active      none   8/19/2022 12:15 PM
+
+PaintStudio.View.exe          6604 Console                    1    107,264 K Running         DESKTOP-51SPHBF\Administrator                           0:00:02 CicMarshalWnd                                                           
+
+MicrosoftEdgeCP.exe           6920 Console                    1    204,704 K Running         DESKTOP-51SPHBF\Administrator                           0:00:05 N/A                                                                     
+
+notepad.exe                   4624 Console                    1     31,900 K Running         DESKTOP-51SPHBF\Administrator                           0:00:01 art classes near me - Notepad                                           
+
+rundll32.exe                  7848 Console                    1     30,520 K Running         DESKTOP-51SPHBF\Administrator                           0:00:00 N/A                                                                     
+
+
+
+Result for `cd /d C:\Users\Administrator & certutil -hashfile c:\windows\system32\MRT.exe MD5`:
+MD5 hash of c:\windows\system32\MRT.exe:
+62892e25c70f67c8aacfea6adb6a4add
+CertUtil: -hashfile command completed successfully.
+
+2022-08-19 14:28:49-- done vetting
+
+
+------------------------X
+=========================
+
+=========================
+T3: 10.180.169.16
+=========================
+X-----------------------
+
+using koadic
+
+2022-08-19 14:46:16-- ON
+
+2022-08-19 14:46:27-- start vetting
+
+Result for `cd /d C:\Users\Administrator & ipconfig /all`:
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-JL9EPC5
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-C1-44-F5
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::bdca:2f17:2c56:fb3a%3(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.180.169.16(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, August 18, 2022 5:41:12 PM
+   Lease Expires . . . . . . . . . . : Saturday, August 20, 2022 5:41:13 AM
+   Default Gateway . . . . . . . . . : 10.180.169.1
+   DHCP Server . . . . . . . . . . . : 10.180.169.3
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-8F-E6-84-FA-16-3E-C1-44-F5
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Result for `cd /d C:\Users\Administrator & date /t`:
+Fri 08/19/2022 
+
+Result for `cd /d C:\Users\Administrator & time /t`:
+02:47 PM
+
+Result for `cd /d C:\Users\Administrator & query user`:
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>administrator         console             1  Active      none   8/18/2022 5:41 PM
+
+Microsoft.Photos.exe          3256 Console                    1         36 K Running         DESKTOP-JL9EPC5\Administrator                           0:00:00 N/A                                                                     
+Music.UI.exe                  6088 Console                    1    118,076 K Running         DESKTOP-JL9EPC5\Administrator                           0:00:03 MediaPlayer SMTC window - {606C2A56-4DEF-4E6F-9B45-09A676C519CC}  
+
+SecHealthUI.exe               4304 Console                    1     50,040 K Running         DESKTOP-JL9EPC5\Administrator                           0:00:03 CicMarshalWnd                                                           
+
+Result for `cd /d C:\Users\Administrator & certutil -hashfile "C:\Program Files (x86)\Windows Media Player\setup_wm.exe" MD5`:
+MD5 hash of C:\Program Files (x86)\Windows Media Player\setup_wm.exe:
+be58120488f2db29f09d318541a03238
+CertUtil: -hashfile command completed successfully.
+
+2022-08-19 15:06:06-- done vetting
+
+2022-08-19 15:14:24-- OFF
+
+
+------------------------X
+=========================
+
+=========================
+T4: 10.180.169.9
+=========================
+X-----------------------
+
+using koadic
+2022-08-19 15:16:58-- ON
+
+2022-08-19 15:17:05-- start vetting
+
+Result for `cd /d C:\Users\Administrator & ipconfig /all`:
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-0MEF9Q6
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-D9-8F-00
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::3c8c:bd30:1b99:3642%4(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.180.169.9(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Friday, August 19, 2022 1:07:57 AM
+   Lease Expires . . . . . . . . . . : Saturday, August 20, 2022 12:52:52 PM
+   Default Gateway . . . . . . . . . : 10.180.169.1
+   DHCP Server . . . . . . . . . . . : 10.180.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-8F-E2-94-FA-16-3E-D9-8F-00
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Result for `cd /d C:\Users\Administrator & date /t`:
+Fri 08/19/2022 
+
+Result for `cd /d C:\Users\Administrator & time /t`:
+03:18 PM
+
+Result for `cd /d C:\Users\Administrator & query user`:
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>administrator         console             1  Active      none   8/19/2022 12:45 PM
+
+XboxIdp.exe                   4392 Console                    1     58,332 K Running         DESKTOP-0MEF9Q6\Administrator                           0:00:00 CicMarshalWnd                                                           
+wordpad.exe                   5184 Console                    1     62,764 K Running         DESKTOP-0MEF9Q6\Administrator                           0:00:03 RDR2_Cheats - WordPad                                                   
+XboxApp.exe                   1492 Console                    1     80,484 K Running         DESKTOP-0MEF9Q6\Administrator                           0:00:01 N/A                                                                     
+Microsoft.Photos.exe          6276 Console                    1        168 K Running         DESKTOP-0MEF9Q6\Administrator                           0:00:00 N/A                                                                     
+
+2022-08-19 15:30:29-- done vetting
+
+2022-08-19 15:39:32-- OFF
+
+
+
+------------------------X
+=========================
+
+=========================
+T5: 10.180.169.20
+=========================
+X-----------------------
+
+using koadic
+2022-08-19 15:43:09-- ON
+
+2022-08-19 15:43:16-- start vetting
+
+Result for `cd /d C:\Users\Administrator & ipconfig /all`:
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-SMITJ2H
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : vta
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : vta
+   Description . . . . . . . . . . . : Red Hat VirtIO Ethernet Adapter
+   Physical Address. . . . . . . . . : FA-16-3E-D1-F6-01
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::7973:e8f7:7966:4b39%4(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.180.169.20(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Thursday, August 18, 2022 5:46:08 PM
+   Lease Expires . . . . . . . . . . : Saturday, August 20, 2022 5:46:09 AM
+   Default Gateway . . . . . . . . . : 10.180.169.1
+   DHCP Server . . . . . . . . . . . : 10.180.169.2
+   DHCPv6 IAID . . . . . . . . . . . : 117052990
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-2A-8F-E6-7D-FA-16-3E-D1-F6-01
+   DNS Servers . . . . . . . . . . . : 10.50.255.254
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Result for `cd /d C:\Users\Administrator & date /t`:
+Fri 08/19/2022 
+
+Result for `cd /d C:\Users\Administrator & time /t`:
+03:43 PM
+
+Result for `cd /d C:\Users\Administrator & query user`:
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>administrator         console             1  Active      none   8/18/2022 5:46 PM
+
+2022-08-19 15:50:22-- done vetting
+
+2022-08-19 16:03:32-- OFF
+
+
+------------------------X
+=========================
+
+
